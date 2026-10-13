@@ -1,0 +1,24 @@
+PASS 7 regenerated traces and sidecars exactly match Phase1
+PASS synthetic_mixed fifo 768
+PASS synthetic_mixed rr 768
+PASS synthetic_mixed drr 768
+PASS synthetic_equal fifo 768
+PASS synthetic_equal rr 768
+PASS synthetic_equal drr 768
+PASS synthetic_burst fifo 768
+PASS synthetic_burst rr 768
+PASS synthetic_burst drr 768
+PASS synthetic_poisson fifo 768
+PASS synthetic_poisson rr 768
+PASS synthetic_poisson drr 768
+PASS moe_low fifo 77
+PASS moe_low rr 77
+PASS moe_low drr 77
+PASS moe_high fifo 2066
+PASS moe_high rr 2066
+PASS moe_high drr 2066
+PASS moe_skew fifo 1009
+PASS moe_skew rr 1009
+PASS moe_skew drr 1009
+PASS 21 trace simulations, 6 exact legacy comparisons, 3 high-trace repeat checks
+PASS: original 15 CTests + 16 E2E, 24 Phase1 tests, Phase2 adapter/evaluation tests, 21 traces, exact baseline and deterministic repeats

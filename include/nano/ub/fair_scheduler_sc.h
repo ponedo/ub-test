@@ -19,6 +19,16 @@ SC_MODULE(JettyFairScheduler) {
     nano_ub::FairJettySchedulerCore core;
     sc_event released_, available_, space_;
     uint64_t next_wr_id_ = 1;
+    // Optional experiment admission barrier. It never changes core policy or
+    // retracts an already selected WR, and is disabled by default.
+    bool admission_hold = false;
+    sc_event admission_changed;
+    void hold_dispatch(bool value) {
+        if (admission_hold != value) {
+            admission_hold = value;
+            admission_changed.notify(SC_ZERO_TIME);
+        }
+    }
     // Experimental conservative per-Jetty barrier: wait for all prior WRs,
     // then gate followers until this exact fenced WR completes. Stronger than
     // the spec's Read/Atomic fence example; not a general dependency engine.
@@ -55,6 +65,7 @@ SC_MODULE(JettyFairScheduler) {
 
     void run() {
         while (true) {
+            if (admission_hold) { wait(admission_changed); continue; }
             refresh_gates();
             auto req = core.dequeue();
             if (req) {

@@ -1,3 +1,5 @@
+> 入队顺序与公平性验证见 [报告](docs/ingress/REPORT.md)，可选入口 `--ingress-mode epoch-rr`；默认行为及 Phase 2 原始结果保留。
+
 > 2026-10-13: 通用 WR Trace → SystemC → 统一评估已实现，见 [Phase 2 报告](docs/phase2/REPORT.md)，一键复现 `scripts/run_phase2.sh`。
 
 > 2026-10-12: 可运行的 FIFO/RR/DRR SystemC 端到端实验见 [E2E_REPORT](docs/E2E_REPORT.md)，入口为 `scripts/run_e2e.sh`。下文保留原项目说明。

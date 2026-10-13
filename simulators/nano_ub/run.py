@@ -14,7 +14,9 @@ FIELDS = ('wr_id','src_node','jetty_id','dst_node','mapped_src','mapped_jetty','
           'mem_addr','payload_bytes','ready_ns','sequence','depends_on','phase')
 
 
-def prepare(trace, output_dir, policy):
+def prepare(trace, output_dir, policy, ingress_mode="csv", ingress_batch=64, source_depth=4096, scheduler_depth=4096):
+    if ingress_mode not in ("csv","epoch-rr") or not 1<=ingress_batch<=1024 or not 1<=source_depth<=4096 or not 1<=scheduler_depth<=4096:
+        raise ValueError("invalid ingress mode/capacities")
     if policy not in ('fifo','rr','drr'):
         raise ValueError('unsupported policy')
     rows=read_trace(trace)
@@ -53,13 +55,15 @@ def prepare(trace, output_dir, policy):
               'backend':'nano-ub-systemc','semantics':'data-write','policy':policy,
               'source_nodes':sources,'nodes':node_map,'jetties':jetty_map,'destination_bytes':offsets,
               'wire_header_bytes':64,'ack_wire_bytes':64,'gbps':100,'propagation_ns':50,
-              'scheduler_quantum_bytes':512,'scheduler_depth_per_jetty':4096,'source_fifo_depth':4096,'pipeline_fifo_depth':1,
+              'scheduler_quantum_bytes':512,'scheduler_depth_per_jetty':scheduler_depth,'source_fifo_depth':source_depth,'pipeline_fifo_depth':1,
               'max_wr_count':MAX_ROWS,'max_payload_bytes':MAX_PAYLOAD,'max_total_payload_bytes':MAX_TOTAL,
               'max_ready_ns':MAX_READY_NS,'phase_semantics':'opaque label, no implicit barrier',
               'dependency_semantics':'all specified prior WRs complete before submit; same-Jetty sequence cannot bypass',
               'destination_semantics':'identity and separate memory address spaces; one shared forward/reverse link and pooled RX/TP/memory service',
               'unsupported':['multiple source nodes','transport Fence/ODR/CQE controls','scatter-gather addresses','loss recovery','PSN/TASSN wrap'],
-              'application_sidecars_consumed':False}
+              'application_sidecars_consumed':False,
+              'ingress_mode':ingress_mode,'ingress_batch_limit':ingress_batch,
+              'epoch_semantics':'earliest ready eligible head per Jetty, ascending mapped-ID rotating cursor, bounded by source capacity and scheduler credits; dispatch held until epoch admitted; later delta completions join next epoch'}
     write_json(out/'run.json',manifest)
     return out/'input.tsv'
 
@@ -71,10 +75,14 @@ def main():
     p.add_argument('--semantics',choices=['data-write'],required=True,
                    help='explicitly choose generic data WRITE; application sidecar protocol flags are outside this profile')
     p.add_argument('--binary',default='build-phase2/trace_e2e')
+    p.add_argument('--ingress-mode',choices=['csv','epoch-rr'],default='csv')
+    p.add_argument('--ingress-batch',type=int,default=64)
+    p.add_argument('--source-depth',type=int,default=4096)
+    p.add_argument('--scheduler-depth',type=int,default=4096)
     a=p.parse_args()
     try:
-        prepared=prepare(a.trace,a.output_dir,a.policy)
-        subprocess.run([str(Path(a.binary).resolve()),a.policy,str(prepared.resolve()),str(Path(a.output_dir).resolve()/'systemc')],check=True)
+        prepared=prepare(a.trace,a.output_dir,a.policy,a.ingress_mode,a.ingress_batch,a.source_depth,a.scheduler_depth)
+        subprocess.run([str(Path(a.binary).resolve()),a.policy,str(prepared.resolve()),str(Path(a.output_dir).resolve()/'systemc'),a.ingress_mode,str(a.ingress_batch),str(a.source_depth),str(a.scheduler_depth)],check=True)
     except (ValueError,OSError,subprocess.CalledProcessError) as e:p.error(str(e))
 
 

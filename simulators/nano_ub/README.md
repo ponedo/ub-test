@@ -48,3 +48,11 @@ The experiment stores/copies and checks all bytes and maintains each destination
 bounds; it does not bypass target service or synthesize completion analytically.
 See `evaluation/results_schema/README.md` for event/metric definitions and
 `docs/phase2/REPORT.md` for limitations and actual measured results.
+
+## Optional same-time ingress arbitration
+
+`--ingress-mode csv` preserves the default. `--ingress-mode epoch-rr` stages a bounded
+round-robin batch through the real Doorbell, then opens scheduler selection only
+after that batch is admitted. Defaults: `--ingress-batch 64 --source-depth 4096
+--scheduler-depth 4096`. See [exact semantics and limits](../../docs/ingress/METHOD.md)
+and [measured permutation experiment](../../docs/ingress/REPORT.md).

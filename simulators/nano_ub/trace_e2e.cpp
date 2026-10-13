@@ -14,11 +14,26 @@ using nano_ub::SchedulePolicy;
 static uint64_t ps() { return sc_time_stamp().value(); }
 static void require(bool v, const char* msg) { if (!v) throw std::runtime_error(msg); }
 static uint8_t pattern(unsigned id, unsigned offset) { return uint8_t(id * 37 + offset * 13 + 7); }
+// Observation only: delegate every operation to the original sc_fifo. No waits,
+// storage slots or notification events are added by these callbacks.
+struct ObservedFifo : sc_fifo<Flit> {
+    std::function<void(const char*,const Flit&)> observe;
+    ObservedFifo(const char* name,int depth):sc_fifo<Flit>(name,depth){}
+    void read(Flit& f) override {
+        sc_fifo<Flit>::read(f); if(observe)observe("read",f);
+    }
+    Flit read() override { Flit f; read(f); return f; }
+    void write(const Flit& f) override {
+        if(observe)observe("write_offer",f);
+        sc_fifo<Flit>::write(f);
+        if(observe)observe("write_accept",f);
+    }
+};
 struct Row {
     Flit f;
     uint64_t id, sequence;
     TraceSpec spec;
-    bool ready_seen=false, eligible_seen=false, submitted=false;
+    bool ready_seen=false, eligible_seen=false, submitted=false, admitted=false;
     uint64_t eligible=0, enqueue=0, dequeue=0;
     uint64_t submit=0, dispatch=0, ordered=0, tx_start=0, tx_end=0, memory=0, complete=0;
     uint32_t psn=0;
@@ -33,7 +48,7 @@ SC_MODULE(Tap) {
     void run() { while (true) { Flit f=in.read(); action(f); out.write(f); } }
 };
 SC_MODULE(Experiment) {
-    sc_fifo<Flit> input;
+    ObservedFifo input;
     sc_vector<sc_fifo<Flit>> q;
     UbDoorbell door;
     JettyFairScheduler scheduler;
@@ -73,14 +88,18 @@ SC_MODULE(Experiment) {
     std::map<uint64_t,unsigned> by_id;
     std::map<uint32_t,std::vector<uint8_t>> targets;
     sc_event completed;
-    std::ofstream events;
+    std::ofstream events, timeline;
+    std::string ingress_mode;
+    unsigned batch_limit, source_depth, scheduler_depth;
+    uint64_t observation_sequence=0, epoch=0;
+    sc_event admitted_event, ready_changed;
     std::vector<TraceSpec> specs;
     unsigned done=0;
     SC_HAS_PROCESS(Experiment);
     Experiment(sc_module_name n, SchedulePolicy policy, const std::vector<TraceSpec>& load,
-               const std::string& prefix, double rate)
-        : sc_module(n), input("input", 4096), q("q"), door("door"),
-          scheduler("scheduler", jetty_count(load), policy, 512), order("order", true),
+               const std::string& prefix, double rate, const std::string& mode, unsigned batch, unsigned source_capacity, unsigned scheduler_capacity)
+        : sc_module(n), input("input", source_capacity), q("q"), door("door"),
+          scheduler("scheduler", jetty_count(load), policy, 512, scheduler_capacity), order("order", true),
           ordered_tap("ordered_tap"), btah("btah"), tpg("tpg", 1, true),
           tp("tp"), congestion("congestion"), retransmit("retransmit", true),
           rtph("rtph"), nth("nth"), encap("encap"), link("link",rate),
@@ -90,10 +109,16 @@ SC_MODULE(Experiment) {
           completion_order_b("completion_order_b"), taack("taack"), ack_stamp("ack_stamp"),
           response_btah("response_btah"), response_nth("response_nth"), response_encap("response_encap"),
           decap_a("decap_a"), nth_a("nth_a"), rtph_a("rtph_a"), btah_a("btah_a"),
-          events(prefix+".events.csv"), specs(load) {
+          events(prefix+".events.csv"), timeline(prefix+".timeline.csv"), ingress_mode(mode),
+          batch_limit(batch), source_depth(source_capacity), scheduler_depth(scheduler_capacity), specs(load) {
         require(bool(events), "cannot open events output");
         events << "time_ps,event,wr_id,jetty,psn,bytes,offset,src_node,dst_node,sequence\n";
-        q.init(55, [](const char* name, size_t) { return new sc_fifo<Flit>(name, 1); });
+        require(bool(timeline), "cannot open timeline output");
+        timeline << "event_seq,delta,time_ps,event,wr_id,jetty,psn,epoch,gate_held,scheduler_queued,jetty_queued,input_available";
+        for(unsigned i=0;i<12;++i)timeline << ",q" << i << "_available";
+        timeline << '\n';
+        q.init(55, [](const char* name, size_t) { return new ObservedFifo(name, 1); });
+        if(ingress_mode=="epoch-rr")scheduler.admission_hold=true;
         door.wr_in(input); door.wr_out(q[0]);
         scheduler.in(q[0]); scheduler.out(q[1]); scheduler.comp_in(q[44]);
         order.in(q[1]); order.out(q[2]); order.comp_in(q[45]);
@@ -118,7 +143,14 @@ SC_MODULE(Experiment) {
         rtph_a.in(q[31]); rtph_a.ack_out(q[32]); rtph_a.data_out(q[54]);
         btah_a.in(q[32]); btah_a.resp_out(q[33]); btah_a.req_out(q[34]);
         make_workload();
-        scheduler.on_enqueue = [&](const Flit& f) { row(f).enqueue=ps(); log("enqueue",f); };
+        input.observe=[&](const char* action,const Flit& f){observe(std::string("input_")+action,f);};
+        for(unsigned i=0;i<12;++i) {
+            static_cast<ObservedFifo&>(q[i]).observe=[&,i](const char* action,const Flit& f){observe("q"+std::to_string(i)+"_"+action,f);};
+        }
+        scheduler.on_enqueue = [&](const Flit& f) {
+            auto& r=row(f); r.enqueue=ps();r.admitted=true;log("enqueue",f);
+            if(ingress_mode=="epoch-rr")admitted_event.notify(SC_ZERO_TIME);
+        };
         scheduler.on_dequeue = [&](const Flit& f) { row(f).dequeue=ps(); log("dequeue",f); };
         scheduler.on_dispatch = [&](const Flit& f) {
             auto& r=row(f); require(!r.dispatch, "duplicate dispatch"); r.dispatch=ps(); r.token=f.sim_wr_id; log("dispatch",f);
@@ -149,7 +181,7 @@ SC_MODULE(Experiment) {
         // Experiment ACK combines successful transaction completion and packet
         // acknowledgement. No claim of complete independent TPACK machinery.
         ack_stamp.action = [&](Flit& f) { f.tp_opcode=0x02; };
-        SC_THREAD(source); SC_THREAD(complete); SC_THREAD(watchdog);
+        SC_THREAD(source); SC_THREAD(complete); SC_THREAD(watchdog); SC_THREAD(ready_clock);
     }
     Row& row(const Flit& f) {
         auto it=by_addr.find({f.is_response ? f.src_addr : f.dst_addr,f.mem_addr}); require(it!=by_addr.end(), "unknown WR address");
@@ -159,9 +191,16 @@ SC_MODULE(Experiment) {
         require(f.mem_len==r.f.mem_len, "WR length changed");
         return r;
     }
+    void observe(const std::string& event,const Flit& f) {
+        auto& r=row(f);
+        timeline << observation_sequence++ << ',' << sc_delta_count() << ',' << ps() << ',' << event << ',' << r.id << ',' << r.spec.jetty << ',' << f.psn << ',' << epoch << ',' << scheduler.admission_hold << ',' << scheduler.core.queued_total() << ',' << scheduler.core.queued_for(f.rc_id-1) << ',' << input.num_available();
+        for(unsigned i=0;i<12;++i)timeline << ',' << q[i].num_available();
+        timeline << '\n';
+    }
     void log(const char* event, const Flit& f, unsigned bytes=0, unsigned offset=0) {
         auto& r=row(f);
         events << ps() << ',' << event << ',' << r.id << ',' << r.spec.jetty << ',' << f.psn << ',' << bytes << ',' << offset << ',' << r.spec.src << ',' << r.spec.dst << ',' << r.sequence << '\n';
+        if(std::string(event)!="tx_chunk" && std::string(event)!="ack_chunk")observe(event,f);
     }
     void make_workload() {
         for (const auto& s:specs) {
@@ -177,6 +216,7 @@ SC_MODULE(Experiment) {
         }
     }
     void source() {
+        if(ingress_mode=="epoch-rr") {source_epoch();return;}
         if(rows.empty()) { sc_stop(); return; }
         std::map<uint32_t,uint64_t> next_sequence;
         unsigned submitted=0;
@@ -202,6 +242,65 @@ SC_MODULE(Experiment) {
             auto wake=completed | input.data_read_event();
             if(next_ready!=UINT64_MAX) wait(sc_time::from_value(next_ready-ps()),wake);
             else wait(wake);
+        }
+    }
+    void ready_clock() {
+        if(ingress_mode!="epoch-rr")return;
+        for(auto& r:rows) {
+            const uint64_t t=r.spec.ready*1000;
+            if(t>ps())wait(sc_time::from_value(t-ps()));
+            r.ready_seen=true;log("ready",r.f,r.f.mem_len);
+            ready_changed.notify(SC_ZERO_TIME);
+        }
+    }
+    bool dependencies_complete(const Row& r) {
+        for(auto id:r.spec.dependencies)if(!rows.at(by_id.at(id)).complete)return false;
+        return true;
+    }
+    void source_epoch() {
+        if(rows.empty()){sc_stop();return;}
+        std::map<unsigned,std::vector<Row*>> jets;
+        std::map<unsigned,unsigned> head;
+        for(auto& r:rows)jets[r.f.rc_id].push_back(&r);
+        unsigned submitted=0,cursor=1;
+        while(submitted<rows.size()) {
+            // Explicit deterministic snapshot boundary. Later delta-cycle
+            // completions at this same physical time join the NEXT epoch.
+            wait(SC_ZERO_TIME);wait(SC_ZERO_TIME);
+            uint64_t earliest=UINT64_MAX;
+            for(auto& [j,queue]:jets)if(head[j]<queue.size()) {
+                auto& r=*queue[head[j]];
+                if(r.ready_seen && dependencies_complete(r))earliest=std::min(earliest,r.spec.ready);
+            }
+            std::vector<Row*> batch;
+            for(unsigned k=0;k<scheduler.core.jetty_count() && batch.size()<std::min(batch_limit,source_depth);++k) {
+                unsigned j=(cursor-1+k)%scheduler.core.jetty_count()+1;
+                if(head[j]>=jets[j].size())continue;
+                auto& r=*jets[j][head[j]];
+                if(!r.ready_seen || r.spec.ready!=earliest || !dependencies_complete(r))continue;
+                if(!r.eligible_seen){r.eligible_seen=true;r.eligible=ps();log("eligible",r.f);}
+                if(scheduler.core.queued_for(j-1)<scheduler_depth)batch.push_back(&r);
+            }
+            if(batch.empty()) {
+                scheduler.hold_dispatch(false);
+                wait(completed | ready_changed | scheduler.space_);
+                continue;
+            }
+            scheduler.hold_dispatch(true);++epoch;
+            observe("epoch_begin",batch.front()->f);
+            require(input.num_available()==0,"previous epoch not fully admitted");
+            for(auto* r:batch) {
+                require(input.nb_write(r->f),"epoch source capacity violated");
+                r->submitted=true;r->submit=ps();log("submit",r->f,r->f.mem_len);
+                ++head[r->f.rc_id];++submitted;
+            }
+            cursor=batch.back()->f.rc_id%scheduler.core.jetty_count()+1;
+            while(!std::all_of(batch.begin(),batch.end(),[](auto r){return r->admitted;}))wait(admitted_event);
+            observe("epoch_admitted",batch.back()->f);
+            scheduler.hold_dispatch(false);
+            observe("epoch_release",batch.back()->f);
+            // Next loop gives run() a delta-cycle opportunity, but cannot
+            // retract a WR already selected or blocked on downstream output.
         }
     }
     void complete() {
@@ -243,13 +342,19 @@ SC_MODULE(Experiment) {
 };
 int sc_main(int argc, char** argv) {
     try {
-        require(argc==4,"usage: trace_e2e fifo|rr|drr INPUT.tsv PREFIX");
+        require(argc>=4 && argc<=8,"usage: trace_e2e fifo|rr|drr INPUT.tsv PREFIX [csv|epoch-rr [BATCH [SOURCE_DEPTH [SCHEDULER_DEPTH]]]]");
         std::string p=argv[1];
         require(p=="fifo" || p=="rr" || p=="drr", "bad policy");
+        std::string mode=argc>4 ? argv[4] : "csv";
+        require(mode=="csv" || mode=="epoch-rr","bad ingress mode");
+        uint64_t batch=argc>5 ? number(argv[5]) : 64;
+        uint64_t source_depth=argc>6 ? number(argv[6]) : 4096;
+        uint64_t scheduler_depth=argc>7 ? number(argv[7]) : 4096;
+        require(batch>=1 && batch<=1024 && source_depth>=1 && source_depth<=4096 && scheduler_depth>=1 && scheduler_depth<=4096,"invalid ingress capacities");
         auto specs=read_specs(argv[2]);
         sc_set_time_resolution(1,SC_PS);
         auto policy=p=="fifo" ? SchedulePolicy::Fifo : p=="rr" ? SchedulePolicy::RoundRobin : SchedulePolicy::DeficitRoundRobin;
-        auto e=std::make_unique<Experiment>("experiment",policy,specs,argv[3],100.);
+        auto e=std::make_unique<Experiment>("experiment",policy,specs,argv[3],100.,mode,batch,source_depth,scheduler_depth);
         sc_start(); e->validate(argv[3]); return 0;
     } catch(const std::exception& e) { std::cerr << "FAIL: " << e.what() << '\n'; return 1; }
 }

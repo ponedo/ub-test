@@ -1,0 +1,151 @@
+{
+  "admission_gate_closed_ns": 0,
+  "causal_checks": "PSN, ACK byte timing, propagation, FIFO conservation/capacity, epoch admission, dispatch/wire order",
+  "epoch_count": 0,
+  "first_dequeue": {
+    "delta": 4,
+    "event_seq": 6204,
+    "time_ps": 1000,
+    "wr_id": 0
+  },
+  "first_enqueue_per_jetty": {
+    "0": {
+      "delta": 3,
+      "event_seq": 6203,
+      "time_ps": 1000,
+      "wr_id": 0
+    },
+    "1": {
+      "delta": 6,
+      "event_seq": 6212,
+      "time_ps": 2000,
+      "wr_id": 128
+    },
+    "2": {
+      "delta": 9,
+      "event_seq": 6224,
+      "time_ps": 3000,
+      "wr_id": 256
+    },
+    "3": {
+      "delta": 12,
+      "event_seq": 6243,
+      "time_ps": 4000,
+      "wr_id": 387
+    },
+    "4": {
+      "delta": 15,
+      "event_seq": 6265,
+      "time_ps": 5000,
+      "wr_id": 516
+    },
+    "5": {
+      "delta": 18,
+      "event_seq": 6290,
+      "time_ps": 6000,
+      "wr_id": 648
+    },
+    "6": {
+      "delta": 21,
+      "event_seq": 6318,
+      "time_ps": 7000,
+      "wr_id": 774
+    },
+    "7": {
+      "delta": 24,
+      "event_seq": 6349,
+      "time_ps": 8000,
+      "wr_id": 902
+    },
+    "8": {
+      "delta": 27,
+      "event_seq": 6383,
+      "time_ps": 9000,
+      "wr_id": 1032
+    },
+    "9": {
+      "delta": 30,
+      "event_seq": 6420,
+      "time_ps": 10000,
+      "wr_id": 1159
+    },
+    "10": {
+      "delta": 33,
+      "event_seq": 6458,
+      "time_ps": 11000,
+      "wr_id": 1286
+    },
+    "11": {
+      "delta": 36,
+      "event_seq": 6494,
+      "time_ps": 12000,
+      "wr_id": 1416
+    },
+    "12": {
+      "delta": 39,
+      "event_seq": 6527,
+      "time_ps": 13000,
+      "wr_id": 1548
+    },
+    "13": {
+      "delta": 42,
+      "event_seq": 6557,
+      "time_ps": 14000,
+      "wr_id": 1679
+    },
+    "14": {
+      "delta": 45,
+      "event_seq": 6584,
+      "time_ps": 15000,
+      "wr_id": 1808
+    },
+    "15": {
+      "delta": 48,
+      "event_seq": 6608,
+      "time_ps": 16000,
+      "wr_id": 1936
+    }
+  },
+  "initial_same_jetty_wire_count": 1,
+  "initial_wire_jetty": 0,
+  "maximum_forward_fifo_occupancy": {
+    "0": 1,
+    "1": 1,
+    "2": 1,
+    "3": 1,
+    "4": 1,
+    "5": 1,
+    "6": 1,
+    "7": 1,
+    "8": 1,
+    "9": 1,
+    "10": 1,
+    "11": 1
+  },
+  "selected_stage_snapshot_100ns": {
+    "0": "link",
+    "1": "btah",
+    "128": "q11",
+    "129": "q3",
+    "256": "encap",
+    "257": "ordered_tap",
+    "387": "q10",
+    "388": "q2",
+    "516": "nth",
+    "517": "order",
+    "648": "q9",
+    "649": "q1",
+    "774": "rtph",
+    "775": "scheduler",
+    "902": "q8",
+    "1032": "retransmit",
+    "1159": "q7",
+    "1286": "congestion",
+    "1416": "q6",
+    "1548": "tp",
+    "1679": "q5",
+    "1808": "tpg",
+    "1936": "q4"
+  },
+  "timeline_observations": 107432
+}

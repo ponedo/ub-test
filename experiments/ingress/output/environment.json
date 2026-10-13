@@ -1,0 +1,15 @@
+{
+  "base_commit": "4320edac4c9b7ff41fe5da1f5524b72b72f65466",
+  "build_type": "Debug",
+  "compiler": "GCC 14.2.0",
+  "cxx_standard": 17,
+  "environment": "ub-test",
+  "experiment": "same-ready ingress arbitration and permutation",
+  "performance_source": "actual SystemC event timestamps and serialized real payload bytes",
+  "primary_window_rule": "one common continuous-backlog interval across all 36 runs",
+  "randomness": "generator seed 42; deterministic simulator",
+  "systemc_official_commit": "5fc1469339775b54b1fcc2020ac744a58be5b50e",
+  "systemc_version": "2.3.4",
+  "time_resolution_ps": 1,
+  "trace_inputs": "unchanged Phase1 High and Skew; no generator or policy-core changes"
+}
