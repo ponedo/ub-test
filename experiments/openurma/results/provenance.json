@@ -1,0 +1,36 @@
+{
+  "builds": {
+    "native": {
+      "commit": "0ae5dce300154d761f97095864bda0cf2546b265",
+      "component_binary_sha256": "49f45822266dd520005f585de90ac5301c1e5f9eb3559c569fc931bd936171ef",
+      "generated_systemc_sha256": "04dccf028ce23396e23d212dd95485220acc392adc5b69a8f58bcd15f7778ae6",
+      "scheduler_sha256": "338ea08b57661de1958afabff0e7ab442ca15a40d8209090c9b06106a4fa4103"
+    },
+    "patched": {
+      "commit": "0ae5dce300154d761f97095864bda0cf2546b265",
+      "component_binary_sha256": "8b0bbaaedc30c90ef61c4f0cf9ca4f8c9b9542ad5aab30cac2659beba38f6101",
+      "generated_systemc_sha256": "b1bfe9b6a71bd9b9a760cde51337660fcc46456a7a9a679fb43ee4f1fdabc7bc",
+      "scheduler_sha256": "88a69046e52be9b6c655ee08f633c1832d3516cb50e761ea1a3ed35d7a8b8b59"
+    }
+  },
+  "cmake": "cmake version 4.4.4",
+  "compiler": "g++ (Debian 14.2.0-19) 14.2.0",
+  "files": {
+    "experiments/openurma/analyze.py": "3b213de5aaff400000c20d823aae0616570284b27dad5fe8ebd5f9ce818659b1",
+    "experiments/openurma/component.cpp": "a869832aa9173d72de8094c2c0805d0bef04a4d4f9d6559829e1f9bea30620cb",
+    "experiments/openurma/run.py": "0ef3501ec3f5ba5f0a8064f6328561d98441a7b9c1f1bc3d1e452328159901a5",
+    "openurma/elements/protocols/ub/UB_Jetty_Sched.clnp": "88a69046e52be9b6c655ee08f633c1832d3516cb50e761ea1a3ed35d7a8b8b59",
+    "patches/openurma/0001-jetty-rr-drr.patch": "875a3284fef79133230279801bf0f424cb11f12a4b2b28859867ddcaaaa96261"
+  },
+  "systemc_header_sha256": "ae6d363bcdddf0487a0b8bdfa2bda4df247a2cef32df240d38344b5e17b6e254",
+  "systemc_version": "2.3.4",
+  "upstream": {
+    "license": "Apache-2.0",
+    "modifications": "lossless full-queue admission via existing peek primitive; optional payload-byte DRR; native RR default preserved",
+    "openclicknp_commit": "c1c6acc58032a1894507d88659b3cca668b0e1a5",
+    "openclicknp_url": "https://github.com/bojieli/OpenClickNP.git",
+    "openurma_commit": "0ae5dce300154d761f97095864bda0cf2546b265",
+    "openurma_url": "https://github.com/bojieli/OpenURMA.git",
+    "overlay": "openurma/elements/protocols/ub/UB_Jetty_Sched.clnp"
+  }
+}

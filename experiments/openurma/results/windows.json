@@ -1,0 +1,24 @@
+{
+  "equal": {
+    "common_window_ps": [
+      258000,
+      12016000
+    ],
+    "invalid_reason": null,
+    "minimum_comparison_window_ps": 120000,
+    "occupancy_sampling_ps": 1000,
+    "rule": "longest intersection of sampled positive per-Jetty ring occupancy across both policies and both source orders; earliest tie",
+    "valid_for_fairness": true
+  },
+  "mixed": {
+    "common_window_ps": [
+      3266000,
+      3334000
+    ],
+    "invalid_reason": "common window shorter than one complete service round",
+    "minimum_comparison_window_ps": 192000,
+    "occupancy_sampling_ps": 1000,
+    "rule": "longest intersection of sampled positive per-Jetty ring occupancy across both policies and both source orders; earliest tie",
+    "valid_for_fairness": false
+  }
+}

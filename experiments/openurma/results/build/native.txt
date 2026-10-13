@@ -1,0 +1,238 @@
+[openurma] running openclicknp-cc on /workspace/openurma-upstream/examples/openurma/topology.clnp
+[openurma] g++ link
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_ethdec(openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:72:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+   72 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_nth_p(openclicknp::SwStream&, openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:410:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+  410 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_rtph_p(openclicknp::SwStream&, openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:476:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+  476 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_utph_p(openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:543:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+  543 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:527:13: warning: variable ‘_state’ set but not used [-Wunused-but-set-variable]
+  527 |     State_t _state{};
+      |             ^~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_tpc_rx(openclicknp::SwStream&, openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&, openclicknp::SignalChannel&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:644:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+  644 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:666:13: warning: label ‘_end_signal’ defined but not used [-Wunused-label]
+  666 |             _end_signal: ;
+      |             ^~~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_reorder(openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:838:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+  838 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_btah_p(openclicknp::SwStream&, openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:970:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+  970 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_ord_tgt(openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:1065:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 1065 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_mr_tab(openclicknp::SwStream&, openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&, openclicknp::SignalChannel&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:1238:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 1238 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:1271:13: warning: label ‘_end_signal’ defined but not used [-Wunused-label]
+ 1271 |             _end_signal: ;
+      |             ^~~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_dispatch(openclicknp::SwStream&, openclicknp::SwStream&, openclicknp::SwStream&, openclicknp::SwStream&, openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:1386:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 1386 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_hbm_rd(openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&, openclicknp::SignalChannel&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:1491:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 1491 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:1516:13: warning: label ‘_end_signal’ defined but not used [-Wunused-label]
+ 1516 |             _end_signal: ;
+      |             ^~~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_hbm_wr(openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&, openclicknp::SignalChannel&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:1608:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 1608 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:1620:13: warning: label ‘_end_signal’ defined but not used [-Wunused-label]
+ 1620 |             _end_signal: ;
+      |             ^~~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_atom(openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:1746:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 1746 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_jgrp(openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&, openclicknp::SignalChannel&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:1906:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 1906 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:1960:13: warning: label ‘_end_signal’ defined but not used [-Wunused-label]
+ 1960 |             _end_signal: ;
+      |             ^~~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_jrecv(openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:2090:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 2090 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:2074:13: warning: variable ‘_state’ set but not used [-Wunused-but-set-variable]
+ 2074 |     State_t _state{};
+      |             ^~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_comp_gen(openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:2156:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 2156 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_comp_reord(openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:2263:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 2263 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_taack(openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:2363:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 2363 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_tpack(openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&, openclicknp::SignalChannel&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:2439:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 2439 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:2446:13: warning: label ‘_end_signal’ defined but not used [-Wunused-label]
+ 2446 |             _end_signal: ;
+      |             ^~~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_cong_echo(openclicknp::SwStream&, openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&, openclicknp::SignalChannel&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:2535:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 2535 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:2553:13: warning: label ‘_end_signal’ defined but not used [-Wunused-label]
+ 2553 |             _end_signal: ;
+      |             ^~~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_dispatch_mux(openclicknp::SwStream&, openclicknp::SwStream&, openclicknp::SwStream&, openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:2662:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 2662 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_tx_mux(openclicknp::SwStream&, openclicknp::SwStream&, openclicknp::SwStream&, openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:2748:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 2748 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_ethenc(openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:2831:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 2831 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_nth_b(openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&, openclicknp::SignalChannel&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:3130:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 3130 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:3142:13: warning: label ‘_end_signal’ defined but not used [-Wunused-label]
+ 3142 |             _end_signal: ;
+      |             ^~~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_doorbell(openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:3206:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 3206 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:3190:13: warning: variable ‘_state’ set but not used [-Wunused-but-set-variable]
+ 3190 |     State_t _state{};
+      |             ^~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_jsched(openclicknp::SwStream&, openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:3311:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 3311 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_ord_ini(openclicknp::SwStream&, openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:3491:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 3491 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_btah_b(openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:3637:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 3637 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:3621:13: warning: variable ‘_state’ set but not used [-Wunused-but-set-variable]
+ 3621 |     State_t _state{};
+      |             ^~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_tpg(openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&, openclicknp::SignalChannel&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:3736:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 3736 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:3767:13: warning: label ‘_end_signal’ defined but not used [-Wunused-label]
+ 3767 |             _end_signal: ;
+      |             ^~~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_tpc_tx(openclicknp::SwStream&, openclicknp::SwStream&, openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&, openclicknp::SignalChannel&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:3887:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 3887 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:3913:13: warning: label ‘_end_signal’ defined but not used [-Wunused-label]
+ 3913 |             _end_signal: ;
+      |             ^~~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_cwnd(openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&, openclicknp::SignalChannel&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:4061:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 4061 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:4111:13: warning: label ‘_end_signal’ defined but not used [-Wunused-label]
+ 4111 |             _end_signal: ;
+      |             ^~~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_retrans(openclicknp::SwStream&, openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:4216:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 4216 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_rtph_b(openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:4380:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 4380 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:4364:13: warning: variable ‘_state’ set but not used [-Wunused-but-set-variable]
+ 4364 |     State_t _state{};
+      |             ^~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_utph_b(openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:4452:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 4452 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:4436:13: warning: variable ‘_state’ set but not used [-Wunused-but-set-variable]
+ 4436 |     State_t _state{};
+      |             ^~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_rto(openclicknp::SwStream&, openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:4556:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 4556 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_cqe_stream(openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:4638:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 4638 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_comp_notify_tee(openclicknp::SwStream&, openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:4706:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 4706 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_jt_tab(openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&, openclicknp::SignalChannel&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:4780:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 4780 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:4813:13: warning: label ‘_end_signal’ defined but not used [-Wunused-label]
+ 4813 |             _end_signal: ;
+      |             ^~~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_tp_tab(openclicknp::SwStream&, openclicknp::SwStream&, std::atomic<bool>&, openclicknp::SignalChannel&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:4886:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 4886 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:4908:13: warning: label ‘_end_signal’ defined but not used [-Wunused-label]
+ 4908 |             _end_signal: ;
+      |             ^~~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp: In function ‘void kernel_clk(std::atomic<bool>&)’:
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:4956:34: warning: unused variable ‘last_rport’ [-Wunused-variable]
+ 4956 |         openclicknp::port_mask_t last_rport = _ret;
+      |                                  ^~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:4951:30: warning: unused variable ‘_input_port’ [-Wunused-variable]
+ 4951 |     openclicknp::port_mask_t _input_port = 0, _output_port = 0, _output_failed = 0, _output_success = 0;
+      |                              ^~~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:4951:47: warning: variable ‘_output_port’ set but not used [-Wunused-but-set-variable]
+ 4951 |     openclicknp::port_mask_t _input_port = 0, _output_port = 0, _output_failed = 0, _output_success = 0;
+      |                                               ^~~~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:4951:65: warning: variable ‘_output_failed’ set but not used [-Wunused-but-set-variable]
+ 4951 |     openclicknp::port_mask_t _input_port = 0, _output_port = 0, _output_failed = 0, _output_success = 0;
+      |                                                                 ^~~~~~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:4952:25: warning: unused variable ‘_input_data’ [-Wunused-variable]
+ 4952 |     openclicknp::flit_t _input_data[2] = {};
+      |                         ^~~~~~~~~~~
+/workspace/openurma-upstream/build/openurma_gen/sw_emu/topology.cpp:4953:25: warning: unused variable ‘_output_data’ [-Wunused-variable]
+ 4953 |     openclicknp::flit_t _output_data[2] = {};
+      |                         ^~~~~~~~~~~~
+/workspace/openurma-openclicknp/runtime/src/pcap.cpp:14:10: warning: ‘uint16_t openclicknp::{anonymous}::bswap16(uint16_t)’ defined but not used [-Wunused-function]
+   14 | uint16_t bswap16(uint16_t v) { return static_cast<uint16_t>((v >> 8) | (v << 8)); }
+      |          ^~~~~~~
+[openurma] built /workspace/openurma-upstream/build/openurma_gen/swemu/openurma_swemu

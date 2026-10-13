@@ -1,0 +1,32 @@
+PASS native rr smoke forward
+PASS native rr fence forward
+EXPECTED NATIVE FAILURE native rr overflow forward
+PASS native rr large forward
+PASS native rr delayed_ext forward
+EXPECTED NATIVE FAILURE native rr stall forward
+EXPECTED NATIVE FAILURE native rr equal forward
+EXPECTED NATIVE FAILURE native rr equal reverse
+EXPECTED NATIVE FAILURE native rr mixed forward
+EXPECTED NATIVE FAILURE native rr mixed reverse
+PASS patched rr smoke forward
+PASS patched rr fence forward
+PASS patched rr overflow forward
+PASS patched rr large forward
+PASS patched rr delayed_ext forward
+PASS patched rr stall forward
+PASS patched rr equal forward
+PASS patched rr equal reverse
+PASS patched rr mixed forward
+PASS patched rr mixed reverse
+PASS patched drr smoke forward
+PASS patched drr fence forward
+PASS patched drr overflow forward
+PASS patched drr large forward
+PASS patched drr delayed_ext forward
+PASS patched drr stall forward
+PASS patched drr equal forward
+PASS patched drr equal reverse
+PASS patched drr mixed forward
+PASS patched drr mixed reverse
+PASS: eight complete measured runs, raw byte/sequence/EOP audit, shared windows and metrics
+PASS: 4 native checks; 6 expected native failure reproductions; 20 patched RR/DRR checks; 12 byte-identical RR comparisons; 2 deterministic repeats

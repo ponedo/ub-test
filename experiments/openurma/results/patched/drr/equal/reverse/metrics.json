@@ -1,0 +1,71 @@
+{
+  "completion_semantics": "scheduler output EOP consumed by a 4 ns/flit sink; NOT target completion/ACK",
+  "component_payload_gbps": 48.366051660516604,
+  "fairness": {
+    "channel_jain": 0.9999888482802038,
+    "common_window_ps": [
+      258000,
+      12016000
+    ],
+    "internal_channel_bytes": {
+      "0": 59136,
+      "1": 59072,
+      "2": 59520
+    },
+    "invalid_reason": null,
+    "minimum_comparison_window_ps": 120000,
+    "occupancy_sampling_ps": 1000,
+    "payload_bytes": {
+      "0": 23616,
+      "1": 23648,
+      "2": 23808
+    },
+    "payload_jain": 0.9999874313360713,
+    "rule": "longest intersection of sampled positive per-Jetty ring occupancy across both policies and both source orders; earliest tie",
+    "short_window_diagnostic_channel_jain": 0.9999888482802038,
+    "short_window_diagnostic_payload_jain": 0.9999874313360713,
+    "valid_for_fairness": true
+  },
+  "makespan_ns": 12195.0,
+  "payload_bytes": 73728,
+  "per_jetty": {
+    "0": {
+      "full_internal_channel_share": 0.3333333333333333,
+      "full_payload_share": 0.3333333333333333,
+      "ready_to_component_eop_p50_ns": 6123.5,
+      "ready_to_component_eop_p99_ns": 12035.3,
+      "submit_to_dispatch_p50_ns": 392.0,
+      "submit_to_dispatch_p99_ns": 392.0,
+      "window_internal_channel_share": 0.33273316528628016,
+      "window_payload_share": 0.33228275551553355
+    },
+    "1": {
+      "full_internal_channel_share": 0.3333333333333333,
+      "full_payload_share": 0.3333333333333333,
+      "ready_to_component_eop_p50_ns": 6163.5,
+      "ready_to_component_eop_p99_ns": 12075.3,
+      "submit_to_dispatch_p50_ns": 460.0,
+      "submit_to_dispatch_p99_ns": 460.0,
+      "window_internal_channel_share": 0.33237306445804826,
+      "window_payload_share": 0.33273300315173343
+    },
+    "2": {
+      "full_internal_channel_share": 0.3333333333333333,
+      "full_payload_share": 0.3333333333333333,
+      "ready_to_component_eop_p50_ns": 6076.5,
+      "ready_to_component_eop_p99_ns": 11988.35,
+      "submit_to_dispatch_p50_ns": 409.0,
+      "submit_to_dispatch_p99_ns": 409.0,
+      "window_internal_channel_share": 0.3348937702556716,
+      "window_payload_share": 0.334984241332733
+    }
+  },
+  "policy": "drr",
+  "ready_to_component_eop_p50_ns": 6120.0,
+  "ready_to_component_eop_p99_ns": 12074.2,
+  "scenario": "equal",
+  "source_order": "reverse",
+  "submit_to_dispatch_p50_ns": 409.0,
+  "submit_to_dispatch_p99_ns": 460.0,
+  "wr_count": 288
+}

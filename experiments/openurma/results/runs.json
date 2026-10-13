@@ -1,0 +1,242 @@
+[
+  {
+    "expected_native_failure": false,
+    "order": "forward",
+    "policy": "rr",
+    "returncode": 0,
+    "scenario": "smoke",
+    "variant": "native"
+  },
+  {
+    "expected_native_failure": false,
+    "order": "forward",
+    "policy": "rr",
+    "returncode": 0,
+    "scenario": "fence",
+    "variant": "native"
+  },
+  {
+    "expected_native_failure": true,
+    "order": "forward",
+    "policy": "rr",
+    "returncode": 1,
+    "scenario": "overflow",
+    "variant": "native"
+  },
+  {
+    "expected_native_failure": false,
+    "order": "forward",
+    "policy": "rr",
+    "returncode": 0,
+    "scenario": "large",
+    "variant": "native"
+  },
+  {
+    "expected_native_failure": false,
+    "order": "forward",
+    "policy": "rr",
+    "returncode": 0,
+    "scenario": "delayed_ext",
+    "variant": "native"
+  },
+  {
+    "expected_native_failure": true,
+    "order": "forward",
+    "policy": "rr",
+    "returncode": 1,
+    "scenario": "stall",
+    "variant": "native"
+  },
+  {
+    "expected_native_failure": true,
+    "order": "forward",
+    "policy": "rr",
+    "returncode": 1,
+    "scenario": "equal",
+    "variant": "native"
+  },
+  {
+    "expected_native_failure": true,
+    "order": "reverse",
+    "policy": "rr",
+    "returncode": 1,
+    "scenario": "equal",
+    "variant": "native"
+  },
+  {
+    "expected_native_failure": true,
+    "order": "forward",
+    "policy": "rr",
+    "returncode": 1,
+    "scenario": "mixed",
+    "variant": "native"
+  },
+  {
+    "expected_native_failure": true,
+    "order": "reverse",
+    "policy": "rr",
+    "returncode": 1,
+    "scenario": "mixed",
+    "variant": "native"
+  },
+  {
+    "expected_native_failure": false,
+    "order": "forward",
+    "policy": "rr",
+    "returncode": 0,
+    "scenario": "smoke",
+    "variant": "patched"
+  },
+  {
+    "expected_native_failure": false,
+    "order": "forward",
+    "policy": "rr",
+    "returncode": 0,
+    "scenario": "fence",
+    "variant": "patched"
+  },
+  {
+    "expected_native_failure": false,
+    "order": "forward",
+    "policy": "rr",
+    "returncode": 0,
+    "scenario": "overflow",
+    "variant": "patched"
+  },
+  {
+    "expected_native_failure": false,
+    "order": "forward",
+    "policy": "rr",
+    "returncode": 0,
+    "scenario": "large",
+    "variant": "patched"
+  },
+  {
+    "expected_native_failure": false,
+    "order": "forward",
+    "policy": "rr",
+    "returncode": 0,
+    "scenario": "delayed_ext",
+    "variant": "patched"
+  },
+  {
+    "expected_native_failure": false,
+    "order": "forward",
+    "policy": "rr",
+    "returncode": 0,
+    "scenario": "stall",
+    "variant": "patched"
+  },
+  {
+    "expected_native_failure": false,
+    "order": "forward",
+    "policy": "rr",
+    "returncode": 0,
+    "scenario": "equal",
+    "variant": "patched"
+  },
+  {
+    "expected_native_failure": false,
+    "order": "reverse",
+    "policy": "rr",
+    "returncode": 0,
+    "scenario": "equal",
+    "variant": "patched"
+  },
+  {
+    "expected_native_failure": false,
+    "order": "forward",
+    "policy": "rr",
+    "returncode": 0,
+    "scenario": "mixed",
+    "variant": "patched"
+  },
+  {
+    "expected_native_failure": false,
+    "order": "reverse",
+    "policy": "rr",
+    "returncode": 0,
+    "scenario": "mixed",
+    "variant": "patched"
+  },
+  {
+    "expected_native_failure": false,
+    "order": "forward",
+    "policy": "drr",
+    "returncode": 0,
+    "scenario": "smoke",
+    "variant": "patched"
+  },
+  {
+    "expected_native_failure": false,
+    "order": "forward",
+    "policy": "drr",
+    "returncode": 0,
+    "scenario": "fence",
+    "variant": "patched"
+  },
+  {
+    "expected_native_failure": false,
+    "order": "forward",
+    "policy": "drr",
+    "returncode": 0,
+    "scenario": "overflow",
+    "variant": "patched"
+  },
+  {
+    "expected_native_failure": false,
+    "order": "forward",
+    "policy": "drr",
+    "returncode": 0,
+    "scenario": "large",
+    "variant": "patched"
+  },
+  {
+    "expected_native_failure": false,
+    "order": "forward",
+    "policy": "drr",
+    "returncode": 0,
+    "scenario": "delayed_ext",
+    "variant": "patched"
+  },
+  {
+    "expected_native_failure": false,
+    "order": "forward",
+    "policy": "drr",
+    "returncode": 0,
+    "scenario": "stall",
+    "variant": "patched"
+  },
+  {
+    "expected_native_failure": false,
+    "order": "forward",
+    "policy": "drr",
+    "returncode": 0,
+    "scenario": "equal",
+    "variant": "patched"
+  },
+  {
+    "expected_native_failure": false,
+    "order": "reverse",
+    "policy": "drr",
+    "returncode": 0,
+    "scenario": "equal",
+    "variant": "patched"
+  },
+  {
+    "expected_native_failure": false,
+    "order": "forward",
+    "policy": "drr",
+    "returncode": 0,
+    "scenario": "mixed",
+    "variant": "patched"
+  },
+  {
+    "expected_native_failure": false,
+    "order": "reverse",
+    "policy": "drr",
+    "returncode": 0,
+    "scenario": "mixed",
+    "variant": "patched"
+  }
+]
