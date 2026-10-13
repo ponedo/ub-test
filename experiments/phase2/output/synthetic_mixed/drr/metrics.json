@@ -1,0 +1,174 @@
+{
+  "admission_wait_ns": {
+    "mean": 0.0,
+    "p50": 0.0,
+    "p99": 0.0
+  },
+  "event_counts": {
+    "ack_chunk": 768,
+    "ack_rx_wire": 768,
+    "ack_tx_end": 768,
+    "ack_tx_start": 768,
+    "complete": 768,
+    "dequeue": 768,
+    "dispatch": 768,
+    "eligible": 768,
+    "enqueue": 768,
+    "memory_commit": 768,
+    "ordered": 768,
+    "ready": 768,
+    "rx_wire": 768,
+    "submit": 768,
+    "tx_chunk": 6144,
+    "tx_end": 768,
+    "tx_start": 768
+  },
+  "fairness": {
+    "invalid_reason": null,
+    "minimum_scheduler_queue": {
+      "1": 60,
+      "2": 175,
+      "3": 229
+    },
+    "payload_bytes": {
+      "1": 8448.0,
+      "2": 13354.5,
+      "3": 15397.5
+    },
+    "payload_jain": 0.9475869452852076,
+    "valid_all_jetties_backlogged": true,
+    "valid_common_policy_window": true,
+    "window_ns": [
+      2000,
+      6000
+    ],
+    "wire_bytes": {
+      "1": 16896.0,
+      "2": 16682.5,
+      "3": 16421.5
+    },
+    "wire_jain": 0.9998644769689814
+  },
+  "finish_ps": 31621480,
+  "makespan_ns": 31621.48,
+  "origin_ps": 0,
+  "payload_bytes": 344064,
+  "payload_throughput_gbps": 87.04564112748676,
+  "per_jetty": {
+    "1": {
+      "admission_wait_ns": {
+        "mean": 0.0,
+        "p50": 0.0,
+        "p99": 0.0
+      },
+      "payload_bytes": 16384,
+      "payload_throughput_gbps": 4.145030529880322,
+      "queue_wait_ns": {
+        "mean": 3940.94,
+        "p50": 3968.06,
+        "p99": 7790.349999999999
+      },
+      "ready_to_complete_ns": {
+        "mean": 4556.09375,
+        "p50": 4587.219999999999,
+        "p99": 8407.990000000002
+      },
+      "scheduler_wait_ns": {
+        "mean": 3564.44,
+        "p50": 3591.56,
+        "p99": 7040.9
+      },
+      "submit_to_complete_ns": {
+        "mean": 4556.09375,
+        "p50": 4587.219999999999,
+        "p99": 8407.990000000002
+      },
+      "wr_count": 256
+    },
+    "2": {
+      "admission_wait_ns": {
+        "mean": 0.0,
+        "p50": 0.0,
+        "p99": 0.0
+      },
+      "payload_bytes": 65536,
+      "payload_throughput_gbps": 16.58012211952129,
+      "queue_wait_ns": {
+        "mean": 8214.41671875,
+        "p50": 8567.24,
+        "p99": 14996.167999999998
+      },
+      "ready_to_complete_ns": {
+        "mean": 9047.3,
+        "p50": 9600.36,
+        "p99": 16063.079999999998
+      },
+      "scheduler_wait_ns": {
+        "mean": 7829.91671875,
+        "p50": 8182.74,
+        "p99": 14238.718
+      },
+      "submit_to_complete_ns": {
+        "mean": 9047.3,
+        "p50": 9600.36,
+        "p99": 16063.079999999998
+      },
+      "wr_count": 256
+    },
+    "3": {
+      "admission_wait_ns": {
+        "mean": 0.0,
+        "p50": 0.0,
+        "p99": 0.0
+      },
+      "payload_bytes": 262144,
+      "payload_throughput_gbps": 66.32048847808515,
+      "queue_wait_ns": {
+        "mean": 17583.56484375,
+        "p50": 18384.84,
+        "p99": 29260.487999999998
+      },
+      "ready_to_complete_ns": {
+        "mean": 19288.06,
+        "p50": 20523.88,
+        "p99": 31399.528
+      },
+      "scheduler_wait_ns": {
+        "mean": 17191.06484375,
+        "p50": 17992.34,
+        "p99": 28495.038
+      },
+      "submit_to_complete_ns": {
+        "mean": 19288.06,
+        "p50": 20523.88,
+        "p99": 31399.528
+      },
+      "wr_count": 256
+    }
+  },
+  "policy": "drr",
+  "queue_wait_ns": {
+    "mean": 9912.973854166667,
+    "p50": 7676.74,
+    "p99": 28814.843200000003
+  },
+  "ready_to_complete_ns": {
+    "mean": 10963.817916666667,
+    "p50": 8225.64,
+    "p99": 30953.883200000004
+  },
+  "result_schema": "wr-results/1.0",
+  "scenario": "synthetic_mixed",
+  "scheduler_wait_ns": {
+    "mean": 9528.473854166667,
+    "p50": 7051.4,
+    "p99": 28065.233200000002
+  },
+  "submit_to_complete_ns": {
+    "mean": 10963.817916666667,
+    "p50": 8225.64,
+    "p99": 30953.883200000004
+  },
+  "trace_sha256": "2947d10c080a4a2134441e0ff83af1ad96e4d615f245e172d411a4918de479e1",
+  "wr_count": 768
+}

@@ -1,1 +1,1 @@
-"""Trace distribution analysis; no simulator metrics."""
+"""Application-independent analysis of measured WR result records."""

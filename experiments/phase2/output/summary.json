@@ -1,0 +1,7550 @@
+[
+  {
+    "admission_wait_ns": {
+      "mean": 0.0,
+      "p50": 0.0,
+      "p99": 0.0
+    },
+    "event_counts": {
+      "ack_chunk": 768,
+      "ack_rx_wire": 768,
+      "ack_tx_end": 768,
+      "ack_tx_start": 768,
+      "complete": 768,
+      "dequeue": 768,
+      "dispatch": 768,
+      "eligible": 768,
+      "enqueue": 768,
+      "memory_commit": 768,
+      "ordered": 768,
+      "ready": 768,
+      "rx_wire": 768,
+      "submit": 768,
+      "tx_chunk": 6144,
+      "tx_end": 768,
+      "tx_start": 768
+    },
+    "fairness": {
+      "invalid_reason": null,
+      "minimum_scheduler_queue": {
+        "1": 195,
+        "2": 200,
+        "3": 200
+      },
+      "payload_bytes": {
+        "1": 2474.5,
+        "2": 8192.0,
+        "3": 32768.0
+      },
+      "payload_jain": 0.5482705089793563,
+      "valid_all_jetties_backlogged": true,
+      "valid_common_policy_window": true,
+      "window_ns": [
+        2000,
+        6000
+      ],
+      "wire_bytes": {
+        "1": 4944.0,
+        "2": 10240.0,
+        "3": 34816.0
+      },
+      "wire_jain": 0.6212162068720499
+    },
+    "finish_ps": 31621480,
+    "makespan_ns": 31621.48,
+    "origin_ps": 0,
+    "payload_bytes": 344064,
+    "payload_throughput_gbps": 87.04564112748676,
+    "per_jetty": {
+      "1": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 16384,
+        "payload_throughput_gbps": 4.145030529880322,
+        "queue_wait_ns": {
+          "mean": 14370.95,
+          "p50": 14345.92,
+          "p99": 29589.23
+        },
+        "ready_to_complete_ns": {
+          "mean": 15450.60625,
+          "p50": 15450.82,
+          "p99": 30698.39
+        },
+        "scheduler_wait_ns": {
+          "mean": 13994.45,
+          "p50": 13969.42,
+          "p99": 28839.78
+        },
+        "submit_to_complete_ns": {
+          "mean": 15450.60625,
+          "p50": 15450.82,
+          "p99": 30698.39
+        },
+        "wr_count": 256
+      },
+      "2": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 65536,
+        "payload_throughput_gbps": 16.58012211952129,
+        "queue_wait_ns": {
+          "mean": 14534.624375,
+          "p50": 14534.599999999999,
+          "p99": 29765.32
+        },
+        "ready_to_complete_ns": {
+          "mean": 15598.44,
+          "p50": 15598.44,
+          "p99": 30859.879999999997
+        },
+        "scheduler_wait_ns": {
+          "mean": 14150.124375,
+          "p50": 14150.099999999999,
+          "p99": 29007.87
+        },
+        "submit_to_complete_ns": {
+          "mean": 15598.44,
+          "p50": 15598.44,
+          "p99": 30859.879999999997
+        },
+        "wr_count": 256
+      },
+      "3": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 262144,
+        "payload_throughput_gbps": 66.32048847808515,
+        "queue_wait_ns": {
+          "mean": 15044.09578125,
+          "p50": 15008.58,
+          "p99": 30366.408
+        },
+        "ready_to_complete_ns": {
+          "mean": 16079.72,
+          "p50": 16079.720000000001,
+          "p99": 31399.528
+        },
+        "scheduler_wait_ns": {
+          "mean": 14651.59578125,
+          "p50": 14616.08,
+          "p99": 29600.958
+        },
+        "submit_to_complete_ns": {
+          "mean": 16079.72,
+          "p50": 16079.720000000001,
+          "p99": 31399.528
+        },
+        "wr_count": 256
+      }
+    },
+    "policy": "fifo",
+    "queue_wait_ns": {
+      "mean": 14649.890052083334,
+      "p50": 14789.18,
+      "p99": 29920.763200000005
+    },
+    "ready_to_complete_ns": {
+      "mean": 15709.58875,
+      "p50": 15898.34,
+      "p99": 30953.883200000004
+    },
+    "result_schema": "wr-results/1.0",
+    "scenario": "synthetic_mixed",
+    "scheduler_wait_ns": {
+      "mean": 14265.390052083334,
+      "p50": 14404.68,
+      "p99": 29160.433200000007
+    },
+    "submit_to_complete_ns": {
+      "mean": 15709.58875,
+      "p50": 15898.34,
+      "p99": 30953.883200000004
+    },
+    "trace_sha256": "2947d10c080a4a2134441e0ff83af1ad96e4d615f245e172d411a4918de479e1",
+    "wr_count": 768
+  },
+  {
+    "admission_wait_ns": {
+      "mean": 0.0,
+      "p50": 0.0,
+      "p99": 0.0
+    },
+    "event_counts": {
+      "ack_chunk": 768,
+      "ack_rx_wire": 768,
+      "ack_tx_end": 768,
+      "ack_tx_start": 768,
+      "complete": 768,
+      "dequeue": 768,
+      "dispatch": 768,
+      "eligible": 768,
+      "enqueue": 768,
+      "memory_commit": 768,
+      "ordered": 768,
+      "ready": 768,
+      "rx_wire": 768,
+      "submit": 768,
+      "tx_chunk": 6144,
+      "tx_end": 768,
+      "tx_start": 768
+    },
+    "fairness": {
+      "invalid_reason": null,
+      "minimum_scheduler_queue": {
+        "1": 198,
+        "2": 198,
+        "3": 201
+      },
+      "payload_bytes": {
+        "1": 2048.0,
+        "2": 8192.0,
+        "3": 33578.5
+      },
+      "payload_jain": 0.5338757599844043,
+      "valid_all_jetties_backlogged": true,
+      "valid_common_policy_window": true,
+      "window_ns": [
+        2000,
+        6000
+      ],
+      "wire_bytes": {
+        "1": 4133.5,
+        "2": 10240.0,
+        "3": 35626.5
+      },
+      "wire_jain": 0.5990071662039033
+    },
+    "finish_ps": 31621480,
+    "makespan_ns": 31621.48,
+    "origin_ps": 0,
+    "payload_bytes": 344064,
+    "payload_throughput_gbps": 87.04564112748676,
+    "per_jetty": {
+      "1": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 16384,
+        "payload_throughput_gbps": 4.145030529880322,
+        "queue_wait_ns": {
+          "mean": 14591.99875,
+          "p50": 14573.0,
+          "p99": 29926.855999999996
+        },
+        "ready_to_complete_ns": {
+          "mean": 15661.309375,
+          "p50": 15668.32,
+          "p99": 31022.176
+        },
+        "scheduler_wait_ns": {
+          "mean": 14215.49875,
+          "p50": 14196.5,
+          "p99": 29177.406
+        },
+        "submit_to_complete_ns": {
+          "mean": 15661.309375,
+          "p50": 15668.32,
+          "p99": 31022.176
+        },
+        "wr_count": 256
+      },
+      "2": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 65536,
+        "payload_throughput_gbps": 16.58012211952129,
+        "queue_wait_ns": {
+          "mean": 14674.95765625,
+          "p50": 14660.04,
+          "p99": 30013.896
+        },
+        "ready_to_complete_ns": {
+          "mean": 15690.2,
+          "p50": 15693.16,
+          "p99": 31047.015999999996
+        },
+        "scheduler_wait_ns": {
+          "mean": 14290.45765625,
+          "p50": 14275.54,
+          "p99": 29256.445999999996
+        },
+        "submit_to_complete_ns": {
+          "mean": 15690.2,
+          "p50": 15693.16,
+          "p99": 31047.015999999996
+        },
+        "wr_count": 256
+      },
+      "3": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 262144,
+        "payload_throughput_gbps": 66.32048847808515,
+        "queue_wait_ns": {
+          "mean": 14923.94,
+          "p50": 14916.8,
+          "p99": 30270.655999999995
+        },
+        "ready_to_complete_ns": {
+          "mean": 16027.64,
+          "p50": 16025.96,
+          "p99": 31379.816
+        },
+        "scheduler_wait_ns": {
+          "mean": 14531.44,
+          "p50": 14524.3,
+          "p99": 29505.206
+        },
+        "submit_to_complete_ns": {
+          "mean": 16027.64,
+          "p50": 16025.96,
+          "p99": 31379.816
+        },
+        "wr_count": 256
+      }
+    },
+    "policy": "rr",
+    "queue_wait_ns": {
+      "mean": 14730.298802083335,
+      "p50": 14726.98,
+      "p99": 30100.677200000002
+    },
+    "ready_to_complete_ns": {
+      "mean": 15793.049791666666,
+      "p50": 15798.119999999999,
+      "p99": 31205.27
+    },
+    "result_schema": "wr-results/1.0",
+    "scenario": "synthetic_mixed",
+    "scheduler_wait_ns": {
+      "mean": 14345.798802083335,
+      "p50": 14338.98,
+      "p99": 29340.967200000003
+    },
+    "submit_to_complete_ns": {
+      "mean": 15793.049791666666,
+      "p50": 15798.119999999999,
+      "p99": 31205.27
+    },
+    "trace_sha256": "2947d10c080a4a2134441e0ff83af1ad96e4d615f245e172d411a4918de479e1",
+    "wr_count": 768
+  },
+  {
+    "admission_wait_ns": {
+      "mean": 0.0,
+      "p50": 0.0,
+      "p99": 0.0
+    },
+    "event_counts": {
+      "ack_chunk": 768,
+      "ack_rx_wire": 768,
+      "ack_tx_end": 768,
+      "ack_tx_start": 768,
+      "complete": 768,
+      "dequeue": 768,
+      "dispatch": 768,
+      "eligible": 768,
+      "enqueue": 768,
+      "memory_commit": 768,
+      "ordered": 768,
+      "ready": 768,
+      "rx_wire": 768,
+      "submit": 768,
+      "tx_chunk": 6144,
+      "tx_end": 768,
+      "tx_start": 768
+    },
+    "fairness": {
+      "invalid_reason": null,
+      "minimum_scheduler_queue": {
+        "1": 60,
+        "2": 175,
+        "3": 229
+      },
+      "payload_bytes": {
+        "1": 8448.0,
+        "2": 13354.5,
+        "3": 15397.5
+      },
+      "payload_jain": 0.9475869452852076,
+      "valid_all_jetties_backlogged": true,
+      "valid_common_policy_window": true,
+      "window_ns": [
+        2000,
+        6000
+      ],
+      "wire_bytes": {
+        "1": 16896.0,
+        "2": 16682.5,
+        "3": 16421.5
+      },
+      "wire_jain": 0.9998644769689814
+    },
+    "finish_ps": 31621480,
+    "makespan_ns": 31621.48,
+    "origin_ps": 0,
+    "payload_bytes": 344064,
+    "payload_throughput_gbps": 87.04564112748676,
+    "per_jetty": {
+      "1": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 16384,
+        "payload_throughput_gbps": 4.145030529880322,
+        "queue_wait_ns": {
+          "mean": 3940.94,
+          "p50": 3968.06,
+          "p99": 7790.349999999999
+        },
+        "ready_to_complete_ns": {
+          "mean": 4556.09375,
+          "p50": 4587.219999999999,
+          "p99": 8407.990000000002
+        },
+        "scheduler_wait_ns": {
+          "mean": 3564.44,
+          "p50": 3591.56,
+          "p99": 7040.9
+        },
+        "submit_to_complete_ns": {
+          "mean": 4556.09375,
+          "p50": 4587.219999999999,
+          "p99": 8407.990000000002
+        },
+        "wr_count": 256
+      },
+      "2": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 65536,
+        "payload_throughput_gbps": 16.58012211952129,
+        "queue_wait_ns": {
+          "mean": 8214.41671875,
+          "p50": 8567.24,
+          "p99": 14996.167999999998
+        },
+        "ready_to_complete_ns": {
+          "mean": 9047.3,
+          "p50": 9600.36,
+          "p99": 16063.079999999998
+        },
+        "scheduler_wait_ns": {
+          "mean": 7829.91671875,
+          "p50": 8182.74,
+          "p99": 14238.718
+        },
+        "submit_to_complete_ns": {
+          "mean": 9047.3,
+          "p50": 9600.36,
+          "p99": 16063.079999999998
+        },
+        "wr_count": 256
+      },
+      "3": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 262144,
+        "payload_throughput_gbps": 66.32048847808515,
+        "queue_wait_ns": {
+          "mean": 17583.56484375,
+          "p50": 18384.84,
+          "p99": 29260.487999999998
+        },
+        "ready_to_complete_ns": {
+          "mean": 19288.06,
+          "p50": 20523.88,
+          "p99": 31399.528
+        },
+        "scheduler_wait_ns": {
+          "mean": 17191.06484375,
+          "p50": 17992.34,
+          "p99": 28495.038
+        },
+        "submit_to_complete_ns": {
+          "mean": 19288.06,
+          "p50": 20523.88,
+          "p99": 31399.528
+        },
+        "wr_count": 256
+      }
+    },
+    "policy": "drr",
+    "queue_wait_ns": {
+      "mean": 9912.973854166667,
+      "p50": 7676.74,
+      "p99": 28814.843200000003
+    },
+    "ready_to_complete_ns": {
+      "mean": 10963.817916666667,
+      "p50": 8225.64,
+      "p99": 30953.883200000004
+    },
+    "result_schema": "wr-results/1.0",
+    "scenario": "synthetic_mixed",
+    "scheduler_wait_ns": {
+      "mean": 9528.473854166667,
+      "p50": 7051.4,
+      "p99": 28065.233200000002
+    },
+    "submit_to_complete_ns": {
+      "mean": 10963.817916666667,
+      "p50": 8225.64,
+      "p99": 30953.883200000004
+    },
+    "trace_sha256": "2947d10c080a4a2134441e0ff83af1ad96e4d615f245e172d411a4918de479e1",
+    "wr_count": 768
+  },
+  {
+    "admission_wait_ns": {
+      "mean": 0.0,
+      "p50": 0.0,
+      "p99": 0.0
+    },
+    "event_counts": {
+      "ack_chunk": 768,
+      "ack_rx_wire": 768,
+      "ack_tx_end": 768,
+      "ack_tx_start": 768,
+      "complete": 768,
+      "dequeue": 768,
+      "dispatch": 768,
+      "eligible": 768,
+      "enqueue": 768,
+      "memory_commit": 768,
+      "ordered": 768,
+      "ready": 768,
+      "rx_wire": 768,
+      "submit": 768,
+      "tx_chunk": 3840,
+      "tx_end": 768,
+      "tx_start": 768
+    },
+    "fairness": {
+      "invalid_reason": null,
+      "minimum_scheduler_queue": {
+        "1": 168,
+        "2": 168,
+        "3": 176
+      },
+      "payload_bytes": {
+        "1": 13022.5,
+        "2": 14336.0,
+        "3": 12657.5
+      },
+      "payload_jain": 0.9970884201468803,
+      "valid_all_jetties_backlogged": true,
+      "valid_common_policy_window": true,
+      "window_ns": [
+        2000,
+        6000
+      ],
+      "wire_bytes": {
+        "1": 16222.5,
+        "2": 17920.0,
+        "3": 15857.5
+      },
+      "wire_jain": 0.9971009737882545
+    },
+    "finish_ps": 19818920,
+    "makespan_ns": 19818.92,
+    "origin_ps": 0,
+    "payload_bytes": 196608,
+    "payload_throughput_gbps": 79.36174120486888,
+    "per_jetty": {
+      "1": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 65536,
+        "payload_throughput_gbps": 26.453913734956295,
+        "queue_wait_ns": {
+          "mean": 9084.884375,
+          "p50": 9070.6,
+          "p99": 18618.12
+        },
+        "ready_to_complete_ns": {
+          "mean": 9796.52,
+          "p50": 9796.52,
+          "p99": 19344.04
+        },
+        "scheduler_wait_ns": {
+          "mean": 8708.384375,
+          "p50": 8694.1,
+          "p99": 17868.67
+        },
+        "submit_to_complete_ns": {
+          "mean": 9796.52,
+          "p50": 9796.52,
+          "p99": 19344.04
+        },
+        "wr_count": 256
+      },
+      "2": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 65536,
+        "payload_throughput_gbps": 26.453913734956295,
+        "queue_wait_ns": {
+          "mean": 9283.534375,
+          "p50": 9275.4,
+          "p99": 18822.92
+        },
+        "ready_to_complete_ns": {
+          "mean": 10001.32,
+          "p50": 10001.32,
+          "p99": 19548.839999999997
+        },
+        "scheduler_wait_ns": {
+          "mean": 8899.034375,
+          "p50": 8890.9,
+          "p99": 18065.47
+        },
+        "submit_to_complete_ns": {
+          "mean": 10001.32,
+          "p50": 10001.32,
+          "p99": 19548.839999999997
+        },
+        "wr_count": 256
+      },
+      "3": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 65536,
+        "payload_throughput_gbps": 26.453913734956295,
+        "queue_wait_ns": {
+          "mean": 9482.3078125,
+          "p50": 9480.2,
+          "p99": 19027.72
+        },
+        "ready_to_complete_ns": {
+          "mean": 10206.12,
+          "p50": 10206.119999999999,
+          "p99": 19753.64
+        },
+        "scheduler_wait_ns": {
+          "mean": 9089.8078125,
+          "p50": 9087.7,
+          "p99": 18262.269999999997
+        },
+        "submit_to_complete_ns": {
+          "mean": 10206.12,
+          "p50": 10206.119999999999,
+          "p99": 19753.64
+        },
+        "wr_count": 256
+      }
+    },
+    "policy": "fifo",
+    "queue_wait_ns": {
+      "mean": 9283.575520833334,
+      "p50": 9275.400000000001,
+      "p99": 18896.648
+    },
+    "ready_to_complete_ns": {
+      "mean": 10001.32,
+      "p50": 10001.32,
+      "p99": 19622.568
+    },
+    "result_schema": "wr-results/1.0",
+    "scenario": "synthetic_equal",
+    "scheduler_wait_ns": {
+      "mean": 8899.075520833334,
+      "p50": 8890.900000000001,
+      "p99": 18136.318
+    },
+    "submit_to_complete_ns": {
+      "mean": 10001.32,
+      "p50": 10001.32,
+      "p99": 19622.568
+    },
+    "trace_sha256": "14279506550500886424d1d4d486066443db6b14a5ba17068b880a4ebe7a91b0",
+    "wr_count": 768
+  },
+  {
+    "admission_wait_ns": {
+      "mean": 0.0,
+      "p50": 0.0,
+      "p99": 0.0
+    },
+    "event_counts": {
+      "ack_chunk": 768,
+      "ack_rx_wire": 768,
+      "ack_tx_end": 768,
+      "ack_tx_start": 768,
+      "complete": 768,
+      "dequeue": 768,
+      "dispatch": 768,
+      "eligible": 768,
+      "enqueue": 768,
+      "memory_commit": 768,
+      "ordered": 768,
+      "ready": 768,
+      "rx_wire": 768,
+      "submit": 768,
+      "tx_chunk": 3840,
+      "tx_end": 768,
+      "tx_start": 768
+    },
+    "fairness": {
+      "invalid_reason": null,
+      "minimum_scheduler_queue": {
+        "1": 170,
+        "2": 170,
+        "3": 172
+      },
+      "payload_bytes": {
+        "1": 13312.0,
+        "2": 13392.0,
+        "3": 13312.0
+      },
+      "payload_jain": 0.9999920064600593,
+      "valid_all_jetties_backlogged": true,
+      "valid_common_policy_window": true,
+      "window_ns": [
+        2000,
+        6000
+      ],
+      "wire_bytes": {
+        "1": 16640.0,
+        "2": 16720.0,
+        "3": 16640.0
+      },
+      "wire_jain": 0.9999948800262143
+    },
+    "finish_ps": 19818920,
+    "makespan_ns": 19818.92,
+    "origin_ps": 0,
+    "payload_bytes": 196608,
+    "payload_throughput_gbps": 79.36174120486888,
+    "per_jetty": {
+      "1": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 65536,
+        "payload_throughput_gbps": 26.453913734956295,
+        "queue_wait_ns": {
+          "mean": 9208.92734375,
+          "p50": 9198.6,
+          "p99": 18794.76
+        },
+        "ready_to_complete_ns": {
+          "mean": 9920.52,
+          "p50": 9924.52,
+          "p99": 19520.679999999997
+        },
+        "scheduler_wait_ns": {
+          "mean": 8832.42734375,
+          "p50": 8822.1,
+          "p99": 18045.309999999998
+        },
+        "submit_to_complete_ns": {
+          "mean": 9920.52,
+          "p50": 9924.52,
+          "p99": 19520.679999999997
+        },
+        "wr_count": 256
+      },
+      "2": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 65536,
+        "payload_throughput_gbps": 26.453913734956295,
+        "queue_wait_ns": {
+          "mean": 9233.934375,
+          "p50": 9224.2,
+          "p99": 18820.36
+        },
+        "ready_to_complete_ns": {
+          "mean": 9951.72,
+          "p50": 9950.119999999999,
+          "p99": 19546.28
+        },
+        "scheduler_wait_ns": {
+          "mean": 8849.434375,
+          "p50": 8839.7,
+          "p99": 18062.909999999996
+        },
+        "submit_to_complete_ns": {
+          "mean": 9951.72,
+          "p50": 9950.119999999999,
+          "p99": 19546.28
+        },
+        "wr_count": 256
+      },
+      "3": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 65536,
+        "payload_throughput_gbps": 26.453913734956295,
+        "queue_wait_ns": {
+          "mean": 9407.86484375,
+          "p50": 9403.4,
+          "p99": 18999.559999999998
+        },
+        "ready_to_complete_ns": {
+          "mean": 10131.72,
+          "p50": 10129.32,
+          "p99": 19725.48
+        },
+        "scheduler_wait_ns": {
+          "mean": 9015.36484375,
+          "p50": 9010.9,
+          "p99": 18234.11
+        },
+        "submit_to_complete_ns": {
+          "mean": 10131.72,
+          "p50": 10129.32,
+          "p99": 19725.48
+        },
+        "wr_count": 256
+      }
+    },
+    "policy": "rr",
+    "queue_wait_ns": {
+      "mean": 9283.575520833334,
+      "p50": 9275.400000000001,
+      "p99": 18896.648
+    },
+    "ready_to_complete_ns": {
+      "mean": 10001.32,
+      "p50": 10001.32,
+      "p99": 19622.568
+    },
+    "result_schema": "wr-results/1.0",
+    "scenario": "synthetic_equal",
+    "scheduler_wait_ns": {
+      "mean": 8899.075520833334,
+      "p50": 8887.400000000001,
+      "p99": 18136.938000000002
+    },
+    "submit_to_complete_ns": {
+      "mean": 10001.32,
+      "p50": 10001.32,
+      "p99": 19622.568
+    },
+    "trace_sha256": "14279506550500886424d1d4d486066443db6b14a5ba17068b880a4ebe7a91b0",
+    "wr_count": 768
+  },
+  {
+    "admission_wait_ns": {
+      "mean": 0.0,
+      "p50": 0.0,
+      "p99": 0.0
+    },
+    "event_counts": {
+      "ack_chunk": 768,
+      "ack_rx_wire": 768,
+      "ack_tx_end": 768,
+      "ack_tx_start": 768,
+      "complete": 768,
+      "dequeue": 768,
+      "dispatch": 768,
+      "eligible": 768,
+      "enqueue": 768,
+      "memory_commit": 768,
+      "ordered": 768,
+      "ready": 768,
+      "rx_wire": 768,
+      "submit": 768,
+      "tx_chunk": 3840,
+      "tx_end": 768,
+      "tx_start": 768
+    },
+    "fairness": {
+      "invalid_reason": null,
+      "minimum_scheduler_queue": {
+        "1": 170,
+        "2": 170,
+        "3": 172
+      },
+      "payload_bytes": {
+        "1": 13425.5,
+        "2": 13056.0,
+        "3": 13534.5
+      },
+      "payload_jain": 0.999764385663297,
+      "valid_all_jetties_backlogged": true,
+      "valid_common_policy_window": true,
+      "window_ns": [
+        2000,
+        6000
+      ],
+      "wire_bytes": {
+        "1": 16817.5,
+        "2": 16320.0,
+        "3": 16862.5
+      },
+      "wire_jain": 0.9997825123111844
+    },
+    "finish_ps": 19818920,
+    "makespan_ns": 19818.92,
+    "origin_ps": 0,
+    "payload_bytes": 196608,
+    "payload_throughput_gbps": 79.36174120486888,
+    "per_jetty": {
+      "1": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 65536,
+        "payload_throughput_gbps": 26.453913734956295,
+        "queue_wait_ns": {
+          "mean": 9190.32734375,
+          "p50": 9173.0,
+          "p99": 18771.72
+        },
+        "ready_to_complete_ns": {
+          "mean": 9901.92,
+          "p50": 9898.92,
+          "p99": 19497.64
+        },
+        "scheduler_wait_ns": {
+          "mean": 8813.82734375,
+          "p50": 8796.5,
+          "p99": 18022.27
+        },
+        "submit_to_complete_ns": {
+          "mean": 9901.92,
+          "p50": 9898.92,
+          "p99": 19497.64
+        },
+        "wr_count": 256
+      },
+      "2": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 65536,
+        "payload_throughput_gbps": 26.453913734956295,
+        "queue_wait_ns": {
+          "mean": 9233.934375,
+          "p50": 9211.400000000001,
+          "p99": 18822.92
+        },
+        "ready_to_complete_ns": {
+          "mean": 9951.72,
+          "p50": 9937.32,
+          "p99": 19548.839999999997
+        },
+        "scheduler_wait_ns": {
+          "mean": 8849.434375,
+          "p50": 8826.900000000001,
+          "p99": 18065.47
+        },
+        "submit_to_complete_ns": {
+          "mean": 9951.72,
+          "p50": 9937.32,
+          "p99": 19548.839999999997
+        },
+        "wr_count": 256
+      },
+      "3": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 65536,
+        "payload_throughput_gbps": 26.453913734956295,
+        "queue_wait_ns": {
+          "mean": 9426.46484375,
+          "p50": 9429.0,
+          "p99": 19027.72
+        },
+        "ready_to_complete_ns": {
+          "mean": 10150.32,
+          "p50": 10154.92,
+          "p99": 19753.64
+        },
+        "scheduler_wait_ns": {
+          "mean": 9033.96484375,
+          "p50": 9036.5,
+          "p99": 18262.269999999997
+        },
+        "submit_to_complete_ns": {
+          "mean": 10150.32,
+          "p50": 10154.92,
+          "p99": 19753.64
+        },
+        "wr_count": 256
+      }
+    },
+    "policy": "drr",
+    "queue_wait_ns": {
+      "mean": 9283.575520833334,
+      "p50": 9275.400000000001,
+      "p99": 18896.648
+    },
+    "ready_to_complete_ns": {
+      "mean": 10001.32,
+      "p50": 10001.32,
+      "p99": 19622.568
+    },
+    "result_schema": "wr-results/1.0",
+    "scenario": "synthetic_equal",
+    "scheduler_wait_ns": {
+      "mean": 8899.075520833334,
+      "p50": 8887.400000000001,
+      "p99": 18136.938000000002
+    },
+    "submit_to_complete_ns": {
+      "mean": 10001.32,
+      "p50": 10001.32,
+      "p99": 19622.568
+    },
+    "trace_sha256": "14279506550500886424d1d4d486066443db6b14a5ba17068b880a4ebe7a91b0",
+    "wr_count": 768
+  },
+  {
+    "admission_wait_ns": {
+      "mean": 0.0,
+      "p50": 0.0,
+      "p99": 0.0
+    },
+    "event_counts": {
+      "ack_chunk": 768,
+      "ack_rx_wire": 768,
+      "ack_tx_end": 768,
+      "ack_tx_start": 768,
+      "complete": 768,
+      "dequeue": 768,
+      "dispatch": 768,
+      "eligible": 768,
+      "enqueue": 768,
+      "memory_commit": 768,
+      "ordered": 768,
+      "ready": 768,
+      "rx_wire": 768,
+      "submit": 768,
+      "tx_chunk": 6144,
+      "tx_end": 768,
+      "tx_start": 768
+    },
+    "fairness": {
+      "invalid_reason": "not continuously backlogged for every active Jetty under every compared policy",
+      "minimum_scheduler_queue": {
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "payload_bytes": {
+        "1": 2048.0,
+        "2": 8192.0,
+        "3": 32768.0
+      },
+      "payload_jain": null,
+      "valid_all_jetties_backlogged": false,
+      "valid_common_policy_window": false,
+      "window_ns": [
+        2000,
+        6000
+      ],
+      "wire_bytes": {
+        "1": 4096.0,
+        "2": 10240.0,
+        "3": 34816.0
+      },
+      "wire_jain": null
+    },
+    "finish_ps": 32147240,
+    "makespan_ns": 32147.24,
+    "origin_ps": 0,
+    "payload_bytes": 344064,
+    "payload_throughput_gbps": 85.62203162697638,
+    "per_jetty": {
+      "1": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 16384,
+        "payload_throughput_gbps": 4.077239601284589,
+        "queue_wait_ns": {
+          "mean": 4.5,
+          "p50": 4.5,
+          "p99": 8.0
+        },
+        "ready_to_complete_ns": {
+          "mean": 206.86,
+          "p50": 206.86,
+          "p99": 245.36
+        },
+        "scheduler_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "submit_to_complete_ns": {
+          "mean": 206.86,
+          "p50": 206.86,
+          "p99": 245.36
+        },
+        "wr_count": 256
+      },
+      "2": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 65536,
+        "payload_throughput_gbps": 16.308958405138355,
+        "queue_wait_ns": {
+          "mean": 12.5,
+          "p50": 12.5,
+          "p99": 16.0
+        },
+        "ready_to_complete_ns": {
+          "mean": 361.32,
+          "p50": 361.32,
+          "p99": 450.92
+        },
+        "scheduler_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "submit_to_complete_ns": {
+          "mean": 361.32,
+          "p50": 361.32,
+          "p99": 450.92
+        },
+        "wr_count": 256
+      },
+      "3": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 262144,
+        "payload_throughput_gbps": 65.23583362055342,
+        "queue_wait_ns": {
+          "mean": 24.0,
+          "p50": 20.5,
+          "p99": 43.0
+        },
+        "ready_to_complete_ns": {
+          "mean": 842.6,
+          "p50": 842.6,
+          "p99": 1147.24
+        },
+        "scheduler_wait_ns": {
+          "mean": 3.5,
+          "p50": 0.0,
+          "p99": 19.0
+        },
+        "submit_to_complete_ns": {
+          "mean": 842.6,
+          "p50": 842.6,
+          "p99": 1147.24
+        },
+        "wr_count": 256
+      }
+    },
+    "policy": "fifo",
+    "queue_wait_ns": {
+      "mean": 13.666666666666666,
+      "p50": 12.5,
+      "p99": 43.0
+    },
+    "ready_to_complete_ns": {
+      "mean": 470.26,
+      "p50": 361.32,
+      "p99": 1147.24
+    },
+    "result_schema": "wr-results/1.0",
+    "scenario": "synthetic_burst",
+    "scheduler_wait_ns": {
+      "mean": 1.1666666666666667,
+      "p50": 0.0,
+      "p99": 19.0
+    },
+    "submit_to_complete_ns": {
+      "mean": 470.26,
+      "p50": 361.32,
+      "p99": 1147.24
+    },
+    "trace_sha256": "1990bcf3479a38fbd7b1fe2ce13e88efde9a45b95b6c8546a01a409ebb490b11",
+    "wr_count": 768
+  },
+  {
+    "admission_wait_ns": {
+      "mean": 0.0,
+      "p50": 0.0,
+      "p99": 0.0
+    },
+    "event_counts": {
+      "ack_chunk": 768,
+      "ack_rx_wire": 768,
+      "ack_tx_end": 768,
+      "ack_tx_start": 768,
+      "complete": 768,
+      "dequeue": 768,
+      "dispatch": 768,
+      "eligible": 768,
+      "enqueue": 768,
+      "memory_commit": 768,
+      "ordered": 768,
+      "ready": 768,
+      "rx_wire": 768,
+      "submit": 768,
+      "tx_chunk": 6144,
+      "tx_end": 768,
+      "tx_start": 768
+    },
+    "fairness": {
+      "invalid_reason": "not continuously backlogged for every active Jetty under every compared policy",
+      "minimum_scheduler_queue": {
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "payload_bytes": {
+        "1": 2048.0,
+        "2": 8192.0,
+        "3": 32768.0
+      },
+      "payload_jain": null,
+      "valid_all_jetties_backlogged": false,
+      "valid_common_policy_window": false,
+      "window_ns": [
+        2000,
+        6000
+      ],
+      "wire_bytes": {
+        "1": 4096.0,
+        "2": 10240.0,
+        "3": 34816.0
+      },
+      "wire_jain": null
+    },
+    "finish_ps": 32147240,
+    "makespan_ns": 32147.24,
+    "origin_ps": 0,
+    "payload_bytes": 344064,
+    "payload_throughput_gbps": 85.62203162697638,
+    "per_jetty": {
+      "1": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 16384,
+        "payload_throughput_gbps": 4.077239601284589,
+        "queue_wait_ns": {
+          "mean": 4.5,
+          "p50": 4.5,
+          "p99": 8.0
+        },
+        "ready_to_complete_ns": {
+          "mean": 206.86,
+          "p50": 206.86,
+          "p99": 245.36
+        },
+        "scheduler_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "submit_to_complete_ns": {
+          "mean": 206.86,
+          "p50": 206.86,
+          "p99": 245.36
+        },
+        "wr_count": 256
+      },
+      "2": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 65536,
+        "payload_throughput_gbps": 16.308958405138355,
+        "queue_wait_ns": {
+          "mean": 12.5,
+          "p50": 12.5,
+          "p99": 16.0
+        },
+        "ready_to_complete_ns": {
+          "mean": 361.32,
+          "p50": 361.32,
+          "p99": 450.92
+        },
+        "scheduler_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "submit_to_complete_ns": {
+          "mean": 361.32,
+          "p50": 361.32,
+          "p99": 450.92
+        },
+        "wr_count": 256
+      },
+      "3": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 262144,
+        "payload_throughput_gbps": 65.23583362055342,
+        "queue_wait_ns": {
+          "mean": 24.0,
+          "p50": 20.5,
+          "p99": 43.0
+        },
+        "ready_to_complete_ns": {
+          "mean": 842.6,
+          "p50": 842.6,
+          "p99": 1147.24
+        },
+        "scheduler_wait_ns": {
+          "mean": 3.5,
+          "p50": 0.0,
+          "p99": 19.0
+        },
+        "submit_to_complete_ns": {
+          "mean": 842.6,
+          "p50": 842.6,
+          "p99": 1147.24
+        },
+        "wr_count": 256
+      }
+    },
+    "policy": "rr",
+    "queue_wait_ns": {
+      "mean": 13.666666666666666,
+      "p50": 12.5,
+      "p99": 43.0
+    },
+    "ready_to_complete_ns": {
+      "mean": 470.26,
+      "p50": 361.32,
+      "p99": 1147.24
+    },
+    "result_schema": "wr-results/1.0",
+    "scenario": "synthetic_burst",
+    "scheduler_wait_ns": {
+      "mean": 1.1666666666666667,
+      "p50": 0.0,
+      "p99": 19.0
+    },
+    "submit_to_complete_ns": {
+      "mean": 470.26,
+      "p50": 361.32,
+      "p99": 1147.24
+    },
+    "trace_sha256": "1990bcf3479a38fbd7b1fe2ce13e88efde9a45b95b6c8546a01a409ebb490b11",
+    "wr_count": 768
+  },
+  {
+    "admission_wait_ns": {
+      "mean": 0.0,
+      "p50": 0.0,
+      "p99": 0.0
+    },
+    "event_counts": {
+      "ack_chunk": 768,
+      "ack_rx_wire": 768,
+      "ack_tx_end": 768,
+      "ack_tx_start": 768,
+      "complete": 768,
+      "dequeue": 768,
+      "dispatch": 768,
+      "eligible": 768,
+      "enqueue": 768,
+      "memory_commit": 768,
+      "ordered": 768,
+      "ready": 768,
+      "rx_wire": 768,
+      "submit": 768,
+      "tx_chunk": 6144,
+      "tx_end": 768,
+      "tx_start": 768
+    },
+    "fairness": {
+      "invalid_reason": "not continuously backlogged for every active Jetty under every compared policy",
+      "minimum_scheduler_queue": {
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "payload_bytes": {
+        "1": 2048.0,
+        "2": 8192.0,
+        "3": 32768.0
+      },
+      "payload_jain": null,
+      "valid_all_jetties_backlogged": false,
+      "valid_common_policy_window": false,
+      "window_ns": [
+        2000,
+        6000
+      ],
+      "wire_bytes": {
+        "1": 4096.0,
+        "2": 10240.0,
+        "3": 34816.0
+      },
+      "wire_jain": null
+    },
+    "finish_ps": 32147240,
+    "makespan_ns": 32147.24,
+    "origin_ps": 0,
+    "payload_bytes": 344064,
+    "payload_throughput_gbps": 85.62203162697638,
+    "per_jetty": {
+      "1": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 16384,
+        "payload_throughput_gbps": 4.077239601284589,
+        "queue_wait_ns": {
+          "mean": 4.5,
+          "p50": 4.5,
+          "p99": 8.0
+        },
+        "ready_to_complete_ns": {
+          "mean": 206.86,
+          "p50": 206.86,
+          "p99": 245.36
+        },
+        "scheduler_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "submit_to_complete_ns": {
+          "mean": 206.86,
+          "p50": 206.86,
+          "p99": 245.36
+        },
+        "wr_count": 256
+      },
+      "2": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 65536,
+        "payload_throughput_gbps": 16.308958405138355,
+        "queue_wait_ns": {
+          "mean": 12.5,
+          "p50": 12.5,
+          "p99": 16.0
+        },
+        "ready_to_complete_ns": {
+          "mean": 361.32,
+          "p50": 361.32,
+          "p99": 450.92
+        },
+        "scheduler_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "submit_to_complete_ns": {
+          "mean": 361.32,
+          "p50": 361.32,
+          "p99": 450.92
+        },
+        "wr_count": 256
+      },
+      "3": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 262144,
+        "payload_throughput_gbps": 65.23583362055342,
+        "queue_wait_ns": {
+          "mean": 24.0,
+          "p50": 20.5,
+          "p99": 43.0
+        },
+        "ready_to_complete_ns": {
+          "mean": 842.6,
+          "p50": 842.6,
+          "p99": 1147.24
+        },
+        "scheduler_wait_ns": {
+          "mean": 3.5,
+          "p50": 0.0,
+          "p99": 19.0
+        },
+        "submit_to_complete_ns": {
+          "mean": 842.6,
+          "p50": 842.6,
+          "p99": 1147.24
+        },
+        "wr_count": 256
+      }
+    },
+    "policy": "drr",
+    "queue_wait_ns": {
+      "mean": 13.666666666666666,
+      "p50": 12.5,
+      "p99": 43.0
+    },
+    "ready_to_complete_ns": {
+      "mean": 470.26,
+      "p50": 361.32,
+      "p99": 1147.24
+    },
+    "result_schema": "wr-results/1.0",
+    "scenario": "synthetic_burst",
+    "scheduler_wait_ns": {
+      "mean": 1.1666666666666667,
+      "p50": 0.0,
+      "p99": 19.0
+    },
+    "submit_to_complete_ns": {
+      "mean": 470.26,
+      "p50": 361.32,
+      "p99": 1147.24
+    },
+    "trace_sha256": "1990bcf3479a38fbd7b1fe2ce13e88efde9a45b95b6c8546a01a409ebb490b11",
+    "wr_count": 768
+  },
+  {
+    "admission_wait_ns": {
+      "mean": 0.0,
+      "p50": 0.0,
+      "p99": 0.0
+    },
+    "event_counts": {
+      "ack_chunk": 768,
+      "ack_rx_wire": 768,
+      "ack_tx_end": 768,
+      "ack_tx_start": 768,
+      "complete": 768,
+      "dequeue": 768,
+      "dispatch": 768,
+      "eligible": 768,
+      "enqueue": 768,
+      "memory_commit": 768,
+      "ordered": 768,
+      "ready": 768,
+      "rx_wire": 768,
+      "submit": 768,
+      "tx_chunk": 6144,
+      "tx_end": 768,
+      "tx_start": 768
+    },
+    "fairness": {
+      "invalid_reason": "not continuously backlogged for every active Jetty under every compared policy",
+      "minimum_scheduler_queue": {
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "payload_bytes": {
+        "1": 2304.0,
+        "2": 9472.0,
+        "3": 31180.5
+      },
+      "payload_jain": null,
+      "valid_all_jetties_backlogged": false,
+      "valid_common_policy_window": false,
+      "window_ns": [
+        2000,
+        6000
+      ],
+      "wire_bytes": {
+        "1": 4608.0,
+        "2": 11840.0,
+        "3": 33164.5
+      },
+      "wire_jain": null
+    },
+    "finish_ps": 32009200,
+    "makespan_ns": 32001.2,
+    "origin_ps": 8000,
+    "payload_bytes": 344064,
+    "payload_throughput_gbps": 86.01277452095546,
+    "per_jetty": {
+      "1": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 16384,
+        "payload_throughput_gbps": 4.095846405759784,
+        "queue_wait_ns": {
+          "mean": 1792.7190625,
+          "p50": 1718.9,
+          "p99": 4512.889999999999
+        },
+        "ready_to_complete_ns": {
+          "mean": 2739.4290625,
+          "p50": 2845.6800000000003,
+          "p99": 5436.93
+        },
+        "scheduler_wait_ns": {
+          "mean": 1791.71125,
+          "p50": 1717.9,
+          "p99": 4511.889999999999
+        },
+        "submit_to_complete_ns": {
+          "mean": 2739.4290625,
+          "p50": 2845.6800000000003,
+          "p99": 5436.93
+        },
+        "wr_count": 256
+      },
+      "2": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 65536,
+        "payload_throughput_gbps": 16.383385623039135,
+        "queue_wait_ns": {
+          "mean": 1955.1296875,
+          "p50": 2225.08,
+          "p99": 4515.367999999999
+        },
+        "ready_to_complete_ns": {
+          "mean": 2942.7815625,
+          "p50": 3199.74,
+          "p99": 5326.778
+        },
+        "scheduler_wait_ns": {
+          "mean": 1954.1140625,
+          "p50": 2224.08,
+          "p99": 4514.3679999999995
+        },
+        "submit_to_complete_ns": {
+          "mean": 2942.7815625,
+          "p50": 3199.74,
+          "p99": 5326.778
+        },
+        "wr_count": 256
+      },
+      "3": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 262144,
+        "payload_throughput_gbps": 65.53354249215654,
+        "queue_wait_ns": {
+          "mean": 1864.61140625,
+          "p50": 1861.3400000000001,
+          "p99": 4568.429999999999
+        },
+        "ready_to_complete_ns": {
+          "mean": 2918.43109375,
+          "p50": 3054.52,
+          "p99": 5430.544
+        },
+        "scheduler_wait_ns": {
+          "mean": 1863.60359375,
+          "p50": 1860.3400000000001,
+          "p99": 4567.43
+        },
+        "submit_to_complete_ns": {
+          "mean": 2918.43109375,
+          "p50": 3054.52,
+          "p99": 5430.544
+        },
+        "wr_count": 256
+      }
+    },
+    "policy": "fifo",
+    "queue_wait_ns": {
+      "mean": 1870.8200520833334,
+      "p50": 1874.08,
+      "p99": 4554.869600000001
+    },
+    "ready_to_complete_ns": {
+      "mean": 2866.8805729166666,
+      "p50": 3065.46,
+      "p99": 5424.2416
+    },
+    "result_schema": "wr-results/1.0",
+    "scenario": "synthetic_poisson",
+    "scheduler_wait_ns": {
+      "mean": 1869.8096354166667,
+      "p50": 1873.08,
+      "p99": 4553.869600000001
+    },
+    "submit_to_complete_ns": {
+      "mean": 2866.8805729166666,
+      "p50": 3065.46,
+      "p99": 5424.2416
+    },
+    "trace_sha256": "7b6d9cf7e50936e3e9b614fddbc6429cd97412b5ec0ab3518709bc7f6f6f583a",
+    "wr_count": 768
+  },
+  {
+    "admission_wait_ns": {
+      "mean": 0.0,
+      "p50": 0.0,
+      "p99": 0.0
+    },
+    "event_counts": {
+      "ack_chunk": 768,
+      "ack_rx_wire": 768,
+      "ack_tx_end": 768,
+      "ack_tx_start": 768,
+      "complete": 768,
+      "dequeue": 768,
+      "dispatch": 768,
+      "eligible": 768,
+      "enqueue": 768,
+      "memory_commit": 768,
+      "ordered": 768,
+      "ready": 768,
+      "rx_wire": 768,
+      "submit": 768,
+      "tx_chunk": 6144,
+      "tx_end": 768,
+      "tx_start": 768
+    },
+    "fairness": {
+      "invalid_reason": "not continuously backlogged for every active Jetty under every compared policy",
+      "minimum_scheduler_queue": {
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "payload_bytes": {
+        "1": 1984.0,
+        "2": 9216.0,
+        "3": 32140.0
+      },
+      "payload_jain": null,
+      "valid_all_jetties_backlogged": false,
+      "valid_common_policy_window": false,
+      "window_ns": [
+        2000,
+        6000
+      ],
+      "wire_bytes": {
+        "1": 3968.5,
+        "2": 11520.0,
+        "3": 34124.0
+      },
+      "wire_jain": null
+    },
+    "finish_ps": 32008440,
+    "makespan_ns": 32000.44,
+    "origin_ps": 8000,
+    "payload_bytes": 344064,
+    "payload_throughput_gbps": 86.01481729626218,
+    "per_jetty": {
+      "1": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 16384,
+        "payload_throughput_gbps": 4.095943680774389,
+        "queue_wait_ns": {
+          "mean": 1141.6115625,
+          "p50": 860.5,
+          "p99": 2960.9139999999993
+        },
+        "ready_to_complete_ns": {
+          "mean": 2117.6796875,
+          "p50": 1955.8200000000002,
+          "p99": 4056.2339999999995
+        },
+        "scheduler_wait_ns": {
+          "mean": 1140.60375,
+          "p50": 859.0,
+          "p99": 2959.9139999999993
+        },
+        "submit_to_complete_ns": {
+          "mean": 2117.6796875,
+          "p50": 1955.8200000000002,
+          "p99": 4056.2339999999995
+        },
+        "wr_count": 256
+      },
+      "2": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 65536,
+        "payload_throughput_gbps": 16.383774723097556,
+        "queue_wait_ns": {
+          "mean": 1842.641875,
+          "p50": 1311.1599999999999,
+          "p99": 5522.557999999999
+        },
+        "ready_to_complete_ns": {
+          "mean": 2811.6015625,
+          "p50": 2344.2799999999997,
+          "p99": 6915.527999999998
+        },
+        "scheduler_wait_ns": {
+          "mean": 1841.62625,
+          "p50": 1310.1599999999999,
+          "p99": 5521.557999999999
+        },
+        "submit_to_complete_ns": {
+          "mean": 2811.6015625,
+          "p50": 2344.2799999999997,
+          "p99": 6915.527999999998
+        },
+        "wr_count": 256
+      },
+      "3": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 262144,
+        "payload_throughput_gbps": 65.53509889239022,
+        "queue_wait_ns": {
+          "mean": 1983.35453125,
+          "p50": 2372.0,
+          "p99": 4245.758
+        },
+        "ready_to_complete_ns": {
+          "mean": 3030.13109375,
+          "p50": 3481.16,
+          "p99": 5354.918
+        },
+        "scheduler_wait_ns": {
+          "mean": 1982.34671875,
+          "p50": 2371.0,
+          "p99": 4244.758
+        },
+        "submit_to_complete_ns": {
+          "mean": 3030.13109375,
+          "p50": 3481.16,
+          "p99": 5354.918
+        },
+        "wr_count": 256
+      }
+    },
+    "policy": "rr",
+    "queue_wait_ns": {
+      "mean": 1655.8693229166665,
+      "p50": 1315.06,
+      "p99": 5307.327600000001
+    },
+    "ready_to_complete_ns": {
+      "mean": 2653.1374479166666,
+      "p50": 2382.8599999999997,
+      "p99": 6546.421200000004
+    },
+    "result_schema": "wr-results/1.0",
+    "scenario": "synthetic_poisson",
+    "scheduler_wait_ns": {
+      "mean": 1654.8589062499998,
+      "p50": 1314.06,
+      "p99": 5306.327600000002
+    },
+    "submit_to_complete_ns": {
+      "mean": 2653.1374479166666,
+      "p50": 2382.8599999999997,
+      "p99": 6546.421200000004
+    },
+    "trace_sha256": "7b6d9cf7e50936e3e9b614fddbc6429cd97412b5ec0ab3518709bc7f6f6f583a",
+    "wr_count": 768
+  },
+  {
+    "admission_wait_ns": {
+      "mean": 0.0,
+      "p50": 0.0,
+      "p99": 0.0
+    },
+    "event_counts": {
+      "ack_chunk": 768,
+      "ack_rx_wire": 768,
+      "ack_tx_end": 768,
+      "ack_tx_start": 768,
+      "complete": 768,
+      "dequeue": 768,
+      "dispatch": 768,
+      "eligible": 768,
+      "enqueue": 768,
+      "memory_commit": 768,
+      "ordered": 768,
+      "ready": 768,
+      "rx_wire": 768,
+      "submit": 768,
+      "tx_chunk": 6144,
+      "tx_end": 768,
+      "tx_start": 768
+    },
+    "fairness": {
+      "invalid_reason": "not continuously backlogged for every active Jetty under every compared policy",
+      "minimum_scheduler_queue": {
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "payload_bytes": {
+        "1": 2304.0,
+        "2": 9472.0,
+        "3": 31180.5
+      },
+      "payload_jain": null,
+      "valid_all_jetties_backlogged": false,
+      "valid_common_policy_window": false,
+      "window_ns": [
+        2000,
+        6000
+      ],
+      "wire_bytes": {
+        "1": 4608.0,
+        "2": 11840.0,
+        "3": 33164.5
+      },
+      "wire_jain": null
+    },
+    "finish_ps": 32008440,
+    "makespan_ns": 32000.44,
+    "origin_ps": 8000,
+    "payload_bytes": 344064,
+    "payload_throughput_gbps": 86.01481729626218,
+    "per_jetty": {
+      "1": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 16384,
+        "payload_throughput_gbps": 4.095943680774389,
+        "queue_wait_ns": {
+          "mean": 71.29203125,
+          "p50": 53.099999999999994,
+          "p99": 364.19399999999985
+        },
+        "ready_to_complete_ns": {
+          "mean": 966.85453125,
+          "p50": 1023.8199999999999,
+          "p99": 1704.3759999999993
+        },
+        "scheduler_wait_ns": {
+          "mean": 70.28421875,
+          "p50": 52.099999999999994,
+          "p99": 363.19399999999985
+        },
+        "submit_to_complete_ns": {
+          "mean": 966.85453125,
+          "p50": 1023.8199999999999,
+          "p99": 1704.3759999999993
+        },
+        "wr_count": 256
+      },
+      "2": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 65536,
+        "payload_throughput_gbps": 16.383774723097556,
+        "queue_wait_ns": {
+          "mean": 203.77984375,
+          "p50": 107.16,
+          "p99": 784.9979999999998
+        },
+        "ready_to_complete_ns": {
+          "mean": 1077.6615625,
+          "p50": 1111.8200000000002,
+          "p99": 1682.8539999999998
+        },
+        "scheduler_wait_ns": {
+          "mean": 202.76421875,
+          "p50": 106.16,
+          "p99": 783.9979999999998
+        },
+        "submit_to_complete_ns": {
+          "mean": 1077.6615625,
+          "p50": 1111.8200000000002,
+          "p99": 1682.8539999999998
+        },
+        "wr_count": 256
+      },
+      "3": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 262144,
+        "payload_throughput_gbps": 65.53509889239022,
+        "queue_wait_ns": {
+          "mean": 2494.86703125,
+          "p50": 3043.16,
+          "p99": 5663.878
+        },
+        "ready_to_complete_ns": {
+          "mean": 3675.55109375,
+          "p50": 4583.86,
+          "p99": 6893.5779999999995
+        },
+        "scheduler_wait_ns": {
+          "mean": 2493.85921875,
+          "p50": 3042.16,
+          "p99": 5662.878
+        },
+        "submit_to_complete_ns": {
+          "mean": 3675.55109375,
+          "p50": 4583.86,
+          "p99": 6893.5779999999995
+        },
+        "wr_count": 256
+      }
+    },
+    "policy": "drr",
+    "queue_wait_ns": {
+      "mean": 923.31296875,
+      "p50": 106.36,
+      "p99": 5611.012000000001
+    },
+    "ready_to_complete_ns": {
+      "mean": 1906.6890624999999,
+      "p50": 1167.3,
+      "p99": 6805.208400000001
+    },
+    "result_schema": "wr-results/1.0",
+    "scenario": "synthetic_poisson",
+    "scheduler_wait_ns": {
+      "mean": 922.3025520833334,
+      "p50": 105.36,
+      "p99": 5610.012000000001
+    },
+    "submit_to_complete_ns": {
+      "mean": 1906.6890624999999,
+      "p50": 1167.3,
+      "p99": 6805.208400000001
+    },
+    "trace_sha256": "7b6d9cf7e50936e3e9b614fddbc6429cd97412b5ec0ab3518709bc7f6f6f583a",
+    "wr_count": 768
+  },
+  {
+    "admission_wait_ns": {
+      "mean": 0.0,
+      "p50": 0.0,
+      "p99": 0.0
+    },
+    "event_counts": {
+      "ack_chunk": 77,
+      "ack_rx_wire": 77,
+      "ack_tx_end": 77,
+      "ack_tx_start": 77,
+      "complete": 77,
+      "dequeue": 77,
+      "dispatch": 77,
+      "eligible": 77,
+      "enqueue": 77,
+      "memory_commit": 77,
+      "ordered": 77,
+      "ready": 77,
+      "rx_wire": 77,
+      "submit": 77,
+      "tx_chunk": 3146,
+      "tx_end": 77,
+      "tx_start": 77
+    },
+    "fairness": {
+      "invalid_reason": "not continuously backlogged for every active Jetty under every compared policy",
+      "minimum_scheduler_queue": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0,
+        "10": 0,
+        "11": 2,
+        "12": 6,
+        "13": 5,
+        "14": 6,
+        "15": 5
+      },
+      "payload_bytes": {
+        "0": 0.0,
+        "1": 1246.5,
+        "2": 10560.0,
+        "3": 8448.0,
+        "4": 14784.0,
+        "5": 10560.0,
+        "6": 3057.5,
+        "7": 0.0,
+        "8": 0.0,
+        "9": 0.0,
+        "10": 0.0,
+        "11": 0.0,
+        "12": 0.0,
+        "13": 0.0,
+        "14": 0.0,
+        "15": 0.0
+      },
+      "payload_jain": null,
+      "selection": "no common all-Jetty queued interval exists",
+      "valid_all_jetties_backlogged": false,
+      "valid_common_policy_window": false,
+      "window_ns": [
+        2000,
+        6000
+      ],
+      "wire_bytes": {
+        "0": 0.0,
+        "1": 1246.5,
+        "2": 10880.0,
+        "3": 8704.0,
+        "4": 15168.0,
+        "5": 10816.0,
+        "6": 3185.5,
+        "7": 0.0,
+        "8": 0.0,
+        "9": 0.0,
+        "10": 0.0,
+        "11": 0.0,
+        "12": 0.0,
+        "13": 0.0,
+        "14": 0.0,
+        "15": 0.0
+      },
+      "wire_jain": null
+    },
+    "finish_ps": 16265640,
+    "makespan_ns": 16265.64,
+    "origin_ps": 0,
+    "payload_bytes": 196416,
+    "payload_throughput_gbps": 96.60412993279084,
+    "per_jetty": {
+      "0": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 14784,
+        "payload_throughput_gbps": 7.271278597091784,
+        "queue_wait_ns": {
+          "mean": 3.5,
+          "p50": 3.5,
+          "p99": 5.95
+        },
+        "ready_to_complete_ns": {
+          "mean": 880.04,
+          "p50": 936.36,
+          "p99": 1362.856
+        },
+        "scheduler_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "submit_to_complete_ns": {
+          "mean": 880.04,
+          "p50": 936.36,
+          "p99": 1362.856
+        },
+        "wr_count": 6
+      },
+      "1": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 10560,
+        "payload_throughput_gbps": 5.193770426494131,
+        "queue_wait_ns": {
+          "mean": 8.5,
+          "p50": 8.5,
+          "p99": 9.969999999999999
+        },
+        "ready_to_complete_ns": {
+          "mean": 1975.72,
+          "p50": 1975.7200000000003,
+          "p99": 2231.6176
+        },
+        "scheduler_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "submit_to_complete_ns": {
+          "mean": 1975.72,
+          "p50": 1975.7200000000003,
+          "p99": 2231.6176
+        },
+        "wr_count": 4
+      },
+      "10": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 10560,
+        "payload_throughput_gbps": 5.193770426494131,
+        "queue_wait_ns": {
+          "mean": 5166.599999999999,
+          "p50": 5222.92,
+          "p99": 5393.5184
+        },
+        "ready_to_complete_ns": {
+          "mean": 10433.96,
+          "p50": 10377.64,
+          "p99": 10713.8192
+        },
+        "scheduler_wait_ns": {
+          "mean": 5117.599999999999,
+          "p50": 5173.92,
+          "p99": 5343.5383999999995
+        },
+        "submit_to_complete_ns": {
+          "mean": 10433.96,
+          "p50": 10377.64,
+          "p99": 10713.8192
+        },
+        "wr_count": 3
+      },
+      "11": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 12672,
+        "payload_throughput_gbps": 6.232524511792957,
+        "queue_wait_ns": {
+          "mean": 5986.824,
+          "p50": 5919.24,
+          "p99": 6429.3967999999995
+        },
+        "ready_to_complete_ns": {
+          "mean": 11378.088,
+          "p50": 11411.88,
+          "p99": 11753.0768
+        },
+        "scheduler_wait_ns": {
+          "mean": 5933.824,
+          "p50": 5866.24,
+          "p99": 6374.4368
+        },
+        "submit_to_complete_ns": {
+          "mean": 11378.088,
+          "p50": 11411.88,
+          "p99": 11753.0768
+        },
+        "wr_count": 5
+      },
+      "12": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 14784,
+        "payload_throughput_gbps": 7.271278597091784,
+        "queue_wait_ns": {
+          "mean": 7130.12,
+          "p50": 7130.120000000001,
+          "p99": 7641.096
+        },
+        "ready_to_complete_ns": {
+          "mean": 12481.96,
+          "p50": 12538.279999999999,
+          "p99": 12964.776
+        },
+        "scheduler_wait_ns": {
+          "mean": 7071.62,
+          "p50": 7071.620000000001,
+          "p99": 7580.146000000001
+        },
+        "submit_to_complete_ns": {
+          "mean": 12481.96,
+          "p50": 12538.279999999999,
+          "p99": 12964.776
+        },
+        "wr_count": 6
+      },
+      "13": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 12672,
+        "payload_throughput_gbps": 6.232524511792957,
+        "queue_wait_ns": {
+          "mean": 8273.416000000001,
+          "p50": 8341.0,
+          "p99": 8682.1968
+        },
+        "ready_to_complete_ns": {
+          "mean": 13529.511999999999,
+          "p50": 13495.72,
+          "p99": 13999.118400000001
+        },
+        "scheduler_wait_ns": {
+          "mean": 8209.416000000001,
+          "p50": 8277.0,
+          "p99": 8616.2368
+        },
+        "submit_to_complete_ns": {
+          "mean": 13529.511999999999,
+          "p50": 13495.72,
+          "p99": 13999.118400000001
+        },
+        "wr_count": 5
+      },
+      "14": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 12672,
+        "payload_throughput_gbps": 6.232524511792957,
+        "queue_wait_ns": {
+          "mean": 9608.199999999999,
+          "p50": 9636.36,
+          "p99": 10231.816
+        },
+        "ready_to_complete_ns": {
+          "mean": 14622.12,
+          "p50": 14622.119999999999,
+          "p99": 15048.615999999998
+        },
+        "scheduler_wait_ns": {
+          "mean": 9538.699999999999,
+          "p50": 9566.86,
+          "p99": 10159.866000000002
+        },
+        "submit_to_complete_ns": {
+          "mean": 14622.12,
+          "p50": 14622.119999999999,
+          "p99": 15048.615999999998
+        },
+        "wr_count": 6
+      },
+      "15": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 14784,
+        "payload_throughput_gbps": 7.271278597091784,
+        "queue_wait_ns": {
+          "mean": 11033.096,
+          "p50": 11100.68,
+          "p99": 11441.8768
+        },
+        "ready_to_complete_ns": {
+          "mean": 15816.104000000001,
+          "p50": 15917.48,
+          "p99": 16258.6768
+        },
+        "scheduler_wait_ns": {
+          "mean": 10958.096,
+          "p50": 11025.68,
+          "p99": 11364.916799999999
+        },
+        "submit_to_complete_ns": {
+          "mean": 15816.104000000001,
+          "p50": 15917.48,
+          "p99": 16258.6768
+        },
+        "wr_count": 5
+      },
+      "2": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 10560,
+        "payload_throughput_gbps": 5.193770426494131,
+        "queue_wait_ns": {
+          "mean": 13.0,
+          "p50": 13.0,
+          "p99": 14.959999999999999
+        },
+        "ready_to_complete_ns": {
+          "mean": 2759.08,
+          "p50": 2759.08,
+          "p99": 3100.2767999999996
+        },
+        "scheduler_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "submit_to_complete_ns": {
+          "mean": 2759.08,
+          "p50": 2759.08,
+          "p99": 3100.2767999999996
+        },
+        "wr_count": 5
+      },
+      "3": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 8448,
+        "payload_throughput_gbps": 4.155016341195305,
+        "queue_wait_ns": {
+          "mean": 17.5,
+          "p50": 17.5,
+          "p99": 18.97
+        },
+        "ready_to_complete_ns": {
+          "mean": 3542.44,
+          "p50": 3542.44,
+          "p99": 3798.3376
+        },
+        "scheduler_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "submit_to_complete_ns": {
+          "mean": 3542.44,
+          "p50": 3542.44,
+          "p99": 3798.3376
+        },
+        "wr_count": 4
+      },
+      "4": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 14784,
+        "payload_throughput_gbps": 7.271278597091784,
+        "queue_wait_ns": {
+          "mean": 109.87333333333333,
+          "p50": 27.0,
+          "p99": 360.4560000000001
+        },
+        "ready_to_complete_ns": {
+          "mean": 4581.8,
+          "p50": 4581.8,
+          "p99": 5008.295999999999
+        },
+        "scheduler_wait_ns": {
+          "mean": 87.37333333333333,
+          "p50": 4.5,
+          "p99": 335.5060000000001
+        },
+        "submit_to_complete_ns": {
+          "mean": 4581.8,
+          "p50": 4581.8,
+          "p99": 5008.295999999999
+        },
+        "wr_count": 6
+      },
+      "5": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 10560,
+        "payload_throughput_gbps": 5.193770426494131,
+        "queue_wait_ns": {
+          "mean": 973.3199999999999,
+          "p50": 973.3199999999999,
+          "p99": 1229.2176
+        },
+        "ready_to_complete_ns": {
+          "mean": 5621.16,
+          "p50": 5621.16,
+          "p99": 5877.057599999999
+        },
+        "scheduler_wait_ns": {
+          "mean": 945.8199999999999,
+          "p50": 945.8199999999999,
+          "p99": 1200.2476000000001
+        },
+        "submit_to_complete_ns": {
+          "mean": 5621.16,
+          "p50": 5621.16,
+          "p99": 5877.057599999999
+        },
+        "wr_count": 4
+      },
+      "6": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 12672,
+        "payload_throughput_gbps": 6.232524511792957,
+        "queue_wait_ns": {
+          "mean": 1925.64,
+          "p50": 1925.64,
+          "p99": 2266.8368
+        },
+        "ready_to_complete_ns": {
+          "mean": 6539.688,
+          "p50": 6573.48,
+          "p99": 6914.6768
+        },
+        "scheduler_wait_ns": {
+          "mean": 1893.64,
+          "p50": 1893.64,
+          "p99": 2232.8768
+        },
+        "submit_to_complete_ns": {
+          "mean": 6539.688,
+          "p50": 6573.48,
+          "p99": 6914.6768
+        },
+        "wr_count": 5
+      },
+      "7": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 10560,
+        "payload_throughput_gbps": 5.193770426494131,
+        "queue_wait_ns": {
+          "mean": 2709.0,
+          "p50": 2709.0,
+          "p99": 2964.8976
+        },
+        "ready_to_complete_ns": {
+          "mean": 7483.56,
+          "p50": 7525.8,
+          "p99": 7781.6975999999995
+        },
+        "scheduler_wait_ns": {
+          "mean": 2672.5,
+          "p50": 2672.5,
+          "p99": 2926.9275999999995
+        },
+        "submit_to_complete_ns": {
+          "mean": 7483.56,
+          "p50": 7525.8,
+          "p99": 7781.6975999999995
+        },
+        "wr_count": 4
+      },
+      "8": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 10560,
+        "payload_throughput_gbps": 5.193770426494131,
+        "queue_wait_ns": {
+          "mean": 3405.32,
+          "p50": 3405.32,
+          "p99": 3661.2176
+        },
+        "ready_to_complete_ns": {
+          "mean": 8306.6,
+          "p50": 8306.6,
+          "p99": 8646.9776
+        },
+        "scheduler_wait_ns": {
+          "mean": 3364.82,
+          "p50": 3364.82,
+          "p99": 3619.2475999999997
+        },
+        "submit_to_complete_ns": {
+          "mean": 8306.6,
+          "p50": 8306.6,
+          "p99": 8646.9776
+        },
+        "wr_count": 4
+      },
+      "9": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 14784,
+        "payload_throughput_gbps": 7.271278597091784,
+        "queue_wait_ns": {
+          "mean": 4357.64,
+          "p50": 4357.64,
+          "p99": 4698.8368
+        },
+        "ready_to_complete_ns": {
+          "mean": 9343.4,
+          "p50": 9343.4,
+          "p99": 9853.5568
+        },
+        "scheduler_wait_ns": {
+          "mean": 4312.64,
+          "p50": 4312.64,
+          "p99": 4651.876800000001
+        },
+        "submit_to_complete_ns": {
+          "mean": 9343.4,
+          "p50": 9343.4,
+          "p99": 9853.5568
+        },
+        "wr_count": 5
+      }
+    },
+    "policy": "fifo",
+    "queue_wait_ns": {
+      "mean": 3935.2285714285713,
+      "p50": 3144.2,
+      "p99": 11316.5392
+    },
+    "ready_to_complete_ns": {
+      "mean": 8197.982857142857,
+      "p50": 7961.0,
+      "p99": 16133.339199999999
+    },
+    "result_schema": "wr-results/1.0",
+    "scenario": "moe_low",
+    "scheduler_wait_ns": {
+      "mean": 3896.2285714285713,
+      "p50": 3105.2,
+      "p99": 11240.299200000001
+    },
+    "submit_to_complete_ns": {
+      "mean": 8197.982857142857,
+      "p50": 7961.0,
+      "p99": 16133.339199999999
+    },
+    "trace_sha256": "c8b180ca40dfa24a408951fc233600fc589ac31cb98f0e9e682da096a3e6a6ca",
+    "wr_count": 77
+  },
+  {
+    "admission_wait_ns": {
+      "mean": 0.0,
+      "p50": 0.0,
+      "p99": 0.0
+    },
+    "event_counts": {
+      "ack_chunk": 77,
+      "ack_rx_wire": 77,
+      "ack_tx_end": 77,
+      "ack_tx_start": 77,
+      "complete": 77,
+      "dequeue": 77,
+      "dispatch": 77,
+      "eligible": 77,
+      "enqueue": 77,
+      "memory_commit": 77,
+      "ordered": 77,
+      "ready": 77,
+      "rx_wire": 77,
+      "submit": 77,
+      "tx_chunk": 3146,
+      "tx_end": 77,
+      "tx_start": 77
+    },
+    "fairness": {
+      "invalid_reason": "not continuously backlogged for every active Jetty under every compared policy",
+      "minimum_scheduler_queue": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 1,
+        "5": 1,
+        "6": 2,
+        "7": 1,
+        "8": 1,
+        "9": 2,
+        "10": 0,
+        "11": 3,
+        "12": 4,
+        "13": 3,
+        "14": 4,
+        "15": 3
+      },
+      "payload_bytes": {
+        "0": 0.0,
+        "1": 1246.5,
+        "2": 10560.0,
+        "3": 8448.0,
+        "4": 8448.0,
+        "5": 4224.0,
+        "6": 2112.0,
+        "7": 2112.0,
+        "8": 2112.0,
+        "9": 2112.0,
+        "10": 4224.0,
+        "11": 2112.0,
+        "12": 1009.5,
+        "13": 0.0,
+        "14": 0.0,
+        "15": 0.0
+      },
+      "payload_jain": null,
+      "selection": "no common all-Jetty queued interval exists",
+      "valid_all_jetties_backlogged": false,
+      "valid_common_policy_window": false,
+      "window_ns": [
+        2000,
+        6000
+      ],
+      "wire_bytes": {
+        "0": 0.0,
+        "1": 1246.5,
+        "2": 10880.0,
+        "3": 8704.0,
+        "4": 8640.0,
+        "5": 4288.0,
+        "6": 2176.0,
+        "7": 2176.0,
+        "8": 2176.0,
+        "9": 2176.0,
+        "10": 4288.0,
+        "11": 2176.0,
+        "12": 1073.5,
+        "13": 0.0,
+        "14": 0.0,
+        "15": 0.0
+      },
+      "wire_jain": null
+    },
+    "finish_ps": 16265640,
+    "makespan_ns": 16265.64,
+    "origin_ps": 0,
+    "payload_bytes": 196416,
+    "payload_throughput_gbps": 96.60412993279084,
+    "per_jetty": {
+      "0": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 14784,
+        "payload_throughput_gbps": 7.271278597091784,
+        "queue_wait_ns": {
+          "mean": 3.5,
+          "p50": 3.5,
+          "p99": 5.95
+        },
+        "ready_to_complete_ns": {
+          "mean": 880.04,
+          "p50": 936.36,
+          "p99": 1362.856
+        },
+        "scheduler_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "submit_to_complete_ns": {
+          "mean": 880.04,
+          "p50": 936.36,
+          "p99": 1362.856
+        },
+        "wr_count": 6
+      },
+      "1": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 10560,
+        "payload_throughput_gbps": 5.193770426494131,
+        "queue_wait_ns": {
+          "mean": 8.5,
+          "p50": 8.5,
+          "p99": 9.969999999999999
+        },
+        "ready_to_complete_ns": {
+          "mean": 1975.72,
+          "p50": 1975.7200000000003,
+          "p99": 2231.6176
+        },
+        "scheduler_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "submit_to_complete_ns": {
+          "mean": 1975.72,
+          "p50": 1975.7200000000003,
+          "p99": 2231.6176
+        },
+        "wr_count": 4
+      },
+      "10": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 10560,
+        "payload_throughput_gbps": 5.193770426494131,
+        "queue_wait_ns": {
+          "mean": 3430.92,
+          "p50": 3318.28,
+          "p99": 5862.2032
+        },
+        "ready_to_complete_ns": {
+          "mean": 8473.0,
+          "p50": 8304.04,
+          "p99": 11179.1248
+        },
+        "scheduler_wait_ns": {
+          "mean": 3381.92,
+          "p50": 3269.28,
+          "p99": 5812.2232
+        },
+        "submit_to_complete_ns": {
+          "mean": 8473.0,
+          "p50": 8304.04,
+          "p99": 11179.1248
+        },
+        "wr_count": 3
+      },
+      "11": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 12672,
+        "payload_throughput_gbps": 6.232524511792957,
+        "queue_wait_ns": {
+          "mean": 5844.487999999999,
+          "p50": 6088.2,
+          "p99": 9841.9792
+        },
+        "ready_to_complete_ns": {
+          "mean": 10999.208,
+          "p50": 11411.88,
+          "p99": 15003.457600000002
+        },
+        "scheduler_wait_ns": {
+          "mean": 5791.487999999999,
+          "p50": 6035.2,
+          "p99": 9787.019199999999
+        },
+        "submit_to_complete_ns": {
+          "mean": 10999.208,
+          "p50": 11411.88,
+          "p99": 15003.457600000002
+        },
+        "wr_count": 5
+      },
+      "12": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 14784,
+        "payload_throughput_gbps": 7.271278597091784,
+        "queue_wait_ns": {
+          "mean": 6922.759999999999,
+          "p50": 7473.16,
+          "p99": 11214.6
+        },
+        "ready_to_complete_ns": {
+          "mean": 12021.159999999998,
+          "p50": 12881.32,
+          "p99": 16048.295999999998
+        },
+        "scheduler_wait_ns": {
+          "mean": 6864.259999999999,
+          "p50": 7414.66,
+          "p99": 11153.65
+        },
+        "submit_to_complete_ns": {
+          "mean": 12021.159999999998,
+          "p50": 12881.32,
+          "p99": 16048.295999999998
+        },
+        "wr_count": 6
+      },
+      "13": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 12672,
+        "payload_throughput_gbps": 6.232524511792957,
+        "queue_wait_ns": {
+          "mean": 6294.024,
+          "p50": 6436.36,
+          "p99": 10352.3408
+        },
+        "ready_to_complete_ns": {
+          "mean": 11414.952,
+          "p50": 11929.0,
+          "p99": 15513.8192
+        },
+        "scheduler_wait_ns": {
+          "mean": 6230.024,
+          "p50": 6372.36,
+          "p99": 10286.3808
+        },
+        "submit_to_complete_ns": {
+          "mean": 11414.952,
+          "p50": 11929.0,
+          "p99": 15513.8192
+        },
+        "wr_count": 5
+      },
+      "14": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 12672,
+        "payload_throughput_gbps": 6.232524511792957,
+        "queue_wait_ns": {
+          "mean": 7354.546666666666,
+          "p50": 7821.32,
+          "p99": 11574.792
+        },
+        "ready_to_complete_ns": {
+          "mean": 12368.466666666667,
+          "p50": 13229.48,
+          "p99": 16239.527999999998
+        },
+        "scheduler_wait_ns": {
+          "mean": 7285.046666666666,
+          "p50": 7751.82,
+          "p99": 11502.842
+        },
+        "submit_to_complete_ns": {
+          "mean": 12368.466666666667,
+          "p50": 13229.48,
+          "p99": 16239.527999999998
+        },
+        "wr_count": 6
+      },
+      "15": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 14784,
+        "payload_throughput_gbps": 7.271278597091784,
+        "queue_wait_ns": {
+          "mean": 6743.56,
+          "p50": 6784.52,
+          "p99": 11031.662400000001
+        },
+        "ready_to_complete_ns": {
+          "mean": 11830.696,
+          "p50": 12446.12,
+          "p99": 15861.9792
+        },
+        "scheduler_wait_ns": {
+          "mean": 6668.56,
+          "p50": 6709.52,
+          "p99": 10954.7024
+        },
+        "submit_to_complete_ns": {
+          "mean": 11830.696,
+          "p50": 12446.12,
+          "p99": 15861.9792
+        },
+        "wr_count": 5
+      },
+      "2": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 10560,
+        "payload_throughput_gbps": 5.193770426494131,
+        "queue_wait_ns": {
+          "mean": 13.0,
+          "p50": 13.0,
+          "p99": 14.959999999999999
+        },
+        "ready_to_complete_ns": {
+          "mean": 2759.08,
+          "p50": 2759.08,
+          "p99": 3100.2767999999996
+        },
+        "scheduler_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "submit_to_complete_ns": {
+          "mean": 2759.08,
+          "p50": 2759.08,
+          "p99": 3100.2767999999996
+        },
+        "wr_count": 5
+      },
+      "3": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 8448,
+        "payload_throughput_gbps": 4.155016341195305,
+        "queue_wait_ns": {
+          "mean": 17.5,
+          "p50": 17.5,
+          "p99": 18.97
+        },
+        "ready_to_complete_ns": {
+          "mean": 3542.44,
+          "p50": 3542.44,
+          "p99": 3798.3376
+        },
+        "scheduler_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "submit_to_complete_ns": {
+          "mean": 3542.44,
+          "p50": 3542.44,
+          "p99": 3798.3376
+        },
+        "wr_count": 4
+      },
+      "4": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 14784,
+        "payload_throughput_gbps": 7.271278597091784,
+        "queue_wait_ns": {
+          "mean": 2332.6800000000003,
+          "p50": 1147.9,
+          "p99": 6845.704000000001
+        },
+        "ready_to_complete_ns": {
+          "mean": 7031.72,
+          "p50": 5708.200000000001,
+          "p99": 12473.512
+        },
+        "scheduler_wait_ns": {
+          "mean": 2310.1800000000003,
+          "p50": 1125.4,
+          "p99": 6820.754000000001
+        },
+        "submit_to_complete_ns": {
+          "mean": 7031.72,
+          "p50": 5708.200000000001,
+          "p99": 12473.512
+        },
+        "wr_count": 6
+      },
+      "5": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 10560,
+        "payload_throughput_gbps": 5.193770426494131,
+        "queue_wait_ns": {
+          "mean": 3664.07,
+          "p50": 3661.32,
+          "p99": 7228.833599999999
+        },
+        "ready_to_complete_ns": {
+          "mean": 8647.08,
+          "p50": 8478.12,
+          "p99": 12706.267199999998
+        },
+        "scheduler_wait_ns": {
+          "mean": 3636.57,
+          "p50": 3633.82,
+          "p99": 7199.863600000001
+        },
+        "submit_to_complete_ns": {
+          "mean": 8647.08,
+          "p50": 8478.12,
+          "p99": 12706.267199999998
+        },
+        "wr_count": 4
+      },
+      "6": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 12672,
+        "payload_throughput_gbps": 6.232524511792957,
+        "queue_wait_ns": {
+          "mean": 5011.976000000001,
+          "p50": 5048.84,
+          "p99": 9473.1344
+        },
+        "ready_to_complete_ns": {
+          "mean": 10031.528,
+          "p50": 10034.6,
+          "p99": 14634.6128
+        },
+        "scheduler_wait_ns": {
+          "mean": 4979.976000000001,
+          "p50": 5016.84,
+          "p99": 9439.1744
+        },
+        "submit_to_complete_ns": {
+          "mean": 10031.528,
+          "p50": 10034.6,
+          "p99": 14634.6128
+        },
+        "wr_count": 5
+      },
+      "7": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 10560,
+        "payload_throughput_gbps": 5.193770426494131,
+        "queue_wait_ns": {
+          "mean": 4051.7200000000003,
+          "p50": 4009.48,
+          "p99": 7740.8848
+        },
+        "ready_to_complete_ns": {
+          "mean": 9079.720000000001,
+          "p50": 8995.24,
+          "p99": 13054.4272
+        },
+        "scheduler_wait_ns": {
+          "mean": 4015.2200000000003,
+          "p50": 3972.98,
+          "p99": 7702.9148
+        },
+        "submit_to_complete_ns": {
+          "mean": 9079.720000000001,
+          "p50": 8995.24,
+          "p99": 13054.4272
+        },
+        "wr_count": 4
+      },
+      "8": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 10560,
+        "payload_throughput_gbps": 5.193770426494131,
+        "queue_wait_ns": {
+          "mean": 4268.04,
+          "p50": 4183.5599999999995,
+          "p99": 7914.9648
+        },
+        "ready_to_complete_ns": {
+          "mean": 9296.04,
+          "p50": 9253.8,
+          "p99": 13233.576
+        },
+        "scheduler_wait_ns": {
+          "mean": 4227.54,
+          "p50": 4143.0599999999995,
+          "p99": 7872.9947999999995
+        },
+        "submit_to_complete_ns": {
+          "mean": 9296.04,
+          "p50": 9253.8,
+          "p99": 13233.576
+        },
+        "wr_count": 4
+      },
+      "9": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 14784,
+        "payload_throughput_gbps": 7.271278597091784,
+        "queue_wait_ns": {
+          "mean": 5532.168,
+          "p50": 5740.04,
+          "p99": 9661.140800000001
+        },
+        "ready_to_complete_ns": {
+          "mean": 10619.304,
+          "p50": 10894.76,
+          "p99": 14829.3776
+        },
+        "scheduler_wait_ns": {
+          "mean": 5487.168,
+          "p50": 5695.04,
+          "p99": 9614.1808
+        },
+        "submit_to_complete_ns": {
+          "mean": 10619.304,
+          "p50": 10894.76,
+          "p99": 14829.3776
+        },
+        "wr_count": 5
+      }
+    },
+    "policy": "rr",
+    "queue_wait_ns": {
+      "mean": 3963.7542857142857,
+      "p50": 3144.2,
+      "p99": 11357.0896
+    },
+    "ready_to_complete_ns": {
+      "mean": 8281.365714285716,
+      "p50": 8129.96,
+      "p99": 16133.339199999999
+    },
+    "result_schema": "wr-results/1.0",
+    "scenario": "moe_low",
+    "scheduler_wait_ns": {
+      "mean": 3924.7542857142857,
+      "p50": 3100.2,
+      "p99": 11293.449599999998
+    },
+    "submit_to_complete_ns": {
+      "mean": 8281.365714285716,
+      "p50": 8129.96,
+      "p99": 16133.339199999999
+    },
+    "trace_sha256": "c8b180ca40dfa24a408951fc233600fc589ac31cb98f0e9e682da096a3e6a6ca",
+    "wr_count": 77
+  },
+  {
+    "admission_wait_ns": {
+      "mean": 0.0,
+      "p50": 0.0,
+      "p99": 0.0
+    },
+    "event_counts": {
+      "ack_chunk": 77,
+      "ack_rx_wire": 77,
+      "ack_tx_end": 77,
+      "ack_tx_start": 77,
+      "complete": 77,
+      "dequeue": 77,
+      "dispatch": 77,
+      "eligible": 77,
+      "enqueue": 77,
+      "memory_commit": 77,
+      "ordered": 77,
+      "ready": 77,
+      "rx_wire": 77,
+      "submit": 77,
+      "tx_chunk": 3146,
+      "tx_end": 77,
+      "tx_start": 77
+    },
+    "fairness": {
+      "invalid_reason": "not continuously backlogged for every active Jetty under every compared policy",
+      "minimum_scheduler_queue": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 1,
+        "6": 2,
+        "7": 1,
+        "8": 1,
+        "9": 3,
+        "10": 1,
+        "11": 3,
+        "12": 4,
+        "13": 2,
+        "14": 3,
+        "15": 3
+      },
+      "payload_bytes": {
+        "0": 0.0,
+        "1": 1246.5,
+        "2": 10560.0,
+        "3": 8448.0,
+        "4": 10560.0,
+        "5": 4224.0,
+        "6": 2112.0,
+        "7": 2112.0,
+        "8": 2112.0,
+        "9": 2112.0,
+        "10": 0.0,
+        "11": 2112.0,
+        "12": 2112.0,
+        "13": 945.5,
+        "14": 0.0,
+        "15": 0.0
+      },
+      "payload_jain": null,
+      "selection": "no common all-Jetty queued interval exists",
+      "valid_all_jetties_backlogged": false,
+      "valid_common_policy_window": false,
+      "window_ns": [
+        2000,
+        6000
+      ],
+      "wire_bytes": {
+        "0": 0.0,
+        "1": 1246.5,
+        "2": 10880.0,
+        "3": 8704.0,
+        "4": 10816.0,
+        "5": 4288.0,
+        "6": 2176.0,
+        "7": 2176.0,
+        "8": 2176.0,
+        "9": 2176.0,
+        "10": 0.0,
+        "11": 2176.0,
+        "12": 2176.0,
+        "13": 1009.5,
+        "14": 0.0,
+        "15": 0.0
+      },
+      "wire_jain": null
+    },
+    "finish_ps": 16265640,
+    "makespan_ns": 16265.64,
+    "origin_ps": 0,
+    "payload_bytes": 196416,
+    "payload_throughput_gbps": 96.60412993279084,
+    "per_jetty": {
+      "0": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 14784,
+        "payload_throughput_gbps": 7.271278597091784,
+        "queue_wait_ns": {
+          "mean": 3.5,
+          "p50": 3.5,
+          "p99": 5.95
+        },
+        "ready_to_complete_ns": {
+          "mean": 880.04,
+          "p50": 936.36,
+          "p99": 1362.856
+        },
+        "scheduler_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "submit_to_complete_ns": {
+          "mean": 880.04,
+          "p50": 936.36,
+          "p99": 1362.856
+        },
+        "wr_count": 6
+      },
+      "1": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 10560,
+        "payload_throughput_gbps": 5.193770426494131,
+        "queue_wait_ns": {
+          "mean": 8.5,
+          "p50": 8.5,
+          "p99": 9.969999999999999
+        },
+        "ready_to_complete_ns": {
+          "mean": 1975.72,
+          "p50": 1975.7200000000003,
+          "p99": 2231.6176
+        },
+        "scheduler_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "submit_to_complete_ns": {
+          "mean": 1975.72,
+          "p50": 1975.7200000000003,
+          "p99": 2231.6176
+        },
+        "wr_count": 4
+      },
+      "10": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 10560,
+        "payload_throughput_gbps": 5.193770426494131,
+        "queue_wait_ns": {
+          "mean": 5110.28,
+          "p50": 4705.8,
+          "p99": 7425.3392
+        },
+        "ready_to_complete_ns": {
+          "mean": 10152.36,
+          "p50": 9522.6,
+          "p99": 12904.462399999999
+        },
+        "scheduler_wait_ns": {
+          "mean": 5061.28,
+          "p50": 4656.8,
+          "p99": 7375.359200000001
+        },
+        "submit_to_complete_ns": {
+          "mean": 10152.36,
+          "p50": 9522.6,
+          "p99": 12904.462399999999
+        },
+        "wr_count": 3
+      },
+      "11": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 12672,
+        "payload_throughput_gbps": 6.232524511792957,
+        "queue_wait_ns": {
+          "mean": 6091.272,
+          "p50": 6267.4,
+          "p99": 9350.8688
+        },
+        "ready_to_complete_ns": {
+          "mean": 11245.992,
+          "p50": 11591.08,
+          "p99": 14843.5088
+        },
+        "scheduler_wait_ns": {
+          "mean": 6038.272,
+          "p50": 6214.4,
+          "p99": 9295.908800000001
+        },
+        "submit_to_complete_ns": {
+          "mean": 11245.992,
+          "p50": 11591.08,
+          "p99": 14843.5088
+        },
+        "wr_count": 5
+      },
+      "12": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 14784,
+        "payload_throughput_gbps": 7.271278597091784,
+        "queue_wait_ns": {
+          "mean": 6782.813333333334,
+          "p50": 7567.88,
+          "p99": 10876.423999999999
+        },
+        "ready_to_complete_ns": {
+          "mean": 11909.373333333335,
+          "p50": 13060.52,
+          "p99": 16039.591999999999
+        },
+        "scheduler_wait_ns": {
+          "mean": 6724.313333333334,
+          "p50": 7509.38,
+          "p99": 10815.474
+        },
+        "submit_to_complete_ns": {
+          "mean": 11909.373333333335,
+          "p50": 13060.52,
+          "p99": 16039.591999999999
+        },
+        "wr_count": 6
+      },
+      "13": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 12672,
+        "payload_throughput_gbps": 6.232524511792957,
+        "queue_wait_ns": {
+          "mean": 5397.0,
+          "p50": 5222.92,
+          "p99": 9771.1184
+        },
+        "ready_to_complete_ns": {
+          "mean": 10416.552,
+          "p50": 10039.72,
+          "p99": 15263.7584
+        },
+        "scheduler_wait_ns": {
+          "mean": 5333.0,
+          "p50": 5158.92,
+          "p99": 9705.1584
+        },
+        "submit_to_complete_ns": {
+          "mean": 10416.552,
+          "p50": 10039.72,
+          "p99": 15263.7584
+        },
+        "wr_count": 5
+      },
+      "14": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 12672,
+        "payload_throughput_gbps": 6.232524511792957,
+        "queue_wait_ns": {
+          "mean": 6120.626666666667,
+          "p50": 6093.32,
+          "p99": 10016.264
+        },
+        "ready_to_complete_ns": {
+          "mean": 11219.026666666667,
+          "p50": 11248.04,
+          "p99": 15508.904
+        },
+        "scheduler_wait_ns": {
+          "mean": 6051.126666666667,
+          "p50": 6023.82,
+          "p99": 9944.314
+        },
+        "submit_to_complete_ns": {
+          "mean": 11219.026666666667,
+          "p50": 11248.04,
+          "p99": 15508.904
+        },
+        "wr_count": 6
+      },
+      "15": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 14784,
+        "payload_throughput_gbps": 7.271278597091784,
+        "queue_wait_ns": {
+          "mean": 7438.856,
+          "p50": 7823.88,
+          "p99": 11245.4736
+        },
+        "ready_to_complete_ns": {
+          "mean": 12492.2,
+          "p50": 13316.52,
+          "p99": 16244.750399999999
+        },
+        "scheduler_wait_ns": {
+          "mean": 7363.856,
+          "p50": 7748.88,
+          "p99": 11168.5136
+        },
+        "submit_to_complete_ns": {
+          "mean": 12492.2,
+          "p50": 13316.52,
+          "p99": 16244.750399999999
+        },
+        "wr_count": 5
+      },
+      "2": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 10560,
+        "payload_throughput_gbps": 5.193770426494131,
+        "queue_wait_ns": {
+          "mean": 13.0,
+          "p50": 13.0,
+          "p99": 14.959999999999999
+        },
+        "ready_to_complete_ns": {
+          "mean": 2759.08,
+          "p50": 2759.08,
+          "p99": 3100.2767999999996
+        },
+        "scheduler_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "submit_to_complete_ns": {
+          "mean": 2759.08,
+          "p50": 2759.08,
+          "p99": 3100.2767999999996
+        },
+        "wr_count": 5
+      },
+      "3": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 8448,
+        "payload_throughput_gbps": 4.155016341195305,
+        "queue_wait_ns": {
+          "mean": 17.5,
+          "p50": 17.5,
+          "p99": 18.97
+        },
+        "ready_to_complete_ns": {
+          "mean": 3542.44,
+          "p50": 3542.44,
+          "p99": 3798.3376
+        },
+        "scheduler_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "submit_to_complete_ns": {
+          "mean": 3542.44,
+          "p50": 3542.44,
+          "p99": 3798.3376
+        },
+        "wr_count": 4
+      },
+      "4": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 14784,
+        "payload_throughput_gbps": 7.271278597091784,
+        "queue_wait_ns": {
+          "mean": 1090.2266666666667,
+          "p50": 108.54,
+          "p99": 3922.6960000000004
+        },
+        "ready_to_complete_ns": {
+          "mean": 5535.826666666667,
+          "p50": 4668.84,
+          "p99": 8562.088
+        },
+        "scheduler_wait_ns": {
+          "mean": 1067.7266666666667,
+          "p50": 86.04,
+          "p99": 3897.7460000000005
+        },
+        "submit_to_complete_ns": {
+          "mean": 5535.826666666667,
+          "p50": 4668.84,
+          "p99": 8562.088
+        },
+        "wr_count": 6
+      },
+      "5": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 10560,
+        "payload_throughput_gbps": 5.193770426494131,
+        "queue_wait_ns": {
+          "mean": 3533.32,
+          "p50": 3315.7200000000003,
+          "p99": 7044.206399999999
+        },
+        "ready_to_complete_ns": {
+          "mean": 8350.12,
+          "p50": 7879.08,
+          "p99": 12347.6112
+        },
+        "scheduler_wait_ns": {
+          "mean": 3505.82,
+          "p50": 3288.2200000000003,
+          "p99": 7015.2364
+        },
+        "submit_to_complete_ns": {
+          "mean": 8350.12,
+          "p50": 7879.08,
+          "p99": 12347.6112
+        },
+        "wr_count": 4
+      },
+      "6": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 12672,
+        "payload_throughput_gbps": 6.232524511792957,
+        "queue_wait_ns": {
+          "mean": 4463.264,
+          "p50": 4357.64,
+          "p99": 7970.312
+        },
+        "ready_to_complete_ns": {
+          "mean": 9413.032000000001,
+          "p50": 9005.48,
+          "p99": 13456.1936
+        },
+        "scheduler_wait_ns": {
+          "mean": 4431.264,
+          "p50": 4325.64,
+          "p99": 7936.352000000001
+        },
+        "submit_to_complete_ns": {
+          "mean": 9413.032000000001,
+          "p50": 9005.48,
+          "p99": 13456.1936
+        },
+        "wr_count": 5
+      },
+      "7": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 10560,
+        "payload_throughput_gbps": 5.193770426494131,
+        "queue_wait_ns": {
+          "mean": 4790.28,
+          "p50": 5138.4400000000005,
+          "p99": 8099.2336
+        },
+        "ready_to_complete_ns": {
+          "mean": 9776.04,
+          "p50": 10039.720000000001,
+          "p99": 13576.6672
+        },
+        "scheduler_wait_ns": {
+          "mean": 4753.78,
+          "p50": 5101.9400000000005,
+          "p99": 8061.263599999999
+        },
+        "submit_to_complete_ns": {
+          "mean": 9776.04,
+          "p50": 10039.720000000001,
+          "p99": 13576.6672
+        },
+        "wr_count": 4
+      },
+      "8": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 10560,
+        "payload_throughput_gbps": 5.193770426494131,
+        "queue_wait_ns": {
+          "mean": 4486.92,
+          "p50": 4357.639999999999,
+          "p99": 8273.3136
+        },
+        "ready_to_complete_ns": {
+          "mean": 9472.68,
+          "p50": 9258.92,
+          "p99": 13755.815999999999
+        },
+        "scheduler_wait_ns": {
+          "mean": 4446.42,
+          "p50": 4317.139999999999,
+          "p99": 8231.3436
+        },
+        "submit_to_complete_ns": {
+          "mean": 9472.68,
+          "p50": 9258.92,
+          "p99": 13755.815999999999
+        },
+        "wr_count": 4
+      },
+      "9": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 14784,
+        "payload_throughput_gbps": 7.271278597091784,
+        "queue_wait_ns": {
+          "mean": 5985.8,
+          "p50": 6093.32,
+          "p99": 10538.503999999999
+        },
+        "ready_to_complete_ns": {
+          "mean": 11072.936,
+          "p50": 11417.0,
+          "p99": 15868.9424
+        },
+        "scheduler_wait_ns": {
+          "mean": 5940.8,
+          "p50": 6048.32,
+          "p99": 10491.543999999998
+        },
+        "submit_to_complete_ns": {
+          "mean": 11072.936,
+          "p50": 11417.0,
+          "p99": 15868.9424
+        },
+        "wr_count": 5
+      }
+    },
+    "policy": "drr",
+    "queue_wait_ns": {
+      "mean": 3865.0114285714285,
+      "p50": 3144.2,
+      "p99": 11019.1696
+    },
+    "ready_to_complete_ns": {
+      "mean": 8145.320000000001,
+      "p50": 7961.0,
+      "p99": 16133.339199999999
+    },
+    "result_schema": "wr-results/1.0",
+    "scenario": "moe_low",
+    "scheduler_wait_ns": {
+      "mean": 3826.0114285714285,
+      "p50": 3096.2,
+      "p99": 10954.3296
+    },
+    "submit_to_complete_ns": {
+      "mean": 8145.320000000001,
+      "p50": 7961.0,
+      "p99": 16133.339199999999
+    },
+    "trace_sha256": "c8b180ca40dfa24a408951fc233600fc589ac31cb98f0e9e682da096a3e6a6ca",
+    "wr_count": 77
+  },
+  {
+    "admission_wait_ns": {
+      "mean": 0.0,
+      "p50": 0.0,
+      "p99": 0.0
+    },
+    "event_counts": {
+      "ack_chunk": 2066,
+      "ack_rx_wire": 2066,
+      "ack_tx_end": 2066,
+      "ack_tx_start": 2066,
+      "complete": 2066,
+      "dequeue": 2066,
+      "dispatch": 2066,
+      "eligible": 2066,
+      "enqueue": 2066,
+      "memory_commit": 2066,
+      "ordered": 2066,
+      "ready": 2066,
+      "rx_wire": 2066,
+      "submit": 2066,
+      "tx_chunk": 401432,
+      "tx_end": 2066,
+      "tx_start": 2066
+    },
+    "fairness": {
+      "initial_diagnostic_window_ns": [
+        100000,
+        500000
+      ],
+      "invalid_reason": null,
+      "minimum_scheduler_queue": {
+        "0": 1,
+        "1": 128,
+        "2": 131,
+        "3": 129,
+        "4": 132,
+        "5": 126,
+        "6": 128,
+        "7": 130,
+        "8": 127,
+        "9": 127,
+        "10": 130,
+        "11": 132,
+        "12": 131,
+        "13": 129,
+        "14": 128,
+        "15": 1
+      },
+      "payload_bytes": {
+        "0": 1277145.5,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0,
+        "7": 0.0,
+        "8": 0.0,
+        "9": 0.0,
+        "10": 0.0,
+        "11": 0.0,
+        "12": 0.0,
+        "13": 0.0,
+        "14": 0.0,
+        "15": 0.0
+      },
+      "payload_jain": 0.0625,
+      "selection": "longest common all-Jetty queued interval; inward integer-ns rounding",
+      "valid_all_jetties_backlogged": true,
+      "valid_common_policy_window": true,
+      "window_ns": [
+        1938,
+        104637
+      ],
+      "wire_bytes": {
+        "0": 1283737.5,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0,
+        "7": 0.0,
+        "8": 0.0,
+        "9": 0.0,
+        "10": 0.0,
+        "11": 0.0,
+        "12": 0.0,
+        "13": 0.0,
+        "14": 0.0,
+        "15": 0.0
+      },
+      "wire_jain": 0.0625
+    },
+    "finish_ps": 2055489960,
+    "makespan_ns": 2055489.96,
+    "origin_ps": 0,
+    "payload_bytes": 25559424,
+    "payload_throughput_gbps": 99.47768949452811,
+    "per_jetty": {
+      "0": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1575552,
+        "payload_throughput_gbps": 6.132073736813582,
+        "queue_wait_ns": {
+          "mean": 43190.893125,
+          "p50": 40614.92,
+          "p99": 103343.98240000001
+        },
+        "ready_to_complete_ns": {
+          "mean": 64219.28,
+          "p50": 64017.32,
+          "p99": 126239.5024
+        },
+        "scheduler_wait_ns": {
+          "mean": 43126.393125,
+          "p50": 40550.42,
+          "p99": 103217.25240000001
+        },
+        "submit_to_complete_ns": {
+          "mean": 64219.28,
+          "p50": 64017.32,
+          "p99": 126239.5024
+        },
+        "wr_count": 128
+      },
+      "1": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1598784,
+        "payload_throughput_gbps": 6.222493054648635,
+        "queue_wait_ns": {
+          "mean": 168580.32,
+          "p50": 168328.2,
+          "p99": 231057.2624
+        },
+        "ready_to_complete_ns": {
+          "mean": 191722.68,
+          "p50": 191730.6,
+          "p99": 254290.7024
+        },
+        "scheduler_wait_ns": {
+          "mean": 168387.82,
+          "p50": 168135.7,
+          "p99": 230802.53240000003
+        },
+        "submit_to_complete_ns": {
+          "mean": 191722.68,
+          "p50": 191730.6,
+          "p99": 254290.7024
+        },
+        "wr_count": 128
+      },
+      "10": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1613568,
+        "payload_throughput_gbps": 6.280032620543668,
+        "queue_wait_ns": {
+          "mean": 1320988.6012307692,
+          "p50": 1320824.8399999999,
+          "p99": 1384383.4448
+        },
+        "ready_to_complete_ns": {
+          "mean": 1344158.3563076924,
+          "p50": 1344396.2,
+          "p99": 1407616.8848
+        },
+        "scheduler_wait_ns": {
+          "mean": 1319637.1012307692,
+          "p50": 1319473.3399999999,
+          "p99": 1382968.7348
+        },
+        "submit_to_complete_ns": {
+          "mean": 1344158.3563076924,
+          "p50": 1344396.2,
+          "p99": 1407616.8848
+        },
+        "wr_count": 130
+      },
+      "11": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1636800,
+        "payload_throughput_gbps": 6.3704519383787215,
+        "queue_wait_ns": {
+          "mean": 1452004.36,
+          "p50": 1452101.6400000001,
+          "p99": 1516151.8672
+        },
+        "ready_to_complete_ns": {
+          "mean": 1475080.36,
+          "p50": 1475166.12,
+          "p99": 1539216.3472
+        },
+        "scheduler_wait_ns": {
+          "mean": 1450521.86,
+          "p50": 1450619.1400000001,
+          "p99": 1514605.1772
+        },
+        "submit_to_complete_ns": {
+          "mean": 1475080.36,
+          "p50": 1475166.12,
+          "p99": 1539216.3472
+        },
+        "wr_count": 132
+      },
+      "12": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1624128,
+        "payload_throughput_gbps": 6.321132310468692,
+        "queue_wait_ns": {
+          "mean": 1583054.6879389314,
+          "p50": 1582705.16,
+          "p99": 1646594.0559999999
+        },
+        "ready_to_complete_ns": {
+          "mean": 1606053.3896183206,
+          "p50": 1606276.52,
+          "p99": 1669320.616
+        },
+        "scheduler_wait_ns": {
+          "mean": 1581440.6879389314,
+          "p50": 1581091.16,
+          "p99": 1644916.3560000001
+        },
+        "submit_to_complete_ns": {
+          "mean": 1606053.3896183206,
+          "p50": 1606276.52,
+          "p99": 1669320.616
+        },
+        "wr_count": 131
+      },
+      "13": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1596672,
+        "payload_throughput_gbps": 6.21427311666363,
+        "queue_wait_ns": {
+          "mean": 1712605.513488372,
+          "p50": 1712963.08,
+          "p99": 1774839.7136
+        },
+        "ready_to_complete_ns": {
+          "mean": 1735617.6027906977,
+          "p50": 1736196.52,
+          "p99": 1797735.2336
+        },
+        "scheduler_wait_ns": {
+          "mean": 1710861.513488372,
+          "p50": 1711219.08,
+          "p99": 1773032.9936000002
+        },
+        "submit_to_complete_ns": {
+          "mean": 1735617.6027906977,
+          "p50": 1736196.52,
+          "p99": 1797735.2336
+        },
+        "wr_count": 129
+      },
+      "14": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1581888,
+        "payload_throughput_gbps": 6.156733550768596,
+        "queue_wait_ns": {
+          "mean": 1840605.0,
+          "p50": 1840509.96,
+          "p99": 1902563.1824
+        },
+        "ready_to_complete_ns": {
+          "mean": 1863715.68,
+          "p50": 1864081.3199999998,
+          "p99": 1925627.6624
+        },
+        "scheduler_wait_ns": {
+          "mean": 1838732.5,
+          "p50": 1838637.46,
+          "p99": 1900628.4523999998
+        },
+        "submit_to_complete_ns": {
+          "mean": 1863715.68,
+          "p50": 1864081.3199999998,
+          "p99": 1925627.6624
+        },
+        "wr_count": 128
+      },
+      "15": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1607232,
+        "payload_throughput_gbps": 6.255372806588654,
+        "queue_wait_ns": {
+          "mean": 1968396.0203076922,
+          "p50": 1967721.48,
+          "p99": 2031786.9648000002
+        },
+        "ready_to_complete_ns": {
+          "mean": 1991370.8215384616,
+          "p50": 1991123.88,
+          "p99": 2054682.4848
+        },
+        "scheduler_wait_ns": {
+          "mean": 1966394.5203076922,
+          "p50": 1965719.98,
+          "p99": 2029722.2547999998
+        },
+        "submit_to_complete_ns": {
+          "mean": 1991370.8215384616,
+          "p50": 1991123.88,
+          "p99": 2054682.4848
+        },
+        "wr_count": 130
+      },
+      "2": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1611456,
+        "payload_throughput_gbps": 6.2718126825586635,
+        "queue_wait_ns": {
+          "mean": 297863.86778625957,
+          "p50": 297738.76,
+          "p99": 361458.69599999994
+        },
+        "ready_to_complete_ns": {
+          "mean": 320869.0183206107,
+          "p50": 320465.32,
+          "p99": 384523.17600000004
+        },
+        "scheduler_wait_ns": {
+          "mean": 297541.86778625957,
+          "p50": 297416.76,
+          "p99": 361072.996
+        },
+        "submit_to_complete_ns": {
+          "mean": 320869.0183206107,
+          "p50": 320465.32,
+          "p99": 384523.17600000004
+        },
+        "wr_count": 131
+      },
+      "3": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1590336,
+        "payload_throughput_gbps": 6.189613302708615,
+        "queue_wait_ns": {
+          "mean": 426768.1181395349,
+          "p50": 426982.92,
+          "p99": 488690.59359999996
+        },
+        "ready_to_complete_ns": {
+          "mean": 449634.823255814,
+          "p50": 449878.44,
+          "p99": 512092.99360000005
+        },
+        "scheduler_wait_ns": {
+          "mean": 426316.1181395349,
+          "p50": 426530.92,
+          "p99": 488175.8736
+        },
+        "submit_to_complete_ns": {
+          "mean": 449634.823255814,
+          "p50": 449878.44,
+          "p99": 512092.99360000005
+        },
+        "wr_count": 129
+      },
+      "4": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1624128,
+        "payload_throughput_gbps": 6.321132310468692,
+        "queue_wait_ns": {
+          "mean": 556006.9199999999,
+          "p50": 555891.72,
+          "p99": 619772.9872
+        },
+        "ready_to_complete_ns": {
+          "mean": 578963.88,
+          "p50": 579125.1599999999,
+          "p99": 643006.4272
+        },
+        "scheduler_wait_ns": {
+          "mean": 555424.4199999999,
+          "p50": 555309.22,
+          "p99": 619126.2971999999
+        },
+        "submit_to_complete_ns": {
+          "mean": 578963.88,
+          "p50": 579125.1599999999,
+          "p99": 643006.4272
+        },
+        "wr_count": 132
+      },
+      "5": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1564992,
+        "payload_throughput_gbps": 6.090974046888558,
+        "queue_wait_ns": {
+          "mean": 684192.0933333334,
+          "p50": 683948.04,
+          "p99": 745509.64
+        },
+        "ready_to_complete_ns": {
+          "mean": 707215.0038095239,
+          "p50": 707181.48,
+          "p99": 768236.2000000001
+        },
+        "scheduler_wait_ns": {
+          "mean": 683480.5933333334,
+          "p50": 683236.54,
+          "p99": 744736.89
+        },
+        "submit_to_complete_ns": {
+          "mean": 707215.0038095239,
+          "p50": 707181.48,
+          "p99": 768236.2000000001
+        },
+        "wr_count": 126
+      },
+      "6": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1584000,
+        "payload_throughput_gbps": 6.164953488753601,
+        "queue_wait_ns": {
+          "mean": 810668.84,
+          "p50": 810642.44,
+          "p99": 872864.6224
+        },
+        "ready_to_complete_ns": {
+          "mean": 833774.24,
+          "p50": 833706.9199999999,
+          "p99": 896267.0224
+        },
+        "scheduler_wait_ns": {
+          "mean": 809830.34,
+          "p50": 809803.94,
+          "p99": 871963.8924
+        },
+        "submit_to_complete_ns": {
+          "mean": 833774.24,
+          "p50": 833706.9199999999,
+          "p99": 896267.0224
+        },
+        "wr_count": 128
+      },
+      "7": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1609344,
+        "payload_throughput_gbps": 6.263592744573659,
+        "queue_wait_ns": {
+          "mean": 938985.992,
+          "p50": 938698.76,
+          "p99": 1002257.3647999999
+        },
+        "ready_to_complete_ns": {
+          "mean": 962019.2793846154,
+          "p50": 961763.24,
+          "p99": 1025659.7648
+        },
+        "scheduler_wait_ns": {
+          "mean": 938018.492,
+          "p50": 937731.26,
+          "p99": 1001226.6547999999
+        },
+        "submit_to_complete_ns": {
+          "mean": 962019.2793846154,
+          "p50": 961763.24,
+          "p99": 1025659.7648
+        },
+        "wr_count": 130
+      },
+      "8": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1569216,
+        "payload_throughput_gbps": 6.1074139228585675,
+        "queue_wait_ns": {
+          "mean": 1066813.718110236,
+          "p50": 1066752.52,
+          "p99": 1128475.4512
+        },
+        "ready_to_complete_ns": {
+          "mean": 1089709.2381102364,
+          "p50": 1089479.08,
+          "p99": 1151202.0111999998
+        },
+        "scheduler_wait_ns": {
+          "mean": 1065717.718110236,
+          "p50": 1065656.52,
+          "p99": 1127317.7112
+        },
+        "submit_to_complete_ns": {
+          "mean": 1089709.2381102364,
+          "p50": 1089479.08,
+          "p99": 1151202.0111999998
+        },
+        "wr_count": 127
+      },
+      "9": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1571328,
+        "payload_throughput_gbps": 6.115633860843572,
+        "queue_wait_ns": {
+          "mean": 1193244.7001574803,
+          "p50": 1193615.88,
+          "p99": 1254325.0512
+        },
+        "ready_to_complete_ns": {
+          "mean": 1216229.356535433,
+          "p50": 1216342.44,
+          "p99": 1277389.5312
+        },
+        "scheduler_wait_ns": {
+          "mean": 1192021.7001574803,
+          "p50": 1192392.88,
+          "p99": 1253040.3111999999
+        },
+        "submit_to_complete_ns": {
+          "mean": 1216229.356535433,
+          "p50": 1216342.44,
+          "p99": 1277389.5312
+        },
+        "wr_count": 127
+      }
+    },
+    "policy": "fifo",
+    "queue_wait_ns": {
+      "mean": 1005242.2980058084,
+      "p50": 1005100.04,
+      "p99": 2012230.4079999998
+    },
+    "ready_to_complete_ns": {
+      "mean": 1028142.3572894483,
+      "p50": 1027657.6399999999,
+      "p99": 2035632.808
+    },
+    "result_schema": "wr-results/1.0",
+    "scenario": "moe_high",
+    "scheduler_wait_ns": {
+      "mean": 1004208.7980058084,
+      "p50": 1004066.54,
+      "p99": 2010185.0579999997
+    },
+    "submit_to_complete_ns": {
+      "mean": 1028142.3572894483,
+      "p50": 1027657.6399999999,
+      "p99": 2035632.808
+    },
+    "trace_sha256": "da08bedeacd123172563f938a1dcb6e90d2f9179c281ae7a2d61dfc540e6b0fc",
+    "wr_count": 2066
+  },
+  {
+    "admission_wait_ns": {
+      "mean": 0.0,
+      "p50": 0.0,
+      "p99": 0.0
+    },
+    "event_counts": {
+      "ack_chunk": 2066,
+      "ack_rx_wire": 2066,
+      "ack_tx_end": 2066,
+      "ack_tx_start": 2066,
+      "complete": 2066,
+      "dequeue": 2066,
+      "dispatch": 2066,
+      "eligible": 2066,
+      "enqueue": 2066,
+      "memory_commit": 2066,
+      "ordered": 2066,
+      "ready": 2066,
+      "rx_wire": 2066,
+      "submit": 2066,
+      "tx_chunk": 401432,
+      "tx_end": 2066,
+      "tx_start": 2066
+    },
+    "fairness": {
+      "initial_diagnostic_window_ns": [
+        100000,
+        500000
+      ],
+      "invalid_reason": null,
+      "minimum_scheduler_queue": {
+        "0": 99,
+        "1": 121,
+        "2": 124,
+        "3": 122,
+        "4": 125,
+        "5": 119,
+        "6": 121,
+        "7": 123,
+        "8": 121,
+        "9": 121,
+        "10": 124,
+        "11": 126,
+        "12": 125,
+        "13": 123,
+        "14": 122,
+        "15": 1
+      },
+      "payload_bytes": {
+        "0": 320421.5,
+        "1": 69748.0,
+        "2": 63360.0,
+        "3": 63360.0,
+        "4": 63360.0,
+        "5": 63360.0,
+        "6": 63360.0,
+        "7": 63360.0,
+        "8": 63360.0,
+        "9": 63360.0,
+        "10": 63360.0,
+        "11": 63360.0,
+        "12": 63360.0,
+        "13": 63360.0,
+        "14": 63360.0,
+        "15": 63360.0
+      },
+      "payload_jain": 0.6226671326239891,
+      "selection": "longest common all-Jetty queued interval; inward integer-ns rounding",
+      "valid_all_jetties_backlogged": true,
+      "valid_common_policy_window": true,
+      "window_ns": [
+        1938,
+        104637
+      ],
+      "wire_bytes": {
+        "0": 322085.5,
+        "1": 70132.0,
+        "2": 63680.0,
+        "3": 63680.0,
+        "4": 63680.0,
+        "5": 63680.0,
+        "6": 63680.0,
+        "7": 63680.0,
+        "8": 63680.0,
+        "9": 63680.0,
+        "10": 63680.0,
+        "11": 63680.0,
+        "12": 63680.0,
+        "13": 63680.0,
+        "14": 63680.0,
+        "15": 63680.0
+      },
+      "wire_jain": 0.6226146817324042
+    },
+    "finish_ps": 2055489960,
+    "makespan_ns": 2055489.96,
+    "origin_ps": 0,
+    "payload_bytes": 25559424,
+    "payload_throughput_gbps": 99.47768949452811,
+    "per_jetty": {
+      "0": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1575552,
+        "payload_throughput_gbps": 6.132073736813582,
+        "queue_wait_ns": {
+          "mean": 694496.773125,
+          "p50": 661519.88,
+          "p99": 1656061.0384
+        },
+        "ready_to_complete_ns": {
+          "mean": 715638.6799999999,
+          "p50": 685091.24,
+          "p99": 1679632.3983999998
+        },
+        "scheduler_wait_ns": {
+          "mean": 694432.273125,
+          "p50": 661455.38,
+          "p99": 1655934.3084
+        },
+        "submit_to_complete_ns": {
+          "mean": 715638.6799999999,
+          "p50": 685091.24,
+          "p99": 1679632.3983999998
+        },
+        "wr_count": 128
+      },
+      "1": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1598784,
+        "payload_throughput_gbps": 6.222493054648635,
+        "queue_wait_ns": {
+          "mean": 1012891.36,
+          "p50": 1015101.96,
+          "p99": 1986494.216
+        },
+        "ready_to_complete_ns": {
+          "mean": 1035967.72,
+          "p50": 1038673.3200000001,
+          "p99": 2009942.2352000002
+        },
+        "scheduler_wait_ns": {
+          "mean": 1012698.86,
+          "p50": 1014909.46,
+          "p99": 1986239.486
+        },
+        "submit_to_complete_ns": {
+          "mean": 1035967.72,
+          "p50": 1038673.3200000001,
+          "p99": 2009942.2352000002
+        },
+        "wr_count": 128
+      },
+      "10": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1613568,
+        "payload_throughput_gbps": 6.280032620543668,
+        "queue_wait_ns": {
+          "mean": 1037259.7446153847,
+          "p50": 1040573.96,
+          "p99": 2017943.4063999997
+        },
+        "ready_to_complete_ns": {
+          "mean": 1060303.4295384616,
+          "p50": 1064145.32,
+          "p99": 2039612.2767999999
+        },
+        "scheduler_wait_ns": {
+          "mean": 1035908.2446153847,
+          "p50": 1039222.46,
+          "p99": 2016528.6963999998
+        },
+        "submit_to_complete_ns": {
+          "mean": 1060303.4295384616,
+          "p50": 1064145.32,
+          "p99": 2039612.2767999999
+        },
+        "wr_count": 130
+      },
+      "11": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1636800,
+        "payload_throughput_gbps": 6.3704519383787215,
+        "queue_wait_ns": {
+          "mean": 1053363.0993939394,
+          "p50": 1057894.92,
+          "p99": 2032782.344
+        },
+        "ready_to_complete_ns": {
+          "mean": 1076354.6193939394,
+          "p50": 1081466.28,
+          "p99": 2052624.7568
+        },
+        "scheduler_wait_ns": {
+          "mean": 1051880.5993939394,
+          "p50": 1056412.42,
+          "p99": 2031235.654
+        },
+        "submit_to_complete_ns": {
+          "mean": 1076354.6193939394,
+          "p50": 1081466.28,
+          "p99": 2052624.7568
+        },
+        "wr_count": 132
+      },
+      "12": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1624128,
+        "payload_throughput_gbps": 6.321132310468692,
+        "queue_wait_ns": {
+          "mean": 1046863.0787786259,
+          "p50": 1050762.76,
+          "p99": 2028474.376
+        },
+        "ready_to_complete_ns": {
+          "mean": 1069877.2577099237,
+          "p50": 1074334.12,
+          "p99": 2049021.352
+        },
+        "scheduler_wait_ns": {
+          "mean": 1045249.0787786259,
+          "p50": 1049148.76,
+          "p99": 2026796.676
+        },
+        "submit_to_complete_ns": {
+          "mean": 1069877.2577099237,
+          "p50": 1074334.12,
+          "p99": 2049021.352
+        },
+        "wr_count": 131
+      },
+      "13": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1596672,
+        "payload_throughput_gbps": 6.21427311666363,
+        "queue_wait_ns": {
+          "mean": 1032570.8443410853,
+          "p50": 1035479.56,
+          "p99": 2010509.832
+        },
+        "ready_to_complete_ns": {
+          "mean": 1055631.3950387598,
+          "p50": 1059050.92,
+          "p99": 2033135.016
+        },
+        "scheduler_wait_ns": {
+          "mean": 1030826.8443410853,
+          "p50": 1033735.56,
+          "p99": 2008703.1119999997
+        },
+        "submit_to_complete_ns": {
+          "mean": 1055631.3950387598,
+          "p50": 1059050.92,
+          "p99": 2033135.016
+        },
+        "wr_count": 129
+      },
+      "14": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1581888,
+        "payload_throughput_gbps": 6.156733550768596,
+        "queue_wait_ns": {
+          "mean": 1025826.44,
+          "p50": 1028347.3999999999,
+          "p99": 1998872.5328000002
+        },
+        "ready_to_complete_ns": {
+          "mean": 1048893.56,
+          "p50": 1051918.76,
+          "p99": 2022274.9328
+        },
+        "scheduler_wait_ns": {
+          "mean": 1023953.94,
+          "p50": 1026474.8999999999,
+          "p99": 1996937.8028000002
+        },
+        "submit_to_complete_ns": {
+          "mean": 1048893.56,
+          "p50": 1051918.76,
+          "p99": 2022274.9328
+        },
+        "wr_count": 128
+      },
+      "15": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1607232,
+        "payload_throughput_gbps": 6.255372806588654,
+        "queue_wait_ns": {
+          "mean": 1042229.256,
+          "p50": 1045668.3599999999,
+          "p99": 2022314.4016
+        },
+        "ready_to_complete_ns": {
+          "mean": 1065261.2436923077,
+          "p50": 1069239.72,
+          "p99": 2043787.2784
+        },
+        "scheduler_wait_ns": {
+          "mean": 1040227.756,
+          "p50": 1043666.8599999999,
+          "p99": 2020249.6915999998
+        },
+        "submit_to_complete_ns": {
+          "mean": 1065261.2436923077,
+          "p50": 1069239.72,
+          "p99": 2043787.2784
+        },
+        "wr_count": 130
+      },
+      "2": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1611456,
+        "payload_throughput_gbps": 6.2718126825586635,
+        "queue_wait_ns": {
+          "mean": 1037046.5145038168,
+          "p50": 1040573.96,
+          "p99": 2023243.2719999999
+        },
+        "ready_to_complete_ns": {
+          "mean": 1060068.4320610687,
+          "p50": 1064145.32,
+          "p99": 2044719.528
+        },
+        "scheduler_wait_ns": {
+          "mean": 1036724.5145038168,
+          "p50": 1040251.96,
+          "p99": 2022857.5720000002
+        },
+        "submit_to_complete_ns": {
+          "mean": 1060068.4320610687,
+          "p50": 1064145.32,
+          "p99": 2044719.528
+        },
+        "wr_count": 131
+      },
+      "3": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1590336,
+        "payload_throughput_gbps": 6.189613302708615,
+        "queue_wait_ns": {
+          "mean": 1022667.8911627906,
+          "p50": 1025290.76,
+          "p99": 2002807.0992
+        },
+        "ready_to_complete_ns": {
+          "mean": 1045719.2734883721,
+          "p50": 1048862.12,
+          "p99": 2026087.848
+        },
+        "scheduler_wait_ns": {
+          "mean": 1022215.8911627906,
+          "p50": 1024838.76,
+          "p99": 2002292.3791999999
+        },
+        "submit_to_complete_ns": {
+          "mean": 1045719.2734883721,
+          "p50": 1048862.12,
+          "p99": 2026087.848
+        },
+        "wr_count": 129
+      },
+      "4": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1624128,
+        "payload_throughput_gbps": 6.321132310468692,
+        "queue_wait_ns": {
+          "mean": 1046576.1903030303,
+          "p50": 1050762.76,
+          "p99": 2031184.136
+        },
+        "ready_to_complete_ns": {
+          "mean": 1069562.59030303,
+          "p50": 1074334.12,
+          "p99": 2051393.192
+        },
+        "scheduler_wait_ns": {
+          "mean": 1045993.6903030303,
+          "p50": 1050180.26,
+          "p99": 2030537.446
+        },
+        "submit_to_complete_ns": {
+          "mean": 1069562.59030303,
+          "p50": 1074334.12,
+          "p99": 2051393.192
+        },
+        "wr_count": 132
+      },
+      "5": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1564992,
+        "payload_throughput_gbps": 6.090974046888558,
+        "queue_wait_ns": {
+          "mean": 1001245.6552380952,
+          "p50": 1002875.3999999999,
+          "p99": 1960309.0
+        },
+        "ready_to_complete_ns": {
+          "mean": 1024315.499047619,
+          "p50": 1026446.76,
+          "p99": 1983880.3599999999
+        },
+        "scheduler_wait_ns": {
+          "mean": 1000534.1552380952,
+          "p50": 1002163.8999999999,
+          "p99": 1959536.25
+        },
+        "submit_to_complete_ns": {
+          "mean": 1024315.499047619,
+          "p50": 1026446.76,
+          "p99": 1983880.3599999999
+        },
+        "wr_count": 126
+      },
+      "6": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1584000,
+        "payload_throughput_gbps": 6.164953488753601,
+        "queue_wait_ns": {
+          "mean": 1017860.28,
+          "p50": 1020196.36,
+          "p99": 1990844.8336
+        },
+        "ready_to_complete_ns": {
+          "mean": 1040931.36,
+          "p50": 1043767.72,
+          "p99": 2014247.2336
+        },
+        "scheduler_wait_ns": {
+          "mean": 1017021.78,
+          "p50": 1019357.86,
+          "p99": 1989944.1036
+        },
+        "submit_to_complete_ns": {
+          "mean": 1040931.36,
+          "p50": 1043767.72,
+          "p99": 2014247.2336
+        },
+        "wr_count": 128
+      },
+      "7": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1609344,
+        "payload_throughput_gbps": 6.263592744573659,
+        "queue_wait_ns": {
+          "mean": 1034319.0135384614,
+          "p50": 1037517.3200000001,
+          "p99": 2016924.5263999999
+        },
+        "ready_to_complete_ns": {
+          "mean": 1057362.6984615386,
+          "p50": 1061088.68,
+          "p99": 2038593.3968
+        },
+        "scheduler_wait_ns": {
+          "mean": 1033351.5135384614,
+          "p50": 1036549.8200000001,
+          "p99": 2015893.8164
+        },
+        "submit_to_complete_ns": {
+          "mean": 1057362.6984615386,
+          "p50": 1061088.68,
+          "p99": 2038593.3968
+        },
+        "wr_count": 130
+      },
+      "8": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1569216,
+        "payload_throughput_gbps": 6.1074139228585675,
+        "queue_wait_ns": {
+          "mean": 1012052.8588976378,
+          "p50": 1014083.08,
+          "p99": 1978496.008
+        },
+        "ready_to_complete_ns": {
+          "mean": 1035129.312440945,
+          "p50": 1037654.44,
+          "p99": 2001942.3376
+        },
+        "scheduler_wait_ns": {
+          "mean": 1010956.8588976378,
+          "p50": 1012987.08,
+          "p99": 1977338.268
+        },
+        "submit_to_complete_ns": {
+          "mean": 1035129.312440945,
+          "p50": 1037654.44,
+          "p99": 2001942.3376
+        },
+        "wr_count": 127
+      },
+      "9": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1571328,
+        "payload_throughput_gbps": 6.115633860843572,
+        "queue_wait_ns": {
+          "mean": 1013049.1222047244,
+          "p50": 1015101.96,
+          "p99": 1979514.8879999998
+        },
+        "ready_to_complete_ns": {
+          "mean": 1036124.2453543306,
+          "p50": 1038673.32,
+          "p99": 2002961.2175999996
+        },
+        "scheduler_wait_ns": {
+          "mean": 1011826.1222047244,
+          "p50": 1013878.96,
+          "p99": 1978230.148
+        },
+        "submit_to_complete_ns": {
+          "mean": 1036124.2453543306,
+          "p50": 1038673.32,
+          "p99": 2002961.2175999996
+        },
+        "wr_count": 127
+      }
+    },
+    "policy": "rr",
+    "queue_wait_ns": {
+      "mean": 1008512.8107647628,
+      "p50": 1008479.24,
+      "p99": 2017299.2079999999
+    },
+    "ready_to_complete_ns": {
+      "mean": 1031439.9396321394,
+      "p50": 1032050.6000000001,
+      "p99": 2038834.5999999999
+    },
+    "result_schema": "wr-results/1.0",
+    "scenario": "moe_high",
+    "scheduler_wait_ns": {
+      "mean": 1007479.3107647628,
+      "p50": 1008093.74,
+      "p99": 2016868.358
+    },
+    "submit_to_complete_ns": {
+      "mean": 1031439.9396321394,
+      "p50": 1032050.6000000001,
+      "p99": 2038834.5999999999
+    },
+    "trace_sha256": "da08bedeacd123172563f938a1dcb6e90d2f9179c281ae7a2d61dfc540e6b0fc",
+    "wr_count": 2066
+  },
+  {
+    "admission_wait_ns": {
+      "mean": 0.0,
+      "p50": 0.0,
+      "p99": 0.0
+    },
+    "event_counts": {
+      "ack_chunk": 2066,
+      "ack_rx_wire": 2066,
+      "ack_tx_end": 2066,
+      "ack_tx_start": 2066,
+      "complete": 2066,
+      "dequeue": 2066,
+      "dispatch": 2066,
+      "eligible": 2066,
+      "enqueue": 2066,
+      "memory_commit": 2066,
+      "ordered": 2066,
+      "ready": 2066,
+      "rx_wire": 2066,
+      "submit": 2066,
+      "tx_chunk": 401432,
+      "tx_end": 2066,
+      "tx_start": 2066
+    },
+    "fairness": {
+      "initial_diagnostic_window_ns": [
+        100000,
+        500000
+      ],
+      "invalid_reason": null,
+      "minimum_scheduler_queue": {
+        "0": 98,
+        "1": 121,
+        "2": 124,
+        "3": 122,
+        "4": 125,
+        "5": 119,
+        "6": 121,
+        "7": 124,
+        "8": 121,
+        "9": 121,
+        "10": 124,
+        "11": 126,
+        "12": 125,
+        "13": 123,
+        "14": 122,
+        "15": 1
+      },
+      "payload_bytes": {
+        "0": 320421.5,
+        "1": 69748.0,
+        "2": 63360.0,
+        "3": 63360.0,
+        "4": 63360.0,
+        "5": 63360.0,
+        "6": 63360.0,
+        "7": 63360.0,
+        "8": 63360.0,
+        "9": 63360.0,
+        "10": 63360.0,
+        "11": 63360.0,
+        "12": 63360.0,
+        "13": 63360.0,
+        "14": 63360.0,
+        "15": 63360.0
+      },
+      "payload_jain": 0.6226671326239891,
+      "selection": "longest common all-Jetty queued interval; inward integer-ns rounding",
+      "valid_all_jetties_backlogged": true,
+      "valid_common_policy_window": true,
+      "window_ns": [
+        1938,
+        104637
+      ],
+      "wire_bytes": {
+        "0": 322085.5,
+        "1": 70132.0,
+        "2": 63680.0,
+        "3": 63680.0,
+        "4": 63680.0,
+        "5": 63680.0,
+        "6": 63680.0,
+        "7": 63680.0,
+        "8": 63680.0,
+        "9": 63680.0,
+        "10": 63680.0,
+        "11": 63680.0,
+        "12": 63680.0,
+        "13": 63680.0,
+        "14": 63680.0,
+        "15": 63680.0
+      },
+      "wire_jain": 0.6226146817324042
+    },
+    "finish_ps": 2055489960,
+    "makespan_ns": 2055489.96,
+    "origin_ps": 0,
+    "payload_bytes": 25559424,
+    "payload_throughput_gbps": 99.47768949452811,
+    "per_jetty": {
+      "0": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1575552,
+        "payload_throughput_gbps": 6.132073736813582,
+        "queue_wait_ns": {
+          "mean": 683025.453125,
+          "p50": 645727.24,
+          "p99": 1639758.9584000001
+        },
+        "ready_to_complete_ns": {
+          "mean": 704166.04,
+          "p50": 669298.6,
+          "p99": 1663330.3184000002
+        },
+        "scheduler_wait_ns": {
+          "mean": 682960.953125,
+          "p50": 645662.74,
+          "p99": 1639632.2284
+        },
+        "submit_to_complete_ns": {
+          "mean": 704166.04,
+          "p50": 669298.6,
+          "p99": 1663330.3184000002
+        },
+        "wr_count": 128
+      },
+      "1": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1598784,
+        "payload_throughput_gbps": 6.222493054648635,
+        "queue_wait_ns": {
+          "mean": 1020365.88,
+          "p50": 1023253.0,
+          "p99": 1999891.4128
+        },
+        "ready_to_complete_ns": {
+          "mean": 1043418.48,
+          "p50": 1046824.3599999999,
+          "p99": 2022631.4896
+        },
+        "scheduler_wait_ns": {
+          "mean": 1020173.38,
+          "p50": 1023060.5,
+          "p99": 1999636.6828
+        },
+        "submit_to_complete_ns": {
+          "mean": 1043418.48,
+          "p50": 1046824.3599999999,
+          "p99": 2022631.4896
+        },
+        "wr_count": 128
+      },
+      "10": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1613568,
+        "payload_throughput_gbps": 6.280032620543668,
+        "queue_wait_ns": {
+          "mean": 1044335.820923077,
+          "p50": 1050253.3199999998,
+          "p99": 2025445.6399999997
+        },
+        "ready_to_complete_ns": {
+          "mean": 1067334.0166153845,
+          "p50": 1073824.6800000002,
+          "p99": 2046220.7119999998
+        },
+        "scheduler_wait_ns": {
+          "mean": 1042984.320923077,
+          "p50": 1048901.8199999998,
+          "p99": 2024030.93
+        },
+        "submit_to_complete_ns": {
+          "mean": 1067334.0166153845,
+          "p50": 1073824.6800000002,
+          "p99": 2046220.7119999998
+        },
+        "wr_count": 130
+      },
+      "11": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1636800,
+        "payload_throughput_gbps": 6.3704519383787215,
+        "queue_wait_ns": {
+          "mean": 1062675.1381818182,
+          "p50": 1067574.28,
+          "p99": 2034492.0143999998
+        },
+        "ready_to_complete_ns": {
+          "mean": 1085630.8181818181,
+          "p50": 1090723.24,
+          "p99": 2054346.2544
+        },
+        "scheduler_wait_ns": {
+          "mean": 1061192.6381818182,
+          "p50": 1066091.78,
+          "p99": 2032945.3243999998
+        },
+        "submit_to_complete_ns": {
+          "mean": 1085630.8181818181,
+          "p50": 1090723.24,
+          "p99": 2054346.2544
+        },
+        "wr_count": 132
+      },
+      "12": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1624128,
+        "payload_throughput_gbps": 6.321132310468692,
+        "queue_wait_ns": {
+          "mean": 1053055.7383206107,
+          "p50": 1059932.68,
+          "p99": 2028717.576
+        },
+        "ready_to_complete_ns": {
+          "mean": 1076064.7581679388,
+          "p50": 1083504.04,
+          "p99": 2049501.096
+        },
+        "scheduler_wait_ns": {
+          "mean": 1051441.7383206107,
+          "p50": 1058318.68,
+          "p99": 2027039.8759999997
+        },
+        "submit_to_complete_ns": {
+          "mean": 1076064.7581679388,
+          "p50": 1083504.04,
+          "p99": 2049501.096
+        },
+        "wr_count": 131
+      },
+      "13": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1596672,
+        "payload_throughput_gbps": 6.21427311666363,
+        "queue_wait_ns": {
+          "mean": 1037726.8827906976,
+          "p50": 1049743.88,
+          "p99": 2007779.8479999998
+        },
+        "ready_to_complete_ns": {
+          "mean": 1060788.7432558138,
+          "p50": 1073315.24,
+          "p99": 2029796.776
+        },
+        "scheduler_wait_ns": {
+          "mean": 1035982.8827906976,
+          "p50": 1047999.88,
+          "p99": 2005973.128
+        },
+        "submit_to_complete_ns": {
+          "mean": 1060788.7432558138,
+          "p50": 1073315.24,
+          "p99": 2029796.776
+        },
+        "wr_count": 129
+      },
+      "14": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1581888,
+        "payload_throughput_gbps": 6.156733550768596,
+        "queue_wait_ns": {
+          "mean": 1033001.16,
+          "p50": 1042611.72,
+          "p99": 2001805.832
+        },
+        "ready_to_complete_ns": {
+          "mean": 1056052.44,
+          "p50": 1066183.08,
+          "p99": 2024669.2496000002
+        },
+        "scheduler_wait_ns": {
+          "mean": 1031128.66,
+          "p50": 1040739.22,
+          "p99": 1999871.1020000002
+        },
+        "submit_to_complete_ns": {
+          "mean": 1056052.44,
+          "p50": 1066183.08,
+          "p99": 2024669.2496000002
+        },
+        "wr_count": 128
+      },
+      "15": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1607232,
+        "payload_throughput_gbps": 6.255372806588654,
+        "queue_wait_ns": {
+          "mean": 1040233.5981538461,
+          "p50": 1038536.2,
+          "p99": 2023407.88
+        },
+        "ready_to_complete_ns": {
+          "mean": 1063231.7938461537,
+          "p50": 1062107.56,
+          "p99": 2044182.952
+        },
+        "scheduler_wait_ns": {
+          "mean": 1038232.0981538461,
+          "p50": 1036534.7,
+          "p99": 2021343.17
+        },
+        "submit_to_complete_ns": {
+          "mean": 1063231.7938461537,
+          "p50": 1062107.56,
+          "p99": 2044182.952
+        },
+        "wr_count": 130
+      },
+      "2": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1611456,
+        "payload_throughput_gbps": 6.2718126825586635,
+        "queue_wait_ns": {
+          "mean": 1029448.5908396947,
+          "p50": 1024271.88,
+          "p99": 2019117.0639999998
+        },
+        "ready_to_complete_ns": {
+          "mean": 1052458.9004580153,
+          "p50": 1047843.24,
+          "p99": 2040542.6319999998
+        },
+        "scheduler_wait_ns": {
+          "mean": 1029126.5908396947,
+          "p50": 1023949.88,
+          "p99": 2018731.364
+        },
+        "submit_to_complete_ns": {
+          "mean": 1052458.9004580153,
+          "p50": 1047843.24,
+          "p99": 2040542.6319999998
+        },
+        "wr_count": 131
+      },
+      "3": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1590336,
+        "payload_throughput_gbps": 6.189613302708615,
+        "queue_wait_ns": {
+          "mean": 1017445.689612403,
+          "p50": 1021215.24,
+          "p99": 1996081.8768
+        },
+        "ready_to_complete_ns": {
+          "mean": 1040525.8868217055,
+          "p50": 1044786.6,
+          "p99": 2019315.3168000001
+        },
+        "scheduler_wait_ns": {
+          "mean": 1016993.689612403,
+          "p50": 1020763.24,
+          "p99": 1995567.1568
+        },
+        "submit_to_complete_ns": {
+          "mean": 1040525.8868217055,
+          "p50": 1044786.6,
+          "p99": 2019315.3168000001
+        },
+        "wr_count": 129
+      },
+      "4": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1624128,
+        "payload_throughput_gbps": 6.321132310468692,
+        "queue_wait_ns": {
+          "mean": 1039742.3090909092,
+          "p50": 1044649.48,
+          "p99": 2027578.4784
+        },
+        "ready_to_complete_ns": {
+          "mean": 1062755.589090909,
+          "p50": 1068220.8399999999,
+          "p99": 2048370.4464
+        },
+        "scheduler_wait_ns": {
+          "mean": 1039159.8090909092,
+          "p50": 1044066.98,
+          "p99": 2026931.7884
+        },
+        "submit_to_complete_ns": {
+          "mean": 1062755.589090909,
+          "p50": 1068220.8399999999,
+          "p99": 2048370.4464
+        },
+        "wr_count": 132
+      },
+      "5": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1564992,
+        "payload_throughput_gbps": 6.090974046888558,
+        "queue_wait_ns": {
+          "mean": 1003386.6685714285,
+          "p50": 1003894.28,
+          "p99": 1959290.1199999999
+        },
+        "ready_to_complete_ns": {
+          "mean": 1026457.8533333333,
+          "p50": 1027465.64,
+          "p99": 1982861.48
+        },
+        "scheduler_wait_ns": {
+          "mean": 1002675.1685714285,
+          "p50": 1003182.78,
+          "p99": 1958517.3699999999
+        },
+        "submit_to_complete_ns": {
+          "mean": 1026457.8533333333,
+          "p50": 1027465.64,
+          "p99": 1982861.48
+        },
+        "wr_count": 126
+      },
+      "6": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1584000,
+        "payload_throughput_gbps": 6.164953488753601,
+        "queue_wait_ns": {
+          "mean": 1013990.44,
+          "p50": 1014083.0800000001,
+          "p99": 1990844.8336
+        },
+        "ready_to_complete_ns": {
+          "mean": 1037054.92,
+          "p50": 1037654.44,
+          "p99": 2014123.8928
+        },
+        "scheduler_wait_ns": {
+          "mean": 1013151.94,
+          "p50": 1013244.5800000001,
+          "p99": 1989944.1036
+        },
+        "submit_to_complete_ns": {
+          "mean": 1037054.92,
+          "p50": 1037654.44,
+          "p99": 2014123.8928
+        },
+        "wr_count": 128
+      },
+      "7": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1609344,
+        "payload_throughput_gbps": 6.263592744573659,
+        "queue_wait_ns": {
+          "mean": 1028583.038153846,
+          "p50": 1027328.52,
+          "p99": 2017171.0032
+        },
+        "ready_to_complete_ns": {
+          "mean": 1051624.1236923079,
+          "p50": 1050899.88,
+          "p99": 2038594.8816
+        },
+        "scheduler_wait_ns": {
+          "mean": 1027615.538153846,
+          "p50": 1026361.02,
+          "p99": 2016140.2932
+        },
+        "submit_to_complete_ns": {
+          "mean": 1051624.1236923079,
+          "p50": 1050899.88,
+          "p99": 2038594.8816
+        },
+        "wr_count": 130
+      },
+      "8": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1569216,
+        "payload_throughput_gbps": 6.1074139228585675,
+        "queue_wait_ns": {
+          "mean": 1001887.5222047244,
+          "p50": 999818.76,
+          "p99": 1966799.2656
+        },
+        "ready_to_complete_ns": {
+          "mean": 1025021.1826771654,
+          "p50": 1023390.12,
+          "p99": 1990370.6256
+        },
+        "scheduler_wait_ns": {
+          "mean": 1000791.5222047244,
+          "p50": 998722.76,
+          "p99": 1965641.5255999998
+        },
+        "submit_to_complete_ns": {
+          "mean": 1025021.1826771654,
+          "p50": 1023390.12,
+          "p99": 1990370.6256
+        },
+        "wr_count": 127
+      },
+      "9": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 1571328,
+        "payload_throughput_gbps": 6.115633860843572,
+        "queue_wait_ns": {
+          "mean": 1019622.3152755906,
+          "p50": 1023253.0,
+          "p99": 1980309.6143999998
+        },
+        "ready_to_complete_ns": {
+          "mean": 1042670.8305511811,
+          "p50": 1046824.36,
+          "p99": 2003630.9136
+        },
+        "scheduler_wait_ns": {
+          "mean": 1018399.3152755906,
+          "p50": 1022030.0,
+          "p99": 1979024.8743999999
+        },
+        "submit_to_complete_ns": {
+          "mean": 1042670.8305511811,
+          "p50": 1046824.36,
+          "p99": 2003630.9136
+        },
+        "wr_count": 127
+      }
+    },
+    "policy": "drr",
+    "queue_wait_ns": {
+      "mean": 1008403.5510551791,
+      "p50": 1008479.24,
+      "p99": 2017130.248
+    },
+    "ready_to_complete_ns": {
+      "mean": 1031324.7916747337,
+      "p50": 1032050.6000000001,
+      "p99": 2038505.1279999998
+    },
+    "result_schema": "wr-results/1.0",
+    "scenario": "moe_high",
+    "scheduler_wait_ns": {
+      "mean": 1007370.0510551791,
+      "p50": 1007644.24,
+      "p99": 2015761.176
+    },
+    "submit_to_complete_ns": {
+      "mean": 1031324.7916747337,
+      "p50": 1032050.6000000001,
+      "p99": 2038505.1279999998
+    },
+    "trace_sha256": "da08bedeacd123172563f938a1dcb6e90d2f9179c281ae7a2d61dfc540e6b0fc",
+    "wr_count": 2066
+  },
+  {
+    "admission_wait_ns": {
+      "mean": 0.0,
+      "p50": 0.0,
+      "p99": 0.0
+    },
+    "event_counts": {
+      "ack_chunk": 1009,
+      "ack_rx_wire": 1009,
+      "ack_tx_end": 1009,
+      "ack_tx_start": 1009,
+      "complete": 1009,
+      "dequeue": 1009,
+      "dispatch": 1009,
+      "eligible": 1009,
+      "enqueue": 1009,
+      "memory_commit": 1009,
+      "ordered": 1009,
+      "ready": 1009,
+      "rx_wire": 1009,
+      "submit": 1009,
+      "tx_chunk": 191122,
+      "tx_end": 1009,
+      "tx_start": 1009
+    },
+    "fairness": {
+      "initial_diagnostic_window_ns": [
+        50000,
+        200000
+      ],
+      "invalid_reason": null,
+      "minimum_scheduler_queue": {
+        "0": 1,
+        "1": 65,
+        "2": 65,
+        "3": 64,
+        "4": 61,
+        "5": 62,
+        "6": 63,
+        "7": 61,
+        "8": 63,
+        "9": 64,
+        "10": 64,
+        "11": 62,
+        "12": 62,
+        "13": 62,
+        "14": 66,
+        "15": 1
+      },
+      "payload_bytes": {
+        "0": 470019.5,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0,
+        "7": 0.0,
+        "8": 0.0,
+        "9": 0.0,
+        "10": 0.0,
+        "11": 0.0,
+        "12": 0.0,
+        "13": 0.0,
+        "14": 0.0,
+        "15": 0.0
+      },
+      "payload_jain": 0.0625,
+      "selection": "longest common all-Jetty queued interval; inward integer-ns rounding",
+      "valid_all_jetties_backlogged": true,
+      "valid_common_policy_window": true,
+      "window_ns": [
+        947,
+        38738
+      ],
+      "wire_bytes": {
+        "0": 472387.5,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0,
+        "7": 0.0,
+        "8": 0.0,
+        "9": 0.0,
+        "10": 0.0,
+        "11": 0.0,
+        "12": 0.0,
+        "13": 0.0,
+        "14": 0.0,
+        "15": 0.0
+      },
+      "wire_jain": 0.0625
+    },
+    "finish_ps": 978702760,
+    "makespan_ns": 978702.76,
+    "origin_ps": 0,
+    "payload_bytes": 12167232,
+    "payload_throughput_gbps": 99.45599417743544,
+    "per_jetty": {
+      "0": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 749760,
+        "payload_throughput_gbps": 6.128602314353339,
+        "queue_wait_ns": {
+          "mean": 12394.640655737705,
+          "p50": 8172.04,
+          "p99": 38127.111999999994
+        },
+        "ready_to_complete_ns": {
+          "mean": 31480.26557377049,
+          "p50": 31743.4,
+          "p99": 60042.664
+        },
+        "scheduler_wait_ns": {
+          "mean": 12363.640655737705,
+          "p50": 8141.04,
+          "p99": 38066.712
+        },
+        "submit_to_complete_ns": {
+          "mean": 31480.26557377049,
+          "p50": 31743.4,
+          "p99": 60042.664
+        },
+        "wr_count": 61
+      },
+      "1": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 792000,
+        "payload_throughput_gbps": 6.473875684176062,
+        "queue_wait_ns": {
+          "mean": 70913.62276923077,
+          "p50": 70502.92,
+          "p99": 102454.9968
+        },
+        "ready_to_complete_ns": {
+          "mean": 93531.0086153846,
+          "p50": 94074.28,
+          "p99": 123708.22559999999
+        },
+        "scheduler_wait_ns": {
+          "mean": 70819.62276923077,
+          "p50": 70408.92,
+          "p99": 102329.63680000001
+        },
+        "submit_to_complete_ns": {
+          "mean": 93531.0086153846,
+          "p50": 94074.28,
+          "p99": 123708.22559999999
+        },
+        "wr_count": 65
+      },
+      "10": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 779328,
+        "payload_throughput_gbps": 6.370293673229245,
+        "queue_wait_ns": {
+          "mean": 620596.04,
+          "p50": 619994.1200000001,
+          "p99": 651446.9456
+        },
+        "ready_to_complete_ns": {
+          "mean": 643037.48,
+          "p50": 643565.48,
+          "p99": 672483.9056
+        },
+        "scheduler_wait_ns": {
+          "mean": 619934.54,
+          "p50": 619332.6200000001,
+          "p99": 650754.5756
+        },
+        "submit_to_complete_ns": {
+          "mean": 643037.48,
+          "p50": 643565.48,
+          "p99": 672483.9056
+        },
+        "wr_count": 64
+      },
+      "11": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 734976,
+        "payload_throughput_gbps": 6.007756634915386,
+        "queue_wait_ns": {
+          "mean": 682044.3083870967,
+          "p50": 681649.1599999999,
+          "p99": 712103.4832
+        },
+        "ready_to_complete_ns": {
+          "mean": 704607.3587096775,
+          "p50": 705220.52,
+          "p99": 732135.1312
+        },
+        "scheduler_wait_ns": {
+          "mean": 681319.8083870967,
+          "p50": 680924.6599999999,
+          "p99": 711349.0932
+        },
+        "submit_to_complete_ns": {
+          "mean": 704607.3587096775,
+          "p50": 705220.52,
+          "p99": 732135.1312
+        },
+        "wr_count": 62
+      },
+      "12": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 749760,
+        "payload_throughput_gbps": 6.128602314353339,
+        "queue_wait_ns": {
+          "mean": 741655.8077419355,
+          "p50": 740764.6799999999,
+          "p99": 771219.0032
+        },
+        "ready_to_complete_ns": {
+          "mean": 763799.1832258065,
+          "p50": 764336.04,
+          "p99": 792227.2400000001
+        },
+        "scheduler_wait_ns": {
+          "mean": 740869.3077419355,
+          "p50": 739978.1799999999,
+          "p99": 770402.6132
+        },
+        "submit_to_complete_ns": {
+          "mean": 763799.1832258065,
+          "p50": 764336.04,
+          "p99": 792227.2400000001
+        },
+        "wr_count": 62
+      },
+      "13": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 737088,
+        "payload_throughput_gbps": 6.025020303406522,
+        "queue_wait_ns": {
+          "mean": 801591.6012903226,
+          "p50": 801062.9199999999,
+          "p99": 831517.2431999999
+        },
+        "ready_to_complete_ns": {
+          "mean": 823980.2412903226,
+          "p50": 824634.28,
+          "p99": 851408.6544
+        },
+        "scheduler_wait_ns": {
+          "mean": 800743.1012903226,
+          "p50": 800214.4199999999,
+          "p99": 830638.8532
+        },
+        "submit_to_complete_ns": {
+          "mean": 823980.2412903226,
+          "p50": 824634.28,
+          "p99": 851408.6544
+        },
+        "wr_count": 62
+      },
+      "14": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 779328,
+        "payload_throughput_gbps": 6.370293673229245,
+        "queue_wait_ns": {
+          "mean": 863117.32,
+          "p50": 862385.1599999999,
+          "p99": 894659.0800000001
+        },
+        "ready_to_complete_ns": {
+          "mean": 885129.64,
+          "p50": 885956.52,
+          "p99": 914175.3999999999
+        },
+        "scheduler_wait_ns": {
+          "mean": 862204.82,
+          "p50": 861472.6599999999,
+          "p99": 893714.73
+        },
+        "submit_to_complete_ns": {
+          "mean": 885129.64,
+          "p50": 885956.52,
+          "p99": 914175.3999999999
+        },
+        "wr_count": 66
+      },
+      "15": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 798336,
+        "payload_throughput_gbps": 6.52566668964947,
+        "queue_wait_ns": {
+          "mean": 924845.08,
+          "p50": 924050.44,
+          "p99": 955503.2656
+        },
+        "ready_to_complete_ns": {
+          "mean": 947426.44,
+          "p50": 947621.8,
+          "p99": 978273.7552
+        },
+        "scheduler_wait_ns": {
+          "mean": 923867.58,
+          "p50": 923072.94,
+          "p99": 954494.8955999999
+        },
+        "submit_to_complete_ns": {
+          "mean": 947426.44,
+          "p50": 947621.8,
+          "p99": 978273.7552
+        },
+        "wr_count": 64
+      },
+      "2": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 777216,
+        "payload_throughput_gbps": 6.353030004738109,
+        "queue_wait_ns": {
+          "mean": 134549.2363076923,
+          "p50": 134195.72,
+          "p99": 166147.7968
+        },
+        "ready_to_complete_ns": {
+          "mean": 157184.81784615386,
+          "p50": 157767.08,
+          "p99": 186542.7088
+        },
+        "scheduler_wait_ns": {
+          "mean": 134390.2363076923,
+          "p50": 134036.72,
+          "p99": 165957.4368
+        },
+        "submit_to_complete_ns": {
+          "mean": 157184.81784615386,
+          "p50": 157767.08,
+          "p99": 186542.7088
+        },
+        "wr_count": 65
+      },
+      "3": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 770880,
+        "payload_throughput_gbps": 6.3012389992647,
+        "queue_wait_ns": {
+          "mean": 196940.84,
+          "p50": 196196.36,
+          "p99": 227649.1856
+        },
+        "ready_to_complete_ns": {
+          "mean": 219144.68,
+          "p50": 219767.72,
+          "p99": 248116.75040000002
+        },
+        "scheduler_wait_ns": {
+          "mean": 196717.34,
+          "p50": 195972.86,
+          "p99": 227394.8156
+        },
+        "submit_to_complete_ns": {
+          "mean": 219144.68,
+          "p50": 219767.72,
+          "p99": 248116.75040000002
+        },
+        "wr_count": 64
+      },
+      "4": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 728640,
+        "payload_throughput_gbps": 5.955965629441977,
+        "queue_wait_ns": {
+          "mean": 257222.8570491803,
+          "p50": 256666.12,
+          "p99": 286621.19200000004
+        },
+        "ready_to_complete_ns": {
+          "mean": 279713.98098360654,
+          "p50": 280237.48,
+          "p99": 307151.272
+        },
+        "scheduler_wait_ns": {
+          "mean": 256936.8570491803,
+          "p50": 256380.12,
+          "p99": 286305.792
+        },
+        "submit_to_complete_ns": {
+          "mean": 279713.98098360654,
+          "p50": 280237.48,
+          "p99": 307151.272
+        },
+        "wr_count": 61
+      },
+      "5": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 743424,
+        "payload_throughput_gbps": 6.07681130887993,
+        "queue_wait_ns": {
+          "mean": 316580.2774193548,
+          "p50": 315779.08,
+          "p99": 346233.40319999994
+        },
+        "ready_to_complete_ns": {
+          "mean": 338775.43096774194,
+          "p50": 339350.44,
+          "p99": 366425.5632
+        },
+        "scheduler_wait_ns": {
+          "mean": 316232.7774193548,
+          "p50": 315431.58,
+          "p99": 345856.0132
+        },
+        "submit_to_complete_ns": {
+          "mean": 338775.43096774194,
+          "p50": 339350.44,
+          "p99": 366425.5632
+        },
+        "wr_count": 62
+      },
+      "6": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 753984,
+        "payload_throughput_gbps": 6.163129651335611,
+        "queue_wait_ns": {
+          "mean": 376747.6742857143,
+          "p50": 376079.88,
+          "p99": 407033.45440000005
+        },
+        "ready_to_complete_ns": {
+          "mean": 399026.3561904762,
+          "p50": 399651.24,
+          "p99": 427475.6752
+        },
+        "scheduler_wait_ns": {
+          "mean": 376337.6742857143,
+          "p50": 375669.88,
+          "p99": 406593.07440000004
+        },
+        "submit_to_complete_ns": {
+          "mean": 399026.3561904762,
+          "p50": 399651.24,
+          "p99": 427475.6752
+        },
+        "wr_count": 63
+      },
+      "7": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 747648,
+        "payload_throughput_gbps": 6.111338645862203,
+        "queue_wait_ns": {
+          "mean": 436394.73901639343,
+          "p50": 435702.28,
+          "p99": 465657.35199999996
+        },
+        "ready_to_complete_ns": {
+          "mean": 458888.63278688525,
+          "p50": 459273.64,
+          "p99": 487302.56799999997
+        },
+        "scheduler_wait_ns": {
+          "mean": 435922.73901639343,
+          "p50": 435230.28,
+          "p99": 465155.952
+        },
+        "submit_to_complete_ns": {
+          "mean": 458888.63278688525,
+          "p50": 459273.64,
+          "p99": 487302.56799999997
+        },
+        "wr_count": 61
+      },
+      "8": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 751872,
+        "payload_throughput_gbps": 6.145865982844475,
+        "queue_wait_ns": {
+          "mean": 497212.74095238093,
+          "p50": 496845.32,
+          "p99": 527798.8944
+        },
+        "ready_to_complete_ns": {
+          "mean": 519732.7942857143,
+          "p50": 520416.68,
+          "p99": 548072.1552
+        },
+        "scheduler_wait_ns": {
+          "mean": 496678.74095238093,
+          "p50": 496311.32,
+          "p99": 527234.5144
+        },
+        "submit_to_complete_ns": {
+          "mean": 519732.7942857143,
+          "p50": 520416.68,
+          "p99": 548072.1552
+        },
+        "wr_count": 63
+      },
+      "9": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 772992,
+        "payload_throughput_gbps": 6.318502667755836,
+        "queue_wait_ns": {
+          "mean": 558489.72,
+          "p50": 557827.0800000001,
+          "p99": 589279.9056
+        },
+        "ready_to_complete_ns": {
+          "mean": 580907.4,
+          "p50": 581398.44,
+          "p99": 610235.7648
+        },
+        "scheduler_wait_ns": {
+          "mean": 557892.22,
+          "p50": 557229.5800000001,
+          "p99": 588651.5356000001
+        },
+        "submit_to_complete_ns": {
+          "mean": 580907.4,
+          "p50": 581398.44,
+          "p99": 610235.7648
+        },
+        "wr_count": 64
+      }
+    },
+    "policy": "fifo",
+    "queue_wait_ns": {
+      "mean": 469077.2376214073,
+      "p50": 469325.32,
+      "p99": 945874.8496
+    },
+    "ready_to_complete_ns": {
+      "mean": 491275.56824578793,
+      "p50": 490869.16,
+      "p99": 968770.3696
+    },
+    "result_schema": "wr-results/1.0",
+    "scenario": "moe_skew",
+    "scheduler_wait_ns": {
+      "mean": 468572.2376214073,
+      "p50": 468820.32,
+      "p99": 944875.9295999999
+    },
+    "submit_to_complete_ns": {
+      "mean": 491275.56824578793,
+      "p50": 490869.16,
+      "p99": 968770.3696
+    },
+    "trace_sha256": "328fe2a7f062b630c2ae838b3cfaa23aca52045de68ab1031112bf1b1f40db2d",
+    "wr_count": 1009
+  },
+  {
+    "admission_wait_ns": {
+      "mean": 0.0,
+      "p50": 0.0,
+      "p99": 0.0
+    },
+    "event_counts": {
+      "ack_chunk": 1009,
+      "ack_rx_wire": 1009,
+      "ack_tx_end": 1009,
+      "ack_tx_start": 1009,
+      "complete": 1009,
+      "dequeue": 1009,
+      "dispatch": 1009,
+      "eligible": 1009,
+      "enqueue": 1009,
+      "memory_commit": 1009,
+      "ordered": 1009,
+      "ready": 1009,
+      "rx_wire": 1009,
+      "submit": 1009,
+      "tx_chunk": 191122,
+      "tx_end": 1009,
+      "tx_start": 1009
+    },
+    "fairness": {
+      "initial_diagnostic_window_ns": [
+        50000,
+        200000
+      ],
+      "invalid_reason": null,
+      "minimum_scheduler_queue": {
+        "0": 36,
+        "1": 62,
+        "2": 62,
+        "3": 61,
+        "4": 58,
+        "5": 59,
+        "6": 61,
+        "7": 59,
+        "8": 61,
+        "9": 62,
+        "10": 62,
+        "11": 60,
+        "12": 60,
+        "13": 60,
+        "14": 64,
+        "15": 1
+      },
+      "payload_bytes": {
+        "0": 279945.0,
+        "1": 12672.0,
+        "2": 12672.0,
+        "3": 12672.0,
+        "4": 12672.0,
+        "5": 12672.0,
+        "6": 12672.0,
+        "7": 12672.0,
+        "8": 12672.0,
+        "9": 12672.0,
+        "10": 12672.0,
+        "11": 12672.0,
+        "12": 12672.0,
+        "13": 12672.0,
+        "14": 12672.0,
+        "15": 12666.5
+      },
+      "payload_jain": 0.17093066320743744,
+      "selection": "longest common all-Jetty queued interval; inward integer-ns rounding",
+      "valid_all_jetties_backlogged": true,
+      "valid_common_policy_window": true,
+      "window_ns": [
+        947,
+        38738
+      ],
+      "wire_bytes": {
+        "0": 281353.0,
+        "1": 12736.0,
+        "2": 12736.0,
+        "3": 12736.0,
+        "4": 12736.0,
+        "5": 12736.0,
+        "6": 12736.0,
+        "7": 12736.0,
+        "8": 12736.0,
+        "9": 12736.0,
+        "10": 12736.0,
+        "11": 12736.0,
+        "12": 12736.0,
+        "13": 12736.0,
+        "14": 12736.0,
+        "15": 12730.5
+      },
+      "wire_jain": 0.17093335059835382
+    },
+    "finish_ps": 978702760,
+    "makespan_ns": 978702.76,
+    "origin_ps": 0,
+    "payload_bytes": 12167232,
+    "payload_throughput_gbps": 99.45599417743544,
+    "per_jetty": {
+      "0": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 749760,
+        "payload_throughput_gbps": 6.128602314353339,
+        "queue_wait_ns": {
+          "mean": 197840.2013114754,
+          "p50": 130437.64,
+          "p99": 608198.152
+        },
+        "ready_to_complete_ns": {
+          "mean": 217133.56393442623,
+          "p50": 154009.0,
+          "p99": 631634.344
+        },
+        "scheduler_wait_ns": {
+          "mean": 197809.2013114754,
+          "p50": 130406.64,
+          "p99": 608137.752
+        },
+        "submit_to_complete_ns": {
+          "mean": 217133.56393442623,
+          "p50": 154009.0,
+          "p99": 631634.344
+        },
+        "wr_count": 61
+      },
+      "1": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 792000,
+        "payload_throughput_gbps": 6.473875684176062,
+        "queue_wait_ns": {
+          "mean": 508218.9667692308,
+          "p50": 522199.56,
+          "p99": 954809.2496000001
+        },
+        "ready_to_complete_ns": {
+          "mean": 530597.2092307693,
+          "p50": 545264.04,
+          "p99": 973406.4272
+        },
+        "scheduler_wait_ns": {
+          "mean": 508124.9667692308,
+          "p50": 522105.56,
+          "p99": 954683.8896000001
+        },
+        "submit_to_complete_ns": {
+          "mean": 530597.2092307693,
+          "p50": 545264.04,
+          "p99": 973406.4272
+        },
+        "wr_count": 65
+      },
+      "10": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 779328,
+        "payload_throughput_gbps": 6.370293673229245,
+        "queue_wait_ns": {
+          "mean": 509798.12,
+          "p50": 522965.0,
+          "p99": 951815.4831999999
+        },
+        "ready_to_complete_ns": {
+          "mean": 532197.32,
+          "p50": 546282.9199999999,
+          "p99": 970655.9632000001
+        },
+        "scheduler_wait_ns": {
+          "mean": 509136.62,
+          "p50": 522303.5,
+          "p99": 951123.1132
+        },
+        "submit_to_complete_ns": {
+          "mean": 532197.32,
+          "p50": 546282.9199999999,
+          "p99": 970655.9632000001
+        },
+        "wr_count": 64
+      },
+      "11": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 734976,
+        "payload_throughput_gbps": 6.007756634915386,
+        "queue_wait_ns": {
+          "mean": 496482.9561290323,
+          "p50": 507935.24,
+          "p99": 931759.5728
+        },
+        "ready_to_complete_ns": {
+          "mean": 518980.6025806452,
+          "p50": 531253.16,
+          "p99": 953114.1776
+        },
+        "scheduler_wait_ns": {
+          "mean": 495758.4561290323,
+          "p50": 507210.74,
+          "p99": 931005.1828000001
+        },
+        "submit_to_complete_ns": {
+          "mean": 518980.6025806452,
+          "p50": 531253.16,
+          "p99": 953114.1776
+        },
+        "wr_count": 62
+      },
+      "12": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 749760,
+        "payload_throughput_gbps": 6.128602314353339,
+        "queue_wait_ns": {
+          "mean": 497458.2335483871,
+          "p50": 508954.12,
+          "p99": 932778.4528
+        },
+        "ready_to_complete_ns": {
+          "mean": 519953.1548387097,
+          "p50": 532272.04,
+          "p99": 953935.3744000001
+        },
+        "scheduler_wait_ns": {
+          "mean": 496671.7335483871,
+          "p50": 508167.62,
+          "p99": 931962.0628000001
+        },
+        "submit_to_complete_ns": {
+          "mean": 519953.1548387097,
+          "p50": 532272.04,
+          "p99": 953935.3744000001
+        },
+        "wr_count": 62
+      },
+      "13": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 737088,
+        "payload_throughput_gbps": 6.025020303406522,
+        "queue_wait_ns": {
+          "mean": 498422.6103225806,
+          "p50": 509973.0,
+          "p99": 933591.2016
+        },
+        "ready_to_complete_ns": {
+          "mean": 520909.35612903227,
+          "p50": 533290.9199999999,
+          "p99": 954822.4656
+        },
+        "scheduler_wait_ns": {
+          "mean": 497574.1103225806,
+          "p50": 509124.5,
+          "p99": 932712.8116000001
+        },
+        "submit_to_complete_ns": {
+          "mean": 520909.35612903227,
+          "p50": 533290.9199999999,
+          "p99": 954822.4656
+        },
+        "wr_count": 62
+      },
+      "14": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 779328,
+        "payload_throughput_gbps": 6.370293673229245,
+        "queue_wait_ns": {
+          "mean": 527113.9842424243,
+          "p50": 543089.1599999999,
+          "p99": 960205.3200000001
+        },
+        "ready_to_complete_ns": {
+          "mean": 549354.1442424243,
+          "p50": 566660.52,
+          "p99": 978369.96
+        },
+        "scheduler_wait_ns": {
+          "mean": 526201.4842424243,
+          "p50": 542176.6599999999,
+          "p99": 959260.97
+        },
+        "submit_to_complete_ns": {
+          "mean": 549354.1442424243,
+          "p50": 566660.52,
+          "p99": 978369.96
+        },
+        "wr_count": 66
+      },
+      "15": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 798336,
+        "payload_throughput_gbps": 6.52566668964947,
+        "queue_wait_ns": {
+          "mean": 514567.32,
+          "p50": 528059.4,
+          "p99": 953853.2432000001
+        },
+        "ready_to_complete_ns": {
+          "mean": 536948.04,
+          "p50": 551377.3200000001,
+          "p99": 972568.6928000001
+        },
+        "scheduler_wait_ns": {
+          "mean": 513589.82,
+          "p50": 527081.9,
+          "p99": 952844.8732
+        },
+        "submit_to_complete_ns": {
+          "mean": 536948.04,
+          "p50": 551377.3200000001,
+          "p99": 972568.6928000001
+        },
+        "wr_count": 64
+      },
+      "2": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 777216,
+        "payload_throughput_gbps": 6.353030004738109,
+        "queue_wait_ns": {
+          "mean": 509198.856,
+          "p50": 523218.44,
+          "p99": 955828.1296000001
+        },
+        "ready_to_complete_ns": {
+          "mean": 531558.9027692308,
+          "p50": 546282.92,
+          "p99": 974121.1792000001
+        },
+        "scheduler_wait_ns": {
+          "mean": 509039.856,
+          "p50": 523059.44,
+          "p99": 955637.7696
+        },
+        "submit_to_complete_ns": {
+          "mean": 531558.9027692308,
+          "p50": 546282.92,
+          "p99": 974121.1792000001
+        },
+        "wr_count": 65
+      },
+      "3": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 770880,
+        "payload_throughput_gbps": 6.3012389992647,
+        "queue_wait_ns": {
+          "mean": 503128.76,
+          "p50": 516086.28,
+          "p99": 948706.824
+        },
+        "ready_to_complete_ns": {
+          "mean": 525564.92,
+          "p50": 539150.76,
+          "p99": 968436.0336
+        },
+        "scheduler_wait_ns": {
+          "mean": 502905.26,
+          "p50": 515862.78,
+          "p99": 948452.4539999999
+        },
+        "submit_to_complete_ns": {
+          "mean": 525564.92,
+          "p50": 539150.76,
+          "p99": 968436.0336
+        },
+        "wr_count": 64
+      },
+      "4": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 728640,
+        "payload_throughput_gbps": 5.955965629441977,
+        "queue_wait_ns": {
+          "mean": 482396.26032786886,
+          "p50": 492652.04,
+          "p99": 912552.456
+        },
+        "ready_to_complete_ns": {
+          "mean": 504934.47147540987,
+          "p50": 516223.4,
+          "p99": 933521.8319999999
+        },
+        "scheduler_wait_ns": {
+          "mean": 482110.26032786886,
+          "p50": 492366.04,
+          "p99": 912237.0560000001
+        },
+        "submit_to_complete_ns": {
+          "mean": 504934.47147540987,
+          "p50": 516223.4,
+          "p99": 933521.8319999999
+        },
+        "wr_count": 61
+      },
+      "5": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 743424,
+        "payload_throughput_gbps": 6.07681130887993,
+        "queue_wait_ns": {
+          "mean": 490653.17548387096,
+          "p50": 501821.95999999996,
+          "p99": 926971.2464
+        },
+        "ready_to_complete_ns": {
+          "mean": 513156.2722580645,
+          "p50": 525139.88,
+          "p99": 948036.9296000001
+        },
+        "scheduler_wait_ns": {
+          "mean": 490305.67548387096,
+          "p50": 501474.45999999996,
+          "p99": 926593.8563999999
+        },
+        "submit_to_complete_ns": {
+          "mean": 513156.2722580645,
+          "p50": 525139.88,
+          "p99": 948036.9296000001
+        },
+        "wr_count": 62
+      },
+      "6": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 753984,
+        "payload_throughput_gbps": 6.163129651335611,
+        "queue_wait_ns": {
+          "mean": 498839.51936507935,
+          "p50": 510991.88,
+          "p99": 939818.504
+        },
+        "ready_to_complete_ns": {
+          "mean": 521300.5707936508,
+          "p50": 534056.36,
+          "p99": 960358.7216
+        },
+        "scheduler_wait_ns": {
+          "mean": 498429.51936507935,
+          "p50": 510581.88,
+          "p99": 939378.124
+        },
+        "submit_to_complete_ns": {
+          "mean": 521300.5707936508,
+          "p50": 534056.36,
+          "p99": 960358.7216
+        },
+        "wr_count": 63
+      },
+      "7": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 747648,
+        "payload_throughput_gbps": 6.111338645862203,
+        "queue_wait_ns": {
+          "mean": 485278.4006557377,
+          "p50": 495708.68,
+          "p99": 914933.2559999999
+        },
+        "ready_to_complete_ns": {
+          "mean": 507855.38950819673,
+          "p50": 519280.04,
+          "p99": 936308.1359999999
+        },
+        "scheduler_wait_ns": {
+          "mean": 484806.4006557377,
+          "p50": 495236.68,
+          "p99": 914431.8559999999
+        },
+        "submit_to_complete_ns": {
+          "mean": 507855.38950819673,
+          "p50": 519280.04,
+          "p99": 936308.1359999999
+        },
+        "wr_count": 61
+      },
+      "8": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 751872,
+        "payload_throughput_gbps": 6.145865982844475,
+        "queue_wait_ns": {
+          "mean": 500748.38539682544,
+          "p50": 513029.64,
+          "p99": 940708.9744000001
+        },
+        "ready_to_complete_ns": {
+          "mean": 523214.80063492066,
+          "p50": 536094.12,
+          "p99": 961120.7824
+        },
+        "scheduler_wait_ns": {
+          "mean": 500214.38539682544,
+          "p50": 512495.64,
+          "p99": 940144.5944000001
+        },
+        "submit_to_complete_ns": {
+          "mean": 523214.80063492066,
+          "p50": 536094.12,
+          "p99": 961120.7824
+        },
+        "wr_count": 63
+      },
+      "9": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 772992,
+        "payload_throughput_gbps": 6.318502667755836,
+        "queue_wait_ns": {
+          "mean": 508810.92,
+          "p50": 521946.12,
+          "p99": 950796.6032
+        },
+        "ready_to_complete_ns": {
+          "mean": 531218.04,
+          "p50": 545264.04,
+          "p99": 969637.0832
+        },
+        "scheduler_wait_ns": {
+          "mean": 508213.42,
+          "p50": 521348.62,
+          "p99": 950168.2331999999
+        },
+        "submit_to_complete_ns": {
+          "mean": 531218.04,
+          "p50": 545264.04,
+          "p99": 969637.0832
+        },
+        "wr_count": 64
+      }
+    },
+    "policy": "rr",
+    "queue_wait_ns": {
+      "mean": 483907.5383548067,
+      "p50": 490614.28,
+      "p99": 952464.2896
+    },
+    "ready_to_complete_ns": {
+      "mean": 506157.27702675917,
+      "p50": 514185.64,
+      "p99": 971304.7696
+    },
+    "result_schema": "wr-results/1.0",
+    "scenario": "moe_skew",
+    "scheduler_wait_ns": {
+      "mean": 483402.5383548067,
+      "p50": 490457.28,
+      "p99": 952268.6496
+    },
+    "submit_to_complete_ns": {
+      "mean": 506157.27702675917,
+      "p50": 514185.64,
+      "p99": 971304.7696
+    },
+    "trace_sha256": "328fe2a7f062b630c2ae838b3cfaa23aca52045de68ab1031112bf1b1f40db2d",
+    "wr_count": 1009
+  },
+  {
+    "admission_wait_ns": {
+      "mean": 0.0,
+      "p50": 0.0,
+      "p99": 0.0
+    },
+    "event_counts": {
+      "ack_chunk": 1009,
+      "ack_rx_wire": 1009,
+      "ack_tx_end": 1009,
+      "ack_tx_start": 1009,
+      "complete": 1009,
+      "dequeue": 1009,
+      "dispatch": 1009,
+      "eligible": 1009,
+      "enqueue": 1009,
+      "memory_commit": 1009,
+      "ordered": 1009,
+      "ready": 1009,
+      "rx_wire": 1009,
+      "submit": 1009,
+      "tx_chunk": 191122,
+      "tx_end": 1009,
+      "tx_start": 1009
+    },
+    "fairness": {
+      "initial_diagnostic_window_ns": [
+        50000,
+        200000
+      ],
+      "invalid_reason": null,
+      "minimum_scheduler_queue": {
+        "0": 36,
+        "1": 62,
+        "2": 62,
+        "3": 61,
+        "4": 58,
+        "5": 59,
+        "6": 61,
+        "7": 59,
+        "8": 61,
+        "9": 62,
+        "10": 62,
+        "11": 60,
+        "12": 60,
+        "13": 60,
+        "14": 64,
+        "15": 1
+      },
+      "payload_bytes": {
+        "0": 279945.0,
+        "1": 12672.0,
+        "2": 12672.0,
+        "3": 12672.0,
+        "4": 12672.0,
+        "5": 12672.0,
+        "6": 12672.0,
+        "7": 12672.0,
+        "8": 12672.0,
+        "9": 12672.0,
+        "10": 12672.0,
+        "11": 12672.0,
+        "12": 12672.0,
+        "13": 12672.0,
+        "14": 12672.0,
+        "15": 12666.5
+      },
+      "payload_jain": 0.17093066320743744,
+      "selection": "longest common all-Jetty queued interval; inward integer-ns rounding",
+      "valid_all_jetties_backlogged": true,
+      "valid_common_policy_window": true,
+      "window_ns": [
+        947,
+        38738
+      ],
+      "wire_bytes": {
+        "0": 281353.0,
+        "1": 12736.0,
+        "2": 12736.0,
+        "3": 12736.0,
+        "4": 12736.0,
+        "5": 12736.0,
+        "6": 12736.0,
+        "7": 12736.0,
+        "8": 12736.0,
+        "9": 12736.0,
+        "10": 12736.0,
+        "11": 12736.0,
+        "12": 12736.0,
+        "13": 12736.0,
+        "14": 12736.0,
+        "15": 12730.5
+      },
+      "wire_jain": 0.17093335059835382
+    },
+    "finish_ps": 978702760,
+    "makespan_ns": 978702.76,
+    "origin_ps": 0,
+    "payload_bytes": 12167232,
+    "payload_throughput_gbps": 99.45599417743544,
+    "per_jetty": {
+      "0": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 749760,
+        "payload_throughput_gbps": 6.128602314353339,
+        "queue_wait_ns": {
+          "mean": 191576.59475409836,
+          "p50": 130437.64,
+          "p99": 577631.752
+        },
+        "ready_to_complete_ns": {
+          "mean": 210869.9573770492,
+          "p50": 154009.0,
+          "p99": 601067.944
+        },
+        "scheduler_wait_ns": {
+          "mean": 191545.59475409836,
+          "p50": 130406.64,
+          "p99": 577571.352
+        },
+        "submit_to_complete_ns": {
+          "mean": 210869.9573770492,
+          "p50": 154009.0,
+          "p99": 601067.944
+        },
+        "wr_count": 61
+      },
+      "1": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 792000,
+        "payload_throughput_gbps": 6.473875684176062,
+        "queue_wait_ns": {
+          "mean": 510659.94646153843,
+          "p50": 522711.56,
+          "p99": 957356.7568000001
+        },
+        "ready_to_complete_ns": {
+          "mean": 532986.2012307692,
+          "p50": 546282.92,
+          "p99": 976933.9024
+        },
+        "scheduler_wait_ns": {
+          "mean": 510565.94646153843,
+          "p50": 522617.56,
+          "p99": 957231.3968
+        },
+        "submit_to_complete_ns": {
+          "mean": 532986.2012307692,
+          "p50": 546282.92,
+          "p99": 976933.9024
+        },
+        "wr_count": 65
+      },
+      "10": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 779328,
+        "payload_throughput_gbps": 6.370293673229245,
+        "queue_wait_ns": {
+          "mean": 509932.52,
+          "p50": 523730.44,
+          "p99": 949942.0752
+        },
+        "ready_to_complete_ns": {
+          "mean": 532323.8,
+          "p50": 547301.8,
+          "p99": 970078.4784
+        },
+        "scheduler_wait_ns": {
+          "mean": 509271.02,
+          "p50": 523068.94,
+          "p99": 949249.7052
+        },
+        "submit_to_complete_ns": {
+          "mean": 532323.8,
+          "p50": 547301.8,
+          "p99": 970078.4784
+        },
+        "wr_count": 64
+      },
+      "11": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 734976,
+        "payload_throughput_gbps": 6.007756634915386,
+        "queue_wait_ns": {
+          "mean": 494732.4941935484,
+          "p50": 508700.68000000005,
+          "p99": 918217.7872
+        },
+        "ready_to_complete_ns": {
+          "mean": 517205.61419354833,
+          "p50": 532018.6,
+          "p99": 939563.944
+        },
+        "scheduler_wait_ns": {
+          "mean": 494007.9941935484,
+          "p50": 507976.18000000005,
+          "p99": 917463.3972
+        },
+        "submit_to_complete_ns": {
+          "mean": 517205.61419354833,
+          "p50": 532018.6,
+          "p99": 939563.944
+        },
+        "wr_count": 62
+      },
+      "12": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 749760,
+        "payload_throughput_gbps": 6.128602314353339,
+        "queue_wait_ns": {
+          "mean": 496448.02451612905,
+          "p50": 509719.56,
+          "p99": 932691.1568
+        },
+        "ready_to_complete_ns": {
+          "mean": 518921.14451612905,
+          "p50": 533037.48,
+          "p99": 952788.6991999999
+        },
+        "scheduler_wait_ns": {
+          "mean": 495661.52451612905,
+          "p50": 508933.06,
+          "p99": 931874.7668
+        },
+        "submit_to_complete_ns": {
+          "mean": 518921.14451612905,
+          "p50": 533037.48,
+          "p99": 952788.6991999999
+        },
+        "wr_count": 62
+      },
+      "13": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 737088,
+        "payload_throughput_gbps": 6.025020303406522,
+        "queue_wait_ns": {
+          "mean": 495680.1896774193,
+          "p50": 510738.44,
+          "p99": 916181.2048
+        },
+        "ready_to_complete_ns": {
+          "mean": 518183.2864516129,
+          "p50": 534056.36,
+          "p99": 936963.0352
+        },
+        "scheduler_wait_ns": {
+          "mean": 494831.6896774193,
+          "p50": 509889.94,
+          "p99": 915302.8148
+        },
+        "submit_to_complete_ns": {
+          "mean": 518183.2864516129,
+          "p50": 534056.36,
+          "p99": 936963.0352
+        },
+        "wr_count": 62
+      },
+      "14": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 779328,
+        "payload_throughput_gbps": 6.370293673229245,
+        "queue_wait_ns": {
+          "mean": 523946.02303030307,
+          "p50": 544617.48,
+          "p99": 953134.3439999999
+        },
+        "ready_to_complete_ns": {
+          "mean": 546260.4230303031,
+          "p50": 567935.3999999999,
+          "p99": 972870.3119999999
+        },
+        "scheduler_wait_ns": {
+          "mean": 523033.52303030307,
+          "p50": 543704.98,
+          "p99": 952189.994
+        },
+        "submit_to_complete_ns": {
+          "mean": 546260.4230303031,
+          "p50": 567935.3999999999,
+          "p99": 972870.3119999999
+        },
+        "wr_count": 66
+      },
+      "15": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 798336,
+        "payload_throughput_gbps": 6.52566668964947,
+        "queue_wait_ns": {
+          "mean": 517888.44,
+          "p50": 528824.84,
+          "p99": 957821.5504000001
+        },
+        "ready_to_complete_ns": {
+          "mean": 540343.08,
+          "p50": 552396.2,
+          "p99": 977844.7504
+        },
+        "scheduler_wait_ns": {
+          "mean": 516910.94,
+          "p50": 527847.34,
+          "p99": 956813.1804
+        },
+        "submit_to_complete_ns": {
+          "mean": 540343.08,
+          "p50": 552396.2,
+          "p99": 977844.7504
+        },
+        "wr_count": 64
+      },
+      "2": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 777216,
+        "payload_throughput_gbps": 6.353030004738109,
+        "queue_wait_ns": {
+          "mean": 511359.73230769235,
+          "p50": 523730.44,
+          "p99": 953397.768
+        },
+        "ready_to_complete_ns": {
+          "mean": 533665.1919999999,
+          "p50": 547301.8,
+          "p99": 973008.7056
+        },
+        "scheduler_wait_ns": {
+          "mean": 511200.73230769235,
+          "p50": 523571.44,
+          "p99": 953207.4079999999
+        },
+        "submit_to_complete_ns": {
+          "mean": 533665.1919999999,
+          "p50": 547301.8,
+          "p99": 973008.7056
+        },
+        "wr_count": 65
+      },
+      "3": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 770880,
+        "payload_throughput_gbps": 6.3012389992647,
+        "queue_wait_ns": {
+          "mean": 503812.68,
+          "p50": 516851.72,
+          "p99": 945600.8784
+        },
+        "ready_to_complete_ns": {
+          "mean": 526214.52,
+          "p50": 540169.64,
+          "p99": 965811.624
+        },
+        "scheduler_wait_ns": {
+          "mean": 503589.18,
+          "p50": 516628.22,
+          "p99": 945346.5083999999
+        },
+        "submit_to_complete_ns": {
+          "mean": 526214.52,
+          "p50": 540169.64,
+          "p99": 965811.624
+        },
+        "wr_count": 64
+      },
+      "4": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 728640,
+        "payload_throughput_gbps": 5.955965629441977,
+        "queue_wait_ns": {
+          "mean": 482918.24852459016,
+          "p50": 493670.92,
+          "p99": 908278.28
+        },
+        "ready_to_complete_ns": {
+          "mean": 505406.60262295086,
+          "p50": 516735.4,
+          "p99": 930058.664
+        },
+        "scheduler_wait_ns": {
+          "mean": 482632.24852459016,
+          "p50": 493384.92,
+          "p99": 907962.88
+        },
+        "submit_to_complete_ns": {
+          "mean": 505406.60262295086,
+          "p50": 516735.4,
+          "p99": 930058.664
+        },
+        "wr_count": 61
+      },
+      "5": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 743424,
+        "payload_throughput_gbps": 6.07681130887993,
+        "queue_wait_ns": {
+          "mean": 490468.2774193548,
+          "p50": 502840.83999999997,
+          "p99": 917665.3392
+        },
+        "ready_to_complete_ns": {
+          "mean": 512944.1225806452,
+          "p50": 525905.3200000001,
+          "p99": 938644.8528
+        },
+        "scheduler_wait_ns": {
+          "mean": 490120.7774193548,
+          "p50": 502493.33999999997,
+          "p99": 917287.9491999999
+        },
+        "submit_to_complete_ns": {
+          "mean": 512944.1225806452,
+          "p50": 525905.3200000001,
+          "p99": 938644.8528
+        },
+        "wr_count": 62
+      },
+      "6": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 753984,
+        "payload_throughput_gbps": 6.163129651335611,
+        "queue_wait_ns": {
+          "mean": 498667.7149206349,
+          "p50": 512010.76,
+          "p99": 938299.2976
+        },
+        "ready_to_complete_ns": {
+          "mean": 520986.6253968254,
+          "p50": 535075.24,
+          "p99": 957785.2048
+        },
+        "scheduler_wait_ns": {
+          "mean": 498257.7149206349,
+          "p50": 511600.76,
+          "p99": 937858.9176
+        },
+        "submit_to_complete_ns": {
+          "mean": 520986.6253968254,
+          "p50": 535075.24,
+          "p99": 957785.2048
+        },
+        "wr_count": 63
+      },
+      "7": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 747648,
+        "payload_throughput_gbps": 6.111338645862203,
+        "queue_wait_ns": {
+          "mean": 487249.18098360655,
+          "p50": 496727.56,
+          "p99": 927575.56
+        },
+        "ready_to_complete_ns": {
+          "mean": 509809.5508196722,
+          "p50": 519792.04,
+          "p99": 948105.6400000001
+        },
+        "scheduler_wait_ns": {
+          "mean": 486777.18098360655,
+          "p50": 496255.56,
+          "p99": 927074.16
+        },
+        "submit_to_complete_ns": {
+          "mean": 509809.5508196722,
+          "p50": 519792.04,
+          "p99": 948105.6400000001
+        },
+        "wr_count": 61
+      },
+      "8": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 751872,
+        "payload_throughput_gbps": 6.145865982844475,
+        "queue_wait_ns": {
+          "mean": 499007.01650793647,
+          "p50": 513541.64,
+          "p99": 936017.0064
+        },
+        "ready_to_complete_ns": {
+          "mean": 521478.79555555555,
+          "p50": 537113.0,
+          "p99": 956283.5088000001
+        },
+        "scheduler_wait_ns": {
+          "mean": 498473.01650793647,
+          "p50": 513007.64,
+          "p99": 935452.6264
+        },
+        "submit_to_complete_ns": {
+          "mean": 521478.79555555555,
+          "p50": 537113.0,
+          "p99": 956283.5088000001
+        },
+        "wr_count": 63
+      },
+      "9": {
+        "admission_wait_ns": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p99": 0.0
+        },
+        "payload_bytes": 772992,
+        "payload_throughput_gbps": 6.318502667755836,
+        "queue_wait_ns": {
+          "mean": 509954.36,
+          "p50": 522711.56,
+          "p99": 948761.5567999999
+        },
+        "ready_to_complete_ns": {
+          "mean": 532372.04,
+          "p50": 546282.9199999999,
+          "p99": 969148.0208
+        },
+        "scheduler_wait_ns": {
+          "mean": 509356.86,
+          "p50": 522114.06,
+          "p99": 948133.1867999999
+        },
+        "submit_to_complete_ns": {
+          "mean": 532372.04,
+          "p50": 546282.9199999999,
+          "p99": 969148.0208
+        },
+        "wr_count": 64
+      }
+    },
+    "policy": "drr",
+    "queue_wait_ns": {
+      "mean": 483634.9249950446,
+      "p50": 490614.28,
+      "p99": 950605.7296
+    },
+    "ready_to_complete_ns": {
+      "mean": 505869.2579980178,
+      "p50": 513678.76,
+      "p99": 970514.0368
+    },
+    "result_schema": "wr-results/1.0",
+    "scenario": "moe_skew",
+    "scheduler_wait_ns": {
+      "mean": 483129.9249950446,
+      "p50": 490522.28,
+      "p99": 950006.6496
+    },
+    "submit_to_complete_ns": {
+      "mean": 505869.2579980178,
+      "p50": 513678.76,
+      "p99": 970514.0368
+    },
+    "trace_sha256": "328fe2a7f062b630c2ae838b3cfaa23aca52045de68ab1031112bf1b1f40db2d",
+    "wr_count": 1009
+  }
+]

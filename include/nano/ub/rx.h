@@ -100,6 +100,9 @@ SC_MODULE(UbMemory) {
 
     // Optional experiment hooks; default memory behavior remains unchanged.
     std::function<void(const Flit&, uint8_t*)> bulk_write;
+    // Opt-in external destination storage, after the SAME 4 ns memory service.
+    // Bypasses only the fixed 1 MiB backing array, not the protocol pipeline.
+    std::function<void(const Flit&)> external_write;
     bool complete_writes = false;
     uint8_t mem[1024 * 1024];  // 1 MB
 
@@ -120,6 +123,11 @@ SC_MODULE(UbMemory) {
         while (true) {
             Flit f = req_in.read();
             wait(4, SC_NS);  // 4 cy: DRAM access
+            if (f.ta_opcode == 0x03 && external_write) {
+                external_write(f);
+                if (complete_writes) resp_out.write(f);
+                continue;
+            }
             uint64_t addr = f.mem_addr;
             uint32_t len  = f.mem_len;
             if (addr + len > sizeof(mem)) len = sizeof(mem) - addr;

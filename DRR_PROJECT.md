@@ -1,5 +1,7 @@
 # Nano-UB 多 Jetty FIFO/RR/DRR 实验
 
+2026-10-13：通用 WR Trace 接入与 Phase 2 实测见 [报告](docs/phase2/REPORT.md)；`scripts/run_phase2.sh` 完整复现。
+
 2026-10-12 已在 ub-test 完成最小 SystemC 端到端 WRITE 实验。实现、假设、结果与复现说明见 [docs/E2E_REPORT.md](docs/E2E_REPORT.md)。
 
 ## 当前可运行路径

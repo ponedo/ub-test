@@ -1,0 +1,174 @@
+{
+  "admission_wait_ns": {
+    "mean": 0.0,
+    "p50": 0.0,
+    "p99": 0.0
+  },
+  "event_counts": {
+    "ack_chunk": 768,
+    "ack_rx_wire": 768,
+    "ack_tx_end": 768,
+    "ack_tx_start": 768,
+    "complete": 768,
+    "dequeue": 768,
+    "dispatch": 768,
+    "eligible": 768,
+    "enqueue": 768,
+    "memory_commit": 768,
+    "ordered": 768,
+    "ready": 768,
+    "rx_wire": 768,
+    "submit": 768,
+    "tx_chunk": 6144,
+    "tx_end": 768,
+    "tx_start": 768
+  },
+  "fairness": {
+    "invalid_reason": "not continuously backlogged for every active Jetty under every compared policy",
+    "minimum_scheduler_queue": {
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    "payload_bytes": {
+      "1": 1984.0,
+      "2": 9216.0,
+      "3": 32140.0
+    },
+    "payload_jain": null,
+    "valid_all_jetties_backlogged": false,
+    "valid_common_policy_window": false,
+    "window_ns": [
+      2000,
+      6000
+    ],
+    "wire_bytes": {
+      "1": 3968.5,
+      "2": 11520.0,
+      "3": 34124.0
+    },
+    "wire_jain": null
+  },
+  "finish_ps": 32008440,
+  "makespan_ns": 32000.44,
+  "origin_ps": 8000,
+  "payload_bytes": 344064,
+  "payload_throughput_gbps": 86.01481729626218,
+  "per_jetty": {
+    "1": {
+      "admission_wait_ns": {
+        "mean": 0.0,
+        "p50": 0.0,
+        "p99": 0.0
+      },
+      "payload_bytes": 16384,
+      "payload_throughput_gbps": 4.095943680774389,
+      "queue_wait_ns": {
+        "mean": 1141.6115625,
+        "p50": 860.5,
+        "p99": 2960.9139999999993
+      },
+      "ready_to_complete_ns": {
+        "mean": 2117.6796875,
+        "p50": 1955.8200000000002,
+        "p99": 4056.2339999999995
+      },
+      "scheduler_wait_ns": {
+        "mean": 1140.60375,
+        "p50": 859.0,
+        "p99": 2959.9139999999993
+      },
+      "submit_to_complete_ns": {
+        "mean": 2117.6796875,
+        "p50": 1955.8200000000002,
+        "p99": 4056.2339999999995
+      },
+      "wr_count": 256
+    },
+    "2": {
+      "admission_wait_ns": {
+        "mean": 0.0,
+        "p50": 0.0,
+        "p99": 0.0
+      },
+      "payload_bytes": 65536,
+      "payload_throughput_gbps": 16.383774723097556,
+      "queue_wait_ns": {
+        "mean": 1842.641875,
+        "p50": 1311.1599999999999,
+        "p99": 5522.557999999999
+      },
+      "ready_to_complete_ns": {
+        "mean": 2811.6015625,
+        "p50": 2344.2799999999997,
+        "p99": 6915.527999999998
+      },
+      "scheduler_wait_ns": {
+        "mean": 1841.62625,
+        "p50": 1310.1599999999999,
+        "p99": 5521.557999999999
+      },
+      "submit_to_complete_ns": {
+        "mean": 2811.6015625,
+        "p50": 2344.2799999999997,
+        "p99": 6915.527999999998
+      },
+      "wr_count": 256
+    },
+    "3": {
+      "admission_wait_ns": {
+        "mean": 0.0,
+        "p50": 0.0,
+        "p99": 0.0
+      },
+      "payload_bytes": 262144,
+      "payload_throughput_gbps": 65.53509889239022,
+      "queue_wait_ns": {
+        "mean": 1983.35453125,
+        "p50": 2372.0,
+        "p99": 4245.758
+      },
+      "ready_to_complete_ns": {
+        "mean": 3030.13109375,
+        "p50": 3481.16,
+        "p99": 5354.918
+      },
+      "scheduler_wait_ns": {
+        "mean": 1982.34671875,
+        "p50": 2371.0,
+        "p99": 4244.758
+      },
+      "submit_to_complete_ns": {
+        "mean": 3030.13109375,
+        "p50": 3481.16,
+        "p99": 5354.918
+      },
+      "wr_count": 256
+    }
+  },
+  "policy": "rr",
+  "queue_wait_ns": {
+    "mean": 1655.8693229166665,
+    "p50": 1315.06,
+    "p99": 5307.327600000001
+  },
+  "ready_to_complete_ns": {
+    "mean": 2653.1374479166666,
+    "p50": 2382.8599999999997,
+    "p99": 6546.421200000004
+  },
+  "result_schema": "wr-results/1.0",
+  "scenario": "synthetic_poisson",
+  "scheduler_wait_ns": {
+    "mean": 1654.8589062499998,
+    "p50": 1314.06,
+    "p99": 5306.327600000002
+  },
+  "submit_to_complete_ns": {
+    "mean": 2653.1374479166666,
+    "p50": 2382.8599999999997,
+    "p99": 6546.421200000004
+  },
+  "trace_sha256": "7b6d9cf7e50936e3e9b614fddbc6429cd97412b5ec0ab3518709bc7f6f6f583a",
+  "wr_count": 768
+}

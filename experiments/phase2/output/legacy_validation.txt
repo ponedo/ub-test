@@ -1,0 +1,70 @@
+-- Configuring done (0.0s)
+-- Generating done (0.1s)
+-- Build files have been written to: /workspace/nano-ub-phase2/build-phase2
+[  6%] Built target m00_empty
+[  8%] Built target m02_link
+[ 12%] Built target m01_flit
+[ 15%] Built target m03_roce_tx
+[ 20%] Built target m04_roce_pingpong
+[ 24%] Built target m07_ub_ls_tx
+[ 29%] Built target m06_roce_full
+[ 34%] Built target m05_roce_read
+[ 37%] Built target m09_ub_urma_tx
+[ 43%] Built target m08_ub_ls_pingpong
+[ 48%] Built target m10_ub_urma_e2e
+[ 51%] Built target m11_ub_ordering
+[ 55%] Built target bench_full_latency
+[ 58%] Built target bench_state_size
+[ 63%] Built target bench_ub
+[ 68%] Built target bench_roce
+[ 72%] Built target bench_ordering_cost
+[ 75%] Built target bench_micro
+[ 79%] Built target bench_loss_recovery
+[ 82%] Built target m12_ub_fair_scheduler
+[ 86%] Built target test_scheduler_core
+[ 89%] Built target bench_scheduler_core
+[ 93%] Built target scheduler_e2e
+[ 96%] Built target m13_scheduler_guards
+[100%] Built target trace_e2e
+Test project /workspace/nano-ub-phase2/build-phase2
+      Start  1: m00_empty
+ 1/15 Test  #1: m00_empty ........................   Passed    0.01 sec
+      Start  2: m01_flit
+ 2/15 Test  #2: m01_flit .........................   Passed    0.00 sec
+      Start  3: m02_link
+ 3/15 Test  #3: m02_link .........................   Passed    0.01 sec
+      Start  4: m03_roce_tx
+ 4/15 Test  #4: m03_roce_tx ......................   Passed    0.01 sec
+      Start  5: m04_roce_pingpong
+ 5/15 Test  #5: m04_roce_pingpong ................   Passed    0.01 sec
+      Start  6: m05_roce_read
+ 6/15 Test  #6: m05_roce_read ....................   Passed    0.01 sec
+      Start  7: m06_roce_full
+ 7/15 Test  #7: m06_roce_full ....................   Passed    0.01 sec
+      Start  8: m07_ub_ls_tx
+ 8/15 Test  #8: m07_ub_ls_tx .....................   Passed    0.01 sec
+      Start  9: m08_ub_ls_pingpong
+ 9/15 Test  #9: m08_ub_ls_pingpong ...............   Passed    0.01 sec
+      Start 10: m09_ub_urma_tx
+10/15 Test #10: m09_ub_urma_tx ...................   Passed    0.01 sec
+      Start 11: m10_ub_urma_e2e
+11/15 Test #11: m10_ub_urma_e2e ..................   Passed    0.01 sec
+      Start 12: m11_ub_ordering
+12/15 Test #12: m11_ub_ordering ..................   Passed    0.01 sec
+      Start 13: m12_ub_fair_scheduler
+13/15 Test #13: m12_ub_fair_scheduler ............   Passed    0.01 sec
+      Start 14: m13_scheduler_guards
+14/15 Test #14: m13_scheduler_guards .............   Passed    0.00 sec
+      Start 15: test_scheduler_core
+15/15 Test #15: test_scheduler_core ..............   Passed    0.00 sec
+
+100% tests passed out of 15
+
+Total Test time (real) =   0.09 sec
+mixed fifo 87.046 Gbps  P50 15892.84 ns  P99 31012.20 ns  wire J 0.62122  payload J 0.54827
+mixed rr   87.046 Gbps  P50 15754.60 ns  P99 31212.64 ns  wire J 0.59901  payload J 0.53388
+mixed drr  87.046 Gbps  P50 8212.84 ns  P99 31012.20 ns  wire J 0.99986  payload J 0.94759
+equal fifo 79.362 Gbps  P50 9988.52 ns  P99 19639.72 ns  wire J 0.99710  payload J 0.99709
+equal rr   79.362 Gbps  P50 9988.52 ns  P99 19639.72 ns  wire J 0.99999  payload J 0.99999
+equal drr  79.362 Gbps  P50 9988.52 ns  P99 19639.72 ns  wire J 0.99978  payload J 0.99976
+PASS: 15 baseline/guard tests, 16 E2E runs, 3 deterministic reruns

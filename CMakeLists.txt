@@ -138,3 +138,6 @@ foreach(test m00_empty m01_flit m02_link m03_roce_tx m04_roce_pingpong
              m13_scheduler_guards test_scheduler_core)
     add_test(NAME ${test} COMMAND ${test})
 endforeach()
+
+add_executable(trace_e2e simulators/nano_ub/trace_e2e.cpp)
+target_link_libraries(trace_e2e nano_common)

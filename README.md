@@ -1,3 +1,5 @@
+> 2026-10-13: 通用 WR Trace → SystemC → 统一评估已实现，见 [Phase 2 报告](docs/phase2/REPORT.md)，一键复现 `scripts/run_phase2.sh`。
+
 > 2026-10-12: 可运行的 FIFO/RR/DRR SystemC 端到端实验见 [E2E_REPORT](docs/E2E_REPORT.md)，入口为 `scripts/run_e2e.sh`。下文保留原项目说明。
 
 # Nano-UB

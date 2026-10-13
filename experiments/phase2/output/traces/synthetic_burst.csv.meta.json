@@ -1,0 +1,37 @@
+{
+  "arrival_is_assumed": true,
+  "generator": "synthetic-v1",
+  "jetty_keys": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ]
+  ],
+  "parameters": {
+    "arrival": "burst",
+    "burst_gap_ns": 1000,
+    "burst_size": 8,
+    "dst_node": 1,
+    "jetties": 3,
+    "mean_gap_ns": 100.0,
+    "seed": 42,
+    "sizes": [
+      64,
+      256,
+      1024
+    ],
+    "src_node": 0,
+    "start_ns": 0,
+    "wr_per_jetty": 256
+  },
+  "poisson_rounding": "ceil absolute exponential-arrival time to integer ns",
+  "schema_version": "1.0"
+}

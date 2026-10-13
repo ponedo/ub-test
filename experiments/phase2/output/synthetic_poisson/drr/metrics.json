@@ -1,0 +1,174 @@
+{
+  "admission_wait_ns": {
+    "mean": 0.0,
+    "p50": 0.0,
+    "p99": 0.0
+  },
+  "event_counts": {
+    "ack_chunk": 768,
+    "ack_rx_wire": 768,
+    "ack_tx_end": 768,
+    "ack_tx_start": 768,
+    "complete": 768,
+    "dequeue": 768,
+    "dispatch": 768,
+    "eligible": 768,
+    "enqueue": 768,
+    "memory_commit": 768,
+    "ordered": 768,
+    "ready": 768,
+    "rx_wire": 768,
+    "submit": 768,
+    "tx_chunk": 6144,
+    "tx_end": 768,
+    "tx_start": 768
+  },
+  "fairness": {
+    "invalid_reason": "not continuously backlogged for every active Jetty under every compared policy",
+    "minimum_scheduler_queue": {
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    "payload_bytes": {
+      "1": 2304.0,
+      "2": 9472.0,
+      "3": 31180.5
+    },
+    "payload_jain": null,
+    "valid_all_jetties_backlogged": false,
+    "valid_common_policy_window": false,
+    "window_ns": [
+      2000,
+      6000
+    ],
+    "wire_bytes": {
+      "1": 4608.0,
+      "2": 11840.0,
+      "3": 33164.5
+    },
+    "wire_jain": null
+  },
+  "finish_ps": 32008440,
+  "makespan_ns": 32000.44,
+  "origin_ps": 8000,
+  "payload_bytes": 344064,
+  "payload_throughput_gbps": 86.01481729626218,
+  "per_jetty": {
+    "1": {
+      "admission_wait_ns": {
+        "mean": 0.0,
+        "p50": 0.0,
+        "p99": 0.0
+      },
+      "payload_bytes": 16384,
+      "payload_throughput_gbps": 4.095943680774389,
+      "queue_wait_ns": {
+        "mean": 71.29203125,
+        "p50": 53.099999999999994,
+        "p99": 364.19399999999985
+      },
+      "ready_to_complete_ns": {
+        "mean": 966.85453125,
+        "p50": 1023.8199999999999,
+        "p99": 1704.3759999999993
+      },
+      "scheduler_wait_ns": {
+        "mean": 70.28421875,
+        "p50": 52.099999999999994,
+        "p99": 363.19399999999985
+      },
+      "submit_to_complete_ns": {
+        "mean": 966.85453125,
+        "p50": 1023.8199999999999,
+        "p99": 1704.3759999999993
+      },
+      "wr_count": 256
+    },
+    "2": {
+      "admission_wait_ns": {
+        "mean": 0.0,
+        "p50": 0.0,
+        "p99": 0.0
+      },
+      "payload_bytes": 65536,
+      "payload_throughput_gbps": 16.383774723097556,
+      "queue_wait_ns": {
+        "mean": 203.77984375,
+        "p50": 107.16,
+        "p99": 784.9979999999998
+      },
+      "ready_to_complete_ns": {
+        "mean": 1077.6615625,
+        "p50": 1111.8200000000002,
+        "p99": 1682.8539999999998
+      },
+      "scheduler_wait_ns": {
+        "mean": 202.76421875,
+        "p50": 106.16,
+        "p99": 783.9979999999998
+      },
+      "submit_to_complete_ns": {
+        "mean": 1077.6615625,
+        "p50": 1111.8200000000002,
+        "p99": 1682.8539999999998
+      },
+      "wr_count": 256
+    },
+    "3": {
+      "admission_wait_ns": {
+        "mean": 0.0,
+        "p50": 0.0,
+        "p99": 0.0
+      },
+      "payload_bytes": 262144,
+      "payload_throughput_gbps": 65.53509889239022,
+      "queue_wait_ns": {
+        "mean": 2494.86703125,
+        "p50": 3043.16,
+        "p99": 5663.878
+      },
+      "ready_to_complete_ns": {
+        "mean": 3675.55109375,
+        "p50": 4583.86,
+        "p99": 6893.5779999999995
+      },
+      "scheduler_wait_ns": {
+        "mean": 2493.85921875,
+        "p50": 3042.16,
+        "p99": 5662.878
+      },
+      "submit_to_complete_ns": {
+        "mean": 3675.55109375,
+        "p50": 4583.86,
+        "p99": 6893.5779999999995
+      },
+      "wr_count": 256
+    }
+  },
+  "policy": "drr",
+  "queue_wait_ns": {
+    "mean": 923.31296875,
+    "p50": 106.36,
+    "p99": 5611.012000000001
+  },
+  "ready_to_complete_ns": {
+    "mean": 1906.6890624999999,
+    "p50": 1167.3,
+    "p99": 6805.208400000001
+  },
+  "result_schema": "wr-results/1.0",
+  "scenario": "synthetic_poisson",
+  "scheduler_wait_ns": {
+    "mean": 922.3025520833334,
+    "p50": 105.36,
+    "p99": 5610.012000000001
+  },
+  "submit_to_complete_ns": {
+    "mean": 1906.6890624999999,
+    "p50": 1167.3,
+    "p99": 6805.208400000001
+  },
+  "trace_sha256": "7b6d9cf7e50936e3e9b614fddbc6429cd97412b5ec0ab3518709bc7f6f6f583a",
+  "wr_count": 768
+}

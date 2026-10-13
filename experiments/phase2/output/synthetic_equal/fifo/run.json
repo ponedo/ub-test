@@ -1,0 +1,46 @@
+{
+  "ack_wire_bytes": 64,
+  "application_sidecars_consumed": false,
+  "backend": "nano-ub-systemc",
+  "dependency_semantics": "all specified prior WRs complete before submit; same-Jetty sequence cannot bypass",
+  "destination_bytes": {
+    "1": 196608
+  },
+  "destination_semantics": "identity and separate memory address spaces; one shared forward/reverse link and pooled RX/TP/memory service",
+  "gbps": 100,
+  "jetties": {
+    "1": 1,
+    "2": 2,
+    "3": 3
+  },
+  "max_payload_bytes": 16777216,
+  "max_ready_ns": 1000000000,
+  "max_total_payload_bytes": 134217728,
+  "max_wr_count": 60000,
+  "nodes": {
+    "0": 1,
+    "1": 2
+  },
+  "phase_semantics": "opaque label, no implicit barrier",
+  "pipeline_fifo_depth": 1,
+  "policy": "fifo",
+  "propagation_ns": 50,
+  "result_schema": "wr-results/1.0",
+  "scheduler_depth_per_jetty": 4096,
+  "scheduler_quantum_bytes": 512,
+  "semantics": "data-write",
+  "source_fifo_depth": 4096,
+  "source_nodes": [
+    0
+  ],
+  "trace_schema": "1.0",
+  "trace_sha256": "14279506550500886424d1d4d486066443db6b14a5ba17068b880a4ebe7a91b0",
+  "unsupported": [
+    "multiple source nodes",
+    "transport Fence/ODR/CQE controls",
+    "scatter-gather addresses",
+    "loss recovery",
+    "PSN/TASSN wrap"
+  ],
+  "wire_header_bytes": 64
+}
