@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "comparison_base_commit": "18e5548e8ec5411a33182a3be8302e9f598927a8",
+  "unchanged_trace_and_sidecar_files": 28,
+  "unchanged_analysis_data_files": 7,
+  "trace_scenarios": 9,
+  "tests_passed": 24,
+  "fix": "Keep start_ns as integer; add ceil(relative floating exponential-gap sum); check int64 headroom with integer arithmetic.",
+  "boundary_cases": [
+    "start_ns=2^53+1 with sub-ns gaps",
+    "exact MAX_INT accepted",
+    "MAX_INT origin plus positive gap rejected",
+    "cumulative overflow rejected",
+    "2^63 offset and nonfinite gaps rejected"
+  ]
+}

@@ -1,6 +1,6 @@
 # Phase 1 短报告：MoE-derived WR 需求与通用接口
 
-完成范围：Schema 1.0、严格验证器、Synthetic / CPU MoE Dispatch Generator、22 项单元测试、9 个可复现 trace 场景及分布图。**未实现 Phase 2 adapter，未运行新的调度性能实验，未推送远端。**
+完成范围：Schema 1.0、严格验证器、Synthetic / CPU MoE Dispatch Generator、24 项单元测试、9 个可复现 trace 场景及分布图。**未实现 Phase 2 adapter，未运行新的调度性能实验，未推送远端。**
 
 工作基线是 `9394048466813e747ca52a72ec0f0463a0c327c6`。源码证据固定到 DeepEP-Ascend `3b25377d04b24fc6154698ded78a2bcb2c59afff`；详见 [源码核验](SOURCE_EVIDENCE.md) 的 commit/行号链接和 SHA256。
 
@@ -56,7 +56,7 @@ MoE 代码仅依赖通用 Python 行对象，不依赖 Nano-UB。通用验证器
 
 ## 验证与可复现性
 
-22 项测试通过，包括：
+24 项测试通过，包括：
 
 - 通用 schema / JSON 约束一致性、CSV round-trip、空输入、节点内 Jetty 命名空间、未知字段/版本、坏数值、依赖/顺序失败检查。
 - Synthetic 等长/混合负载与原 768 WR 基线中的 ID、Jetty、sequence、大小、提交时刻逐项对齐；batch/burst/Poisson 及 seed 检查。
@@ -67,6 +67,12 @@ MoE 代码仅依赖通用 Python 行对象，不依赖 Nano-UB。通用验证器
 复现入口：`./experiments/phase1/run.sh`。只需要 Python 标准库；图表另需 Matplotlib 3.10.8。脚本不调用 SystemC、CMake 或调度 benchmark。固定源码复核：`python3 experiments/phase1/verify_source.py <固定提交的本地 DeepEP-Ascend 路径>`。
 
 基线文件全部按 Git 原始 blob 核验，不改变原 15 CTest、16 E2E 代码/数据，不重复执行调度性能实验。证据见 `experiments/phase1/output/baseline_preservation.json` 和 `source_verification.json`。本阶段测试日志在 `output/tests.txt`，不是原 E2E 的测试报告。
+
+## 独立复核后的 Poisson 边界修复
+
+原实现把 int64 start_ns 转成浮点累计，起点超过 2^53 时可能丢失纳秒精度。本次只修复这个 Phase 1 输入边界：起点一直保留为整数，指数间隔在相对时轴累计，取 ceil 后再做整数加法；用 `MAX_INT - start_ns` 的整数余量检查溢出。新增大起点平移一致性、精确上界、正间隔越界、累计越界和非有限间隔测试。
+
+24 项测试通过；在独立输出目录重新生成现有九个场景，28 个 trace/侧车文件与七个统计数据文件均逐字节保持一致。原结果、图和基线不变；没有新增性能实验。复核记录见 `experiments/phase1/output/poisson_boundary_fix.json`。
 
 ## Phase 2 接入障碍（本次不实施）
 

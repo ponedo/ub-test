@@ -6,10 +6,11 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 from dataclasses import replace
 from pathlib import Path
 
-from workloads.schema.trace import FIELDS, make_wr, read_trace, validate, write_trace
+from workloads.schema.trace import MAX_INT, FIELDS, make_wr, read_trace, validate, write_trace
 from workloads.generators.synthetic import Config as Synthetic, generate as synthetic
 from workloads.generators.moe_dispatch import Config as MoE, generate as moe, token_layout, save
 
@@ -90,6 +91,33 @@ class SyntheticTests(unittest.TestCase):
             if pattern=='poisson':
                 self.assertNotEqual(a,synthetic(replace(c,seed=20))[0])
                 self.assertTrue(all(r['ready_ns']>0 for r in a))
+
+    def test_poisson_large_integer_origin_translation(self):
+        c=Synthetic(jetties=2,wr_per_jetty=20,sizes=(16,),arrival='poisson',
+                    mean_gap_ns=.001,seed=19)
+        origin=2**53+1
+        zero,_=synthetic(c)
+        shifted,_=synthetic(replace(c,start_ns=origin))
+        for a,b in zip(zero,shifted):
+            self.assertEqual(b['ready_ns'],origin+a['ready_ns'])
+            self.assertGreaterEqual(b['ready_ns'],origin)
+            self.assertLessEqual(b['ready_ns'],MAX_INT)
+        self.assertGreater(shifted[0]['ready_ns'],origin)
+        self.assertEqual(shifted,synthetic(replace(c,start_ns=origin))[0])
+
+    def test_poisson_exact_int64_boundary_and_overflow(self):
+        c=Synthetic(jetties=1,wr_per_jetty=1,sizes=(16,),arrival='poisson',
+                    mean_gap_ns=1.,start_ns=MAX_INT-1)
+        with patch('workloads.generators.synthetic.random.Random.expovariate',return_value=1.):
+            self.assertEqual(synthetic(c)[0][0]['ready_ns'],MAX_INT)
+            with self.assertRaisesRegex(ValueError,'ready_ns range'):
+                synthetic(replace(c,start_ns=MAX_INT))
+            with self.assertRaisesRegex(ValueError,'ready_ns range'):
+                synthetic(replace(c,wr_per_jetty=2))
+        for gap in (float(2**63),float('inf'),float('nan')):
+            with self.subTest(gap=gap),patch('workloads.generators.synthetic.random.Random.expovariate',return_value=gap):
+                with self.assertRaisesRegex(ValueError,'ready_ns range'):
+                    synthetic(replace(c,start_ns=0))
 
     def test_empty_and_invalid(self):
         self.assertEqual(synthetic(Synthetic(wr_per_jetty=0))[0],[])

@@ -41,14 +41,19 @@ def generate(config):
     rng = random.Random(c.seed)
     times = []
     for j in range(c.jetties):
-        clock = float(c.start_ns)
+        # Keep the absolute int64 origin exact; accumulate only relative gaps.
+        elapsed_ns = 0.0
         jt = []
         for seq in range(c.wr_per_jetty):
             if c.arrival == 'poisson':
-                clock += rng.expovariate(1.0 / c.mean_gap_ns)
-                if not math.isfinite(clock) or clock > MAX_INT:
+                elapsed_ns += rng.expovariate(1.0 / c.mean_gap_ns)
+                if not math.isfinite(elapsed_ns):
                     raise ValueError('Poisson arrival exceeds supported ready_ns range')
-                ready = math.ceil(clock)
+                offset_ns = math.ceil(elapsed_ns)
+                # Compare integers, not a rounded float representation of MAX_INT.
+                if offset_ns > MAX_INT - c.start_ns:
+                    raise ValueError('Poisson arrival exceeds supported ready_ns range')
+                ready = c.start_ns + offset_ns
             else:
                 ready = c.start_ns + (seq // c.burst_size * c.burst_gap_ns if c.arrival == 'burst' else 0)
             jt.append(ready)
