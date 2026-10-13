@@ -1,0 +1,65 @@
+{
+  "date_utc": "2026-10-12",
+  "environment": "ub-test",
+  "inputs": [
+    {
+      "name": "DRR_PROJECT.md",
+      "bytes": 2997,
+      "sha256": "8bcabcd0c398693f2f11520113968c941e95bf6afdc10e0cee9b490674532aab"
+    },
+    {
+      "name": "nano-ub-drr-project.tar.gz",
+      "bytes": 70982,
+      "sha256": "d9d57e8e22a6b8936f28d7ae2fe465fa76f9e08a66d1a0e60b5475856437505a"
+    },
+    {
+      "name": "results.csv",
+      "bytes": 414,
+      "sha256": "3ea6e033353dc67406549be18675c158e99acdf7d52504dde36b1d5b6994b427"
+    },
+    {
+      "name": "nano-ub-main.zip",
+      "bytes": 18341822,
+      "sha256": "c00c18b06c49bad7c4bb92574f4b9768543c599500a1a7f43a5ccce838a364ed"
+    }
+  ],
+  "original_vs_input_baseline": {
+    "include/nano/ub/tx.h": true,
+    "include/nano/ub/rx.h": true,
+    "include/nano/flit.h": true
+  },
+  "systemc": {
+    "version": "2.3.4",
+    "source": "https://github.com/accellera-official/systemc.git",
+    "commit": "5fc1469339775b54b1fcc2020ac744a58be5b50e",
+    "cxx_standard": 17,
+    "build_type": "Release"
+  },
+  "compiler": "g++ Debian 14.2.0-19",
+  "cmake": "4.4.4",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "project_build_type": "Debug",
+  "performance": {
+    "jetties": 3,
+    "wr_per_jetty": 256,
+    "mixed_payload_bytes": [
+      64,
+      256,
+      1024
+    ],
+    "equal_payload_bytes": 256,
+    "quantum_bytes": 512,
+    "assumed_header_bytes": 64,
+    "link_gbps": 100,
+    "propagation_ns": 50,
+    "fifo_depth": 1,
+    "scheduler_queue_depth_per_jetty": 4096,
+    "source_fifo_depth": 4096,
+    "fairness_window_ns": [
+      2000,
+      6000
+    ]
+  },
+  "scope": "SystemC finite-batch, single-TP, lossless WRITE; experimental byte serializer and completion loop; no hardware performance claim"
+}
