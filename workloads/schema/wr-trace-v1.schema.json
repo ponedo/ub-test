@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:wr-trace:1.0",
+  "title": "Simulator-independent WRITE demand row 1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "wr_id",
+    "src_node",
+    "jetty_id",
+    "dst_node",
+    "opcode",
+    "payload_bytes",
+    "ready_ns",
+    "sequence",
+    "depends_on",
+    "phase"
+  ],
+  "properties": {
+    "wr_id": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9223372036854775807
+    },
+    "src_node": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9223372036854775807
+    },
+    "jetty_id": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9223372036854775807
+    },
+    "dst_node": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9223372036854775807
+    },
+    "payload_bytes": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9223372036854775807
+    },
+    "ready_ns": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9223372036854775807
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9223372036854775807
+    },
+    "schema_version": {
+      "const": "1.0"
+    },
+    "opcode": {
+      "const": "WRITE"
+    },
+    "depends_on": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9223372036854775807
+      },
+      "uniqueItems": true
+    },
+    "phase": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.-]{0,64}$"
+    }
+  },
+  "$comment": "CSV decoder plus cross-row validator must additionally enforce source!=destination, IDs, ordering and dependencies."
+}

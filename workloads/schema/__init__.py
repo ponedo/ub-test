@@ -1,0 +1,1 @@
+"""Versioned WR trace contract."""

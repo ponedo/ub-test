@@ -1,0 +1,16 @@
+{
+  "python": "3.12.14",
+  "matplotlib": "3.10.8",
+  "source_commit": "3b25377d04b24fc6154698ded78a2bcb2c59afff",
+  "baseline_commit": "9394048466813e747ca52a72ec0f0463a0c327c6",
+  "new_unit_tests": 22,
+  "trace_cases": 9,
+  "performance_measurements": false,
+  "determinism_check": "High-token trace plus all three sidecars byte-identical on independent rerun",
+  "commands": [
+    "python3 -m unittest discover -s workloads/tests -v",
+    "./experiments/phase1/run.sh",
+    "python3 experiments/phase1/verify_source.py <pinned checkout>"
+  ],
+  "source_code_vendored": false
+}

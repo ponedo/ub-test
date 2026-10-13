@@ -1,0 +1,258 @@
+{
+  "arrival_formula": "start_ns + aiv*aiv_stagger_ns + owned_tokens*token_prep_ns; one batch per AIV",
+  "arrival_is_assumed": true,
+  "conservation": {
+    "local_token_rank_pairs": 1697,
+    "local_transfer_bytes": 3584064,
+    "remote_token_rank_pairs": 12102,
+    "remote_transfer_bytes": 25559424,
+    "token_expert_assignments": 16384,
+    "token_rank_pairs": 13799
+  },
+  "final_sqe_flags": "sidecar records fence/CQE; generic trace does not claim to encode transport ODR/fence",
+  "generator": "moe-dispatch-v1",
+  "jetties": [
+    {
+      "assumed_doorbell_ready_ns": 2560,
+      "jetty_id": 0,
+      "payload_bytes": 1575552,
+      "src_node": 0,
+      "token_begin": 0,
+      "token_end": 256,
+      "wr_count": 128
+    },
+    {
+      "assumed_doorbell_ready_ns": 2660,
+      "jetty_id": 1,
+      "payload_bytes": 1598784,
+      "src_node": 0,
+      "token_begin": 256,
+      "token_end": 512,
+      "wr_count": 128
+    },
+    {
+      "assumed_doorbell_ready_ns": 2760,
+      "jetty_id": 2,
+      "payload_bytes": 1611456,
+      "src_node": 0,
+      "token_begin": 512,
+      "token_end": 768,
+      "wr_count": 131
+    },
+    {
+      "assumed_doorbell_ready_ns": 2860,
+      "jetty_id": 3,
+      "payload_bytes": 1590336,
+      "src_node": 0,
+      "token_begin": 768,
+      "token_end": 1024,
+      "wr_count": 129
+    },
+    {
+      "assumed_doorbell_ready_ns": 2960,
+      "jetty_id": 4,
+      "payload_bytes": 1624128,
+      "src_node": 0,
+      "token_begin": 1024,
+      "token_end": 1280,
+      "wr_count": 132
+    },
+    {
+      "assumed_doorbell_ready_ns": 3060,
+      "jetty_id": 5,
+      "payload_bytes": 1564992,
+      "src_node": 0,
+      "token_begin": 1280,
+      "token_end": 1536,
+      "wr_count": 126
+    },
+    {
+      "assumed_doorbell_ready_ns": 3160,
+      "jetty_id": 6,
+      "payload_bytes": 1584000,
+      "src_node": 0,
+      "token_begin": 1536,
+      "token_end": 1792,
+      "wr_count": 128
+    },
+    {
+      "assumed_doorbell_ready_ns": 3260,
+      "jetty_id": 7,
+      "payload_bytes": 1609344,
+      "src_node": 0,
+      "token_begin": 1792,
+      "token_end": 2048,
+      "wr_count": 130
+    },
+    {
+      "assumed_doorbell_ready_ns": 3360,
+      "jetty_id": 8,
+      "payload_bytes": 1569216,
+      "src_node": 0,
+      "token_begin": 2048,
+      "token_end": 2304,
+      "wr_count": 127
+    },
+    {
+      "assumed_doorbell_ready_ns": 3460,
+      "jetty_id": 9,
+      "payload_bytes": 1571328,
+      "src_node": 0,
+      "token_begin": 2304,
+      "token_end": 2560,
+      "wr_count": 127
+    },
+    {
+      "assumed_doorbell_ready_ns": 3560,
+      "jetty_id": 10,
+      "payload_bytes": 1613568,
+      "src_node": 0,
+      "token_begin": 2560,
+      "token_end": 2816,
+      "wr_count": 130
+    },
+    {
+      "assumed_doorbell_ready_ns": 3660,
+      "jetty_id": 11,
+      "payload_bytes": 1636800,
+      "src_node": 0,
+      "token_begin": 2816,
+      "token_end": 3072,
+      "wr_count": 132
+    },
+    {
+      "assumed_doorbell_ready_ns": 3760,
+      "jetty_id": 12,
+      "payload_bytes": 1624128,
+      "src_node": 0,
+      "token_begin": 3072,
+      "token_end": 3328,
+      "wr_count": 131
+    },
+    {
+      "assumed_doorbell_ready_ns": 3860,
+      "jetty_id": 13,
+      "payload_bytes": 1596672,
+      "src_node": 0,
+      "token_begin": 3328,
+      "token_end": 3584,
+      "wr_count": 129
+    },
+    {
+      "assumed_doorbell_ready_ns": 3960,
+      "jetty_id": 14,
+      "payload_bytes": 1581888,
+      "src_node": 0,
+      "token_begin": 3584,
+      "token_end": 3840,
+      "wr_count": 128
+    },
+    {
+      "assumed_doorbell_ready_ns": 4060,
+      "jetty_id": 15,
+      "payload_bytes": 1607232,
+      "src_node": 0,
+      "token_begin": 3840,
+      "token_end": 4096,
+      "wr_count": 130
+    }
+  ],
+  "jetty_keys": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      7
+    ],
+    [
+      0,
+      8
+    ],
+    [
+      0,
+      9
+    ],
+    [
+      0,
+      10
+    ],
+    [
+      0,
+      11
+    ],
+    [
+      0,
+      12
+    ],
+    [
+      0,
+      13
+    ],
+    [
+      0,
+      14
+    ],
+    [
+      0,
+      15
+    ]
+  ],
+  "order_model": "cyclic peer blocks, ascending tokens; deterministic atomic-order approximation",
+  "parameters": {
+    "aiv_stagger_ns": 100,
+    "aivs": 16,
+    "capacity": 4096,
+    "dtype": "bf16",
+    "experts": 64,
+    "hidden_size": 1024,
+    "hot_rank": 0,
+    "ranks": 8,
+    "score_factor": 1.0,
+    "seed": 42,
+    "sf_packs": 0,
+    "src_nodes": [
+      0
+    ],
+    "start_ns": 0,
+    "token_prep_ns": 10,
+    "tokens": 4096,
+    "top_k": 4
+  },
+  "schema_version": "1.0",
+  "scope": "uncached remote payload WRITE only; local copies/control stores/NOPs excluded",
+  "source_commit": "3b25377d04b24fc6154698ded78a2bcb2c59afff",
+  "token_layout": {
+    "hidden_bytes": 2048,
+    "metadata_sge_bytes": 64,
+    "padding_bytes": 12,
+    "scale_bytes": 0,
+    "semantic_bytes": 2100,
+    "transfer_bytes": 2112
+  }
+}
