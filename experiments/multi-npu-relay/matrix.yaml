@@ -96,6 +96,38 @@
     "checkpoint": "stop correctness failure; retain negative performance"
   },
   {
+    "case_id": "slow_relay8/no-balancing",
+    "case_dir": "evidence/slow_relay8/no-balancing",
+    "block": "slow_relay8",
+    "mode": "no-balancing",
+    "prediction": "correctness and dependency invariants hold; no guaranteed speedup",
+    "checkpoint": "stop correctness failure; retain negative performance"
+  },
+  {
+    "case_id": "slow_relay8/direct",
+    "case_dir": "evidence/slow_relay8/direct",
+    "block": "slow_relay8",
+    "mode": "direct",
+    "prediction": "correctness and dependency invariants hold; no guaranteed speedup",
+    "checkpoint": "stop correctness failure; retain negative performance"
+  },
+  {
+    "case_id": "slow_relay8/two-stage",
+    "case_dir": "evidence/slow_relay8/two-stage",
+    "block": "slow_relay8",
+    "mode": "two-stage",
+    "prediction": "correctness and dependency invariants hold; no guaranteed speedup",
+    "checkpoint": "stop correctness failure; retain negative performance"
+  },
+  {
+    "case_id": "slow_relay8/chunk-streaming",
+    "case_dir": "evidence/slow_relay8/chunk-streaming",
+    "block": "slow_relay8",
+    "mode": "chunk-streaming",
+    "prediction": "correctness and dependency invariants hold; no guaranteed speedup",
+    "checkpoint": "stop correctness failure; retain negative performance"
+  },
+  {
     "case_id": "multi_expert8/no-balancing",
     "case_dir": "evidence/multi_expert8/no-balancing",
     "block": "multi_expert8",

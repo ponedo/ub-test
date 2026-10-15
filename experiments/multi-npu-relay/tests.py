@@ -43,7 +43,7 @@ for name in [d for d in out.iterdir() if d.is_dir() and (d/'chunk-streaming').ex
   require(run_graph((case/'graph-input.txt').read_text())==ref_graph((case/'graph-input.txt').read_text()),'case public grouping')
 # Integration invariants and specific coverage.
 comparison=json.loads((out/'comparison.json').read_text())
-require(len(comparison)==11,'full matrix coverage')
+require(len(comparison)==12,'full matrix coverage')
 for name,block in comparison.items():
  require(len({v['combine_sha256'] for v in block.values()})==1,'result equivalence')
  require(all(block[m]['per_npu_load']==block['direct']['per_npu_load'] for m in MODES[1:]),'load equivalence')
@@ -62,14 +62,29 @@ with (case/'events.csv').open() as f:events=list(csv.DictReader(f))
 ready={int(x['task']):int(x['time_ps']) for x in events if x['event']=='edge_ready'}
 weights=[x for x in c['transfers'] if x['stage']==2 and not x['dependencies']]
 require(any(x['physical']==y['physical'] and x['offset']<y['offset'] and ready[x['task']]>ready[y['task']] for x in weights for y in weights),'out-of-order target completion not exercised')
+# Slow-relay evidence: fast relay has local coverage but waits for the entire fan-out group.
+slow=comparison['slow_relay8']['chunk-streaming']
+require(slow['readiness']=='upstream-group-chunk' and slow['group_chunk_count']>0,'missing upstream groups')
+slow_config=json.loads((out/'slow_relay8/chunk-streaming/config.json').read_text())
+fast_waits=[w for w in slow['group_waits'] if slow_config['transfers'][w['task']]['source']==2]
+require(fast_waits and max(w['wait_ps'] for w in fast_waits)>10000000,'slow relay failed to hold fast relay')
 # Live adversarial execution, never fabricate successful logs.
 canary=out/'multi4_force/chunk-streaming';faults=[]
-expected={'weight-byte':'payload byte mismatch','relay-byte':'payload byte mismatch','relay-buffer-byte':'payload byte mismatch','early-relay':'relay before target chunk ready','early-final-ready':'final ready before full weight coverage','premature-ready':'ready before target completion coverage','duplicate-weight':'duplicate forwarding'}
+expected={'weight-byte':'payload byte mismatch','relay-byte':'payload byte mismatch','relay-buffer-byte':'payload byte mismatch','early-relay':'relay before target chunk ready','early-final-ready':'final ready before full weight coverage','premature-ready':'ready before target completion coverage','duplicate-weight':'duplicate forwarding','early-group':'relay before target chunk ready'}
 for fault,error in expected.items():
  dest=out/'negative'/fault;dest.mkdir(parents=True,exist_ok=True)
- cmd=[sys.executable,'./ns3','run','--no-build',f'multi-npu-relay --input={canary}/input.txt --out={dest} --fault={fault}']
+ fault_case=out/'slow_relay8/chunk-streaming' if fault=='early-group' else canary
+ cmd=[sys.executable,'./ns3','run','--no-build',f'multi-npu-relay --input={fault_case}/input.txt --out={dest} --fault={fault}']
  with (dest/'console.txt').open('w') as f:r=subprocess.run(cmd,cwd=a.ns3,stdout=f,stderr=subprocess.STDOUT)
  require(r.returncode!=0 and error in (dest/'console.txt').read_text(),'fault not rejected '+fault)
+ if fault=='early-group':
+  fc=json.loads((fault_case/'config.json').read_text())
+  with (dest/'events.csv').open() as f:fe=list(csv.DictReader(f))
+  attempts=[x for x in fe if x['event']=='early_group_attempt'];require(len(attempts)==1,'missing fast-relay group fault')
+  child=fc['transfers'][int(attempts[0]['task'])]
+  completed={int(x['task']) for x in fe if x['event']=='edge_ready'}
+  own=[j for j in child['dependencies'] if fc['transfers'][j]['physical']==child['source_physical']]
+  require(all(j in completed for j in own) and any(j not in completed for j in child['dependencies']),'fault must distinguish own-ready from group-ready')
  faults.append(dict(fault=fault,returncode=r.returncode,expected=error,command=cmd))
 dest=out/'duplicate-notify';dest.mkdir(exist_ok=True)
 for name in ['input.txt','plan.json','config.json']:shutil.copyfile(canary/name,dest/name)
@@ -94,6 +109,6 @@ with tempfile.TemporaryDirectory(prefix='relay-audit-') as tmp:
  try:verify(d)
  except ValueError:pass
  else:raise ValueError('premature final log not rejected')
-report=dict(status='PASS',public_oracle_cases=120,order_sensitive_cases=order_differences,cross_expert_load_sensitive_cases=load_differences,live_faults=faults,duplicate_notifications='idempotent, same final timing/payloads',event_payload_tamper_rejections=2,coverage='44 runs, EP4/8/64, partial chunks/TAs, actual target completion reordering, pipeline overlap, legacy Direct parity',oracle_records=records)
+report=dict(status='PASS',public_oracle_cases=120,order_sensitive_cases=order_differences,cross_expert_load_sensitive_cases=load_differences,live_faults=faults,duplicate_notifications='idempotent, same final timing/payloads',event_payload_tamper_rejections=2,slow_relay_max_fast_wait_ps=max(w['wait_ps'] for w in fast_waits),coverage='48 runs, EP4/8/64, partial chunks/TAs, actual target completion reordering, pipeline overlap, legacy Direct parity',oracle_records=records)
 (out/('tests-optimized.json' if not __debug__ else 'tests.json')).write_text(json.dumps(report,indent=2)+'\n')
-print('PASS:',report['public_oracle_cases'],'oracle cases;',order_differences,'order-sensitive;',load_differences,'cross-expert sensitive; 7 live faults and duplicate/tamper checks')
+print('PASS:',report['public_oracle_cases'],'oracle cases;',order_differences,'order-sensitive;',load_differences,'cross-expert sensitive; 8 live faults and duplicate/tamper checks')

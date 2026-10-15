@@ -10,7 +10,8 @@
 struct PhysicalExpert {
     uint32_t id, expert, rank, replica, quota, mainId, mainRank;
 };
-enum class WeightReadyScope { FullExpert, Chunk };
+// GroupChunk waits for every main-to-relay edge in the same expert/range fan-out.
+enum class WeightReadyScope { FullExpert, Chunk, GroupChunk };
 struct WeightEdge { uint32_t sourcePhysical, targetPhysical, offset, bytes; WeightReadyScope sourceDependency; };
 enum class WeightStrategyKind { Direct=0, TwoStageRelay=1, ChunkStreamingRelay=2 };
 struct WeightDistributionOptions {
@@ -112,7 +113,7 @@ public:
             for(uint32_t r=0;r<nr;++r) for(auto [off,len]:ranges)
                 for(uint32_t j=0;j<leaves.size();++j) if(owners[j]==r)
                     result.push_back({reps[selected[r]].id,reps[leaves[j]].id,off,len,
-                                      streaming?WeightReadyScope::Chunk:WeightReadyScope::FullExpert});
+                                      streaming?WeightReadyScope::GroupChunk:WeightReadyScope::FullExpert});
         }
         return result;
     }

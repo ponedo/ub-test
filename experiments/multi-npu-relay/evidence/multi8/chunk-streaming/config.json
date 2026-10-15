@@ -442,7 +442,9 @@
     "relay_max_relays": 8,
     "relay_min_fanout_gain": 2,
     "force_relay": false,
-    "reorder_ns": 0
+    "reorder_ns": 0,
+    "slow_relay_rank": 4294967295,
+    "slow_relay_ns": 0
   },
   "runtime": {
     "model_dim": 64,
@@ -467,7 +469,9 @@
     "relay_max_relays": 8,
     "relay_min_fanout_gain": 2,
     "force_relay": false,
-    "reorder_ns": 0
+    "reorder_ns": 0,
+    "slow_relay_rank": 4294967295,
+    "slow_relay_ns": 0
   },
   "mode": "ultraep",
   "assignments": [
@@ -2884,7 +2888,8 @@
       "source_physical": 3,
       "offset": 0,
       "dependencies": [
-        128
+        128,
+        129
       ]
     },
     {
@@ -2898,7 +2903,8 @@
       "source_physical": 3,
       "offset": 0,
       "dependencies": [
-        128
+        128,
+        129
       ]
     },
     {
@@ -2912,7 +2918,8 @@
       "source_physical": 3,
       "offset": 4096,
       "dependencies": [
-        130
+        130,
+        131
       ]
     },
     {
@@ -2926,7 +2933,8 @@
       "source_physical": 3,
       "offset": 4096,
       "dependencies": [
-        130
+        130,
+        131
       ]
     },
     {
@@ -2940,7 +2948,8 @@
       "source_physical": 3,
       "offset": 8192,
       "dependencies": [
-        132
+        132,
+        133
       ]
     },
     {
@@ -2954,7 +2963,8 @@
       "source_physical": 3,
       "offset": 8192,
       "dependencies": [
-        132
+        132,
+        133
       ]
     },
     {
@@ -2968,7 +2978,8 @@
       "source_physical": 3,
       "offset": 12288,
       "dependencies": [
-        134
+        134,
+        135
       ]
     },
     {
@@ -2982,7 +2993,8 @@
       "source_physical": 3,
       "offset": 12288,
       "dependencies": [
-        134
+        134,
+        135
       ]
     },
     {
@@ -2996,7 +3008,8 @@
       "source_physical": 3,
       "offset": 16384,
       "dependencies": [
-        136
+        136,
+        137
       ]
     },
     {
@@ -3010,7 +3023,8 @@
       "source_physical": 3,
       "offset": 16384,
       "dependencies": [
-        136
+        136,
+        137
       ]
     },
     {
@@ -3024,7 +3038,8 @@
       "source_physical": 3,
       "offset": 20480,
       "dependencies": [
-        138
+        138,
+        139
       ]
     },
     {
@@ -3038,7 +3053,8 @@
       "source_physical": 3,
       "offset": 20480,
       "dependencies": [
-        138
+        138,
+        139
       ]
     },
     {
@@ -3052,7 +3068,8 @@
       "source_physical": 3,
       "offset": 24576,
       "dependencies": [
-        140
+        140,
+        141
       ]
     },
     {
@@ -3066,7 +3083,8 @@
       "source_physical": 3,
       "offset": 24576,
       "dependencies": [
-        140
+        140,
+        141
       ]
     },
     {
@@ -3080,7 +3098,8 @@
       "source_physical": 3,
       "offset": 28672,
       "dependencies": [
-        142
+        142,
+        143
       ]
     },
     {
@@ -3094,7 +3113,8 @@
       "source_physical": 3,
       "offset": 28672,
       "dependencies": [
-        142
+        142,
+        143
       ]
     },
     {
@@ -3108,7 +3128,8 @@
       "source_physical": 3,
       "offset": 32768,
       "dependencies": [
-        144
+        144,
+        145
       ]
     },
     {
@@ -3122,7 +3143,8 @@
       "source_physical": 3,
       "offset": 32768,
       "dependencies": [
-        144
+        144,
+        145
       ]
     },
     {
@@ -3136,7 +3158,8 @@
       "source_physical": 3,
       "offset": 36864,
       "dependencies": [
-        146
+        146,
+        147
       ]
     },
     {
@@ -3150,7 +3173,8 @@
       "source_physical": 3,
       "offset": 36864,
       "dependencies": [
-        146
+        146,
+        147
       ]
     },
     {
@@ -3164,7 +3188,8 @@
       "source_physical": 3,
       "offset": 40960,
       "dependencies": [
-        148
+        148,
+        149
       ]
     },
     {
@@ -3178,7 +3203,8 @@
       "source_physical": 3,
       "offset": 40960,
       "dependencies": [
-        148
+        148,
+        149
       ]
     },
     {
@@ -3192,7 +3218,8 @@
       "source_physical": 3,
       "offset": 45056,
       "dependencies": [
-        150
+        150,
+        151
       ]
     },
     {
@@ -3206,7 +3233,8 @@
       "source_physical": 3,
       "offset": 45056,
       "dependencies": [
-        150
+        150,
+        151
       ]
     },
     {
@@ -3220,6 +3248,7 @@
       "source_physical": 5,
       "offset": 0,
       "dependencies": [
+        128,
         129
       ]
     },
@@ -3234,6 +3263,7 @@
       "source_physical": 5,
       "offset": 0,
       "dependencies": [
+        128,
         129
       ]
     },
@@ -3248,6 +3278,7 @@
       "source_physical": 5,
       "offset": 4096,
       "dependencies": [
+        130,
         131
       ]
     },
@@ -3262,6 +3293,7 @@
       "source_physical": 5,
       "offset": 4096,
       "dependencies": [
+        130,
         131
       ]
     },
@@ -3276,6 +3308,7 @@
       "source_physical": 5,
       "offset": 8192,
       "dependencies": [
+        132,
         133
       ]
     },
@@ -3290,6 +3323,7 @@
       "source_physical": 5,
       "offset": 8192,
       "dependencies": [
+        132,
         133
       ]
     },
@@ -3304,6 +3338,7 @@
       "source_physical": 5,
       "offset": 12288,
       "dependencies": [
+        134,
         135
       ]
     },
@@ -3318,6 +3353,7 @@
       "source_physical": 5,
       "offset": 12288,
       "dependencies": [
+        134,
         135
       ]
     },
@@ -3332,6 +3368,7 @@
       "source_physical": 5,
       "offset": 16384,
       "dependencies": [
+        136,
         137
       ]
     },
@@ -3346,6 +3383,7 @@
       "source_physical": 5,
       "offset": 16384,
       "dependencies": [
+        136,
         137
       ]
     },
@@ -3360,6 +3398,7 @@
       "source_physical": 5,
       "offset": 20480,
       "dependencies": [
+        138,
         139
       ]
     },
@@ -3374,6 +3413,7 @@
       "source_physical": 5,
       "offset": 20480,
       "dependencies": [
+        138,
         139
       ]
     },
@@ -3388,6 +3428,7 @@
       "source_physical": 5,
       "offset": 24576,
       "dependencies": [
+        140,
         141
       ]
     },
@@ -3402,6 +3443,7 @@
       "source_physical": 5,
       "offset": 24576,
       "dependencies": [
+        140,
         141
       ]
     },
@@ -3416,6 +3458,7 @@
       "source_physical": 5,
       "offset": 28672,
       "dependencies": [
+        142,
         143
       ]
     },
@@ -3430,6 +3473,7 @@
       "source_physical": 5,
       "offset": 28672,
       "dependencies": [
+        142,
         143
       ]
     },
@@ -3444,6 +3488,7 @@
       "source_physical": 5,
       "offset": 32768,
       "dependencies": [
+        144,
         145
       ]
     },
@@ -3458,6 +3503,7 @@
       "source_physical": 5,
       "offset": 32768,
       "dependencies": [
+        144,
         145
       ]
     },
@@ -3472,6 +3518,7 @@
       "source_physical": 5,
       "offset": 36864,
       "dependencies": [
+        146,
         147
       ]
     },
@@ -3486,6 +3533,7 @@
       "source_physical": 5,
       "offset": 36864,
       "dependencies": [
+        146,
         147
       ]
     },
@@ -3500,6 +3548,7 @@
       "source_physical": 5,
       "offset": 40960,
       "dependencies": [
+        148,
         149
       ]
     },
@@ -3514,6 +3563,7 @@
       "source_physical": 5,
       "offset": 40960,
       "dependencies": [
+        148,
         149
       ]
     },
@@ -3528,6 +3578,7 @@
       "source_physical": 5,
       "offset": 45056,
       "dependencies": [
+        150,
         151
       ]
     },
@@ -3542,6 +3593,7 @@
       "source_physical": 5,
       "offset": 45056,
       "dependencies": [
+        150,
         151
       ]
     }
@@ -3553,6 +3605,9 @@
     "relay_max_relays": 8,
     "relay_min_fanout_gain": 2,
     "force_relay": false,
-    "reorder_ns": 0
-  }
+    "reorder_ns": 0,
+    "slow_relay_rank": 4294967295,
+    "slow_relay_ns": 0
+  },
+  "readiness": "upstream-group-chunk"
 }

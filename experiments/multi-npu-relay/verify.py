@@ -46,7 +46,7 @@ def verify(path):
             for off,length in expected.items():
                 rec=one('target_received',task=task,offset=off);ver=one('payload_verified',task=task,offset=off);done=one('target_complete',task=task,offset=off)
                 require(send['time_ps']<=time('ta_admitted',task=task,offset=off)<=rec['time_ps']<=ver['time_ps']<=done['time_ps']<=r['time_ps'],'TA execution ordering')
-                require(done['time_ps']-ver['time_ps']==((p['weight_completion_ns']+(p['reorder_ns'] if x['offset']==0 and physical[x['source_physical']]['kind']=='main' else 0))*1000 if x['stage']==2 else 0),'target completion service delay')
+                require(done['time_ps']-ver['time_ps']==((p['weight_completion_ns']+(p['reorder_ns'] if x['offset']==0 and physical[x['source_physical']]['kind']=='main' else 0)+(p['slow_relay_ns'] if x['target']==p['slow_relay_rank'] and physical[x['source_physical']]['kind']=='main' else 0))*1000 if x['stage']==2 else 0),'target completion service delay')
             require(r['time_ps']==max(v['time_ps'] for v in find('target_complete',task=task)),'ready must aggregate target completes')
             sender=one('sender_complete',task=task);require(sender['node']==x['source'] and sender['time_ps']>=send['time_ps'],'sender completion')
             if x['stage']==2:weight_senders.append(sender['time_ps'])
@@ -72,6 +72,22 @@ def verify(path):
         require(cursor==p['weight_bytes'],'replica full bytes')
         require(time('weight_ready',id=ph['id'])==max(ready[x['task']] for x in incoming),'final ready requires all chunks')
     require(weights==max([planning]+[time('weight_ready',id=ph['id']) for ph in replicas]),'global weights completion')
+    group_keys=set();group_waits=[]
+    for x in weight_tasks:
+        src=physical[x['source_physical']]
+        if src['kind']=='main':require(not x['dependencies'],'main cannot wait');continue
+        if c['weight_strategy']=='chunk-streaming':
+            required=[y['task'] for y in weight_tasks if physical[y['source_physical']]['kind']=='main' and physical[y['physical']]['expert']==src['expert'] and (y['offset'],y['bytes'])==(x['offset'],x['bytes'])]
+            key=(src['expert'],x['offset'],x['bytes']);group_keys.add(key)
+            group=time('group_chunk_ready',id=src['expert'],offset=x['offset'],bytes=x['bytes'])
+            require(group==max(ready[j] for j in required),'group ready must wait all Stage-I relay targets')
+            require(time('send',task=x['task'])==group,'Stage-II must wait upstream group')
+            own=[j for j in required if transfers[j]['physical']==x['source_physical']]
+            require(bool(own),'own relay dependency missing')
+            group_waits.append(dict(task=x['task'],own_ready_ps=max(ready[j] for j in own),group_ready_ps=group,wait_ps=group-max(ready[j] for j in own)))
+        else:required=[y['task'] for y in weight_tasks if y['physical']==x['source_physical']]
+        require(x['dependencies']==required,'incomplete or extraneous source/group dependency list')
+    require(len(find('group_chunk_ready'))==len(group_keys),'group ready cardinality')
     require(gate==max(weights,reroute),'Figure 8 dispatch gate')
     for ph in physical.values():
         if ph['kind']=='main':require(time('main_weight_ready',id=ph['id'])==start,'main weights resident')
@@ -127,7 +143,8 @@ def verify(path):
             if x['dependencies']:
                 buf=bytearray(p['weight_bytes'])
                 for parent in x['dependencies']:
-                    src=transfers[parent];buf[src['offset']:src['offset']+src['bytes']]=payloads[parent]
+                    src=transfers[parent]
+                    if src['physical']==x['source_physical']:buf[src['offset']:src['offset']+src['bytes']]=payloads[parent]
                 require(payloads[x['task']]==buf[x['offset']:x['offset']+x['bytes']],'relay raw received buffer provenance')
         else:
             a=assignments[x['id']]
@@ -157,7 +174,7 @@ def verify(path):
                 native_overlaps.append(dict(outgoing=x['task'],incoming=incoming['task'],overlap_ps=finish-begin))
                 break
     combine_hash=hashlib.sha256(b''.join(payloads[len(assignments)+i] for i in range(len(assignments)))).hexdigest()
-    return dict(mode=c['mode'],strategy=c['weight_strategy'],weight_WQEs=len(weight_tasks),weight_TAs=sum((x['bytes']+p['segment_bytes']-1)//p['segment_bytes'] for x in weight_tasks),weight_send_bytes_per_npu=send_bytes,pipeline_overlaps=overlaps,native_pipeline_overlaps=native_overlaps,combine_sha256=combine_hash,npus=pc['npus'],tokens=len(pc['mapping']),assignments=len(assignments),layer_latency_ps=end-start,
+    return dict(mode=c['mode'],strategy=c['weight_strategy'],readiness=c['readiness'],group_chunk_count=len(group_keys),group_waits=group_waits,weight_WQEs=len(weight_tasks),weight_TAs=sum((x['bytes']+p['segment_bytes']-1)//p['segment_bytes'] for x in weight_tasks),weight_send_bytes_per_npu=send_bytes,pipeline_overlaps=overlaps,native_pipeline_overlaps=native_overlaps,combine_sha256=combine_hash,npus=pc['npus'],tokens=len(pc['mapping']),assignments=len(assignments),layer_latency_ps=end-start,
                 replicas=len(replicas),max_npu_load=max(per_rank),per_npu_load=per_rank,weight_target_duration_ps=weights-planning,
                 weight_sender_end_ps=max(weight_senders,default=planning),weight_bytes=verified_bytes[2],verified_bytes=verified_bytes,
                 remote_bytes=remote_bytes,local_bytes=local_bytes,target_segments=len(find('target_complete')),remote_WQEs=sum(x['source']!=x['target'] for x in transfers),

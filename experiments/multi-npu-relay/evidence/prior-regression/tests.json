@@ -8,7 +8,7 @@
         "./ns3",
         "run",
         "--no-build",
-        "direct-weight-forward --input=/tmp/multi-relay-prior-u0dxj3t1/single_replica4/ultraep/input.txt --out=/tmp/multi-relay-prior-u0dxj3t1/negative/weight-byte --fault=weight-byte"
+        "direct-weight-forward --input=/tmp/multi-relay-prior-dtzsnx46/single_replica4/ultraep/input.txt --out=/tmp/multi-relay-prior-dtzsnx46/negative/weight-byte --fault=weight-byte"
       ],
       "returncode": 2,
       "expected_error": "payload byte mismatch"
@@ -20,7 +20,7 @@
         "./ns3",
         "run",
         "--no-build",
-        "direct-weight-forward --input=/tmp/multi-relay-prior-u0dxj3t1/single_replica4/ultraep/input.txt --out=/tmp/multi-relay-prior-u0dxj3t1/negative/premature-ready --fault=premature-ready"
+        "direct-weight-forward --input=/tmp/multi-relay-prior-dtzsnx46/single_replica4/ultraep/input.txt --out=/tmp/multi-relay-prior-dtzsnx46/negative/premature-ready --fault=premature-ready"
       ],
       "returncode": 2,
       "expected_error": "ready before target completion coverage"
@@ -32,7 +32,7 @@
         "./ns3",
         "run",
         "--no-build",
-        "direct-weight-forward --input=/tmp/multi-relay-prior-u0dxj3t1/single_replica4/ultraep/input.txt --out=/tmp/multi-relay-prior-u0dxj3t1/negative/duplicate-weight --fault=duplicate-weight"
+        "direct-weight-forward --input=/tmp/multi-relay-prior-dtzsnx46/single_replica4/ultraep/input.txt --out=/tmp/multi-relay-prior-dtzsnx46/negative/duplicate-weight --fault=duplicate-weight"
       ],
       "returncode": 2,
       "expected_error": "duplicate forwarding"
@@ -44,7 +44,7 @@
         "./ns3",
         "run",
         "--no-build",
-        "direct-weight-forward --input=/tmp/multi-relay-prior-u0dxj3t1/single_replica4/ultraep/input.txt --out=/tmp/multi-relay-prior-u0dxj3t1/negative/early-compute --fault=early-compute"
+        "direct-weight-forward --input=/tmp/multi-relay-prior-dtzsnx46/single_replica4/ultraep/input.txt --out=/tmp/multi-relay-prior-dtzsnx46/negative/early-compute --fault=early-compute"
       ],
       "returncode": 2,
       "expected_error": "compute token/gate dependency"
@@ -56,7 +56,7 @@
         "./ns3",
         "run",
         "--no-build",
-        "direct-weight-forward --input=/tmp/multi-relay-prior-u0dxj3t1/negative/bad-provenance/input.txt --out=/tmp/multi-relay-prior-u0dxj3t1/negative/bad-provenance"
+        "direct-weight-forward --input=/tmp/multi-relay-prior-dtzsnx46/negative/bad-provenance/input.txt --out=/tmp/multi-relay-prior-dtzsnx46/negative/bad-provenance"
       ],
       "returncode": 2,
       "expected_error": "weight provenance"
@@ -68,7 +68,7 @@
         "./ns3",
         "run",
         "--no-build",
-        "direct-weight-forward --input=/tmp/multi-relay-prior-u0dxj3t1/negative/bad-quota/input.txt --out=/tmp/multi-relay-prior-u0dxj3t1/negative/bad-quota"
+        "direct-weight-forward --input=/tmp/multi-relay-prior-dtzsnx46/negative/bad-quota/input.txt --out=/tmp/multi-relay-prior-dtzsnx46/negative/bad-quota"
       ],
       "returncode": 2,
       "expected_error": "physical quota mismatch"

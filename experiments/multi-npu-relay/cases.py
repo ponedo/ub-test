@@ -13,6 +13,7 @@ def cases():
  'single4':(single,{},{}),
  'multi4_force':(multi,{},dict(force_relay=True)),
  'multi8':(loads(8,1,[64]+[0]*7),{},{}),
+ 'slow_relay8':(loads(8,1,[64]+[0]*7),{},dict(slow_relay_rank=1,slow_relay_ns=20000)),
  'multi_expert8':(many,{},dict(force_relay=True)),
  'chunk_lt_ta':(multi,{},dict(force_relay=True,chunk_bytes=512)),
  'chunk_eq_ta':(multi,{},dict(force_relay=True,chunk_bytes=1024)),
@@ -32,5 +33,5 @@ def package(root):
    d=root/'cases'/name/mode;d.mkdir(parents=True,exist_ok=True)
    (d/'experiment-spec.md').write_text('# '+cid+'\n\nSame accepted single-switch network and compute. See experiment-plan.md.\n\n```json\n'+json.dumps(dict(planner_input=c,model_overrides=p,relay_overrides=r),indent=2)+'\n```\n')
  (root/'matrix.yaml').write_text(json.dumps(rows,indent=2)+'\n');(root/'command-manifest.yaml').write_text(json.dumps(commands,indent=2)+'\n')
- (root/'run-ledger.md').write_text('# Run ledger\n\n44 planned runs pending.\n')
+ (root/'run-ledger.md').write_text('# Run ledger\n\n48 planned runs pending.\n')
 if __name__=='__main__':package(HERE)

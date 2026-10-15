@@ -120,6 +120,46 @@
     ]
   },
   {
+    "case_id": "slow_relay8/no-balancing",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/slow_relay8/no-balancing/input.txt --out={evidence}/slow_relay8/no-balancing"
+    ]
+  },
+  {
+    "case_id": "slow_relay8/direct",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/slow_relay8/direct/input.txt --out={evidence}/slow_relay8/direct"
+    ]
+  },
+  {
+    "case_id": "slow_relay8/two-stage",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/slow_relay8/two-stage/input.txt --out={evidence}/slow_relay8/two-stage"
+    ]
+  },
+  {
+    "case_id": "slow_relay8/chunk-streaming",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/slow_relay8/chunk-streaming/input.txt --out={evidence}/slow_relay8/chunk-streaming"
+    ]
+  },
+  {
     "case_id": "multi_expert8/no-balancing",
     "argv": [
       "python3.12",

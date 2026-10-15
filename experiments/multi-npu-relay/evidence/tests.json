@@ -87,11 +87,24 @@
         "--no-build",
         "multi-npu-relay --input=/workspace/ub-test/experiments/multi-npu-relay/evidence/multi4_force/chunk-streaming/input.txt --out=/workspace/ub-test/experiments/multi-npu-relay/evidence/negative/duplicate-weight --fault=duplicate-weight"
       ]
+    },
+    {
+      "fault": "early-group",
+      "returncode": 2,
+      "expected": "relay before target chunk ready",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+        "./ns3",
+        "run",
+        "--no-build",
+        "multi-npu-relay --input=/workspace/ub-test/experiments/multi-npu-relay/evidence/slow_relay8/chunk-streaming/input.txt --out=/workspace/ub-test/experiments/multi-npu-relay/evidence/negative/early-group --fault=early-group"
+      ]
     }
   ],
   "duplicate_notifications": "idempotent, same final timing/payloads",
   "event_payload_tamper_rejections": 2,
-  "coverage": "44 runs, EP4/8/64, partial chunks/TAs, actual target completion reordering, pipeline overlap, legacy Direct parity",
+  "slow_relay_max_fast_wait_ps": 17784400,
+  "coverage": "48 runs, EP4/8/64, partial chunks/TAs, actual target completion reordering, pipeline overlap, legacy Direct parity",
   "oracle_records": [
     {
       "trial": 0,

@@ -1,6 +1,298 @@
 {
   "mode": "ultraep",
   "strategy": "chunk-streaming",
+  "readiness": "upstream-group-chunk",
+  "group_chunk_count": 12,
+  "group_waits": [
+    {
+      "task": 152,
+      "own_ready_ps": 7124520,
+      "group_ready_ps": 7212680,
+      "wait_ps": 88160
+    },
+    {
+      "task": 153,
+      "own_ready_ps": 7124520,
+      "group_ready_ps": 7212680,
+      "wait_ps": 88160
+    },
+    {
+      "task": 154,
+      "own_ready_ps": 7300840,
+      "group_ready_ps": 7398960,
+      "wait_ps": 98120
+    },
+    {
+      "task": 155,
+      "own_ready_ps": 7300840,
+      "group_ready_ps": 7398960,
+      "wait_ps": 98120
+    },
+    {
+      "task": 156,
+      "own_ready_ps": 7487120,
+      "group_ready_ps": 7575280,
+      "wait_ps": 88160
+    },
+    {
+      "task": 157,
+      "own_ready_ps": 7487120,
+      "group_ready_ps": 7575280,
+      "wait_ps": 88160
+    },
+    {
+      "task": 158,
+      "own_ready_ps": 7756600,
+      "group_ready_ps": 7756600,
+      "wait_ps": 0
+    },
+    {
+      "task": 159,
+      "own_ready_ps": 7756600,
+      "group_ready_ps": 7756600,
+      "wait_ps": 0
+    },
+    {
+      "task": 160,
+      "own_ready_ps": 7859720,
+      "group_ready_ps": 7937920,
+      "wait_ps": 78200
+    },
+    {
+      "task": 161,
+      "own_ready_ps": 7859720,
+      "group_ready_ps": 7937920,
+      "wait_ps": 78200
+    },
+    {
+      "task": 162,
+      "own_ready_ps": 8026080,
+      "group_ready_ps": 8114240,
+      "wait_ps": 88160
+    },
+    {
+      "task": 163,
+      "own_ready_ps": 8026080,
+      "group_ready_ps": 8114240,
+      "wait_ps": 88160
+    },
+    {
+      "task": 164,
+      "own_ready_ps": 8202400,
+      "group_ready_ps": 8393720,
+      "wait_ps": 191320
+    },
+    {
+      "task": 165,
+      "own_ready_ps": 8202400,
+      "group_ready_ps": 8393720,
+      "wait_ps": 191320
+    },
+    {
+      "task": 166,
+      "own_ready_ps": 8305560,
+      "group_ready_ps": 8580040,
+      "wait_ps": 274480
+    },
+    {
+      "task": 167,
+      "own_ready_ps": 8305560,
+      "group_ready_ps": 8580040,
+      "wait_ps": 274480
+    },
+    {
+      "task": 168,
+      "own_ready_ps": 8481880,
+      "group_ready_ps": 8678160,
+      "wait_ps": 196280
+    },
+    {
+      "task": 169,
+      "own_ready_ps": 8481880,
+      "group_ready_ps": 8678160,
+      "wait_ps": 196280
+    },
+    {
+      "task": 170,
+      "own_ready_ps": 8761320,
+      "group_ready_ps": 8956160,
+      "wait_ps": 194840
+    },
+    {
+      "task": 171,
+      "own_ready_ps": 8761320,
+      "group_ready_ps": 8956160,
+      "wait_ps": 194840
+    },
+    {
+      "task": 172,
+      "own_ready_ps": 8864480,
+      "group_ready_ps": 9138960,
+      "wait_ps": 274480
+    },
+    {
+      "task": 173,
+      "own_ready_ps": 8864480,
+      "group_ready_ps": 9138960,
+      "wait_ps": 274480
+    },
+    {
+      "task": 174,
+      "own_ready_ps": 9044200,
+      "group_ready_ps": 9242080,
+      "wait_ps": 197880
+    },
+    {
+      "task": 175,
+      "own_ready_ps": 9044200,
+      "group_ready_ps": 9242080,
+      "wait_ps": 197880
+    },
+    {
+      "task": 176,
+      "own_ready_ps": 7212680,
+      "group_ready_ps": 7212680,
+      "wait_ps": 0
+    },
+    {
+      "task": 177,
+      "own_ready_ps": 7212680,
+      "group_ready_ps": 7212680,
+      "wait_ps": 0
+    },
+    {
+      "task": 178,
+      "own_ready_ps": 7398960,
+      "group_ready_ps": 7398960,
+      "wait_ps": 0
+    },
+    {
+      "task": 179,
+      "own_ready_ps": 7398960,
+      "group_ready_ps": 7398960,
+      "wait_ps": 0
+    },
+    {
+      "task": 180,
+      "own_ready_ps": 7575280,
+      "group_ready_ps": 7575280,
+      "wait_ps": 0
+    },
+    {
+      "task": 181,
+      "own_ready_ps": 7575280,
+      "group_ready_ps": 7575280,
+      "wait_ps": 0
+    },
+    {
+      "task": 182,
+      "own_ready_ps": 7673400,
+      "group_ready_ps": 7756600,
+      "wait_ps": 83200
+    },
+    {
+      "task": 183,
+      "own_ready_ps": 7673400,
+      "group_ready_ps": 7756600,
+      "wait_ps": 83200
+    },
+    {
+      "task": 184,
+      "own_ready_ps": 7937920,
+      "group_ready_ps": 7937920,
+      "wait_ps": 0
+    },
+    {
+      "task": 185,
+      "own_ready_ps": 7937920,
+      "group_ready_ps": 7937920,
+      "wait_ps": 0
+    },
+    {
+      "task": 186,
+      "own_ready_ps": 8114240,
+      "group_ready_ps": 8114240,
+      "wait_ps": 0
+    },
+    {
+      "task": 187,
+      "own_ready_ps": 8114240,
+      "group_ready_ps": 8114240,
+      "wait_ps": 0
+    },
+    {
+      "task": 188,
+      "own_ready_ps": 8393720,
+      "group_ready_ps": 8393720,
+      "wait_ps": 0
+    },
+    {
+      "task": 189,
+      "own_ready_ps": 8393720,
+      "group_ready_ps": 8393720,
+      "wait_ps": 0
+    },
+    {
+      "task": 190,
+      "own_ready_ps": 8580040,
+      "group_ready_ps": 8580040,
+      "wait_ps": 0
+    },
+    {
+      "task": 191,
+      "own_ready_ps": 8580040,
+      "group_ready_ps": 8580040,
+      "wait_ps": 0
+    },
+    {
+      "task": 192,
+      "own_ready_ps": 8678160,
+      "group_ready_ps": 8678160,
+      "wait_ps": 0
+    },
+    {
+      "task": 193,
+      "own_ready_ps": 8678160,
+      "group_ready_ps": 8678160,
+      "wait_ps": 0
+    },
+    {
+      "task": 194,
+      "own_ready_ps": 8956160,
+      "group_ready_ps": 8956160,
+      "wait_ps": 0
+    },
+    {
+      "task": 195,
+      "own_ready_ps": 8956160,
+      "group_ready_ps": 8956160,
+      "wait_ps": 0
+    },
+    {
+      "task": 196,
+      "own_ready_ps": 9138960,
+      "group_ready_ps": 9138960,
+      "wait_ps": 0
+    },
+    {
+      "task": 197,
+      "own_ready_ps": 9138960,
+      "group_ready_ps": 9138960,
+      "wait_ps": 0
+    },
+    {
+      "task": 198,
+      "own_ready_ps": 9242080,
+      "group_ready_ps": 9242080,
+      "wait_ps": 0
+    },
+    {
+      "task": 199,
+      "own_ready_ps": 9242080,
+      "group_ready_ps": 9242080,
+      "wait_ps": 0
+    }
+  ],
   "weight_WQEs": 72,
   "weight_TAs": 288,
   "weight_send_bytes_per_npu": [
@@ -17,112 +309,102 @@
     {
       "outgoing": 152,
       "incoming": 130,
-      "overlap_ps": 176320
+      "overlap_ps": 88160
     },
     {
       "outgoing": 153,
       "incoming": 130,
-      "overlap_ps": 176320
+      "overlap_ps": 88160
     },
     {
       "outgoing": 154,
       "incoming": 132,
-      "overlap_ps": 186280
+      "overlap_ps": 88160
     },
     {
       "outgoing": 155,
       "incoming": 132,
-      "overlap_ps": 186280
+      "overlap_ps": 88160
     },
     {
       "outgoing": 156,
       "incoming": 134,
-      "overlap_ps": 176320
+      "overlap_ps": 181320
     },
     {
       "outgoing": 157,
       "incoming": 134,
-      "overlap_ps": 176320
+      "overlap_ps": 181320
     },
     {
       "outgoing": 158,
       "incoming": 136,
-      "overlap_ps": 186320
+      "overlap_ps": 103120
     },
     {
       "outgoing": 159,
       "incoming": 136,
-      "overlap_ps": 186320
+      "overlap_ps": 103120
     },
     {
       "outgoing": 160,
       "incoming": 138,
-      "overlap_ps": 176320
+      "overlap_ps": 88160
     },
     {
       "outgoing": 161,
       "incoming": 138,
-      "overlap_ps": 176320
+      "overlap_ps": 88160
     },
     {
       "outgoing": 162,
       "incoming": 140,
-      "overlap_ps": 279480
+      "overlap_ps": 88160
     },
     {
       "outgoing": 163,
       "incoming": 140,
-      "overlap_ps": 279480
+      "overlap_ps": 88160
     },
     {
       "outgoing": 164,
-      "incoming": 142,
-      "overlap_ps": 186320
+      "incoming": 144,
+      "overlap_ps": 88160
     },
     {
       "outgoing": 165,
-      "incoming": 142,
-      "overlap_ps": 186320
+      "incoming": 144,
+      "overlap_ps": 88160
     },
     {
       "outgoing": 166,
-      "incoming": 144,
-      "overlap_ps": 98120
+      "incoming": 146,
+      "overlap_ps": 181280
     },
     {
       "outgoing": 167,
-      "incoming": 144,
-      "overlap_ps": 98120
+      "incoming": 146,
+      "overlap_ps": 181280
     },
     {
       "outgoing": 168,
       "incoming": 146,
-      "overlap_ps": 278040
+      "overlap_ps": 83160
     },
     {
       "outgoing": 169,
       "incoming": 146,
-      "overlap_ps": 278040
+      "overlap_ps": 83160
     },
     {
       "outgoing": 170,
-      "incoming": 148,
-      "overlap_ps": 182760
+      "incoming": 150,
+      "overlap_ps": 88040
     },
     {
       "outgoing": 171,
-      "incoming": 148,
-      "overlap_ps": 182760
-    },
-    {
-      "outgoing": 172,
       "incoming": 150,
-      "overlap_ps": 103120
-    },
-    {
-      "outgoing": 173,
-      "incoming": 150,
-      "overlap_ps": 103120
+      "overlap_ps": 88040
     },
     {
       "outgoing": 176,
@@ -147,22 +429,22 @@
     {
       "outgoing": 180,
       "incoming": 135,
-      "overlap_ps": 176320
+      "overlap_ps": 98120
     },
     {
       "outgoing": 181,
       "incoming": 135,
-      "overlap_ps": 176320
+      "overlap_ps": 98120
     },
     {
       "outgoing": 182,
       "incoming": 137,
-      "overlap_ps": 186320
+      "overlap_ps": 181320
     },
     {
       "outgoing": 183,
       "incoming": 137,
-      "overlap_ps": 186320
+      "overlap_ps": 181320
     },
     {
       "outgoing": 184,
@@ -177,124 +459,124 @@
     {
       "outgoing": 186,
       "incoming": 141,
-      "overlap_ps": 103160
+      "overlap_ps": 279480
     },
     {
       "outgoing": 187,
       "incoming": 141,
-      "overlap_ps": 103160
+      "overlap_ps": 279480
     },
     {
       "outgoing": 188,
       "incoming": 143,
-      "overlap_ps": 176320
+      "overlap_ps": 186320
     },
     {
       "outgoing": 189,
       "incoming": 143,
-      "overlap_ps": 176320
+      "overlap_ps": 186320
     },
     {
       "outgoing": 190,
       "incoming": 145,
-      "overlap_ps": 279440
+      "overlap_ps": 98120
     },
     {
       "outgoing": 191,
       "incoming": 145,
-      "overlap_ps": 279440
+      "overlap_ps": 98120
     },
     {
       "outgoing": 192,
       "incoming": 147,
-      "overlap_ps": 103160
+      "overlap_ps": 278000
     },
     {
       "outgoing": 193,
       "incoming": 147,
-      "overlap_ps": 103160
+      "overlap_ps": 278000
     },
     {
       "outgoing": 194,
       "incoming": 149,
-      "overlap_ps": 179880
+      "overlap_ps": 182800
     },
     {
       "outgoing": 195,
       "incoming": 149,
-      "overlap_ps": 179880
+      "overlap_ps": 182800
     },
     {
       "outgoing": 196,
       "incoming": 151,
-      "overlap_ps": 279440
+      "overlap_ps": 103120
     },
     {
       "outgoing": 197,
       "incoming": 151,
-      "overlap_ps": 279440
+      "overlap_ps": 103120
     }
   ],
   "native_pipeline_overlaps": [
     {
       "outgoing": 152,
       "incoming": 130,
-      "overlap_ps": 176320
+      "overlap_ps": 88160
     },
     {
       "outgoing": 153,
       "incoming": 130,
-      "overlap_ps": 176320
+      "overlap_ps": 88160
     },
     {
       "outgoing": 154,
       "incoming": 134,
-      "overlap_ps": 151280
+      "overlap_ps": 264440
     },
     {
       "outgoing": 155,
       "incoming": 134,
-      "overlap_ps": 161280
+      "overlap_ps": 176320
     },
     {
       "outgoing": 156,
-      "incoming": 136,
-      "overlap_ps": 141320
+      "incoming": 138,
+      "overlap_ps": 43240
     },
     {
       "outgoing": 157,
       "incoming": 136,
-      "overlap_ps": 136320
+      "overlap_ps": 83120
     },
     {
       "outgoing": 158,
       "incoming": 140,
-      "overlap_ps": 204480
+      "overlap_ps": 38280
     },
     {
       "outgoing": 159,
-      "incoming": 140,
-      "overlap_ps": 199480
+      "incoming": 142,
+      "overlap_ps": 38320
     },
     {
       "outgoing": 160,
       "incoming": 144,
-      "overlap_ps": 96360
+      "overlap_ps": 8360
     },
     {
       "outgoing": 161,
-      "incoming": 142,
-      "overlap_ps": 8240
+      "incoming": 146,
+      "overlap_ps": 101520
     },
     {
       "outgoing": 162,
-      "incoming": 148,
-      "overlap_ps": 179560
+      "incoming": 150,
+      "overlap_ps": 80000
     },
     {
       "outgoing": 163,
-      "incoming": 148,
-      "overlap_ps": 76440
+      "incoming": 150,
+      "overlap_ps": 75000
     },
     {
       "outgoing": 176,
@@ -309,52 +591,52 @@
     {
       "outgoing": 178,
       "incoming": 135,
-      "overlap_ps": 151280
+      "overlap_ps": 73080
     },
     {
       "outgoing": 179,
       "incoming": 135,
-      "overlap_ps": 161280
+      "overlap_ps": 83080
     },
     {
       "outgoing": 180,
       "incoming": 137,
-      "overlap_ps": 141320
+      "overlap_ps": 141360
     },
     {
       "outgoing": 181,
       "incoming": 137,
-      "overlap_ps": 136320
+      "overlap_ps": 136360
     },
     {
       "outgoing": 182,
       "incoming": 141,
-      "overlap_ps": 28160
+      "overlap_ps": 204520
     },
     {
       "outgoing": 183,
       "incoming": 141,
-      "overlap_ps": 38160
+      "overlap_ps": 199520
     },
     {
       "outgoing": 184,
       "incoming": 145,
-      "overlap_ps": 91400
+      "overlap_ps": 96400
     },
     {
       "outgoing": 185,
-      "incoming": 145,
-      "overlap_ps": 86400
+      "incoming": 143,
+      "overlap_ps": 8280
     },
     {
       "outgoing": 186,
-      "incoming": 151,
-      "overlap_ps": 261320
+      "incoming": 149,
+      "overlap_ps": 179600
     },
     {
       "outgoing": 187,
-      "incoming": 151,
-      "overlap_ps": 271320
+      "incoming": 149,
+      "overlap_ps": 76480
     }
   ],
   "combine_sha256": "f9b0d2310c2f4ddd7508fd5ac50921924ed2d859bd611190261a3f52510ad32b",

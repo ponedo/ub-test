@@ -442,7 +442,9 @@
     "relay_max_relays": 8,
     "relay_min_fanout_gain": 2,
     "force_relay": false,
-    "reorder_ns": 0
+    "reorder_ns": 0,
+    "slow_relay_rank": 4294967295,
+    "slow_relay_ns": 0
   },
   "runtime": {
     "model_dim": 64,
@@ -467,7 +469,9 @@
     "relay_max_relays": 8,
     "relay_min_fanout_gain": 2,
     "force_relay": false,
-    "reorder_ns": 0
+    "reorder_ns": 0,
+    "slow_relay_rank": 4294967295,
+    "slow_relay_ns": 0
   },
   "mode": "ultraep",
   "assignments": [
@@ -2644,7 +2648,8 @@
       "source_physical": 3,
       "offset": 0,
       "dependencies": [
-        128
+        128,
+        129
       ]
     },
     {
@@ -2658,7 +2663,8 @@
       "source_physical": 3,
       "offset": 0,
       "dependencies": [
-        128
+        128,
+        129
       ]
     },
     {
@@ -2672,7 +2678,8 @@
       "source_physical": 3,
       "offset": 32768,
       "dependencies": [
-        130
+        130,
+        131
       ]
     },
     {
@@ -2686,7 +2693,8 @@
       "source_physical": 3,
       "offset": 32768,
       "dependencies": [
-        130
+        130,
+        131
       ]
     },
     {
@@ -2700,6 +2708,7 @@
       "source_physical": 5,
       "offset": 0,
       "dependencies": [
+        128,
         129
       ]
     },
@@ -2714,6 +2723,7 @@
       "source_physical": 5,
       "offset": 0,
       "dependencies": [
+        128,
         129
       ]
     },
@@ -2728,6 +2738,7 @@
       "source_physical": 5,
       "offset": 32768,
       "dependencies": [
+        130,
         131
       ]
     },
@@ -2742,6 +2753,7 @@
       "source_physical": 5,
       "offset": 32768,
       "dependencies": [
+        130,
         131
       ]
     }
@@ -2753,6 +2765,9 @@
     "relay_max_relays": 8,
     "relay_min_fanout_gain": 2,
     "force_relay": false,
-    "reorder_ns": 0
-  }
+    "reorder_ns": 0,
+    "slow_relay_rank": 4294967295,
+    "slow_relay_ns": 0
+  },
+  "readiness": "upstream-group-chunk"
 }

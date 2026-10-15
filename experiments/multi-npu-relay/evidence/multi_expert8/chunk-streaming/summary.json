@@ -1,6 +1,154 @@
 {
   "mode": "ultraep",
   "strategy": "chunk-streaming",
+  "readiness": "upstream-group-chunk",
+  "group_chunk_count": 24,
+  "group_waits": [
+    {
+      "task": 332,
+      "own_ready_ps": 7124520,
+      "group_ready_ps": 7124520,
+      "wait_ps": 0
+    },
+    {
+      "task": 333,
+      "own_ready_ps": 7300840,
+      "group_ready_ps": 7300840,
+      "wait_ps": 0
+    },
+    {
+      "task": 334,
+      "own_ready_ps": 7487120,
+      "group_ready_ps": 7487120,
+      "wait_ps": 0
+    },
+    {
+      "task": 335,
+      "own_ready_ps": 7673440,
+      "group_ready_ps": 7673440,
+      "wait_ps": 0
+    },
+    {
+      "task": 336,
+      "own_ready_ps": 7849760,
+      "group_ready_ps": 7849760,
+      "wait_ps": 0
+    },
+    {
+      "task": 337,
+      "own_ready_ps": 8046080,
+      "group_ready_ps": 8046080,
+      "wait_ps": 0
+    },
+    {
+      "task": 338,
+      "own_ready_ps": 8222400,
+      "group_ready_ps": 8222400,
+      "wait_ps": 0
+    },
+    {
+      "task": 339,
+      "own_ready_ps": 8418720,
+      "group_ready_ps": 8418720,
+      "wait_ps": 0
+    },
+    {
+      "task": 340,
+      "own_ready_ps": 8606800,
+      "group_ready_ps": 8606800,
+      "wait_ps": 0
+    },
+    {
+      "task": 341,
+      "own_ready_ps": 8781360,
+      "group_ready_ps": 8781360,
+      "wait_ps": 0
+    },
+    {
+      "task": 342,
+      "own_ready_ps": 8977680,
+      "group_ready_ps": 8977680,
+      "wait_ps": 0
+    },
+    {
+      "task": 343,
+      "own_ready_ps": 9257160,
+      "group_ready_ps": 9257160,
+      "wait_ps": 0
+    },
+    {
+      "task": 357,
+      "own_ready_ps": 7124520,
+      "group_ready_ps": 7124520,
+      "wait_ps": 0
+    },
+    {
+      "task": 358,
+      "own_ready_ps": 7300840,
+      "group_ready_ps": 7300840,
+      "wait_ps": 0
+    },
+    {
+      "task": 359,
+      "own_ready_ps": 7487120,
+      "group_ready_ps": 7487120,
+      "wait_ps": 0
+    },
+    {
+      "task": 360,
+      "own_ready_ps": 7673440,
+      "group_ready_ps": 7673440,
+      "wait_ps": 0
+    },
+    {
+      "task": 361,
+      "own_ready_ps": 7849760,
+      "group_ready_ps": 7849760,
+      "wait_ps": 0
+    },
+    {
+      "task": 362,
+      "own_ready_ps": 8046080,
+      "group_ready_ps": 8046080,
+      "wait_ps": 0
+    },
+    {
+      "task": 363,
+      "own_ready_ps": 8222400,
+      "group_ready_ps": 8222400,
+      "wait_ps": 0
+    },
+    {
+      "task": 364,
+      "own_ready_ps": 8418720,
+      "group_ready_ps": 8418720,
+      "wait_ps": 0
+    },
+    {
+      "task": 365,
+      "own_ready_ps": 8606800,
+      "group_ready_ps": 8606800,
+      "wait_ps": 0
+    },
+    {
+      "task": 366,
+      "own_ready_ps": 8781360,
+      "group_ready_ps": 8781360,
+      "wait_ps": 0
+    },
+    {
+      "task": 367,
+      "own_ready_ps": 8977680,
+      "group_ready_ps": 8977680,
+      "wait_ps": 0
+    },
+    {
+      "task": 368,
+      "own_ready_ps": 9257160,
+      "group_ready_ps": 9257160,
+      "wait_ps": 0
+    }
+  ],
   "weight_WQEs": 50,
   "weight_TAs": 288,
   "weight_send_bytes_per_npu": [

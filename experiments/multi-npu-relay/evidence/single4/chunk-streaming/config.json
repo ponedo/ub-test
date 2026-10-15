@@ -146,7 +146,9 @@
     "relay_max_relays": 8,
     "relay_min_fanout_gain": 2,
     "force_relay": false,
-    "reorder_ns": 0
+    "reorder_ns": 0,
+    "slow_relay_rank": 4294967295,
+    "slow_relay_ns": 0
   },
   "runtime": {
     "model_dim": 64,
@@ -171,7 +173,9 @@
     "relay_max_relays": 8,
     "relay_min_fanout_gain": 2,
     "force_relay": false,
-    "reorder_ns": 0
+    "reorder_ns": 0,
+    "slow_relay_rank": 4294967295,
+    "slow_relay_ns": 0
   },
   "mode": "ultraep",
   "assignments": [
@@ -725,6 +729,9 @@
     "relay_max_relays": 8,
     "relay_min_fanout_gain": 2,
     "force_relay": false,
-    "reorder_ns": 0
-  }
+    "reorder_ns": 0,
+    "slow_relay_rank": 4294967295,
+    "slow_relay_ns": 0
+  },
+  "readiness": "upstream-group-chunk"
 }

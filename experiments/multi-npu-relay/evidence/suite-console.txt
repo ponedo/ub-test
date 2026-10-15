@@ -9,7 +9,11 @@ multi4_force chunk-streaming 14321600 3 22
 multi8 no-balancing 8600056 0 0
 multi8 direct 28536080 6 0
 multi8 two-stage 19735920 6 0
-multi8 chunk-streaming 17803720 6 44
+multi8 chunk-streaming 17803720 6 42
+slow_relay8 no-balancing 8600056 0 0
+slow_relay8 direct 37136920 6 0
+slow_relay8 two-stage 37275480 6 0
+slow_relay8 chunk-streaming 35889760 6 22
 multi_expert8 no-balancing 10917320 0 0
 multi_expert8 direct 16915608 6 0
 multi_expert8 two-stage 17082408 6 0
@@ -33,7 +37,7 @@ out_of_order4 chunk-streaming 25998880 3 20
 public_chunk8 no-balancing 8600056 0 0
 public_chunk8 direct 28536080 6 0
 public_chunk8 two-stage 19735920 6 0
-public_chunk8 chunk-streaming 16919240 6 0
+public_chunk8 chunk-streaming 16909760 6 0
 slots_zero4 no-balancing 4244688 0 0
 slots_zero4 direct 4544688 0 0
 slots_zero4 two-stage 4544688 0 0
@@ -41,5 +45,5 @@ slots_zero4 chunk-streaming 4544688 0 0
 fixed64 no-balancing 18238360 0 0
 fixed64 direct 139969584 31 0
 fixed64 two-stage 50671824 31 0
-fixed64 chunk-streaming 45383384 31 286
-PASS matrix 44
+fixed64 chunk-streaming 45750904 31 257
+PASS matrix 48

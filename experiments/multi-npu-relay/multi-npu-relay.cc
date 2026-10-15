@@ -37,7 +37,8 @@ public:
     std::ofstream log;
     std::string fault;
     WeightDistributionOptions weightOptions;
-    uint32_t reorderNs=0;
+    uint32_t reorderNs=0,slowRelayRank=UINT32_MAX,slowRelayNs=0;
+    std::set<std::tuple<uint32_t,uint32_t,uint32_t>> readyGroups;
     std::vector<std::vector<uint8_t>> weightData;
     std::vector<std::unique_ptr<ChunkTracker>> weightCoverage;
     std::vector<std::vector<uint32_t>> dependents;
@@ -85,9 +86,9 @@ public:
             for(uint32_t rank=0;rank<k;++rank){uint32_t expert,pid;Require(bool(f>>expert>>pid)&&expert<e&&ids.insert(expert).second,"top-k");auto& p=P(pid);Require(p.expert==expert,"logical routing altered");assignments.push_back({token,rank,expert,source,p.rank,pid});++expected[p.rank];++counts[pIndex.at(pid)];}
         }
         for(uint32_t i=0;i<np;++i)Require(counts[i]==physical[i].quota,"physical quota mismatch");
-        Require(bool(f>>weightOptions.chunkBytes>>weightOptions.minReplicas>>weightOptions.maxRelays>>weightOptions.minFanoutGain>>weightOptions.forceRelay>>weightOptions.shardCut>>reorderNs),"relay options");
+        Require(bool(f>>weightOptions.chunkBytes>>weightOptions.minReplicas>>weightOptions.maxRelays>>weightOptions.minFanoutGain>>weightOptions.forceRelay>>weightOptions.shardCut>>reorderNs>>slowRelayRank>>slowRelayNs),"relay options");
         weightOptions.nodes=n;weightOptions.domain.assign(n,0);
-        Require(weightOptions.chunkBytes>0&&weightOptions.chunkBytes<=64*1024*1024&&weightOptions.maxRelays>0&&weightOptions.maxRelays<=72&&reorderNs<=100000000,"relay option bounds");
+        Require(weightOptions.chunkBytes>0&&weightOptions.chunkBytes<=64*1024*1024&&weightOptions.maxRelays>0&&weightOptions.maxRelays<=72&&reorderNs<=100000000&&slowRelayNs<=100000000&&(slowRelayRank==UINT32_MAX||slowRelayRank<n),"relay option bounds");
         uint32_t orderSize;Require(bool(f>>orderSize)&&orderSize==np,"ordinal size");
         std::vector<PhysicalExpert> ordered;std::set<uint32_t> seenOrder;
         for(uint32_t i=0;i<np;++i){uint32_t id;Require(bool(f>>id)&&seenOrder.insert(id).second,"ordinal duplicate");ordered.push_back(P(id));}
@@ -110,10 +111,14 @@ public:
             auto scope=edges[task-2*assignments.size()].sourceDependency;
             ChunkTracker coverage(scope==WeightReadyScope::FullExpert?weightBytes:x.bytes);
             for(uint32_t parent=2*assignments.size();parent<transfers.size();++parent){
-                auto& y=transfers[parent];if(y.physical!=x.sourcePhysical)continue;
-                if(scope==WeightReadyScope::Chunk&&(y.offset!=x.offset||y.bytes!=x.bytes))continue;
+                auto& y=transfers[parent];
+                if(scope==WeightReadyScope::GroupChunk){
+                    // One upstream Stage-I fan-out task publishes all relay flags together.
+                    // Aggregate its per-edge target completions without using sender ACKs.
+                    if(P(y.sourcePhysical).replica||P(y.physical).expert!=P(x.physical).expert||y.offset!=x.offset||y.bytes!=x.bytes)continue;
+                }else if(y.physical!=x.sourcePhysical)continue;
                 x.dependencies.push_back(parent);dependents[parent].push_back(task);
-                coverage.Notify(parent,scope==WeightReadyScope::Chunk?0:y.offset,y.bytes);
+                if(y.physical==x.sourcePhysical)coverage.Notify(parent,scope==WeightReadyScope::GroupChunk?0:y.offset,y.bytes);
             }
             Require(coverage.Complete(),"relay source coverage graph");
         }
@@ -180,6 +185,7 @@ public:
             };
             uint64_t delay=x.stage==2?weightCompleteNs:0;
             if(x.stage==2&&!P(x.sourcePhysical).replica&&x.offset==0)delay+=reorderNs;
+            if(x.stage==2&&!P(x.sourcePhysical).replica&&x.target==slowRelayRank)delay+=slowRelayNs;
             if(delay)Simulator::Schedule(NanoSeconds(delay),complete);else complete();
         })),"target executor");
         UbUtils::Get()->TopoTraceConnect();for(auto [a,b]:pairs){UbUtils::Get()->SingleTpTraceConnect(a,Tpn(a,b));UbUtils::Get()->SingleTpTraceConnect(b,Tpn(b,a));}
@@ -187,7 +193,11 @@ public:
     void Validate(uint32_t task,uint64_t off,const std::vector<uint8_t>& data){auto& x=transfers.at(task);for(size_t i=0;i<data.size();++i){Require(data[i]==ExpectedByte(task,off+i),"payload byte mismatch");x.data[off+i]=data[i];if(x.stage==2)weightData[pIndex.at(x.physical)][x.offset+off+i]=data[i];}}
     void Send(uint32_t task){auto& x=transfers.at(task);Require(!x.sent,"duplicate forwarding");
         Require(planningDone,"send before planning");if(x.stage==0)Require(dispatchStarted,"dispatch gate");if(x.stage==1)Require(finished[x.source],"combine before compute");
-        if(x.stage==2)for(auto parent:x.dependencies)Require(transfers[parent].ready,"relay before target chunk ready");
+        if(x.stage==2)for(auto parent:x.dependencies)Require(transfers[parent].ready,"relay before target chunk ready (including group)");
+        if(x.stage==2&&strategy==2&&P(x.sourcePhysical).replica){
+            auto key=std::make_tuple(P(x.physical).expert,x.offset,x.bytes);
+            if(readyGroups.insert(key).second)Event("group_chunk_ready",2,P(x.physical).expert,P(x.physical).mainRank,x.offset,x.bytes);
+        }
         x.sent=true;TE("send",task,x.source,0,x.bytes);std::vector<uint8_t> data(x.bytes);
         if(x.stage==2&&P(x.sourcePhysical).replica&&fault=="relay-buffer-byte")weightData[pIndex.at(x.sourcePhysical)][x.offset]^=1;
         for(uint32_t i=0;i<x.bytes;++i){
@@ -218,6 +228,12 @@ public:
             auto idx=pIndex.at(x.physical);
             if(fault=="early-final-ready")FinalWeight(x.physical);
             if(weightCoverage[idx]->Notify(task,x.offset,x.bytes))FinalWeight(x.physical);
+            if(fault=="early-group"&&strategy==2&&!P(x.sourcePhysical).replica){
+                for(auto child:dependents[task])if(transfers[child].sourcePhysical==x.physical&&
+                    !std::all_of(transfers[child].dependencies.begin(),transfers[child].dependencies.end(),[this](auto p){return transfers[p].ready;})){
+                    TE("early_group_attempt",child,transfers[child].source);Send(child);
+                }
+            }
             for(auto child:dependents[task])if(!transfers[child].sent &&
                 std::all_of(transfers[child].dependencies.begin(),transfers[child].dependencies.end(),[this](auto p){return transfers[p].ready;}))Send(child);
         }
@@ -267,4 +283,4 @@ public:
         WritePayloads(out);log.close();UbUtils::Get()->Destroy();traceOn=false;Simulator::Destroy();
     }
 };
-int main(int argc,char** argv){Time::SetResolution(Time::PS);Layer layer;std::string input,out;CommandLine cmd;cmd.AddValue("input","validated execution input",input);cmd.AddValue("out","output directory",out);cmd.AddValue("fault","test-only fault injection",layer.fault);cmd.Parse(argc,argv);try{Require(layer.fault.empty()||layer.fault=="weight-byte"||layer.fault=="premature-ready"||layer.fault=="duplicate-weight"||layer.fault=="early-compute"||layer.fault=="relay-byte"||layer.fault=="relay-buffer-byte"||layer.fault=="duplicate-notify"||layer.fault=="early-relay"||layer.fault=="early-final-ready","unknown fault");Require(!input.empty()&&!out.empty(),"input/out");layer.Run(input,out);}catch(const std::exception& ex){if(layer.log){layer.Event("error");layer.log.flush();}if(layer.traceOn)UbUtils::Get()->Destroy();std::cerr<<"ERROR: "<<ex.what()<<'\n';return 2;}return 0;}
+int main(int argc,char** argv){Time::SetResolution(Time::PS);Layer layer;std::string input,out;CommandLine cmd;cmd.AddValue("input","validated execution input",input);cmd.AddValue("out","output directory",out);cmd.AddValue("fault","test-only fault injection",layer.fault);cmd.Parse(argc,argv);try{Require(layer.fault.empty()||layer.fault=="weight-byte"||layer.fault=="premature-ready"||layer.fault=="duplicate-weight"||layer.fault=="early-compute"||layer.fault=="early-group"||layer.fault=="relay-byte"||layer.fault=="relay-buffer-byte"||layer.fault=="duplicate-notify"||layer.fault=="early-relay"||layer.fault=="early-final-ready","unknown fault");Require(!input.empty()&&!out.empty(),"input/out");layer.Run(input,out);}catch(const std::exception& ex){if(layer.log){layer.Event("error");layer.log.flush();}if(layer.traceOn)UbUtils::Get()->Destroy();std::cerr<<"ERROR: "<<ex.what()<<'\n';return 2;}return 0;}
