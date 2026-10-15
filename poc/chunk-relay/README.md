@@ -71,7 +71,7 @@ A→B Chunk 1 与 B→C Chunk 0 的真实 TA 活动区间重叠 **5.399 µs**；
 
 第二个真实网络案例使用 65,537 / 262,147 B、4096 B TA、2000 ns 计算，覆盖非整除末段：164 个目标 TA、2 个 C Chunk、通信重叠 5.445 µs、计算重叠 2 µs。结果见 `variant-verification.json`。
 
-自动化检查：Tracker 测试覆盖乱序、完全重复、重叠覆盖、单字节缺口、重复完成、冲突 ID、零长度、越界、整数溢出与 Chunk 独立性；8 个 Python 测试验证正常事件，并拒绝缺失 TA、错误长度、提前/重复转发、缺失 C 完成和错误计算依赖，另测试不相交/端点相接不算重叠。网络验证器逐 TA 检查覆盖和次数、每 Chunk ready/转发/发送端完成关系、两跳及计算重叠。上述元数据负例操作 Tracker 或事件副本；最终版本另有真实网络 payload 单字节损坏负例（见下文），不模拟物理链路随机错误。
+自动化检查：Tracker 测试覆盖乱序、完全重复、重叠覆盖、单字节缺口、重复完成、冲突 ID、零长度、越界、整数溢出与 Chunk 独立性；11 个 Python 测试验证正常事件，并拒绝缺失 TA、错误长度、提前/重复转发、缺失 C 完成和错误计算依赖，另测试不相交/端点相接不算重叠。网络验证器逐 TA 检查覆盖和次数、每 Chunk ready/转发/发送端完成关系、两跳及计算重叠。上述元数据负例操作 Tracker 或事件副本；最终版本另有真实网络 payload 单字节损坏负例（见下文），不模拟物理链路随机错误。
 
 ## 完整性能力边界
 
@@ -104,4 +104,23 @@ A→B Chunk 1 与 B→C Chunk 0 的真实 TA 活动区间重叠 **5.399 µs**；
 
 通信窗口定义：每 hop/Chunk 的区间为首个 `WqeSegmentSendsNotify` 接纳时间至最后目标 TA 完成时间。默认 A→B Chunk 1 为 [0.010,26.945] µs，B→C Chunk 0 为 [10.120,15.519] µs，交集 [10.120,15.519] µs。窗口内两跳都必须存在真实目标 TA 到达事件。该定义不是精确物理链路逐字节忙碌区间。计算区间 [10.120,15.120] µs，由 computeNs=5000 明确参数生成；与通信交集为 5 µs。链路 20 ns 是 UbLink 传播参数，未用固定延时直接触发网络接收或 Chunk ready。
 
-重复/乱序/覆盖/缺口负例均实际执行于 `tracker-test.cc`；网络字节损坏负例实际走 B→C 链路。最终默认与末段变体重新构建运行，8 项 Python 测试重新通过。验收结论为本三节点案例及所列测试通过，非全部系统需求验收通过。
+重复/乱序/覆盖/缺口负例均实际执行于 `tracker-test.cc`；网络字节损坏负例实际走 B→C 链路。最终默认与末段变体重新构建运行，11 项 Python 测试重新通过。验收结论为本三节点案例及所列测试通过，非全部系统需求验收通过。
+
+
+## 审核修复与交付约束
+
+Bundle 的默认 HEAD 不保证指向 PoC 分支，必须显式检出：
+
+```bash
+git clone -b poc/three-node-prep-20261015 ub-test-poc.bundle ub-test
+cd ub-test
+bash poc/chunk-relay/run.sh
+```
+
+此命令已实际验证可 checkout，并检查克隆 HEAD 和应用文件。交付包包含 ub-test 完整 Git 历史，但**不是离线依赖包**：缺少本地 ns-3-ub、子模块或构建工具时，run.sh 需要联网获取固定版本。
+
+run.sh 在更新/构建前检查 ns3 和 tools 的固定 SHA、暂存区和跟踪文件干净状态；不把复制到 scratch 的未跟踪应用文件误判成底层修改。工具版本记录在 evidence/tool-versions.txt。
+
+verify.py 使用显式 EvidenceError，不依赖 Python assert；逐 (hop,chunk,offset,length) 配对 admitted、received、payload_verified、done，核实每阶段数量、仿真时刻与同一时刻的记录顺序。新增 offset 篡改、验证时间篡改和同一时刻顺序篡改负例；11 项测试分别在常规和 python -O 下执行通过。
+
+损坏负例在终止前记录 payload_mismatch 并 flush，corrupt-events.csv 保留从开始到失败的完整应用时间线。现有 UbUtils 的原生 trace 接口已启用，无底层修改；默认、变体和损坏运行分别保存于 events.csv.native/runlog、variant-events.csv.native/runlog、corrupt-events.csv.native/runlog，包含包/ACK 路径、TP、端口事件。trace 初始化需先实例化 UbUtils 再配置其 GlobalValues，已修正并重跑。原生 trace 与应用事件是两套独立观测证据。

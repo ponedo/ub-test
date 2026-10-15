@@ -6,6 +6,7 @@
 #include <fstream>
 #include <memory>
 #include <array>
+#include <filesystem>
 using namespace ns3;
 
 // One fresh Jetty per (hop, chunk): its TASSN starts at zero. This mapping is
@@ -63,7 +64,8 @@ public:
     Ctrl(hop)->GetTransportChannelManager()->GetTp(tx)->TraceConnectWithoutContext(
       "WqeSegmentSendsNotify",Callback<void,uint32_t,uint32_t,uint32_t>(
         [this,hop](uint32_t,uint32_t task,uint32_t ssn){
-          Event("ta_send_admitted",hop,task%100,uint64_t(ssn)*segment);
+          uint64_t off=uint64_t(ssn)*segment;
+          Event("ta_send_admitted",hop,task%100,off,std::min<uint64_t>(segment,Size(task%100)-off));
         }));
     for(uint32_t c=0;c<2;++c) {
       auto fn=Ctrl(hop)->GetUbFunction(); fn->CreateJetty(a->GetId(),b->GetId(),c);
@@ -89,7 +91,11 @@ public:
         std::vector<uint8_t> bytes(len);
         request->GetExplicitPayload()->CopyData(bytes.data(),len);
         for(uint64_t i=0;i<len;++i) {
-          NS_ABORT_MSG_IF(bytes[i]!=Byte(c,off+i),"payload byte mismatch");
+          if(bytes[i]!=Byte(c,off+i)) {
+            Event("payload_mismatch",hop,c,off+i,1); events.flush();
+            UbUtils::Get()->Destroy();
+            NS_ABORT_MSG("payload byte mismatch");
+          }
           buffers[hop][c][off+i]=bytes[i];
         }
         Event("payload_bytes_verified",hop,c,off,len);
@@ -123,13 +129,26 @@ public:
     events.open(output); NS_ABORT_MSG_IF(!events,"cannot open event file");
     events<<"time_ps,event,hop,chunk,offset,bytes\n";
     GlobalValue::Bind("UB_CC_ENABLED",BooleanValue(false));
+    UbUtils::Get(); // instantiate utility-owned GlobalValues before configuring trace
+    GlobalValue::Bind("UB_TRACE_ENABLE",BooleanValue(true));
+    GlobalValue::Bind("UB_PACKET_TRACE_ENABLE",BooleanValue(true));
+    GlobalValue::Bind("UB_PORT_TRACE_ENABLE",BooleanValue(true));
+    GlobalValue::Bind("UB_RECORD_PKT_TRACE",BooleanValue(true));
+    std::string tracePath=output+".native";
+    std::filesystem::create_directories(tracePath+"/runlog");
+    UbUtils::SetTracePathForTest(tracePath);
     InitNode(0,1); InitNode(1,2); InitNode(2,1);
     Link(0,0,0); Link(1,1,0);
+    UbUtils::Get()->TopoTraceConnect();
+    UbUtils::Get()->SingleTpTraceConnect(0,10);
+    UbUtils::Get()->SingleTpTraceConnect(1,11);
+    UbUtils::Get()->SingleTpTraceConnect(1,12);
+    UbUtils::Get()->SingleTpTraceConnect(2,13);
     Simulator::Schedule(NanoSeconds(10),[this]{Send(0,0);Send(0,1);});
     Simulator::Stop(MilliSeconds(1)); Simulator::Run();
     NS_ABORT_MSG_IF(completed!=2 || senderCompleted!=4,"missing chunk or sender completion");
     std::cout<<"PASS network: C chunks="<<completed<<" sender completions="<<senderCompleted<<" target TAs="<<taCount<<"\n";
-    events.close(); Simulator::Destroy();
+    events.close(); UbUtils::Get()->Destroy(); Simulator::Destroy();
   }
 };
 int main(int argc,char** argv) {

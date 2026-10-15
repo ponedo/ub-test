@@ -2,7 +2,7 @@
 import csv,sys,tempfile,unittest
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
-from verify import verify,overlap
+from verify import verify,overlap,EvidenceError
 SOURCE=Path(sys.argv.pop(1))
 class EvidenceTests(unittest.TestCase):
     def check_mutation(self,mutate):
@@ -12,7 +12,20 @@ class EvidenceTests(unittest.TestCase):
             p=Path(d)/'events.csv'
             with open(p,'w') as f:
                 w=csv.DictWriter(f,fieldnames=rows[0].keys()); w.writeheader(); w.writerows(rows)
-            with self.assertRaises(AssertionError): verify(p)
+            with self.assertRaises(EvidenceError): verify(p)
+    def test_admission_offset(self):
+        def change(rs): next(r for r in rs if r['event']=='ta_send_admitted')['offset']='1'
+        self.check_mutation(change)
+    def test_verification_time(self):
+        def change(rs):
+            next(r for r in rs if r['event']=='payload_bytes_verified')['time_ps']='0'
+            rs.sort(key=lambda r:int(r['time_ps']))
+        self.check_mutation(change)
+    def test_same_time_stage_order(self):
+        def change(rs):
+            i=next(i for i,r in enumerate(rs) if r['event']=='payload_bytes_verified')
+            rs[i],rs[i+1]=rs[i+1],rs[i]
+        self.check_mutation(change)
     def test_baseline(self): verify(SOURCE)
     def test_disjoint_and_touching_intervals(self):
         self.assertEqual(overlap((0,10),(11,20)),0)

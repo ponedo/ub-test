@@ -11,13 +11,25 @@ if [[ ! -d "$NS3_ROOT/.git" ]]; then
   git -C "$NS3_ROOT" checkout --detach d6aa9e242d5a93f5bbd1ad54f39b1620c1b8757b
 fi
 test "$(git -C "$NS3_ROOT" rev-parse HEAD)" = d6aa9e242d5a93f5bbd1ad54f39b1620c1b8757b
+git -C "$NS3_ROOT" diff --quiet --ignore-submodules=all
+git -C "$NS3_ROOT" diff --cached --quiet --ignore-submodules=all
+if git -C "$NS3_ROOT/scratch/ns-3-ub-tools" rev-parse --show-toplevel 2>/dev/null | grep -q '/ns-3-ub-tools$'; then
+  git -C "$NS3_ROOT/scratch/ns-3-ub-tools" diff --quiet
+  git -C "$NS3_ROOT/scratch/ns-3-ub-tools" diff --cached --quiet
+  test "$(git -C "$NS3_ROOT/scratch/ns-3-ub-tools" rev-parse HEAD)" = 29009175f1778f76a22d929063c3a0821cb91e56
+fi
 git -C "$NS3_ROOT" submodule update --init --recursive
 test "$(git -C "$NS3_ROOT/scratch/ns-3-ub-tools" rev-parse HEAD)" = 29009175f1778f76a22d929063c3a0821cb91e56
+git -C "$NS3_ROOT" diff --quiet
+git -C "$NS3_ROOT" diff --cached --quiet
+git -C "$NS3_ROOT/scratch/ns-3-ub-tools" diff --quiet
+git -C "$NS3_ROOT/scratch/ns-3-ub-tools" diff --cached --quiet
 if [[ ! -x "$BUILD_TOOLS/bin/cmake" || ! -x "$BUILD_TOOLS/bin/ninja" ]]; then
   "$PYTHON" -m pip install --target "$BUILD_TOOLS" cmake==4.4.4 ninja==1.13.2
 fi
 export PATH="$BUILD_TOOLS/bin:$PATH"
 export PYTHONPATH="$BUILD_TOOLS${PYTHONPATH:+:$PYTHONPATH}"
+{ "$PYTHON" --version; cmake --version; ninja --version; g++ --version; git --version; } > "$OUT/tool-versions.txt"
 cp "$POC_DIR/chunk-relay.cc" "$NS3_ROOT/scratch/chunk-relay.cc"
 cp "$POC_DIR/tracker.h" "$NS3_ROOT/scratch/tracker.h"
 cd "$NS3_ROOT"
@@ -40,5 +52,7 @@ printf 'PASS: real-network corrupted byte rejected at C\n' > "$OUT/corrupt-test.
 g++ -std=c++17 -Wall -Wextra -Werror "$POC_DIR/tests/tracker-test.cc" -o "$OUT/tracker-test"
 "$OUT/tracker-test" > "$OUT/tracker-tests.txt"
 "$PYTHON" "$POC_DIR/tests/test-verifier.py" "$OUT/events.csv" > "$OUT/verifier-tests.txt" 2>&1
+"$PYTHON" -O "$POC_DIR/tests/test-verifier.py" "$OUT/events.csv" > "$OUT/verifier-tests-optimized.txt" 2>&1
+"$PYTHON" -O "$POC_DIR/verify.py" "$OUT/events.csv" > "$OUT/verification-optimized.json"
 rm "$OUT/tracker-test"
 printf 'PASS: evidence in %s\n' "$OUT"
