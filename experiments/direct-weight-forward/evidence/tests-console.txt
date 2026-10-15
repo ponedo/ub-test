@@ -1,0 +1,80 @@
+{
+  "status": "PASS",
+  "live_faults": [
+    {
+      "fault": "weight-byte",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+        "./ns3",
+        "run",
+        "--no-build",
+        "direct-weight-forward --input=/workspace/ub-test/experiments/direct-weight-forward/evidence/single_replica4/ultraep/input.txt --out=/workspace/ub-test/experiments/direct-weight-forward/evidence/negative/weight-byte --fault=weight-byte"
+      ],
+      "returncode": 2,
+      "expected_error": "payload byte mismatch"
+    },
+    {
+      "fault": "premature-ready",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+        "./ns3",
+        "run",
+        "--no-build",
+        "direct-weight-forward --input=/workspace/ub-test/experiments/direct-weight-forward/evidence/single_replica4/ultraep/input.txt --out=/workspace/ub-test/experiments/direct-weight-forward/evidence/negative/premature-ready --fault=premature-ready"
+      ],
+      "returncode": 2,
+      "expected_error": "ready before target completion coverage"
+    },
+    {
+      "fault": "duplicate-weight",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+        "./ns3",
+        "run",
+        "--no-build",
+        "direct-weight-forward --input=/workspace/ub-test/experiments/direct-weight-forward/evidence/single_replica4/ultraep/input.txt --out=/workspace/ub-test/experiments/direct-weight-forward/evidence/negative/duplicate-weight --fault=duplicate-weight"
+      ],
+      "returncode": 2,
+      "expected_error": "duplicate forwarding"
+    },
+    {
+      "fault": "early-compute",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+        "./ns3",
+        "run",
+        "--no-build",
+        "direct-weight-forward --input=/workspace/ub-test/experiments/direct-weight-forward/evidence/single_replica4/ultraep/input.txt --out=/workspace/ub-test/experiments/direct-weight-forward/evidence/negative/early-compute --fault=early-compute"
+      ],
+      "returncode": 2,
+      "expected_error": "compute token/gate dependency"
+    },
+    {
+      "fault": "bad-provenance",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+        "./ns3",
+        "run",
+        "--no-build",
+        "direct-weight-forward --input=/workspace/ub-test/experiments/direct-weight-forward/evidence/negative/bad-provenance/input.txt --out=/workspace/ub-test/experiments/direct-weight-forward/evidence/negative/bad-provenance"
+      ],
+      "returncode": 2,
+      "expected_error": "weight provenance"
+    },
+    {
+      "fault": "bad-quota",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+        "./ns3",
+        "run",
+        "--no-build",
+        "direct-weight-forward --input=/workspace/ub-test/experiments/direct-weight-forward/evidence/negative/bad-quota/input.txt --out=/workspace/ub-test/experiments/direct-weight-forward/evidence/negative/bad-quota"
+      ],
+      "returncode": 2,
+      "expected_error": "physical quota mismatch"
+    }
+  ],
+  "tampered_event_rejections": 3,
+  "unsupported_strategies": 2,
+  "coverage": "replicas, overlap both directions, target-vs-sender readiness, EP64, nondivisible TA"
+}

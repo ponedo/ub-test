@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/workspace/ub-test/experiments/no-balancing-layer/verify.py", line 113, in <module>
+    result=verify(sys.argv[1]);print(json.dumps(result,indent=2))
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/ub-test/experiments/no-balancing-layer/verify.py", line 38, in verify
+    with open(case/'assignments.csv') as f:raw=[{key:int(v) for key,v in r.items()} for r in csv.DictReader(f)]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/ub-test/experiments/direct-weight-forward/evidence/legacy-parity/assignments.csv'
+Traceback (most recent call last):
+  File "/workspace/ub-test/experiments/direct-weight-forward/legacy_parity.py", line 16, in <module>
+    result=subprocess.check_output([sys.executable,str(script),str(case)],text=True);old=json.loads(result)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12', '/workspace/ub-test/experiments/no-balancing-layer/verify.py', '/workspace/ub-test/experiments/direct-weight-forward/evidence/legacy-parity']' returned non-zero exit status 1.

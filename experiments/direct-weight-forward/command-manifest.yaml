@@ -1,0 +1,106 @@
+[
+  {
+    "case_id": "uniform4/no-balancing",
+    "command": "python3.12 ./ns3 run --no-build \"direct-weight-forward --input={evidence}/uniform4/no-balancing/input.txt --out={evidence}/uniform4/no-balancing\""
+  },
+  {
+    "case_id": "uniform4/ultraep",
+    "command": "python3.12 ./ns3 run --no-build \"direct-weight-forward --input={evidence}/uniform4/ultraep/input.txt --out={evidence}/uniform4/ultraep\""
+  },
+  {
+    "case_id": "single_replica4/no-balancing",
+    "command": "python3.12 ./ns3 run --no-build \"direct-weight-forward --input={evidence}/single_replica4/no-balancing/input.txt --out={evidence}/single_replica4/no-balancing\""
+  },
+  {
+    "case_id": "single_replica4/ultraep",
+    "command": "python3.12 ./ns3 run --no-build \"direct-weight-forward --input={evidence}/single_replica4/ultraep/input.txt --out={evidence}/single_replica4/ultraep\""
+  },
+  {
+    "case_id": "multi_replica4/no-balancing",
+    "command": "python3.12 ./ns3 run --no-build \"direct-weight-forward --input={evidence}/multi_replica4/no-balancing/input.txt --out={evidence}/multi_replica4/no-balancing\""
+  },
+  {
+    "case_id": "multi_replica4/ultraep",
+    "command": "python3.12 ./ns3 run --no-build \"direct-weight-forward --input={evidence}/multi_replica4/ultraep/input.txt --out={evidence}/multi_replica4/ultraep\""
+  },
+  {
+    "case_id": "multi_expert8/no-balancing",
+    "command": "python3.12 ./ns3 run --no-build \"direct-weight-forward --input={evidence}/multi_expert8/no-balancing/input.txt --out={evidence}/multi_expert8/no-balancing\""
+  },
+  {
+    "case_id": "multi_expert8/ultraep",
+    "command": "python3.12 ./ns3 run --no-build \"direct-weight-forward --input={evidence}/multi_expert8/ultraep/input.txt --out={evidence}/multi_expert8/ultraep\""
+  },
+  {
+    "case_id": "slots_zero4/no-balancing",
+    "command": "python3.12 ./ns3 run --no-build \"direct-weight-forward --input={evidence}/slots_zero4/no-balancing/input.txt --out={evidence}/slots_zero4/no-balancing\""
+  },
+  {
+    "case_id": "slots_zero4/ultraep",
+    "command": "python3.12 ./ns3 run --no-build \"direct-weight-forward --input={evidence}/slots_zero4/ultraep/input.txt --out={evidence}/slots_zero4/ultraep\""
+  },
+  {
+    "case_id": "nondivisible4/no-balancing",
+    "command": "python3.12 ./ns3 run --no-build \"direct-weight-forward --input={evidence}/nondivisible4/no-balancing/input.txt --out={evidence}/nondivisible4/no-balancing\""
+  },
+  {
+    "case_id": "nondivisible4/ultraep",
+    "command": "python3.12 ./ns3 run --no-build \"direct-weight-forward --input={evidence}/nondivisible4/ultraep/input.txt --out={evidence}/nondivisible4/ultraep\""
+  },
+  {
+    "case_id": "target_delay4/no-balancing",
+    "command": "python3.12 ./ns3 run --no-build \"direct-weight-forward --input={evidence}/target_delay4/no-balancing/input.txt --out={evidence}/target_delay4/no-balancing\""
+  },
+  {
+    "case_id": "target_delay4/ultraep",
+    "command": "python3.12 ./ns3 run --no-build \"direct-weight-forward --input={evidence}/target_delay4/ultraep/input.txt --out={evidence}/target_delay4/ultraep\""
+  },
+  {
+    "case_id": "reroute_slow4/no-balancing",
+    "command": "python3.12 ./ns3 run --no-build \"direct-weight-forward --input={evidence}/reroute_slow4/no-balancing/input.txt --out={evidence}/reroute_slow4/no-balancing\""
+  },
+  {
+    "case_id": "reroute_slow4/ultraep",
+    "command": "python3.12 ./ns3 run --no-build \"direct-weight-forward --input={evidence}/reroute_slow4/ultraep/input.txt --out={evidence}/reroute_slow4/ultraep\""
+  },
+  {
+    "case_id": "two_matrix4/no-balancing",
+    "command": "python3.12 ./ns3 run --no-build \"direct-weight-forward --input={evidence}/two_matrix4/no-balancing/input.txt --out={evidence}/two_matrix4/no-balancing\""
+  },
+  {
+    "case_id": "two_matrix4/ultraep",
+    "command": "python3.12 ./ns3 run --no-build \"direct-weight-forward --input={evidence}/two_matrix4/ultraep/input.txt --out={evidence}/two_matrix4/ultraep\""
+  },
+  {
+    "case_id": "empty4/no-balancing",
+    "command": "python3.12 ./ns3 run --no-build \"direct-weight-forward --input={evidence}/empty4/no-balancing/input.txt --out={evidence}/empty4/no-balancing\""
+  },
+  {
+    "case_id": "empty4/ultraep",
+    "command": "python3.12 ./ns3 run --no-build \"direct-weight-forward --input={evidence}/empty4/ultraep/input.txt --out={evidence}/empty4/ultraep\""
+  },
+  {
+    "case_id": "uneven_sources4/no-balancing",
+    "command": "python3.12 ./ns3 run --no-build \"direct-weight-forward --input={evidence}/uneven_sources4/no-balancing/input.txt --out={evidence}/uneven_sources4/no-balancing\""
+  },
+  {
+    "case_id": "uneven_sources4/ultraep",
+    "command": "python3.12 ./ns3 run --no-build \"direct-weight-forward --input={evidence}/uneven_sources4/ultraep/input.txt --out={evidence}/uneven_sources4/ultraep\""
+  },
+  {
+    "case_id": "fixed64/no-balancing",
+    "command": "python3.12 ./ns3 run --no-build \"direct-weight-forward --input={evidence}/fixed64/no-balancing/input.txt --out={evidence}/fixed64/no-balancing\""
+  },
+  {
+    "case_id": "fixed64/ultraep",
+    "command": "python3.12 ./ns3 run --no-build \"direct-weight-forward --input={evidence}/fixed64/ultraep/input.txt --out={evidence}/fixed64/ultraep\""
+  },
+  {
+    "case_id": "single_replica4_repeat/no-balancing",
+    "command": "python3.12 ./ns3 run --no-build \"direct-weight-forward --input={evidence}/single_replica4_repeat/no-balancing/input.txt --out={evidence}/single_replica4_repeat/no-balancing\""
+  },
+  {
+    "case_id": "single_replica4_repeat/ultraep",
+    "command": "python3.12 ./ns3 run --no-build \"direct-weight-forward --input={evidence}/single_replica4_repeat/ultraep/input.txt --out={evidence}/single_replica4_repeat/ultraep\""
+  }
+]

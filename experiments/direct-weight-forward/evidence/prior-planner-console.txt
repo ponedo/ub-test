@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "scenarios": 10,
+  "random": 250,
+  "exhaustive": 80,
+  "greedy_optimality_gaps": 4,
+  "reference_fixtures": 4,
+  "negative_checker": 5,
+  "invalid": 6
+}
+{
+  "status": "PASS",
+  "replication_scenarios": 9,
+  "fast_retry": true,
+  "epsilon": true,
+  "dynamic_floor_below_configured": true,
+  "fallback": true,
+  "kernel_stages": [
+    0,
+    1
+  ]
+}
+{
+  "status": "PASS",
+  "scenario_count": 26,
+  "accepted_goldens": 9,
+  "repair_exhaustive_cases": 63,
+  "unsupported_inputs_rejected": 11,
+  "placement_differences": 0,
+  "classifications": {
+    "exact": 22,
+    "integer_correction": 4,
+    "substantial_placement_difference": 0,
+    "unaligned": [
+      "GPU atomic token ordinal identity",
+      "multi-domain layout and noncontiguous/nonuniform inputs rejected"
+    ]
+  }
+}

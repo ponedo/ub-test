@@ -1,0 +1,262 @@
+[
+  {
+    "case_id": "uniform4/no-balancing",
+    "block_id": "uniform4",
+    "role": "control",
+    "case_dir": "evidence/uniform4/no-balancing",
+    "changed_variable": "balancing policy and its required overhead",
+    "fixed_controls": "shared logical trace/network/model/per-assignment WQE",
+    "prediction": "no guaranteed speedup; direct weights can dominate",
+    "checkpoint": "stop on correctness failure; continue negative speedup"
+  },
+  {
+    "case_id": "uniform4/ultraep",
+    "block_id": "uniform4",
+    "role": "treatment",
+    "case_dir": "evidence/uniform4/ultraep",
+    "changed_variable": "balancing policy and its required overhead",
+    "fixed_controls": "shared logical trace/network/model/per-assignment WQE",
+    "prediction": "no guaranteed speedup; direct weights can dominate",
+    "checkpoint": "stop on correctness failure; continue negative speedup"
+  },
+  {
+    "case_id": "single_replica4/no-balancing",
+    "block_id": "single_replica4",
+    "role": "control",
+    "case_dir": "evidence/single_replica4/no-balancing",
+    "changed_variable": "balancing policy and its required overhead",
+    "fixed_controls": "shared logical trace/network/model/per-assignment WQE",
+    "prediction": "no guaranteed speedup; direct weights can dominate",
+    "checkpoint": "stop on correctness failure; continue negative speedup"
+  },
+  {
+    "case_id": "single_replica4/ultraep",
+    "block_id": "single_replica4",
+    "role": "treatment",
+    "case_dir": "evidence/single_replica4/ultraep",
+    "changed_variable": "balancing policy and its required overhead",
+    "fixed_controls": "shared logical trace/network/model/per-assignment WQE",
+    "prediction": "no guaranteed speedup; direct weights can dominate",
+    "checkpoint": "stop on correctness failure; continue negative speedup"
+  },
+  {
+    "case_id": "multi_replica4/no-balancing",
+    "block_id": "multi_replica4",
+    "role": "control",
+    "case_dir": "evidence/multi_replica4/no-balancing",
+    "changed_variable": "balancing policy and its required overhead",
+    "fixed_controls": "shared logical trace/network/model/per-assignment WQE",
+    "prediction": "no guaranteed speedup; direct weights can dominate",
+    "checkpoint": "stop on correctness failure; continue negative speedup"
+  },
+  {
+    "case_id": "multi_replica4/ultraep",
+    "block_id": "multi_replica4",
+    "role": "treatment",
+    "case_dir": "evidence/multi_replica4/ultraep",
+    "changed_variable": "balancing policy and its required overhead",
+    "fixed_controls": "shared logical trace/network/model/per-assignment WQE",
+    "prediction": "no guaranteed speedup; direct weights can dominate",
+    "checkpoint": "stop on correctness failure; continue negative speedup"
+  },
+  {
+    "case_id": "multi_expert8/no-balancing",
+    "block_id": "multi_expert8",
+    "role": "control",
+    "case_dir": "evidence/multi_expert8/no-balancing",
+    "changed_variable": "balancing policy and its required overhead",
+    "fixed_controls": "shared logical trace/network/model/per-assignment WQE",
+    "prediction": "no guaranteed speedup; direct weights can dominate",
+    "checkpoint": "stop on correctness failure; continue negative speedup"
+  },
+  {
+    "case_id": "multi_expert8/ultraep",
+    "block_id": "multi_expert8",
+    "role": "treatment",
+    "case_dir": "evidence/multi_expert8/ultraep",
+    "changed_variable": "balancing policy and its required overhead",
+    "fixed_controls": "shared logical trace/network/model/per-assignment WQE",
+    "prediction": "no guaranteed speedup; direct weights can dominate",
+    "checkpoint": "stop on correctness failure; continue negative speedup"
+  },
+  {
+    "case_id": "slots_zero4/no-balancing",
+    "block_id": "slots_zero4",
+    "role": "control",
+    "case_dir": "evidence/slots_zero4/no-balancing",
+    "changed_variable": "balancing policy and its required overhead",
+    "fixed_controls": "shared logical trace/network/model/per-assignment WQE",
+    "prediction": "no guaranteed speedup; direct weights can dominate",
+    "checkpoint": "stop on correctness failure; continue negative speedup"
+  },
+  {
+    "case_id": "slots_zero4/ultraep",
+    "block_id": "slots_zero4",
+    "role": "treatment",
+    "case_dir": "evidence/slots_zero4/ultraep",
+    "changed_variable": "balancing policy and its required overhead",
+    "fixed_controls": "shared logical trace/network/model/per-assignment WQE",
+    "prediction": "no guaranteed speedup; direct weights can dominate",
+    "checkpoint": "stop on correctness failure; continue negative speedup"
+  },
+  {
+    "case_id": "nondivisible4/no-balancing",
+    "block_id": "nondivisible4",
+    "role": "control",
+    "case_dir": "evidence/nondivisible4/no-balancing",
+    "changed_variable": "balancing policy and its required overhead",
+    "fixed_controls": "shared logical trace/network/model/per-assignment WQE",
+    "prediction": "no guaranteed speedup; direct weights can dominate",
+    "checkpoint": "stop on correctness failure; continue negative speedup"
+  },
+  {
+    "case_id": "nondivisible4/ultraep",
+    "block_id": "nondivisible4",
+    "role": "treatment",
+    "case_dir": "evidence/nondivisible4/ultraep",
+    "changed_variable": "balancing policy and its required overhead",
+    "fixed_controls": "shared logical trace/network/model/per-assignment WQE",
+    "prediction": "no guaranteed speedup; direct weights can dominate",
+    "checkpoint": "stop on correctness failure; continue negative speedup"
+  },
+  {
+    "case_id": "target_delay4/no-balancing",
+    "block_id": "target_delay4",
+    "role": "control",
+    "case_dir": "evidence/target_delay4/no-balancing",
+    "changed_variable": "balancing policy and its required overhead",
+    "fixed_controls": "shared logical trace/network/model/per-assignment WQE",
+    "prediction": "no guaranteed speedup; direct weights can dominate",
+    "checkpoint": "stop on correctness failure; continue negative speedup"
+  },
+  {
+    "case_id": "target_delay4/ultraep",
+    "block_id": "target_delay4",
+    "role": "treatment",
+    "case_dir": "evidence/target_delay4/ultraep",
+    "changed_variable": "balancing policy and its required overhead",
+    "fixed_controls": "shared logical trace/network/model/per-assignment WQE",
+    "prediction": "no guaranteed speedup; direct weights can dominate",
+    "checkpoint": "stop on correctness failure; continue negative speedup"
+  },
+  {
+    "case_id": "reroute_slow4/no-balancing",
+    "block_id": "reroute_slow4",
+    "role": "control",
+    "case_dir": "evidence/reroute_slow4/no-balancing",
+    "changed_variable": "balancing policy and its required overhead",
+    "fixed_controls": "shared logical trace/network/model/per-assignment WQE",
+    "prediction": "no guaranteed speedup; direct weights can dominate",
+    "checkpoint": "stop on correctness failure; continue negative speedup"
+  },
+  {
+    "case_id": "reroute_slow4/ultraep",
+    "block_id": "reroute_slow4",
+    "role": "treatment",
+    "case_dir": "evidence/reroute_slow4/ultraep",
+    "changed_variable": "balancing policy and its required overhead",
+    "fixed_controls": "shared logical trace/network/model/per-assignment WQE",
+    "prediction": "no guaranteed speedup; direct weights can dominate",
+    "checkpoint": "stop on correctness failure; continue negative speedup"
+  },
+  {
+    "case_id": "two_matrix4/no-balancing",
+    "block_id": "two_matrix4",
+    "role": "control",
+    "case_dir": "evidence/two_matrix4/no-balancing",
+    "changed_variable": "balancing policy and its required overhead",
+    "fixed_controls": "shared logical trace/network/model/per-assignment WQE",
+    "prediction": "no guaranteed speedup; direct weights can dominate",
+    "checkpoint": "stop on correctness failure; continue negative speedup"
+  },
+  {
+    "case_id": "two_matrix4/ultraep",
+    "block_id": "two_matrix4",
+    "role": "treatment",
+    "case_dir": "evidence/two_matrix4/ultraep",
+    "changed_variable": "balancing policy and its required overhead",
+    "fixed_controls": "shared logical trace/network/model/per-assignment WQE",
+    "prediction": "no guaranteed speedup; direct weights can dominate",
+    "checkpoint": "stop on correctness failure; continue negative speedup"
+  },
+  {
+    "case_id": "empty4/no-balancing",
+    "block_id": "empty4",
+    "role": "control",
+    "case_dir": "evidence/empty4/no-balancing",
+    "changed_variable": "balancing policy and its required overhead",
+    "fixed_controls": "shared logical trace/network/model/per-assignment WQE",
+    "prediction": "no guaranteed speedup; direct weights can dominate",
+    "checkpoint": "stop on correctness failure; continue negative speedup"
+  },
+  {
+    "case_id": "empty4/ultraep",
+    "block_id": "empty4",
+    "role": "treatment",
+    "case_dir": "evidence/empty4/ultraep",
+    "changed_variable": "balancing policy and its required overhead",
+    "fixed_controls": "shared logical trace/network/model/per-assignment WQE",
+    "prediction": "no guaranteed speedup; direct weights can dominate",
+    "checkpoint": "stop on correctness failure; continue negative speedup"
+  },
+  {
+    "case_id": "uneven_sources4/no-balancing",
+    "block_id": "uneven_sources4",
+    "role": "control",
+    "case_dir": "evidence/uneven_sources4/no-balancing",
+    "changed_variable": "balancing policy and its required overhead",
+    "fixed_controls": "shared logical trace/network/model/per-assignment WQE",
+    "prediction": "no guaranteed speedup; direct weights can dominate",
+    "checkpoint": "stop on correctness failure; continue negative speedup"
+  },
+  {
+    "case_id": "uneven_sources4/ultraep",
+    "block_id": "uneven_sources4",
+    "role": "treatment",
+    "case_dir": "evidence/uneven_sources4/ultraep",
+    "changed_variable": "balancing policy and its required overhead",
+    "fixed_controls": "shared logical trace/network/model/per-assignment WQE",
+    "prediction": "no guaranteed speedup; direct weights can dominate",
+    "checkpoint": "stop on correctness failure; continue negative speedup"
+  },
+  {
+    "case_id": "fixed64/no-balancing",
+    "block_id": "fixed64",
+    "role": "control",
+    "case_dir": "evidence/fixed64/no-balancing",
+    "changed_variable": "balancing policy and its required overhead",
+    "fixed_controls": "shared logical trace/network/model/per-assignment WQE",
+    "prediction": "no guaranteed speedup; direct weights can dominate",
+    "checkpoint": "stop on correctness failure; continue negative speedup"
+  },
+  {
+    "case_id": "fixed64/ultraep",
+    "block_id": "fixed64",
+    "role": "treatment",
+    "case_dir": "evidence/fixed64/ultraep",
+    "changed_variable": "balancing policy and its required overhead",
+    "fixed_controls": "shared logical trace/network/model/per-assignment WQE",
+    "prediction": "no guaranteed speedup; direct weights can dominate",
+    "checkpoint": "stop on correctness failure; continue negative speedup"
+  },
+  {
+    "case_id": "single_replica4_repeat/no-balancing",
+    "block_id": "single_replica4_repeat",
+    "role": "control",
+    "case_dir": "evidence/single_replica4_repeat/no-balancing",
+    "changed_variable": "balancing policy and its required overhead",
+    "fixed_controls": "shared logical trace/network/model/per-assignment WQE",
+    "prediction": "no guaranteed speedup; direct weights can dominate",
+    "checkpoint": "stop on correctness failure; continue negative speedup"
+  },
+  {
+    "case_id": "single_replica4_repeat/ultraep",
+    "block_id": "single_replica4_repeat",
+    "role": "treatment",
+    "case_dir": "evidence/single_replica4_repeat/ultraep",
+    "changed_variable": "balancing policy and its required overhead",
+    "fixed_controls": "shared logical trace/network/model/per-assignment WQE",
+    "prediction": "no guaranteed speedup; direct weights can dominate",
+    "checkpoint": "stop on correctness failure; continue negative speedup"
+  }
+]

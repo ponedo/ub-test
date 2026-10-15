@@ -1,0 +1,2441 @@
+[
+  {
+    "case": "uniform4",
+    "no_balancing": {
+      "mode": "no-balancing",
+      "npus": 4,
+      "tokens": 32,
+      "assignments": 32,
+      "layer_latency_ps": 1363592,
+      "replicas": 0,
+      "max_npu_load": 8,
+      "per_npu_load": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "weight_target_duration_ps": 0,
+      "weight_sender_end_ps": 1000,
+      "weight_bytes": 0,
+      "verified_bytes": [
+        4096,
+        4096,
+        0
+      ],
+      "remote_bytes": [
+        3072,
+        3072,
+        0
+      ],
+      "local_bytes": [
+        1024,
+        1024,
+        0
+      ],
+      "target_segments": 48,
+      "remote_WQEs": 48,
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 1000,
+        "reroute_end": 1000,
+        "weights_end": 1000,
+        "dispatch_gate": 1000,
+        "layer_end": 1364592
+      },
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 166360,
+          "end_ps": 1152792
+        },
+        {
+          "node": 1,
+          "start_ps": 166360,
+          "end_ps": 1152792
+        },
+        {
+          "node": 2,
+          "start_ps": 182840,
+          "end_ps": 1169272
+        },
+        {
+          "node": 3,
+          "start_ps": 199320,
+          "end_ps": 1185752
+        }
+      ],
+      "computation": "three-matrix SwiGLU GEMM FLOPs",
+      "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+      "empty": false
+    },
+    "ultraep": {
+      "mode": "ultraep",
+      "npus": 4,
+      "tokens": 32,
+      "assignments": 32,
+      "layer_latency_ps": 1663592,
+      "replicas": 0,
+      "max_npu_load": 8,
+      "per_npu_load": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "weight_target_duration_ps": 0,
+      "weight_sender_end_ps": 201000,
+      "weight_bytes": 0,
+      "verified_bytes": [
+        4096,
+        4096,
+        0
+      ],
+      "remote_bytes": [
+        3072,
+        3072,
+        0
+      ],
+      "local_bytes": [
+        1024,
+        1024,
+        0
+      ],
+      "target_segments": 48,
+      "remote_WQEs": 48,
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 201000,
+        "dispatch_gate": 301000,
+        "layer_end": 1664592
+      },
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 466360,
+          "end_ps": 1452792
+        },
+        {
+          "node": 1,
+          "start_ps": 466360,
+          "end_ps": 1452792
+        },
+        {
+          "node": 2,
+          "start_ps": 482840,
+          "end_ps": 1469272
+        },
+        {
+          "node": 3,
+          "start_ps": 499320,
+          "end_ps": 1485752
+        }
+      ],
+      "computation": "three-matrix SwiGLU GEMM FLOPs",
+      "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+      "empty": false
+    },
+    "speedup": 0.819667322276135,
+    "interpretation": "simulation ratio, not hardware speedup"
+  },
+  {
+    "case": "single_replica4",
+    "no_balancing": {
+      "mode": "no-balancing",
+      "npus": 4,
+      "tokens": 16,
+      "assignments": 16,
+      "layer_latency_ps": 1217152,
+      "replicas": 0,
+      "max_npu_load": 8,
+      "per_npu_load": [
+        8,
+        0,
+        4,
+        4
+      ],
+      "weight_target_duration_ps": 0,
+      "weight_sender_end_ps": 1000,
+      "weight_bytes": 0,
+      "verified_bytes": [
+        2048,
+        2048,
+        0
+      ],
+      "remote_bytes": [
+        1536,
+        1536,
+        0
+      ],
+      "local_bytes": [
+        512,
+        512,
+        0
+      ],
+      "target_segments": 24,
+      "remote_WQEs": 24,
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 1000,
+        "reroute_end": 1000,
+        "weights_end": 1000,
+        "dispatch_gate": 1000,
+        "layer_end": 1218152
+      },
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 166360,
+          "end_ps": 1052792
+        },
+        {
+          "node": 2,
+          "start_ps": 116920,
+          "end_ps": 610136
+        },
+        {
+          "node": 3,
+          "start_ps": 133400,
+          "end_ps": 626616
+        }
+      ],
+      "computation": "three-matrix SwiGLU GEMM FLOPs",
+      "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+      "empty": false
+    },
+    "ultraep": {
+      "mode": "ultraep",
+      "npus": 4,
+      "tokens": 16,
+      "assignments": 16,
+      "layer_latency_ps": 5757264,
+      "replicas": 1,
+      "max_npu_load": 6,
+      "per_npu_load": [
+        6,
+        2,
+        4,
+        4
+      ],
+      "weight_target_duration_ps": 4594240,
+      "weight_sender_end_ps": 4903080,
+      "weight_bytes": 49152,
+      "verified_bytes": [
+        2048,
+        2048,
+        49152
+      ],
+      "remote_bytes": [
+        1280,
+        1280,
+        49152
+      ],
+      "local_bytes": [
+        768,
+        768,
+        0
+      ],
+      "target_segments": 68,
+      "remote_WQEs": 21,
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 4795240,
+        "dispatch_gate": 4795240,
+        "layer_end": 5758264
+      },
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 4936040,
+          "end_ps": 5625864
+        },
+        {
+          "node": 1,
+          "start_ps": 4795240,
+          "end_ps": 5091848
+        },
+        {
+          "node": 2,
+          "start_ps": 4911160,
+          "end_ps": 5404376
+        },
+        {
+          "node": 3,
+          "start_ps": 4927640,
+          "end_ps": 5420856
+        }
+      ],
+      "computation": "three-matrix SwiGLU GEMM FLOPs",
+      "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+      "empty": false
+    },
+    "speedup": 0.2114115315886157,
+    "interpretation": "simulation ratio, not hardware speedup"
+  },
+  {
+    "case": "multi_replica4",
+    "no_balancing": {
+      "mode": "no-balancing",
+      "npus": 4,
+      "tokens": 32,
+      "assignments": 32,
+      "layer_latency_ps": 4244688,
+      "replicas": 0,
+      "max_npu_load": 32,
+      "per_npu_load": [
+        32,
+        0,
+        0,
+        0
+      ],
+      "weight_target_duration_ps": 0,
+      "weight_sender_end_ps": 1000,
+      "weight_bytes": 0,
+      "verified_bytes": [
+        4096,
+        4096,
+        0
+      ],
+      "remote_bytes": [
+        3072,
+        3072,
+        0
+      ],
+      "local_bytes": [
+        1024,
+        1024,
+        0
+      ],
+      "target_segments": 48,
+      "remote_WQEs": 48,
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 1000,
+        "reroute_end": 1000,
+        "weights_end": 1000,
+        "dispatch_gate": 1000,
+        "layer_end": 4245688
+      },
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 463000,
+          "end_ps": 3708728
+        }
+      ],
+      "computation": "three-matrix SwiGLU GEMM FLOPs",
+      "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+      "empty": false
+    },
+    "ultraep": {
+      "mode": "ultraep",
+      "npus": 4,
+      "tokens": 32,
+      "assignments": 32,
+      "layer_latency_ps": 15095720,
+      "replicas": 3,
+      "max_npu_load": 10,
+      "per_npu_load": [
+        10,
+        10,
+        10,
+        2
+      ],
+      "weight_target_duration_ps": 13521400,
+      "weight_sender_end_ps": 13820280,
+      "weight_bytes": 147456,
+      "verified_bytes": [
+        4096,
+        4096,
+        147456
+      ],
+      "remote_bytes": [
+        768,
+        768,
+        147456
+      ],
+      "local_bytes": [
+        3328,
+        3328,
+        0
+      ],
+      "target_segments": 156,
+      "remote_WQEs": 15,
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 13722400,
+        "dispatch_gate": 13722400,
+        "layer_end": 15096720
+      },
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 13897760,
+          "end_ps": 14980800
+        },
+        {
+          "node": 1,
+          "start_ps": 13848320,
+          "end_ps": 14931360
+        },
+        {
+          "node": 2,
+          "start_ps": 13864800,
+          "end_ps": 14947840
+        },
+        {
+          "node": 3,
+          "start_ps": 13722400,
+          "end_ps": 14019008
+        }
+      ],
+      "computation": "three-matrix SwiGLU GEMM FLOPs",
+      "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+      "empty": false
+    },
+    "speedup": 0.28118486564403683,
+    "interpretation": "simulation ratio, not hardware speedup"
+  },
+  {
+    "case": "multi_expert8",
+    "no_balancing": {
+      "mode": "no-balancing",
+      "npus": 8,
+      "tokens": 80,
+      "assignments": 80,
+      "layer_latency_ps": 5651760,
+      "replicas": 0,
+      "max_npu_load": 40,
+      "per_npu_load": [
+        40,
+        40,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weight_target_duration_ps": 0,
+      "weight_sender_end_ps": 1000,
+      "weight_bytes": 0,
+      "verified_bytes": [
+        10240,
+        10240,
+        0
+      ],
+      "remote_bytes": [
+        9088,
+        9088,
+        0
+      ],
+      "local_bytes": [
+        1152,
+        1152,
+        0
+      ],
+      "target_segments": 142,
+      "remote_WQEs": 142,
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 1000,
+        "reroute_end": 1000,
+        "weights_end": 1000,
+        "dispatch_gate": 1000,
+        "layer_end": 5652760
+      },
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 659240,
+          "end_ps": 4791400
+        },
+        {
+          "node": 1,
+          "start_ps": 680680,
+          "end_ps": 4812840
+        }
+      ],
+      "computation": "three-matrix SwiGLU GEMM FLOPs",
+      "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+      "empty": false
+    },
+    "ultraep": {
+      "mode": "ultraep",
+      "npus": 8,
+      "tokens": 80,
+      "assignments": 80,
+      "layer_latency_ps": 15618568,
+      "replicas": 6,
+      "max_npu_load": 12,
+      "per_npu_load": [
+        12,
+        12,
+        12,
+        7,
+        9,
+        12,
+        7,
+        9
+      ],
+      "weight_target_duration_ps": 13521400,
+      "weight_sender_end_ps": 13958640,
+      "weight_bytes": 294912,
+      "verified_bytes": [
+        10240,
+        10240,
+        294912
+      ],
+      "remote_bytes": [
+        7424,
+        7424,
+        294912
+      ],
+      "local_bytes": [
+        2816,
+        2816,
+        0
+      ],
+      "target_segments": 404,
+      "remote_WQEs": 122,
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 13722400,
+        "dispatch_gate": 13722400,
+        "layer_end": 15619568
+      },
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 13953680,
+          "end_ps": 15333328
+        },
+        {
+          "node": 1,
+          "start_ps": 13995160,
+          "end_ps": 15374808
+        },
+        {
+          "node": 2,
+          "start_ps": 13937200,
+          "end_ps": 15216848
+        },
+        {
+          "node": 3,
+          "start_ps": 13871280,
+          "end_ps": 14659408
+        },
+        {
+          "node": 4,
+          "start_ps": 13904240,
+          "end_ps": 14888976
+        },
+        {
+          "node": 5,
+          "start_ps": 13993640,
+          "end_ps": 15273288
+        },
+        {
+          "node": 6,
+          "start_ps": 13920720,
+          "end_ps": 14708848
+        },
+        {
+          "node": 7,
+          "start_ps": 13953680,
+          "end_ps": 14938416
+        }
+      ],
+      "computation": "three-matrix SwiGLU GEMM FLOPs",
+      "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+      "empty": false
+    },
+    "speedup": 0.3618615996037537,
+    "interpretation": "simulation ratio, not hardware speedup"
+  },
+  {
+    "case": "slots_zero4",
+    "no_balancing": {
+      "mode": "no-balancing",
+      "npus": 4,
+      "tokens": 32,
+      "assignments": 32,
+      "layer_latency_ps": 4244688,
+      "replicas": 0,
+      "max_npu_load": 32,
+      "per_npu_load": [
+        32,
+        0,
+        0,
+        0
+      ],
+      "weight_target_duration_ps": 0,
+      "weight_sender_end_ps": 1000,
+      "weight_bytes": 0,
+      "verified_bytes": [
+        4096,
+        4096,
+        0
+      ],
+      "remote_bytes": [
+        3072,
+        3072,
+        0
+      ],
+      "local_bytes": [
+        1024,
+        1024,
+        0
+      ],
+      "target_segments": 48,
+      "remote_WQEs": 48,
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 1000,
+        "reroute_end": 1000,
+        "weights_end": 1000,
+        "dispatch_gate": 1000,
+        "layer_end": 4245688
+      },
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 463000,
+          "end_ps": 3708728
+        }
+      ],
+      "computation": "three-matrix SwiGLU GEMM FLOPs",
+      "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+      "empty": false
+    },
+    "ultraep": {
+      "mode": "ultraep",
+      "npus": 4,
+      "tokens": 32,
+      "assignments": 32,
+      "layer_latency_ps": 4544688,
+      "replicas": 0,
+      "max_npu_load": 32,
+      "per_npu_load": [
+        32,
+        0,
+        0,
+        0
+      ],
+      "weight_target_duration_ps": 0,
+      "weight_sender_end_ps": 201000,
+      "weight_bytes": 0,
+      "verified_bytes": [
+        4096,
+        4096,
+        0
+      ],
+      "remote_bytes": [
+        3072,
+        3072,
+        0
+      ],
+      "local_bytes": [
+        1024,
+        1024,
+        0
+      ],
+      "target_segments": 48,
+      "remote_WQEs": 48,
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 201000,
+        "dispatch_gate": 301000,
+        "layer_end": 4545688
+      },
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 763000,
+          "end_ps": 4008728
+        }
+      ],
+      "computation": "three-matrix SwiGLU GEMM FLOPs",
+      "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+      "empty": false
+    },
+    "speedup": 0.9339888678826798,
+    "interpretation": "simulation ratio, not hardware speedup"
+  },
+  {
+    "case": "nondivisible4",
+    "no_balancing": {
+      "mode": "no-balancing",
+      "npus": 4,
+      "tokens": 25,
+      "assignments": 25,
+      "layer_latency_ps": 2343180,
+      "replicas": 0,
+      "max_npu_load": 17,
+      "per_npu_load": [
+        17,
+        5,
+        2,
+        1
+      ],
+      "weight_target_duration_ps": 0,
+      "weight_sender_end_ps": 1000,
+      "weight_bytes": 0,
+      "verified_bytes": [
+        3250,
+        3250,
+        0
+      ],
+      "remote_bytes": [
+        2080,
+        2080,
+        0
+      ],
+      "local_bytes": [
+        1170,
+        1170,
+        0
+      ],
+      "target_segments": 32,
+      "remote_WQEs": 32,
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 1000,
+        "reroute_end": 1000,
+        "weights_end": 1000,
+        "dispatch_gate": 1000,
+        "layer_end": 2344180
+      },
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 267320,
+          "end_ps": 2077860
+        },
+        {
+          "node": 1,
+          "start_ps": 117560,
+          "end_ps": 720660
+        },
+        {
+          "node": 2,
+          "start_ps": 117560,
+          "end_ps": 418800
+        },
+        {
+          "node": 3,
+          "start_ps": 1000,
+          "end_ps": 201620
+        }
+      ],
+      "computation": "three-matrix SwiGLU GEMM FLOPs",
+      "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+      "empty": false
+    },
+    "ultraep": {
+      "mode": "ultraep",
+      "npus": 4,
+      "tokens": 25,
+      "assignments": 25,
+      "layer_latency_ps": 12954760,
+      "replicas": 2,
+      "max_npu_load": 8,
+      "per_npu_load": [
+        8,
+        5,
+        4,
+        8
+      ],
+      "weight_target_duration_ps": 11500040,
+      "weight_sender_end_ps": 11804280,
+      "weight_bytes": 100620,
+      "verified_bytes": [
+        3250,
+        3250,
+        100620
+      ],
+      "remote_bytes": [
+        1300,
+        1300,
+        100620
+      ],
+      "local_bytes": [
+        1950,
+        1950,
+        0
+      ],
+      "target_segments": 324,
+      "remote_WQEs": 22,
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 11701040,
+        "dispatch_gate": 11701040,
+        "layer_end": 12955760
+      },
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 11837600,
+          "end_ps": 12742560
+        },
+        {
+          "node": 1,
+          "start_ps": 11818320,
+          "end_ps": 12421420
+        },
+        {
+          "node": 2,
+          "start_ps": 11802960,
+          "end_ps": 12405440
+        },
+        {
+          "node": 3,
+          "start_ps": 11834240,
+          "end_ps": 12839200
+        }
+      ],
+      "computation": "three-matrix SwiGLU GEMM FLOPs",
+      "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+      "empty": false
+    },
+    "speedup": 0.18087405710333498,
+    "interpretation": "simulation ratio, not hardware speedup"
+  },
+  {
+    "case": "target_delay4",
+    "no_balancing": {
+      "mode": "no-balancing",
+      "npus": 4,
+      "tokens": 16,
+      "assignments": 16,
+      "layer_latency_ps": 1217152,
+      "replicas": 0,
+      "max_npu_load": 8,
+      "per_npu_load": [
+        8,
+        0,
+        4,
+        4
+      ],
+      "weight_target_duration_ps": 0,
+      "weight_sender_end_ps": 1000,
+      "weight_bytes": 0,
+      "verified_bytes": [
+        2048,
+        2048,
+        0
+      ],
+      "remote_bytes": [
+        1536,
+        1536,
+        0
+      ],
+      "local_bytes": [
+        512,
+        512,
+        0
+      ],
+      "target_segments": 24,
+      "remote_WQEs": 24,
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 1000,
+        "reroute_end": 1000,
+        "weights_end": 1000,
+        "dispatch_gate": 1000,
+        "layer_end": 1218152
+      },
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 166360,
+          "end_ps": 1052792
+        },
+        {
+          "node": 2,
+          "start_ps": 116920,
+          "end_ps": 610136
+        },
+        {
+          "node": 3,
+          "start_ps": 133400,
+          "end_ps": 626616
+        }
+      ],
+      "computation": "three-matrix SwiGLU GEMM FLOPs",
+      "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+      "empty": false
+    },
+    "ultraep": {
+      "mode": "ultraep",
+      "npus": 4,
+      "tokens": 16,
+      "assignments": 16,
+      "layer_latency_ps": 7637624,
+      "replicas": 1,
+      "max_npu_load": 6,
+      "per_npu_load": [
+        6,
+        2,
+        4,
+        4
+      ],
+      "weight_target_duration_ps": 6479560,
+      "weight_sender_end_ps": 6740480,
+      "weight_bytes": 49152,
+      "verified_bytes": [
+        2048,
+        2048,
+        49152
+      ],
+      "remote_bytes": [
+        1280,
+        1280,
+        49152
+      ],
+      "local_bytes": [
+        768,
+        768,
+        0
+      ],
+      "target_segments": 68,
+      "remote_WQEs": 21,
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 6680560,
+        "dispatch_gate": 6680560,
+        "layer_end": 7638624
+      },
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 6816400,
+          "end_ps": 7506224
+        },
+        {
+          "node": 1,
+          "start_ps": 6680560,
+          "end_ps": 6977168
+        },
+        {
+          "node": 2,
+          "start_ps": 6796480,
+          "end_ps": 7289696
+        },
+        {
+          "node": 3,
+          "start_ps": 6812960,
+          "end_ps": 7306176
+        }
+      ],
+      "computation": "three-matrix SwiGLU GEMM FLOPs",
+      "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+      "empty": false
+    },
+    "speedup": 0.15936264995501218,
+    "interpretation": "simulation ratio, not hardware speedup"
+  },
+  {
+    "case": "reroute_slow4",
+    "no_balancing": {
+      "mode": "no-balancing",
+      "npus": 4,
+      "tokens": 16,
+      "assignments": 16,
+      "layer_latency_ps": 1217152,
+      "replicas": 0,
+      "max_npu_load": 8,
+      "per_npu_load": [
+        8,
+        0,
+        4,
+        4
+      ],
+      "weight_target_duration_ps": 0,
+      "weight_sender_end_ps": 1000,
+      "weight_bytes": 0,
+      "verified_bytes": [
+        2048,
+        2048,
+        0
+      ],
+      "remote_bytes": [
+        1536,
+        1536,
+        0
+      ],
+      "local_bytes": [
+        512,
+        512,
+        0
+      ],
+      "target_segments": 24,
+      "remote_WQEs": 24,
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 1000,
+        "reroute_end": 1000,
+        "weights_end": 1000,
+        "dispatch_gate": 1000,
+        "layer_end": 1218152
+      },
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 166360,
+          "end_ps": 1052792
+        },
+        {
+          "node": 2,
+          "start_ps": 116920,
+          "end_ps": 610136
+        },
+        {
+          "node": 3,
+          "start_ps": 133400,
+          "end_ps": 626616
+        }
+      ],
+      "computation": "three-matrix SwiGLU GEMM FLOPs",
+      "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+      "empty": false
+    },
+    "ultraep": {
+      "mode": "ultraep",
+      "npus": 4,
+      "tokens": 16,
+      "assignments": 16,
+      "layer_latency_ps": 101154624,
+      "replicas": 1,
+      "max_npu_load": 6,
+      "per_npu_load": [
+        6,
+        2,
+        4,
+        4
+      ],
+      "weight_target_duration_ps": 4594240,
+      "weight_sender_end_ps": 4860160,
+      "weight_bytes": 49152,
+      "verified_bytes": [
+        2048,
+        2048,
+        49152
+      ],
+      "remote_bytes": [
+        1280,
+        1280,
+        49152
+      ],
+      "local_bytes": [
+        768,
+        768,
+        0
+      ],
+      "target_segments": 68,
+      "remote_WQEs": 21,
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 100201000,
+        "weights_end": 4795240,
+        "dispatch_gate": 100201000,
+        "layer_end": 101155624
+      },
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 100333400,
+          "end_ps": 101023224
+        },
+        {
+          "node": 1,
+          "start_ps": 100201000,
+          "end_ps": 100497608
+        },
+        {
+          "node": 2,
+          "start_ps": 100316920,
+          "end_ps": 100810136
+        },
+        {
+          "node": 3,
+          "start_ps": 100333400,
+          "end_ps": 100826616
+        }
+      ],
+      "computation": "three-matrix SwiGLU GEMM FLOPs",
+      "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+      "empty": false
+    },
+    "speedup": 0.012032588841415693,
+    "interpretation": "simulation ratio, not hardware speedup"
+  },
+  {
+    "case": "two_matrix4",
+    "no_balancing": {
+      "mode": "no-balancing",
+      "npus": 4,
+      "tokens": 16,
+      "assignments": 16,
+      "layer_latency_ps": 955008,
+      "replicas": 0,
+      "max_npu_load": 8,
+      "per_npu_load": [
+        8,
+        0,
+        4,
+        4
+      ],
+      "weight_target_duration_ps": 0,
+      "weight_sender_end_ps": 1000,
+      "weight_bytes": 0,
+      "verified_bytes": [
+        2048,
+        2048,
+        0
+      ],
+      "remote_bytes": [
+        1536,
+        1536,
+        0
+      ],
+      "local_bytes": [
+        512,
+        512,
+        0
+      ],
+      "target_segments": 24,
+      "remote_WQEs": 24,
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 1000,
+        "reroute_end": 1000,
+        "weights_end": 1000,
+        "dispatch_gate": 1000,
+        "layer_end": 956008
+      },
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 166360,
+          "end_ps": 790648
+        },
+        {
+          "node": 2,
+          "start_ps": 116920,
+          "end_ps": 479064
+        },
+        {
+          "node": 3,
+          "start_ps": 133400,
+          "end_ps": 495544
+        }
+      ],
+      "computation": "legacy two-matrix functional model",
+      "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+      "empty": false
+    },
+    "ultraep": {
+      "mode": "ultraep",
+      "npus": 4,
+      "tokens": 16,
+      "assignments": 16,
+      "layer_latency_ps": 4060336,
+      "replicas": 1,
+      "max_npu_load": 6,
+      "per_npu_load": [
+        6,
+        2,
+        4,
+        4
+      ],
+      "weight_target_duration_ps": 3093920,
+      "weight_sender_end_ps": 3402760,
+      "weight_bytes": 32768,
+      "verified_bytes": [
+        2048,
+        2048,
+        32768
+      ],
+      "remote_bytes": [
+        1280,
+        1280,
+        32768
+      ],
+      "local_bytes": [
+        768,
+        768,
+        0
+      ],
+      "target_segments": 52,
+      "remote_WQEs": 21,
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 3294920,
+        "dispatch_gate": 3294920,
+        "layer_end": 4061336
+      },
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 3435720,
+          "end_ps": 3928936
+        },
+        {
+          "node": 1,
+          "start_ps": 3294920,
+          "end_ps": 3525992
+        },
+        {
+          "node": 2,
+          "start_ps": 3410840,
+          "end_ps": 3772984
+        },
+        {
+          "node": 3,
+          "start_ps": 3427320,
+          "end_ps": 3789464
+        }
+      ],
+      "computation": "legacy two-matrix functional model",
+      "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+      "empty": false
+    },
+    "speedup": 0.23520418014666766,
+    "interpretation": "simulation ratio, not hardware speedup"
+  },
+  {
+    "case": "empty4",
+    "no_balancing": {
+      "mode": "no-balancing",
+      "npus": 4,
+      "tokens": 0,
+      "assignments": 0,
+      "layer_latency_ps": 0,
+      "replicas": 0,
+      "max_npu_load": 0,
+      "per_npu_load": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "weight_target_duration_ps": 0,
+      "weight_sender_end_ps": 1000,
+      "weight_bytes": 0,
+      "verified_bytes": [
+        0,
+        0,
+        0
+      ],
+      "remote_bytes": [
+        0,
+        0,
+        0
+      ],
+      "local_bytes": [
+        0,
+        0,
+        0
+      ],
+      "target_segments": 0,
+      "remote_WQEs": 0,
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 1000,
+        "reroute_end": 1000,
+        "weights_end": 1000,
+        "dispatch_gate": 1000,
+        "layer_end": 1000
+      },
+      "compute_intervals": [],
+      "computation": "three-matrix SwiGLU GEMM FLOPs",
+      "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+      "empty": true
+    },
+    "ultraep": {
+      "mode": "ultraep",
+      "npus": 4,
+      "tokens": 0,
+      "assignments": 0,
+      "layer_latency_ps": 300000,
+      "replicas": 0,
+      "max_npu_load": 0,
+      "per_npu_load": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "weight_target_duration_ps": 0,
+      "weight_sender_end_ps": 201000,
+      "weight_bytes": 0,
+      "verified_bytes": [
+        0,
+        0,
+        0
+      ],
+      "remote_bytes": [
+        0,
+        0,
+        0
+      ],
+      "local_bytes": [
+        0,
+        0,
+        0
+      ],
+      "target_segments": 0,
+      "remote_WQEs": 0,
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 201000,
+        "dispatch_gate": 301000,
+        "layer_end": 301000
+      },
+      "compute_intervals": [],
+      "computation": "three-matrix SwiGLU GEMM FLOPs",
+      "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+      "empty": true
+    },
+    "speedup": 0.0,
+    "interpretation": "empty functional case"
+  },
+  {
+    "case": "uneven_sources4",
+    "no_balancing": {
+      "mode": "no-balancing",
+      "npus": 4,
+      "tokens": 12,
+      "assignments": 24,
+      "layer_latency_ps": 2824096,
+      "replicas": 0,
+      "max_npu_load": 24,
+      "per_npu_load": [
+        24,
+        0,
+        0,
+        0
+      ],
+      "weight_target_duration_ps": 0,
+      "weight_sender_end_ps": 1000,
+      "weight_bytes": 0,
+      "verified_bytes": [
+        3072,
+        3072,
+        0
+      ],
+      "remote_bytes": [
+        512,
+        512,
+        0
+      ],
+      "local_bytes": [
+        2560,
+        2560,
+        0
+      ],
+      "target_segments": 8,
+      "remote_WQEs": 8,
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 1000,
+        "reroute_end": 1000,
+        "weights_end": 1000,
+        "dispatch_gate": 1000,
+        "layer_end": 2825096
+      },
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 133400,
+          "end_ps": 2692696
+        }
+      ],
+      "computation": "three-matrix SwiGLU GEMM FLOPs",
+      "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+      "empty": false
+    },
+    "ultraep": {
+      "mode": "ultraep",
+      "npus": 4,
+      "tokens": 12,
+      "assignments": 24,
+      "layer_latency_ps": 10680992,
+      "replicas": 2,
+      "max_npu_load": 8,
+      "per_npu_load": [
+        8,
+        8,
+        8,
+        0
+      ],
+      "weight_target_duration_ps": 9056080,
+      "weight_sender_end_ps": 9322000,
+      "weight_bytes": 98304,
+      "verified_bytes": [
+        3072,
+        3072,
+        98304
+      ],
+      "remote_bytes": [
+        2048,
+        2048,
+        98304
+      ],
+      "local_bytes": [
+        1024,
+        1024,
+        0
+      ],
+      "target_segments": 128,
+      "remote_WQEs": 34,
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 9257080,
+        "dispatch_gate": 9257080,
+        "layer_end": 10681992
+      },
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 9257080,
+          "end_ps": 10243512
+        },
+        {
+          "node": 1,
+          "start_ps": 9546280,
+          "end_ps": 10432712
+        },
+        {
+          "node": 2,
+          "start_ps": 9509840,
+          "end_ps": 10396272
+        }
+      ],
+      "computation": "three-matrix SwiGLU GEMM FLOPs",
+      "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+      "empty": false
+    },
+    "speedup": 0.26440390555483984,
+    "interpretation": "simulation ratio, not hardware speedup"
+  },
+  {
+    "case": "fixed64",
+    "no_balancing": {
+      "mode": "no-balancing",
+      "npus": 64,
+      "tokens": 128,
+      "assignments": 256,
+      "layer_latency_ps": 18238360,
+      "replicas": 0,
+      "max_npu_load": 130,
+      "per_npu_load": [
+        130,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "weight_target_duration_ps": 0,
+      "weight_sender_end_ps": 1000,
+      "weight_bytes": 0,
+      "verified_bytes": [
+        32768,
+        32768,
+        0
+      ],
+      "remote_bytes": [
+        32256,
+        32256,
+        0
+      ],
+      "local_bytes": [
+        512,
+        512,
+        0
+      ],
+      "target_segments": 504,
+      "remote_WQEs": 504,
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 1000,
+        "reroute_end": 1000,
+        "weights_end": 1000,
+        "dispatch_gate": 1000,
+        "layer_end": 18239360
+      },
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 2470400,
+          "end_ps": 15449920
+        },
+        {
+          "node": 1,
+          "start_ps": 100440,
+          "end_ps": 497048
+        },
+        {
+          "node": 2,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 3,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 4,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 5,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 6,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 7,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 8,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 9,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 10,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 11,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 12,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 13,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 14,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 15,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 16,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 17,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 18,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 19,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 20,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 21,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 22,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 23,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 24,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 25,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 26,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 27,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 28,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 29,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 30,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 31,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 32,
+          "start_ps": 100440,
+          "end_ps": 497048
+        },
+        {
+          "node": 33,
+          "start_ps": 116920,
+          "end_ps": 513528
+        },
+        {
+          "node": 34,
+          "start_ps": 133400,
+          "end_ps": 530008
+        },
+        {
+          "node": 35,
+          "start_ps": 133400,
+          "end_ps": 530008
+        },
+        {
+          "node": 36,
+          "start_ps": 133400,
+          "end_ps": 530008
+        },
+        {
+          "node": 37,
+          "start_ps": 133400,
+          "end_ps": 530008
+        },
+        {
+          "node": 38,
+          "start_ps": 133400,
+          "end_ps": 530008
+        },
+        {
+          "node": 39,
+          "start_ps": 133400,
+          "end_ps": 530008
+        },
+        {
+          "node": 40,
+          "start_ps": 133400,
+          "end_ps": 530008
+        },
+        {
+          "node": 41,
+          "start_ps": 133400,
+          "end_ps": 530008
+        },
+        {
+          "node": 42,
+          "start_ps": 133400,
+          "end_ps": 530008
+        },
+        {
+          "node": 43,
+          "start_ps": 133400,
+          "end_ps": 530008
+        },
+        {
+          "node": 44,
+          "start_ps": 133400,
+          "end_ps": 530008
+        },
+        {
+          "node": 45,
+          "start_ps": 133400,
+          "end_ps": 530008
+        },
+        {
+          "node": 46,
+          "start_ps": 133400,
+          "end_ps": 530008
+        },
+        {
+          "node": 47,
+          "start_ps": 133400,
+          "end_ps": 530008
+        },
+        {
+          "node": 48,
+          "start_ps": 133400,
+          "end_ps": 530008
+        },
+        {
+          "node": 49,
+          "start_ps": 133400,
+          "end_ps": 530008
+        },
+        {
+          "node": 50,
+          "start_ps": 133400,
+          "end_ps": 530008
+        },
+        {
+          "node": 51,
+          "start_ps": 133400,
+          "end_ps": 530008
+        },
+        {
+          "node": 52,
+          "start_ps": 133400,
+          "end_ps": 530008
+        },
+        {
+          "node": 53,
+          "start_ps": 133400,
+          "end_ps": 530008
+        },
+        {
+          "node": 54,
+          "start_ps": 133400,
+          "end_ps": 530008
+        },
+        {
+          "node": 55,
+          "start_ps": 133400,
+          "end_ps": 530008
+        },
+        {
+          "node": 56,
+          "start_ps": 133400,
+          "end_ps": 530008
+        },
+        {
+          "node": 57,
+          "start_ps": 133400,
+          "end_ps": 530008
+        },
+        {
+          "node": 58,
+          "start_ps": 133400,
+          "end_ps": 530008
+        },
+        {
+          "node": 59,
+          "start_ps": 133400,
+          "end_ps": 530008
+        },
+        {
+          "node": 60,
+          "start_ps": 133400,
+          "end_ps": 530008
+        },
+        {
+          "node": 61,
+          "start_ps": 133400,
+          "end_ps": 530008
+        },
+        {
+          "node": 62,
+          "start_ps": 133400,
+          "end_ps": 530008
+        },
+        {
+          "node": 63,
+          "start_ps": 133400,
+          "end_ps": 530008
+        }
+      ],
+      "computation": "three-matrix SwiGLU GEMM FLOPs",
+      "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+      "empty": false
+    },
+    "ultraep": {
+      "mode": "ultraep",
+      "npus": 64,
+      "tokens": 128,
+      "assignments": 256,
+      "layer_latency_ps": 139969584,
+      "replicas": 31,
+      "max_npu_load": 6,
+      "per_npu_load": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "weight_target_duration_ps": 138598480,
+      "weight_sender_end_ps": 138907320,
+      "weight_bytes": 1523712,
+      "verified_bytes": [
+        32768,
+        32768,
+        1523712
+      ],
+      "remote_bytes": [
+        24320,
+        24320,
+        1523712
+      ],
+      "local_bytes": [
+        8448,
+        8448,
+        0
+      ],
+      "target_segments": 1868,
+      "remote_WQEs": 411,
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 138799480,
+        "dispatch_gate": 138799480,
+        "layer_end": 139970584
+      },
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 138931880,
+          "end_ps": 139721704
+        },
+        {
+          "node": 1,
+          "start_ps": 138915400,
+          "end_ps": 139805224
+        },
+        {
+          "node": 2,
+          "start_ps": 138931880,
+          "end_ps": 139821704
+        },
+        {
+          "node": 3,
+          "start_ps": 138931880,
+          "end_ps": 139821704
+        },
+        {
+          "node": 4,
+          "start_ps": 138931880,
+          "end_ps": 139821704
+        },
+        {
+          "node": 5,
+          "start_ps": 138931880,
+          "end_ps": 139821704
+        },
+        {
+          "node": 6,
+          "start_ps": 138931880,
+          "end_ps": 139821704
+        },
+        {
+          "node": 7,
+          "start_ps": 138931880,
+          "end_ps": 139821704
+        },
+        {
+          "node": 8,
+          "start_ps": 138931880,
+          "end_ps": 139821704
+        },
+        {
+          "node": 9,
+          "start_ps": 138931880,
+          "end_ps": 139821704
+        },
+        {
+          "node": 10,
+          "start_ps": 138931880,
+          "end_ps": 139821704
+        },
+        {
+          "node": 11,
+          "start_ps": 138931880,
+          "end_ps": 139821704
+        },
+        {
+          "node": 12,
+          "start_ps": 138931880,
+          "end_ps": 139821704
+        },
+        {
+          "node": 13,
+          "start_ps": 138931880,
+          "end_ps": 139821704
+        },
+        {
+          "node": 14,
+          "start_ps": 138931880,
+          "end_ps": 139821704
+        },
+        {
+          "node": 15,
+          "start_ps": 138931880,
+          "end_ps": 139821704
+        },
+        {
+          "node": 16,
+          "start_ps": 138931880,
+          "end_ps": 139821704
+        },
+        {
+          "node": 17,
+          "start_ps": 138948360,
+          "end_ps": 139838184
+        },
+        {
+          "node": 18,
+          "start_ps": 138948360,
+          "end_ps": 139838184
+        },
+        {
+          "node": 19,
+          "start_ps": 138948360,
+          "end_ps": 139838184
+        },
+        {
+          "node": 20,
+          "start_ps": 138948360,
+          "end_ps": 139838184
+        },
+        {
+          "node": 21,
+          "start_ps": 138948360,
+          "end_ps": 139838184
+        },
+        {
+          "node": 22,
+          "start_ps": 138948360,
+          "end_ps": 139838184
+        },
+        {
+          "node": 23,
+          "start_ps": 138948360,
+          "end_ps": 139838184
+        },
+        {
+          "node": 24,
+          "start_ps": 138948360,
+          "end_ps": 139838184
+        },
+        {
+          "node": 25,
+          "start_ps": 138948360,
+          "end_ps": 139838184
+        },
+        {
+          "node": 26,
+          "start_ps": 138948360,
+          "end_ps": 139838184
+        },
+        {
+          "node": 27,
+          "start_ps": 138948360,
+          "end_ps": 139838184
+        },
+        {
+          "node": 28,
+          "start_ps": 138948360,
+          "end_ps": 139838184
+        },
+        {
+          "node": 29,
+          "start_ps": 138948360,
+          "end_ps": 139838184
+        },
+        {
+          "node": 30,
+          "start_ps": 138948360,
+          "end_ps": 139838184
+        },
+        {
+          "node": 31,
+          "start_ps": 138948360,
+          "end_ps": 139838184
+        },
+        {
+          "node": 32,
+          "start_ps": 138915760,
+          "end_ps": 139312368
+        },
+        {
+          "node": 33,
+          "start_ps": 138898920,
+          "end_ps": 139295528
+        },
+        {
+          "node": 34,
+          "start_ps": 138915400,
+          "end_ps": 139312008
+        },
+        {
+          "node": 35,
+          "start_ps": 138915400,
+          "end_ps": 139312008
+        },
+        {
+          "node": 36,
+          "start_ps": 138915400,
+          "end_ps": 139312008
+        },
+        {
+          "node": 37,
+          "start_ps": 138915400,
+          "end_ps": 139312008
+        },
+        {
+          "node": 38,
+          "start_ps": 138915400,
+          "end_ps": 139312008
+        },
+        {
+          "node": 39,
+          "start_ps": 138915400,
+          "end_ps": 139312008
+        },
+        {
+          "node": 40,
+          "start_ps": 138915400,
+          "end_ps": 139312008
+        },
+        {
+          "node": 41,
+          "start_ps": 138915400,
+          "end_ps": 139312008
+        },
+        {
+          "node": 42,
+          "start_ps": 138915400,
+          "end_ps": 139312008
+        },
+        {
+          "node": 43,
+          "start_ps": 138915400,
+          "end_ps": 139312008
+        },
+        {
+          "node": 44,
+          "start_ps": 138915400,
+          "end_ps": 139312008
+        },
+        {
+          "node": 45,
+          "start_ps": 138915400,
+          "end_ps": 139312008
+        },
+        {
+          "node": 46,
+          "start_ps": 138915400,
+          "end_ps": 139312008
+        },
+        {
+          "node": 47,
+          "start_ps": 138915400,
+          "end_ps": 139312008
+        },
+        {
+          "node": 48,
+          "start_ps": 138931880,
+          "end_ps": 139328488
+        },
+        {
+          "node": 49,
+          "start_ps": 138931880,
+          "end_ps": 139328488
+        },
+        {
+          "node": 50,
+          "start_ps": 138931880,
+          "end_ps": 139328488
+        },
+        {
+          "node": 51,
+          "start_ps": 138931880,
+          "end_ps": 139328488
+        },
+        {
+          "node": 52,
+          "start_ps": 138931880,
+          "end_ps": 139328488
+        },
+        {
+          "node": 53,
+          "start_ps": 138931880,
+          "end_ps": 139328488
+        },
+        {
+          "node": 54,
+          "start_ps": 138931880,
+          "end_ps": 139328488
+        },
+        {
+          "node": 55,
+          "start_ps": 138931880,
+          "end_ps": 139328488
+        },
+        {
+          "node": 56,
+          "start_ps": 138931880,
+          "end_ps": 139328488
+        },
+        {
+          "node": 57,
+          "start_ps": 138931880,
+          "end_ps": 139328488
+        },
+        {
+          "node": 58,
+          "start_ps": 138931880,
+          "end_ps": 139328488
+        },
+        {
+          "node": 59,
+          "start_ps": 138931880,
+          "end_ps": 139328488
+        },
+        {
+          "node": 60,
+          "start_ps": 138931880,
+          "end_ps": 139328488
+        },
+        {
+          "node": 61,
+          "start_ps": 138931880,
+          "end_ps": 139328488
+        },
+        {
+          "node": 62,
+          "start_ps": 138931880,
+          "end_ps": 139328488
+        },
+        {
+          "node": 63,
+          "start_ps": 138931880,
+          "end_ps": 139328488
+        }
+      ],
+      "computation": "three-matrix SwiGLU GEMM FLOPs",
+      "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+      "empty": false
+    },
+    "speedup": 0.13030230910738436,
+    "interpretation": "simulation ratio, not hardware speedup"
+  },
+  {
+    "case": "single_replica4_repeat",
+    "no_balancing": {
+      "mode": "no-balancing",
+      "npus": 4,
+      "tokens": 16,
+      "assignments": 16,
+      "layer_latency_ps": 1217152,
+      "replicas": 0,
+      "max_npu_load": 8,
+      "per_npu_load": [
+        8,
+        0,
+        4,
+        4
+      ],
+      "weight_target_duration_ps": 0,
+      "weight_sender_end_ps": 1000,
+      "weight_bytes": 0,
+      "verified_bytes": [
+        2048,
+        2048,
+        0
+      ],
+      "remote_bytes": [
+        1536,
+        1536,
+        0
+      ],
+      "local_bytes": [
+        512,
+        512,
+        0
+      ],
+      "target_segments": 24,
+      "remote_WQEs": 24,
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 1000,
+        "reroute_end": 1000,
+        "weights_end": 1000,
+        "dispatch_gate": 1000,
+        "layer_end": 1218152
+      },
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 166360,
+          "end_ps": 1052792
+        },
+        {
+          "node": 2,
+          "start_ps": 116920,
+          "end_ps": 610136
+        },
+        {
+          "node": 3,
+          "start_ps": 133400,
+          "end_ps": 626616
+        }
+      ],
+      "computation": "three-matrix SwiGLU GEMM FLOPs",
+      "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+      "empty": false
+    },
+    "ultraep": {
+      "mode": "ultraep",
+      "npus": 4,
+      "tokens": 16,
+      "assignments": 16,
+      "layer_latency_ps": 5757264,
+      "replicas": 1,
+      "max_npu_load": 6,
+      "per_npu_load": [
+        6,
+        2,
+        4,
+        4
+      ],
+      "weight_target_duration_ps": 4594240,
+      "weight_sender_end_ps": 4903080,
+      "weight_bytes": 49152,
+      "verified_bytes": [
+        2048,
+        2048,
+        49152
+      ],
+      "remote_bytes": [
+        1280,
+        1280,
+        49152
+      ],
+      "local_bytes": [
+        768,
+        768,
+        0
+      ],
+      "target_segments": 68,
+      "remote_WQEs": 21,
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 4795240,
+        "dispatch_gate": 4795240,
+        "layer_end": 5758264
+      },
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 4936040,
+          "end_ps": 5625864
+        },
+        {
+          "node": 1,
+          "start_ps": 4795240,
+          "end_ps": 5091848
+        },
+        {
+          "node": 2,
+          "start_ps": 4911160,
+          "end_ps": 5404376
+        },
+        {
+          "node": 3,
+          "start_ps": 4927640,
+          "end_ps": 5420856
+        }
+      ],
+      "computation": "three-matrix SwiGLU GEMM FLOPs",
+      "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+      "empty": false
+    },
+    "speedup": 0.2114115315886157,
+    "interpretation": "simulation ratio, not hardware speedup"
+  }
+]

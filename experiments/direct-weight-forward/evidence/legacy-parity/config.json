@@ -1,0 +1,127 @@
+{
+  "model_dim": 64,
+  "ff_dim": 128,
+  "dtype_bytes": 2,
+  "segment_bytes": 1024,
+  "peak_gflops": 1000,
+  "util_permille": 500,
+  "setup_ns": 100,
+  "seed": 20261015,
+  "link_gbps": 100,
+  "link_delay_ns": 20,
+  "matrices": 2,
+  "planning_ns": 200,
+  "reroute_ns": 100,
+  "weight_completion_ns": 0,
+  "weight_strategy": "direct",
+  "weight_bytes": 32768,
+  "weight_size_kind": "matrix_exact",
+  "npus": 4,
+  "experts": 4,
+  "top_k": 1,
+  "tokens": 16,
+  "placement": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "mapping": [
+    {
+      "source": 0,
+      "experts": [
+        0
+      ]
+    },
+    {
+      "source": 1,
+      "experts": [
+        0
+      ]
+    },
+    {
+      "source": 2,
+      "experts": [
+        0
+      ]
+    },
+    {
+      "source": 3,
+      "experts": [
+        0
+      ]
+    },
+    {
+      "source": 0,
+      "experts": [
+        0
+      ]
+    },
+    {
+      "source": 1,
+      "experts": [
+        0
+      ]
+    },
+    {
+      "source": 2,
+      "experts": [
+        0
+      ]
+    },
+    {
+      "source": 3,
+      "experts": [
+        0
+      ]
+    },
+    {
+      "source": 2,
+      "experts": [
+        2
+      ]
+    },
+    {
+      "source": 3,
+      "experts": [
+        2
+      ]
+    },
+    {
+      "source": 0,
+      "experts": [
+        2
+      ]
+    },
+    {
+      "source": 1,
+      "experts": [
+        2
+      ]
+    },
+    {
+      "source": 3,
+      "experts": [
+        3
+      ]
+    },
+    {
+      "source": 0,
+      "experts": [
+        3
+      ]
+    },
+    {
+      "source": 1,
+      "experts": [
+        3
+      ]
+    },
+    {
+      "source": 2,
+      "experts": [
+        3
+      ]
+    }
+  ]
+}

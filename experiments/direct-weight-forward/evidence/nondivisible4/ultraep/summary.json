@@ -1,0 +1,68 @@
+{
+  "mode": "ultraep",
+  "npus": 4,
+  "tokens": 25,
+  "assignments": 25,
+  "layer_latency_ps": 12954760,
+  "replicas": 2,
+  "max_npu_load": 8,
+  "per_npu_load": [
+    8,
+    5,
+    4,
+    8
+  ],
+  "weight_target_duration_ps": 11500040,
+  "weight_sender_end_ps": 11804280,
+  "weight_bytes": 100620,
+  "verified_bytes": [
+    3250,
+    3250,
+    100620
+  ],
+  "remote_bytes": [
+    1300,
+    1300,
+    100620
+  ],
+  "local_bytes": [
+    1950,
+    1950,
+    0
+  ],
+  "target_segments": 324,
+  "remote_WQEs": 22,
+  "timeline": {
+    "layer_start": 1000,
+    "planning_end": 201000,
+    "reroute_end": 301000,
+    "weights_end": 11701040,
+    "dispatch_gate": 11701040,
+    "layer_end": 12955760
+  },
+  "compute_intervals": [
+    {
+      "node": 0,
+      "start_ps": 11837600,
+      "end_ps": 12742560
+    },
+    {
+      "node": 1,
+      "start_ps": 11818320,
+      "end_ps": 12421420
+    },
+    {
+      "node": 2,
+      "start_ps": 11802960,
+      "end_ps": 12405440
+    },
+    {
+      "node": 3,
+      "start_ps": 11834240,
+      "end_ps": 12839200
+    }
+  ],
+  "computation": "three-matrix SwiGLU GEMM FLOPs",
+  "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+  "empty": false
+}

@@ -1,0 +1,967 @@
+{
+  "schema_version": 1,
+  "mode": "upstream-compatible",
+  "lambda_axes": [
+    "source_rank",
+    "logical_expert"
+  ],
+  "lambda_source_expert": [
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  ],
+  "expert_load": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+  ],
+  "physical": [
+    {
+      "expert": 0,
+      "id": 0,
+      "rank": 0,
+      "quota": 4,
+      "kind": "main",
+      "slot": 0,
+      "weight_source_rank": 0,
+      "weight_source_physical": 0
+    },
+    {
+      "expert": 1,
+      "id": 1,
+      "rank": 0,
+      "quota": 4,
+      "kind": "main",
+      "slot": 1,
+      "weight_source_rank": 0,
+      "weight_source_physical": 1
+    },
+    {
+      "expert": 2,
+      "id": 3,
+      "rank": 1,
+      "quota": 4,
+      "kind": "main",
+      "slot": 0,
+      "weight_source_rank": 1,
+      "weight_source_physical": 3
+    },
+    {
+      "expert": 3,
+      "id": 4,
+      "rank": 1,
+      "quota": 4,
+      "kind": "main",
+      "slot": 1,
+      "weight_source_rank": 1,
+      "weight_source_physical": 4
+    },
+    {
+      "expert": 4,
+      "id": 6,
+      "rank": 2,
+      "quota": 4,
+      "kind": "main",
+      "slot": 0,
+      "weight_source_rank": 2,
+      "weight_source_physical": 6
+    },
+    {
+      "expert": 5,
+      "id": 7,
+      "rank": 2,
+      "quota": 4,
+      "kind": "main",
+      "slot": 1,
+      "weight_source_rank": 2,
+      "weight_source_physical": 7
+    },
+    {
+      "expert": 6,
+      "id": 9,
+      "rank": 3,
+      "quota": 4,
+      "kind": "main",
+      "slot": 0,
+      "weight_source_rank": 3,
+      "weight_source_physical": 9
+    },
+    {
+      "expert": 7,
+      "id": 10,
+      "rank": 3,
+      "quota": 4,
+      "kind": "main",
+      "slot": 1,
+      "weight_source_rank": 3,
+      "weight_source_physical": 10
+    }
+  ],
+  "q_axes": [
+    "source_rank",
+    "physical_id_in_q_physical_ids"
+  ],
+  "q_physical_ids": [
+    0,
+    1,
+    3,
+    4,
+    6,
+    7,
+    9,
+    10
+  ],
+  "source_quotas": [
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  ],
+  "token_mapping": [
+    {
+      "token": 0,
+      "source": 0,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        0
+      ]
+    },
+    {
+      "token": 1,
+      "source": 1,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        0
+      ]
+    },
+    {
+      "token": 2,
+      "source": 2,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        0
+      ]
+    },
+    {
+      "token": 3,
+      "source": 3,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        0
+      ]
+    },
+    {
+      "token": 4,
+      "source": 1,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 5,
+      "source": 2,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 6,
+      "source": 3,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 7,
+      "source": 0,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 8,
+      "source": 2,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        3
+      ]
+    },
+    {
+      "token": 9,
+      "source": 3,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        3
+      ]
+    },
+    {
+      "token": 10,
+      "source": 0,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        3
+      ]
+    },
+    {
+      "token": 11,
+      "source": 1,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        3
+      ]
+    },
+    {
+      "token": 12,
+      "source": 3,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        4
+      ]
+    },
+    {
+      "token": 13,
+      "source": 0,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        4
+      ]
+    },
+    {
+      "token": 14,
+      "source": 1,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        4
+      ]
+    },
+    {
+      "token": 15,
+      "source": 2,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        4
+      ]
+    },
+    {
+      "token": 16,
+      "source": 0,
+      "logical_experts": [
+        4
+      ],
+      "physical_experts": [
+        6
+      ]
+    },
+    {
+      "token": 17,
+      "source": 1,
+      "logical_experts": [
+        4
+      ],
+      "physical_experts": [
+        6
+      ]
+    },
+    {
+      "token": 18,
+      "source": 2,
+      "logical_experts": [
+        4
+      ],
+      "physical_experts": [
+        6
+      ]
+    },
+    {
+      "token": 19,
+      "source": 3,
+      "logical_experts": [
+        4
+      ],
+      "physical_experts": [
+        6
+      ]
+    },
+    {
+      "token": 20,
+      "source": 1,
+      "logical_experts": [
+        5
+      ],
+      "physical_experts": [
+        7
+      ]
+    },
+    {
+      "token": 21,
+      "source": 2,
+      "logical_experts": [
+        5
+      ],
+      "physical_experts": [
+        7
+      ]
+    },
+    {
+      "token": 22,
+      "source": 3,
+      "logical_experts": [
+        5
+      ],
+      "physical_experts": [
+        7
+      ]
+    },
+    {
+      "token": 23,
+      "source": 0,
+      "logical_experts": [
+        5
+      ],
+      "physical_experts": [
+        7
+      ]
+    },
+    {
+      "token": 24,
+      "source": 2,
+      "logical_experts": [
+        6
+      ],
+      "physical_experts": [
+        9
+      ]
+    },
+    {
+      "token": 25,
+      "source": 3,
+      "logical_experts": [
+        6
+      ],
+      "physical_experts": [
+        9
+      ]
+    },
+    {
+      "token": 26,
+      "source": 0,
+      "logical_experts": [
+        6
+      ],
+      "physical_experts": [
+        9
+      ]
+    },
+    {
+      "token": 27,
+      "source": 1,
+      "logical_experts": [
+        6
+      ],
+      "physical_experts": [
+        9
+      ]
+    },
+    {
+      "token": 28,
+      "source": 3,
+      "logical_experts": [
+        7
+      ],
+      "physical_experts": [
+        10
+      ]
+    },
+    {
+      "token": 29,
+      "source": 0,
+      "logical_experts": [
+        7
+      ],
+      "physical_experts": [
+        10
+      ]
+    },
+    {
+      "token": 30,
+      "source": 1,
+      "logical_experts": [
+        7
+      ],
+      "physical_experts": [
+        10
+      ]
+    },
+    {
+      "token": 31,
+      "source": 2,
+      "logical_experts": [
+        7
+      ],
+      "physical_experts": [
+        10
+      ]
+    }
+  ],
+  "weight_dependencies": [],
+  "upstream": {
+    "commit": "94cab099b44fffa99a82fea99e7c12d89cf65e4f",
+    "replication_stdin": "4 2 1 1.01 1024 0 0.01 1 4 4 4 4 4 4 4 4\n",
+    "replication_stdout": "{\"search_enabled\":1,\"lower_bound\":9,\"threshold\":10,\"fast_success\":1,\"precheck_success\":0,\"replica_count\":0,\"physical\":[{\"expert\":0,\"id\":0,\"rank\":0,\"quota\":4,\"kind\":\"main\"},{\"expert\":1,\"id\":1,\"rank\":0,\"quota\":4,\"kind\":\"main\"},{\"expert\":2,\"id\":3,\"rank\":1,\"quota\":4,\"kind\":\"main\"},{\"expert\":3,\"id\":4,\"rank\":1,\"quota\":4,\"kind\":\"main\"},{\"expert\":4,\"id\":6,\"rank\":2,\"quota\":4,\"kind\":\"main\"},{\"expert\":5,\"id\":7,\"rank\":2,\"quota\":4,\"kind\":\"main\"},{\"expert\":6,\"id\":9,\"rank\":3,\"quota\":4,\"kind\":\"main\"},{\"expert\":7,\"id\":10,\"rank\":3,\"quota\":4,\"kind\":\"main\"}],\"probes\":[{\"threshold\":10,\"dynamic\":1,\"store\":1}],\"dynamic_floors\":[]}\n",
+    "replication": {
+      "search_enabled": 1,
+      "lower_bound": 9,
+      "threshold": 10,
+      "fast_success": 1,
+      "precheck_success": 0,
+      "replica_count": 0,
+      "physical": [
+        {
+          "expert": 0,
+          "id": 0,
+          "rank": 0,
+          "quota": 4,
+          "kind": "main"
+        },
+        {
+          "expert": 1,
+          "id": 1,
+          "rank": 0,
+          "quota": 4,
+          "kind": "main"
+        },
+        {
+          "expert": 2,
+          "id": 3,
+          "rank": 1,
+          "quota": 4,
+          "kind": "main"
+        },
+        {
+          "expert": 3,
+          "id": 4,
+          "rank": 1,
+          "quota": 4,
+          "kind": "main"
+        },
+        {
+          "expert": 4,
+          "id": 6,
+          "rank": 2,
+          "quota": 4,
+          "kind": "main"
+        },
+        {
+          "expert": 5,
+          "id": 7,
+          "rank": 2,
+          "quota": 4,
+          "kind": "main"
+        },
+        {
+          "expert": 6,
+          "id": 9,
+          "rank": 3,
+          "quota": 4,
+          "kind": "main"
+        },
+        {
+          "expert": 7,
+          "id": 10,
+          "rank": 3,
+          "quota": 4,
+          "kind": "main"
+        }
+      ],
+      "probes": [
+        {
+          "threshold": 10,
+          "dynamic": 1,
+          "store": 1
+        }
+      ],
+      "dynamic_floors": []
+    },
+    "validation": "CPU adapted source execution, not GPU execution",
+    "decomposition_stdin": "4 1 1 1 1 1 1 0 4\n4 1 1 1 1 1 1 0 4\n4 1 1 1 1 1 1 1 4\n4 1 1 1 1 1 1 1 4\n4 1 1 1 1 1 1 2 4\n4 1 1 1 1 1 1 2 4\n4 1 1 1 1 1 1 3 4\n4 1 1 1 1 1 1 3 4\n",
+    "decomposition_stdout": "1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n1 \n",
+    "quota_repairs": [
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "corrected": [
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 0,
+        "physical_ids": [
+          0
+        ]
+      },
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "corrected": [
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 1,
+        "physical_ids": [
+          1
+        ]
+      },
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "corrected": [
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 2,
+        "physical_ids": [
+          3
+        ]
+      },
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "corrected": [
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 3,
+        "physical_ids": [
+          4
+        ]
+      },
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "corrected": [
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 4,
+        "physical_ids": [
+          6
+        ]
+      },
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "corrected": [
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 5,
+        "physical_ids": [
+          7
+        ]
+      },
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "corrected": [
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 6,
+        "physical_ids": [
+          9
+        ]
+      },
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "corrected": [
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 7,
+        "physical_ids": [
+          10
+        ]
+      }
+    ],
+    "moved_assignments": 0
+  },
+  "ordinal_physical_order": [
+    0,
+    1,
+    3,
+    4,
+    6,
+    7,
+    9,
+    10
+  ],
+  "compatibility": {
+    "placement": "exact pinned-source CPU semantics",
+    "quota_decomposition": "exact",
+    "mapping": "public sparse-quota cumulative ordinal lookup; CPU input-order ordinals, GPU atomic arrival order not reproduced",
+    "requested_rounding": "code",
+    "effective_rounding": "upstream float32 lower-bound formula",
+    "locality_aware": true,
+    "threshold_convention": "upstream search threshold"
+  },
+  "metrics": {
+    "initial_rank_load": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "final_rank_load": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "slot_usage": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "total_assignments": 32,
+    "target_threshold": 9,
+    "chosen_threshold": 10,
+    "target_met": true,
+    "initial_imbalance": 1.0,
+    "final_imbalance": 1.0,
+    "local_assignments": 8,
+    "path": "fast",
+    "repaired_assignments": 0
+  },
+  "probes": [
+    {
+      "threshold": 10,
+      "dynamic": 1,
+      "store": 1
+    }
+  ],
+  "optimality": "pinned heuristic witness; not global optimality or infeasibility proof",
+  "cpu_wall_ns": 14049800
+}

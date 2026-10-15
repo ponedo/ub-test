@@ -1,0 +1,68 @@
+{
+  "mode": "ultraep",
+  "npus": 4,
+  "tokens": 16,
+  "assignments": 16,
+  "layer_latency_ps": 4060336,
+  "replicas": 1,
+  "max_npu_load": 6,
+  "per_npu_load": [
+    6,
+    2,
+    4,
+    4
+  ],
+  "weight_target_duration_ps": 3093920,
+  "weight_sender_end_ps": 3402760,
+  "weight_bytes": 32768,
+  "verified_bytes": [
+    2048,
+    2048,
+    32768
+  ],
+  "remote_bytes": [
+    1280,
+    1280,
+    32768
+  ],
+  "local_bytes": [
+    768,
+    768,
+    0
+  ],
+  "target_segments": 52,
+  "remote_WQEs": 21,
+  "timeline": {
+    "layer_start": 1000,
+    "planning_end": 201000,
+    "reroute_end": 301000,
+    "weights_end": 3294920,
+    "dispatch_gate": 3294920,
+    "layer_end": 4061336
+  },
+  "compute_intervals": [
+    {
+      "node": 0,
+      "start_ps": 3435720,
+      "end_ps": 3928936
+    },
+    {
+      "node": 1,
+      "start_ps": 3294920,
+      "end_ps": 3525992
+    },
+    {
+      "node": 2,
+      "start_ps": 3410840,
+      "end_ps": 3772984
+    },
+    {
+      "node": 3,
+      "start_ps": 3427320,
+      "end_ps": 3789464
+    }
+  ],
+  "computation": "legacy two-matrix functional model",
+  "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+  "empty": false
+}
