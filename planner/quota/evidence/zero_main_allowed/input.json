@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "npus": 2,
+  "experts": 2,
+  "top_k": 1,
+  "main_placement": [
+    0,
+    0
+  ],
+  "slots": [
+    1,
+    1
+  ],
+  "mapping": [
+    {
+      "source": 0,
+      "experts": [
+        0
+      ]
+    },
+    {
+      "source": 1,
+      "experts": [
+        1
+      ]
+    }
+  ],
+  "min_replica_quota": 1,
+  "beta": "1",
+  "allow_zero_main": true,
+  "rounding": "paper"
+}

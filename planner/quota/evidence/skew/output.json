@@ -1,0 +1,1010 @@
+{
+  "schema_version": 1,
+  "lambda_axes": [
+    "source_rank",
+    "logical_expert"
+  ],
+  "lambda_source_expert": [
+    [
+      11,
+      0,
+      0,
+      1,
+      5,
+      0,
+      0,
+      0
+    ],
+    [
+      10,
+      1,
+      0,
+      1,
+      5,
+      0,
+      0,
+      0
+    ],
+    [
+      10,
+      0,
+      1,
+      0,
+      5,
+      0,
+      0,
+      0
+    ],
+    [
+      10,
+      0,
+      1,
+      1,
+      5,
+      0,
+      0,
+      1
+    ]
+  ],
+  "expert_load": [
+    41,
+    1,
+    2,
+    3,
+    20,
+    0,
+    0,
+    1
+  ],
+  "physical": [
+    {
+      "id": 0,
+      "expert": 0,
+      "rank": 0,
+      "kind": "main",
+      "slot": 0,
+      "quota": 1,
+      "weight_source_rank": 0,
+      "weight_source_physical": 0
+    },
+    {
+      "id": 1,
+      "expert": 4,
+      "rank": 0,
+      "kind": "main",
+      "slot": 1,
+      "quota": 20,
+      "weight_source_rank": 0,
+      "weight_source_physical": 1
+    },
+    {
+      "id": 3,
+      "expert": 1,
+      "rank": 1,
+      "kind": "main",
+      "slot": 0,
+      "quota": 1,
+      "weight_source_rank": 1,
+      "weight_source_physical": 3
+    },
+    {
+      "id": 4,
+      "expert": 5,
+      "rank": 1,
+      "kind": "main",
+      "slot": 1,
+      "quota": 0,
+      "weight_source_rank": 1,
+      "weight_source_physical": 4
+    },
+    {
+      "id": 5,
+      "expert": 0,
+      "rank": 1,
+      "kind": "replica",
+      "slot": 2,
+      "quota": 20,
+      "weight_source_rank": 0,
+      "weight_source_physical": 0
+    },
+    {
+      "id": 6,
+      "expert": 2,
+      "rank": 2,
+      "kind": "main",
+      "slot": 0,
+      "quota": 2,
+      "weight_source_rank": 2,
+      "weight_source_physical": 6
+    },
+    {
+      "id": 7,
+      "expert": 6,
+      "rank": 2,
+      "kind": "main",
+      "slot": 1,
+      "quota": 0,
+      "weight_source_rank": 2,
+      "weight_source_physical": 7
+    },
+    {
+      "id": 8,
+      "expert": 0,
+      "rank": 2,
+      "kind": "replica",
+      "slot": 2,
+      "quota": 19,
+      "weight_source_rank": 0,
+      "weight_source_physical": 0
+    },
+    {
+      "id": 9,
+      "expert": 3,
+      "rank": 3,
+      "kind": "main",
+      "slot": 0,
+      "quota": 3,
+      "weight_source_rank": 3,
+      "weight_source_physical": 9
+    },
+    {
+      "id": 10,
+      "expert": 7,
+      "rank": 3,
+      "kind": "main",
+      "slot": 1,
+      "quota": 1,
+      "weight_source_rank": 3,
+      "weight_source_physical": 10
+    },
+    {
+      "id": 11,
+      "expert": 0,
+      "rank": 3,
+      "kind": "replica",
+      "slot": 2,
+      "quota": 1,
+      "weight_source_rank": 0,
+      "weight_source_physical": 0
+    }
+  ],
+  "q_axes": [
+    "source_rank",
+    "physical_id_in_q_physical_ids"
+  ],
+  "q_physical_ids": [
+    0,
+    1,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "source_quotas": [
+    [
+      1,
+      5,
+      0,
+      0,
+      5,
+      0,
+      0,
+      5,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      5,
+      1,
+      0,
+      10,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      5,
+      0,
+      0,
+      0,
+      1,
+      0,
+      10,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      5,
+      0,
+      0,
+      5,
+      1,
+      0,
+      4,
+      1,
+      1,
+      1
+    ]
+  ],
+  "token_mapping": [
+    {
+      "token": 0,
+      "source": 0,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        0
+      ]
+    },
+    {
+      "token": 1,
+      "source": 1,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        5
+      ]
+    },
+    {
+      "token": 2,
+      "source": 2,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        8
+      ]
+    },
+    {
+      "token": 3,
+      "source": 3,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        5
+      ]
+    },
+    {
+      "token": 4,
+      "source": 0,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        5
+      ]
+    },
+    {
+      "token": 5,
+      "source": 1,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        5
+      ]
+    },
+    {
+      "token": 6,
+      "source": 2,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        8
+      ]
+    },
+    {
+      "token": 7,
+      "source": 3,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        5
+      ]
+    },
+    {
+      "token": 8,
+      "source": 0,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        5
+      ]
+    },
+    {
+      "token": 9,
+      "source": 1,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        5
+      ]
+    },
+    {
+      "token": 10,
+      "source": 2,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        8
+      ]
+    },
+    {
+      "token": 11,
+      "source": 3,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        5
+      ]
+    },
+    {
+      "token": 12,
+      "source": 0,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        5
+      ]
+    },
+    {
+      "token": 13,
+      "source": 1,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        5
+      ]
+    },
+    {
+      "token": 14,
+      "source": 2,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        8
+      ]
+    },
+    {
+      "token": 15,
+      "source": 3,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        5
+      ]
+    },
+    {
+      "token": 16,
+      "source": 0,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        5
+      ]
+    },
+    {
+      "token": 17,
+      "source": 1,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        5
+      ]
+    },
+    {
+      "token": 18,
+      "source": 2,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        8
+      ]
+    },
+    {
+      "token": 19,
+      "source": 3,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        5
+      ]
+    },
+    {
+      "token": 20,
+      "source": 0,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        5
+      ]
+    },
+    {
+      "token": 21,
+      "source": 1,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        5
+      ]
+    },
+    {
+      "token": 22,
+      "source": 2,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        8
+      ]
+    },
+    {
+      "token": 23,
+      "source": 3,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        8
+      ]
+    },
+    {
+      "token": 24,
+      "source": 0,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        8
+      ]
+    },
+    {
+      "token": 25,
+      "source": 1,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        5
+      ]
+    },
+    {
+      "token": 26,
+      "source": 2,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        8
+      ]
+    },
+    {
+      "token": 27,
+      "source": 3,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        8
+      ]
+    },
+    {
+      "token": 28,
+      "source": 0,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        8
+      ]
+    },
+    {
+      "token": 29,
+      "source": 1,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        5
+      ]
+    },
+    {
+      "token": 30,
+      "source": 2,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        8
+      ]
+    },
+    {
+      "token": 31,
+      "source": 3,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        8
+      ]
+    },
+    {
+      "token": 32,
+      "source": 0,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        8
+      ]
+    },
+    {
+      "token": 33,
+      "source": 1,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        5
+      ]
+    },
+    {
+      "token": 34,
+      "source": 2,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        8
+      ]
+    },
+    {
+      "token": 35,
+      "source": 3,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        8
+      ]
+    },
+    {
+      "token": 36,
+      "source": 0,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        8
+      ]
+    },
+    {
+      "token": 37,
+      "source": 1,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        5
+      ]
+    },
+    {
+      "token": 38,
+      "source": 2,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        8
+      ]
+    },
+    {
+      "token": 39,
+      "source": 3,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        11
+      ]
+    },
+    {
+      "token": 40,
+      "source": 0,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        8
+      ]
+    },
+    {
+      "token": 41,
+      "source": 1,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        3
+      ]
+    },
+    {
+      "token": 42,
+      "source": 2,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        6
+      ]
+    },
+    {
+      "token": 43,
+      "source": 3,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        6
+      ]
+    },
+    {
+      "token": 44,
+      "source": 3,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        9
+      ]
+    },
+    {
+      "token": 45,
+      "source": 0,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        9
+      ]
+    },
+    {
+      "token": 46,
+      "source": 1,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        9
+      ]
+    },
+    {
+      "token": 47,
+      "source": 0,
+      "logical_experts": [
+        4
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 48,
+      "source": 1,
+      "logical_experts": [
+        4
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 49,
+      "source": 2,
+      "logical_experts": [
+        4
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 50,
+      "source": 3,
+      "logical_experts": [
+        4
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 51,
+      "source": 0,
+      "logical_experts": [
+        4
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 52,
+      "source": 1,
+      "logical_experts": [
+        4
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 53,
+      "source": 2,
+      "logical_experts": [
+        4
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 54,
+      "source": 3,
+      "logical_experts": [
+        4
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 55,
+      "source": 0,
+      "logical_experts": [
+        4
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 56,
+      "source": 1,
+      "logical_experts": [
+        4
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 57,
+      "source": 2,
+      "logical_experts": [
+        4
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 58,
+      "source": 3,
+      "logical_experts": [
+        4
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 59,
+      "source": 0,
+      "logical_experts": [
+        4
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 60,
+      "source": 1,
+      "logical_experts": [
+        4
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 61,
+      "source": 2,
+      "logical_experts": [
+        4
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 62,
+      "source": 3,
+      "logical_experts": [
+        4
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 63,
+      "source": 0,
+      "logical_experts": [
+        4
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 64,
+      "source": 1,
+      "logical_experts": [
+        4
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 65,
+      "source": 2,
+      "logical_experts": [
+        4
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 66,
+      "source": 3,
+      "logical_experts": [
+        4
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 67,
+      "source": 3,
+      "logical_experts": [
+        7
+      ],
+      "physical_experts": [
+        10
+      ]
+    }
+  ],
+  "weight_dependencies": [
+    {
+      "expert": 0,
+      "from_rank": 0,
+      "from_physical": 0,
+      "to_rank": 1,
+      "to_physical": 5,
+      "requires_weight_ready": true
+    },
+    {
+      "expert": 0,
+      "from_rank": 0,
+      "from_physical": 0,
+      "to_rank": 2,
+      "to_physical": 8,
+      "requires_weight_ready": true
+    },
+    {
+      "expert": 0,
+      "from_rank": 0,
+      "from_physical": 0,
+      "to_rank": 3,
+      "to_physical": 11,
+      "requires_weight_ready": true
+    }
+  ],
+  "metrics": {
+    "initial_rank_load": [
+      61,
+      1,
+      2,
+      4
+    ],
+    "final_rank_load": [
+      21,
+      21,
+      21,
+      5
+    ],
+    "slot_usage": [
+      0,
+      1,
+      1,
+      1
+    ],
+    "total_assignments": 68,
+    "target_threshold": 18,
+    "chosen_threshold": 21,
+    "target_met": false,
+    "initial_imbalance": 3.588235294117647,
+    "final_imbalance": 1.2352941176470589,
+    "local_assignments": 31
+  },
+  "probes": [
+    {
+      "threshold": 39,
+      "greedy_witness_found": true
+    },
+    {
+      "threshold": 28,
+      "greedy_witness_found": true
+    },
+    {
+      "threshold": 23,
+      "greedy_witness_found": true
+    },
+    {
+      "threshold": 20,
+      "greedy_witness_found": false
+    },
+    {
+      "threshold": 22,
+      "greedy_witness_found": true
+    },
+    {
+      "threshold": 21,
+      "greedy_witness_found": true
+    },
+    {
+      "threshold": 21,
+      "greedy_witness_found": true,
+      "final": true
+    }
+  ],
+  "optimality": "greedy binary-search witness; not a global optimality/infeasibility proof",
+  "cpu_wall_ns": 315455
+}

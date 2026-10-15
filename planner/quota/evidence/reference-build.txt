@@ -1,0 +1,16 @@
+{
+  "commit": "94cab099b44fffa99a82fea99e7c12d89cf65e4f",
+  "tag": "v1.0.0",
+  "method": "verbatim slow function + verbatim fast branch body + verbatim sparse ordinal lookup; CUDA attributes removed via macros only",
+  "gpu_execution": false,
+  "source_sha256": {
+    "placement.cu": "195637d9d9b0ce37656dcccbd7f487202699fbda0f11c41c431f71b38f01983f",
+    "reroute.cu": "19033250379282cb856df7656d5a56111f1ceb77057e9a12315e55494f632fad",
+    "weight_sync.cu": "0c5a8bf91df78f83ac82016730642219fdbb52b9394511485346b08ee8c62a83"
+  },
+  "extracted_block_sha256": {
+    "slow": "8e3200a3255b235bd91f29db545020f1e140539f6561ef08d78983e9a7a92e4b",
+    "fast_body": "710d07227311016e321f43682354f3efa6b91557e68f31fc5cc07df875040327",
+    "lookup": "0b7b7d66ffacad77515a4cfda17daac912cb9159796b874c49baca05706b2028"
+  }
+}
