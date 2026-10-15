@@ -1,0 +1,43 @@
+{
+  "npus": 4,
+  "tokens": 8,
+  "assignments": 16,
+  "layer_latency_ps": 17821896,
+  "dispatch_envelope_ps": 422320,
+  "compute_envelope_ps": 17215936,
+  "compute_total_busy_ps": 34154432,
+  "combine_envelope_ps": 15441144,
+  "dispatch_remote_payload_bytes": 5632,
+  "dispatch_local_payload_bytes": 2560,
+  "combine_remote_payload_bytes": 5632,
+  "combine_local_payload_bytes": 2560,
+  "sender_completions": 22,
+  "target_TAs": 44,
+  "per_npu_assignments": [
+    3,
+    1,
+    4,
+    8
+  ],
+  "per_npu_compute_ps": [
+    6491456,
+    2197152,
+    8488608,
+    16977216
+  ],
+  "per_expert_assignments": [
+    2,
+    1,
+    0,
+    5,
+    1,
+    0,
+    4,
+    3
+  ],
+  "dispatch_compute_overlap_ps": 238720,
+  "compute_combine_overlap_ps": 497360,
+  "dispatch_combine_overlap_ps": 0,
+  "byte_integrity": "Every explicit payload byte checked at target; synthetic deterministic result transform, not numerical MLP or reduction",
+  "seed": 20261015
+}

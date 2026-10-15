@@ -1,0 +1,29 @@
+{
+  "model_dim": 256,
+  "ff_dim": 1024,
+  "dtype_bytes": 2,
+  "segment_bytes": 256,
+  "peak_gflops": 1000,
+  "util_permille": 500,
+  "setup_ns": 100,
+  "seed": 20261015,
+  "link_gbps": 100,
+  "link_delay_ns": 20,
+  "npus": 4,
+  "experts": 8,
+  "tokens": 0,
+  "top_k": 2,
+  "placement": [
+    0,
+    1,
+    2,
+    3,
+    0,
+    1,
+    2,
+    3
+  ],
+  "mapping": [],
+  "synthetic": true,
+  "mode": "uniform"
+}

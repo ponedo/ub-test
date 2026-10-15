@@ -1,0 +1,150 @@
+{
+  "model_dim": 256,
+  "ff_dim": 1024,
+  "dtype_bytes": 2,
+  "segment_bytes": 256,
+  "peak_gflops": 1000,
+  "util_permille": 500,
+  "setup_ns": 100,
+  "seed": 20261015,
+  "link_gbps": 100,
+  "link_delay_ns": 20,
+  "npus": 8,
+  "experts": 16,
+  "tokens": 16,
+  "top_k": 2,
+  "placement": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "mapping": [
+    {
+      "source": 0,
+      "experts": [
+        6,
+        3
+      ]
+    },
+    {
+      "source": 1,
+      "experts": [
+        14,
+        7
+      ]
+    },
+    {
+      "source": 2,
+      "experts": [
+        0,
+        13
+      ]
+    },
+    {
+      "source": 3,
+      "experts": [
+        1,
+        0
+      ]
+    },
+    {
+      "source": 4,
+      "experts": [
+        6,
+        8
+      ]
+    },
+    {
+      "source": 5,
+      "experts": [
+        13,
+        14
+      ]
+    },
+    {
+      "source": 6,
+      "experts": [
+        12,
+        9
+      ]
+    },
+    {
+      "source": 7,
+      "experts": [
+        12,
+        13
+      ]
+    },
+    {
+      "source": 0,
+      "experts": [
+        7,
+        12
+      ]
+    },
+    {
+      "source": 1,
+      "experts": [
+        15,
+        10
+      ]
+    },
+    {
+      "source": 2,
+      "experts": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": 3,
+      "experts": [
+        5,
+        0
+      ]
+    },
+    {
+      "source": 4,
+      "experts": [
+        8,
+        1
+      ]
+    },
+    {
+      "source": 5,
+      "experts": [
+        11,
+        10
+      ]
+    },
+    {
+      "source": 6,
+      "experts": [
+        7,
+        4
+      ]
+    },
+    {
+      "source": 7,
+      "experts": [
+        12,
+        2
+      ]
+    }
+  ],
+  "synthetic": true,
+  "mode": "uniform"
+}

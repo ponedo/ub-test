@@ -1,0 +1,86 @@
+{
+  "model_dim": 256,
+  "ff_dim": 1024,
+  "dtype_bytes": 2,
+  "segment_bytes": 256,
+  "peak_gflops": 1000,
+  "util_permille": 500,
+  "setup_ns": 100,
+  "seed": 20261015,
+  "link_gbps": 100,
+  "link_delay_ns": 20,
+  "npus": 4,
+  "experts": 8,
+  "tokens": 8,
+  "top_k": 2,
+  "placement": [
+    0,
+    1,
+    2,
+    3,
+    0,
+    1,
+    2,
+    3
+  ],
+  "mapping": [
+    {
+      "source": 0,
+      "experts": [
+        0,
+        4
+      ]
+    },
+    {
+      "source": 1,
+      "experts": [
+        5,
+        1
+      ]
+    },
+    {
+      "source": 2,
+      "experts": [
+        2,
+        6
+      ]
+    },
+    {
+      "source": 3,
+      "experts": [
+        3,
+        7
+      ]
+    },
+    {
+      "source": 0,
+      "experts": [
+        4,
+        0
+      ]
+    },
+    {
+      "source": 1,
+      "experts": [
+        5,
+        1
+      ]
+    },
+    {
+      "source": 2,
+      "experts": [
+        6,
+        2
+      ]
+    },
+    {
+      "source": 3,
+      "experts": [
+        3,
+        7
+      ]
+    }
+  ],
+  "synthetic": true,
+  "mode": "local"
+}
