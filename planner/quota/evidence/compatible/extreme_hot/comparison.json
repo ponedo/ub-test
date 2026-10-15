@@ -1,0 +1,86 @@
+{
+  "classification": "exact placement and source quota",
+  "upstream_metrics": {
+    "initial_rank_load": [
+      8192,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "final_rank_load": [
+      1046,
+      1046,
+      1046,
+      1046,
+      1046,
+      1046,
+      1046,
+      870
+    ],
+    "slot_usage": [
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "total_assignments": 8192,
+    "target_threshold": 1035,
+    "chosen_threshold": 1046,
+    "target_met": false,
+    "initial_imbalance": 8.0,
+    "final_imbalance": 1.021484375,
+    "local_assignments": 8038,
+    "path": "fast",
+    "repaired_assignments": 0
+  },
+  "strict_metrics": {
+    "initial_rank_load": [
+      8192,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "final_rank_load": [
+      2048,
+      2048,
+      2048,
+      2048,
+      0,
+      0,
+      0,
+      0
+    ],
+    "slot_usage": [
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "total_assignments": 8192,
+    "target_threshold": 1035,
+    "chosen_threshold": 2048,
+    "target_met": false,
+    "initial_imbalance": 8.0,
+    "final_imbalance": 2.0,
+    "local_assignments": 4096
+  },
+  "strict_unsupported": null,
+  "same_strict_placement": false,
+  "token_identity_limit": "deterministic input ordinals; GPU atomic ordering is not compared"
+}

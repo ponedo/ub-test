@@ -1,0 +1,262 @@
+{
+  "schema_version": 1,
+  "mode": "upstream-compatible",
+  "lambda_axes": [
+    "source_rank",
+    "logical_expert"
+  ],
+  "lambda_source_expert": [
+    [
+      3,
+      0,
+      2
+    ]
+  ],
+  "expert_load": [
+    3,
+    0,
+    2
+  ],
+  "physical": [
+    {
+      "expert": 0,
+      "id": 0,
+      "rank": 0,
+      "quota": 3,
+      "kind": "main",
+      "slot": 0,
+      "weight_source_rank": 0,
+      "weight_source_physical": 0
+    },
+    {
+      "expert": 1,
+      "id": 1,
+      "rank": 0,
+      "quota": 0,
+      "kind": "main",
+      "slot": 1,
+      "weight_source_rank": 0,
+      "weight_source_physical": 1
+    },
+    {
+      "expert": 2,
+      "id": 2,
+      "rank": 0,
+      "quota": 2,
+      "kind": "main",
+      "slot": 2,
+      "weight_source_rank": 0,
+      "weight_source_physical": 2
+    }
+  ],
+  "q_axes": [
+    "source_rank",
+    "physical_id_in_q_physical_ids"
+  ],
+  "q_physical_ids": [
+    0,
+    1,
+    2
+  ],
+  "source_quotas": [
+    [
+      3,
+      0,
+      2
+    ]
+  ],
+  "token_mapping": [
+    {
+      "token": 0,
+      "source": 0,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        0
+      ]
+    },
+    {
+      "token": 1,
+      "source": 0,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        0
+      ]
+    },
+    {
+      "token": 2,
+      "source": 0,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        0
+      ]
+    },
+    {
+      "token": 3,
+      "source": 0,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        2
+      ]
+    },
+    {
+      "token": 4,
+      "source": 0,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        2
+      ]
+    }
+  ],
+  "weight_dependencies": [],
+  "upstream": {
+    "commit": "94cab099b44fffa99a82fea99e7c12d89cf65e4f",
+    "replication_stdin": "1 3 2 1.01 1024 0 0.01 1 3 0 2\n",
+    "replication_stdout": "{\"search_enabled\":0,\"lower_bound\":6,\"threshold\":null,\"fast_success\":0,\"precheck_success\":0,\"replica_count\":0,\"physical\":[{\"expert\":0,\"id\":0,\"rank\":0,\"quota\":3,\"kind\":\"main\"},{\"expert\":1,\"id\":1,\"rank\":0,\"quota\":0,\"kind\":\"main\"},{\"expert\":2,\"id\":2,\"rank\":0,\"quota\":2,\"kind\":\"main\"}],\"probes\":[],\"dynamic_floors\":[]}\n",
+    "replication": {
+      "search_enabled": 0,
+      "lower_bound": 6,
+      "threshold": null,
+      "fast_success": 0,
+      "precheck_success": 0,
+      "replica_count": 0,
+      "physical": [
+        {
+          "expert": 0,
+          "id": 0,
+          "rank": 0,
+          "quota": 3,
+          "kind": "main"
+        },
+        {
+          "expert": 1,
+          "id": 1,
+          "rank": 0,
+          "quota": 0,
+          "kind": "main"
+        },
+        {
+          "expert": 2,
+          "id": 2,
+          "rank": 0,
+          "quota": 2,
+          "kind": "main"
+        }
+      ],
+      "probes": [],
+      "dynamic_floors": []
+    },
+    "validation": "CPU adapted source execution, not GPU execution",
+    "decomposition_stdin": "1 1 1 3 0 3\n1 1 1 0 0 0\n1 1 1 2 0 2\n",
+    "decomposition_stdout": "3 \n3 \n0 \n0 \n2 \n2 \n",
+    "quota_repairs": [
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            3
+          ]
+        ],
+        "corrected": [
+          [
+            3
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 0,
+        "physical_ids": [
+          0
+        ]
+      },
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            0
+          ]
+        ],
+        "corrected": [
+          [
+            0
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 1,
+        "physical_ids": [
+          1
+        ]
+      },
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            2
+          ]
+        ],
+        "corrected": [
+          [
+            2
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 2,
+        "physical_ids": [
+          2
+        ]
+      }
+    ],
+    "moved_assignments": 0
+  },
+  "ordinal_physical_order": [
+    0,
+    1,
+    2
+  ],
+  "compatibility": {
+    "placement": "exact pinned-source CPU semantics",
+    "quota_decomposition": "exact",
+    "mapping": "public sparse-quota cumulative ordinal lookup; CPU input-order ordinals, GPU atomic arrival order not reproduced",
+    "requested_rounding": "code",
+    "effective_rounding": "upstream float32 lower-bound formula",
+    "locality_aware": true,
+    "threshold_convention": "upstream threshold undefined; CPU chosen threshold is actual maximum load"
+  },
+  "metrics": {
+    "initial_rank_load": [
+      5
+    ],
+    "final_rank_load": [
+      5
+    ],
+    "slot_usage": [
+      0
+    ],
+    "total_assignments": 5,
+    "target_threshold": 6,
+    "chosen_threshold": 5,
+    "target_met": true,
+    "initial_imbalance": 1.0,
+    "final_imbalance": 1.0,
+    "local_assignments": 5,
+    "path": "bypass",
+    "repaired_assignments": 0
+  },
+  "probes": [],
+  "optimality": "pinned heuristic witness; not global optimality or infeasibility proof",
+  "cpu_wall_ns": 28463169
+}

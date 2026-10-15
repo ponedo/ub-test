@@ -6,12 +6,13 @@
     "search_and_materialization": "6efd5232ce2161f84e59a738867a6010147cfb21f988fda5360a4cd59f2c81aa",
     "shared_without_ptx": "f8daaba9ede8006e5dbe32d2babc65f708a5fd4d84e67fcb728b1d3b3e0e42d0"
   },
-  "adapter_sha256": "2f91f26dd1b9e26052263e291f36fa45538d1616a5cec91aabffc6d782deede1",
+  "adapter_sha256": "ad4582acf2a7d0ffeae421302c8d7b515033df5f78204b552a9bc1a806366e3c",
   "adaptations": [
     "CUDA attributes become empty macros",
     "warp shuffle/sync and block sync use C++20 barriers, 128 CPU threads",
     "single-domain contiguous-main input setup on host",
     "lane-0 logging at oracle entry and both dynamic-floor assignments; no decision changes",
+    "shared-state q read-before-write warp barrier added for CPU SIMT ordering; decisions unchanged",
     "search and X/U materialization body unchanged"
   ],
   "gpu_execution": false

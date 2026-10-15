@@ -1,74 +1,76 @@
-# CPU Quota-Driven Planner
+# CPU UltraEP Planner: two explicit modes
 
-Independent single-layer CPU implementation, based on [UltraEP v3, §5 and Algorithm 1](https://arxiv.org/html/2606.04101v3) and reviewed against [UltraEP v1.0.0 at 94cab099](https://github.com/Dots-Infra/UltraEP/tree/94cab099b44fffa99a82fea99e7c12d89cf65e4f). Base repository commit: `0f94188d7ecedb2f736cf3580fce0b14f494d1c9`.
+Default **`upstream-compatible`** executes the extracted replication and quota-decomposition logic of [Dots-Infra/UltraEP 94cab099b44fffa99a82fea99e7c12d89cf65e4f](https://github.com/Dots-Infra/UltraEP/tree/94cab099b44fffa99a82fea99e7c12d89cf65e4f). **`strict-floor`** preserves the previous independent Algorithm-1-style planner and its configured replica floor. This branch is based on `132763fe8ccbe4dc57e0ffcbcfa3f4d3b1d77fc7`.
+
+The default is a CPU semantic adaptation, not a GPU runtime or timing model. It reuses public source rather than maintaining a second handwritten replication algorithm. The previous [report](REPORT.md) and [replication investigation](REPLICATION_REPORT.md) describe the earlier strict-floor milestone; [COMPATIBILITY_REPORT.md](COMPATIBILITY_REPORT.md) describes the current implementation.
 
 ## Run
 
-Python 3.10+ and g++ with C++20 and pthread support are sufficient. No CUDA, ns3, pip packages, or network is required for the CPU suite.
+Requires Python 3.10+, g++ with C++20 and pthreads. No pip packages, GPU or network are required.
 
 ```bash
 bash planner/quota/run.sh
-python3 planner/quota/planner.py planner/quota/evidence/skew/input.json /tmp/quota-output.json
-python3 planner/quota/planner.py experiments/no-balancing-layer/evidence/n64/config.json /tmp/quota-n64.json --from-no-balancing --slots 2 --min-quota 1
+python3 planner/quota/planner.py planner/quota/evidence/compatible/extreme_hot/input.json /tmp/compatible.json
+python3 planner/quota/planner.py planner/quota/evidence/compatible/extreme_hot/input.json /tmp/strict.json --mode strict-floor
 ```
 
-The first command verifies pinned source hashes, builds the CPU decomposition and replication reference harnesses and runs normal and `-O` tests. It regenerates this module's evidence only. Timings vary by run. Prior network regressions are separate:
+The CLI builds the pinned CPU engines on demand, with source and binary hash checks. `run.sh` builds both engines and runs all CPU suites in normal and optimized Python modes. It regenerates this module's evidence. Prior network regressions are separate and write to a fresh directory:
 
 ```bash
-EVIDENCE=/tmp/quota-prior-regression bash experiments/no-balancing-layer/run.sh
+EVIDENCE=/tmp/upstream-compatible-network-regression bash experiments/no-balancing-layer/run.sh
 ```
 
-## Input and output contract
+## Input contract
 
-See each `evidence/*/input.json` and matching `output.json` for complete executable examples.
+Existing JSON field names are retained. Every saved `evidence/compatible/<case>/input.json` is executable.
 
-| Input | Meaning |
+| Field | Meaning/default |
 |---|---|
 | `schema_version` | 1 |
+| `mode` | `upstream-compatible` by default; `strict-floor` explicitly selects the legacy implementation |
 | `npus`, `experts`, `top_k` | EP ranks, logical expert count, unique logical selections per token |
-| `main_placement[e]` | Immutable home rank of logical expert e |
-| `slots[r]` | Additional physical expert capacity on rank r, 0 through expert count |
-| `mapping[t]` | Token t's `source` rank and ordered, unique `experts` list |
-| `min_replica_quota` | Positive integer minimum actual assignments on each new replica |
-| `beta` | Rational decimal/string >=1; examples use paper setting 1.01 |
-| `allow_zero_main` | False keeps at least one assignment on each nonempty main; empty experts stay zero |
-| `rounding` | `paper`: ceil(beta * ceil(total/EP)); `code`: ceil(beta * total/EP) |
+| `main_placement[e]` | Fixed main rank; never rearranged implicitly |
+| `slots[r]` | Redundant physical expert budget |
+| `mapping[t]` | Token t's source rank and ordered unique logical `experts` list |
+| `beta` | Decimal number/string; defaults to pinned public config's 1.0 |
+| `min_replica_quota` | Positive integer, default 1024; fast upstream mode may replace it with a lower dynamic floor |
+| `allow_zero_main` | False by default; otherwise zero quota on a nonempty main is allowed |
+| `oracle_epsilon` | Decimal, default 0.01; used by upstream fast probes |
+| `kernel_stage` | Upstream 0 or 1, default 1 |
+| `locality_aware` | True by default; upstream also supports False; strict mode retains legacy True behavior |
+| `rounding` | Legacy paper/code setting. Upstream always executes its original float32 arithmetic; a supplied legacy setting is explicitly recorded as overridden in output metadata |
+| `reroute_mode` | Only `sparse-quota` is supported; CPU ordinals follow input order |
 
-Λ[source rank, logical expert] counts actual router selections at their **source**, not main placement. Total assignments = tokens × top_k. U is represented by `physical[].quota`, including every fixed main (even empty) and active replicas. Physical IDs reserve each rank's main slots followed by redundant slots; unused IDs can have holes. `weight_source_rank` and `weight_source_physical` always identify the fixed main.
+Upstream-compatible inputs must describe **one EP domain**, G<=72, E=G*M<=512 with M>=1, contiguous equal main partitions (`main_placement[e]=e//M`), uniform slots S and G*S<=512. Unsupported layouts are rejected, never silently rerouted to strict mode. Slots can exceed E if the public total-slot bound allows them. The wrapper caps beta/epsilon at 100 and total assignments at two million. Strict mode retains arbitrary main placement and per-rank slots (each <=E), NPU<=256, E<=4096. The NoBalancing adapter copies the original layout; incompatible layouts require an explicit `--mode strict-floor`, not automatic rearrangement.
 
-Q is stored as `source_quotas[source][column]`; `q_physical_ids[column]` identifies its physical instance. Summing over that expert's instances recovers Λ[source,e]; summing a column over sources recovers U. `token_mapping` materializes every input selection exactly once and preserves the logical router. `weight_dependencies` describes main-to-replica readiness metadata only: no weights are copied or scheduled.
+## Execution and output contract
 
-Metrics include complete initial/final rank loads, used redundant slots, total/local assignments, target and chosen thresholds, imbalance (max/average, zero for empty input), and `target_met`. `cpu_wall_ns` measures host planning only; it is not simulated latency and excludes validation by the independent checker and JSON I/O.
+Λ[source rank, logical expert] counts the actual routing selections at their source. `physical` contains fixed mains, active replicas, their original slot/physical IDs and quotas U. Every main is present, even empty. Weight provenance always points to that expert's fixed main; `weight_dependencies` is readiness metadata only.
 
-## Algorithm and guarantees
+`source_quotas[source][column]` is Q, with IDs in `q_physical_ids`. Every source/expert row sum equals Λ, every physical column equals U, and `token_mapping` realizes each input selection exactly once. Logical experts and top-k order are unchanged. Original main-then-export instance order is preserved in `ordinal_physical_order` for public sparse-quota ordinal lookup, even though physical output columns are sorted by ID. GPU atomic arrival order is unavailable; per-token physical identities across GPU schedules are not claimed identical.
 
-The paper describes threshold search, greedy replication and local-first quota decomposition. This implementation searches integer thresholds between the configured lower target and initial maximum, visiting overloaded ranks by descending excess, their experts by descending demand, and candidate destinations by descending slack. Ties use rank/expert IDs. Transfers are min(excess, destination slack, transferable main quota), respect the floor and consume one free replica slot. A rank never holds two instances of the same logical expert.
+`metrics` reports complete initial/final rank loads, slot usage, total/local assignments, target/chosen thresholds, path (`fast`, `fallback`, `bypass`), imbalance and number of corrected assignments. The lower target does not include fast epsilon inflation; `target_met=false` need not indicate an incompatible result. `cpu_wall_ns` is observed host wall time including CPU engine startup, and initial compilation when necessary. It is not GPU performance or simulated planning latency.
 
-A successful probe is a legal witness. Failure is **not an infeasibility proof**. The initial placement is always a legal fallback. The minimum quota makes this greedy oracle potentially nonmonotonic, so binary search may skip better legal witnesses. Neither `chosen_threshold` nor `target_met=false` claims global optimality or mathematical infeasibility. The exhaustive tests deliberately preserve counterexamples.
+With G=1 or S=0, public replication bypasses search and its search threshold is undefined. Raw output uses `threshold:null`; the CPU `chosen_threshold` convention is actual maximum final load. Its `target_threshold` is a separately computed float32 lower-bound diagnostic. Neither field is presented as an upstream search result on bypass.
 
-For fixed U, decomposition fills each instance with as many local-source assignments as possible. It then allocates residual source demand in ascending rank order, proportionally to current remaining capacities, with largest-remainder rounding (host rank tie-break). Capacities are reduced after every source. This guarantees both integer margins exactly and maximizes locality for the given placement and U, without claiming a global locality optimum over placements. Stable input token order consumes these source/expert quotas.
+## Pinned semantics and CPU adaptation
 
-`checker.py` independently reconstructs counts from individual token assignments and checks fixed mains, uniqueness, slots, replica floors, provenance, both Q margins, unchanged router, locality, load metrics and threshold witnesses. Validation uses explicit exceptions and remains active under Python `-O`.
+The engine executes original fast epsilon probes/retries, dynamic floor, static-floor fallback and four-warp search, fixed-main retention, export order, physical slot allocation, and float32/ceilf threshold arithmetic. `replication-manifest.json` records source/block hashes and adapter changes. `extract_replication.py` refuses a changed source snapshot. The exact source license is retained in `reference/LICENSE.UltraEP`.
 
-## Differences from the pinned public implementation
+128 CPU threads represent the CUDA lanes. Full-mask shuffles and synchronization use C++20 barriers. Host initialization supplies the original descending-load/ascending-ID ordering. The G>64 shared-state branch needs one extra CPU barrier after reading q and before lane 0 updates slack, to preserve the original warp read-before-write ordering. Without that boundary, independently scheduled CPU threads can disagree on q and hang. This is an explicit semantic synchronization adaptation, not a quota formula change or a claim about CUDA runtime correctness. Tests exercise rank 32/63 and high occupancy bits at 64/71, plus shared-state fallback. No TMA, CUDA scheduling, weights or packet transport is modeled.
 
-The pinned [config.py](https://github.com/Dots-Infra/UltraEP/blob/94cab099b44fffa99a82fea99e7c12d89cf65e4f/ultra_ep/config.py) defaults to balance threshold 1.0, minimum replica quota 1024, positive nonempty mains, locality enabled and oracle epsilon 0.01. Our examples use beta 1.01; tiny functional examples explicitly lower the minimum quota to 1 or 2. `paper_floor` retains 1024 and correctly creates no tiny replica.
+The dynamic floor is a replacement: `max(1, ceil(need/feasible_slots))`, not max(configured floor, dynamic floor). Thus the accepted extreme-hot fixture produces seven replicas and max load 1046, including a quota-870 replica with configured floor 1024. Strict mode intentionally retains three replicas and max 2048 for that input. Both remain heuristics; no global optimality or infeasibility proof is claimed.
 
-The pinned placement kernel contains a fast probe with epsilon inflation and a dynamic quota floor before fallback search. This CPU implementation retains the user's configured floor and Algorithm-1-style integer binary search; it does not reproduce the entire GPU kernel. `rounding=code` changes only the lower-bound formula, not that distinction. Arbitrary main placement and per-rank slot budgets generalize the kernel's contiguous, equal main partition and uniform extra capacity. Stable CPU token order also differs from parallel atomic ordinal arrival order.
+## Explicit conservation repair
 
-`reference/` vendors exact MIT-licensed source files. `extract.py` enforces hardcoded SHA-256 values and mechanically extracts the unchanged slow decomposition function, fast scalar branch body, and sparse ordinal lookup from reroute. It removes CUDA attributes through macros and provides a C++ driver; no handwritten substitute reference is used. `manifest.json` records block and file hashes. Four fixtures supply identical source demands, hosts and physical quotas to both reference branches and this implementation. These are decomposition-level tests with supplied U, **not** GPU-generated placement or end-to-end GPU equivalence tests.
+Upstream decomposition's independent per-source integer rounding can preserve every source row but miss physical column quotas. The exact raw source stdout, original Q and all inputs are preserved under `output.upstream`. No replacement is made when both margins already match.
 
-Three fixtures agree. In the explicit counterexample, demand `[0,0,1,1]`, hosts `[0,1]`, U `[1,1]`, both upstream scalar branches independently round both remote sources onto host 0, yielding columns `[2,0]`. Our capacity-updated decomposition yields `[1,1]`. This observed CPU scalar discrepancy is intentional here to satisfy exact physical quotas; GPU end-to-end impact has not been established. The exact upstream ordinal lookup is also executed and checked against each reference row.
+If only column margins mismatch, the wrapper moves assignments from surplus columns to deficit columns within the same source/expert row. Local fills are locked when locality is enabled. The deterministic ordering is original instance order, then source rank. It changes neither placement nor U, never fabricates tokens, and moves exactly `sum(max(raw_column-U,0))` assignments, the minimum required to repair the column imbalance. Each move, trigger, raw/corrected matrix and affected physical IDs is recorded in `quota_repairs`; output compatibility is labeled `integer-conservation-repaired`. Unexpected source-margin failure or fast/slow disagreement causes an explicit error rather than an undocumented fallback.
 
-No CUDA compiler or GPU runtime is available in this environment. The unresolved validation limit is full upstream GPU planner execution and comparison. No TokenPacking, ns3 planner integration, WeightDistribution, relay implementation or multilayer execution is included.
+Example: raw rows `[1,0]`, `[1,0]` for two remote sources and U `[1,1]` become `[0,1]`, `[1,0]`; exactly one assignment moves. This intentionally differs from both the raw public rounding and the old strict mode's sequential-capacity rounding. `checker.py` independently reconstructs token counts, validates all applicable constraints, replays the repair ledger, checks minimal change and ordinal mapping. Checks stay enabled under Python `-O`.
 
+## Validation independence and limits
 
-## Replication differential validation (review follow-up)
+Accepted prior-commit goldens freeze the original nine source results. New integration comparisons separately run the extracted executable on identical inputs, but share the execution engine and are **not** called an independent second algorithm. Independent checks include analytical large-rank witnesses, token-level invariant reconstruction, small exhaustive allocation searches and exhaustive minimum-distance repair checks. Reports classify exact results, explicit integer corrections, placement differences and unsupported/unverified behavior.
 
-`reference/extract_replication.py` now extracts the pinned `placement.cu` replication helpers (lines 22–667), search control (954–1284), and X/U materialization (1286–1337). The generated C++ executes the original `warp_build_export_plan`, fast epsilon probe/retries, capacity precheck, four-warp fallback probes, final plan and physical mapping. Search/materialization statements are unchanged. Helper instrumentation only logs oracle entry and effective-floor assignments; all algorithmic statements remain from upstream. Hardcoded source hash verification and `replication-manifest.json` make extraction auditable. This is not a second handwritten version of our planner.
-
-`replication_adapter.cpp` replaces CUDA attributes with empty macros and implements full-mask shuffles, warp barriers and block barriers using 128 C++ threads and C++20 barriers. Host setup supplies a single domain with contiguous equal main partitions, uniform redundant slots, and the original descending-load/ascending-ID ordering. TMA, CUDA launch machinery, GPU scheduling, runtime memory behavior and performance are not modeled. Both register-state oracle and its alternate source branch are compiled; the current nine scenarios exercise G <= 8 (register-state path). Kernel stages 0 and 1 are exercised. Input/outputs are host semantic evidence, not GPU runs.
-
-`tests/test_replication_reference.py` feeds the same compatible inputs to the extracted reference and our planner, checks placement uniqueness, fixed mains, slot budget, expert conservation and threshold witnesses, and compares complete binary X and integer U matrices, replica counts, thresholds and per-rank loads. Our comparison uses `rounding=code` to isolate the upstream lower-bound formula; each case also records our `paper` result. Each fixture saves exact reference stdin/stdout, normalized upstream output, our output and comparison JSON. Parallel fallback trace order is canonicalized only in JSON; raw stdout is retained. No CPU-thread time is presented as planner/GPU latency.
-
-The nine cases cover uniform, skew, extreme-hot, floor-sensitive, nondivisible, fallback, fallback with high floor, zero epsilon and stage zero. Assertions require fast retries, three failed fast probes before fallback, static-floor fallback probes, the epsilon-dependent threshold change, and dynamic-floor output below the configured floor. Critically, upstream lines 424–440 **replace** `effective_min_tokens` with `max(1, ceil(need/feasible_slots))`; they do not take the maximum with the configured floor. Therefore fast-path replicas can be smaller than 1024. The current planner's configured floor remains mandatory. See [replication report](REPLICATION_REPORT.md) and `evidence/replication-results.json` for all observed differences. The earlier four given-U decomposition fixtures remain separate tests.
+GPU end-to-end execution, GPU token scheduling and multiple domains remain unverified/unsupported. This module does not integrate the planner into ns3 or change Dispatch, Combine, compute, weights, relay or packing.

@@ -1,0 +1,566 @@
+{
+  "schema_version": 1,
+  "mode": "upstream-compatible",
+  "lambda_axes": [
+    "source_rank",
+    "logical_expert"
+  ],
+  "lambda_source_expert": [
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ]
+  ],
+  "expert_load": [
+    4,
+    0,
+    0,
+    0
+  ],
+  "physical": [
+    {
+      "expert": 0,
+      "id": 0,
+      "rank": 0,
+      "quota": 1,
+      "kind": "main",
+      "slot": 0,
+      "weight_source_rank": 0,
+      "weight_source_physical": 0
+    },
+    {
+      "expert": 1,
+      "id": 2,
+      "rank": 1,
+      "quota": 0,
+      "kind": "main",
+      "slot": 0,
+      "weight_source_rank": 1,
+      "weight_source_physical": 2
+    },
+    {
+      "expert": 0,
+      "id": 3,
+      "rank": 1,
+      "quota": 1,
+      "kind": "replica",
+      "slot": 1,
+      "weight_source_rank": 0,
+      "weight_source_physical": 0
+    },
+    {
+      "expert": 2,
+      "id": 4,
+      "rank": 2,
+      "quota": 0,
+      "kind": "main",
+      "slot": 0,
+      "weight_source_rank": 2,
+      "weight_source_physical": 4
+    },
+    {
+      "expert": 0,
+      "id": 5,
+      "rank": 2,
+      "quota": 1,
+      "kind": "replica",
+      "slot": 1,
+      "weight_source_rank": 0,
+      "weight_source_physical": 0
+    },
+    {
+      "expert": 3,
+      "id": 6,
+      "rank": 3,
+      "quota": 0,
+      "kind": "main",
+      "slot": 0,
+      "weight_source_rank": 3,
+      "weight_source_physical": 6
+    },
+    {
+      "expert": 0,
+      "id": 7,
+      "rank": 3,
+      "quota": 1,
+      "kind": "replica",
+      "slot": 1,
+      "weight_source_rank": 0,
+      "weight_source_physical": 0
+    }
+  ],
+  "q_axes": [
+    "source_rank",
+    "physical_id_in_q_physical_ids"
+  ],
+  "q_physical_ids": [
+    0,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "source_quotas": [
+    [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ]
+  ],
+  "token_mapping": [
+    {
+      "token": 0,
+      "source": 0,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        0
+      ]
+    },
+    {
+      "token": 1,
+      "source": 1,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        3
+      ]
+    },
+    {
+      "token": 2,
+      "source": 2,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        5
+      ]
+    },
+    {
+      "token": 3,
+      "source": 3,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        7
+      ]
+    }
+  ],
+  "weight_dependencies": [
+    {
+      "expert": 0,
+      "from_rank": 0,
+      "from_physical": 0,
+      "to_rank": 1,
+      "to_physical": 3,
+      "requires_weight_ready": true
+    },
+    {
+      "expert": 0,
+      "from_rank": 0,
+      "from_physical": 0,
+      "to_rank": 2,
+      "to_physical": 5,
+      "requires_weight_ready": true
+    },
+    {
+      "expert": 0,
+      "from_rank": 0,
+      "from_physical": 0,
+      "to_rank": 3,
+      "to_physical": 7,
+      "requires_weight_ready": true
+    }
+  ],
+  "upstream": {
+    "commit": "94cab099b44fffa99a82fea99e7c12d89cf65e4f",
+    "replication_stdin": "4 1 1 1.00000001 1 0 0.00000001 1 4 0 0 0\n",
+    "replication_stdout": "{\"search_enabled\":1,\"lower_bound\":1,\"threshold\":1,\"fast_success\":1,\"precheck_success\":0,\"replica_count\":3,\"physical\":[{\"expert\":0,\"id\":0,\"rank\":0,\"quota\":1,\"kind\":\"main\"},{\"expert\":0,\"id\":3,\"rank\":1,\"quota\":1,\"kind\":\"replica\"},{\"expert\":0,\"id\":5,\"rank\":2,\"quota\":1,\"kind\":\"replica\"},{\"expert\":0,\"id\":7,\"rank\":3,\"quota\":1,\"kind\":\"replica\"},{\"expert\":1,\"id\":2,\"rank\":1,\"quota\":0,\"kind\":\"main\"},{\"expert\":2,\"id\":4,\"rank\":2,\"quota\":0,\"kind\":\"main\"},{\"expert\":3,\"id\":6,\"rank\":3,\"quota\":0,\"kind\":\"main\"}],\"probes\":[{\"threshold\":1,\"dynamic\":1,\"store\":1}],\"dynamic_floors\":[{\"threshold\":1,\"configured\":1,\"effective\":1,\"need\":3,\"feasible_slots\":3},{\"threshold\":1,\"configured\":1,\"effective\":1,\"need\":2,\"feasible_slots\":2},{\"threshold\":1,\"configured\":1,\"effective\":1,\"need\":1,\"feasible_slots\":1}]}\n",
+    "replication": {
+      "search_enabled": 1,
+      "lower_bound": 1,
+      "threshold": 1,
+      "fast_success": 1,
+      "precheck_success": 0,
+      "replica_count": 3,
+      "physical": [
+        {
+          "expert": 0,
+          "id": 0,
+          "rank": 0,
+          "quota": 1,
+          "kind": "main"
+        },
+        {
+          "expert": 0,
+          "id": 3,
+          "rank": 1,
+          "quota": 1,
+          "kind": "replica"
+        },
+        {
+          "expert": 0,
+          "id": 5,
+          "rank": 2,
+          "quota": 1,
+          "kind": "replica"
+        },
+        {
+          "expert": 0,
+          "id": 7,
+          "rank": 3,
+          "quota": 1,
+          "kind": "replica"
+        },
+        {
+          "expert": 1,
+          "id": 2,
+          "rank": 1,
+          "quota": 0,
+          "kind": "main"
+        },
+        {
+          "expert": 2,
+          "id": 4,
+          "rank": 2,
+          "quota": 0,
+          "kind": "main"
+        },
+        {
+          "expert": 3,
+          "id": 6,
+          "rank": 3,
+          "quota": 0,
+          "kind": "main"
+        }
+      ],
+      "probes": [
+        {
+          "threshold": 1,
+          "dynamic": 1,
+          "store": 1
+        }
+      ],
+      "dynamic_floors": [
+        {
+          "threshold": 1,
+          "configured": 1,
+          "effective": 1,
+          "need": 3,
+          "feasible_slots": 3
+        },
+        {
+          "threshold": 1,
+          "configured": 1,
+          "effective": 1,
+          "need": 2,
+          "feasible_slots": 2
+        },
+        {
+          "threshold": 1,
+          "configured": 1,
+          "effective": 1,
+          "need": 1,
+          "feasible_slots": 1
+        }
+      ]
+    },
+    "validation": "CPU adapted source execution, not GPU execution",
+    "decomposition_stdin": "4 4 1 1 1 1 1 0 1 2 3 1 1 1 1\n4 1 1 0 0 0 0 1 0\n4 1 1 0 0 0 0 2 0\n4 1 1 0 0 0 0 3 0\n",
+    "decomposition_stdout": "1 0 0 0 \n0 1 0 0 \n0 0 1 0 \n0 0 0 1 \n1 0 0 0 \n0 1 0 0 \n0 0 1 0 \n0 0 0 1 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n",
+    "quota_repairs": [
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "corrected": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 0,
+        "physical_ids": [
+          0,
+          3,
+          5,
+          7
+        ]
+      },
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "corrected": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 1,
+        "physical_ids": [
+          2
+        ]
+      },
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "corrected": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 2,
+        "physical_ids": [
+          4
+        ]
+      },
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "corrected": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 3,
+        "physical_ids": [
+          6
+        ]
+      }
+    ],
+    "moved_assignments": 0
+  },
+  "ordinal_physical_order": [
+    0,
+    3,
+    5,
+    7,
+    2,
+    4,
+    6
+  ],
+  "compatibility": {
+    "placement": "exact pinned-source CPU semantics",
+    "quota_decomposition": "exact",
+    "mapping": "public sparse-quota cumulative ordinal lookup; CPU input-order ordinals, GPU atomic arrival order not reproduced",
+    "requested_rounding": "code",
+    "effective_rounding": "upstream float32 lower-bound formula",
+    "locality_aware": true,
+    "threshold_convention": "upstream search threshold"
+  },
+  "metrics": {
+    "initial_rank_load": [
+      4,
+      0,
+      0,
+      0
+    ],
+    "final_rank_load": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "slot_usage": [
+      0,
+      1,
+      1,
+      1
+    ],
+    "total_assignments": 4,
+    "target_threshold": 1,
+    "chosen_threshold": 1,
+    "target_met": true,
+    "initial_imbalance": 4.0,
+    "final_imbalance": 1.0,
+    "local_assignments": 4,
+    "path": "fast",
+    "repaired_assignments": 0
+  },
+  "probes": [
+    {
+      "threshold": 1,
+      "dynamic": 1,
+      "store": 1
+    }
+  ],
+  "optimality": "pinned heuristic witness; not global optimality or infeasibility proof",
+  "cpu_wall_ns": 14710822
+}

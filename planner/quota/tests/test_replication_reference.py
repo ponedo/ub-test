@@ -11,7 +11,7 @@ def require(condition,message):
 
 def run_case(name,g,m,loads,floor,eps='0.01',stage=1):
     # All cases meet upstream's contiguous equally sized main and uniform-slot layout.
-    c=dict(schema_version=1,npus=g,experts=g*m,top_k=1,
+    c=dict(schema_version=1,mode='strict-floor',npus=g,experts=g*m,top_k=1,
            main_placement=[e//m for e in range(g*m)],slots=[1]*g,
            mapping=[dict(source=(i+e)%g,experts=[e]) for e,count in enumerate(loads) for i in range(count)],
            min_replica_quota=floor,beta='1.01',allow_zero_main=False,rounding='code')

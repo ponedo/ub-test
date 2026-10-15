@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "npus": 4,
+  "experts": 8,
+  "top_k": 1,
+  "main_placement": [
+    0,
+    0,
+    1,
+    1,
+    2,
+    2,
+    3,
+    3
+  ],
+  "slots": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "mapping": [
+    {
+      "source": 0,
+      "experts": [
+        0
+      ]
+    },
+    {
+      "source": 1,
+      "experts": [
+        0
+      ]
+    },
+    {
+      "source": 2,
+      "experts": [
+        0
+      ]
+    },
+    {
+      "source": 3,
+      "experts": [
+        0
+      ]
+    },
+    {
+      "source": 0,
+      "experts": [
+        0
+      ]
+    },
+    {
+      "source": 1,
+      "experts": [
+        0
+      ]
+    },
+    {
+      "source": 2,
+      "experts": [
+        0
+      ]
+    },
+    {
+      "source": 3,
+      "experts": [
+        0
+      ]
+    },
+    {
+      "source": 0,
+      "experts": [
+        0
+      ]
+    },
+    {
+      "source": 1,
+      "experts": [
+        0
+      ]
+    },
+    {
+      "source": 2,
+      "experts": [
+        0
+      ]
+    },
+    {
+      "source": 1,
+      "experts": [
+        1
+      ]
+    },
+    {
+      "source": 3,
+      "experts": [
+        7
+      ]
+    }
+  ],
+  "beta": "1.01",
+  "min_replica_quota": 1,
+  "allow_zero_main": false,
+  "rounding": "code",
+  "locality_aware": false
+}

@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "lambda_axes": [
+    "source_rank",
+    "logical_expert"
+  ],
+  "lambda_source_expert": [
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "expert_load": [
+    0,
+    0,
+    0,
+    2
+  ],
+  "physical": [
+    {
+      "id": 0,
+      "expert": 0,
+      "rank": 0,
+      "kind": "main",
+      "slot": 0,
+      "quota": 0,
+      "weight_source_rank": 0,
+      "weight_source_physical": 0
+    },
+    {
+      "id": 1,
+      "expert": 3,
+      "rank": 0,
+      "kind": "replica",
+      "slot": 1,
+      "quota": 1,
+      "weight_source_rank": 3,
+      "weight_source_physical": 6
+    },
+    {
+      "id": 2,
+      "expert": 1,
+      "rank": 1,
+      "kind": "main",
+      "slot": 0,
+      "quota": 0,
+      "weight_source_rank": 1,
+      "weight_source_physical": 2
+    },
+    {
+      "id": 4,
+      "expert": 2,
+      "rank": 2,
+      "kind": "main",
+      "slot": 0,
+      "quota": 0,
+      "weight_source_rank": 2,
+      "weight_source_physical": 4
+    },
+    {
+      "id": 6,
+      "expert": 3,
+      "rank": 3,
+      "kind": "main",
+      "slot": 0,
+      "quota": 1,
+      "weight_source_rank": 3,
+      "weight_source_physical": 6
+    }
+  ],
+  "q_axes": [
+    "source_rank",
+    "physical_id_in_q_physical_ids"
+  ],
+  "q_physical_ids": [
+    0,
+    1,
+    2,
+    4,
+    6
+  ],
+  "source_quotas": [
+    [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "token_mapping": [
+    {
+      "token": 0,
+      "source": 1,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 1,
+      "source": 2,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        6
+      ]
+    }
+  ],
+  "weight_dependencies": [
+    {
+      "expert": 3,
+      "from_rank": 3,
+      "from_physical": 6,
+      "to_rank": 0,
+      "to_physical": 1,
+      "requires_weight_ready": true
+    }
+  ],
+  "metrics": {
+    "initial_rank_load": [
+      0,
+      0,
+      0,
+      2
+    ],
+    "final_rank_load": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "slot_usage": [
+      1,
+      0,
+      0,
+      0
+    ],
+    "total_assignments": 2,
+    "target_threshold": 1,
+    "chosen_threshold": 1,
+    "target_met": true,
+    "initial_imbalance": 4.0,
+    "final_imbalance": 2.0,
+    "local_assignments": 0
+  },
+  "probes": [
+    {
+      "threshold": 1,
+      "greedy_witness_found": true
+    },
+    {
+      "threshold": 1,
+      "greedy_witness_found": true,
+      "final": true
+    }
+  ],
+  "optimality": "greedy binary-search witness; not a global optimality/infeasibility proof",
+  "cpu_wall_ns": 111038,
+  "mode": "strict-floor"
+}

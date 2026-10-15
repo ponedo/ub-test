@@ -8,7 +8,7 @@ OUT=ROOT/'evidence';OUT.mkdir(exist_ok=True)
 def require(ok,msg):
  if not ok:raise RuntimeError(msg)
 def config(n,e,rows,slots=1,floor=1,beta='1.01',placement=None,zero=False):
- return dict(schema_version=1,npus=n,experts=e,top_k=len(rows[0]['experts']) if rows else 1,main_placement=placement if placement is not None else [x%n for x in range(e)],slots=[slots]*n,mapping=rows,min_replica_quota=floor,beta=beta,allow_zero_main=zero,rounding='paper')
+ return dict(schema_version=1,mode='strict-floor',npus=n,experts=e,top_k=len(rows[0]['experts']) if rows else 1,main_placement=placement if placement is not None else [x%n for x in range(e)],slots=[slots]*n,mapping=rows,min_replica_quota=floor,beta=beta,allow_zero_main=zero,rounding='paper')
 def rows(loads,n):return [dict(source=(i+x)%n,experts=[x]) for x,amount in enumerate(loads) for i in range(amount)]
 def save(name,c):
  o=solve(c);check(c,o);p=OUT/name;p.mkdir(exist_ok=True);(p/'input.json').write_text(json.dumps(c,indent=2)+'\n');(p/'output.json').write_text(json.dumps(o,indent=2)+'\n');return o
@@ -24,7 +24,7 @@ cases={
  'paper_floor':config(4,4,rows([20,0,0,0],4),floor=1024),
 }
 no_balancing=json.loads((ROOT.parents[1]/'experiments/no-balancing-layer/evidence/n64/config.json').read_text())
-cases['n64_adapter']=from_no_balancing(no_balancing,slots=2,min_quota=1)
+cases['n64_adapter']=from_no_balancing(no_balancing,slots=2,min_quota=1,mode='strict-floor')
 summary={name:save(name,c)['metrics'] for name,c in cases.items()}
 # Independent exhaustive mathematical enumeration; no oracle/greedy code reused.
 def compositions(v,n):

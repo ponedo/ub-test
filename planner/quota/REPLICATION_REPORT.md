@@ -1,5 +1,7 @@
 # Replication differential report
 
+Historical strict-floor milestone report. For the current default-compatible implementation see [COMPATIBILITY_REPORT.md](COMPATIBILITY_REPORT.md).
+
 Pinned source: [Dots-Infra/UltraEP 94cab099b44fffa99a82fea99e7c12d89cf65e4f](https://github.com/Dots-Infra/UltraEP/blob/94cab099b44fffa99a82fea99e7c12d89cf65e4f/csrc/kernels/placement.cu). CPU semantic adaptation, not a GPU run. No planner decision code was changed for this follow-up.
 
 Normal and `python -O` execution pass all 9 replication scenarios. The original 10 scenarios, 250 random cases, 80 exhaustive comparisons, 4 decomposition fixtures and negative tests also pass. The original nonmonotonic counterexample and 4 optimality gaps remain.

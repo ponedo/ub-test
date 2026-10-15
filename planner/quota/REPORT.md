@@ -1,5 +1,7 @@
 # Validation report
 
+Historical strict-floor milestone report. For the current default-compatible implementation see [COMPATIBILITY_REPORT.md](COMPATIBILITY_REPORT.md).
+
 Executed CPU suite in normal and optimized Python modes: 10 saved scenarios, 250 deterministic random cases (including top-k > 1), 80 independent exhaustive comparisons, 5 corrupted-output checks, 6 invalid inputs, 2 threshold-rounding modes, and 4 compiled fixed-source fixtures. All pass. An explicit `[true,false,true]` threshold witness regression verifies nonmonotonicity.
 
 | Scenario | Initial max | Final max | Target | Target met | Replica slots used | CPU wall ms |

@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "npus": 2,
+  "experts": 2,
+  "top_k": 1,
+  "main_placement": [
+    0,
+    1
+  ],
+  "slots": [
+    5,
+    5
+  ],
+  "mapping": [
+    {
+      "source": 0,
+      "experts": [
+        0
+      ]
+    },
+    {
+      "source": 1,
+      "experts": [
+        0
+      ]
+    },
+    {
+      "source": 0,
+      "experts": [
+        0
+      ]
+    }
+  ],
+  "beta": "1.01",
+  "min_replica_quota": 1024,
+  "allow_zero_main": false,
+  "rounding": "code"
+}

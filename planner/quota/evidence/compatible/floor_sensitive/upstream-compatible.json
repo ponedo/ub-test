@@ -1,0 +1,679 @@
+{
+  "schema_version": 1,
+  "mode": "upstream-compatible",
+  "lambda_axes": [
+    "source_rank",
+    "logical_expert"
+  ],
+  "lambda_source_expert": [
+    [
+      5,
+      0,
+      0,
+      0
+    ],
+    [
+      5,
+      0,
+      0,
+      0
+    ],
+    [
+      5,
+      0,
+      0,
+      0
+    ],
+    [
+      5,
+      0,
+      0,
+      0
+    ]
+  ],
+  "expert_load": [
+    20,
+    0,
+    0,
+    0
+  ],
+  "physical": [
+    {
+      "expert": 0,
+      "id": 0,
+      "rank": 0,
+      "quota": 7,
+      "kind": "main",
+      "slot": 0,
+      "weight_source_rank": 0,
+      "weight_source_physical": 0
+    },
+    {
+      "expert": 1,
+      "id": 2,
+      "rank": 1,
+      "quota": 0,
+      "kind": "main",
+      "slot": 0,
+      "weight_source_rank": 1,
+      "weight_source_physical": 2
+    },
+    {
+      "expert": 0,
+      "id": 3,
+      "rank": 1,
+      "quota": 7,
+      "kind": "replica",
+      "slot": 1,
+      "weight_source_rank": 0,
+      "weight_source_physical": 0
+    },
+    {
+      "expert": 2,
+      "id": 4,
+      "rank": 2,
+      "quota": 0,
+      "kind": "main",
+      "slot": 0,
+      "weight_source_rank": 2,
+      "weight_source_physical": 4
+    },
+    {
+      "expert": 0,
+      "id": 5,
+      "rank": 2,
+      "quota": 6,
+      "kind": "replica",
+      "slot": 1,
+      "weight_source_rank": 0,
+      "weight_source_physical": 0
+    },
+    {
+      "expert": 3,
+      "id": 6,
+      "rank": 3,
+      "quota": 0,
+      "kind": "main",
+      "slot": 0,
+      "weight_source_rank": 3,
+      "weight_source_physical": 6
+    }
+  ],
+  "q_axes": [
+    "source_rank",
+    "physical_id_in_q_physical_ids"
+  ],
+  "q_physical_ids": [
+    0,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "source_quotas": [
+    [
+      5,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      5,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      5,
+      0
+    ],
+    [
+      2,
+      0,
+      2,
+      0,
+      1,
+      0
+    ]
+  ],
+  "token_mapping": [
+    {
+      "token": 0,
+      "source": 0,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        0
+      ]
+    },
+    {
+      "token": 1,
+      "source": 1,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        3
+      ]
+    },
+    {
+      "token": 2,
+      "source": 2,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        5
+      ]
+    },
+    {
+      "token": 3,
+      "source": 3,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        0
+      ]
+    },
+    {
+      "token": 4,
+      "source": 0,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        0
+      ]
+    },
+    {
+      "token": 5,
+      "source": 1,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        3
+      ]
+    },
+    {
+      "token": 6,
+      "source": 2,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        5
+      ]
+    },
+    {
+      "token": 7,
+      "source": 3,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        0
+      ]
+    },
+    {
+      "token": 8,
+      "source": 0,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        0
+      ]
+    },
+    {
+      "token": 9,
+      "source": 1,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        3
+      ]
+    },
+    {
+      "token": 10,
+      "source": 2,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        5
+      ]
+    },
+    {
+      "token": 11,
+      "source": 3,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        3
+      ]
+    },
+    {
+      "token": 12,
+      "source": 0,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        0
+      ]
+    },
+    {
+      "token": 13,
+      "source": 1,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        3
+      ]
+    },
+    {
+      "token": 14,
+      "source": 2,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        5
+      ]
+    },
+    {
+      "token": 15,
+      "source": 3,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        3
+      ]
+    },
+    {
+      "token": 16,
+      "source": 0,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        0
+      ]
+    },
+    {
+      "token": 17,
+      "source": 1,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        3
+      ]
+    },
+    {
+      "token": 18,
+      "source": 2,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        5
+      ]
+    },
+    {
+      "token": 19,
+      "source": 3,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        5
+      ]
+    }
+  ],
+  "weight_dependencies": [
+    {
+      "expert": 0,
+      "from_rank": 0,
+      "from_physical": 0,
+      "to_rank": 1,
+      "to_physical": 3,
+      "requires_weight_ready": true
+    },
+    {
+      "expert": 0,
+      "from_rank": 0,
+      "from_physical": 0,
+      "to_rank": 2,
+      "to_physical": 5,
+      "requires_weight_ready": true
+    }
+  ],
+  "upstream": {
+    "commit": "94cab099b44fffa99a82fea99e7c12d89cf65e4f",
+    "replication_stdin": "4 1 1 1.01 1024 0 0.01 1 20 0 0 0\n",
+    "replication_stdout": "{\"search_enabled\":1,\"lower_bound\":6,\"threshold\":7,\"fast_success\":1,\"precheck_success\":0,\"replica_count\":2,\"physical\":[{\"expert\":0,\"id\":0,\"rank\":0,\"quota\":7,\"kind\":\"main\"},{\"expert\":0,\"id\":3,\"rank\":1,\"quota\":7,\"kind\":\"replica\"},{\"expert\":0,\"id\":5,\"rank\":2,\"quota\":6,\"kind\":\"replica\"},{\"expert\":1,\"id\":2,\"rank\":1,\"quota\":0,\"kind\":\"main\"},{\"expert\":2,\"id\":4,\"rank\":2,\"quota\":0,\"kind\":\"main\"},{\"expert\":3,\"id\":6,\"rank\":3,\"quota\":0,\"kind\":\"main\"}],\"probes\":[{\"threshold\":7,\"dynamic\":1,\"store\":1}],\"dynamic_floors\":[{\"threshold\":7,\"configured\":1024,\"effective\":5,\"need\":13,\"feasible_slots\":3},{\"threshold\":7,\"configured\":1024,\"effective\":3,\"need\":6,\"feasible_slots\":2}]}\n",
+    "replication": {
+      "search_enabled": 1,
+      "lower_bound": 6,
+      "threshold": 7,
+      "fast_success": 1,
+      "precheck_success": 0,
+      "replica_count": 2,
+      "physical": [
+        {
+          "expert": 0,
+          "id": 0,
+          "rank": 0,
+          "quota": 7,
+          "kind": "main"
+        },
+        {
+          "expert": 0,
+          "id": 3,
+          "rank": 1,
+          "quota": 7,
+          "kind": "replica"
+        },
+        {
+          "expert": 0,
+          "id": 5,
+          "rank": 2,
+          "quota": 6,
+          "kind": "replica"
+        },
+        {
+          "expert": 1,
+          "id": 2,
+          "rank": 1,
+          "quota": 0,
+          "kind": "main"
+        },
+        {
+          "expert": 2,
+          "id": 4,
+          "rank": 2,
+          "quota": 0,
+          "kind": "main"
+        },
+        {
+          "expert": 3,
+          "id": 6,
+          "rank": 3,
+          "quota": 0,
+          "kind": "main"
+        }
+      ],
+      "probes": [
+        {
+          "threshold": 7,
+          "dynamic": 1,
+          "store": 1
+        }
+      ],
+      "dynamic_floors": [
+        {
+          "threshold": 7,
+          "configured": 1024,
+          "effective": 5,
+          "need": 13,
+          "feasible_slots": 3
+        },
+        {
+          "threshold": 7,
+          "configured": 1024,
+          "effective": 3,
+          "need": 6,
+          "feasible_slots": 2
+        }
+      ]
+    },
+    "validation": "CPU adapted source execution, not GPU execution",
+    "decomposition_stdin": "4 3 1 5 5 5 5 0 1 2 7 7 6\n4 1 1 0 0 0 0 1 0\n4 1 1 0 0 0 0 2 0\n4 1 1 0 0 0 0 3 0\n",
+    "decomposition_stdout": "5 0 0 \n0 5 0 \n0 0 5 \n2 2 1 \n5 0 0 \n0 5 0 \n0 0 5 \n2 2 1 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n",
+    "quota_repairs": [
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            5,
+            0,
+            0
+          ],
+          [
+            0,
+            5,
+            0
+          ],
+          [
+            0,
+            0,
+            5
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        "corrected": [
+          [
+            5,
+            0,
+            0
+          ],
+          [
+            0,
+            5,
+            0
+          ],
+          [
+            0,
+            0,
+            5
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 0,
+        "physical_ids": [
+          0,
+          3,
+          5
+        ]
+      },
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "corrected": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 1,
+        "physical_ids": [
+          2
+        ]
+      },
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "corrected": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 2,
+        "physical_ids": [
+          4
+        ]
+      },
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "corrected": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 3,
+        "physical_ids": [
+          6
+        ]
+      }
+    ],
+    "moved_assignments": 0
+  },
+  "ordinal_physical_order": [
+    0,
+    3,
+    5,
+    2,
+    4,
+    6
+  ],
+  "compatibility": {
+    "placement": "exact pinned-source CPU semantics",
+    "quota_decomposition": "exact",
+    "mapping": "public sparse-quota cumulative ordinal lookup; CPU input-order ordinals, GPU atomic arrival order not reproduced",
+    "requested_rounding": "code",
+    "effective_rounding": "upstream float32 lower-bound formula",
+    "locality_aware": true,
+    "threshold_convention": "upstream search threshold"
+  },
+  "metrics": {
+    "initial_rank_load": [
+      20,
+      0,
+      0,
+      0
+    ],
+    "final_rank_load": [
+      7,
+      7,
+      6,
+      0
+    ],
+    "slot_usage": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "total_assignments": 20,
+    "target_threshold": 6,
+    "chosen_threshold": 7,
+    "target_met": false,
+    "initial_imbalance": 4.0,
+    "final_imbalance": 1.4,
+    "local_assignments": 15,
+    "path": "fast",
+    "repaired_assignments": 0
+  },
+  "probes": [
+    {
+      "threshold": 7,
+      "dynamic": 1,
+      "store": 1
+    }
+  ],
+  "optimality": "pinned heuristic witness; not global optimality or infeasibility proof",
+  "cpu_wall_ns": 14181629
+}

@@ -1,0 +1,62 @@
+{
+  "classification": "integer-conservation correction",
+  "upstream_metrics": {
+    "initial_rank_load": [
+      12,
+      0,
+      0,
+      1
+    ],
+    "final_rank_load": [
+      5,
+      5,
+      2,
+      1
+    ],
+    "slot_usage": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "total_assignments": 13,
+    "target_threshold": 4,
+    "chosen_threshold": 5,
+    "target_met": false,
+    "initial_imbalance": 3.6923076923076925,
+    "final_imbalance": 1.5384615384615385,
+    "local_assignments": 4,
+    "path": "fast",
+    "repaired_assignments": 1
+  },
+  "strict_metrics": {
+    "initial_rank_load": [
+      12,
+      0,
+      0,
+      1
+    ],
+    "final_rank_load": [
+      4,
+      4,
+      4,
+      1
+    ],
+    "slot_usage": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "total_assignments": 13,
+    "target_threshold": 4,
+    "chosen_threshold": 4,
+    "target_met": true,
+    "initial_imbalance": 3.6923076923076925,
+    "final_imbalance": 1.2307692307692308,
+    "local_assignments": 10
+  },
+  "strict_unsupported": null,
+  "same_strict_placement": false,
+  "token_identity_limit": "deterministic input ordinals; GPU atomic ordering is not compared"
+}
