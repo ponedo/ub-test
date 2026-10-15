@@ -1,0 +1,27 @@
+[05:17:52] [case] Run case: /workspace/ns-3-ub/scratch/2nodes_single-tp
+[05:17:52] [case] node.csv delay fields: allocationDelay -> AllocationTime; forwardDelay -> InPortProcessingDelay; legacy 4-column forwardDelay -> AllocationTime.
+[05:17:52] [setup] Load network_attribute.txt
+[05:17:52] [setup] Adapt legacy network attributes: 1 line(s)
+[05:17:52] [setup] Prepare runlog directory: /workspace/ns-3-ub/scratch/2nodes_single-tp/runlog
+[05:17:52] [setup] Load node.csv
+[05:17:52] [setup] Load topology.csv
+[05:17:52] [setup] Load routing_table.csv
+[05:17:52] [setup] Load transport_channel.csv
+[05:17:52] [traffic] Index phase dependencies from traffic.csv
+[05:17:52] [traffic] Activate clients and enqueue tasks.
+[05:17:52] [traffic] Load traffic.csv
+[05:17:52] Simulation time progress: 0 us[05:17:52] [traffic] Scheduled local tasks: 4
+[05:17:52] Simulation time progress: 100 us
+[05:17:52] [run] Simulation finished.
+[05:17:52] [trace] Parse runlog into output artifacts.
+Stats: Processed 0 tasks.
+Stats: All tasks have complete packet timestamp info.
+Saved traffic tasks throughput results to /workspace/ns-3-ub/scratch/2nodes_single-tp/output/task_statistics.csv
+Stats: Generated throughput metrics for 0 port-directions.
+Note: No port throughput data found. This is expected if UB_PORT_TRACE_ENABLE is set to 'false'.
+[05:17:52] [summary] Program finished.
+[05:17:52] [summary] Wall-clock:
+[05:17:52] [summary]   config : 161 us
+[05:17:52] [summary]   run    : 51.004 ms
+[05:17:52] [summary]   trace  : 46.049 ms
+[05:17:52] [summary]   total  : 98.057 ms
