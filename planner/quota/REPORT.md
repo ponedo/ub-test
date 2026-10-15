@@ -4,16 +4,16 @@ Executed CPU suite in normal and optimized Python modes: 10 saved scenarios, 250
 
 | Scenario | Initial max | Final max | Target | Target met | Replica slots used | CPU wall ms |
 |---|---:|---:|---:|---|---:|---:|
-| uniform | 16 | 16 | 17 | True | 0 | 0.399 |
+| uniform | 16 | 16 | 17 | True | 0 | 0.287 |
 | skew | 61 | 21 | 18 | False | 3 | 0.315 |
-| extreme_hot | 8192 | 2048 | 1035 | False | 3 | 11.538 |
-| slots_insufficient | 31 | 31 | 9 | False | 0 | 0.204 |
-| empty | 0 | 0 | 0 | True | 0 | 0.093 |
-| nondivisible | 17 | 10 | 10 | True | 1 | 0.181 |
-| zero_main_allowed | 2 | 1 | 1 | True | 1 | 0.076 |
-| positive_main | 2 | 2 | 1 | False | 0 | 0.081 |
-| paper_floor | 20 | 20 | 6 | False | 0 | 0.133 |
-| n64_adapter | 9 | 5 | 5 | True | 11 | 38.803 |
+| extreme_hot | 8192 | 2048 | 1035 | False | 3 | 10.076 |
+| slots_insufficient | 31 | 31 | 9 | False | 0 | 0.220 |
+| empty | 0 | 0 | 0 | True | 0 | 0.111 |
+| nondivisible | 17 | 10 | 10 | True | 1 | 0.170 |
+| zero_main_allowed | 2 | 1 | 1 | True | 1 | 0.173 |
+| positive_main | 2 | 2 | 1 | False | 0 | 0.078 |
+| paper_floor | 20 | 20 | 6 | False | 0 | 0.128 |
+| n64_adapter | 9 | 5 | 5 | True | 11 | 39.671 |
 
 CPU times are single observed host measurements, not GPU performance, simulated planning latency, or a speedup benchmark. Full load vectors, slot usage, U, Q and every token assignment are in the saved outputs.
 
@@ -26,3 +26,5 @@ Three fixed-source decomposition fixtures match. The fourth demonstrates column-
 Prior PoC and NoBalancing full regressions passed, including 16 normal and 16 optimized NoBalancing tests. `evidence/prior-regression/` contains console output, run ledger, tool versions and SHA-256 inventory of raw traces at `/workspace/quota-network-regression`. Existing tracked source and evidence had no changes before this module was staged. The pinned ns3 and tools commits are in the captured tool versions.
 
 Reproduce CPU checks: `bash planner/quota/run.sh`. Reproduce prior regression in a separate output directory using the README command. No network-model behavior was changed.
+
+Replication follow-up: the pinned solver itself now has 9 extracted-source CPU differential scenarios covering fast probes, epsilon, dynamic floor and fallback. See [REPLICATION_REPORT.md](REPLICATION_REPORT.md). GPU execution is still unavailable.

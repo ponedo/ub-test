@@ -1,0 +1,299 @@
+{
+  "name": "skew",
+  "upstream_parameters": {
+    "beta": "1.01",
+    "epsilon": "0.01",
+    "kernel_stage": 1,
+    "configured_floor": 1
+  },
+  "upstream": {
+    "X": [
+      [
+        1,
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "U": [
+      [
+        19,
+        3,
+        0,
+        19
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        3,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        20,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "rank_load": [
+      20,
+      8,
+      20,
+      20
+    ],
+    "replica_count": 2,
+    "slot_usage": [
+      0,
+      1,
+      0,
+      1
+    ]
+  },
+  "ours_code_bound": {
+    "X": [
+      [
+        1,
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "U": [
+      [
+        19,
+        3,
+        0,
+        19
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        3,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        20,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "rank_load": [
+      20,
+      8,
+      20,
+      20
+    ],
+    "replica_count": 2,
+    "slot_usage": [
+      0,
+      1,
+      0,
+      1
+    ]
+  },
+  "ours_paper_bound": {
+    "threshold": 20,
+    "target": 18,
+    "rank_load": [
+      20,
+      8,
+      20,
+      20
+    ]
+  },
+  "upstream_threshold": 20,
+  "ours_threshold": 20,
+  "ours_lower_bound": 18,
+  "equal_X": true,
+  "equal_U": true,
+  "equal_threshold": true,
+  "fast_success": true,
+  "probes": [
+    {
+      "threshold": 19,
+      "dynamic": 1,
+      "store": 1
+    },
+    {
+      "threshold": 20,
+      "dynamic": 1,
+      "store": 1
+    }
+  ],
+  "dynamic_floors": [
+    {
+      "threshold": 19,
+      "configured": 1,
+      "effective": 12,
+      "need": 23,
+      "feasible_slots": 2
+    },
+    {
+      "threshold": 19,
+      "configured": 1,
+      "effective": 5,
+      "need": 5,
+      "feasible_slots": 1
+    },
+    {
+      "threshold": 20,
+      "configured": 1,
+      "effective": 11,
+      "need": 22,
+      "feasible_slots": 2
+    },
+    {
+      "threshold": 20,
+      "configured": 1,
+      "effective": 3,
+      "need": 3,
+      "feasible_slots": 1
+    }
+  ],
+  "upstream_below_configured_floor": []
+}

@@ -1,0 +1,73 @@
+{
+  "threshold": 7,
+  "fast_success": 1,
+  "precheck_success": 0,
+  "replica_count": 2,
+  "physical": [
+    {
+      "expert": 0,
+      "id": 0,
+      "rank": 0,
+      "quota": 7,
+      "kind": "main"
+    },
+    {
+      "expert": 0,
+      "id": 3,
+      "rank": 1,
+      "quota": 7,
+      "kind": "replica"
+    },
+    {
+      "expert": 0,
+      "id": 5,
+      "rank": 2,
+      "quota": 6,
+      "kind": "replica"
+    },
+    {
+      "expert": 1,
+      "id": 2,
+      "rank": 1,
+      "quota": 0,
+      "kind": "main"
+    },
+    {
+      "expert": 2,
+      "id": 4,
+      "rank": 2,
+      "quota": 0,
+      "kind": "main"
+    },
+    {
+      "expert": 3,
+      "id": 6,
+      "rank": 3,
+      "quota": 0,
+      "kind": "main"
+    }
+  ],
+  "probes": [
+    {
+      "threshold": 7,
+      "dynamic": 1,
+      "store": 1
+    }
+  ],
+  "dynamic_floors": [
+    {
+      "threshold": 7,
+      "configured": 1024,
+      "effective": 5,
+      "need": 13,
+      "feasible_slots": 3
+    },
+    {
+      "threshold": 7,
+      "configured": 1024,
+      "effective": 3,
+      "need": 6,
+      "feasible_slots": 2
+    }
+  ]
+}

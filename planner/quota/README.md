@@ -4,7 +4,7 @@ Independent single-layer CPU implementation, based on [UltraEP v3, §5 and Algor
 
 ## Run
 
-Python 3.10+ and g++ with C++17 are sufficient. No CUDA, ns3, pip packages, or network is required for the CPU suite.
+Python 3.10+ and g++ with C++20 and pthread support are sufficient. No CUDA, ns3, pip packages, or network is required for the CPU suite.
 
 ```bash
 bash planner/quota/run.sh
@@ -12,7 +12,7 @@ python3 planner/quota/planner.py planner/quota/evidence/skew/input.json /tmp/quo
 python3 planner/quota/planner.py experiments/no-balancing-layer/evidence/n64/config.json /tmp/quota-n64.json --from-no-balancing --slots 2 --min-quota 1
 ```
 
-The first command verifies pinned source hashes, builds the CPU reference harness and runs normal and `-O` tests. It regenerates this module's evidence only. Timings vary by run. Prior network regressions are separate:
+The first command verifies pinned source hashes, builds the CPU decomposition and replication reference harnesses and runs normal and `-O` tests. It regenerates this module's evidence only. Timings vary by run. Prior network regressions are separate:
 
 ```bash
 EVIDENCE=/tmp/quota-prior-regression bash experiments/no-balancing-layer/run.sh
@@ -61,3 +61,14 @@ The pinned placement kernel contains a fast probe with epsilon inflation and a d
 Three fixtures agree. In the explicit counterexample, demand `[0,0,1,1]`, hosts `[0,1]`, U `[1,1]`, both upstream scalar branches independently round both remote sources onto host 0, yielding columns `[2,0]`. Our capacity-updated decomposition yields `[1,1]`. This observed CPU scalar discrepancy is intentional here to satisfy exact physical quotas; GPU end-to-end impact has not been established. The exact upstream ordinal lookup is also executed and checked against each reference row.
 
 No CUDA compiler or GPU runtime is available in this environment. The unresolved validation limit is full upstream GPU planner execution and comparison. No TokenPacking, ns3 planner integration, WeightDistribution, relay implementation or multilayer execution is included.
+
+
+## Replication differential validation (review follow-up)
+
+`reference/extract_replication.py` now extracts the pinned `placement.cu` replication helpers (lines 22–667), search control (954–1284), and X/U materialization (1286–1337). The generated C++ executes the original `warp_build_export_plan`, fast epsilon probe/retries, capacity precheck, four-warp fallback probes, final plan and physical mapping. Search/materialization statements are unchanged. Helper instrumentation only logs oracle entry and effective-floor assignments; all algorithmic statements remain from upstream. Hardcoded source hash verification and `replication-manifest.json` make extraction auditable. This is not a second handwritten version of our planner.
+
+`replication_adapter.cpp` replaces CUDA attributes with empty macros and implements full-mask shuffles, warp barriers and block barriers using 128 C++ threads and C++20 barriers. Host setup supplies a single domain with contiguous equal main partitions, uniform redundant slots, and the original descending-load/ascending-ID ordering. TMA, CUDA launch machinery, GPU scheduling, runtime memory behavior and performance are not modeled. Both register-state oracle and its alternate source branch are compiled; the current nine scenarios exercise G <= 8 (register-state path). Kernel stages 0 and 1 are exercised. Input/outputs are host semantic evidence, not GPU runs.
+
+`tests/test_replication_reference.py` feeds the same compatible inputs to the extracted reference and our planner, checks placement uniqueness, fixed mains, slot budget, expert conservation and threshold witnesses, and compares complete binary X and integer U matrices, replica counts, thresholds and per-rank loads. Our comparison uses `rounding=code` to isolate the upstream lower-bound formula; each case also records our `paper` result. Each fixture saves exact reference stdin/stdout, normalized upstream output, our output and comparison JSON. Parallel fallback trace order is canonicalized only in JSON; raw stdout is retained. No CPU-thread time is presented as planner/GPU latency.
+
+The nine cases cover uniform, skew, extreme-hot, floor-sensitive, nondivisible, fallback, fallback with high floor, zero epsilon and stage zero. Assertions require fast retries, three failed fast probes before fallback, static-floor fallback probes, the epsilon-dependent threshold change, and dynamic-floor output below the configured floor. Critically, upstream lines 424–440 **replace** `effective_min_tokens` with `max(1, ceil(need/feasible_slots))`; they do not take the maximum with the configured floor. Therefore fast-path replicas can be smaller than 1024. The current planner's configured floor remains mandatory. See [replication report](REPLICATION_REPORT.md) and `evidence/replication-results.json` for all observed differences. The earlier four given-U decomposition fixtures remain separate tests.

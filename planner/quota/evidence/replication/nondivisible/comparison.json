@@ -1,0 +1,203 @@
+{
+  "name": "nondivisible",
+  "upstream_parameters": {
+    "beta": "1.01",
+    "epsilon": "0.01",
+    "kernel_stage": 1,
+    "configured_floor": 2
+  },
+  "upstream": {
+    "X": [
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "U": [
+      [
+        5,
+        3,
+        9
+      ],
+      [
+        5,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "rank_load": [
+      10,
+      5,
+      10
+    ],
+    "replica_count": 2,
+    "slot_usage": [
+      0,
+      1,
+      1
+    ]
+  },
+  "ours_code_bound": {
+    "X": [
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "U": [
+      [
+        4,
+        5,
+        8
+      ],
+      [
+        5,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "rank_load": [
+      9,
+      7,
+      9
+    ],
+    "replica_count": 2,
+    "slot_usage": [
+      0,
+      1,
+      1
+    ]
+  },
+  "ours_paper_bound": {
+    "threshold": 12,
+    "target": 10,
+    "rank_load": [
+      12,
+      2,
+      11
+    ]
+  },
+  "upstream_threshold": 10,
+  "ours_threshold": 9,
+  "ours_lower_bound": 9,
+  "equal_X": true,
+  "equal_U": false,
+  "equal_threshold": false,
+  "fast_success": true,
+  "probes": [
+    {
+      "threshold": 10,
+      "dynamic": 1,
+      "store": 1
+    }
+  ],
+  "dynamic_floors": [
+    {
+      "threshold": 10,
+      "configured": 2,
+      "effective": 6,
+      "need": 12,
+      "feasible_slots": 2
+    },
+    {
+      "threshold": 10,
+      "configured": 2,
+      "effective": 3,
+      "need": 3,
+      "feasible_slots": 1
+    }
+  ],
+  "upstream_below_configured_floor": []
+}

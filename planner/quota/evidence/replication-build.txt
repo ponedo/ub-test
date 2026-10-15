@@ -1,0 +1,18 @@
+{
+  "commit": "94cab099b44fffa99a82fea99e7c12d89cf65e4f",
+  "source_sha256": "195637d9d9b0ce37656dcccbd7f487202699fbda0f11c41c431f71b38f01983f",
+  "blocks": {
+    "helpers": "7e66e9ea7fe95a7c0de0c3a1d373b82e651f12fd8ca3ada423deb0de79a743d8",
+    "search_and_materialization": "6efd5232ce2161f84e59a738867a6010147cfb21f988fda5360a4cd59f2c81aa",
+    "shared_without_ptx": "f8daaba9ede8006e5dbe32d2babc65f708a5fd4d84e67fcb728b1d3b3e0e42d0"
+  },
+  "adapter_sha256": "2f91f26dd1b9e26052263e291f36fa45538d1616a5cec91aabffc6d782deede1",
+  "adaptations": [
+    "CUDA attributes become empty macros",
+    "warp shuffle/sync and block sync use C++20 barriers, 128 CPU threads",
+    "single-domain contiguous-main input setup on host",
+    "lane-0 logging at oracle entry and both dynamic-floor assignments; no decision changes",
+    "search and X/U materialization body unchanged"
+  ],
+  "gpu_execution": false
+}

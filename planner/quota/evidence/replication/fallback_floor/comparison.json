@@ -1,0 +1,1110 @@
+{
+  "name": "fallback_floor",
+  "upstream_parameters": {
+    "beta": "1.01",
+    "epsilon": "0.01",
+    "kernel_stage": 1,
+    "configured_floor": 1024
+  },
+  "upstream": {
+    "X": [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "U": [
+      [
+        100,
+        0,
+        0,
+        0
+      ],
+      [
+        100,
+        0,
+        0,
+        0
+      ],
+      [
+        100,
+        0,
+        0,
+        0
+      ],
+      [
+        100,
+        0,
+        0,
+        0
+      ],
+      [
+        100,
+        0,
+        0,
+        0
+      ],
+      [
+        100,
+        0,
+        0,
+        0
+      ],
+      [
+        100,
+        0,
+        0,
+        0
+      ],
+      [
+        100,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "rank_load": [
+      800,
+      0,
+      0,
+      0
+    ],
+    "replica_count": 0,
+    "slot_usage": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "ours_code_bound": {
+    "X": [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "U": [
+      [
+        100,
+        0,
+        0,
+        0
+      ],
+      [
+        100,
+        0,
+        0,
+        0
+      ],
+      [
+        100,
+        0,
+        0,
+        0
+      ],
+      [
+        100,
+        0,
+        0,
+        0
+      ],
+      [
+        100,
+        0,
+        0,
+        0
+      ],
+      [
+        100,
+        0,
+        0,
+        0
+      ],
+      [
+        100,
+        0,
+        0,
+        0
+      ],
+      [
+        100,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "rank_load": [
+      800,
+      0,
+      0,
+      0
+    ],
+    "replica_count": 0,
+    "slot_usage": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "ours_paper_bound": {
+    "threshold": 800,
+    "target": 202,
+    "rank_load": [
+      800,
+      0,
+      0,
+      0
+    ]
+  },
+  "upstream_threshold": 800,
+  "ours_threshold": 800,
+  "ours_lower_bound": 202,
+  "equal_X": true,
+  "equal_U": true,
+  "equal_threshold": true,
+  "fast_success": false,
+  "probes": [
+    {
+      "threshold": 205,
+      "dynamic": 1,
+      "store": 1
+    },
+    {
+      "threshold": 213,
+      "dynamic": 1,
+      "store": 1
+    },
+    {
+      "threshold": 221,
+      "dynamic": 1,
+      "store": 1
+    },
+    {
+      "threshold": 202,
+      "dynamic": 0,
+      "store": 1
+    },
+    {
+      "threshold": 800,
+      "dynamic": 0,
+      "store": 1
+    },
+    {
+      "threshold": 322,
+      "dynamic": 0,
+      "store": 0
+    },
+    {
+      "threshold": 441,
+      "dynamic": 0,
+      "store": 0
+    },
+    {
+      "threshold": 561,
+      "dynamic": 0,
+      "store": 0
+    },
+    {
+      "threshold": 680,
+      "dynamic": 0,
+      "store": 0
+    },
+    {
+      "threshold": 704,
+      "dynamic": 0,
+      "store": 0
+    },
+    {
+      "threshold": 728,
+      "dynamic": 0,
+      "store": 0
+    },
+    {
+      "threshold": 752,
+      "dynamic": 0,
+      "store": 0
+    },
+    {
+      "threshold": 776,
+      "dynamic": 0,
+      "store": 0
+    },
+    {
+      "threshold": 781,
+      "dynamic": 0,
+      "store": 0
+    },
+    {
+      "threshold": 786,
+      "dynamic": 0,
+      "store": 0
+    },
+    {
+      "threshold": 790,
+      "dynamic": 0,
+      "store": 0
+    },
+    {
+      "threshold": 795,
+      "dynamic": 0,
+      "store": 0
+    },
+    {
+      "threshold": 796,
+      "dynamic": 0,
+      "store": 0
+    },
+    {
+      "threshold": 797,
+      "dynamic": 0,
+      "store": 0
+    },
+    {
+      "threshold": 798,
+      "dynamic": 0,
+      "store": 0
+    },
+    {
+      "threshold": 799,
+      "dynamic": 0,
+      "store": 0
+    }
+  ],
+  "dynamic_floors": [
+    {
+      "threshold": 205,
+      "configured": 1024,
+      "effective": 199,
+      "need": 595,
+      "feasible_slots": 3
+    },
+    {
+      "threshold": 205,
+      "configured": 1024,
+      "effective": 199,
+      "need": 595,
+      "feasible_slots": 3
+    },
+    {
+      "threshold": 205,
+      "configured": 1024,
+      "effective": 199,
+      "need": 595,
+      "feasible_slots": 3
+    },
+    {
+      "threshold": 205,
+      "configured": 1024,
+      "effective": 199,
+      "need": 595,
+      "feasible_slots": 3
+    },
+    {
+      "threshold": 205,
+      "configured": 1024,
+      "effective": 199,
+      "need": 595,
+      "feasible_slots": 3
+    },
+    {
+      "threshold": 205,
+      "configured": 1024,
+      "effective": 199,
+      "need": 595,
+      "feasible_slots": 3
+    },
+    {
+      "threshold": 205,
+      "configured": 1024,
+      "effective": 199,
+      "need": 595,
+      "feasible_slots": 3
+    },
+    {
+      "threshold": 205,
+      "configured": 1024,
+      "effective": 199,
+      "need": 595,
+      "feasible_slots": 3
+    },
+    {
+      "threshold": 213,
+      "configured": 1024,
+      "effective": 196,
+      "need": 587,
+      "feasible_slots": 3
+    },
+    {
+      "threshold": 213,
+      "configured": 1024,
+      "effective": 196,
+      "need": 587,
+      "feasible_slots": 3
+    },
+    {
+      "threshold": 213,
+      "configured": 1024,
+      "effective": 196,
+      "need": 587,
+      "feasible_slots": 3
+    },
+    {
+      "threshold": 213,
+      "configured": 1024,
+      "effective": 196,
+      "need": 587,
+      "feasible_slots": 3
+    },
+    {
+      "threshold": 213,
+      "configured": 1024,
+      "effective": 196,
+      "need": 587,
+      "feasible_slots": 3
+    },
+    {
+      "threshold": 213,
+      "configured": 1024,
+      "effective": 196,
+      "need": 587,
+      "feasible_slots": 3
+    },
+    {
+      "threshold": 213,
+      "configured": 1024,
+      "effective": 196,
+      "need": 587,
+      "feasible_slots": 3
+    },
+    {
+      "threshold": 213,
+      "configured": 1024,
+      "effective": 196,
+      "need": 587,
+      "feasible_slots": 3
+    },
+    {
+      "threshold": 221,
+      "configured": 1024,
+      "effective": 193,
+      "need": 579,
+      "feasible_slots": 3
+    },
+    {
+      "threshold": 221,
+      "configured": 1024,
+      "effective": 193,
+      "need": 579,
+      "feasible_slots": 3
+    },
+    {
+      "threshold": 221,
+      "configured": 1024,
+      "effective": 193,
+      "need": 579,
+      "feasible_slots": 3
+    },
+    {
+      "threshold": 221,
+      "configured": 1024,
+      "effective": 193,
+      "need": 579,
+      "feasible_slots": 3
+    },
+    {
+      "threshold": 221,
+      "configured": 1024,
+      "effective": 193,
+      "need": 579,
+      "feasible_slots": 3
+    },
+    {
+      "threshold": 221,
+      "configured": 1024,
+      "effective": 193,
+      "need": 579,
+      "feasible_slots": 3
+    },
+    {
+      "threshold": 221,
+      "configured": 1024,
+      "effective": 193,
+      "need": 579,
+      "feasible_slots": 3
+    },
+    {
+      "threshold": 221,
+      "configured": 1024,
+      "effective": 193,
+      "need": 579,
+      "feasible_slots": 3
+    }
+  ],
+  "upstream_below_configured_floor": []
+}
