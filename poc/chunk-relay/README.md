@@ -71,12 +71,15 @@ A→B Chunk 1 与 B→C Chunk 0 的真实 TA 活动区间重叠 **5.399 µs**；
 
 第二个真实网络案例使用 65,537 / 262,147 B、4096 B TA、2000 ns 计算，覆盖非整除末段：164 个目标 TA、2 个 C Chunk、通信重叠 5.445 µs、计算重叠 2 µs。结果见 `variant-verification.json`。
 
-自动化检查：Tracker 测试覆盖乱序、完全重复、重叠覆盖、单字节缺口、重复完成、冲突 ID、零长度、越界、整数溢出与 Chunk 独立性；8 个 Python 测试验证正常事件，并拒绝缺失 TA、错误长度、提前/重复转发、缺失 C 完成和错误计算依赖，另测试不相交/端点相接不算重叠。网络验证器逐 TA 检查覆盖和次数、每 Chunk ready/转发/发送端完成关系、两跳及计算重叠。负例只操作 Tracker 或事件副本，不声称网络实现了故障注入。
+自动化检查：Tracker 测试覆盖乱序、完全重复、重叠覆盖、单字节缺口、重复完成、冲突 ID、零长度、越界、整数溢出与 Chunk 独立性；8 个 Python 测试验证正常事件，并拒绝缺失 TA、错误长度、提前/重复转发、缺失 C 完成和错误计算依赖，另测试不相交/端点相接不算重叠。网络验证器逐 TA 检查覆盖和次数、每 Chunk ready/转发/发送端完成关系、两跳及计算重叠。上述元数据负例操作 Tracker 或事件副本；最终版本另有真实网络 payload 单字节损坏负例（见下文），不模拟物理链路随机错误。
 
 ## 完整性能力边界
 
-**本 PoC 验证的是模型元数据与长度完整性，不是业务 payload 字节完整性。** ns-3-ub 此路径根据描述符长度创建 `Packet`；PoC 未装入真实 tensor 字节，未计算端到端 payload hash，也没有声称检查任意字节损坏。B 按已验证逻辑 Chunk 长度重建下游 WQE。任务/源目标/TA 身份、区间覆盖、长度及无重复转发均有自动化检查，但不等价于真实 buffer 内容复制或数据校验和。
+**最终版本已使用固定底层版本提供的 ExplicitPayload API，未修改协议实现。** A 按 Chunk ID 与绝对 offset 生成非恒定确定性字节，设置 `UbWqe::SetExplicitPayload(Create<Packet>(bytes,...))`；UbFunction 分 TA、UbTransport 再分包，接收端重组后由 `request->GetExplicitPayload()->CopyData` 读取实际字节。B、C 对每个 TA 逐字节与独立计算的期望值比较；B 将真正收到的 buffer 作为下一跳 payload，绝不在 B 重新生成数据。每个正常运行共校验 655,360 个 hop-payload 字节（327,680 B × 两跳）。
 
+真实网络负例 `--corrupt=1` 在 B 转发 Chunk 0 前翻转一个字节，C 在 13.500 µs 以 `payload byte mismatch` 拒绝；脚本要求进程失败且出现此错误才判负例测试通过。证据在 `corrupt-console.txt`、`corrupt-test.txt`。这验证了本案例显式字节的应用完整性，不等于任意业务负载、随机网络位翻转、物理硬件或完整 tensor 模型验收通过。
+
+最初元数据版的源码与证据保留于提交 `7ae0407c93cfa6feed634f8cbe63496efb65d68d`，交付包另附原始证据。其“未检查字节”是历史范围，不是底层能力限制。底层既支持长度占位 Packet，也支持显式 payload；之前未启用后者。
 尚未证明任意拓扑/拥塞/丢包/重传负载下的 relay 正确性与性能。重复和乱序通知目前在应用组件层验证；主网络运行使用模型正常流量。计算仅是独立定时事件，不是完整 Compute 解析模型。三节点 PoC 已到此停止。
 
 ## 文件和证据
@@ -93,3 +96,12 @@ A→B Chunk 1 与 B→C Chunk 0 的真实 TA 活动区间重叠 **5.399 µs**；
 ## Future Work（待研究假设）
 
 后续可研究 UB 动态硬件组播是否可用、组配置与控制成本、与 Chunk Relay 的比较，以及不同拓扑和 replica fanout 下的适用条件。目前不假定 UB 或本 ns-3 模型具备此能力，也不把“论文为何选择 Relay”当成已证实事实。下一里程碑须等待用户验收后决定。
+
+
+## 最终复核补充
+
+每个 hop 一个 Chunk 对应一个 WQE，但拆成多个 TA：Chunk 0 为 8 TA，Chunk 1 为 32 TA，因此 (8+32)×2=80 TA；两个 Chunk × 两跳=4 次发送端 WQE 完成。TA ready 使用真实 `UbTransaction::SetTargetExecutor` 注册的回调，回调在重组请求进入 `RunInboundTransaction` 后调用；应用做字节验证、调用 `UbTargetCompletion done(success)`，再更新 Chunk Tracker。
+
+通信窗口定义：每 hop/Chunk 的区间为首个 `WqeSegmentSendsNotify` 接纳时间至最后目标 TA 完成时间。默认 A→B Chunk 1 为 [0.010,26.945] µs，B→C Chunk 0 为 [10.120,15.519] µs，交集 [10.120,15.519] µs。窗口内两跳都必须存在真实目标 TA 到达事件。该定义不是精确物理链路逐字节忙碌区间。计算区间 [10.120,15.120] µs，由 computeNs=5000 明确参数生成；与通信交集为 5 µs。链路 20 ns 是 UbLink 传播参数，未用固定延时直接触发网络接收或 Chunk ready。
+
+重复/乱序/覆盖/缺口负例均实际执行于 `tracker-test.cc`；网络字节损坏负例实际走 B→C 链路。最终默认与末段变体重新构建运行，8 项 Python 测试重新通过。验收结论为本三节点案例及所列测试通过，非全部系统需求验收通过。

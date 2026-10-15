@@ -21,8 +21,10 @@ def verify(path, sizes=(65536,262144), segment=8192, compute_ns=5000):
             sender=one('sender_wqe_complete',h,c)
             received=select('target_ta_received',h,c)
             completed=select('target_ta_complete',h,c)
+            checked=select('payload_bytes_verified',h,c)
             expected=[(o,min(segment,n-o)) for o in range(0,n,segment)]
             assert sorted((r['offset'],r['bytes']) for r in completed)==expected,'missing/duplicate/wrong TA'
+            assert sorted((r['offset'],r['bytes']) for r in checked)==expected,'missing byte verification'
             assert [(r['offset'],r['bytes'],r['time_ps']) for r in received]==[(r['offset'],r['bytes'],r['time_ps']) for r in completed]
             assert all(send<r['time_ps']<=done for r in completed),'early completion'
             assert done==max(r['time_ps'] for r in completed) and sender>done
@@ -45,7 +47,7 @@ def verify(path, sizes=(65536,262144), segment=8192, compute_ns=5000):
     assert compute_overlap>0,'no compute/communication overlap'
     return {'communication_overlap_ps':end-start,'compute_overlap_ps':compute_overlap,
             'C_chunks':2,'target_TAs':sum(len(select('target_ta_complete',h,c)) for h in range(2) for c in range(2)),
-            'integrity':'metadata identity, range coverage and length only; no application payload bytes'}
+            'integrity':'explicit payload bytes checked individually at B and C; B forwards received bytes; identity, coverage and length checked'}
 
 if __name__=='__main__':
     import argparse

@@ -16,6 +16,9 @@ public:
   uint64_t computeNs=5000;
   std::array<Ptr<Node>,3> nodes;
   std::array<std::array<std::unique_ptr<ChunkTracker>,2>,2> trackers;
+  std::array<std::array<std::vector<uint8_t>,2>,2> buffers;
+  bool corrupt=false;
+  static uint8_t Byte(uint32_t c,uint64_t i) { return uint8_t((i*131+(i>>8)*17+c*73+19)%256); }
   std::ofstream events;
   uint32_t completed=0, senderCompleted=0, taCount=0;
   void Event(const std::string& event, uint32_t hop, uint32_t chunk,
@@ -70,6 +73,7 @@ public:
         ++senderCompleted; Event("sender_wqe_complete",hop,c);
       }));
       trackers[hop][c]=std::make_unique<ChunkTracker>(Size(c));
+      buffers[hop][c].resize(Size(c));
     }
     NS_ABORT_MSG_IF(!Ctrl(hop+1)->GetUbTransaction()->SetTargetExecutor(UbTargetExecutor(
       [this,hop](Ptr<const UbWqeSegment> request,const UbTransactionRule&,UbTargetCompletion done) {
@@ -81,6 +85,14 @@ public:
         NS_ABORT_MSG_IF(off>=Size(c) || len!=std::min<uint64_t>(segment,Size(c)-off) ||
                         request->GetPayloadBytes()!=len,"TA metadata length mismatch");
         Event("target_ta_received",hop,c,off,len);
+        NS_ABORT_MSG_IF(!request->HasExplicitPayload() || request->GetExplicitPayload()->GetSize()!=len,"missing explicit bytes");
+        std::vector<uint8_t> bytes(len);
+        request->GetExplicitPayload()->CopyData(bytes.data(),len);
+        for(uint64_t i=0;i<len;++i) {
+          NS_ABORT_MSG_IF(bytes[i]!=Byte(c,off+i),"payload byte mismatch");
+          buffers[hop][c][off+i]=bytes[i];
+        }
+        Event("payload_bytes_verified",hop,c,off,len);
         done(UbWorkExecutionResult{}); // report successful target execution, normal TA response
         ++taCount; Event("target_ta_complete",hop,c,off,len);
         if(trackers[hop][c]->Notify(request->GetTaSsn(),off,len)) {
@@ -99,6 +111,11 @@ public:
     Event("chunk_send",hop,c,0,Size(c));
     auto fn=Ctrl(hop)->GetUbFunction();
     auto wqe=fn->CreateWqe(nodes[hop]->GetId(),nodes[hop+1]->GetId(),Size(c),hop*100+c,UbTransactionOpcode::WRITE);
+    std::vector<uint8_t> payload(Size(c));
+    if(hop==0) { for(uint64_t i=0;i<payload.size();++i) payload[i]=Byte(c,i); }
+    else payload=buffers[0][c]; // forward the actually received bytes, never regenerate at B
+    if(corrupt && hop==1 && c==0) payload[payload.size()/2]^=1;
+    wqe->SetExplicitPayload(Create<Packet>(payload.data(),payload.size()));
     NS_ABORT_MSG_IF(fn->SubmitWqe(wqe,c).status!=UbWqeSubmissionStatus::ACCEPTED,"dynamic WQE admission rejected");
   }
   void Run(const std::string& output) {
@@ -122,5 +139,6 @@ int main(int argc,char** argv) {
   cmd.AddValue("chunk1Bytes","chunk 1 logical bytes",relay.large);
   cmd.AddValue("segmentBytes","TA segment bytes",relay.segment);
   cmd.AddValue("computeNs","independent B NPU duration per ready chunk",relay.computeNs);
+  cmd.AddValue("corrupt","negative test: flip one byte at B before real-network forwarding",relay.corrupt);
   cmd.Parse(argc,argv); relay.Run(output); return 0;
 }

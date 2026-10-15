@@ -31,6 +31,12 @@ cp scratch/2nodes_single-tp/runlog/TaskTrace_*.csv scratch/2nodes_single-tp/runl
 "$PYTHON" "$POC_DIR/verify.py" "$OUT/events.csv" > "$OUT/verification.json"
 "$PYTHON" ./ns3 run --no-build "chunk-relay --chunk0Bytes=65537 --chunk1Bytes=262147 --segmentBytes=4096 --computeNs=2000 --output=$OUT/variant-events.csv" > "$OUT/variant-console.txt" 2>&1
 "$PYTHON" "$POC_DIR/verify.py" "$OUT/variant-events.csv" --sizes 65537 262147 --segment 4096 --compute-ns 2000 > "$OUT/variant-verification.json"
+ulimit -c 0
+if "$PYTHON" ./ns3 run --no-build "chunk-relay --corrupt=1 --output=$OUT/corrupt-events.csv" > "$OUT/corrupt-console.txt" 2>&1; then
+  echo 'ERROR: corrupted payload was accepted' >&2; exit 1
+fi
+grep -q 'payload byte mismatch' "$OUT/corrupt-console.txt"
+printf 'PASS: real-network corrupted byte rejected at C\n' > "$OUT/corrupt-test.txt"
 g++ -std=c++17 -Wall -Wextra -Werror "$POC_DIR/tests/tracker-test.cc" -o "$OUT/tracker-test"
 "$OUT/tracker-test" > "$OUT/tracker-tests.txt"
 "$PYTHON" "$POC_DIR/tests/test-verifier.py" "$OUT/events.csv" > "$OUT/verifier-tests.txt" 2>&1
