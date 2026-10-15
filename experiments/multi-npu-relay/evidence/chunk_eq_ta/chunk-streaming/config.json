@@ -1,0 +1,3262 @@
+{
+  "planner_input": {
+    "schema_version": 1,
+    "npus": 4,
+    "experts": 4,
+    "top_k": 1,
+    "main_placement": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "slots": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "mapping": [
+      {
+        "source": 0,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 1,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 2,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 3,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 0,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 1,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 2,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 3,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 0,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 1,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 2,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 3,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 0,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 1,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 2,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 3,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 0,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 1,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 2,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 3,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 0,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 1,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 2,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 3,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 0,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 1,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 2,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 3,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 0,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 1,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 2,
+        "experts": [
+          0
+        ]
+      },
+      {
+        "source": 3,
+        "experts": [
+          0
+        ]
+      }
+    ],
+    "beta": "1.01",
+    "min_replica_quota": 1024,
+    "mode": "upstream-compatible",
+    "allow_zero_main": false,
+    "rounding": "code",
+    "oracle_epsilon": "0.01",
+    "kernel_stage": 1,
+    "locality_aware": true
+  },
+  "parameters": {
+    "model_dim": 64,
+    "ff_dim": 128,
+    "dtype_bytes": 2,
+    "segment_bytes": 1024,
+    "peak_gflops": 1000,
+    "util_permille": 500,
+    "setup_ns": 100,
+    "seed": 20261015,
+    "link_gbps": 100,
+    "link_delay_ns": 20,
+    "matrices": 3,
+    "planning_ns": 200,
+    "reroute_ns": 100,
+    "weight_completion_ns": 0,
+    "weight_strategy": "chunk-streaming",
+    "weight_bytes": 49152,
+    "weight_size_kind": "matrix_exact",
+    "chunk_bytes": 1024,
+    "relay_min_replicas": 4,
+    "relay_max_relays": 8,
+    "relay_min_fanout_gain": 2,
+    "force_relay": true,
+    "reorder_ns": 0
+  },
+  "runtime": {
+    "model_dim": 64,
+    "ff_dim": 128,
+    "dtype_bytes": 2,
+    "segment_bytes": 1024,
+    "peak_gflops": 1000,
+    "util_permille": 500,
+    "setup_ns": 100,
+    "seed": 20261015,
+    "link_gbps": 100,
+    "link_delay_ns": 20,
+    "matrices": 3,
+    "planning_ns": 200,
+    "reroute_ns": 100,
+    "weight_completion_ns": 0,
+    "weight_strategy": "chunk-streaming",
+    "weight_bytes": 49152,
+    "weight_size_kind": "matrix_exact",
+    "chunk_bytes": 1024,
+    "relay_min_replicas": 4,
+    "relay_max_relays": 8,
+    "relay_min_fanout_gain": 2,
+    "force_relay": true,
+    "reorder_ns": 0
+  },
+  "mode": "ultraep",
+  "assignments": [
+    {
+      "assignment": 0,
+      "token": 0,
+      "rank": 0,
+      "expert": 0,
+      "physical": 0,
+      "source": 0,
+      "target": 0
+    },
+    {
+      "assignment": 1,
+      "token": 1,
+      "rank": 0,
+      "expert": 0,
+      "physical": 3,
+      "source": 1,
+      "target": 1
+    },
+    {
+      "assignment": 2,
+      "token": 2,
+      "rank": 0,
+      "expert": 0,
+      "physical": 5,
+      "source": 2,
+      "target": 2
+    },
+    {
+      "assignment": 3,
+      "token": 3,
+      "rank": 0,
+      "expert": 0,
+      "physical": 0,
+      "source": 3,
+      "target": 0
+    },
+    {
+      "assignment": 4,
+      "token": 4,
+      "rank": 0,
+      "expert": 0,
+      "physical": 0,
+      "source": 0,
+      "target": 0
+    },
+    {
+      "assignment": 5,
+      "token": 5,
+      "rank": 0,
+      "expert": 0,
+      "physical": 3,
+      "source": 1,
+      "target": 1
+    },
+    {
+      "assignment": 6,
+      "token": 6,
+      "rank": 0,
+      "expert": 0,
+      "physical": 5,
+      "source": 2,
+      "target": 2
+    },
+    {
+      "assignment": 7,
+      "token": 7,
+      "rank": 0,
+      "expert": 0,
+      "physical": 0,
+      "source": 3,
+      "target": 0
+    },
+    {
+      "assignment": 8,
+      "token": 8,
+      "rank": 0,
+      "expert": 0,
+      "physical": 0,
+      "source": 0,
+      "target": 0
+    },
+    {
+      "assignment": 9,
+      "token": 9,
+      "rank": 0,
+      "expert": 0,
+      "physical": 3,
+      "source": 1,
+      "target": 1
+    },
+    {
+      "assignment": 10,
+      "token": 10,
+      "rank": 0,
+      "expert": 0,
+      "physical": 5,
+      "source": 2,
+      "target": 2
+    },
+    {
+      "assignment": 11,
+      "token": 11,
+      "rank": 0,
+      "expert": 0,
+      "physical": 3,
+      "source": 3,
+      "target": 1
+    },
+    {
+      "assignment": 12,
+      "token": 12,
+      "rank": 0,
+      "expert": 0,
+      "physical": 0,
+      "source": 0,
+      "target": 0
+    },
+    {
+      "assignment": 13,
+      "token": 13,
+      "rank": 0,
+      "expert": 0,
+      "physical": 3,
+      "source": 1,
+      "target": 1
+    },
+    {
+      "assignment": 14,
+      "token": 14,
+      "rank": 0,
+      "expert": 0,
+      "physical": 5,
+      "source": 2,
+      "target": 2
+    },
+    {
+      "assignment": 15,
+      "token": 15,
+      "rank": 0,
+      "expert": 0,
+      "physical": 3,
+      "source": 3,
+      "target": 1
+    },
+    {
+      "assignment": 16,
+      "token": 16,
+      "rank": 0,
+      "expert": 0,
+      "physical": 0,
+      "source": 0,
+      "target": 0
+    },
+    {
+      "assignment": 17,
+      "token": 17,
+      "rank": 0,
+      "expert": 0,
+      "physical": 3,
+      "source": 1,
+      "target": 1
+    },
+    {
+      "assignment": 18,
+      "token": 18,
+      "rank": 0,
+      "expert": 0,
+      "physical": 5,
+      "source": 2,
+      "target": 2
+    },
+    {
+      "assignment": 19,
+      "token": 19,
+      "rank": 0,
+      "expert": 0,
+      "physical": 5,
+      "source": 3,
+      "target": 2
+    },
+    {
+      "assignment": 20,
+      "token": 20,
+      "rank": 0,
+      "expert": 0,
+      "physical": 0,
+      "source": 0,
+      "target": 0
+    },
+    {
+      "assignment": 21,
+      "token": 21,
+      "rank": 0,
+      "expert": 0,
+      "physical": 3,
+      "source": 1,
+      "target": 1
+    },
+    {
+      "assignment": 22,
+      "token": 22,
+      "rank": 0,
+      "expert": 0,
+      "physical": 5,
+      "source": 2,
+      "target": 2
+    },
+    {
+      "assignment": 23,
+      "token": 23,
+      "rank": 0,
+      "expert": 0,
+      "physical": 5,
+      "source": 3,
+      "target": 2
+    },
+    {
+      "assignment": 24,
+      "token": 24,
+      "rank": 0,
+      "expert": 0,
+      "physical": 0,
+      "source": 0,
+      "target": 0
+    },
+    {
+      "assignment": 25,
+      "token": 25,
+      "rank": 0,
+      "expert": 0,
+      "physical": 3,
+      "source": 1,
+      "target": 1
+    },
+    {
+      "assignment": 26,
+      "token": 26,
+      "rank": 0,
+      "expert": 0,
+      "physical": 5,
+      "source": 2,
+      "target": 2
+    },
+    {
+      "assignment": 27,
+      "token": 27,
+      "rank": 0,
+      "expert": 0,
+      "physical": 7,
+      "source": 3,
+      "target": 3
+    },
+    {
+      "assignment": 28,
+      "token": 28,
+      "rank": 0,
+      "expert": 0,
+      "physical": 0,
+      "source": 0,
+      "target": 0
+    },
+    {
+      "assignment": 29,
+      "token": 29,
+      "rank": 0,
+      "expert": 0,
+      "physical": 3,
+      "source": 1,
+      "target": 1
+    },
+    {
+      "assignment": 30,
+      "token": 30,
+      "rank": 0,
+      "expert": 0,
+      "physical": 5,
+      "source": 2,
+      "target": 2
+    },
+    {
+      "assignment": 31,
+      "token": 31,
+      "rank": 0,
+      "expert": 0,
+      "physical": 7,
+      "source": 3,
+      "target": 3
+    }
+  ],
+  "transfers": [
+    {
+      "task": 0,
+      "stage": 0,
+      "id": 0,
+      "source": 0,
+      "target": 0,
+      "physical": 0,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 1,
+      "stage": 0,
+      "id": 1,
+      "source": 1,
+      "target": 1,
+      "physical": 3,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 2,
+      "stage": 0,
+      "id": 2,
+      "source": 2,
+      "target": 2,
+      "physical": 5,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 3,
+      "stage": 0,
+      "id": 3,
+      "source": 3,
+      "target": 0,
+      "physical": 0,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 4,
+      "stage": 0,
+      "id": 4,
+      "source": 0,
+      "target": 0,
+      "physical": 0,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 5,
+      "stage": 0,
+      "id": 5,
+      "source": 1,
+      "target": 1,
+      "physical": 3,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 6,
+      "stage": 0,
+      "id": 6,
+      "source": 2,
+      "target": 2,
+      "physical": 5,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 7,
+      "stage": 0,
+      "id": 7,
+      "source": 3,
+      "target": 0,
+      "physical": 0,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 8,
+      "stage": 0,
+      "id": 8,
+      "source": 0,
+      "target": 0,
+      "physical": 0,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 9,
+      "stage": 0,
+      "id": 9,
+      "source": 1,
+      "target": 1,
+      "physical": 3,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 10,
+      "stage": 0,
+      "id": 10,
+      "source": 2,
+      "target": 2,
+      "physical": 5,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 11,
+      "stage": 0,
+      "id": 11,
+      "source": 3,
+      "target": 1,
+      "physical": 3,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 12,
+      "stage": 0,
+      "id": 12,
+      "source": 0,
+      "target": 0,
+      "physical": 0,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 13,
+      "stage": 0,
+      "id": 13,
+      "source": 1,
+      "target": 1,
+      "physical": 3,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 14,
+      "stage": 0,
+      "id": 14,
+      "source": 2,
+      "target": 2,
+      "physical": 5,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 15,
+      "stage": 0,
+      "id": 15,
+      "source": 3,
+      "target": 1,
+      "physical": 3,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 16,
+      "stage": 0,
+      "id": 16,
+      "source": 0,
+      "target": 0,
+      "physical": 0,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 17,
+      "stage": 0,
+      "id": 17,
+      "source": 1,
+      "target": 1,
+      "physical": 3,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 18,
+      "stage": 0,
+      "id": 18,
+      "source": 2,
+      "target": 2,
+      "physical": 5,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 19,
+      "stage": 0,
+      "id": 19,
+      "source": 3,
+      "target": 2,
+      "physical": 5,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 20,
+      "stage": 0,
+      "id": 20,
+      "source": 0,
+      "target": 0,
+      "physical": 0,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 21,
+      "stage": 0,
+      "id": 21,
+      "source": 1,
+      "target": 1,
+      "physical": 3,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 22,
+      "stage": 0,
+      "id": 22,
+      "source": 2,
+      "target": 2,
+      "physical": 5,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 23,
+      "stage": 0,
+      "id": 23,
+      "source": 3,
+      "target": 2,
+      "physical": 5,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 24,
+      "stage": 0,
+      "id": 24,
+      "source": 0,
+      "target": 0,
+      "physical": 0,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 25,
+      "stage": 0,
+      "id": 25,
+      "source": 1,
+      "target": 1,
+      "physical": 3,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 26,
+      "stage": 0,
+      "id": 26,
+      "source": 2,
+      "target": 2,
+      "physical": 5,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 27,
+      "stage": 0,
+      "id": 27,
+      "source": 3,
+      "target": 3,
+      "physical": 7,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 28,
+      "stage": 0,
+      "id": 28,
+      "source": 0,
+      "target": 0,
+      "physical": 0,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 29,
+      "stage": 0,
+      "id": 29,
+      "source": 1,
+      "target": 1,
+      "physical": 3,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 30,
+      "stage": 0,
+      "id": 30,
+      "source": 2,
+      "target": 2,
+      "physical": 5,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 31,
+      "stage": 0,
+      "id": 31,
+      "source": 3,
+      "target": 3,
+      "physical": 7,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 32,
+      "stage": 1,
+      "id": 0,
+      "source": 0,
+      "target": 0,
+      "physical": 0,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 33,
+      "stage": 1,
+      "id": 1,
+      "source": 1,
+      "target": 1,
+      "physical": 3,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 34,
+      "stage": 1,
+      "id": 2,
+      "source": 2,
+      "target": 2,
+      "physical": 5,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 35,
+      "stage": 1,
+      "id": 3,
+      "source": 0,
+      "target": 3,
+      "physical": 0,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 36,
+      "stage": 1,
+      "id": 4,
+      "source": 0,
+      "target": 0,
+      "physical": 0,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 37,
+      "stage": 1,
+      "id": 5,
+      "source": 1,
+      "target": 1,
+      "physical": 3,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 38,
+      "stage": 1,
+      "id": 6,
+      "source": 2,
+      "target": 2,
+      "physical": 5,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 39,
+      "stage": 1,
+      "id": 7,
+      "source": 0,
+      "target": 3,
+      "physical": 0,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 40,
+      "stage": 1,
+      "id": 8,
+      "source": 0,
+      "target": 0,
+      "physical": 0,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 41,
+      "stage": 1,
+      "id": 9,
+      "source": 1,
+      "target": 1,
+      "physical": 3,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 42,
+      "stage": 1,
+      "id": 10,
+      "source": 2,
+      "target": 2,
+      "physical": 5,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 43,
+      "stage": 1,
+      "id": 11,
+      "source": 1,
+      "target": 3,
+      "physical": 3,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 44,
+      "stage": 1,
+      "id": 12,
+      "source": 0,
+      "target": 0,
+      "physical": 0,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 45,
+      "stage": 1,
+      "id": 13,
+      "source": 1,
+      "target": 1,
+      "physical": 3,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 46,
+      "stage": 1,
+      "id": 14,
+      "source": 2,
+      "target": 2,
+      "physical": 5,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 47,
+      "stage": 1,
+      "id": 15,
+      "source": 1,
+      "target": 3,
+      "physical": 3,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 48,
+      "stage": 1,
+      "id": 16,
+      "source": 0,
+      "target": 0,
+      "physical": 0,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 49,
+      "stage": 1,
+      "id": 17,
+      "source": 1,
+      "target": 1,
+      "physical": 3,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 50,
+      "stage": 1,
+      "id": 18,
+      "source": 2,
+      "target": 2,
+      "physical": 5,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 51,
+      "stage": 1,
+      "id": 19,
+      "source": 2,
+      "target": 3,
+      "physical": 5,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 52,
+      "stage": 1,
+      "id": 20,
+      "source": 0,
+      "target": 0,
+      "physical": 0,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 53,
+      "stage": 1,
+      "id": 21,
+      "source": 1,
+      "target": 1,
+      "physical": 3,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 54,
+      "stage": 1,
+      "id": 22,
+      "source": 2,
+      "target": 2,
+      "physical": 5,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 55,
+      "stage": 1,
+      "id": 23,
+      "source": 2,
+      "target": 3,
+      "physical": 5,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 56,
+      "stage": 1,
+      "id": 24,
+      "source": 0,
+      "target": 0,
+      "physical": 0,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 57,
+      "stage": 1,
+      "id": 25,
+      "source": 1,
+      "target": 1,
+      "physical": 3,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 58,
+      "stage": 1,
+      "id": 26,
+      "source": 2,
+      "target": 2,
+      "physical": 5,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 59,
+      "stage": 1,
+      "id": 27,
+      "source": 3,
+      "target": 3,
+      "physical": 7,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 60,
+      "stage": 1,
+      "id": 28,
+      "source": 0,
+      "target": 0,
+      "physical": 0,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 61,
+      "stage": 1,
+      "id": 29,
+      "source": 1,
+      "target": 1,
+      "physical": 3,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 62,
+      "stage": 1,
+      "id": 30,
+      "source": 2,
+      "target": 2,
+      "physical": 5,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 63,
+      "stage": 1,
+      "id": 31,
+      "source": 3,
+      "target": 3,
+      "physical": 7,
+      "bytes": 128,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 64,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 0,
+      "dependencies": []
+    },
+    {
+      "task": 65,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 1024,
+      "dependencies": []
+    },
+    {
+      "task": 66,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 2048,
+      "dependencies": []
+    },
+    {
+      "task": 67,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 3072,
+      "dependencies": []
+    },
+    {
+      "task": 68,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 4096,
+      "dependencies": []
+    },
+    {
+      "task": 69,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 5120,
+      "dependencies": []
+    },
+    {
+      "task": 70,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 6144,
+      "dependencies": []
+    },
+    {
+      "task": 71,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 7168,
+      "dependencies": []
+    },
+    {
+      "task": 72,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 8192,
+      "dependencies": []
+    },
+    {
+      "task": 73,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 9216,
+      "dependencies": []
+    },
+    {
+      "task": 74,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 10240,
+      "dependencies": []
+    },
+    {
+      "task": 75,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 11264,
+      "dependencies": []
+    },
+    {
+      "task": 76,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 12288,
+      "dependencies": []
+    },
+    {
+      "task": 77,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 13312,
+      "dependencies": []
+    },
+    {
+      "task": 78,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 14336,
+      "dependencies": []
+    },
+    {
+      "task": 79,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 15360,
+      "dependencies": []
+    },
+    {
+      "task": 80,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 16384,
+      "dependencies": []
+    },
+    {
+      "task": 81,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 17408,
+      "dependencies": []
+    },
+    {
+      "task": 82,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 18432,
+      "dependencies": []
+    },
+    {
+      "task": 83,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 19456,
+      "dependencies": []
+    },
+    {
+      "task": 84,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 20480,
+      "dependencies": []
+    },
+    {
+      "task": 85,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 21504,
+      "dependencies": []
+    },
+    {
+      "task": 86,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 22528,
+      "dependencies": []
+    },
+    {
+      "task": 87,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 23552,
+      "dependencies": []
+    },
+    {
+      "task": 88,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 24576,
+      "dependencies": []
+    },
+    {
+      "task": 89,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 25600,
+      "dependencies": []
+    },
+    {
+      "task": 90,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 26624,
+      "dependencies": []
+    },
+    {
+      "task": 91,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 27648,
+      "dependencies": []
+    },
+    {
+      "task": 92,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 28672,
+      "dependencies": []
+    },
+    {
+      "task": 93,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 29696,
+      "dependencies": []
+    },
+    {
+      "task": 94,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 30720,
+      "dependencies": []
+    },
+    {
+      "task": 95,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 31744,
+      "dependencies": []
+    },
+    {
+      "task": 96,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 32768,
+      "dependencies": []
+    },
+    {
+      "task": 97,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 33792,
+      "dependencies": []
+    },
+    {
+      "task": 98,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 34816,
+      "dependencies": []
+    },
+    {
+      "task": 99,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 35840,
+      "dependencies": []
+    },
+    {
+      "task": 100,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 36864,
+      "dependencies": []
+    },
+    {
+      "task": 101,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 37888,
+      "dependencies": []
+    },
+    {
+      "task": 102,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 38912,
+      "dependencies": []
+    },
+    {
+      "task": 103,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 39936,
+      "dependencies": []
+    },
+    {
+      "task": 104,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 40960,
+      "dependencies": []
+    },
+    {
+      "task": 105,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 41984,
+      "dependencies": []
+    },
+    {
+      "task": 106,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 43008,
+      "dependencies": []
+    },
+    {
+      "task": 107,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 44032,
+      "dependencies": []
+    },
+    {
+      "task": 108,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 45056,
+      "dependencies": []
+    },
+    {
+      "task": 109,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 46080,
+      "dependencies": []
+    },
+    {
+      "task": 110,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 47104,
+      "dependencies": []
+    },
+    {
+      "task": 111,
+      "stage": 2,
+      "id": 3,
+      "source": 0,
+      "target": 1,
+      "physical": 3,
+      "bytes": 1024,
+      "source_physical": 0,
+      "offset": 48128,
+      "dependencies": []
+    },
+    {
+      "task": 112,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 0,
+      "dependencies": [
+        64
+      ]
+    },
+    {
+      "task": 113,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 0,
+      "dependencies": [
+        64
+      ]
+    },
+    {
+      "task": 114,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 1024,
+      "dependencies": [
+        65
+      ]
+    },
+    {
+      "task": 115,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 1024,
+      "dependencies": [
+        65
+      ]
+    },
+    {
+      "task": 116,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 2048,
+      "dependencies": [
+        66
+      ]
+    },
+    {
+      "task": 117,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 2048,
+      "dependencies": [
+        66
+      ]
+    },
+    {
+      "task": 118,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 3072,
+      "dependencies": [
+        67
+      ]
+    },
+    {
+      "task": 119,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 3072,
+      "dependencies": [
+        67
+      ]
+    },
+    {
+      "task": 120,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 4096,
+      "dependencies": [
+        68
+      ]
+    },
+    {
+      "task": 121,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 4096,
+      "dependencies": [
+        68
+      ]
+    },
+    {
+      "task": 122,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 5120,
+      "dependencies": [
+        69
+      ]
+    },
+    {
+      "task": 123,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 5120,
+      "dependencies": [
+        69
+      ]
+    },
+    {
+      "task": 124,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 6144,
+      "dependencies": [
+        70
+      ]
+    },
+    {
+      "task": 125,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 6144,
+      "dependencies": [
+        70
+      ]
+    },
+    {
+      "task": 126,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 7168,
+      "dependencies": [
+        71
+      ]
+    },
+    {
+      "task": 127,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 7168,
+      "dependencies": [
+        71
+      ]
+    },
+    {
+      "task": 128,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 8192,
+      "dependencies": [
+        72
+      ]
+    },
+    {
+      "task": 129,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 8192,
+      "dependencies": [
+        72
+      ]
+    },
+    {
+      "task": 130,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 9216,
+      "dependencies": [
+        73
+      ]
+    },
+    {
+      "task": 131,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 9216,
+      "dependencies": [
+        73
+      ]
+    },
+    {
+      "task": 132,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 10240,
+      "dependencies": [
+        74
+      ]
+    },
+    {
+      "task": 133,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 10240,
+      "dependencies": [
+        74
+      ]
+    },
+    {
+      "task": 134,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 11264,
+      "dependencies": [
+        75
+      ]
+    },
+    {
+      "task": 135,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 11264,
+      "dependencies": [
+        75
+      ]
+    },
+    {
+      "task": 136,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 12288,
+      "dependencies": [
+        76
+      ]
+    },
+    {
+      "task": 137,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 12288,
+      "dependencies": [
+        76
+      ]
+    },
+    {
+      "task": 138,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 13312,
+      "dependencies": [
+        77
+      ]
+    },
+    {
+      "task": 139,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 13312,
+      "dependencies": [
+        77
+      ]
+    },
+    {
+      "task": 140,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 14336,
+      "dependencies": [
+        78
+      ]
+    },
+    {
+      "task": 141,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 14336,
+      "dependencies": [
+        78
+      ]
+    },
+    {
+      "task": 142,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 15360,
+      "dependencies": [
+        79
+      ]
+    },
+    {
+      "task": 143,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 15360,
+      "dependencies": [
+        79
+      ]
+    },
+    {
+      "task": 144,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 16384,
+      "dependencies": [
+        80
+      ]
+    },
+    {
+      "task": 145,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 16384,
+      "dependencies": [
+        80
+      ]
+    },
+    {
+      "task": 146,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 17408,
+      "dependencies": [
+        81
+      ]
+    },
+    {
+      "task": 147,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 17408,
+      "dependencies": [
+        81
+      ]
+    },
+    {
+      "task": 148,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 18432,
+      "dependencies": [
+        82
+      ]
+    },
+    {
+      "task": 149,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 18432,
+      "dependencies": [
+        82
+      ]
+    },
+    {
+      "task": 150,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 19456,
+      "dependencies": [
+        83
+      ]
+    },
+    {
+      "task": 151,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 19456,
+      "dependencies": [
+        83
+      ]
+    },
+    {
+      "task": 152,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 20480,
+      "dependencies": [
+        84
+      ]
+    },
+    {
+      "task": 153,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 20480,
+      "dependencies": [
+        84
+      ]
+    },
+    {
+      "task": 154,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 21504,
+      "dependencies": [
+        85
+      ]
+    },
+    {
+      "task": 155,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 21504,
+      "dependencies": [
+        85
+      ]
+    },
+    {
+      "task": 156,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 22528,
+      "dependencies": [
+        86
+      ]
+    },
+    {
+      "task": 157,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 22528,
+      "dependencies": [
+        86
+      ]
+    },
+    {
+      "task": 158,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 23552,
+      "dependencies": [
+        87
+      ]
+    },
+    {
+      "task": 159,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 23552,
+      "dependencies": [
+        87
+      ]
+    },
+    {
+      "task": 160,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 24576,
+      "dependencies": [
+        88
+      ]
+    },
+    {
+      "task": 161,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 24576,
+      "dependencies": [
+        88
+      ]
+    },
+    {
+      "task": 162,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 25600,
+      "dependencies": [
+        89
+      ]
+    },
+    {
+      "task": 163,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 25600,
+      "dependencies": [
+        89
+      ]
+    },
+    {
+      "task": 164,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 26624,
+      "dependencies": [
+        90
+      ]
+    },
+    {
+      "task": 165,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 26624,
+      "dependencies": [
+        90
+      ]
+    },
+    {
+      "task": 166,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 27648,
+      "dependencies": [
+        91
+      ]
+    },
+    {
+      "task": 167,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 27648,
+      "dependencies": [
+        91
+      ]
+    },
+    {
+      "task": 168,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 28672,
+      "dependencies": [
+        92
+      ]
+    },
+    {
+      "task": 169,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 28672,
+      "dependencies": [
+        92
+      ]
+    },
+    {
+      "task": 170,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 29696,
+      "dependencies": [
+        93
+      ]
+    },
+    {
+      "task": 171,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 29696,
+      "dependencies": [
+        93
+      ]
+    },
+    {
+      "task": 172,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 30720,
+      "dependencies": [
+        94
+      ]
+    },
+    {
+      "task": 173,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 30720,
+      "dependencies": [
+        94
+      ]
+    },
+    {
+      "task": 174,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 31744,
+      "dependencies": [
+        95
+      ]
+    },
+    {
+      "task": 175,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 31744,
+      "dependencies": [
+        95
+      ]
+    },
+    {
+      "task": 176,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 32768,
+      "dependencies": [
+        96
+      ]
+    },
+    {
+      "task": 177,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 32768,
+      "dependencies": [
+        96
+      ]
+    },
+    {
+      "task": 178,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 33792,
+      "dependencies": [
+        97
+      ]
+    },
+    {
+      "task": 179,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 33792,
+      "dependencies": [
+        97
+      ]
+    },
+    {
+      "task": 180,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 34816,
+      "dependencies": [
+        98
+      ]
+    },
+    {
+      "task": 181,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 34816,
+      "dependencies": [
+        98
+      ]
+    },
+    {
+      "task": 182,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 35840,
+      "dependencies": [
+        99
+      ]
+    },
+    {
+      "task": 183,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 35840,
+      "dependencies": [
+        99
+      ]
+    },
+    {
+      "task": 184,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 36864,
+      "dependencies": [
+        100
+      ]
+    },
+    {
+      "task": 185,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 36864,
+      "dependencies": [
+        100
+      ]
+    },
+    {
+      "task": 186,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 37888,
+      "dependencies": [
+        101
+      ]
+    },
+    {
+      "task": 187,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 37888,
+      "dependencies": [
+        101
+      ]
+    },
+    {
+      "task": 188,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 38912,
+      "dependencies": [
+        102
+      ]
+    },
+    {
+      "task": 189,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 38912,
+      "dependencies": [
+        102
+      ]
+    },
+    {
+      "task": 190,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 39936,
+      "dependencies": [
+        103
+      ]
+    },
+    {
+      "task": 191,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 39936,
+      "dependencies": [
+        103
+      ]
+    },
+    {
+      "task": 192,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 40960,
+      "dependencies": [
+        104
+      ]
+    },
+    {
+      "task": 193,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 40960,
+      "dependencies": [
+        104
+      ]
+    },
+    {
+      "task": 194,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 41984,
+      "dependencies": [
+        105
+      ]
+    },
+    {
+      "task": 195,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 41984,
+      "dependencies": [
+        105
+      ]
+    },
+    {
+      "task": 196,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 43008,
+      "dependencies": [
+        106
+      ]
+    },
+    {
+      "task": 197,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 43008,
+      "dependencies": [
+        106
+      ]
+    },
+    {
+      "task": 198,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 44032,
+      "dependencies": [
+        107
+      ]
+    },
+    {
+      "task": 199,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 44032,
+      "dependencies": [
+        107
+      ]
+    },
+    {
+      "task": 200,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 45056,
+      "dependencies": [
+        108
+      ]
+    },
+    {
+      "task": 201,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 45056,
+      "dependencies": [
+        108
+      ]
+    },
+    {
+      "task": 202,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 46080,
+      "dependencies": [
+        109
+      ]
+    },
+    {
+      "task": 203,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 46080,
+      "dependencies": [
+        109
+      ]
+    },
+    {
+      "task": 204,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 47104,
+      "dependencies": [
+        110
+      ]
+    },
+    {
+      "task": 205,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 47104,
+      "dependencies": [
+        110
+      ]
+    },
+    {
+      "task": 206,
+      "stage": 2,
+      "id": 5,
+      "source": 1,
+      "target": 2,
+      "physical": 5,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 48128,
+      "dependencies": [
+        111
+      ]
+    },
+    {
+      "task": 207,
+      "stage": 2,
+      "id": 7,
+      "source": 1,
+      "target": 3,
+      "physical": 7,
+      "bytes": 1024,
+      "source_physical": 3,
+      "offset": 48128,
+      "dependencies": [
+        111
+      ]
+    }
+  ],
+  "weight_strategy": "chunk-streaming",
+  "relay_parameters": {
+    "chunk_bytes": 1024,
+    "relay_min_replicas": 4,
+    "relay_max_relays": 8,
+    "relay_min_fanout_gain": 2,
+    "force_relay": true,
+    "reorder_ns": 0
+  }
+}

@@ -1,0 +1,3685 @@
+{
+  "schema_version": 1,
+  "mode": "upstream-compatible",
+  "lambda_axes": [
+    "source_rank",
+    "logical_expert"
+  ],
+  "lambda_source_expert": [
+    [
+      5,
+      5,
+      5,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      5,
+      5,
+      5,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      5,
+      5,
+      5,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      5,
+      5,
+      5,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      5,
+      5,
+      5,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      5,
+      5,
+      5,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      5,
+      5,
+      5,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      5,
+      5,
+      5,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "expert_load": [
+    40,
+    40,
+    40,
+    40,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "physical": [
+    {
+      "expert": 0,
+      "id": 0,
+      "rank": 0,
+      "quota": 1,
+      "kind": "main",
+      "slot": 0,
+      "weight_source_rank": 0,
+      "weight_source_physical": 0
+    },
+    {
+      "expert": 1,
+      "id": 1,
+      "rank": 0,
+      "quota": 21,
+      "kind": "main",
+      "slot": 1,
+      "weight_source_rank": 0,
+      "weight_source_physical": 1
+    },
+    {
+      "expert": 2,
+      "id": 5,
+      "rank": 1,
+      "quota": 1,
+      "kind": "main",
+      "slot": 0,
+      "weight_source_rank": 1,
+      "weight_source_physical": 5
+    },
+    {
+      "expert": 3,
+      "id": 6,
+      "rank": 1,
+      "quota": 21,
+      "kind": "main",
+      "slot": 1,
+      "weight_source_rank": 1,
+      "weight_source_physical": 6
+    },
+    {
+      "expert": 4,
+      "id": 10,
+      "rank": 2,
+      "quota": 0,
+      "kind": "main",
+      "slot": 0,
+      "weight_source_rank": 2,
+      "weight_source_physical": 10
+    },
+    {
+      "expert": 5,
+      "id": 11,
+      "rank": 2,
+      "quota": 0,
+      "kind": "main",
+      "slot": 1,
+      "weight_source_rank": 2,
+      "weight_source_physical": 11
+    },
+    {
+      "expert": 0,
+      "id": 12,
+      "rank": 2,
+      "quota": 22,
+      "kind": "replica",
+      "slot": 2,
+      "weight_source_rank": 0,
+      "weight_source_physical": 0
+    },
+    {
+      "expert": 6,
+      "id": 15,
+      "rank": 3,
+      "quota": 0,
+      "kind": "main",
+      "slot": 0,
+      "weight_source_rank": 3,
+      "weight_source_physical": 15
+    },
+    {
+      "expert": 7,
+      "id": 16,
+      "rank": 3,
+      "quota": 0,
+      "kind": "main",
+      "slot": 1,
+      "weight_source_rank": 3,
+      "weight_source_physical": 16
+    },
+    {
+      "expert": 0,
+      "id": 17,
+      "rank": 3,
+      "quota": 17,
+      "kind": "replica",
+      "slot": 2,
+      "weight_source_rank": 0,
+      "weight_source_physical": 0
+    },
+    {
+      "expert": 8,
+      "id": 20,
+      "rank": 4,
+      "quota": 0,
+      "kind": "main",
+      "slot": 0,
+      "weight_source_rank": 4,
+      "weight_source_physical": 20
+    },
+    {
+      "expert": 9,
+      "id": 21,
+      "rank": 4,
+      "quota": 0,
+      "kind": "main",
+      "slot": 1,
+      "weight_source_rank": 4,
+      "weight_source_physical": 21
+    },
+    {
+      "expert": 1,
+      "id": 22,
+      "rank": 4,
+      "quota": 19,
+      "kind": "replica",
+      "slot": 2,
+      "weight_source_rank": 0,
+      "weight_source_physical": 1
+    },
+    {
+      "expert": 10,
+      "id": 25,
+      "rank": 5,
+      "quota": 0,
+      "kind": "main",
+      "slot": 0,
+      "weight_source_rank": 5,
+      "weight_source_physical": 25
+    },
+    {
+      "expert": 11,
+      "id": 26,
+      "rank": 5,
+      "quota": 0,
+      "kind": "main",
+      "slot": 1,
+      "weight_source_rank": 5,
+      "weight_source_physical": 26
+    },
+    {
+      "expert": 2,
+      "id": 27,
+      "rank": 5,
+      "quota": 22,
+      "kind": "replica",
+      "slot": 2,
+      "weight_source_rank": 1,
+      "weight_source_physical": 5
+    },
+    {
+      "expert": 12,
+      "id": 30,
+      "rank": 6,
+      "quota": 0,
+      "kind": "main",
+      "slot": 0,
+      "weight_source_rank": 6,
+      "weight_source_physical": 30
+    },
+    {
+      "expert": 13,
+      "id": 31,
+      "rank": 6,
+      "quota": 0,
+      "kind": "main",
+      "slot": 1,
+      "weight_source_rank": 6,
+      "weight_source_physical": 31
+    },
+    {
+      "expert": 2,
+      "id": 32,
+      "rank": 6,
+      "quota": 17,
+      "kind": "replica",
+      "slot": 2,
+      "weight_source_rank": 1,
+      "weight_source_physical": 5
+    },
+    {
+      "expert": 14,
+      "id": 35,
+      "rank": 7,
+      "quota": 0,
+      "kind": "main",
+      "slot": 0,
+      "weight_source_rank": 7,
+      "weight_source_physical": 35
+    },
+    {
+      "expert": 15,
+      "id": 36,
+      "rank": 7,
+      "quota": 0,
+      "kind": "main",
+      "slot": 1,
+      "weight_source_rank": 7,
+      "weight_source_physical": 36
+    },
+    {
+      "expert": 3,
+      "id": 37,
+      "rank": 7,
+      "quota": 19,
+      "kind": "replica",
+      "slot": 2,
+      "weight_source_rank": 1,
+      "weight_source_physical": 6
+    }
+  ],
+  "q_axes": [
+    "source_rank",
+    "physical_id_in_q_physical_ids"
+  ],
+  "q_physical_ids": [
+    0,
+    1,
+    5,
+    6,
+    10,
+    11,
+    12,
+    15,
+    16,
+    17,
+    20,
+    21,
+    22,
+    25,
+    26,
+    27,
+    30,
+    31,
+    32,
+    35,
+    36,
+    37
+  ],
+  "source_quotas": [
+    [
+      1,
+      5,
+      0,
+      1,
+      0,
+      0,
+      2,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3,
+      0,
+      0,
+      2,
+      0,
+      0,
+      4
+    ],
+    [
+      0,
+      1,
+      1,
+      5,
+      0,
+      0,
+      3,
+      0,
+      0,
+      2,
+      0,
+      0,
+      4,
+      0,
+      0,
+      2,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      3,
+      0,
+      3,
+      0,
+      0,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      3,
+      0,
+      0,
+      2,
+      0,
+      0,
+      2
+    ],
+    [
+      0,
+      3,
+      0,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      5,
+      0,
+      0,
+      2,
+      0,
+      0,
+      3,
+      0,
+      0,
+      2,
+      0,
+      0,
+      2
+    ],
+    [
+      0,
+      0,
+      0,
+      3,
+      0,
+      0,
+      3,
+      0,
+      0,
+      2,
+      0,
+      0,
+      5,
+      0,
+      0,
+      3,
+      0,
+      0,
+      2,
+      0,
+      0,
+      2
+    ],
+    [
+      0,
+      3,
+      0,
+      3,
+      0,
+      0,
+      3,
+      0,
+      0,
+      2,
+      0,
+      0,
+      2,
+      0,
+      0,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2
+    ],
+    [
+      0,
+      3,
+      0,
+      3,
+      0,
+      0,
+      3,
+      0,
+      0,
+      2,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      5,
+      0,
+      0,
+      2
+    ],
+    [
+      0,
+      3,
+      0,
+      0,
+      0,
+      0,
+      3,
+      0,
+      0,
+      2,
+      0,
+      0,
+      2,
+      0,
+      0,
+      3,
+      0,
+      0,
+      2,
+      0,
+      0,
+      5
+    ]
+  ],
+  "token_mapping": [
+    {
+      "token": 0,
+      "source": 0,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        0
+      ]
+    },
+    {
+      "token": 1,
+      "source": 1,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        12
+      ]
+    },
+    {
+      "token": 2,
+      "source": 2,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        12
+      ]
+    },
+    {
+      "token": 3,
+      "source": 3,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        17
+      ]
+    },
+    {
+      "token": 4,
+      "source": 4,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        12
+      ]
+    },
+    {
+      "token": 5,
+      "source": 5,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        12
+      ]
+    },
+    {
+      "token": 6,
+      "source": 6,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        12
+      ]
+    },
+    {
+      "token": 7,
+      "source": 7,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        12
+      ]
+    },
+    {
+      "token": 8,
+      "source": 0,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        12
+      ]
+    },
+    {
+      "token": 9,
+      "source": 1,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        12
+      ]
+    },
+    {
+      "token": 10,
+      "source": 2,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        12
+      ]
+    },
+    {
+      "token": 11,
+      "source": 3,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        17
+      ]
+    },
+    {
+      "token": 12,
+      "source": 4,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        12
+      ]
+    },
+    {
+      "token": 13,
+      "source": 5,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        12
+      ]
+    },
+    {
+      "token": 14,
+      "source": 6,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        12
+      ]
+    },
+    {
+      "token": 15,
+      "source": 7,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        12
+      ]
+    },
+    {
+      "token": 16,
+      "source": 0,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        12
+      ]
+    },
+    {
+      "token": 17,
+      "source": 1,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        12
+      ]
+    },
+    {
+      "token": 18,
+      "source": 2,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        12
+      ]
+    },
+    {
+      "token": 19,
+      "source": 3,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        17
+      ]
+    },
+    {
+      "token": 20,
+      "source": 4,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        12
+      ]
+    },
+    {
+      "token": 21,
+      "source": 5,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        12
+      ]
+    },
+    {
+      "token": 22,
+      "source": 6,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        12
+      ]
+    },
+    {
+      "token": 23,
+      "source": 7,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        12
+      ]
+    },
+    {
+      "token": 24,
+      "source": 0,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        17
+      ]
+    },
+    {
+      "token": 25,
+      "source": 1,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        17
+      ]
+    },
+    {
+      "token": 26,
+      "source": 2,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        12
+      ]
+    },
+    {
+      "token": 27,
+      "source": 3,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        17
+      ]
+    },
+    {
+      "token": 28,
+      "source": 4,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        17
+      ]
+    },
+    {
+      "token": 29,
+      "source": 5,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        17
+      ]
+    },
+    {
+      "token": 30,
+      "source": 6,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        17
+      ]
+    },
+    {
+      "token": 31,
+      "source": 7,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        17
+      ]
+    },
+    {
+      "token": 32,
+      "source": 0,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        17
+      ]
+    },
+    {
+      "token": 33,
+      "source": 1,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        17
+      ]
+    },
+    {
+      "token": 34,
+      "source": 2,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        12
+      ]
+    },
+    {
+      "token": 35,
+      "source": 3,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        17
+      ]
+    },
+    {
+      "token": 36,
+      "source": 4,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        17
+      ]
+    },
+    {
+      "token": 37,
+      "source": 5,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        17
+      ]
+    },
+    {
+      "token": 38,
+      "source": 6,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        17
+      ]
+    },
+    {
+      "token": 39,
+      "source": 7,
+      "logical_experts": [
+        0
+      ],
+      "physical_experts": [
+        17
+      ]
+    },
+    {
+      "token": 40,
+      "source": 1,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 41,
+      "source": 2,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 42,
+      "source": 3,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 43,
+      "source": 4,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        22
+      ]
+    },
+    {
+      "token": 44,
+      "source": 5,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 45,
+      "source": 6,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 46,
+      "source": 7,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 47,
+      "source": 0,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 48,
+      "source": 1,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        22
+      ]
+    },
+    {
+      "token": 49,
+      "source": 2,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 50,
+      "source": 3,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 51,
+      "source": 4,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        22
+      ]
+    },
+    {
+      "token": 52,
+      "source": 5,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 53,
+      "source": 6,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 54,
+      "source": 7,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 55,
+      "source": 0,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 56,
+      "source": 1,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        22
+      ]
+    },
+    {
+      "token": 57,
+      "source": 2,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 58,
+      "source": 3,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 59,
+      "source": 4,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        22
+      ]
+    },
+    {
+      "token": 60,
+      "source": 5,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 61,
+      "source": 6,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 62,
+      "source": 7,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 63,
+      "source": 0,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 64,
+      "source": 1,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        22
+      ]
+    },
+    {
+      "token": 65,
+      "source": 2,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        22
+      ]
+    },
+    {
+      "token": 66,
+      "source": 3,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        22
+      ]
+    },
+    {
+      "token": 67,
+      "source": 4,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        22
+      ]
+    },
+    {
+      "token": 68,
+      "source": 5,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        22
+      ]
+    },
+    {
+      "token": 69,
+      "source": 6,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        22
+      ]
+    },
+    {
+      "token": 70,
+      "source": 7,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        22
+      ]
+    },
+    {
+      "token": 71,
+      "source": 0,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 72,
+      "source": 1,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        22
+      ]
+    },
+    {
+      "token": 73,
+      "source": 2,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        22
+      ]
+    },
+    {
+      "token": 74,
+      "source": 3,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        22
+      ]
+    },
+    {
+      "token": 75,
+      "source": 4,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        22
+      ]
+    },
+    {
+      "token": 76,
+      "source": 5,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        22
+      ]
+    },
+    {
+      "token": 77,
+      "source": 6,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        22
+      ]
+    },
+    {
+      "token": 78,
+      "source": 7,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        22
+      ]
+    },
+    {
+      "token": 79,
+      "source": 0,
+      "logical_experts": [
+        1
+      ],
+      "physical_experts": [
+        1
+      ]
+    },
+    {
+      "token": 80,
+      "source": 2,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        27
+      ]
+    },
+    {
+      "token": 81,
+      "source": 3,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        27
+      ]
+    },
+    {
+      "token": 82,
+      "source": 4,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        27
+      ]
+    },
+    {
+      "token": 83,
+      "source": 5,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        27
+      ]
+    },
+    {
+      "token": 84,
+      "source": 6,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        32
+      ]
+    },
+    {
+      "token": 85,
+      "source": 7,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        27
+      ]
+    },
+    {
+      "token": 86,
+      "source": 0,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        27
+      ]
+    },
+    {
+      "token": 87,
+      "source": 1,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        5
+      ]
+    },
+    {
+      "token": 88,
+      "source": 2,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        27
+      ]
+    },
+    {
+      "token": 89,
+      "source": 3,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        27
+      ]
+    },
+    {
+      "token": 90,
+      "source": 4,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        27
+      ]
+    },
+    {
+      "token": 91,
+      "source": 5,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        27
+      ]
+    },
+    {
+      "token": 92,
+      "source": 6,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        32
+      ]
+    },
+    {
+      "token": 93,
+      "source": 7,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        27
+      ]
+    },
+    {
+      "token": 94,
+      "source": 0,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        27
+      ]
+    },
+    {
+      "token": 95,
+      "source": 1,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        27
+      ]
+    },
+    {
+      "token": 96,
+      "source": 2,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        27
+      ]
+    },
+    {
+      "token": 97,
+      "source": 3,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        27
+      ]
+    },
+    {
+      "token": 98,
+      "source": 4,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        27
+      ]
+    },
+    {
+      "token": 99,
+      "source": 5,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        27
+      ]
+    },
+    {
+      "token": 100,
+      "source": 6,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        32
+      ]
+    },
+    {
+      "token": 101,
+      "source": 7,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        27
+      ]
+    },
+    {
+      "token": 102,
+      "source": 0,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        27
+      ]
+    },
+    {
+      "token": 103,
+      "source": 1,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        27
+      ]
+    },
+    {
+      "token": 104,
+      "source": 2,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        32
+      ]
+    },
+    {
+      "token": 105,
+      "source": 3,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        32
+      ]
+    },
+    {
+      "token": 106,
+      "source": 4,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        32
+      ]
+    },
+    {
+      "token": 107,
+      "source": 5,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        27
+      ]
+    },
+    {
+      "token": 108,
+      "source": 6,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        32
+      ]
+    },
+    {
+      "token": 109,
+      "source": 7,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        32
+      ]
+    },
+    {
+      "token": 110,
+      "source": 0,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        32
+      ]
+    },
+    {
+      "token": 111,
+      "source": 1,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        32
+      ]
+    },
+    {
+      "token": 112,
+      "source": 2,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        32
+      ]
+    },
+    {
+      "token": 113,
+      "source": 3,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        32
+      ]
+    },
+    {
+      "token": 114,
+      "source": 4,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        32
+      ]
+    },
+    {
+      "token": 115,
+      "source": 5,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        27
+      ]
+    },
+    {
+      "token": 116,
+      "source": 6,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        32
+      ]
+    },
+    {
+      "token": 117,
+      "source": 7,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        32
+      ]
+    },
+    {
+      "token": 118,
+      "source": 0,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        32
+      ]
+    },
+    {
+      "token": 119,
+      "source": 1,
+      "logical_experts": [
+        2
+      ],
+      "physical_experts": [
+        32
+      ]
+    },
+    {
+      "token": 120,
+      "source": 3,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        6
+      ]
+    },
+    {
+      "token": 121,
+      "source": 4,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        6
+      ]
+    },
+    {
+      "token": 122,
+      "source": 5,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        6
+      ]
+    },
+    {
+      "token": 123,
+      "source": 6,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        6
+      ]
+    },
+    {
+      "token": 124,
+      "source": 7,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        37
+      ]
+    },
+    {
+      "token": 125,
+      "source": 0,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        6
+      ]
+    },
+    {
+      "token": 126,
+      "source": 1,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        6
+      ]
+    },
+    {
+      "token": 127,
+      "source": 2,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        6
+      ]
+    },
+    {
+      "token": 128,
+      "source": 3,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        6
+      ]
+    },
+    {
+      "token": 129,
+      "source": 4,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        6
+      ]
+    },
+    {
+      "token": 130,
+      "source": 5,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        6
+      ]
+    },
+    {
+      "token": 131,
+      "source": 6,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        6
+      ]
+    },
+    {
+      "token": 132,
+      "source": 7,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        37
+      ]
+    },
+    {
+      "token": 133,
+      "source": 0,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        37
+      ]
+    },
+    {
+      "token": 134,
+      "source": 1,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        6
+      ]
+    },
+    {
+      "token": 135,
+      "source": 2,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        6
+      ]
+    },
+    {
+      "token": 136,
+      "source": 3,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        6
+      ]
+    },
+    {
+      "token": 137,
+      "source": 4,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        6
+      ]
+    },
+    {
+      "token": 138,
+      "source": 5,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        6
+      ]
+    },
+    {
+      "token": 139,
+      "source": 6,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        6
+      ]
+    },
+    {
+      "token": 140,
+      "source": 7,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        37
+      ]
+    },
+    {
+      "token": 141,
+      "source": 0,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        37
+      ]
+    },
+    {
+      "token": 142,
+      "source": 1,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        6
+      ]
+    },
+    {
+      "token": 143,
+      "source": 2,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        6
+      ]
+    },
+    {
+      "token": 144,
+      "source": 3,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        37
+      ]
+    },
+    {
+      "token": 145,
+      "source": 4,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        37
+      ]
+    },
+    {
+      "token": 146,
+      "source": 5,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        37
+      ]
+    },
+    {
+      "token": 147,
+      "source": 6,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        37
+      ]
+    },
+    {
+      "token": 148,
+      "source": 7,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        37
+      ]
+    },
+    {
+      "token": 149,
+      "source": 0,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        37
+      ]
+    },
+    {
+      "token": 150,
+      "source": 1,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        6
+      ]
+    },
+    {
+      "token": 151,
+      "source": 2,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        37
+      ]
+    },
+    {
+      "token": 152,
+      "source": 3,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        37
+      ]
+    },
+    {
+      "token": 153,
+      "source": 4,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        37
+      ]
+    },
+    {
+      "token": 154,
+      "source": 5,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        37
+      ]
+    },
+    {
+      "token": 155,
+      "source": 6,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        37
+      ]
+    },
+    {
+      "token": 156,
+      "source": 7,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        37
+      ]
+    },
+    {
+      "token": 157,
+      "source": 0,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        37
+      ]
+    },
+    {
+      "token": 158,
+      "source": 1,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        6
+      ]
+    },
+    {
+      "token": 159,
+      "source": 2,
+      "logical_experts": [
+        3
+      ],
+      "physical_experts": [
+        37
+      ]
+    }
+  ],
+  "weight_dependencies": [
+    {
+      "expert": 0,
+      "from_rank": 0,
+      "from_physical": 0,
+      "to_rank": 2,
+      "to_physical": 12,
+      "requires_weight_ready": true
+    },
+    {
+      "expert": 0,
+      "from_rank": 0,
+      "from_physical": 0,
+      "to_rank": 3,
+      "to_physical": 17,
+      "requires_weight_ready": true
+    },
+    {
+      "expert": 1,
+      "from_rank": 0,
+      "from_physical": 1,
+      "to_rank": 4,
+      "to_physical": 22,
+      "requires_weight_ready": true
+    },
+    {
+      "expert": 2,
+      "from_rank": 1,
+      "from_physical": 5,
+      "to_rank": 5,
+      "to_physical": 27,
+      "requires_weight_ready": true
+    },
+    {
+      "expert": 2,
+      "from_rank": 1,
+      "from_physical": 5,
+      "to_rank": 6,
+      "to_physical": 32,
+      "requires_weight_ready": true
+    },
+    {
+      "expert": 3,
+      "from_rank": 1,
+      "from_physical": 6,
+      "to_rank": 7,
+      "to_physical": 37,
+      "requires_weight_ready": true
+    }
+  ],
+  "upstream": {
+    "commit": "94cab099b44fffa99a82fea99e7c12d89cf65e4f",
+    "replication_stdin": "8 2 3 1.01 1024 0 0.01 1 40 40 40 40 0 0 0 0 0 0 0 0 0 0 0 0\n",
+    "replication_stdout": "{\"search_enabled\":1,\"lower_bound\":21,\"threshold\":22,\"fast_success\":1,\"precheck_success\":0,\"replica_count\":6,\"physical\":[{\"expert\":0,\"id\":0,\"rank\":0,\"quota\":1,\"kind\":\"main\"},{\"expert\":0,\"id\":12,\"rank\":2,\"quota\":22,\"kind\":\"replica\"},{\"expert\":0,\"id\":17,\"rank\":3,\"quota\":17,\"kind\":\"replica\"},{\"expert\":1,\"id\":1,\"rank\":0,\"quota\":21,\"kind\":\"main\"},{\"expert\":1,\"id\":22,\"rank\":4,\"quota\":19,\"kind\":\"replica\"},{\"expert\":2,\"id\":5,\"rank\":1,\"quota\":1,\"kind\":\"main\"},{\"expert\":2,\"id\":27,\"rank\":5,\"quota\":22,\"kind\":\"replica\"},{\"expert\":2,\"id\":32,\"rank\":6,\"quota\":17,\"kind\":\"replica\"},{\"expert\":3,\"id\":6,\"rank\":1,\"quota\":21,\"kind\":\"main\"},{\"expert\":3,\"id\":37,\"rank\":7,\"quota\":19,\"kind\":\"replica\"},{\"expert\":4,\"id\":10,\"rank\":2,\"quota\":0,\"kind\":\"main\"},{\"expert\":5,\"id\":11,\"rank\":2,\"quota\":0,\"kind\":\"main\"},{\"expert\":6,\"id\":15,\"rank\":3,\"quota\":0,\"kind\":\"main\"},{\"expert\":7,\"id\":16,\"rank\":3,\"quota\":0,\"kind\":\"main\"},{\"expert\":8,\"id\":20,\"rank\":4,\"quota\":0,\"kind\":\"main\"},{\"expert\":9,\"id\":21,\"rank\":4,\"quota\":0,\"kind\":\"main\"},{\"expert\":10,\"id\":25,\"rank\":5,\"quota\":0,\"kind\":\"main\"},{\"expert\":11,\"id\":26,\"rank\":5,\"quota\":0,\"kind\":\"main\"},{\"expert\":12,\"id\":30,\"rank\":6,\"quota\":0,\"kind\":\"main\"},{\"expert\":13,\"id\":31,\"rank\":6,\"quota\":0,\"kind\":\"main\"},{\"expert\":14,\"id\":35,\"rank\":7,\"quota\":0,\"kind\":\"main\"},{\"expert\":15,\"id\":36,\"rank\":7,\"quota\":0,\"kind\":\"main\"}],\"probes\":[{\"threshold\":22,\"dynamic\":1,\"store\":1}],\"dynamic_floors\":[{\"threshold\":22,\"configured\":1024,\"effective\":10,\"need\":58,\"feasible_slots\":6},{\"threshold\":22,\"configured\":1024,\"effective\":8,\"need\":36,\"feasible_slots\":5},{\"threshold\":22,\"configured\":1024,\"effective\":4,\"need\":19,\"feasible_slots\":5},{\"threshold\":22,\"configured\":1024,\"effective\":12,\"need\":58,\"feasible_slots\":5},{\"threshold\":22,\"configured\":1024,\"effective\":9,\"need\":36,\"feasible_slots\":4},{\"threshold\":22,\"configured\":1024,\"effective\":5,\"need\":19,\"feasible_slots\":4}]}\n",
+    "replication": {
+      "search_enabled": 1,
+      "lower_bound": 21,
+      "threshold": 22,
+      "fast_success": 1,
+      "precheck_success": 0,
+      "replica_count": 6,
+      "physical": [
+        {
+          "expert": 0,
+          "id": 0,
+          "rank": 0,
+          "quota": 1,
+          "kind": "main"
+        },
+        {
+          "expert": 0,
+          "id": 12,
+          "rank": 2,
+          "quota": 22,
+          "kind": "replica"
+        },
+        {
+          "expert": 0,
+          "id": 17,
+          "rank": 3,
+          "quota": 17,
+          "kind": "replica"
+        },
+        {
+          "expert": 1,
+          "id": 1,
+          "rank": 0,
+          "quota": 21,
+          "kind": "main"
+        },
+        {
+          "expert": 1,
+          "id": 22,
+          "rank": 4,
+          "quota": 19,
+          "kind": "replica"
+        },
+        {
+          "expert": 2,
+          "id": 5,
+          "rank": 1,
+          "quota": 1,
+          "kind": "main"
+        },
+        {
+          "expert": 2,
+          "id": 27,
+          "rank": 5,
+          "quota": 22,
+          "kind": "replica"
+        },
+        {
+          "expert": 2,
+          "id": 32,
+          "rank": 6,
+          "quota": 17,
+          "kind": "replica"
+        },
+        {
+          "expert": 3,
+          "id": 6,
+          "rank": 1,
+          "quota": 21,
+          "kind": "main"
+        },
+        {
+          "expert": 3,
+          "id": 37,
+          "rank": 7,
+          "quota": 19,
+          "kind": "replica"
+        },
+        {
+          "expert": 4,
+          "id": 10,
+          "rank": 2,
+          "quota": 0,
+          "kind": "main"
+        },
+        {
+          "expert": 5,
+          "id": 11,
+          "rank": 2,
+          "quota": 0,
+          "kind": "main"
+        },
+        {
+          "expert": 6,
+          "id": 15,
+          "rank": 3,
+          "quota": 0,
+          "kind": "main"
+        },
+        {
+          "expert": 7,
+          "id": 16,
+          "rank": 3,
+          "quota": 0,
+          "kind": "main"
+        },
+        {
+          "expert": 8,
+          "id": 20,
+          "rank": 4,
+          "quota": 0,
+          "kind": "main"
+        },
+        {
+          "expert": 9,
+          "id": 21,
+          "rank": 4,
+          "quota": 0,
+          "kind": "main"
+        },
+        {
+          "expert": 10,
+          "id": 25,
+          "rank": 5,
+          "quota": 0,
+          "kind": "main"
+        },
+        {
+          "expert": 11,
+          "id": 26,
+          "rank": 5,
+          "quota": 0,
+          "kind": "main"
+        },
+        {
+          "expert": 12,
+          "id": 30,
+          "rank": 6,
+          "quota": 0,
+          "kind": "main"
+        },
+        {
+          "expert": 13,
+          "id": 31,
+          "rank": 6,
+          "quota": 0,
+          "kind": "main"
+        },
+        {
+          "expert": 14,
+          "id": 35,
+          "rank": 7,
+          "quota": 0,
+          "kind": "main"
+        },
+        {
+          "expert": 15,
+          "id": 36,
+          "rank": 7,
+          "quota": 0,
+          "kind": "main"
+        }
+      ],
+      "probes": [
+        {
+          "threshold": 22,
+          "dynamic": 1,
+          "store": 1
+        }
+      ],
+      "dynamic_floors": [
+        {
+          "threshold": 22,
+          "configured": 1024,
+          "effective": 10,
+          "need": 58,
+          "feasible_slots": 6
+        },
+        {
+          "threshold": 22,
+          "configured": 1024,
+          "effective": 8,
+          "need": 36,
+          "feasible_slots": 5
+        },
+        {
+          "threshold": 22,
+          "configured": 1024,
+          "effective": 4,
+          "need": 19,
+          "feasible_slots": 5
+        },
+        {
+          "threshold": 22,
+          "configured": 1024,
+          "effective": 12,
+          "need": 58,
+          "feasible_slots": 5
+        },
+        {
+          "threshold": 22,
+          "configured": 1024,
+          "effective": 9,
+          "need": 36,
+          "feasible_slots": 4
+        },
+        {
+          "threshold": 22,
+          "configured": 1024,
+          "effective": 5,
+          "need": 19,
+          "feasible_slots": 4
+        }
+      ]
+    },
+    "validation": "CPU adapted source execution, not GPU execution",
+    "decomposition_stdin": "8 3 1 5 5 5 5 5 5 5 5 0 2 3 1 22 17\n8 2 1 5 5 5 5 5 5 5 5 0 4 21 19\n8 3 1 5 5 5 5 5 5 5 5 1 5 6 1 22 17\n8 2 1 5 5 5 5 5 5 5 5 1 7 21 19\n8 1 1 0 0 0 0 0 0 0 0 2 0\n8 1 1 0 0 0 0 0 0 0 0 2 0\n8 1 1 0 0 0 0 0 0 0 0 3 0\n8 1 1 0 0 0 0 0 0 0 0 3 0\n8 1 1 0 0 0 0 0 0 0 0 4 0\n8 1 1 0 0 0 0 0 0 0 0 4 0\n8 1 1 0 0 0 0 0 0 0 0 5 0\n8 1 1 0 0 0 0 0 0 0 0 5 0\n8 1 1 0 0 0 0 0 0 0 0 6 0\n8 1 1 0 0 0 0 0 0 0 0 6 0\n8 1 1 0 0 0 0 0 0 0 0 7 0\n8 1 1 0 0 0 0 0 0 0 0 7 0\n",
+    "decomposition_stdout": "1 2 2 \n0 3 2 \n0 5 0 \n0 0 5 \n0 3 2 \n0 3 2 \n0 3 2 \n0 3 2 \n1 2 2 \n0 3 2 \n0 5 0 \n0 0 5 \n0 3 2 \n0 3 2 \n0 3 2 \n0 3 2 \n5 0 \n3 2 \n3 2 \n3 2 \n0 5 \n3 2 \n3 2 \n3 2 \n5 0 \n3 2 \n3 2 \n3 2 \n0 5 \n3 2 \n3 2 \n3 2 \n0 3 2 \n1 2 2 \n0 3 2 \n0 3 2 \n0 3 2 \n0 5 0 \n0 0 5 \n0 3 2 \n0 3 2 \n1 2 2 \n0 3 2 \n0 3 2 \n0 3 2 \n0 5 0 \n0 0 5 \n0 3 2 \n3 2 \n5 0 \n3 2 \n3 2 \n3 2 \n3 2 \n3 2 \n0 5 \n3 2 \n5 0 \n3 2 \n3 2 \n3 2 \n3 2 \n3 2 \n0 5 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n0 \n",
+    "quota_repairs": [
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            1,
+            2,
+            2
+          ],
+          [
+            0,
+            3,
+            2
+          ],
+          [
+            0,
+            5,
+            0
+          ],
+          [
+            0,
+            0,
+            5
+          ],
+          [
+            0,
+            3,
+            2
+          ],
+          [
+            0,
+            3,
+            2
+          ],
+          [
+            0,
+            3,
+            2
+          ],
+          [
+            0,
+            3,
+            2
+          ]
+        ],
+        "corrected": [
+          [
+            1,
+            2,
+            2
+          ],
+          [
+            0,
+            3,
+            2
+          ],
+          [
+            0,
+            5,
+            0
+          ],
+          [
+            0,
+            0,
+            5
+          ],
+          [
+            0,
+            3,
+            2
+          ],
+          [
+            0,
+            3,
+            2
+          ],
+          [
+            0,
+            3,
+            2
+          ],
+          [
+            0,
+            3,
+            2
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 0,
+        "physical_ids": [
+          0,
+          12,
+          17
+        ]
+      },
+      {
+        "trigger": true,
+        "reason": "upstream independent per-source rounding column mismatch",
+        "raw": [
+          [
+            5,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "corrected": [
+          [
+            5,
+            0
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "minimum_moved_assignments": 2,
+        "moves": [
+          {
+            "source": 1,
+            "from_instance": 0,
+            "to_instance": 1,
+            "assignments": 2
+          }
+        ],
+        "expert": 1,
+        "physical_ids": [
+          1,
+          22
+        ]
+      },
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            0,
+            3,
+            2
+          ],
+          [
+            1,
+            2,
+            2
+          ],
+          [
+            0,
+            3,
+            2
+          ],
+          [
+            0,
+            3,
+            2
+          ],
+          [
+            0,
+            3,
+            2
+          ],
+          [
+            0,
+            5,
+            0
+          ],
+          [
+            0,
+            0,
+            5
+          ],
+          [
+            0,
+            3,
+            2
+          ]
+        ],
+        "corrected": [
+          [
+            0,
+            3,
+            2
+          ],
+          [
+            1,
+            2,
+            2
+          ],
+          [
+            0,
+            3,
+            2
+          ],
+          [
+            0,
+            3,
+            2
+          ],
+          [
+            0,
+            3,
+            2
+          ],
+          [
+            0,
+            5,
+            0
+          ],
+          [
+            0,
+            0,
+            5
+          ],
+          [
+            0,
+            3,
+            2
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 2,
+        "physical_ids": [
+          5,
+          27,
+          32
+        ]
+      },
+      {
+        "trigger": true,
+        "reason": "upstream independent per-source rounding column mismatch",
+        "raw": [
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "corrected": [
+          [
+            1,
+            4
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "minimum_moved_assignments": 2,
+        "moves": [
+          {
+            "source": 0,
+            "from_instance": 0,
+            "to_instance": 1,
+            "assignments": 2
+          }
+        ],
+        "expert": 3,
+        "physical_ids": [
+          6,
+          37
+        ]
+      },
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "corrected": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 4,
+        "physical_ids": [
+          10
+        ]
+      },
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "corrected": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 5,
+        "physical_ids": [
+          11
+        ]
+      },
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "corrected": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 6,
+        "physical_ids": [
+          15
+        ]
+      },
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "corrected": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 7,
+        "physical_ids": [
+          16
+        ]
+      },
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "corrected": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 8,
+        "physical_ids": [
+          20
+        ]
+      },
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "corrected": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 9,
+        "physical_ids": [
+          21
+        ]
+      },
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "corrected": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 10,
+        "physical_ids": [
+          25
+        ]
+      },
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "corrected": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 11,
+        "physical_ids": [
+          26
+        ]
+      },
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "corrected": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 12,
+        "physical_ids": [
+          30
+        ]
+      },
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "corrected": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 13,
+        "physical_ids": [
+          31
+        ]
+      },
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "corrected": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 14,
+        "physical_ids": [
+          35
+        ]
+      },
+      {
+        "trigger": false,
+        "reason": null,
+        "raw": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "corrected": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "minimum_moved_assignments": 0,
+        "moves": [],
+        "expert": 15,
+        "physical_ids": [
+          36
+        ]
+      }
+    ],
+    "moved_assignments": 4
+  },
+  "ordinal_physical_order": [
+    0,
+    12,
+    17,
+    1,
+    22,
+    5,
+    27,
+    32,
+    6,
+    37,
+    10,
+    11,
+    15,
+    16,
+    20,
+    21,
+    25,
+    26,
+    30,
+    31,
+    35,
+    36
+  ],
+  "compatibility": {
+    "placement": "exact pinned-source CPU semantics",
+    "quota_decomposition": "integer-conservation-repaired",
+    "mapping": "public sparse-quota cumulative ordinal lookup; CPU input-order ordinals, GPU atomic arrival order not reproduced",
+    "requested_rounding": "code",
+    "effective_rounding": "upstream float32 lower-bound formula",
+    "locality_aware": true,
+    "threshold_convention": "upstream search threshold"
+  },
+  "metrics": {
+    "initial_rank_load": [
+      80,
+      80,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "final_rank_load": [
+      22,
+      22,
+      22,
+      17,
+      19,
+      22,
+      17,
+      19
+    ],
+    "slot_usage": [
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "total_assignments": 160,
+    "target_threshold": 21,
+    "chosen_threshold": 22,
+    "target_met": false,
+    "initial_imbalance": 4.0,
+    "final_imbalance": 1.1,
+    "local_assignments": 42,
+    "path": "fast",
+    "repaired_assignments": 4
+  },
+  "probes": [
+    {
+      "threshold": 22,
+      "dynamic": 1,
+      "store": 1
+    }
+  ],
+  "optimality": "pinned heuristic witness; not global optimality or infeasibility proof",
+  "cpu_wall_ns": 19138837
+}

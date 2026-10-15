@@ -1,0 +1,65 @@
+{
+  "mode": "no-balancing",
+  "strategy": "direct",
+  "weight_WQEs": 0,
+  "weight_TAs": 0,
+  "weight_send_bytes_per_npu": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "pipeline_overlaps": [],
+  "native_pipeline_overlaps": [],
+  "combine_sha256": "62169eb8554c9c42db172a3a4c6e748365927e4bafa776538c9c1949130dc0f4",
+  "npus": 4,
+  "tokens": 32,
+  "assignments": 32,
+  "layer_latency_ps": 4326800,
+  "replicas": 0,
+  "max_npu_load": 32,
+  "per_npu_load": [
+    32,
+    0,
+    0,
+    0
+  ],
+  "weight_target_duration_ps": 0,
+  "weight_sender_end_ps": 1000,
+  "weight_bytes": 0,
+  "verified_bytes": [
+    4160,
+    4160,
+    0
+  ],
+  "remote_bytes": [
+    3120,
+    3120,
+    0
+  ],
+  "local_bytes": [
+    1040,
+    1040,
+    0
+  ],
+  "target_segments": 48,
+  "remote_WQEs": 48,
+  "timeline": {
+    "layer_start": 1000,
+    "planning_end": 1000,
+    "reroute_end": 1000,
+    "weights_end": 1000,
+    "dispatch_gate": 1000,
+    "layer_end": 4327800
+  },
+  "compute_intervals": [
+    {
+      "node": 0,
+      "start_ps": 467000,
+      "end_ps": 3786840
+    }
+  ],
+  "computation": "three-matrix SwiGLU GEMM FLOPs",
+  "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+  "empty": false
+}

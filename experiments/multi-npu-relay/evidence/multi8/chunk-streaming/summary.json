@@ -1,0 +1,445 @@
+{
+  "mode": "ultraep",
+  "strategy": "chunk-streaming",
+  "weight_WQEs": 72,
+  "weight_TAs": 288,
+  "weight_send_bytes_per_npu": [
+    98304,
+    98304,
+    98304,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "pipeline_overlaps": [
+    {
+      "outgoing": 152,
+      "incoming": 130,
+      "overlap_ps": 176320
+    },
+    {
+      "outgoing": 153,
+      "incoming": 130,
+      "overlap_ps": 176320
+    },
+    {
+      "outgoing": 154,
+      "incoming": 132,
+      "overlap_ps": 186280
+    },
+    {
+      "outgoing": 155,
+      "incoming": 132,
+      "overlap_ps": 186280
+    },
+    {
+      "outgoing": 156,
+      "incoming": 134,
+      "overlap_ps": 176320
+    },
+    {
+      "outgoing": 157,
+      "incoming": 134,
+      "overlap_ps": 176320
+    },
+    {
+      "outgoing": 158,
+      "incoming": 136,
+      "overlap_ps": 186320
+    },
+    {
+      "outgoing": 159,
+      "incoming": 136,
+      "overlap_ps": 186320
+    },
+    {
+      "outgoing": 160,
+      "incoming": 138,
+      "overlap_ps": 176320
+    },
+    {
+      "outgoing": 161,
+      "incoming": 138,
+      "overlap_ps": 176320
+    },
+    {
+      "outgoing": 162,
+      "incoming": 140,
+      "overlap_ps": 279480
+    },
+    {
+      "outgoing": 163,
+      "incoming": 140,
+      "overlap_ps": 279480
+    },
+    {
+      "outgoing": 164,
+      "incoming": 142,
+      "overlap_ps": 186320
+    },
+    {
+      "outgoing": 165,
+      "incoming": 142,
+      "overlap_ps": 186320
+    },
+    {
+      "outgoing": 166,
+      "incoming": 144,
+      "overlap_ps": 98120
+    },
+    {
+      "outgoing": 167,
+      "incoming": 144,
+      "overlap_ps": 98120
+    },
+    {
+      "outgoing": 168,
+      "incoming": 146,
+      "overlap_ps": 278040
+    },
+    {
+      "outgoing": 169,
+      "incoming": 146,
+      "overlap_ps": 278040
+    },
+    {
+      "outgoing": 170,
+      "incoming": 148,
+      "overlap_ps": 182760
+    },
+    {
+      "outgoing": 171,
+      "incoming": 148,
+      "overlap_ps": 182760
+    },
+    {
+      "outgoing": 172,
+      "incoming": 150,
+      "overlap_ps": 103120
+    },
+    {
+      "outgoing": 173,
+      "incoming": 150,
+      "overlap_ps": 103120
+    },
+    {
+      "outgoing": 176,
+      "incoming": 131,
+      "overlap_ps": 186280
+    },
+    {
+      "outgoing": 177,
+      "incoming": 131,
+      "overlap_ps": 186280
+    },
+    {
+      "outgoing": 178,
+      "incoming": 133,
+      "overlap_ps": 176320
+    },
+    {
+      "outgoing": 179,
+      "incoming": 133,
+      "overlap_ps": 176320
+    },
+    {
+      "outgoing": 180,
+      "incoming": 135,
+      "overlap_ps": 176320
+    },
+    {
+      "outgoing": 181,
+      "incoming": 135,
+      "overlap_ps": 176320
+    },
+    {
+      "outgoing": 182,
+      "incoming": 137,
+      "overlap_ps": 186320
+    },
+    {
+      "outgoing": 183,
+      "incoming": 137,
+      "overlap_ps": 186320
+    },
+    {
+      "outgoing": 184,
+      "incoming": 139,
+      "overlap_ps": 176320
+    },
+    {
+      "outgoing": 185,
+      "incoming": 139,
+      "overlap_ps": 176320
+    },
+    {
+      "outgoing": 186,
+      "incoming": 141,
+      "overlap_ps": 103160
+    },
+    {
+      "outgoing": 187,
+      "incoming": 141,
+      "overlap_ps": 103160
+    },
+    {
+      "outgoing": 188,
+      "incoming": 143,
+      "overlap_ps": 176320
+    },
+    {
+      "outgoing": 189,
+      "incoming": 143,
+      "overlap_ps": 176320
+    },
+    {
+      "outgoing": 190,
+      "incoming": 145,
+      "overlap_ps": 279440
+    },
+    {
+      "outgoing": 191,
+      "incoming": 145,
+      "overlap_ps": 279440
+    },
+    {
+      "outgoing": 192,
+      "incoming": 147,
+      "overlap_ps": 103160
+    },
+    {
+      "outgoing": 193,
+      "incoming": 147,
+      "overlap_ps": 103160
+    },
+    {
+      "outgoing": 194,
+      "incoming": 149,
+      "overlap_ps": 179880
+    },
+    {
+      "outgoing": 195,
+      "incoming": 149,
+      "overlap_ps": 179880
+    },
+    {
+      "outgoing": 196,
+      "incoming": 151,
+      "overlap_ps": 279440
+    },
+    {
+      "outgoing": 197,
+      "incoming": 151,
+      "overlap_ps": 279440
+    }
+  ],
+  "native_pipeline_overlaps": [
+    {
+      "outgoing": 152,
+      "incoming": 130,
+      "overlap_ps": 176320
+    },
+    {
+      "outgoing": 153,
+      "incoming": 130,
+      "overlap_ps": 176320
+    },
+    {
+      "outgoing": 154,
+      "incoming": 134,
+      "overlap_ps": 151280
+    },
+    {
+      "outgoing": 155,
+      "incoming": 134,
+      "overlap_ps": 161280
+    },
+    {
+      "outgoing": 156,
+      "incoming": 136,
+      "overlap_ps": 141320
+    },
+    {
+      "outgoing": 157,
+      "incoming": 136,
+      "overlap_ps": 136320
+    },
+    {
+      "outgoing": 158,
+      "incoming": 140,
+      "overlap_ps": 204480
+    },
+    {
+      "outgoing": 159,
+      "incoming": 140,
+      "overlap_ps": 199480
+    },
+    {
+      "outgoing": 160,
+      "incoming": 144,
+      "overlap_ps": 96360
+    },
+    {
+      "outgoing": 161,
+      "incoming": 142,
+      "overlap_ps": 8240
+    },
+    {
+      "outgoing": 162,
+      "incoming": 148,
+      "overlap_ps": 179560
+    },
+    {
+      "outgoing": 163,
+      "incoming": 148,
+      "overlap_ps": 76440
+    },
+    {
+      "outgoing": 176,
+      "incoming": 131,
+      "overlap_ps": 186280
+    },
+    {
+      "outgoing": 177,
+      "incoming": 131,
+      "overlap_ps": 186280
+    },
+    {
+      "outgoing": 178,
+      "incoming": 135,
+      "overlap_ps": 151280
+    },
+    {
+      "outgoing": 179,
+      "incoming": 135,
+      "overlap_ps": 161280
+    },
+    {
+      "outgoing": 180,
+      "incoming": 137,
+      "overlap_ps": 141320
+    },
+    {
+      "outgoing": 181,
+      "incoming": 137,
+      "overlap_ps": 136320
+    },
+    {
+      "outgoing": 182,
+      "incoming": 141,
+      "overlap_ps": 28160
+    },
+    {
+      "outgoing": 183,
+      "incoming": 141,
+      "overlap_ps": 38160
+    },
+    {
+      "outgoing": 184,
+      "incoming": 145,
+      "overlap_ps": 91400
+    },
+    {
+      "outgoing": 185,
+      "incoming": 145,
+      "overlap_ps": 86400
+    },
+    {
+      "outgoing": 186,
+      "incoming": 151,
+      "overlap_ps": 261320
+    },
+    {
+      "outgoing": 187,
+      "incoming": 151,
+      "overlap_ps": 271320
+    }
+  ],
+  "combine_sha256": "f9b0d2310c2f4ddd7508fd5ac50921924ed2d859bd611190261a3f52510ad32b",
+  "npus": 8,
+  "tokens": 64,
+  "assignments": 64,
+  "layer_latency_ps": 17803720,
+  "replicas": 6,
+  "max_npu_load": 10,
+  "per_npu_load": [
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    4,
+    0
+  ],
+  "weight_target_duration_ps": 16187520,
+  "weight_sender_end_ps": 16453440,
+  "weight_bytes": 294912,
+  "verified_bytes": [
+    8192,
+    8192,
+    294912
+  ],
+  "remote_bytes": [
+    1536,
+    1536,
+    294912
+  ],
+  "local_bytes": [
+    6656,
+    6656,
+    0
+  ],
+  "target_segments": 312,
+  "remote_WQEs": 96,
+  "timeline": {
+    "layer_start": 1000,
+    "planning_end": 201000,
+    "reroute_end": 301000,
+    "weights_end": 16388520,
+    "dispatch_gate": 16388520,
+    "layer_end": 17804720
+  },
+  "compute_intervals": [
+    {
+      "node": 0,
+      "start_ps": 16570360,
+      "end_ps": 17653400
+    },
+    {
+      "node": 1,
+      "start_ps": 16586840,
+      "end_ps": 17669880
+    },
+    {
+      "node": 2,
+      "start_ps": 16504440,
+      "end_ps": 17587480
+    },
+    {
+      "node": 3,
+      "start_ps": 16520920,
+      "end_ps": 17603960
+    },
+    {
+      "node": 4,
+      "start_ps": 16539840,
+      "end_ps": 17622880
+    },
+    {
+      "node": 5,
+      "start_ps": 16553880,
+      "end_ps": 17636920
+    },
+    {
+      "node": 6,
+      "start_ps": 16388520,
+      "end_ps": 16881736
+    }
+  ],
+  "computation": "three-matrix SwiGLU GEMM FLOPs",
+  "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+  "empty": false
+}

@@ -1,0 +1,442 @@
+[
+  {
+    "case_id": "single4/no-balancing",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/single4/no-balancing/input.txt --out={evidence}/single4/no-balancing"
+    ]
+  },
+  {
+    "case_id": "single4/direct",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/single4/direct/input.txt --out={evidence}/single4/direct"
+    ]
+  },
+  {
+    "case_id": "single4/two-stage",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/single4/two-stage/input.txt --out={evidence}/single4/two-stage"
+    ]
+  },
+  {
+    "case_id": "single4/chunk-streaming",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/single4/chunk-streaming/input.txt --out={evidence}/single4/chunk-streaming"
+    ]
+  },
+  {
+    "case_id": "multi4_force/no-balancing",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/multi4_force/no-balancing/input.txt --out={evidence}/multi4_force/no-balancing"
+    ]
+  },
+  {
+    "case_id": "multi4_force/direct",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/multi4_force/direct/input.txt --out={evidence}/multi4_force/direct"
+    ]
+  },
+  {
+    "case_id": "multi4_force/two-stage",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/multi4_force/two-stage/input.txt --out={evidence}/multi4_force/two-stage"
+    ]
+  },
+  {
+    "case_id": "multi4_force/chunk-streaming",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/multi4_force/chunk-streaming/input.txt --out={evidence}/multi4_force/chunk-streaming"
+    ]
+  },
+  {
+    "case_id": "multi8/no-balancing",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/multi8/no-balancing/input.txt --out={evidence}/multi8/no-balancing"
+    ]
+  },
+  {
+    "case_id": "multi8/direct",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/multi8/direct/input.txt --out={evidence}/multi8/direct"
+    ]
+  },
+  {
+    "case_id": "multi8/two-stage",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/multi8/two-stage/input.txt --out={evidence}/multi8/two-stage"
+    ]
+  },
+  {
+    "case_id": "multi8/chunk-streaming",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/multi8/chunk-streaming/input.txt --out={evidence}/multi8/chunk-streaming"
+    ]
+  },
+  {
+    "case_id": "multi_expert8/no-balancing",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/multi_expert8/no-balancing/input.txt --out={evidence}/multi_expert8/no-balancing"
+    ]
+  },
+  {
+    "case_id": "multi_expert8/direct",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/multi_expert8/direct/input.txt --out={evidence}/multi_expert8/direct"
+    ]
+  },
+  {
+    "case_id": "multi_expert8/two-stage",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/multi_expert8/two-stage/input.txt --out={evidence}/multi_expert8/two-stage"
+    ]
+  },
+  {
+    "case_id": "multi_expert8/chunk-streaming",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/multi_expert8/chunk-streaming/input.txt --out={evidence}/multi_expert8/chunk-streaming"
+    ]
+  },
+  {
+    "case_id": "chunk_lt_ta/no-balancing",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/chunk_lt_ta/no-balancing/input.txt --out={evidence}/chunk_lt_ta/no-balancing"
+    ]
+  },
+  {
+    "case_id": "chunk_lt_ta/direct",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/chunk_lt_ta/direct/input.txt --out={evidence}/chunk_lt_ta/direct"
+    ]
+  },
+  {
+    "case_id": "chunk_lt_ta/two-stage",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/chunk_lt_ta/two-stage/input.txt --out={evidence}/chunk_lt_ta/two-stage"
+    ]
+  },
+  {
+    "case_id": "chunk_lt_ta/chunk-streaming",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/chunk_lt_ta/chunk-streaming/input.txt --out={evidence}/chunk_lt_ta/chunk-streaming"
+    ]
+  },
+  {
+    "case_id": "chunk_eq_ta/no-balancing",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/chunk_eq_ta/no-balancing/input.txt --out={evidence}/chunk_eq_ta/no-balancing"
+    ]
+  },
+  {
+    "case_id": "chunk_eq_ta/direct",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/chunk_eq_ta/direct/input.txt --out={evidence}/chunk_eq_ta/direct"
+    ]
+  },
+  {
+    "case_id": "chunk_eq_ta/two-stage",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/chunk_eq_ta/two-stage/input.txt --out={evidence}/chunk_eq_ta/two-stage"
+    ]
+  },
+  {
+    "case_id": "chunk_eq_ta/chunk-streaming",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/chunk_eq_ta/chunk-streaming/input.txt --out={evidence}/chunk_eq_ta/chunk-streaming"
+    ]
+  },
+  {
+    "case_id": "tail4/no-balancing",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/tail4/no-balancing/input.txt --out={evidence}/tail4/no-balancing"
+    ]
+  },
+  {
+    "case_id": "tail4/direct",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/tail4/direct/input.txt --out={evidence}/tail4/direct"
+    ]
+  },
+  {
+    "case_id": "tail4/two-stage",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/tail4/two-stage/input.txt --out={evidence}/tail4/two-stage"
+    ]
+  },
+  {
+    "case_id": "tail4/chunk-streaming",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/tail4/chunk-streaming/input.txt --out={evidence}/tail4/chunk-streaming"
+    ]
+  },
+  {
+    "case_id": "out_of_order4/no-balancing",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/out_of_order4/no-balancing/input.txt --out={evidence}/out_of_order4/no-balancing"
+    ]
+  },
+  {
+    "case_id": "out_of_order4/direct",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/out_of_order4/direct/input.txt --out={evidence}/out_of_order4/direct"
+    ]
+  },
+  {
+    "case_id": "out_of_order4/two-stage",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/out_of_order4/two-stage/input.txt --out={evidence}/out_of_order4/two-stage"
+    ]
+  },
+  {
+    "case_id": "out_of_order4/chunk-streaming",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/out_of_order4/chunk-streaming/input.txt --out={evidence}/out_of_order4/chunk-streaming"
+    ]
+  },
+  {
+    "case_id": "public_chunk8/no-balancing",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/public_chunk8/no-balancing/input.txt --out={evidence}/public_chunk8/no-balancing"
+    ]
+  },
+  {
+    "case_id": "public_chunk8/direct",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/public_chunk8/direct/input.txt --out={evidence}/public_chunk8/direct"
+    ]
+  },
+  {
+    "case_id": "public_chunk8/two-stage",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/public_chunk8/two-stage/input.txt --out={evidence}/public_chunk8/two-stage"
+    ]
+  },
+  {
+    "case_id": "public_chunk8/chunk-streaming",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/public_chunk8/chunk-streaming/input.txt --out={evidence}/public_chunk8/chunk-streaming"
+    ]
+  },
+  {
+    "case_id": "slots_zero4/no-balancing",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/slots_zero4/no-balancing/input.txt --out={evidence}/slots_zero4/no-balancing"
+    ]
+  },
+  {
+    "case_id": "slots_zero4/direct",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/slots_zero4/direct/input.txt --out={evidence}/slots_zero4/direct"
+    ]
+  },
+  {
+    "case_id": "slots_zero4/two-stage",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/slots_zero4/two-stage/input.txt --out={evidence}/slots_zero4/two-stage"
+    ]
+  },
+  {
+    "case_id": "slots_zero4/chunk-streaming",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/slots_zero4/chunk-streaming/input.txt --out={evidence}/slots_zero4/chunk-streaming"
+    ]
+  },
+  {
+    "case_id": "fixed64/no-balancing",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/fixed64/no-balancing/input.txt --out={evidence}/fixed64/no-balancing"
+    ]
+  },
+  {
+    "case_id": "fixed64/direct",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/fixed64/direct/input.txt --out={evidence}/fixed64/direct"
+    ]
+  },
+  {
+    "case_id": "fixed64/two-stage",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/fixed64/two-stage/input.txt --out={evidence}/fixed64/two-stage"
+    ]
+  },
+  {
+    "case_id": "fixed64/chunk-streaming",
+    "argv": [
+      "python3.12",
+      "./ns3",
+      "run",
+      "--no-build",
+      "multi-npu-relay --input={evidence}/fixed64/chunk-streaming/input.txt --out={evidence}/fixed64/chunk-streaming"
+    ]
+  }
+]
