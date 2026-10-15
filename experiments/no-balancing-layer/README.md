@@ -100,3 +100,5 @@ skew4 把全部 expert 初始放在 NPU0，固定保持，检查负载 `[16,0,0,
 ## Knowledge Sources
 
 复用仓库 `poc/chunk-relay` 的实际 payload 和目标 TA 完成接口；固定 ns3 的 `ub-target-execution-test.cc`、`ub-node-test-fixture.h`、`ub-function.cc`、`ub-transport.cc` 作为 API 语义来源。检查了 ns3 AGENTS.md 与 openusim-plan-experiment/run-experiment 规则；该实验由显式用户授权，参数和边界先记录在 experiment-spec.md。没有引入未经验证的 UB 规范/硬件能力断言。
+
+干净 checkout 复核：从实现提交 `985895b8b0a84a5b1d95dcc9595a62627837411f` 重新 clone，工作树干净；复用固定版本 ns3/tools 依赖，在独立 EVIDENCE 目录执行完整 run.sh。全部 PoC 与新测试通过，8 个案例的配置、输入、原始 assignment、事件和 summary 共 40 文件与原运行逐字节一致，SHA256 记录在 evidence/clean-checkout.json。本复核不是重新下载/重建所有依赖的离线安装测试。
