@@ -19,6 +19,33 @@ def normalize(c):
     c.setdefault('locality_aware',True)
     return c
 
+def validate_upstream_numeric(total, ranks, beta, epsilon, search_enabled=True):
+    """Conservative preflight for all signed-int aggregates, without a trace.
+
+    Each float32 operation has relative error <= 2**-24 in this bounded
+    nonnegative domain. Four factors of (1 + 2**-20) safely dominate parameter
+    conversion, division, multiplication and addition at each threshold stage.
+    These bounds only reject input; public float32 decisions remain unchanged.
+    """
+    need(integer(total,0,2000000) and integer(ranks,1,72),'numeric preflight sizes')
+    try:b=Fraction(str(beta));eps=Fraction(str(epsilon))
+    except (ValueError,ZeroDivisionError):raise InputError('numeric preflight parameters')
+    need(1<=b<=100 and 0<=eps<=100,'numeric preflight parameter range')
+    limit=2**31-1;guard=(1+Fraction(1,2**20))**4
+    upper_lower=ceil(Fraction(total,ranks)*b*guard)
+    upper_hi=max(total,upper_lower)
+    upper_fast=ceil(upper_lower*(1+eps)*guard) if search_enabled else None
+    upper_threshold=max(upper_hi,upper_fast) if search_enabled else upper_lower
+    aggregate=ranks*upper_threshold if search_enabled else None
+    # Retry additions are evaluated BEFORE min(hi, ...), so bound those too.
+    upper_step=(upper_hi+99)//100
+    need(upper_lower<=limit,'upstream float-to-int lower bound unsafe')
+    if search_enabled:
+        need(aggregate<=limit and upper_hi+99<=limit and upper_threshold+max(1,upper_step)<=limit,
+             'upstream int32 aggregate/threshold unsafe: conservative numeric bound exceeded')
+    return dict(upper_lower_bound=upper_lower,upper_threshold=upper_threshold,
+                upper_aggregate_slack=aggregate,search_enabled=search_enabled)
+
 def validate(c):
     need(c.get('schema_version')==1,'schema_version')
     n,e=c.get('npus'),c.get('experts');need(integer(n,1,256) and integer(e,1,4096),'npus/experts')
@@ -48,7 +75,7 @@ def validate(c):
         try:eps=Fraction(str(c['oracle_epsilon']))
         except (ValueError,ZeroDivisionError):raise InputError('oracle_epsilon')
         need(0<=eps<=100,'oracle_epsilon must be finite in [0,100]')
-        need((float(b)*len(rows)*k/n+1)*(1+float(eps))<2**31-1,'upstream threshold would exceed int32 range')
+        validate_upstream_numeric(len(rows)*k,n,c['beta'],c['oracle_epsilon'],n>1 and slots[0]>0)
         need(c.get('reroute_mode','sparse-quota')=='sparse-quota','only sparse-quota CPU ordinal mapping is supported')
     else:
         need(c['locality_aware'],'strict-floor retains legacy locality-aware decomposition only')

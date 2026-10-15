@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "method": "validation-only arithmetic; no large trace and no unsafe C++ execution",
+  "reported_case": {
+    "assignments": 300000,
+    "ranks": 72,
+    "beta": 100,
+    "epsilon": 100,
+    "fast_threshold": 42083368,
+    "aggregate_slack": 3029702496,
+    "rejected": true
+  },
+  "conservative_boundary": {
+    "last_allowed": 212620,
+    "first_rejected": 212621,
+    "allowed_bounds": {
+      "upper_lower_bound": 295307,
+      "upper_threshold": 29826121,
+      "upper_aggregate_slack": 2147480712,
+      "search_enabled": true
+    }
+  },
+  "safe_parameter_samples": 464,
+  "normal_full_domain": true,
+  "bypass": true
+}
