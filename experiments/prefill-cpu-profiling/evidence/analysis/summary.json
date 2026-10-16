@@ -1,0 +1,3109 @@
+{
+  "complete_matrix": true,
+  "ledger": "/workspace/scratch/c6ba02920254/prefill-cpu-profiling-dot/experiments/prefill-cpu-profiling/evidence/run-ledger.json",
+  "measurement_note": "Single runs; ratios are observed overhead, not statistically established regressions.",
+  "missing_or_unsuccessful_runs": [],
+  "output_hash_comparisons": [
+    {
+      "all_output_files_byte_identical": true,
+      "assignments": 5000,
+      "baseline_files": 398,
+      "differing_files": [],
+      "input_hashes_match": true,
+      "variant": "sampled",
+      "variant_files": 398
+    },
+    {
+      "all_output_files_byte_identical": true,
+      "assignments": 5000,
+      "baseline_files": 398,
+      "differing_files": [],
+      "input_hashes_match": true,
+      "variant": "timed",
+      "variant_files": 398
+    },
+    {
+      "all_output_files_byte_identical": true,
+      "assignments": 10000,
+      "baseline_files": 398,
+      "differing_files": [],
+      "input_hashes_match": true,
+      "variant": "sampled",
+      "variant_files": 398
+    },
+    {
+      "all_output_files_byte_identical": true,
+      "assignments": 10000,
+      "baseline_files": 398,
+      "differing_files": [],
+      "input_hashes_match": true,
+      "variant": "timed",
+      "variant_files": 398
+    },
+    {
+      "all_output_files_byte_identical": true,
+      "assignments": 20000,
+      "baseline_files": 398,
+      "differing_files": [],
+      "input_hashes_match": true,
+      "variant": "sampled",
+      "variant_files": 398
+    },
+    {
+      "all_output_files_byte_identical": true,
+      "assignments": 20000,
+      "baseline_files": 398,
+      "differing_files": [],
+      "input_hashes_match": true,
+      "variant": "timed",
+      "variant_files": 398
+    },
+    {
+      "all_output_files_byte_identical": true,
+      "assignments": 50000,
+      "baseline_files": 398,
+      "differing_files": [],
+      "input_hashes_match": true,
+      "variant": "sampled",
+      "variant_files": 398
+    },
+    {
+      "all_output_files_byte_identical": true,
+      "assignments": 50000,
+      "baseline_files": 398,
+      "differing_files": [],
+      "input_hashes_match": true,
+      "variant": "timed",
+      "variant_files": 398
+    }
+  ],
+  "raw_root": "/workspace/scratch/c6ba02920254/prefill-cpu-raw",
+  "runs": {
+    "10000-baseline": {
+      "resource": {
+        "assignments": 10000,
+        "cpu_seconds": 13.705576,
+        "cpu_seconds_relative_to_baseline": 1.0,
+        "peak_rss_kib": 499384,
+        "returncode": 0,
+        "sampled_peak_tree_rss_bytes": 511438848,
+        "status": "PASS",
+        "system_cpu_seconds": 0.289246,
+        "user_cpu_seconds": 13.41633,
+        "variant": "baseline",
+        "wall_seconds": 13.787876101967413,
+        "wall_seconds_relative_to_baseline": 1.0
+      }
+    },
+    "10000-sampled": {
+      "resource": {
+        "assignments": 10000,
+        "cpu_seconds": 13.056336,
+        "cpu_seconds_relative_to_baseline": 0.9526294991177313,
+        "peak_rss_kib": 499472,
+        "returncode": 0,
+        "sampled_peak_tree_rss_bytes": 512204800,
+        "status": "PASS",
+        "system_cpu_seconds": 0.217294,
+        "user_cpu_seconds": 12.839042,
+        "variant": "sampled",
+        "wall_seconds": 13.291840179008432,
+        "wall_seconds_relative_to_baseline": 0.9640237612166966
+      },
+      "sampling": {
+        "callchain_requested": true,
+        "decode_command": [
+          "/workspace/shared/cpu_sampler/perf",
+          "script",
+          "-i",
+          "/workspace/scratch/c6ba02920254/prefill-cpu-raw/10000-sampled/perf.data",
+          "--max-stack",
+          "1024",
+          "-F",
+          "comm,pid,tid,time,event,ip,sym,dso"
+        ],
+        "events": {
+          "cpu-clock:u": 1271
+        },
+        "hotspot_subtrees": {
+          "CreateJetty": {
+            "percent": 0.47206923682140045,
+            "samples": 6,
+            "stack_pattern": "ns3::UbFunction::CreateJetty("
+          },
+          "GetJettiesUsingTpn": {
+            "percent": 51.21951219512195,
+            "samples": 651,
+            "stack_pattern": "ns3::UbTransaction::GetJettiesUsingTpn("
+          },
+          "ResolveWqeLifecycleLocalId": {
+            "percent": 1.7309205350118018,
+            "samples": 22,
+            "stack_pattern": "ns3::UbJettyManager::ResolveWqeLifecycleLocalId("
+          },
+          "SubmitWqe": {
+            "percent": 2.045633359559402,
+            "samples": 26,
+            "stack_pattern": "ns3::UbFunction::SubmitWqe("
+          }
+        },
+        "inclusive_caveat": "Observed stack membership, not complete attribution when unwinding is truncated. Recursion deduplicated per sample.",
+        "inclusive_top20": [
+          {
+            "percent": 99.8426435877262,
+            "samples": 1269,
+            "symbol": "main (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/ns3.44-multi-npu-relay)"
+          },
+          {
+            "percent": 98.74114870180959,
+            "samples": 1255,
+            "symbol": "Layer::Run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/ns3.44-multi-npu-relay)"
+          },
+          {
+            "percent": 97.5609756097561,
+            "samples": 1240,
+            "symbol": "[unknown] (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+          },
+          {
+            "percent": 97.4822974036192,
+            "samples": 1239,
+            "symbol": "ns3::DefaultSimulatorImpl::ProcessOneEvent() (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-core.so)"
+          },
+          {
+            "percent": 97.4822974036192,
+            "samples": 1239,
+            "symbol": "ns3::DefaultSimulatorImpl::Run() (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-core.so)"
+          },
+          {
+            "percent": 96.6955153422502,
+            "samples": 1229,
+            "symbol": "__libc_start_main (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+          },
+          {
+            "percent": 96.14476789929189,
+            "samples": 1222,
+            "symbol": "_start (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/ns3.44-multi-npu-relay)"
+          },
+          {
+            "percent": 54.366640440597955,
+            "samples": 691,
+            "symbol": "ns3::UbTransportChannel::TryContinueJettyTransmission() (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          },
+          {
+            "percent": 54.130605822187256,
+            "samples": 688,
+            "symbol": "ns3::UbTransaction::TryContinueJettyTransmission(ns3::Ptr<ns3::UbTransportChannel>) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          },
+          {
+            "percent": 51.21951219512195,
+            "samples": 651,
+            "symbol": "ns3::UbTransaction::GetJettiesUsingTpn(unsigned int) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          },
+          {
+            "percent": 43.98111723052715,
+            "samples": 559,
+            "symbol": "ns3::UbPort::Receive(ns3::Ptr<ns3::Packet>) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          },
+          {
+            "percent": 43.98111723052715,
+            "samples": 559,
+            "symbol": "std::_Function_handler<void (), std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)> >::_M_invoke(std::_Any_data const&) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          },
+          {
+            "percent": 43.98111723052715,
+            "samples": 559,
+            "symbol": "std::__invoke_result<void (ns3::UbPort::*&)(ns3::Ptr<ns3::Packet>), ns3::Ptr<ns3::UbPort>&, ns3::Ptr<ns3::Packet>&>::type std::__invoke<void (ns3::UbPort::*&)(ns3::Ptr<ns3::Packet>), ns3::Ptr<ns3::UbPort>&, ns3::Ptr<ns3::Packet>&>(void (ns3::UbPort::*&)(ns3::Ptr<ns3::Packet>), ns3::Ptr<ns3::UbPort>&, ns3::Ptr<ns3::Packet>&) (inlined)"
+          },
+          {
+            "percent": 43.98111723052715,
+            "samples": 559,
+            "symbol": "std::enable_if<is_invocable_r_v<void, std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)>&>, void>::type std::__invoke_r<void, std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)>&>(std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)>&) (inlined)"
+          },
+          {
+            "percent": 43.98111723052715,
+            "samples": 559,
+            "symbol": "void std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)>::__call<void, , 0ul, 1ul>(std::tuple<>&&, std::_Index_tuple<0ul, 1ul>) (inlined)"
+          },
+          {
+            "percent": 43.98111723052715,
+            "samples": 559,
+            "symbol": "void std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)>::operator()<, void>() (inlined)"
+          },
+          {
+            "percent": 43.98111723052715,
+            "samples": 559,
+            "symbol": "void std::__invoke_impl<void, std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)>&>(std::__invoke_other, std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)>&) (inlined)"
+          },
+          {
+            "percent": 43.98111723052715,
+            "samples": 559,
+            "symbol": "void std::__invoke_impl<void, void (ns3::UbPort::*&)(ns3::Ptr<ns3::Packet>), ns3::Ptr<ns3::UbPort>&, ns3::Ptr<ns3::Packet>&>(std::__invoke_memfun_deref, void (ns3::UbPort::*&)(ns3::Ptr<ns3::Packet>), ns3::Ptr<ns3::UbPort>&, ns3::Ptr<ns3::Packet>&) (inlined)"
+          },
+          {
+            "percent": 42.64358772619984,
+            "samples": 542,
+            "symbol": "std::_Function_handler<void (), std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)> >::_M_invoke(std::_Any_data const&) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          },
+          {
+            "percent": 42.64358772619984,
+            "samples": 542,
+            "symbol": "std::__invoke_result<void (ns3::UbSwitchAllocator::*&)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*&, ns3::Ptr<ns3::UbPort>&>::type std::__invoke<void (ns3::UbSwitchAllocator::*&)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*&, ns3::Ptr<ns3::UbPort>&>(void (ns3::UbSwitchAllocator::*&)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*&, ns3::Ptr<ns3::UbPort>&) (inlined)"
+          }
+        ],
+        "leaf_only_observed": false,
+        "lost_samples_reported": 0,
+        "pid_tid_scope": [
+          {
+            "comm": "ns3.44-multi-np",
+            "pid": 14,
+            "samples": 1271,
+            "tid": 14
+          }
+        ],
+        "recorder": {
+          "bytes": 11060688,
+          "child_exit": 0,
+          "child_system_seconds": 0.184644,
+          "child_user_seconds": 12.831357,
+          "lost_records": 0,
+          "lost_samples_reported": 0,
+          "period_sum_ns": 12838383710,
+          "samples": 1271,
+          "throttle_records": 0,
+          "unthrottle_records": 0
+        },
+        "records": {
+          "COMM": 1,
+          "EXIT": 1,
+          "LOST": 0,
+          "LOST_SAMPLES": 0,
+          "MMAP2": 3624,
+          "SAMPLE": 1271,
+          "THROTTLE": 0,
+          "UNTHROTTLE": 0
+        },
+        "sample_count": 1271,
+        "sample_type_masks": [
+          12583
+        ],
+        "samples_without_frames": 0,
+        "self_top20": [
+          {
+            "percent": 15.892997639653816,
+            "samples": 202,
+            "symbol": "std::_Rb_tree_increment(std::_Rb_tree_node_base*) (/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)"
+          },
+          {
+            "percent": 9.284028324154209,
+            "samples": 118,
+            "symbol": "std::_Rb_tree<unsigned int, std::pair<unsigned int const, ns3::UbRtpTransportReference>, std::_Select1st<std::pair<unsigned int const, ns3::UbRtpTransportReference> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, ns3::UbRtpTransportReference> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<unsigned int const, ns3::UbRtpTransportReference> >*, std::_Rb_tree_node_base*, unsigned int const&) (inlined)"
+          },
+          {
+            "percent": 8.339889850511408,
+            "samples": 106,
+            "symbol": "std::_Rb_tree<unsigned int, std::pair<unsigned int const, ns3::UbTransportChannelManager::EndpointRecord>, std::_Select1st<std::pair<unsigned int const, ns3::UbTransportChannelManager::EndpointRecord> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, ns3::UbTransportChannelManager::EndpointRecord> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<unsigned int const, ns3::UbTransportChannelManager::EndpointRecord> >*, std::_Rb_tree_node_base*, unsigned int const&) (inlined)"
+          },
+          {
+            "percent": 4.878048780487805,
+            "samples": 62,
+            "symbol": "[unknown] (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+          },
+          {
+            "percent": 3.4618410700236035,
+            "samples": 44,
+            "symbol": "cfree (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+          },
+          {
+            "percent": 2.832415420928403,
+            "samples": 36,
+            "symbol": "malloc (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+          },
+          {
+            "percent": 2.2816679779701023,
+            "samples": 29,
+            "symbol": "std::_Rb_tree<unsigned int, std::pair<unsigned int const, ns3::UbJettyManager::JettyRecord>, std::_Select1st<std::pair<unsigned int const, ns3::UbJettyManager::JettyRecord> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, ns3::UbJettyManager::JettyRecord> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<unsigned int const, ns3::UbJettyManager::JettyRecord> > const*, std::_Rb_tree_node_base const*, unsigned int const&) const (inlined)"
+          },
+          {
+            "percent": 1.8882769472856018,
+            "samples": 24,
+            "symbol": "ns3::UbTransaction::GetJettyLiveTps(unsigned int) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          },
+          {
+            "percent": 1.4948859166011015,
+            "samples": 19,
+            "symbol": "__dynamic_cast (/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)"
+          },
+          {
+            "percent": 1.3375295043273014,
+            "samples": 17,
+            "symbol": "ns3::SimpleRefCount<ns3::Object, ns3::ObjectBase, ns3::ObjectDeleter>::Unref() const (inlined)"
+          },
+          {
+            "percent": 1.3375295043273014,
+            "samples": 17,
+            "symbol": "ns3::UbLifecycleResourceIdentity::operator==(ns3::UbLifecycleResourceIdentity const&) const (inlined)"
+          },
+          {
+            "percent": 1.2588512981904012,
+            "samples": 16,
+            "symbol": "ns3::UbTransportChannelManager::ResolveLiveTpLocked(unsigned int, ns3::UbLifecycleResourceIdentity const&) (inlined)"
+          },
+          {
+            "percent": 1.1014948859166012,
+            "samples": 14,
+            "symbol": "ns3::Ptr<ns3::UbJetty>::Ptr(ns3::Ptr<ns3::UbJetty> const&) (inlined)"
+          },
+          {
+            "percent": 0.9441384736428009,
+            "samples": 12,
+            "symbol": "_ZNKSt8__detail10_Synth3wayclIjjEEDaRKT_RKT0_QrqXltfL0p_fL0p0_RNS_18__boolean_testableEXltfL0p0_fL0p_RNS_18__boolean_testableEE (inlined)"
+          },
+          {
+            "percent": 0.9441384736428009,
+            "samples": 12,
+            "symbol": "ns3::UbSwitchAllocator::GetIngressQueueSlotCount(unsigned int, unsigned int) const (inlined)"
+          },
+          {
+            "percent": 0.9441384736428009,
+            "samples": 12,
+            "symbol": "ns3::UbTransportChannel::HasPendingTransmitWork() (inlined)"
+          },
+          {
+            "percent": 0.9441384736428009,
+            "samples": 12,
+            "symbol": "std::_Rb_tree_increment(std::_Rb_tree_node_base const*) (/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)"
+          },
+          {
+            "percent": 0.8654602675059009,
+            "samples": 11,
+            "symbol": "std::_Rb_tree<utils::UbUtils::TraceFileState*, std::pair<utils::UbUtils::TraceFileState* const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::_Select1st<std::pair<utils::UbUtils::TraceFileState* const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::less<utils::UbUtils::TraceFileState*>, std::allocator<std::pair<utils::UbUtils::TraceFileState* const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >::_M_lower_bound(std::_Rb_tree_node<std::pair<utils::UbUtils::TraceFileState* const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >*, std::_Rb_tree_node_base*, utils::UbUtils::TraceFileState* const&) (inlined)"
+          },
+          {
+            "percent": 0.7867820613690008,
+            "samples": 10,
+            "symbol": "_ZNKSt8__detail10_Synth3wayclIN3ns323UbLifecycleResourceKindES3_EEDaRKT_RKT0_QrqXltfL0p_fL0p0_RNS_18__boolean_testableEXltfL0p0_fL0p_RNS_18__boolean_testableEE (inlined)"
+          },
+          {
+            "percent": 0.7081038552321007,
+            "samples": 9,
+            "symbol": "ns3::UbRetransController::GetRetransEnable() const (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          }
+        ],
+        "stack_depth_histogram": {
+          "2": 1,
+          "7": 3,
+          "8": 9,
+          "9": 5,
+          "10": 6,
+          "11": 7,
+          "12": 10,
+          "13": 7,
+          "14": 5,
+          "15": 25,
+          "16": 7,
+          "17": 17,
+          "18": 17,
+          "19": 25,
+          "20": 21,
+          "21": 33,
+          "22": 34,
+          "23": 24,
+          "24": 48,
+          "25": 145,
+          "26": 42,
+          "27": 130,
+          "28": 117,
+          "29": 126,
+          "30": 86,
+          "31": 31,
+          "32": 77,
+          "33": 17,
+          "34": 19,
+          "35": 32,
+          "36": 17,
+          "37": 15,
+          "38": 20,
+          "39": 12,
+          "40": 7,
+          "41": 11,
+          "42": 6,
+          "43": 14,
+          "44": 5,
+          "45": 7,
+          "46": 3,
+          "47": 4,
+          "48": 6,
+          "49": 2,
+          "51": 1,
+          "53": 1,
+          "54": 1,
+          "56": 1,
+          "57": 2,
+          "61": 2,
+          "62": 1,
+          "65": 1,
+          "66": 2,
+          "71": 1,
+          "72": 1,
+          "73": 1,
+          "77": 1
+        },
+        "unknown_any_frame_samples": 1242,
+        "unknown_self_samples": 66,
+        "user_stack_requested": true,
+        "weighting": "one per SAMPLE record; never period weighted"
+      }
+    },
+    "10000-timed": {
+      "resource": {
+        "assignments": 10000,
+        "cpu_seconds": 14.229149,
+        "cpu_seconds_relative_to_baseline": 1.0382014590266033,
+        "peak_rss_kib": 499012,
+        "returncode": 0,
+        "sampled_peak_tree_rss_bytes": 511078400,
+        "status": "PASS",
+        "system_cpu_seconds": 0.43812999999999996,
+        "user_cpu_seconds": 13.791019,
+        "variant": "timed",
+        "wall_seconds": 14.28688664699439,
+        "wall_seconds_relative_to_baseline": 1.0361919806456465
+      },
+      "timing": {
+        "caveat": "Instrumented timings include measurement overhead. Inclusive scopes overlap; do not sum them.",
+        "counters": {
+          "AckCapacityGrowthRequests": 23208,
+          "AckResetBytes": 380239872,
+          "AckResetSlots": 47529984,
+          "AckResizeBytes": 760479744,
+          "AckResizeSlots": 95059968,
+          "ClockErrors": 0,
+          "JettyRecordsScanned": 11390962,
+          "LifecycleCandidates": 19674,
+          "TpnLookupJettyRecordsScanned": 38261528,
+          "TpnLookupLiveTransportVectorSlots": 38261528,
+          "TpnLookupMatchedJetties": 995265,
+          "TpnLookupTransportEntriesCompared": 38261528,
+          "WqeEntriesCompared": 4357672
+        },
+        "exclusive_definition": "inclusive minus nested instrumented scopes, not complete function self time",
+        "timers": [
+          {
+            "calls_or_count": 19674,
+            "exclusive_thread_cpu_ns": 14633432,
+            "exclusive_wall_ns": 8774412,
+            "inclusive_thread_cpu_ns": 160620593,
+            "inclusive_wall_ns": 164558254,
+            "kind": "timer",
+            "name": "CreateJettyBound"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "CreateJettyUnbound"
+          },
+          {
+            "calls_or_count": 19674,
+            "exclusive_thread_cpu_ns": 24641892,
+            "exclusive_wall_ns": 24022674,
+            "inclusive_thread_cpu_ns": 109287246,
+            "inclusive_wall_ns": 113047700,
+            "kind": "timer",
+            "name": "CreateObjectJetty"
+          },
+          {
+            "calls_or_count": 19674,
+            "exclusive_thread_cpu_ns": 10215428,
+            "exclusive_wall_ns": 6820892,
+            "inclusive_thread_cpu_ns": 21720166,
+            "inclusive_wall_ns": 24615779,
+            "kind": "timer",
+            "name": "JettyInit"
+          },
+          {
+            "calls_or_count": 19674,
+            "exclusive_thread_cpu_ns": 14979749,
+            "exclusive_wall_ns": 18120363,
+            "inclusive_thread_cpu_ns": 14979749,
+            "inclusive_wall_ns": 18120363,
+            "kind": "timer",
+            "name": "RegisterJetty"
+          },
+          {
+            "calls_or_count": 19674,
+            "exclusive_thread_cpu_ns": 212484189,
+            "exclusive_wall_ns": 217159865,
+            "inclusive_thread_cpu_ns": 212484189,
+            "inclusive_wall_ns": 217159865,
+            "kind": "timer",
+            "name": "ResolveWqeLifecycleLocalId"
+          },
+          {
+            "calls_or_count": 19674,
+            "exclusive_thread_cpu_ns": 92388908,
+            "exclusive_wall_ns": 88399559,
+            "inclusive_thread_cpu_ns": 310314616,
+            "inclusive_wall_ns": 314424273,
+            "kind": "timer",
+            "name": "SubmitWqe"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "SubmitCtpWqe"
+          },
+          {
+            "calls_or_count": 19674,
+            "exclusive_thread_cpu_ns": 5441519,
+            "exclusive_wall_ns": 8864849,
+            "inclusive_thread_cpu_ns": 5441519,
+            "inclusive_wall_ns": 8864849,
+            "kind": "timer",
+            "name": "RegisterWqe"
+          },
+          {
+            "calls_or_count": 69624,
+            "exclusive_thread_cpu_ns": 114647804,
+            "exclusive_wall_ns": 128215224,
+            "inclusive_thread_cpu_ns": 114647804,
+            "inclusive_wall_ns": 128215224,
+            "kind": "timer",
+            "name": "AckResize"
+          },
+          {
+            "calls_or_count": 23208,
+            "exclusive_thread_cpu_ns": 6552790,
+            "exclusive_wall_ns": 10078740,
+            "inclusive_thread_cpu_ns": 6552790,
+            "inclusive_wall_ns": 10078740,
+            "kind": "timer",
+            "name": "AckReset"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 671770,
+            "exclusive_wall_ns": 663523,
+            "inclusive_thread_cpu_ns": 14178838988,
+            "inclusive_wall_ns": 14195724946,
+            "kind": "timer",
+            "name": "AppRun"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 7822430,
+            "exclusive_wall_ns": 7824254,
+            "inclusive_thread_cpu_ns": 7822430,
+            "inclusive_wall_ns": 7824254,
+            "kind": "timer",
+            "name": "AppRead"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 65091065,
+            "exclusive_wall_ns": 61139730,
+            "inclusive_thread_cpu_ns": 311568924,
+            "inclusive_wall_ns": 312000932,
+            "kind": "timer",
+            "name": "AppTopology"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 8135395,
+            "exclusive_wall_ns": 8136882,
+            "inclusive_thread_cpu_ns": 8135395,
+            "inclusive_wall_ns": 8136882,
+            "kind": "timer",
+            "name": "AppWriteArtifacts"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 2789249,
+            "exclusive_wall_ns": 2790318,
+            "inclusive_thread_cpu_ns": 2789249,
+            "inclusive_wall_ns": 2790318,
+            "kind": "timer",
+            "name": "AppWritePayloads"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 5390305040,
+            "exclusive_wall_ns": 5345120928,
+            "inclusive_thread_cpu_ns": 13720951915,
+            "inclusive_wall_ns": 13737268727,
+            "kind": "timer",
+            "name": "AppSimulatorRun"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 120262194,
+            "exclusive_wall_ns": 116597010,
+            "inclusive_thread_cpu_ns": 124390342,
+            "inclusive_wall_ns": 124530142,
+            "kind": "timer",
+            "name": "AppSimulatorDestroy"
+          },
+          {
+            "calls_or_count": 20000,
+            "exclusive_thread_cpu_ns": 47373504,
+            "exclusive_wall_ns": 50399002,
+            "inclusive_thread_cpu_ns": 47373504,
+            "inclusive_wall_ns": 50399002,
+            "kind": "timer",
+            "name": "AppValidate"
+          },
+          {
+            "calls_or_count": 19674,
+            "exclusive_thread_cpu_ns": 34603612,
+            "exclusive_wall_ns": 25300829,
+            "inclusive_thread_cpu_ns": 341465049,
+            "inclusive_wall_ns": 345229974,
+            "kind": "timer",
+            "name": "AppTargetExecutor"
+          },
+          {
+            "calls_or_count": 19674,
+            "exclusive_thread_cpu_ns": 196935154,
+            "exclusive_wall_ns": 189760104,
+            "inclusive_thread_cpu_ns": 230630721,
+            "inclusive_wall_ns": 233812446,
+            "kind": "timer",
+            "name": "AppTargetCompletion"
+          },
+          {
+            "calls_or_count": 160141,
+            "exclusive_thread_cpu_ns": 110063408,
+            "exclusive_wall_ns": 140000342,
+            "inclusive_thread_cpu_ns": 110063408,
+            "inclusive_wall_ns": 140000342,
+            "kind": "timer",
+            "name": "AppEvent"
+          },
+          {
+            "calls_or_count": 20000,
+            "exclusive_thread_cpu_ns": 45220633,
+            "exclusive_wall_ns": 41688088,
+            "inclusive_thread_cpu_ns": 365636856,
+            "inclusive_wall_ns": 369205658,
+            "kind": "timer",
+            "name": "AppSend"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 2496014,
+            "exclusive_wall_ns": 2496978,
+            "inclusive_thread_cpu_ns": 2496014,
+            "inclusive_wall_ns": 2496978,
+            "kind": "timer",
+            "name": "AppUbUtilsDestroy"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 12949,
+            "exclusive_wall_ns": 13190,
+            "inclusive_thread_cpu_ns": 12949,
+            "inclusive_wall_ns": 13190,
+            "kind": "timer",
+            "name": "AppLogClose"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 16989567,
+            "exclusive_wall_ns": 16990929,
+            "inclusive_thread_cpu_ns": 16989567,
+            "inclusive_wall_ns": 16990929,
+            "kind": "timer",
+            "name": "AppLayerDestroy"
+          },
+          {
+            "calls_or_count": 39348,
+            "exclusive_thread_cpu_ns": 75559776,
+            "exclusive_wall_ns": 82448266,
+            "inclusive_thread_cpu_ns": 719643255,
+            "inclusive_wall_ns": 734197025,
+            "kind": "timer",
+            "name": "TransactionInboundTaUnit"
+          },
+          {
+            "calls_or_count": 19674,
+            "exclusive_thread_cpu_ns": 283927614,
+            "exclusive_wall_ns": 283544521,
+            "inclusive_thread_cpu_ns": 302618430,
+            "inclusive_wall_ns": 306518785,
+            "kind": "timer",
+            "name": "TransactionSegmentComplete"
+          },
+          {
+            "calls_or_count": 71007,
+            "exclusive_thread_cpu_ns": 7226648558,
+            "exclusive_wall_ns": 7264582374,
+            "inclusive_thread_cpu_ns": 7226648558,
+            "inclusive_wall_ns": 7264582374,
+            "kind": "timer",
+            "name": "GetJettiesUsingTpn"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "TransactionExecuteInbound"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "NativeAppendTrace"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "NativeCommitTrace"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "NativeFlushTrace"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "PortDispatchReceive"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "TransportParseData"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "TransportHandleAck"
+          },
+          {
+            "calls_or_count": 1767,
+            "exclusive_thread_cpu_ns": 53337418,
+            "exclusive_wall_ns": 51149760,
+            "inclusive_thread_cpu_ns": 74259772,
+            "inclusive_wall_ns": 74690679,
+            "kind": "timer",
+            "name": "AppPair"
+          },
+          {
+            "calls_or_count": 65,
+            "exclusive_thread_cpu_ns": 11597494,
+            "exclusive_wall_ns": 11612269,
+            "inclusive_thread_cpu_ns": 11597494,
+            "inclusive_wall_ns": 11612269,
+            "kind": "timer",
+            "name": "AppInit"
+          }
+        ],
+        "timing_units": "integer nanoseconds; CPU is CLOCK_THREAD_CPUTIME_ID"
+      }
+    },
+    "20000-baseline": {
+      "resource": {
+        "assignments": 20000,
+        "cpu_seconds": 51.303509999999996,
+        "cpu_seconds_relative_to_baseline": 1.0,
+        "peak_rss_kib": 881352,
+        "returncode": 0,
+        "sampled_peak_tree_rss_bytes": 902610944,
+        "status": "PASS",
+        "system_cpu_seconds": 0.44845999999999997,
+        "user_cpu_seconds": 50.85505,
+        "variant": "baseline",
+        "wall_seconds": 51.39420318300836,
+        "wall_seconds_relative_to_baseline": 1.0
+      }
+    },
+    "20000-sampled": {
+      "resource": {
+        "assignments": 20000,
+        "cpu_seconds": 49.912195,
+        "cpu_seconds_relative_to_baseline": 0.972880705433215,
+        "peak_rss_kib": 881416,
+        "returncode": 0,
+        "sampled_peak_tree_rss_bytes": 903421952,
+        "status": "PASS",
+        "system_cpu_seconds": 0.440731,
+        "user_cpu_seconds": 49.471464,
+        "variant": "sampled",
+        "wall_seconds": 49.90562245401088,
+        "wall_seconds_relative_to_baseline": 0.971036018912545
+      },
+      "sampling": {
+        "callchain_requested": true,
+        "decode_command": [
+          "/workspace/shared/cpu_sampler/perf",
+          "script",
+          "-i",
+          "/workspace/scratch/c6ba02920254/prefill-cpu-raw/20000-sampled/perf.data",
+          "--max-stack",
+          "1024",
+          "-F",
+          "comm,pid,tid,time,event,ip,sym,dso"
+        ],
+        "events": {
+          "cpu-clock:u": 4878
+        },
+        "hotspot_subtrees": {
+          "CreateJetty": {
+            "percent": 0.16400164001640016,
+            "samples": 8,
+            "stack_pattern": "ns3::UbFunction::CreateJetty("
+          },
+          "GetJettiesUsingTpn": {
+            "percent": 64.37064370643706,
+            "samples": 3140,
+            "stack_pattern": "ns3::UbTransaction::GetJettiesUsingTpn("
+          },
+          "ResolveWqeLifecycleLocalId": {
+            "percent": 2.808528085280853,
+            "samples": 137,
+            "stack_pattern": "ns3::UbJettyManager::ResolveWqeLifecycleLocalId("
+          },
+          "SubmitWqe": {
+            "percent": 3.177531775317753,
+            "samples": 155,
+            "stack_pattern": "ns3::UbFunction::SubmitWqe("
+          }
+        },
+        "inclusive_caveat": "Observed stack membership, not complete attribution when unwinding is truncated. Recursion deduplicated per sample.",
+        "inclusive_top20": [
+          {
+            "percent": 99.9589995899959,
+            "samples": 4876,
+            "symbol": "main (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/ns3.44-multi-npu-relay)"
+          },
+          {
+            "percent": 99.48749487494875,
+            "samples": 4853,
+            "symbol": "Layer::Run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/ns3.44-multi-npu-relay)"
+          },
+          {
+            "percent": 98.95448954489545,
+            "samples": 4827,
+            "symbol": "ns3::DefaultSimulatorImpl::Run() (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-core.so)"
+          },
+          {
+            "percent": 98.8929889298893,
+            "samples": 4824,
+            "symbol": "ns3::DefaultSimulatorImpl::ProcessOneEvent() (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-core.so)"
+          },
+          {
+            "percent": 98.54448544485444,
+            "samples": 4807,
+            "symbol": "[unknown] (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+          },
+          {
+            "percent": 98.01148011480115,
+            "samples": 4781,
+            "symbol": "__libc_start_main (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+          },
+          {
+            "percent": 97.8679786797868,
+            "samples": 4774,
+            "symbol": "_start (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/ns3.44-multi-npu-relay)"
+          },
+          {
+            "percent": 67.91717917179172,
+            "samples": 3313,
+            "symbol": "ns3::UbTransportChannel::TryContinueJettyTransmission() (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          },
+          {
+            "percent": 67.87617876178761,
+            "samples": 3311,
+            "symbol": "ns3::UbTransaction::TryContinueJettyTransmission(ns3::Ptr<ns3::UbTransportChannel>) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          },
+          {
+            "percent": 64.37064370643706,
+            "samples": 3140,
+            "symbol": "ns3::UbTransaction::GetJettiesUsingTpn(unsigned int) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          },
+          {
+            "percent": 48.7289872898729,
+            "samples": 2377,
+            "symbol": "std::_Function_handler<void (), std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)> >::_M_invoke(std::_Any_data const&) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          },
+          {
+            "percent": 48.7289872898729,
+            "samples": 2377,
+            "symbol": "std::__invoke_result<void (ns3::UbSwitchAllocator::*&)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*&, ns3::Ptr<ns3::UbPort>&>::type std::__invoke<void (ns3::UbSwitchAllocator::*&)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*&, ns3::Ptr<ns3::UbPort>&>(void (ns3::UbSwitchAllocator::*&)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*&, ns3::Ptr<ns3::UbPort>&) (inlined)"
+          },
+          {
+            "percent": 48.7289872898729,
+            "samples": 2377,
+            "symbol": "std::enable_if<is_invocable_r_v<void, std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>&>, void>::type std::__invoke_r<void, std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>&>(std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>&) (inlined)"
+          },
+          {
+            "percent": 48.7289872898729,
+            "samples": 2377,
+            "symbol": "void std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>::__call<void, , 0ul, 1ul>(std::tuple<>&&, std::_Index_tuple<0ul, 1ul>) (inlined)"
+          },
+          {
+            "percent": 48.7289872898729,
+            "samples": 2377,
+            "symbol": "void std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>::operator()<, void>() (inlined)"
+          },
+          {
+            "percent": 48.7289872898729,
+            "samples": 2377,
+            "symbol": "void std::__invoke_impl<void, std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>&>(std::__invoke_other, std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>&) (inlined)"
+          },
+          {
+            "percent": 48.7289872898729,
+            "samples": 2377,
+            "symbol": "void std::__invoke_impl<void, void (ns3::UbSwitchAllocator::*&)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*&, ns3::Ptr<ns3::UbPort>&>(std::__invoke_memfun_deref, void (ns3::UbSwitchAllocator::*&)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*&, ns3::Ptr<ns3::UbPort>&) (inlined)"
+          },
+          {
+            "percent": 48.687986879868795,
+            "samples": 2375,
+            "symbol": "ns3::UbSwitchAllocator::RunAllocation(ns3::Ptr<ns3::UbPort>) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          },
+          {
+            "percent": 48.6059860598606,
+            "samples": 2371,
+            "symbol": "ns3::UbRoundRobinAllocator::AllocateNextPacket(ns3::Ptr<ns3::UbPort>) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          },
+          {
+            "percent": 43.398933989339895,
+            "samples": 2117,
+            "symbol": "ns3::UbTransportChannel::GetNextPacket() (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          }
+        ],
+        "leaf_only_observed": false,
+        "lost_samples_reported": 0,
+        "pid_tid_scope": [
+          {
+            "comm": "ns3.44-multi-np",
+            "pid": 28,
+            "samples": 4878,
+            "tid": 28
+          }
+        ],
+        "recorder": {
+          "bytes": 41712936,
+          "child_exit": 0,
+          "child_system_seconds": 0.371701,
+          "child_user_seconds": 49.438336,
+          "lost_records": 0,
+          "lost_samples_reported": 0,
+          "period_sum_ns": 49272726780,
+          "samples": 4878,
+          "throttle_records": 0,
+          "unthrottle_records": 0
+        },
+        "records": {
+          "COMM": 1,
+          "EXIT": 1,
+          "LOST": 0,
+          "LOST_SAMPLES": 0,
+          "MMAP2": 6404,
+          "SAMPLE": 4878,
+          "THROTTLE": 0,
+          "UNTHROTTLE": 0
+        },
+        "sample_count": 4878,
+        "sample_type_masks": [
+          12583
+        ],
+        "samples_without_frames": 0,
+        "self_top20": [
+          {
+            "percent": 22.63222632226322,
+            "samples": 1104,
+            "symbol": "std::_Rb_tree_increment(std::_Rb_tree_node_base*) (/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)"
+          },
+          {
+            "percent": 10.844608446084461,
+            "samples": 529,
+            "symbol": "std::_Rb_tree<unsigned int, std::pair<unsigned int const, ns3::UbRtpTransportReference>, std::_Select1st<std::pair<unsigned int const, ns3::UbRtpTransportReference> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, ns3::UbRtpTransportReference> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<unsigned int const, ns3::UbRtpTransportReference> >*, std::_Rb_tree_node_base*, unsigned int const&) (inlined)"
+          },
+          {
+            "percent": 8.897088970889708,
+            "samples": 434,
+            "symbol": "std::_Rb_tree<unsigned int, std::pair<unsigned int const, ns3::UbTransportChannelManager::EndpointRecord>, std::_Select1st<std::pair<unsigned int const, ns3::UbTransportChannelManager::EndpointRecord> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, ns3::UbTransportChannelManager::EndpointRecord> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<unsigned int const, ns3::UbTransportChannelManager::EndpointRecord> >*, std::_Rb_tree_node_base*, unsigned int const&) (inlined)"
+          },
+          {
+            "percent": 3.956539565395654,
+            "samples": 193,
+            "symbol": "std::_Rb_tree<unsigned int, std::pair<unsigned int const, ns3::UbJettyManager::JettyRecord>, std::_Select1st<std::pair<unsigned int const, ns3::UbJettyManager::JettyRecord> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, ns3::UbJettyManager::JettyRecord> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<unsigned int const, ns3::UbJettyManager::JettyRecord> > const*, std::_Rb_tree_node_base const*, unsigned int const&) const (inlined)"
+          },
+          {
+            "percent": 3.3825338253382533,
+            "samples": 165,
+            "symbol": "[unknown] (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+          },
+          {
+            "percent": 3.054530545305453,
+            "samples": 149,
+            "symbol": "cfree (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+          },
+          {
+            "percent": 2.3780237802378026,
+            "samples": 116,
+            "symbol": "ns3::UbTransaction::GetJettyLiveTps(unsigned int) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          },
+          {
+            "percent": 2.029520295202952,
+            "samples": 99,
+            "symbol": "std::_Rb_tree_increment(std::_Rb_tree_node_base const*) (/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)"
+          },
+          {
+            "percent": 1.968019680196802,
+            "samples": 96,
+            "symbol": "malloc (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+          },
+          {
+            "percent": 1.927019270192702,
+            "samples": 94,
+            "symbol": "__dynamic_cast (/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)"
+          },
+          {
+            "percent": 1.9065190651906518,
+            "samples": 93,
+            "symbol": "ns3::UbLifecycleResourceIdentity::operator==(ns3::UbLifecycleResourceIdentity const&) const (inlined)"
+          },
+          {
+            "percent": 1.2710127101271014,
+            "samples": 62,
+            "symbol": "ns3::SimpleRefCount<ns3::Object, ns3::ObjectBase, ns3::ObjectDeleter>::Unref() const (inlined)"
+          },
+          {
+            "percent": 1.2505125051250512,
+            "samples": 61,
+            "symbol": "ns3::Ptr<ns3::UbJetty>::Ptr(ns3::Ptr<ns3::UbJetty> const&) (inlined)"
+          },
+          {
+            "percent": 1.086510865108651,
+            "samples": 53,
+            "symbol": "_ZNKSt8__detail10_Synth3wayclIjjEEDaRKT_RKT0_QrqXltfL0p_fL0p0_RNS_18__boolean_testableEXltfL0p0_fL0p_RNS_18__boolean_testableEE (inlined)"
+          },
+          {
+            "percent": 0.963509635096351,
+            "samples": 47,
+            "symbol": "std::_Rb_tree<unsigned int, std::pair<unsigned int const, ns3::UbRtpTransportReference>, std::_Select1st<std::pair<unsigned int const, ns3::UbRtpTransportReference> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, ns3::UbRtpTransportReference> > >::find(unsigned int const&) (inlined)"
+          },
+          {
+            "percent": 0.9020090200902009,
+            "samples": 44,
+            "symbol": "_ZNKSt8__detail10_Synth3wayclIN3ns323UbLifecycleResourceKindES3_EEDaRKT_RKT0_QrqXltfL0p_fL0p0_RNS_18__boolean_testableEXltfL0p0_fL0p_RNS_18__boolean_testableEE (inlined)"
+          },
+          {
+            "percent": 0.6560065600656007,
+            "samples": 32,
+            "symbol": "ns3::UbTransportChannelManager::ResolveLiveTpLocked(unsigned int, ns3::UbLifecycleResourceIdentity const&) (inlined)"
+          },
+          {
+            "percent": 0.6355063550635507,
+            "samples": 31,
+            "symbol": "ns3::UbJettyManager::ResolveWqeLifecycleLocalId(unsigned int, unsigned int) const [clone .localalias] (inlined)"
+          },
+          {
+            "percent": 0.6355063550635507,
+            "samples": 31,
+            "symbol": "ns3::UbTransportChannel::HasPendingTransmitWork() (inlined)"
+          },
+          {
+            "percent": 0.6150061500615006,
+            "samples": 30,
+            "symbol": "ns3::UbTransaction::GetJettiesUsingTpn(unsigned int) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          }
+        ],
+        "stack_depth_histogram": {
+          "6": 1,
+          "7": 8,
+          "8": 16,
+          "9": 9,
+          "10": 12,
+          "11": 7,
+          "12": 19,
+          "13": 26,
+          "14": 27,
+          "15": 140,
+          "16": 32,
+          "17": 46,
+          "18": 80,
+          "19": 49,
+          "20": 50,
+          "21": 66,
+          "22": 91,
+          "23": 99,
+          "24": 173,
+          "25": 763,
+          "26": 156,
+          "27": 535,
+          "28": 589,
+          "29": 494,
+          "30": 388,
+          "31": 116,
+          "32": 372,
+          "33": 82,
+          "34": 48,
+          "35": 52,
+          "36": 44,
+          "37": 32,
+          "38": 48,
+          "39": 34,
+          "40": 21,
+          "41": 18,
+          "42": 22,
+          "43": 18,
+          "44": 14,
+          "45": 20,
+          "46": 11,
+          "47": 7,
+          "48": 4,
+          "49": 7,
+          "50": 6,
+          "51": 2,
+          "52": 2,
+          "53": 2,
+          "56": 1,
+          "58": 2,
+          "59": 1,
+          "60": 1,
+          "61": 1,
+          "62": 4,
+          "65": 1,
+          "66": 1,
+          "67": 2,
+          "69": 1,
+          "70": 1,
+          "71": 1,
+          "73": 2,
+          "78": 1
+        },
+        "unknown_any_frame_samples": 4808,
+        "unknown_self_samples": 169,
+        "user_stack_requested": true,
+        "weighting": "one per SAMPLE record; never period weighted"
+      }
+    },
+    "20000-timed": {
+      "resource": {
+        "assignments": 20000,
+        "cpu_seconds": 50.435856,
+        "cpu_seconds_relative_to_baseline": 0.9830878238155636,
+        "peak_rss_kib": 880848,
+        "returncode": 0,
+        "sampled_peak_tree_rss_bytes": 902324224,
+        "status": "PASS",
+        "system_cpu_seconds": 0.893469,
+        "user_cpu_seconds": 49.542387,
+        "variant": "timed",
+        "wall_seconds": 50.6414503279957,
+        "wall_seconds_relative_to_baseline": 0.9853533509930643
+      },
+      "timing": {
+        "caveat": "Instrumented timings include measurement overhead. Inclusive scopes overlap; do not sum them.",
+        "counters": {
+          "AckCapacityGrowthRequests": 43272,
+          "AckResetBytes": 708968448,
+          "AckResetSlots": 88621056,
+          "AckResizeBytes": 1417936896,
+          "AckResizeSlots": 177242112,
+          "ClockErrors": 0,
+          "JettyRecordsScanned": 45335376,
+          "LifecycleCandidates": 39354,
+          "TpnLookupJettyRecordsScanned": 147966778,
+          "TpnLookupLiveTransportVectorSlots": 147966778,
+          "TpnLookupMatchedJetties": 3793223,
+          "TpnLookupTransportEntriesCompared": 147966778,
+          "WqeEntriesCompared": 17405439
+        },
+        "exclusive_definition": "inclusive minus nested instrumented scopes, not complete function self time",
+        "timers": [
+          {
+            "calls_or_count": 39354,
+            "exclusive_thread_cpu_ns": 36183083,
+            "exclusive_wall_ns": 21763202,
+            "inclusive_thread_cpu_ns": 397922571,
+            "inclusive_wall_ns": 406463233,
+            "kind": "timer",
+            "name": "CreateJettyBound"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "CreateJettyUnbound"
+          },
+          {
+            "calls_or_count": 39354,
+            "exclusive_thread_cpu_ns": 62003122,
+            "exclusive_wall_ns": 58968382,
+            "inclusive_thread_cpu_ns": 257330050,
+            "inclusive_wall_ns": 265004876,
+            "kind": "timer",
+            "name": "CreateObjectJetty"
+          },
+          {
+            "calls_or_count": 39354,
+            "exclusive_thread_cpu_ns": 25581972,
+            "exclusive_wall_ns": 16628409,
+            "inclusive_thread_cpu_ns": 52987052,
+            "inclusive_wall_ns": 59839365,
+            "kind": "timer",
+            "name": "JettyInit"
+          },
+          {
+            "calls_or_count": 39354,
+            "exclusive_thread_cpu_ns": 51422386,
+            "exclusive_wall_ns": 59855790,
+            "inclusive_thread_cpu_ns": 51422386,
+            "inclusive_wall_ns": 59855790,
+            "kind": "timer",
+            "name": "RegisterJetty"
+          },
+          {
+            "calls_or_count": 39354,
+            "exclusive_thread_cpu_ns": 1488438639,
+            "exclusive_wall_ns": 1499709400,
+            "inclusive_thread_cpu_ns": 1488438639,
+            "inclusive_wall_ns": 1499709400,
+            "kind": "timer",
+            "name": "ResolveWqeLifecycleLocalId"
+          },
+          {
+            "calls_or_count": 39354,
+            "exclusive_thread_cpu_ns": 245616151,
+            "exclusive_wall_ns": 234726369,
+            "inclusive_thread_cpu_ns": 1747119436,
+            "inclusive_wall_ns": 1755168169,
+            "kind": "timer",
+            "name": "SubmitWqe"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "SubmitCtpWqe"
+          },
+          {
+            "calls_or_count": 39354,
+            "exclusive_thread_cpu_ns": 13064646,
+            "exclusive_wall_ns": 20732400,
+            "inclusive_thread_cpu_ns": 13064646,
+            "inclusive_wall_ns": 20732400,
+            "kind": "timer",
+            "name": "RegisterWqe"
+          },
+          {
+            "calls_or_count": 129816,
+            "exclusive_thread_cpu_ns": 242049880,
+            "exclusive_wall_ns": 271160229,
+            "inclusive_thread_cpu_ns": 242049880,
+            "inclusive_wall_ns": 271160229,
+            "kind": "timer",
+            "name": "AckResize"
+          },
+          {
+            "calls_or_count": 43272,
+            "exclusive_thread_cpu_ns": 14123458,
+            "exclusive_wall_ns": 22446106,
+            "inclusive_thread_cpu_ns": 14123458,
+            "inclusive_wall_ns": 22446106,
+            "kind": "timer",
+            "name": "AckReset"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 1666943,
+            "exclusive_wall_ns": 1660448,
+            "inclusive_thread_cpu_ns": 50345558231,
+            "inclusive_wall_ns": 50366510394,
+            "kind": "timer",
+            "name": "AppRun"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 11936206,
+            "exclusive_wall_ns": 11937314,
+            "inclusive_thread_cpu_ns": 11936206,
+            "inclusive_wall_ns": 11937314,
+            "kind": "timer",
+            "name": "AppRead"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 144853986,
+            "exclusive_wall_ns": 135886800,
+            "inclusive_thread_cpu_ns": 668904763,
+            "inclusive_wall_ns": 669005822,
+            "kind": "timer",
+            "name": "AppTopology"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 10985586,
+            "exclusive_wall_ns": 10987087,
+            "inclusive_thread_cpu_ns": 10985586,
+            "inclusive_wall_ns": 10987087,
+            "kind": "timer",
+            "name": "AppWriteArtifacts"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 5309350,
+            "exclusive_wall_ns": 5310457,
+            "inclusive_thread_cpu_ns": 5309350,
+            "inclusive_wall_ns": 5310457,
+            "kind": "timer",
+            "name": "AppWritePayloads"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 13769250928,
+            "exclusive_wall_ns": 13644978872,
+            "inclusive_thread_cpu_ns": 49448267871,
+            "inclusive_wall_ns": 49469110338,
+            "kind": "timer",
+            "name": "AppSimulatorRun"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 188210533,
+            "exclusive_wall_ns": 180526008,
+            "inclusive_thread_cpu_ns": 196203141,
+            "inclusive_wall_ns": 196213502,
+            "kind": "timer",
+            "name": "AppSimulatorDestroy"
+          },
+          {
+            "calls_or_count": 40000,
+            "exclusive_thread_cpu_ns": 97457101,
+            "exclusive_wall_ns": 103695898,
+            "inclusive_thread_cpu_ns": 97457101,
+            "inclusive_wall_ns": 103695898,
+            "kind": "timer",
+            "name": "AppValidate"
+          },
+          {
+            "calls_or_count": 39354,
+            "exclusive_thread_cpu_ns": 73064497,
+            "exclusive_wall_ns": 55417934,
+            "inclusive_thread_cpu_ns": 744847160,
+            "inclusive_wall_ns": 752600746,
+            "kind": "timer",
+            "name": "AppTargetExecutor"
+          },
+          {
+            "calls_or_count": 39354,
+            "exclusive_thread_cpu_ns": 429466541,
+            "exclusive_wall_ns": 415363633,
+            "inclusive_thread_cpu_ns": 505870079,
+            "inclusive_wall_ns": 511997304,
+            "kind": "timer",
+            "name": "AppTargetCompletion"
+          },
+          {
+            "calls_or_count": 319791,
+            "exclusive_thread_cpu_ns": 259575598,
+            "exclusive_wall_ns": 320244261,
+            "inclusive_thread_cpu_ns": 259575598,
+            "inclusive_wall_ns": 320244261,
+            "kind": "timer",
+            "name": "AppEvent"
+          },
+          {
+            "calls_or_count": 40000,
+            "exclusive_thread_cpu_ns": 101405302,
+            "exclusive_wall_ns": 93016447,
+            "inclusive_thread_cpu_ns": 1873573777,
+            "inclusive_wall_ns": 1880318569,
+            "kind": "timer",
+            "name": "AppSend"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 2272784,
+            "exclusive_wall_ns": 2273598,
+            "inclusive_thread_cpu_ns": 2272784,
+            "inclusive_wall_ns": 2273598,
+            "kind": "timer",
+            "name": "AppUbUtilsDestroy"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 11587,
+            "exclusive_wall_ns": 11828,
+            "inclusive_thread_cpu_ns": 11587,
+            "inclusive_wall_ns": 11828,
+            "kind": "timer",
+            "name": "AppLogClose"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 45984261,
+            "exclusive_wall_ns": 45986537,
+            "inclusive_thread_cpu_ns": 45984261,
+            "inclusive_wall_ns": 45986537,
+            "kind": "timer",
+            "name": "AppLayerDestroy"
+          },
+          {
+            "calls_or_count": 78708,
+            "exclusive_thread_cpu_ns": 184477907,
+            "exclusive_wall_ns": 203130492,
+            "inclusive_thread_cpu_ns": 1694803461,
+            "inclusive_wall_ns": 1728333124,
+            "kind": "timer",
+            "name": "TransactionInboundTaUnit"
+          },
+          {
+            "calls_or_count": 39354,
+            "exclusive_thread_cpu_ns": 725362720,
+            "exclusive_wall_ns": 724325920,
+            "inclusive_thread_cpu_ns": 765478394,
+            "inclusive_wall_ns": 772601886,
+            "kind": "timer",
+            "name": "TransactionSegmentComplete"
+          },
+          {
+            "calls_or_count": 136821,
+            "exclusive_thread_cpu_ns": 32061087841,
+            "exclusive_wall_ns": 32153768712,
+            "inclusive_thread_cpu_ns": 32061087841,
+            "inclusive_wall_ns": 32153768712,
+            "kind": "timer",
+            "name": "GetJettiesUsingTpn"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "TransactionExecuteInbound"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "NativeAppendTrace"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "NativeCommitTrace"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "NativeFlushTrace"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "PortDispatchReceive"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "TransportParseData"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "TransportHandleAck"
+          },
+          {
+            "calls_or_count": 1959,
+            "exclusive_thread_cpu_ns": 89319699,
+            "exclusive_wall_ns": 86609153,
+            "inclusive_thread_cpu_ns": 114768421,
+            "inclusive_wall_ns": 115280544,
+            "kind": "timer",
+            "name": "AppPair"
+          },
+          {
+            "calls_or_count": 65,
+            "exclusive_thread_cpu_ns": 11359785,
+            "exclusive_wall_ns": 11375245,
+            "inclusive_thread_cpu_ns": 11359785,
+            "inclusive_wall_ns": 11375245,
+            "kind": "timer",
+            "name": "AppInit"
+          }
+        ],
+        "timing_units": "integer nanoseconds; CPU is CLOCK_THREAD_CPUTIME_ID"
+      }
+    },
+    "5000-baseline": {
+      "resource": {
+        "assignments": 5000,
+        "cpu_seconds": 4.3013129999999995,
+        "cpu_seconds_relative_to_baseline": 1.0,
+        "peak_rss_kib": 295004,
+        "returncode": 0,
+        "sampled_peak_tree_rss_bytes": 302182400,
+        "status": "PASS",
+        "system_cpu_seconds": 0.136568,
+        "user_cpu_seconds": 4.164745,
+        "variant": "baseline",
+        "wall_seconds": 4.515577168029267,
+        "wall_seconds_relative_to_baseline": 1.0
+      }
+    },
+    "5000-sampled": {
+      "resource": {
+        "assignments": 5000,
+        "cpu_seconds": 4.7993809999999995,
+        "cpu_seconds_relative_to_baseline": 1.1157944097534869,
+        "peak_rss_kib": 294988,
+        "returncode": 0,
+        "sampled_peak_tree_rss_bytes": 302882816,
+        "status": "PASS",
+        "system_cpu_seconds": 0.172317,
+        "user_cpu_seconds": 4.627064,
+        "variant": "sampled",
+        "wall_seconds": 5.016711600997951,
+        "wall_seconds_relative_to_baseline": 1.1109790430593822
+      },
+      "sampling": {
+        "callchain_requested": true,
+        "decode_command": [
+          "/workspace/shared/cpu_sampler/perf",
+          "script",
+          "-i",
+          "/workspace/scratch/c6ba02920254/prefill-cpu-raw/5000-sampled/perf.data",
+          "--max-stack",
+          "1024",
+          "-F",
+          "comm,pid,tid,time,event,ip,sym,dso"
+        ],
+        "events": {
+          "cpu-clock:u": 461
+        },
+        "hotspot_subtrees": {
+          "CreateJetty": {
+            "percent": 0.43383947939262474,
+            "samples": 2,
+            "stack_pattern": "ns3::UbFunction::CreateJetty("
+          },
+          "GetJettiesUsingTpn": {
+            "percent": 35.57483731019523,
+            "samples": 164,
+            "stack_pattern": "ns3::UbTransaction::GetJettiesUsingTpn("
+          },
+          "ResolveWqeLifecycleLocalId": {
+            "percent": 1.3015184381778742,
+            "samples": 6,
+            "stack_pattern": "ns3::UbJettyManager::ResolveWqeLifecycleLocalId("
+          },
+          "SubmitWqe": {
+            "percent": 1.9522776572668112,
+            "samples": 9,
+            "stack_pattern": "ns3::UbFunction::SubmitWqe("
+          }
+        },
+        "inclusive_caveat": "Observed stack membership, not complete attribution when unwinding is truncated. Recursion deduplicated per sample.",
+        "inclusive_top20": [
+          {
+            "percent": 99.78308026030369,
+            "samples": 460,
+            "symbol": "main (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/ns3.44-multi-npu-relay)"
+          },
+          {
+            "percent": 98.0477223427332,
+            "samples": 452,
+            "symbol": "Layer::Run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/ns3.44-multi-npu-relay)"
+          },
+          {
+            "percent": 96.74620390455532,
+            "samples": 446,
+            "symbol": "[unknown] (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+          },
+          {
+            "percent": 96.09544468546638,
+            "samples": 443,
+            "symbol": "__libc_start_main (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+          },
+          {
+            "percent": 94.57700650759219,
+            "samples": 436,
+            "symbol": "_start (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/ns3.44-multi-npu-relay)"
+          },
+          {
+            "percent": 94.36008676789588,
+            "samples": 435,
+            "symbol": "ns3::DefaultSimulatorImpl::Run() (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-core.so)"
+          },
+          {
+            "percent": 94.14316702819957,
+            "samples": 434,
+            "symbol": "ns3::DefaultSimulatorImpl::ProcessOneEvent() (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-core.so)"
+          },
+          {
+            "percent": 42.950108459869845,
+            "samples": 198,
+            "symbol": "std::_Function_handler<void (), std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)> >::_M_invoke(std::_Any_data const&) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          },
+          {
+            "percent": 42.950108459869845,
+            "samples": 198,
+            "symbol": "std::__invoke_result<void (ns3::UbPort::*&)(ns3::Ptr<ns3::Packet>), ns3::Ptr<ns3::UbPort>&, ns3::Ptr<ns3::Packet>&>::type std::__invoke<void (ns3::UbPort::*&)(ns3::Ptr<ns3::Packet>), ns3::Ptr<ns3::UbPort>&, ns3::Ptr<ns3::Packet>&>(void (ns3::UbPort::*&)(ns3::Ptr<ns3::Packet>), ns3::Ptr<ns3::UbPort>&, ns3::Ptr<ns3::Packet>&) (inlined)"
+          },
+          {
+            "percent": 42.950108459869845,
+            "samples": 198,
+            "symbol": "std::enable_if<is_invocable_r_v<void, std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)>&>, void>::type std::__invoke_r<void, std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)>&>(std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)>&) (inlined)"
+          },
+          {
+            "percent": 42.950108459869845,
+            "samples": 198,
+            "symbol": "void std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)>::__call<void, , 0ul, 1ul>(std::tuple<>&&, std::_Index_tuple<0ul, 1ul>) (inlined)"
+          },
+          {
+            "percent": 42.950108459869845,
+            "samples": 198,
+            "symbol": "void std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)>::operator()<, void>() (inlined)"
+          },
+          {
+            "percent": 42.950108459869845,
+            "samples": 198,
+            "symbol": "void std::__invoke_impl<void, std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)>&>(std::__invoke_other, std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)>&) (inlined)"
+          },
+          {
+            "percent": 42.950108459869845,
+            "samples": 198,
+            "symbol": "void std::__invoke_impl<void, void (ns3::UbPort::*&)(ns3::Ptr<ns3::Packet>), ns3::Ptr<ns3::UbPort>&, ns3::Ptr<ns3::Packet>&>(std::__invoke_memfun_deref, void (ns3::UbPort::*&)(ns3::Ptr<ns3::Packet>), ns3::Ptr<ns3::UbPort>&, ns3::Ptr<ns3::Packet>&) (inlined)"
+          },
+          {
+            "percent": 42.51626898047722,
+            "samples": 196,
+            "symbol": "ns3::UbPort::Receive(ns3::Ptr<ns3::Packet>) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          },
+          {
+            "percent": 40.99783080260303,
+            "samples": 189,
+            "symbol": "ns3::UbPort::DispatchReceive(ns3::Ptr<ns3::Packet>) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          },
+          {
+            "percent": 40.99783080260303,
+            "samples": 189,
+            "symbol": "ns3::UbPort::HandleWithUbSwitch(ns3::Ptr<ns3::Packet>) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          },
+          {
+            "percent": 40.99783080260303,
+            "samples": 189,
+            "symbol": "ns3::UbSwitch::SwitchHandlePacket(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          },
+          {
+            "percent": 39.91323210412148,
+            "samples": 184,
+            "symbol": "ns3::UbSwitch::HandleURMADataPacket(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          },
+          {
+            "percent": 37.310195227765725,
+            "samples": 172,
+            "symbol": "ns3::UbTransaction::TryContinueJettyTransmission(ns3::Ptr<ns3::UbTransportChannel>) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          }
+        ],
+        "leaf_only_observed": false,
+        "lost_samples_reported": 0,
+        "pid_tid_scope": [
+          {
+            "comm": "ns3.44-multi-np",
+            "pid": 7,
+            "samples": 461,
+            "tid": 7
+          }
+        ],
+        "recorder": {
+          "bytes": 4094400,
+          "child_exit": 0,
+          "child_system_seconds": 0.159973,
+          "child_user_seconds": 4.618062,
+          "lost_records": 0,
+          "lost_samples_reported": 0,
+          "period_sum_ns": 4656565610,
+          "samples": 461,
+          "throttle_records": 0,
+          "unthrottle_records": 0
+        },
+        "records": {
+          "COMM": 1,
+          "EXIT": 1,
+          "LOST": 0,
+          "LOST_SAMPLES": 0,
+          "MMAP2": 2136,
+          "SAMPLE": 461,
+          "THROTTLE": 0,
+          "UNTHROTTLE": 0
+        },
+        "sample_count": 461,
+        "sample_type_masks": [
+          12583
+        ],
+        "samples_without_frames": 0,
+        "self_top20": [
+          {
+            "percent": 9.97830802603037,
+            "samples": 46,
+            "symbol": "std::_Rb_tree_increment(std::_Rb_tree_node_base*) (/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)"
+          },
+          {
+            "percent": 7.158351409978308,
+            "samples": 33,
+            "symbol": "std::_Rb_tree<unsigned int, std::pair<unsigned int const, ns3::UbRtpTransportReference>, std::_Select1st<std::pair<unsigned int const, ns3::UbRtpTransportReference> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, ns3::UbRtpTransportReference> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<unsigned int const, ns3::UbRtpTransportReference> >*, std::_Rb_tree_node_base*, unsigned int const&) (inlined)"
+          },
+          {
+            "percent": 6.290672451193059,
+            "samples": 29,
+            "symbol": "std::_Rb_tree<unsigned int, std::pair<unsigned int const, ns3::UbTransportChannelManager::EndpointRecord>, std::_Select1st<std::pair<unsigned int const, ns3::UbTransportChannelManager::EndpointRecord> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, ns3::UbTransportChannelManager::EndpointRecord> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<unsigned int const, ns3::UbTransportChannelManager::EndpointRecord> >*, std::_Rb_tree_node_base*, unsigned int const&) (inlined)"
+          },
+          {
+            "percent": 5.422993492407809,
+            "samples": 25,
+            "symbol": "[unknown] (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+          },
+          {
+            "percent": 3.9045553145336225,
+            "samples": 18,
+            "symbol": "cfree (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+          },
+          {
+            "percent": 3.9045553145336225,
+            "samples": 18,
+            "symbol": "malloc (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+          },
+          {
+            "percent": 2.1691973969631237,
+            "samples": 10,
+            "symbol": "std::_Rb_tree<unsigned int, std::pair<unsigned int const, ns3::UbJettyManager::JettyRecord>, std::_Select1st<std::pair<unsigned int const, ns3::UbJettyManager::JettyRecord> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, ns3::UbJettyManager::JettyRecord> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<unsigned int const, ns3::UbJettyManager::JettyRecord> > const*, std::_Rb_tree_node_base const*, unsigned int const&) const (inlined)"
+          },
+          {
+            "percent": 1.9522776572668112,
+            "samples": 9,
+            "symbol": "__dynamic_cast (/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)"
+          },
+          {
+            "percent": 1.9522776572668112,
+            "samples": 9,
+            "symbol": "ns3::UbSwitchAllocator::GetIngressQueueSlotCount(unsigned int, unsigned int) const (inlined)"
+          },
+          {
+            "percent": 1.735357917570499,
+            "samples": 8,
+            "symbol": "_ZNKSt8__detail10_Synth3wayclIN3ns323UbLifecycleResourceKindES3_EEDaRKT_RKT0_QrqXltfL0p_fL0p0_RNS_18__boolean_testableEXltfL0p0_fL0p_RNS_18__boolean_testableEE (inlined)"
+          },
+          {
+            "percent": 1.5184381778741864,
+            "samples": 7,
+            "symbol": "ns3::Ptr<ns3::UbJetty>::Ptr(ns3::Ptr<ns3::UbJetty> const&) (inlined)"
+          },
+          {
+            "percent": 1.3015184381778742,
+            "samples": 6,
+            "symbol": "std::_Rb_tree<utils::UbUtils::TraceFileState*, std::pair<utils::UbUtils::TraceFileState* const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::_Select1st<std::pair<utils::UbUtils::TraceFileState* const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::less<utils::UbUtils::TraceFileState*>, std::allocator<std::pair<utils::UbUtils::TraceFileState* const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >::_M_lower_bound(std::_Rb_tree_node<std::pair<utils::UbUtils::TraceFileState* const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >*, std::_Rb_tree_node_base*, utils::UbUtils::TraceFileState* const&) (inlined)"
+          },
+          {
+            "percent": 1.3015184381778742,
+            "samples": 6,
+            "symbol": "std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&) (/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)"
+          },
+          {
+            "percent": 1.0845986984815619,
+            "samples": 5,
+            "symbol": "ns3::SimpleRefCount<ns3::Object, ns3::ObjectBase, ns3::ObjectDeleter>::Unref() const (inlined)"
+          },
+          {
+            "percent": 1.0845986984815619,
+            "samples": 5,
+            "symbol": "std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&) (/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)"
+          },
+          {
+            "percent": 1.0845986984815619,
+            "samples": 5,
+            "symbol": "std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const (inlined)"
+          },
+          {
+            "percent": 1.0845986984815619,
+            "samples": 5,
+            "symbol": "std::function<void (unsigned int, unsigned int, unsigned int)>::operator()(unsigned int, unsigned int, unsigned int) const (inlined)"
+          },
+          {
+            "percent": 0.8676789587852495,
+            "samples": 4,
+            "symbol": "ns3::CallbackImpl<void, unsigned int, unsigned int, unsigned int>::operator()(unsigned int, unsigned int, unsigned int) const (inlined)"
+          },
+          {
+            "percent": 0.8676789587852495,
+            "samples": 4,
+            "symbol": "ns3::UbRetransController::GetRetransEnable() const (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          },
+          {
+            "percent": 0.8676789587852495,
+            "samples": 4,
+            "symbol": "ns3::UbSwitchAllocator::FindNextEligibleIngressQueue(unsigned int, unsigned int, unsigned int, ns3::Ptr<ns3::UbPort>) const (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          }
+        ],
+        "stack_depth_histogram": {
+          "8": 6,
+          "9": 6,
+          "10": 1,
+          "11": 6,
+          "12": 7,
+          "13": 12,
+          "14": 8,
+          "15": 11,
+          "16": 4,
+          "17": 9,
+          "18": 8,
+          "19": 6,
+          "20": 10,
+          "21": 14,
+          "22": 12,
+          "23": 11,
+          "24": 19,
+          "25": 34,
+          "26": 13,
+          "27": 38,
+          "28": 35,
+          "29": 32,
+          "30": 26,
+          "31": 8,
+          "32": 28,
+          "33": 10,
+          "34": 4,
+          "35": 14,
+          "36": 7,
+          "37": 8,
+          "38": 9,
+          "39": 8,
+          "40": 5,
+          "41": 5,
+          "42": 3,
+          "43": 3,
+          "44": 1,
+          "45": 4,
+          "46": 1,
+          "47": 2,
+          "48": 2,
+          "49": 3,
+          "55": 2,
+          "57": 2,
+          "65": 1,
+          "69": 1,
+          "73": 2
+        },
+        "unknown_any_frame_samples": 447,
+        "unknown_self_samples": 27,
+        "user_stack_requested": true,
+        "weighting": "one per SAMPLE record; never period weighted"
+      }
+    },
+    "5000-timed": {
+      "resource": {
+        "assignments": 5000,
+        "cpu_seconds": 4.613503,
+        "cpu_seconds_relative_to_baseline": 1.0725801633129233,
+        "peak_rss_kib": 294692,
+        "returncode": 0,
+        "sampled_peak_tree_rss_bytes": 301887488,
+        "status": "PASS",
+        "system_cpu_seconds": 0.188681,
+        "user_cpu_seconds": 4.424822,
+        "variant": "timed",
+        "wall_seconds": 4.764755695010535,
+        "wall_seconds_relative_to_baseline": 1.0551819884167801
+      },
+      "timing": {
+        "caveat": "Instrumented timings include measurement overhead. Inclusive scopes overlap; do not sum them.",
+        "counters": {
+          "AckCapacityGrowthRequests": 12744,
+          "AckResetBytes": 208797696,
+          "AckResetSlots": 26099712,
+          "AckResizeBytes": 417595392,
+          "AckResizeSlots": 52199424,
+          "ClockErrors": 0,
+          "JettyRecordsScanned": 2869058,
+          "LifecycleCandidates": 9850,
+          "TpnLookupJettyRecordsScanned": 9952287,
+          "TpnLookupLiveTransportVectorSlots": 9952287,
+          "TpnLookupMatchedJetties": 269080,
+          "TpnLookupTransportEntriesCompared": 9952287,
+          "WqeEntriesCompared": 1096392
+        },
+        "exclusive_definition": "inclusive minus nested instrumented scopes, not complete function self time",
+        "timers": [
+          {
+            "calls_or_count": 9850,
+            "exclusive_thread_cpu_ns": 7516048,
+            "exclusive_wall_ns": 5391143,
+            "inclusive_thread_cpu_ns": 86707634,
+            "inclusive_wall_ns": 89593376,
+            "kind": "timer",
+            "name": "CreateJettyBound"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "CreateJettyUnbound"
+          },
+          {
+            "calls_or_count": 9850,
+            "exclusive_thread_cpu_ns": 12246997,
+            "exclusive_wall_ns": 12206679,
+            "inclusive_thread_cpu_ns": 59654449,
+            "inclusive_wall_ns": 61565766,
+            "kind": "timer",
+            "name": "CreateObjectJetty"
+          },
+          {
+            "calls_or_count": 9850,
+            "exclusive_thread_cpu_ns": 4918228,
+            "exclusive_wall_ns": 3496074,
+            "inclusive_thread_cpu_ns": 12271011,
+            "inclusive_wall_ns": 13777414,
+            "kind": "timer",
+            "name": "JettyInit"
+          },
+          {
+            "calls_or_count": 9850,
+            "exclusive_thread_cpu_ns": 7266126,
+            "exclusive_wall_ns": 8859053,
+            "inclusive_thread_cpu_ns": 7266126,
+            "inclusive_wall_ns": 8859053,
+            "kind": "timer",
+            "name": "RegisterJetty"
+          },
+          {
+            "calls_or_count": 9850,
+            "exclusive_thread_cpu_ns": 35033990,
+            "exclusive_wall_ns": 36987540,
+            "inclusive_thread_cpu_ns": 35033990,
+            "inclusive_wall_ns": 36987540,
+            "kind": "timer",
+            "name": "ResolveWqeLifecycleLocalId"
+          },
+          {
+            "calls_or_count": 9850,
+            "exclusive_thread_cpu_ns": 43252080,
+            "exclusive_wall_ns": 41521427,
+            "inclusive_thread_cpu_ns": 80686409,
+            "inclusive_wall_ns": 82506033,
+            "kind": "timer",
+            "name": "SubmitWqe"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "SubmitCtpWqe"
+          },
+          {
+            "calls_or_count": 9850,
+            "exclusive_thread_cpu_ns": 2400339,
+            "exclusive_wall_ns": 3997066,
+            "inclusive_thread_cpu_ns": 2400339,
+            "inclusive_wall_ns": 3997066,
+            "kind": "timer",
+            "name": "RegisterWqe"
+          },
+          {
+            "calls_or_count": 38232,
+            "exclusive_thread_cpu_ns": 69073579,
+            "exclusive_wall_ns": 76243049,
+            "inclusive_thread_cpu_ns": 69073579,
+            "inclusive_wall_ns": 76243049,
+            "kind": "timer",
+            "name": "AckResize"
+          },
+          {
+            "calls_or_count": 12744,
+            "exclusive_thread_cpu_ns": 3812839,
+            "exclusive_wall_ns": 5844348,
+            "inclusive_thread_cpu_ns": 3812839,
+            "inclusive_wall_ns": 5844348,
+            "kind": "timer",
+            "name": "AckReset"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 485741,
+            "exclusive_wall_ns": 480622,
+            "inclusive_thread_cpu_ns": 4579286539,
+            "inclusive_wall_ns": 4581488923,
+            "kind": "timer",
+            "name": "AppRun"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 2879674,
+            "exclusive_wall_ns": 2880483,
+            "inclusive_thread_cpu_ns": 2879674,
+            "inclusive_wall_ns": 2880483,
+            "kind": "timer",
+            "name": "AppRead"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 45232244,
+            "exclusive_wall_ns": 42196188,
+            "inclusive_thread_cpu_ns": 203421336,
+            "inclusive_wall_ns": 203609531,
+            "kind": "timer",
+            "name": "AppTopology"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 2658706,
+            "exclusive_wall_ns": 2659401,
+            "inclusive_thread_cpu_ns": 2658706,
+            "inclusive_wall_ns": 2659401,
+            "kind": "timer",
+            "name": "AppWriteArtifacts"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 1366889,
+            "exclusive_wall_ns": 1367553,
+            "inclusive_thread_cpu_ns": 1366889,
+            "inclusive_wall_ns": 1367553,
+            "kind": "timer",
+            "name": "AppWritePayloads"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 2220618287,
+            "exclusive_wall_ns": 2200383013,
+            "inclusive_thread_cpu_ns": 4279644509,
+            "inclusive_wall_ns": 4281658076,
+            "kind": "timer",
+            "name": "AppSimulatorRun"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 84451094,
+            "exclusive_wall_ns": 82437284,
+            "inclusive_thread_cpu_ns": 86461489,
+            "inclusive_wall_ns": 86463992,
+            "kind": "timer",
+            "name": "AppSimulatorDestroy"
+          },
+          {
+            "calls_or_count": 10000,
+            "exclusive_thread_cpu_ns": 22366061,
+            "exclusive_wall_ns": 23839809,
+            "inclusive_thread_cpu_ns": 22366061,
+            "inclusive_wall_ns": 23839809,
+            "kind": "timer",
+            "name": "AppValidate"
+          },
+          {
+            "calls_or_count": 9850,
+            "exclusive_thread_cpu_ns": 14890393,
+            "exclusive_wall_ns": 10776116,
+            "inclusive_thread_cpu_ns": 153015327,
+            "inclusive_wall_ns": 154880124,
+            "kind": "timer",
+            "name": "AppTargetExecutor"
+          },
+          {
+            "calls_or_count": 9850,
+            "exclusive_thread_cpu_ns": 86559312,
+            "exclusive_wall_ns": 82719772,
+            "inclusive_thread_cpu_ns": 103302046,
+            "inclusive_wall_ns": 104742064,
+            "kind": "timer",
+            "name": "AppTargetCompletion"
+          },
+          {
+            "calls_or_count": 80396,
+            "exclusive_thread_cpu_ns": 50108124,
+            "exclusive_wall_ns": 64272372,
+            "inclusive_thread_cpu_ns": 50108124,
+            "inclusive_wall_ns": 64272372,
+            "kind": "timer",
+            "name": "AppEvent"
+          },
+          {
+            "calls_or_count": 10000,
+            "exclusive_thread_cpu_ns": 20748562,
+            "exclusive_wall_ns": 19165169,
+            "inclusive_thread_cpu_ns": 106335766,
+            "inclusive_wall_ns": 108018783,
+            "kind": "timer",
+            "name": "AppSend"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 2357339,
+            "exclusive_wall_ns": 2358198,
+            "inclusive_thread_cpu_ns": 2357339,
+            "inclusive_wall_ns": 2358198,
+            "kind": "timer",
+            "name": "AppUbUtilsDestroy"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 10856,
+            "exclusive_wall_ns": 11067,
+            "inclusive_thread_cpu_ns": 10856,
+            "inclusive_wall_ns": 11067,
+            "kind": "timer",
+            "name": "AppLogClose"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 9173476,
+            "exclusive_wall_ns": 9174968,
+            "inclusive_thread_cpu_ns": 9173476,
+            "inclusive_wall_ns": 9174968,
+            "kind": "timer",
+            "name": "AppLayerDestroy"
+          },
+          {
+            "calls_or_count": 19700,
+            "exclusive_thread_cpu_ns": 32924649,
+            "exclusive_wall_ns": 35141849,
+            "inclusive_thread_cpu_ns": 303470190,
+            "inclusive_wall_ns": 309277379,
+            "kind": "timer",
+            "name": "TransactionInboundTaUnit"
+          },
+          {
+            "calls_or_count": 9850,
+            "exclusive_thread_cpu_ns": 109236254,
+            "exclusive_wall_ns": 109085827,
+            "inclusive_thread_cpu_ns": 117530214,
+            "inclusive_wall_ns": 119255406,
+            "kind": "timer",
+            "name": "TransactionSegmentComplete"
+          },
+          {
+            "calls_or_count": 36736,
+            "exclusive_thread_cpu_ns": 1641506458,
+            "exclusive_wall_ns": 1653768116,
+            "inclusive_thread_cpu_ns": 1641506458,
+            "inclusive_wall_ns": 1653768116,
+            "kind": "timer",
+            "name": "GetJettiesUsingTpn"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "TransactionExecuteInbound"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "NativeAppendTrace"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "NativeCommitTrace"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "NativeFlushTrace"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "PortDispatchReceive"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "TransportParseData"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "TransportHandleAck"
+          },
+          {
+            "calls_or_count": 1447,
+            "exclusive_thread_cpu_ns": 45067438,
+            "exclusive_wall_ns": 43087230,
+            "inclusive_thread_cpu_ns": 61183226,
+            "inclusive_wall_ns": 61507492,
+            "kind": "timer",
+            "name": "AppPair"
+          },
+          {
+            "calls_or_count": 65,
+            "exclusive_thread_cpu_ns": 10298232,
+            "exclusive_wall_ns": 10312475,
+            "inclusive_thread_cpu_ns": 10298232,
+            "inclusive_wall_ns": 10312475,
+            "kind": "timer",
+            "name": "AppInit"
+          }
+        ],
+        "timing_units": "integer nanoseconds; CPU is CLOCK_THREAD_CPUTIME_ID"
+      }
+    },
+    "50000-baseline": {
+      "resource": {
+        "assignments": 50000,
+        "cpu_seconds": 289.378019,
+        "cpu_seconds_relative_to_baseline": 1.0,
+        "peak_rss_kib": 1996944,
+        "returncode": 0,
+        "sampled_peak_tree_rss_bytes": 2045022208,
+        "status": "PASS",
+        "system_cpu_seconds": 1.097627,
+        "user_cpu_seconds": 288.280392,
+        "variant": "baseline",
+        "wall_seconds": 289.5296401460073,
+        "wall_seconds_relative_to_baseline": 1.0
+      }
+    },
+    "50000-sampled": {
+      "resource": {
+        "assignments": 50000,
+        "cpu_seconds": 280.74763800000005,
+        "cpu_seconds_relative_to_baseline": 0.9701761003485204,
+        "peak_rss_kib": 1996688,
+        "returncode": 0,
+        "sampled_peak_tree_rss_bytes": 2045640704,
+        "status": "PASS",
+        "system_cpu_seconds": 1.455276,
+        "user_cpu_seconds": 279.292362,
+        "variant": "sampled",
+        "wall_seconds": 280.616258930997,
+        "wall_seconds_relative_to_baseline": 0.9692142703920905
+      },
+      "sampling": {
+        "callchain_requested": true,
+        "decode_command": [
+          "/workspace/shared/cpu_sampler/perf",
+          "script",
+          "-i",
+          "/workspace/scratch/c6ba02920254/prefill-cpu-raw/50000-sampled/perf.data",
+          "--max-stack",
+          "1024",
+          "-F",
+          "comm,pid,tid,time,event,ip,sym,dso"
+        ],
+        "events": {
+          "cpu-clock:u": 27619
+        },
+        "hotspot_subtrees": {
+          "CreateJetty": {
+            "percent": 0.07965530975053406,
+            "samples": 22,
+            "stack_pattern": "ns3::UbFunction::CreateJetty("
+          },
+          "GetJettiesUsingTpn": {
+            "percent": 76.97237409030015,
+            "samples": 21259,
+            "stack_pattern": "ns3::UbTransaction::GetJettiesUsingTpn("
+          },
+          "ResolveWqeLifecycleLocalId": {
+            "percent": 4.156558890618777,
+            "samples": 1148,
+            "stack_pattern": "ns3::UbJettyManager::ResolveWqeLifecycleLocalId("
+          },
+          "SubmitWqe": {
+            "percent": 4.3593178608928635,
+            "samples": 1204,
+            "stack_pattern": "ns3::UbFunction::SubmitWqe("
+          }
+        },
+        "inclusive_caveat": "Observed stack membership, not complete attribution when unwinding is truncated. Recursion deduplicated per sample.",
+        "inclusive_top20": [
+          {
+            "percent": 99.97827582461349,
+            "samples": 27613,
+            "symbol": "main (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/ns3.44-multi-npu-relay)"
+          },
+          {
+            "percent": 99.7899996379304,
+            "samples": 27561,
+            "symbol": "Layer::Run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/ns3.44-multi-npu-relay)"
+          },
+          {
+            "percent": 99.61258553894058,
+            "samples": 27512,
+            "symbol": "ns3::DefaultSimulatorImpl::Run() (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-core.so)"
+          },
+          {
+            "percent": 99.59448205945182,
+            "samples": 27507,
+            "symbol": "ns3::DefaultSimulatorImpl::ProcessOneEvent() (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-core.so)"
+          },
+          {
+            "percent": 99.34827473840473,
+            "samples": 27439,
+            "symbol": "[unknown] (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+          },
+          {
+            "percent": 99.08758463376661,
+            "samples": 27367,
+            "symbol": "__libc_start_main (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+          },
+          {
+            "percent": 98.9536188855498,
+            "samples": 27330,
+            "symbol": "_start (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/ns3.44-multi-npu-relay)"
+          },
+          {
+            "percent": 80.65462181831349,
+            "samples": 22276,
+            "symbol": "ns3::UbTransportChannel::TryContinueJettyTransmission() (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          },
+          {
+            "percent": 80.60755277164272,
+            "samples": 22263,
+            "symbol": "ns3::UbTransaction::TryContinueJettyTransmission(ns3::Ptr<ns3::UbTransportChannel>) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          },
+          {
+            "percent": 76.97237409030015,
+            "samples": 21259,
+            "symbol": "ns3::UbTransaction::GetJettiesUsingTpn(unsigned int) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          },
+          {
+            "percent": 55.76233752127159,
+            "samples": 15401,
+            "symbol": "std::_Function_handler<void (), std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)> >::_M_invoke(std::_Any_data const&) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          },
+          {
+            "percent": 55.76233752127159,
+            "samples": 15401,
+            "symbol": "std::__invoke_result<void (ns3::UbSwitchAllocator::*&)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*&, ns3::Ptr<ns3::UbPort>&>::type std::__invoke<void (ns3::UbSwitchAllocator::*&)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*&, ns3::Ptr<ns3::UbPort>&>(void (ns3::UbSwitchAllocator::*&)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*&, ns3::Ptr<ns3::UbPort>&) (inlined)"
+          },
+          {
+            "percent": 55.76233752127159,
+            "samples": 15401,
+            "symbol": "std::enable_if<is_invocable_r_v<void, std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>&>, void>::type std::__invoke_r<void, std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>&>(std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>&) (inlined)"
+          },
+          {
+            "percent": 55.76233752127159,
+            "samples": 15401,
+            "symbol": "void std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>::__call<void, , 0ul, 1ul>(std::tuple<>&&, std::_Index_tuple<0ul, 1ul>) (inlined)"
+          },
+          {
+            "percent": 55.76233752127159,
+            "samples": 15401,
+            "symbol": "void std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>::operator()<, void>() (inlined)"
+          },
+          {
+            "percent": 55.76233752127159,
+            "samples": 15401,
+            "symbol": "void std::__invoke_impl<void, std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>&>(std::__invoke_other, std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>&) (inlined)"
+          },
+          {
+            "percent": 55.76233752127159,
+            "samples": 15401,
+            "symbol": "void std::__invoke_impl<void, void (ns3::UbSwitchAllocator::*&)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*&, ns3::Ptr<ns3::UbPort>&>(std::__invoke_memfun_deref, void (ns3::UbSwitchAllocator::*&)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*&, ns3::Ptr<ns3::UbPort>&) (inlined)"
+          },
+          {
+            "percent": 55.71164777870307,
+            "samples": 15387,
+            "symbol": "ns3::UbSwitchAllocator::RunAllocation(ns3::Ptr<ns3::UbPort>) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          },
+          {
+            "percent": 55.6790615156233,
+            "samples": 15378,
+            "symbol": "ns3::UbRoundRobinAllocator::AllocateNextPacket(ns3::Ptr<ns3::UbPort>) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          },
+          {
+            "percent": 52.764401317933306,
+            "samples": 14573,
+            "symbol": "ns3::UbTransportChannel::GetNextPacket() (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          }
+        ],
+        "leaf_only_observed": false,
+        "lost_samples_reported": 0,
+        "pid_tid_scope": [
+          {
+            "comm": "ns3.44-multi-np",
+            "pid": 42,
+            "samples": 27619,
+            "tid": 42
+          }
+        ],
+        "recorder": {
+          "bytes": 234063120,
+          "child_exit": 0,
+          "child_system_seconds": 1.114029,
+          "child_user_seconds": 279.198441,
+          "lost_records": 0,
+          "lost_samples_reported": 0,
+          "period_sum_ns": 278979795190,
+          "samples": 27619,
+          "throttle_records": 0,
+          "unthrottle_records": 0
+        },
+        "records": {
+          "COMM": 1,
+          "EXIT": 1,
+          "LOST": 0,
+          "LOST_SAMPLES": 0,
+          "MMAP2": 14529,
+          "SAMPLE": 27619,
+          "THROTTLE": 0,
+          "UNTHROTTLE": 0
+        },
+        "sample_count": 27619,
+        "sample_type_masks": [
+          12583
+        ],
+        "samples_without_frames": 0,
+        "self_top20": [
+          {
+            "percent": 33.84988594807922,
+            "samples": 9349,
+            "symbol": "std::_Rb_tree_increment(std::_Rb_tree_node_base*) (/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)"
+          },
+          {
+            "percent": 10.851225605561389,
+            "samples": 2997,
+            "symbol": "std::_Rb_tree<unsigned int, std::pair<unsigned int const, ns3::UbRtpTransportReference>, std::_Select1st<std::pair<unsigned int const, ns3::UbRtpTransportReference> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, ns3::UbRtpTransportReference> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<unsigned int const, ns3::UbRtpTransportReference> >*, std::_Rb_tree_node_base*, unsigned int const&) (inlined)"
+          },
+          {
+            "percent": 8.599152757159926,
+            "samples": 2375,
+            "symbol": "std::_Rb_tree<unsigned int, std::pair<unsigned int const, ns3::UbTransportChannelManager::EndpointRecord>, std::_Select1st<std::pair<unsigned int const, ns3::UbTransportChannelManager::EndpointRecord> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, ns3::UbTransportChannelManager::EndpointRecord> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<unsigned int const, ns3::UbTransportChannelManager::EndpointRecord> >*, std::_Rb_tree_node_base*, unsigned int const&) (inlined)"
+          },
+          {
+            "percent": 4.761215105543285,
+            "samples": 1315,
+            "symbol": "std::_Rb_tree<unsigned int, std::pair<unsigned int const, ns3::UbJettyManager::JettyRecord>, std::_Select1st<std::pair<unsigned int const, ns3::UbJettyManager::JettyRecord> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, ns3::UbJettyManager::JettyRecord> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<unsigned int const, ns3::UbJettyManager::JettyRecord> > const*, std::_Rb_tree_node_base const*, unsigned int const&) const (inlined)"
+          },
+          {
+            "percent": 3.403454143886455,
+            "samples": 940,
+            "symbol": "std::_Rb_tree_increment(std::_Rb_tree_node_base const*) (/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)"
+          },
+          {
+            "percent": 2.54896991201709,
+            "samples": 704,
+            "symbol": "cfree (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+          },
+          {
+            "percent": 2.2701763278902205,
+            "samples": 627,
+            "symbol": "ns3::UbTransaction::GetJettyLiveTps(unsigned int) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          },
+          {
+            "percent": 1.8936239545240596,
+            "samples": 523,
+            "symbol": "[unknown] (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+          },
+          {
+            "percent": 1.7741409898982585,
+            "samples": 490,
+            "symbol": "__dynamic_cast (/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)"
+          },
+          {
+            "percent": 1.7560375104095007,
+            "samples": 485,
+            "symbol": "malloc (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+          },
+          {
+            "percent": 1.3758644411455883,
+            "samples": 380,
+            "symbol": "ns3::UbLifecycleResourceIdentity::operator==(ns3::UbLifecycleResourceIdentity const&) const (inlined)"
+          },
+          {
+            "percent": 1.2853470437017995,
+            "samples": 355,
+            "symbol": "ns3::Ptr<ns3::UbJetty>::Ptr(ns3::Ptr<ns3::UbJetty> const&) (inlined)"
+          },
+          {
+            "percent": 1.2781056519062963,
+            "samples": 353,
+            "symbol": "ns3::SimpleRefCount<ns3::Object, ns3::ObjectBase, ns3::ObjectDeleter>::Unref() const (inlined)"
+          },
+          {
+            "percent": 1.2672435642130417,
+            "samples": 350,
+            "symbol": "std::_Rb_tree<unsigned int, std::pair<unsigned int const, ns3::UbRtpTransportReference>, std::_Select1st<std::pair<unsigned int const, ns3::UbRtpTransportReference> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, ns3::UbRtpTransportReference> > >::find(unsigned int const&) (inlined)"
+          },
+          {
+            "percent": 1.0536225062457005,
+            "samples": 291,
+            "symbol": "_ZNKSt8__detail10_Synth3wayclIjjEEDaRKT_RKT0_QrqXltfL0p_fL0p0_RNS_18__boolean_testableEXltfL0p0_fL0p_RNS_18__boolean_testableEE (inlined)"
+          },
+          {
+            "percent": 1.0029327636771788,
+            "samples": 277,
+            "symbol": "ns3::UbTransportChannelManager::ResolveLiveTpLocked(unsigned int, ns3::UbLifecycleResourceIdentity const&) (inlined)"
+          },
+          {
+            "percent": 0.6770701328795394,
+            "samples": 187,
+            "symbol": "ns3::UbTransaction::GetJettiesUsingTpn(unsigned int) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)"
+          },
+          {
+            "percent": 0.6010355190267569,
+            "samples": 166,
+            "symbol": "pthread_mutex_lock (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+          },
+          {
+            "percent": 0.5974148231290054,
+            "samples": 165,
+            "symbol": "__find_if<std::_Rb_tree_const_iterator<std::pair<unsigned int const, ns3::UbLifecycleResourceIdentity> >, __gnu_cxx::__ops::_Iter_pred<ns3::UbJettyManager::ResolveWqeLifecycleLocalId(uint32_t, uint32_t) const::<lambda(uint64_t)>::<lambda(const auto:47&)> > > (inlined)"
+          },
+          {
+            "percent": 0.5829320395379992,
+            "samples": 161,
+            "symbol": "_ZNKSt8__detail10_Synth3wayclIN3ns323UbLifecycleResourceKindES3_EEDaRKT_RKT0_QrqXltfL0p_fL0p0_RNS_18__boolean_testableEXltfL0p0_fL0p_RNS_18__boolean_testableEE (inlined)"
+          }
+        ],
+        "stack_depth_histogram": {
+          "2": 2,
+          "6": 4,
+          "7": 21,
+          "8": 24,
+          "9": 26,
+          "10": 33,
+          "11": 18,
+          "12": 54,
+          "13": 88,
+          "14": 78,
+          "15": 1051,
+          "16": 59,
+          "17": 144,
+          "18": 277,
+          "19": 127,
+          "20": 213,
+          "21": 195,
+          "22": 317,
+          "23": 376,
+          "24": 733,
+          "25": 6624,
+          "26": 856,
+          "27": 2817,
+          "28": 4083,
+          "29": 3103,
+          "30": 2062,
+          "31": 534,
+          "32": 1943,
+          "33": 388,
+          "34": 153,
+          "35": 286,
+          "36": 124,
+          "37": 110,
+          "38": 124,
+          "39": 100,
+          "40": 50,
+          "41": 57,
+          "42": 66,
+          "43": 45,
+          "44": 37,
+          "45": 37,
+          "46": 29,
+          "47": 15,
+          "48": 20,
+          "49": 19,
+          "50": 4,
+          "51": 2,
+          "53": 1,
+          "54": 4,
+          "55": 4,
+          "56": 6,
+          "57": 7,
+          "58": 3,
+          "59": 6,
+          "60": 2,
+          "61": 9,
+          "62": 15,
+          "64": 1,
+          "65": 4,
+          "66": 2,
+          "67": 1,
+          "69": 3,
+          "70": 4,
+          "71": 2,
+          "72": 5,
+          "73": 7,
+          "75": 1,
+          "77": 4
+        },
+        "unknown_any_frame_samples": 27442,
+        "unknown_self_samples": 534,
+        "user_stack_requested": true,
+        "weighting": "one per SAMPLE record; never period weighted"
+      }
+    },
+    "50000-timed": {
+      "resource": {
+        "assignments": 50000,
+        "cpu_seconds": 292.557923,
+        "cpu_seconds_relative_to_baseline": 1.0109887544706706,
+        "peak_rss_kib": 1996708,
+        "returncode": 0,
+        "sampled_peak_tree_rss_bytes": 2044792832,
+        "status": "PASS",
+        "system_cpu_seconds": 2.220298,
+        "user_cpu_seconds": 290.337625,
+        "variant": "timed",
+        "wall_seconds": 292.79533293901477,
+        "wall_seconds_relative_to_baseline": 1.0112793038783892
+      },
+      "timing": {
+        "caveat": "Instrumented timings include measurement overhead. Inclusive scopes overlap; do not sum them.",
+        "counters": {
+          "AckCapacityGrowthRequests": 102416,
+          "AckResetBytes": 1677983744,
+          "AckResetSlots": 209747968,
+          "AckResizeBytes": 3355967488,
+          "AckResizeSlots": 419495936,
+          "ClockErrors": 0,
+          "JettyRecordsScanned": 281531784,
+          "LifecycleCandidates": 98386,
+          "TpnLookupJettyRecordsScanned": 893007851,
+          "TpnLookupLiveTransportVectorSlots": 893007851,
+          "TpnLookupMatchedJetties": 22726174,
+          "TpnLookupTransportEntriesCompared": 893007851,
+          "WqeEntriesCompared": 108261581
+        },
+        "exclusive_definition": "inclusive minus nested instrumented scopes, not complete function self time",
+        "timers": [
+          {
+            "calls_or_count": 98386,
+            "exclusive_thread_cpu_ns": 75082642,
+            "exclusive_wall_ns": 45675000,
+            "inclusive_thread_cpu_ns": 787403428,
+            "inclusive_wall_ns": 805611489,
+            "kind": "timer",
+            "name": "CreateJettyBound"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "CreateJettyUnbound"
+          },
+          {
+            "calls_or_count": 98386,
+            "exclusive_thread_cpu_ns": 119658576,
+            "exclusive_wall_ns": 116177574,
+            "inclusive_thread_cpu_ns": 515316774,
+            "inclusive_wall_ns": 532076606,
+            "kind": "timer",
+            "name": "CreateObjectJetty"
+          },
+          {
+            "calls_or_count": 98386,
+            "exclusive_thread_cpu_ns": 51406836,
+            "exclusive_wall_ns": 36020563,
+            "inclusive_thread_cpu_ns": 109094966,
+            "inclusive_wall_ns": 124010732,
+            "kind": "timer",
+            "name": "JettyInit"
+          },
+          {
+            "calls_or_count": 98386,
+            "exclusive_thread_cpu_ns": 87909046,
+            "exclusive_wall_ns": 103849151,
+            "inclusive_thread_cpu_ns": 87909046,
+            "inclusive_wall_ns": 103849151,
+            "kind": "timer",
+            "name": "RegisterJetty"
+          },
+          {
+            "calls_or_count": 98386,
+            "exclusive_thread_cpu_ns": 12278441105,
+            "exclusive_wall_ns": 12322740353,
+            "inclusive_thread_cpu_ns": 12278441105,
+            "inclusive_wall_ns": 12322740353,
+            "kind": "timer",
+            "name": "ResolveWqeLifecycleLocalId"
+          },
+          {
+            "calls_or_count": 98386,
+            "exclusive_thread_cpu_ns": 769341159,
+            "exclusive_wall_ns": 724880601,
+            "inclusive_thread_cpu_ns": 13085904510,
+            "inclusive_wall_ns": 13105518265,
+            "kind": "timer",
+            "name": "SubmitWqe"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "SubmitCtpWqe"
+          },
+          {
+            "calls_or_count": 98386,
+            "exclusive_thread_cpu_ns": 38122246,
+            "exclusive_wall_ns": 57897311,
+            "inclusive_thread_cpu_ns": 38122246,
+            "inclusive_wall_ns": 57897311,
+            "kind": "timer",
+            "name": "RegisterWqe"
+          },
+          {
+            "calls_or_count": 307248,
+            "exclusive_thread_cpu_ns": 470066852,
+            "exclusive_wall_ns": 529427606,
+            "inclusive_thread_cpu_ns": 470066852,
+            "inclusive_wall_ns": 529427606,
+            "kind": "timer",
+            "name": "AckResize"
+          },
+          {
+            "calls_or_count": 102416,
+            "exclusive_thread_cpu_ns": 29687527,
+            "exclusive_wall_ns": 47285533,
+            "inclusive_thread_cpu_ns": 29687527,
+            "inclusive_wall_ns": 47285533,
+            "kind": "timer",
+            "name": "AckReset"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 2157644,
+            "exclusive_wall_ns": 2147997,
+            "inclusive_thread_cpu_ns": 292370109592,
+            "inclusive_wall_ns": 292450412656,
+            "kind": "timer",
+            "name": "AppRun"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 27028927,
+            "exclusive_wall_ns": 27030562,
+            "inclusive_thread_cpu_ns": 27028927,
+            "inclusive_wall_ns": 27030562,
+            "kind": "timer",
+            "name": "AppRead"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 224877757,
+            "exclusive_wall_ns": 206266434,
+            "inclusive_thread_cpu_ns": 1135974594,
+            "inclusive_wall_ns": 1136016204,
+            "kind": "timer",
+            "name": "AppTopology"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 25746294,
+            "exclusive_wall_ns": 25757190,
+            "inclusive_thread_cpu_ns": 25746294,
+            "inclusive_wall_ns": 25757190,
+            "kind": "timer",
+            "name": "AppWriteArtifacts"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 15310153,
+            "exclusive_wall_ns": 15312301,
+            "inclusive_thread_cpu_ns": 15310153,
+            "inclusive_wall_ns": 15312301,
+            "kind": "timer",
+            "name": "AppWritePayloads"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 48775543590,
+            "exclusive_wall_ns": 48402207454,
+            "inclusive_thread_cpu_ns": 290727724418,
+            "inclusive_wall_ns": 290807981190,
+            "kind": "timer",
+            "name": "AppSimulatorRun"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 415635817,
+            "exclusive_wall_ns": 398994350,
+            "inclusive_thread_cpu_ns": 433597648,
+            "inclusive_wall_ns": 433596080,
+            "kind": "timer",
+            "name": "AppSimulatorDestroy"
+          },
+          {
+            "calls_or_count": 100000,
+            "exclusive_thread_cpu_ns": 251365139,
+            "exclusive_wall_ns": 267218640,
+            "inclusive_thread_cpu_ns": 251365139,
+            "inclusive_wall_ns": 267218640,
+            "kind": "timer",
+            "name": "AppValidate"
+          },
+          {
+            "calls_or_count": 98386,
+            "exclusive_thread_cpu_ns": 201588413,
+            "exclusive_wall_ns": 155518758,
+            "inclusive_thread_cpu_ns": 2054897877,
+            "inclusive_wall_ns": 2075879868,
+            "kind": "timer",
+            "name": "AppTargetExecutor"
+          },
+          {
+            "calls_or_count": 98386,
+            "exclusive_thread_cpu_ns": 1231935340,
+            "exclusive_wall_ns": 1195343424,
+            "inclusive_thread_cpu_ns": 1428267232,
+            "inclusive_wall_ns": 1444522568,
+            "kind": "timer",
+            "name": "AppTargetCompletion"
+          },
+          {
+            "calls_or_count": 798701,
+            "exclusive_thread_cpu_ns": 736187900,
+            "exclusive_wall_ns": 904901407,
+            "inclusive_thread_cpu_ns": 736187900,
+            "inclusive_wall_ns": 904901407,
+            "kind": "timer",
+            "name": "AppEvent"
+          },
+          {
+            "calls_or_count": 100000,
+            "exclusive_thread_cpu_ns": 295132118,
+            "exclusive_wall_ns": 277212120,
+            "inclusive_thread_cpu_ns": 13457828003,
+            "inclusive_wall_ns": 13475291508,
+            "kind": "timer",
+            "name": "AppSend"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 2554171,
+            "exclusive_wall_ns": 2555148,
+            "inclusive_thread_cpu_ns": 2554171,
+            "inclusive_wall_ns": 2555148,
+            "kind": "timer",
+            "name": "AppUbUtilsDestroy"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 15743,
+            "exclusive_wall_ns": 15984,
+            "inclusive_thread_cpu_ns": 15743,
+            "inclusive_wall_ns": 15984,
+            "kind": "timer",
+            "name": "AppLogClose"
+          },
+          {
+            "calls_or_count": 1,
+            "exclusive_thread_cpu_ns": 128429568,
+            "exclusive_wall_ns": 128438831,
+            "inclusive_thread_cpu_ns": 128429568,
+            "inclusive_wall_ns": 128438831,
+            "kind": "timer",
+            "name": "AppLayerDestroy"
+          },
+          {
+            "calls_or_count": 196772,
+            "exclusive_thread_cpu_ns": 550041042,
+            "exclusive_wall_ns": 595083564,
+            "inclusive_thread_cpu_ns": 5173005689,
+            "inclusive_wall_ns": 5257635743,
+            "kind": "timer",
+            "name": "TransactionInboundTaUnit"
+          },
+          {
+            "calls_or_count": 98386,
+            "exclusive_thread_cpu_ns": 2453912765,
+            "exclusive_wall_ns": 2450300836,
+            "inclusive_thread_cpu_ns": 2568066770,
+            "inclusive_wall_ns": 2586672311,
+            "kind": "timer",
+            "name": "TransactionSegmentComplete"
+          },
+          {
+            "calls_or_count": 327148,
+            "exclusive_thread_cpu_ns": 223146113601,
+            "exclusive_wall_ns": 223454676722,
+            "inclusive_thread_cpu_ns": 223146113601,
+            "inclusive_wall_ns": 223454676722,
+            "kind": "timer",
+            "name": "GetJettiesUsingTpn"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "TransactionExecuteInbound"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "NativeAppendTrace"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "NativeCommitTrace"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "NativeFlushTrace"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "PortDispatchReceive"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "TransportParseData"
+          },
+          {
+            "calls_or_count": 0,
+            "exclusive_thread_cpu_ns": 0,
+            "exclusive_wall_ns": 0,
+            "inclusive_thread_cpu_ns": 0,
+            "inclusive_wall_ns": 0,
+            "kind": "timer",
+            "name": "TransportHandleAck"
+          },
+          {
+            "calls_or_count": 2015,
+            "exclusive_thread_cpu_ns": 84240879,
+            "exclusive_wall_ns": 74895256,
+            "inclusive_thread_cpu_ns": 112687099,
+            "inclusive_wall_ns": 113117464,
+            "kind": "timer",
+            "name": "AppPair"
+          },
+          {
+            "calls_or_count": 65,
+            "exclusive_thread_cpu_ns": 11006310,
+            "exclusive_wall_ns": 11020817,
+            "inclusive_thread_cpu_ns": 11006310,
+            "inclusive_wall_ns": 11020817,
+            "kind": "timer",
+            "name": "AppInit"
+          }
+        ],
+        "timing_units": "integer nanoseconds; CPU is CLOCK_THREAD_CPUTIME_ID"
+      }
+    }
+  }
+}

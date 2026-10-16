@@ -1,0 +1,42 @@
+No PMU found for 'cpu-clock:u'
+callchain: type DWARF
+callchain: stack dump size 8192
+DEBUGINFOD_URLS=
+No PMU found for 'cycles:Pu'
+Failed to read max cpus, using default of 4096
+nr_cblocks: 0
+affinity: SYS
+mmap flush: 1
+comp level: 0
+Problems creating module maps, continuing anyway...
+No PMU found for 'cycles:u'
+No PMU found for 'instructions:u'
+No PMU found for 'cpu-clock:u'
+mmap size 528384B
+libperf: Miscounted nr_mmaps 0 vs 1
+Control descriptor is not initialized
+thread_data[0x55f3bf76e180]: nr_mmaps=0, maps=(nil), ow_maps=(nil)
+thread_data[0x55f3bf76e180]: pollfd[0] <- non_perf_event fd=4
+WARNING: No sample_id_all support, falling back to unordered processing
+------------------------------------------------------------
+perf_event_attr:
+  type                             1 (PERF_TYPE_SOFTWARE)
+  size                             136
+  config                           0x9 (PERF_COUNT_SW_DUMMY)
+  watermark                        1
+  sample_id_all                    1
+  bpf_event                        1
+  { wakeup_events, wakeup_watermark } 1
+------------------------------------------------------------
+sys_perf_event_open: pid -1  cpu 0  group_fd -1  flags 0x8
+sys_perf_event_open failed, error -13
+Couldn't start the BPF side band thread:
+BPF programs starting from now on won't be annotatable
+[ perf record: Woken up 1 times to write data ]
+failed to write feature BUILD_ID
+failed to write feature CPU_TOPOLOGY
+failed to write feature NUMA_TOPOLOGY
+failed to write feature MEM_TOPOLOGY
+failed to write feature CPU_PMU_CAPS
+failed to write feature HYBRID_TOPOLOGY
+[ perf record: Captured and wrote 0.000 MB /tmp/official-perf-empty.data ]

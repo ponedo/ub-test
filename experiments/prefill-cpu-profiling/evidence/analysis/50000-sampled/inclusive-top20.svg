@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="710" viewBox="0 0 1600 710">
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="monospace" font-size="12" fill="#172554">
+<text x="20" y="27" font-size="18">50000-sampled: inclusive Top20</text>
+<text x="20" y="51">Unit: sample records; denominator: 27619; inclusive membership counted once per symbol per sample.</text>
+<text x="20" y="94"><title>main (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/ns3.44-multi-npu-relay)</title>main (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/ns3.44-multi-npu-relay)</text>
+<rect x="1060" y="80" width="390.00" height="20" fill="#2563eb"/>
+<text x="1460" y="94">27613 (99.98%)</text>
+<text x="20" y="124"><title>Layer::Run(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/ns3.44-multi-npu-relay)</title>Layer::Run(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;, std::__cxx11::basic_string&lt;char, st...</text>
+<rect x="1060" y="110" width="389.27" height="20" fill="#2563eb"/>
+<text x="1460" y="124">27561 (99.79%)</text>
+<text x="20" y="154"><title>ns3::DefaultSimulatorImpl::Run() (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-core.so)</title>ns3::DefaultSimulatorImpl::Run() (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-core.so)</text>
+<rect x="1060" y="140" width="388.57" height="20" fill="#2563eb"/>
+<text x="1460" y="154">27512 (99.61%)</text>
+<text x="20" y="184"><title>ns3::DefaultSimulatorImpl::ProcessOneEvent() (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-core.so)</title>ns3::DefaultSimulatorImpl::ProcessOneEvent() (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-core.so)</text>
+<rect x="1060" y="170" width="388.50" height="20" fill="#2563eb"/>
+<text x="1460" y="184">27507 (99.59%)</text>
+<text x="20" y="214"><title>[unknown] (/usr/lib/x86_64-linux-gnu/libc.so.6)</title>[unknown] (/usr/lib/x86_64-linux-gnu/libc.so.6)</text>
+<rect x="1060" y="200" width="387.54" height="20" fill="#2563eb"/>
+<text x="1460" y="214">27439 (99.35%)</text>
+<text x="20" y="244"><title>__libc_start_main (/usr/lib/x86_64-linux-gnu/libc.so.6)</title>__libc_start_main (/usr/lib/x86_64-linux-gnu/libc.so.6)</text>
+<rect x="1060" y="230" width="386.53" height="20" fill="#2563eb"/>
+<text x="1460" y="244">27367 (99.09%)</text>
+<text x="20" y="274"><title>_start (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/ns3.44-multi-npu-relay)</title>_start (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/ns3.44-multi-npu-relay)</text>
+<rect x="1060" y="260" width="386.00" height="20" fill="#2563eb"/>
+<text x="1460" y="274">27330 (98.95%)</text>
+<text x="20" y="304"><title>ns3::UbTransportChannel::TryContinueJettyTransmission() (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)</title>ns3::UbTransportChannel::TryContinueJettyTransmission() (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3....</text>
+<rect x="1060" y="290" width="314.62" height="20" fill="#2563eb"/>
+<text x="1460" y="304">22276 (80.65%)</text>
+<text x="20" y="334"><title>ns3::UbTransaction::TryContinueJettyTransmission(ns3::Ptr&lt;ns3::UbTransportChannel&gt;) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)</title>ns3::UbTransaction::TryContinueJettyTransmission(ns3::Ptr&lt;ns3::UbTransportChannel&gt;) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/b...</text>
+<rect x="1060" y="320" width="314.44" height="20" fill="#2563eb"/>
+<text x="1460" y="334">22263 (80.61%)</text>
+<text x="20" y="364"><title>ns3::UbTransaction::GetJettiesUsingTpn(unsigned int) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)</title>ns3::UbTransaction::GetJettiesUsingTpn(unsigned int) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-...</text>
+<rect x="1060" y="350" width="300.26" height="20" fill="#2563eb"/>
+<text x="1460" y="364">21259 (76.97%)</text>
+<text x="20" y="394"><title>std::_Function_handler&lt;void (), std::_Bind&lt;void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr&lt;ns3::UbPort&gt;))(ns3::Ptr&lt;ns3::UbPort&gt;)&gt; &gt;::_M_invoke(std::_Any_data const&amp;) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)</title>std::_Function_handler&lt;void (), std::_Bind&lt;void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr&lt;ns3::UbPort&gt;))(ns3::Ptr&lt;n...</text>
+<rect x="1060" y="380" width="217.52" height="20" fill="#2563eb"/>
+<text x="1460" y="394">15401 (55.76%)</text>
+<text x="20" y="424"><title>std::__invoke_result&lt;void (ns3::UbSwitchAllocator::*&amp;)(ns3::Ptr&lt;ns3::UbPort&gt;), ns3::UbSwitchAllocator*&amp;, ns3::Ptr&lt;ns3::UbPort&gt;&amp;&gt;::type std::__invoke&lt;void (ns3::UbSwitchAllocator::*&amp;)(ns3::Ptr&lt;ns3::UbPort&gt;), ns3::UbSwitchAllocator*&amp;, ns3::Ptr&lt;ns3::UbPort&gt;&amp;&gt;(void (ns3::UbSwitchAllocator::*&amp;)(ns3::Ptr&lt;ns3::UbPort&gt;), ns3::UbSwitchAllocator*&amp;, ns3::Ptr&lt;ns3::UbPort&gt;&amp;) (inlined)</title>std::__invoke_result&lt;void (ns3::UbSwitchAllocator::*&amp;)(ns3::Ptr&lt;ns3::UbPort&gt;), ns3::UbSwitchAllocator*&amp;, ns3::Ptr&lt;ns3::UbPort&gt;&amp;&gt;::type...</text>
+<rect x="1060" y="410" width="217.52" height="20" fill="#2563eb"/>
+<text x="1460" y="424">15401 (55.76%)</text>
+<text x="20" y="454"><title>std::enable_if&lt;is_invocable_r_v&lt;void, std::_Bind&lt;void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr&lt;ns3::UbPort&gt;))(ns3::Ptr&lt;ns3::UbPort&gt;)&gt;&amp;&gt;, void&gt;::type std::__invoke_r&lt;void, std::_Bind&lt;void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr&lt;ns3::UbPort&gt;))(ns3::Ptr&lt;ns3::UbPort&gt;)&gt;&amp;&gt;(std::_Bind&lt;void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr&lt;ns3::UbPort&gt;))(ns3::Ptr&lt;ns3::UbPort&gt;)&gt;&amp;) (inlined)</title>std::enable_if&lt;is_invocable_r_v&lt;void, std::_Bind&lt;void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr&lt;ns3::UbPort&gt;))(ns3:...</text>
+<rect x="1060" y="440" width="217.52" height="20" fill="#2563eb"/>
+<text x="1460" y="454">15401 (55.76%)</text>
+<text x="20" y="484"><title>void std::_Bind&lt;void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr&lt;ns3::UbPort&gt;))(ns3::Ptr&lt;ns3::UbPort&gt;)&gt;::__call&lt;void, , 0ul, 1ul&gt;(std::tuple&lt;&gt;&amp;&amp;, std::_Index_tuple&lt;0ul, 1ul&gt;) (inlined)</title>void std::_Bind&lt;void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr&lt;ns3::UbPort&gt;))(ns3::Ptr&lt;ns3::UbPort&gt;)&gt;::__call&lt;void,...</text>
+<rect x="1060" y="470" width="217.52" height="20" fill="#2563eb"/>
+<text x="1460" y="484">15401 (55.76%)</text>
+<text x="20" y="514"><title>void std::_Bind&lt;void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr&lt;ns3::UbPort&gt;))(ns3::Ptr&lt;ns3::UbPort&gt;)&gt;::operator()&lt;, void&gt;() (inlined)</title>void std::_Bind&lt;void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr&lt;ns3::UbPort&gt;))(ns3::Ptr&lt;ns3::UbPort&gt;)&gt;::operator()&lt;,...</text>
+<rect x="1060" y="500" width="217.52" height="20" fill="#2563eb"/>
+<text x="1460" y="514">15401 (55.76%)</text>
+<text x="20" y="544"><title>void std::__invoke_impl&lt;void, std::_Bind&lt;void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr&lt;ns3::UbPort&gt;))(ns3::Ptr&lt;ns3::UbPort&gt;)&gt;&amp;&gt;(std::__invoke_other, std::_Bind&lt;void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr&lt;ns3::UbPort&gt;))(ns3::Ptr&lt;ns3::UbPort&gt;)&gt;&amp;) (inlined)</title>void std::__invoke_impl&lt;void, std::_Bind&lt;void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr&lt;ns3::UbPort&gt;))(ns3::Ptr&lt;ns3...</text>
+<rect x="1060" y="530" width="217.52" height="20" fill="#2563eb"/>
+<text x="1460" y="544">15401 (55.76%)</text>
+<text x="20" y="574"><title>void std::__invoke_impl&lt;void, void (ns3::UbSwitchAllocator::*&amp;)(ns3::Ptr&lt;ns3::UbPort&gt;), ns3::UbSwitchAllocator*&amp;, ns3::Ptr&lt;ns3::UbPort&gt;&amp;&gt;(std::__invoke_memfun_deref, void (ns3::UbSwitchAllocator::*&amp;)(ns3::Ptr&lt;ns3::UbPort&gt;), ns3::UbSwitchAllocator*&amp;, ns3::Ptr&lt;ns3::UbPort&gt;&amp;) (inlined)</title>void std::__invoke_impl&lt;void, void (ns3::UbSwitchAllocator::*&amp;)(ns3::Ptr&lt;ns3::UbPort&gt;), ns3::UbSwitchAllocator*&amp;, ns3::Ptr&lt;ns3::UbPort...</text>
+<rect x="1060" y="560" width="217.52" height="20" fill="#2563eb"/>
+<text x="1460" y="574">15401 (55.76%)</text>
+<text x="20" y="604"><title>ns3::UbSwitchAllocator::RunAllocation(ns3::Ptr&lt;ns3::UbPort&gt;) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)</title>ns3::UbSwitchAllocator::RunAllocation(ns3::Ptr&lt;ns3::UbPort&gt;) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/li...</text>
+<rect x="1060" y="590" width="217.32" height="20" fill="#2563eb"/>
+<text x="1460" y="604">15387 (55.71%)</text>
+<text x="20" y="634"><title>ns3::UbRoundRobinAllocator::AllocateNextPacket(ns3::Ptr&lt;ns3::UbPort&gt;) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)</title>ns3::UbRoundRobinAllocator::AllocateNextPacket(ns3::Ptr&lt;ns3::UbPort&gt;) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binari...</text>
+<rect x="1060" y="620" width="217.20" height="20" fill="#2563eb"/>
+<text x="1460" y="634">15378 (55.68%)</text>
+<text x="20" y="664"><title>ns3::UbTransportChannel::GetNextPacket() (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)</title>ns3::UbTransportChannel::GetNextPacket() (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)</text>
+<rect x="1060" y="650" width="205.83" height="20" fill="#2563eb"/>
+<text x="1460" y="664">14573 (52.76%)</text>
+</g></svg>

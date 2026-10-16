@@ -1,0 +1,106 @@
+{
+  "callchain_requested": true,
+  "decode_command": [
+    "/workspace/shared/cpu_sampler/perf",
+    "script",
+    "-i",
+    "/workspace/scratch/c6ba02920254/prefill-cpu-profiling-dot/experiments/prefill-cpu-profiling/evidence/calibration2.data",
+    "--max-stack",
+    "1024",
+    "-F",
+    "comm,pid,tid,time,event,ip,sym,dso"
+  ],
+  "events": {
+    "cpu-clock:u": 152
+  },
+  "hotspot_subtrees": {
+    "CreateJetty": {
+      "percent": 0.0,
+      "samples": 0,
+      "stack_pattern": "ns3::UbFunction::CreateJetty("
+    },
+    "GetJettiesUsingTpn": {
+      "percent": 0.0,
+      "samples": 0,
+      "stack_pattern": "ns3::UbTransaction::GetJettiesUsingTpn("
+    },
+    "ResolveWqeLifecycleLocalId": {
+      "percent": 0.0,
+      "samples": 0,
+      "stack_pattern": "ns3::UbJettyManager::ResolveWqeLifecycleLocalId("
+    },
+    "SubmitWqe": {
+      "percent": 0.0,
+      "samples": 0,
+      "stack_pattern": "ns3::UbFunction::SubmitWqe("
+    }
+  },
+  "inclusive_caveat": "Observed stack membership, not complete attribution when unwinding is truncated. Recursion deduplicated per sample.",
+  "inclusive_top20": [
+    {
+      "percent": 100.0,
+      "samples": 152,
+      "symbol": "[unknown] (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+    },
+    {
+      "percent": 100.0,
+      "samples": 152,
+      "symbol": "__libc_start_main (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+    },
+    {
+      "percent": 100.0,
+      "samples": 152,
+      "symbol": "_start (/workspace/shared/cpu_sampler/busy)"
+    },
+    {
+      "percent": 100.0,
+      "samples": 152,
+      "symbol": "hot_loop (/workspace/shared/cpu_sampler/busy)"
+    },
+    {
+      "percent": 100.0,
+      "samples": 152,
+      "symbol": "main (/workspace/shared/cpu_sampler/busy)"
+    }
+  ],
+  "leaf_only_observed": false,
+  "lost_samples_reported": 0,
+  "pid_tid_scope": [
+    {
+      "comm": "busy",
+      "pid": 11,
+      "samples": 152,
+      "tid": 11
+    }
+  ],
+  "recorder": {},
+  "records": {
+    "COMM": 1,
+    "EXIT": 1,
+    "LOST": 0,
+    "LOST_SAMPLES": 0,
+    "MMAP2": 24,
+    "SAMPLE": 152,
+    "THROTTLE": 0,
+    "UNTHROTTLE": 0
+  },
+  "sample_count": 152,
+  "sample_type_masks": [
+    12583
+  ],
+  "samples_without_frames": 0,
+  "self_top20": [
+    {
+      "percent": 100.0,
+      "samples": 152,
+      "symbol": "hot_loop (/workspace/shared/cpu_sampler/busy)"
+    }
+  ],
+  "stack_depth_histogram": {
+    "5": 152
+  },
+  "unknown_any_frame_samples": 152,
+  "unknown_self_samples": 0,
+  "user_stack_requested": true,
+  "weighting": "one per SAMPLE record; never period weighted"
+}

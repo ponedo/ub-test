@@ -1,0 +1,33 @@
+{
+  "source_commit": "bb578c9c1ba78efe1f4bb33108ab31cbd0ccc9c8",
+  "source_path": "experiments/prefill-cpu-profiling/evidence/build-original/compile_commands.json",
+  "qualification": "Saved-environment original-build evidence arrived after dot reconstruction began; used only to audit flags, never as dot measurements.",
+  "commands": {
+    "scratch/multi-npu-relay.cc": {
+      "directory": "/workspace/ns-3-ub/cmake-cache",
+      "command": "/usr/bin/c++ -DNS3_BUILD_PROFILE_RELEASE -DPROJECT_SOURCE_PATH=\\\"/workspace/ns-3-ub\\\" -D__LINUX__ -I/workspace/ns-3-ub/build/include -O3 -DNDEBUG -std=c++20 -fPIE   -fno-semantic-interposition -fdiagnostics-color=always -Wall -Wpedantic -o scratch/CMakeFiles/scratch_multi-npu-relay.dir/multi-npu-relay.cc.o -c /workspace/ns-3-ub/scratch/multi-npu-relay.cc",
+      "file": "/workspace/ns-3-ub/scratch/multi-npu-relay.cc",
+      "output": "/workspace/ns-3-ub/cmake-cache/scratch/CMakeFiles/scratch_multi-npu-relay.dir/multi-npu-relay.cc.o"
+    },
+    "src/unified-bus/model/protocol/ub-function.cc": {
+      "directory": "/workspace/ns-3-ub/cmake-cache",
+      "command": "/usr/bin/c++ -DNS3_BUILD_PROFILE_RELEASE -DPROJECT_SOURCE_PATH=\\\"/workspace/ns-3-ub\\\" -D__LINUX__ -Dunified_bus_EXPORTS -I/workspace/ns-3-ub/build/include -O3 -DNDEBUG -std=c++20 -fPIC   -fno-semantic-interposition -fdiagnostics-color=always -Wall -Wpedantic -o src/unified-bus/CMakeFiles/unified-bus.dir/model/protocol/ub-function.cc.o -c /workspace/ns-3-ub/src/unified-bus/model/protocol/ub-function.cc",
+      "file": "/workspace/ns-3-ub/src/unified-bus/model/protocol/ub-function.cc",
+      "output": "/workspace/ns-3-ub/cmake-cache/src/unified-bus/CMakeFiles/unified-bus.dir/model/protocol/ub-function.cc.o"
+    },
+    "src/core/model/simulator.cc": {
+      "directory": "/workspace/ns-3-ub/cmake-cache",
+      "command": "/usr/bin/c++ -DNS3_BUILD_PROFILE_RELEASE -DPROJECT_SOURCE_PATH=\\\"/workspace/ns-3-ub\\\" -D__LINUX__ -Dcore_EXPORTS -I/workspace/ns-3-ub/build/include -O3 -DNDEBUG -std=c++20 -fPIC   -fno-semantic-interposition -fdiagnostics-color=always -Wall -Wpedantic -o src/core/CMakeFiles/core.dir/model/simulator.cc.o -c /workspace/ns-3-ub/src/core/model/simulator.cc",
+      "file": "/workspace/ns-3-ub/src/core/model/simulator.cc",
+      "output": "/workspace/ns-3-ub/cmake-cache/src/core/CMakeFiles/core.dir/model/simulator.cc.o"
+    }
+  },
+  "original_build_actions": {
+    "native_build_command": "bash experiments/prefill-cpu-profiling/build.sh > /workspace/prefill-cpu-raw/build-timed.txt 2>&1",
+    "final_timer_library_command": "c++ -O3 -g -shared -fPIC experiments/prefill-cpu-profiling/scopes.cc -o /workspace/prefill-cpu-native/libcpuscopes.so",
+    "final_timer_library_timing": "After native build completed and before capture.py / first 5K trial. Added coarse CPU and RSS accounting; ABI unchanged. All timed trials used this final library.",
+    "capture_command": "python3 experiments/prefill-cpu-profiling/capture.py",
+    "original_executor": "Existing accepted release ELF reused; SHA256 in binary-sha256.json. No optimization level change.",
+    "compile_profile": "Original O3 DNDEBUG; timed O3 DNDEBUG g, forced scopes.h include, linked libcpuscopes.so. Exact flags in build-original/build-timed."
+  }
+}

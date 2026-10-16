@@ -1,0 +1,21 @@
+symbol,samples,percent
+main (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/ns3.44-multi-npu-relay),460,99.78308026030369
+"Layer::Run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/ns3.44-multi-npu-relay)",452,98.0477223427332
+[unknown] (/usr/lib/x86_64-linux-gnu/libc.so.6),446,96.74620390455532
+__libc_start_main (/usr/lib/x86_64-linux-gnu/libc.so.6),443,96.09544468546638
+_start (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/ns3.44-multi-npu-relay),436,94.57700650759219
+ns3::DefaultSimulatorImpl::Run() (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-core.so),435,94.36008676789588
+ns3::DefaultSimulatorImpl::ProcessOneEvent() (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-core.so),434,94.14316702819957
+"std::_Function_handler<void (), std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)> >::_M_invoke(std::_Any_data const&) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)",198,42.950108459869845
+"std::__invoke_result<void (ns3::UbPort::*&)(ns3::Ptr<ns3::Packet>), ns3::Ptr<ns3::UbPort>&, ns3::Ptr<ns3::Packet>&>::type std::__invoke<void (ns3::UbPort::*&)(ns3::Ptr<ns3::Packet>), ns3::Ptr<ns3::UbPort>&, ns3::Ptr<ns3::Packet>&>(void (ns3::UbPort::*&)(ns3::Ptr<ns3::Packet>), ns3::Ptr<ns3::UbPort>&, ns3::Ptr<ns3::Packet>&) (inlined)",198,42.950108459869845
+"std::enable_if<is_invocable_r_v<void, std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)>&>, void>::type std::__invoke_r<void, std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)>&>(std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)>&) (inlined)",198,42.950108459869845
+"void std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)>::__call<void, , 0ul, 1ul>(std::tuple<>&&, std::_Index_tuple<0ul, 1ul>) (inlined)",198,42.950108459869845
+"void std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)>::operator()<, void>() (inlined)",198,42.950108459869845
+"void std::__invoke_impl<void, std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)>&>(std::__invoke_other, std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)>&) (inlined)",198,42.950108459869845
+"void std::__invoke_impl<void, void (ns3::UbPort::*&)(ns3::Ptr<ns3::Packet>), ns3::Ptr<ns3::UbPort>&, ns3::Ptr<ns3::Packet>&>(std::__invoke_memfun_deref, void (ns3::UbPort::*&)(ns3::Ptr<ns3::Packet>), ns3::Ptr<ns3::UbPort>&, ns3::Ptr<ns3::Packet>&) (inlined)",198,42.950108459869845
+ns3::UbPort::Receive(ns3::Ptr<ns3::Packet>) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so),196,42.51626898047722
+ns3::UbPort::DispatchReceive(ns3::Ptr<ns3::Packet>) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so),189,40.99783080260303
+ns3::UbPort::HandleWithUbSwitch(ns3::Ptr<ns3::Packet>) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so),189,40.99783080260303
+"ns3::UbSwitch::SwitchHandlePacket(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)",189,40.99783080260303
+"ns3::UbSwitch::HandleURMADataPacket(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so)",184,39.91323210412148
+ns3::UbTransaction::TryContinueJettyTransmission(ns3::Ptr<ns3::UbTransportChannel>) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so),172,37.310195227765725

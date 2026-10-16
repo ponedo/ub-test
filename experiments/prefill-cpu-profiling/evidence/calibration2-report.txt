@@ -1,0 +1,24 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 152  of event 'cpu-clock:u'
+# Event count (approx.): 1535353520
+#
+# Overhead  Shared Object  Symbol        IPC   [IPC Coverage]
+# ........  .............  ............  ....................
+#
+   100.00%  busy           [.] hot_loop  -      -            
+            |
+            ---hot_loop
+               main
+               0x7f5b3adcdca7
+               __libc_start_main
+               _start
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

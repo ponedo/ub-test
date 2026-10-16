@@ -1,0 +1,21 @@
+symbol,samples,percent
+std::_Rb_tree_increment(std::_Rb_tree_node_base*) (/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33),1104,22.63222632226322
+"std::_Rb_tree<unsigned int, std::pair<unsigned int const, ns3::UbRtpTransportReference>, std::_Select1st<std::pair<unsigned int const, ns3::UbRtpTransportReference> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, ns3::UbRtpTransportReference> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<unsigned int const, ns3::UbRtpTransportReference> >*, std::_Rb_tree_node_base*, unsigned int const&) (inlined)",529,10.844608446084461
+"std::_Rb_tree<unsigned int, std::pair<unsigned int const, ns3::UbTransportChannelManager::EndpointRecord>, std::_Select1st<std::pair<unsigned int const, ns3::UbTransportChannelManager::EndpointRecord> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, ns3::UbTransportChannelManager::EndpointRecord> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<unsigned int const, ns3::UbTransportChannelManager::EndpointRecord> >*, std::_Rb_tree_node_base*, unsigned int const&) (inlined)",434,8.897088970889708
+"std::_Rb_tree<unsigned int, std::pair<unsigned int const, ns3::UbJettyManager::JettyRecord>, std::_Select1st<std::pair<unsigned int const, ns3::UbJettyManager::JettyRecord> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, ns3::UbJettyManager::JettyRecord> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<unsigned int const, ns3::UbJettyManager::JettyRecord> > const*, std::_Rb_tree_node_base const*, unsigned int const&) const (inlined)",193,3.956539565395654
+[unknown] (/usr/lib/x86_64-linux-gnu/libc.so.6),165,3.3825338253382533
+cfree (/usr/lib/x86_64-linux-gnu/libc.so.6),149,3.054530545305453
+ns3::UbTransaction::GetJettyLiveTps(unsigned int) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so),116,2.3780237802378026
+std::_Rb_tree_increment(std::_Rb_tree_node_base const*) (/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33),99,2.029520295202952
+malloc (/usr/lib/x86_64-linux-gnu/libc.so.6),96,1.968019680196802
+__dynamic_cast (/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33),94,1.927019270192702
+ns3::UbLifecycleResourceIdentity::operator==(ns3::UbLifecycleResourceIdentity const&) const (inlined),93,1.9065190651906518
+"ns3::SimpleRefCount<ns3::Object, ns3::ObjectBase, ns3::ObjectDeleter>::Unref() const (inlined)",62,1.2710127101271014
+ns3::Ptr<ns3::UbJetty>::Ptr(ns3::Ptr<ns3::UbJetty> const&) (inlined),61,1.2505125051250512
+_ZNKSt8__detail10_Synth3wayclIjjEEDaRKT_RKT0_QrqXltfL0p_fL0p0_RNS_18__boolean_testableEXltfL0p0_fL0p_RNS_18__boolean_testableEE (inlined),53,1.086510865108651
+"std::_Rb_tree<unsigned int, std::pair<unsigned int const, ns3::UbRtpTransportReference>, std::_Select1st<std::pair<unsigned int const, ns3::UbRtpTransportReference> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, ns3::UbRtpTransportReference> > >::find(unsigned int const&) (inlined)",47,0.963509635096351
+_ZNKSt8__detail10_Synth3wayclIN3ns323UbLifecycleResourceKindES3_EEDaRKT_RKT0_QrqXltfL0p_fL0p0_RNS_18__boolean_testableEXltfL0p0_fL0p_RNS_18__boolean_testableEE (inlined),44,0.9020090200902009
+"ns3::UbTransportChannelManager::ResolveLiveTpLocked(unsigned int, ns3::UbLifecycleResourceIdentity const&) (inlined)",32,0.6560065600656007
+"ns3::UbJettyManager::ResolveWqeLifecycleLocalId(unsigned int, unsigned int) const [clone .localalias] (inlined)",31,0.6355063550635507
+ns3::UbTransportChannel::HasPendingTransmitWork() (inlined),31,0.6355063550635507
+ns3::UbTransaction::GetJettiesUsingTpn(unsigned int) (/workspace/scratch/c6ba02920254/prefill-cpu-raw/baseline-binaries/lib/libns3.44-unified-bus.so),30,0.6150061500615006

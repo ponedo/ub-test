@@ -1,0 +1,77 @@
+{
+  "rows": [
+    {
+      "assignments": 5000,
+      "variant": "baseline",
+      "command": "python3 experiments/prefill-cpu-profiling/execute.py --assignments 5000 --variant baseline"
+    },
+    {
+      "assignments": 5000,
+      "variant": "sampled",
+      "command": "python3 experiments/prefill-cpu-profiling/execute.py --assignments 5000 --variant sampled"
+    },
+    {
+      "assignments": 5000,
+      "variant": "timed",
+      "command": "python3 experiments/prefill-cpu-profiling/execute.py --assignments 5000 --variant timed"
+    },
+    {
+      "assignments": 10000,
+      "variant": "baseline",
+      "command": "python3 experiments/prefill-cpu-profiling/execute.py --assignments 10000 --variant baseline"
+    },
+    {
+      "assignments": 10000,
+      "variant": "sampled",
+      "command": "python3 experiments/prefill-cpu-profiling/execute.py --assignments 10000 --variant sampled"
+    },
+    {
+      "assignments": 10000,
+      "variant": "timed",
+      "command": "python3 experiments/prefill-cpu-profiling/execute.py --assignments 10000 --variant timed"
+    },
+    {
+      "assignments": 20000,
+      "variant": "baseline",
+      "command": "python3 experiments/prefill-cpu-profiling/execute.py --assignments 20000 --variant baseline"
+    },
+    {
+      "assignments": 20000,
+      "variant": "sampled",
+      "command": "python3 experiments/prefill-cpu-profiling/execute.py --assignments 20000 --variant sampled"
+    },
+    {
+      "assignments": 20000,
+      "variant": "timed",
+      "command": "python3 experiments/prefill-cpu-profiling/execute.py --assignments 20000 --variant timed"
+    },
+    {
+      "assignments": 50000,
+      "variant": "baseline",
+      "command": "python3 experiments/prefill-cpu-profiling/execute.py --assignments 50000 --variant baseline"
+    },
+    {
+      "assignments": 50000,
+      "variant": "sampled",
+      "command": "python3 experiments/prefill-cpu-profiling/execute.py --assignments 50000 --variant sampled"
+    },
+    {
+      "assignments": 50000,
+      "variant": "timed",
+      "command": "python3 experiments/prefill-cpu-profiling/execute.py --assignments 50000 --variant timed"
+    }
+  ],
+  "preconditions": [
+    "exact pinned sources",
+    "baseline and timed builds finished",
+    "white-list environment and calibrated CPU sampler",
+    "small parity and guarded smaller scale pass"
+  ],
+  "stop": "Any simulator or verifier failure stops larger scales; never run 100K.",
+  "postconditions": [
+    "complete generated-output hashes identical",
+    "all binary hashes unchanged during matrix",
+    "sampling count/record checks",
+    "accepted regressions after binary preservation"
+  ]
+}

@@ -1,0 +1,364 @@
+{
+  "caveat": "Instrumented timings include measurement overhead. Inclusive scopes overlap; do not sum them.",
+  "counters": {
+    "AckCapacityGrowthRequests": 102416,
+    "AckResetBytes": 1677983744,
+    "AckResetSlots": 209747968,
+    "AckResizeBytes": 3355967488,
+    "AckResizeSlots": 419495936,
+    "ClockErrors": 0,
+    "JettyRecordsScanned": 281531784,
+    "LifecycleCandidates": 98386,
+    "TpnLookupJettyRecordsScanned": 893007851,
+    "TpnLookupLiveTransportVectorSlots": 893007851,
+    "TpnLookupMatchedJetties": 22726174,
+    "TpnLookupTransportEntriesCompared": 893007851,
+    "WqeEntriesCompared": 108261581
+  },
+  "exclusive_definition": "inclusive minus nested instrumented scopes, not complete function self time",
+  "timers": [
+    {
+      "calls_or_count": 98386,
+      "exclusive_thread_cpu_ns": 75082642,
+      "exclusive_wall_ns": 45675000,
+      "inclusive_thread_cpu_ns": 787403428,
+      "inclusive_wall_ns": 805611489,
+      "kind": "timer",
+      "name": "CreateJettyBound"
+    },
+    {
+      "calls_or_count": 0,
+      "exclusive_thread_cpu_ns": 0,
+      "exclusive_wall_ns": 0,
+      "inclusive_thread_cpu_ns": 0,
+      "inclusive_wall_ns": 0,
+      "kind": "timer",
+      "name": "CreateJettyUnbound"
+    },
+    {
+      "calls_or_count": 98386,
+      "exclusive_thread_cpu_ns": 119658576,
+      "exclusive_wall_ns": 116177574,
+      "inclusive_thread_cpu_ns": 515316774,
+      "inclusive_wall_ns": 532076606,
+      "kind": "timer",
+      "name": "CreateObjectJetty"
+    },
+    {
+      "calls_or_count": 98386,
+      "exclusive_thread_cpu_ns": 51406836,
+      "exclusive_wall_ns": 36020563,
+      "inclusive_thread_cpu_ns": 109094966,
+      "inclusive_wall_ns": 124010732,
+      "kind": "timer",
+      "name": "JettyInit"
+    },
+    {
+      "calls_or_count": 98386,
+      "exclusive_thread_cpu_ns": 87909046,
+      "exclusive_wall_ns": 103849151,
+      "inclusive_thread_cpu_ns": 87909046,
+      "inclusive_wall_ns": 103849151,
+      "kind": "timer",
+      "name": "RegisterJetty"
+    },
+    {
+      "calls_or_count": 98386,
+      "exclusive_thread_cpu_ns": 12278441105,
+      "exclusive_wall_ns": 12322740353,
+      "inclusive_thread_cpu_ns": 12278441105,
+      "inclusive_wall_ns": 12322740353,
+      "kind": "timer",
+      "name": "ResolveWqeLifecycleLocalId"
+    },
+    {
+      "calls_or_count": 98386,
+      "exclusive_thread_cpu_ns": 769341159,
+      "exclusive_wall_ns": 724880601,
+      "inclusive_thread_cpu_ns": 13085904510,
+      "inclusive_wall_ns": 13105518265,
+      "kind": "timer",
+      "name": "SubmitWqe"
+    },
+    {
+      "calls_or_count": 0,
+      "exclusive_thread_cpu_ns": 0,
+      "exclusive_wall_ns": 0,
+      "inclusive_thread_cpu_ns": 0,
+      "inclusive_wall_ns": 0,
+      "kind": "timer",
+      "name": "SubmitCtpWqe"
+    },
+    {
+      "calls_or_count": 98386,
+      "exclusive_thread_cpu_ns": 38122246,
+      "exclusive_wall_ns": 57897311,
+      "inclusive_thread_cpu_ns": 38122246,
+      "inclusive_wall_ns": 57897311,
+      "kind": "timer",
+      "name": "RegisterWqe"
+    },
+    {
+      "calls_or_count": 307248,
+      "exclusive_thread_cpu_ns": 470066852,
+      "exclusive_wall_ns": 529427606,
+      "inclusive_thread_cpu_ns": 470066852,
+      "inclusive_wall_ns": 529427606,
+      "kind": "timer",
+      "name": "AckResize"
+    },
+    {
+      "calls_or_count": 102416,
+      "exclusive_thread_cpu_ns": 29687527,
+      "exclusive_wall_ns": 47285533,
+      "inclusive_thread_cpu_ns": 29687527,
+      "inclusive_wall_ns": 47285533,
+      "kind": "timer",
+      "name": "AckReset"
+    },
+    {
+      "calls_or_count": 1,
+      "exclusive_thread_cpu_ns": 2157644,
+      "exclusive_wall_ns": 2147997,
+      "inclusive_thread_cpu_ns": 292370109592,
+      "inclusive_wall_ns": 292450412656,
+      "kind": "timer",
+      "name": "AppRun"
+    },
+    {
+      "calls_or_count": 1,
+      "exclusive_thread_cpu_ns": 27028927,
+      "exclusive_wall_ns": 27030562,
+      "inclusive_thread_cpu_ns": 27028927,
+      "inclusive_wall_ns": 27030562,
+      "kind": "timer",
+      "name": "AppRead"
+    },
+    {
+      "calls_or_count": 1,
+      "exclusive_thread_cpu_ns": 224877757,
+      "exclusive_wall_ns": 206266434,
+      "inclusive_thread_cpu_ns": 1135974594,
+      "inclusive_wall_ns": 1136016204,
+      "kind": "timer",
+      "name": "AppTopology"
+    },
+    {
+      "calls_or_count": 1,
+      "exclusive_thread_cpu_ns": 25746294,
+      "exclusive_wall_ns": 25757190,
+      "inclusive_thread_cpu_ns": 25746294,
+      "inclusive_wall_ns": 25757190,
+      "kind": "timer",
+      "name": "AppWriteArtifacts"
+    },
+    {
+      "calls_or_count": 1,
+      "exclusive_thread_cpu_ns": 15310153,
+      "exclusive_wall_ns": 15312301,
+      "inclusive_thread_cpu_ns": 15310153,
+      "inclusive_wall_ns": 15312301,
+      "kind": "timer",
+      "name": "AppWritePayloads"
+    },
+    {
+      "calls_or_count": 1,
+      "exclusive_thread_cpu_ns": 48775543590,
+      "exclusive_wall_ns": 48402207454,
+      "inclusive_thread_cpu_ns": 290727724418,
+      "inclusive_wall_ns": 290807981190,
+      "kind": "timer",
+      "name": "AppSimulatorRun"
+    },
+    {
+      "calls_or_count": 1,
+      "exclusive_thread_cpu_ns": 415635817,
+      "exclusive_wall_ns": 398994350,
+      "inclusive_thread_cpu_ns": 433597648,
+      "inclusive_wall_ns": 433596080,
+      "kind": "timer",
+      "name": "AppSimulatorDestroy"
+    },
+    {
+      "calls_or_count": 100000,
+      "exclusive_thread_cpu_ns": 251365139,
+      "exclusive_wall_ns": 267218640,
+      "inclusive_thread_cpu_ns": 251365139,
+      "inclusive_wall_ns": 267218640,
+      "kind": "timer",
+      "name": "AppValidate"
+    },
+    {
+      "calls_or_count": 98386,
+      "exclusive_thread_cpu_ns": 201588413,
+      "exclusive_wall_ns": 155518758,
+      "inclusive_thread_cpu_ns": 2054897877,
+      "inclusive_wall_ns": 2075879868,
+      "kind": "timer",
+      "name": "AppTargetExecutor"
+    },
+    {
+      "calls_or_count": 98386,
+      "exclusive_thread_cpu_ns": 1231935340,
+      "exclusive_wall_ns": 1195343424,
+      "inclusive_thread_cpu_ns": 1428267232,
+      "inclusive_wall_ns": 1444522568,
+      "kind": "timer",
+      "name": "AppTargetCompletion"
+    },
+    {
+      "calls_or_count": 798701,
+      "exclusive_thread_cpu_ns": 736187900,
+      "exclusive_wall_ns": 904901407,
+      "inclusive_thread_cpu_ns": 736187900,
+      "inclusive_wall_ns": 904901407,
+      "kind": "timer",
+      "name": "AppEvent"
+    },
+    {
+      "calls_or_count": 100000,
+      "exclusive_thread_cpu_ns": 295132118,
+      "exclusive_wall_ns": 277212120,
+      "inclusive_thread_cpu_ns": 13457828003,
+      "inclusive_wall_ns": 13475291508,
+      "kind": "timer",
+      "name": "AppSend"
+    },
+    {
+      "calls_or_count": 1,
+      "exclusive_thread_cpu_ns": 2554171,
+      "exclusive_wall_ns": 2555148,
+      "inclusive_thread_cpu_ns": 2554171,
+      "inclusive_wall_ns": 2555148,
+      "kind": "timer",
+      "name": "AppUbUtilsDestroy"
+    },
+    {
+      "calls_or_count": 1,
+      "exclusive_thread_cpu_ns": 15743,
+      "exclusive_wall_ns": 15984,
+      "inclusive_thread_cpu_ns": 15743,
+      "inclusive_wall_ns": 15984,
+      "kind": "timer",
+      "name": "AppLogClose"
+    },
+    {
+      "calls_or_count": 1,
+      "exclusive_thread_cpu_ns": 128429568,
+      "exclusive_wall_ns": 128438831,
+      "inclusive_thread_cpu_ns": 128429568,
+      "inclusive_wall_ns": 128438831,
+      "kind": "timer",
+      "name": "AppLayerDestroy"
+    },
+    {
+      "calls_or_count": 196772,
+      "exclusive_thread_cpu_ns": 550041042,
+      "exclusive_wall_ns": 595083564,
+      "inclusive_thread_cpu_ns": 5173005689,
+      "inclusive_wall_ns": 5257635743,
+      "kind": "timer",
+      "name": "TransactionInboundTaUnit"
+    },
+    {
+      "calls_or_count": 98386,
+      "exclusive_thread_cpu_ns": 2453912765,
+      "exclusive_wall_ns": 2450300836,
+      "inclusive_thread_cpu_ns": 2568066770,
+      "inclusive_wall_ns": 2586672311,
+      "kind": "timer",
+      "name": "TransactionSegmentComplete"
+    },
+    {
+      "calls_or_count": 327148,
+      "exclusive_thread_cpu_ns": 223146113601,
+      "exclusive_wall_ns": 223454676722,
+      "inclusive_thread_cpu_ns": 223146113601,
+      "inclusive_wall_ns": 223454676722,
+      "kind": "timer",
+      "name": "GetJettiesUsingTpn"
+    },
+    {
+      "calls_or_count": 0,
+      "exclusive_thread_cpu_ns": 0,
+      "exclusive_wall_ns": 0,
+      "inclusive_thread_cpu_ns": 0,
+      "inclusive_wall_ns": 0,
+      "kind": "timer",
+      "name": "TransactionExecuteInbound"
+    },
+    {
+      "calls_or_count": 0,
+      "exclusive_thread_cpu_ns": 0,
+      "exclusive_wall_ns": 0,
+      "inclusive_thread_cpu_ns": 0,
+      "inclusive_wall_ns": 0,
+      "kind": "timer",
+      "name": "NativeAppendTrace"
+    },
+    {
+      "calls_or_count": 0,
+      "exclusive_thread_cpu_ns": 0,
+      "exclusive_wall_ns": 0,
+      "inclusive_thread_cpu_ns": 0,
+      "inclusive_wall_ns": 0,
+      "kind": "timer",
+      "name": "NativeCommitTrace"
+    },
+    {
+      "calls_or_count": 0,
+      "exclusive_thread_cpu_ns": 0,
+      "exclusive_wall_ns": 0,
+      "inclusive_thread_cpu_ns": 0,
+      "inclusive_wall_ns": 0,
+      "kind": "timer",
+      "name": "NativeFlushTrace"
+    },
+    {
+      "calls_or_count": 0,
+      "exclusive_thread_cpu_ns": 0,
+      "exclusive_wall_ns": 0,
+      "inclusive_thread_cpu_ns": 0,
+      "inclusive_wall_ns": 0,
+      "kind": "timer",
+      "name": "PortDispatchReceive"
+    },
+    {
+      "calls_or_count": 0,
+      "exclusive_thread_cpu_ns": 0,
+      "exclusive_wall_ns": 0,
+      "inclusive_thread_cpu_ns": 0,
+      "inclusive_wall_ns": 0,
+      "kind": "timer",
+      "name": "TransportParseData"
+    },
+    {
+      "calls_or_count": 0,
+      "exclusive_thread_cpu_ns": 0,
+      "exclusive_wall_ns": 0,
+      "inclusive_thread_cpu_ns": 0,
+      "inclusive_wall_ns": 0,
+      "kind": "timer",
+      "name": "TransportHandleAck"
+    },
+    {
+      "calls_or_count": 2015,
+      "exclusive_thread_cpu_ns": 84240879,
+      "exclusive_wall_ns": 74895256,
+      "inclusive_thread_cpu_ns": 112687099,
+      "inclusive_wall_ns": 113117464,
+      "kind": "timer",
+      "name": "AppPair"
+    },
+    {
+      "calls_or_count": 65,
+      "exclusive_thread_cpu_ns": 11006310,
+      "exclusive_wall_ns": 11020817,
+      "inclusive_thread_cpu_ns": 11006310,
+      "inclusive_wall_ns": 11020817,
+      "kind": "timer",
+      "name": "AppInit"
+    }
+  ],
+  "timing_units": "integer nanoseconds; CPU is CLOCK_THREAD_CPUTIME_ID"
+}
