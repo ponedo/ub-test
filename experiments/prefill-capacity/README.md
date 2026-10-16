@@ -25,3 +25,5 @@ For the original delivery the same stages were executed individually, with the e
 The optional executor `--capacityMetrics=path` writes post-Run counters; default operation is unchanged. No A/T/payload cap was raised, and no protocol field, WQE submission time, TA segment size, relay dependency, planner algorithm or verifier structure was changed. Absence of an OOM does not prove higher scales feasible. A timed-out ns3 process and a timed-out verifier are separate failure states; neither is full success.
 
 Public resource-sample CSV copies normalize CRLF to LF for repository text checks. Values are unchanged; lossless raw archives and original-file manifests retain the original bytes.
+
+Protection-policy history: NB50K used the initial memory/wall/workspace-disk guards. The ≥2GiB free `/tmp` guard was added afterward and is recorded for NB100K and UltraEP50K, not retroactively attributed to NB50K. Original resource records and raw archives are unchanged. The current reproduction script applies the strengthened policy from its first run; see the amendment in `experiment-plan.md`.

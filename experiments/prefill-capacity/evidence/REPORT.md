@@ -1,6 +1,6 @@
 # EP64 prefill capacity observations
 
-This is an actual bounded host-capacity experiment, not a speedup scan. Topology, synthetic routing distribution, application/native semantics and model parameters are fixed in [experiment-plan.md](../experiment-plan.md). Host resource guards were declared before execution.
+This is an actual bounded host-capacity experiment, not a speedup scan. Topology, synthetic routing distribution, application/native semantics and model parameters are fixed in [experiment-plan.md](../experiment-plan.md). The initial memory, wall-time and workspace-disk guards were declared before NB50K. The ≥2GiB free `/tmp` guard was added afterward for NB100K and UltraEP50K; it was not part of the first-run guard set. The original per-run `resource.json` files preserve this distinction (NB50K has no `min_tmp_disk_free_bytes` field; subsequent runs record 2147483648). See the guard amendment in the experiment plan.
 
 Measured starting host: cgroup memory limit 17179869184 bytes; CPU quota/period 400000 100000 microseconds; workspace free 28.03 GiB. Process-tree RSS guard 8GiB, cgroup guard 12GiB, ns3/verifier wall guard 300 seconds each. No swap was available. ns3 wall covers the whole executor process, including input/topology creation and payload/log flush, not just the event kernel.
 

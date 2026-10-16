@@ -1,4 +1,4 @@
-# EP64 prefill capacity experiment, preregistered 2026-10-16
+# EP64 prefill capacity experiment: initial plan and guard amendment, 2026-10-16
 
 Base: 555f2a591d7537b35fb507078dd686a50fb3400e. User explicitly authorizes execution, safe minimal cap adjustments, all old regressions and ordinary branch push. This is capacity diagnosis, not a speedup sweep.
 
@@ -12,7 +12,9 @@ Prediction: host memory/disk/time grow with explicit assignments and events; ver
 
 Checkpoint policy: sequential, no parallel builds/tests/capacity stages. Continue only after full verification. Stop expansion on correctness failure or any guard; larger cases become not_attempted with reason. A representative treatment at a smaller safe scale may run independently after a NoBalance bottleneck, but is not allowed to expand past it.
 
-Host guards (pre-registered): stage process-tree RSS 8GiB, total cgroup memory 12GiB, process address-space 12GiB; retain ≥8GiB free workspace disk and ≥2GiB free /tmp, ≤6GiB output per case. Poll 0.5s, disk scan every 5s; bounds are protective sampled thresholds, not hard RSS containment. RLIMIT_AS is an additional hard per-process virtual-memory bound. Wall limits: generate180s, planner180s, adapter180s, ns3 300s, verifier300s. Regression suite separately guarded at 1800s. SIGTERM process group then SIGKILL if required. This tests a declared bounded host envelope, not unrestricted maximum machine capacity.
+Initial host guards (declared before NB50K): stage process-tree RSS 8GiB, total cgroup memory 12GiB, process address-space 12GiB; retain ≥8GiB free workspace disk, ≤6GiB output per case. Poll 0.5s, disk scan every 5s; bounds are protective sampled thresholds, not hard RSS containment. RLIMIT_AS is an additional hard per-process virtual-memory bound. Wall limits: generate180s, planner180s, adapter180s, ns3 300s, verifier300s. Regression suite separately guarded at 1800s. SIGTERM process group then SIGKILL if required. This tests a declared bounded host envelope, not unrestricted maximum machine capacity.
+
+Guard amendment after NB50K: the ≥2GiB free `/tmp` check was added for subsequent runs. NB50K's original `resource.json` has no `min_tmp_disk_free_bytes` field; NB100K and UltraEP50K record `min_tmp_disk_free_bytes=2147483648`. The final guard set was therefore not all in force or preregistered from the first run. Original resource records and archives are preserved unchanged. The current reproduction script uses the strengthened guard from its first run.
 
 Evidence: exact commands/status, stage wall and CPU, wait4 process peak RSS plus sampled process-tree RSS and cgroup memory, raw log size, generated task/WQE/TA cardinality, executed ns3 event count where available, application event count, LayerLatency ps, strict verifier output and failure logs. Host seconds never substitute for simulated NPU time. Killed/unverified cases are not success.
 
