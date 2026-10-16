@@ -1,0 +1,327 @@
+diff --git a/src/unified-bus/model/protocol/ub-transaction.cc b/src/unified-bus/model/protocol/ub-transaction.cc
+index a820f51..a196bca 100644
+--- a/src/unified-bus/model/protocol/ub-transaction.cc
++++ b/src/unified-bus/model/protocol/ub-transaction.cc
+@@ -379,6 +379,7 @@ bool UbTransaction::JettyBindTp(uint32_t src,
+         {
+             return false;
+         }
++        UnindexJettyRtpReference(jettyNum);
+         m_jettyRtpReferences.insert_or_assign(
+             jettyNum,
+             UbRtpTransportReference::ForTpGroup(group->GetLifecycleIdentity()));
+@@ -405,11 +406,14 @@ bool UbTransaction::JettyBindTp(uint32_t src,
+         Ptr<UbTransportChannel> transport = requestedTransports[pos];
+         boundTransports.push_back(transport);
+         const uint32_t tpn = transport->GetTpn();
++        UnindexJettyRtpReference(jettyNum);
+         m_jettyRtpReferences.insert_or_assign(
+             jettyNum,
+             UbRtpTransportReference::ForDirectTp(tpn, transport->GetLifecycleOwner()));
+     }
+ 
++    IndexJettyRtpReference(jettyNum);
++
+     if (!boundTransports.empty()) {
+         m_jettyTpNextIndex[jettyNum] = m_nextJettyTpStartIndex % boundTransports.size();
+         m_nextJettyTpStartIndex = (m_nextJettyTpStartIndex + 1) % boundTransports.size();
+@@ -429,8 +433,53 @@ UbTransaction::HasJettyTpBinding(uint32_t jettyNum) const
+     return m_jettyRtpReferences.find(jettyNum) != m_jettyRtpReferences.end();
+ }
+ 
++void
++UbTransaction::IndexJettyRtpReference(uint32_t jettyNum)
++{
++    const auto& reference = m_jettyRtpReferences.at(jettyNum);
++    if (reference.IsDirectTp())
++    {
++        m_directJettiesByTpn[reference.GetDirectTpn()].insert(jettyNum);
++    }
++    else
++    {
++        m_jettiesByTpg[reference.GetIdentity().localId].insert(jettyNum);
++    }
++}
++
++void
++UbTransaction::UnindexJettyRtpReference(uint32_t jettyNum)
++{
++    const auto binding = m_jettyRtpReferences.find(jettyNum);
++    if (binding == m_jettyRtpReferences.end())
++    {
++        return;
++    }
++    const auto eraseJetty = [jettyNum](auto& index, auto key) {
++        const auto entry = index.find(key);
++        if (entry != index.end())
++        {
++            entry->second.erase(jettyNum);
++            if (entry->second.empty())
++            {
++                index.erase(entry);
++            }
++        }
++    };
++    const auto& reference = binding->second;
++    if (reference.IsDirectTp())
++    {
++        eraseJetty(m_directJettiesByTpn, reference.GetDirectTpn());
++    }
++    else
++    {
++        eraseJetty(m_jettiesByTpg, reference.GetIdentity().localId);
++    }
++}
++
+ void UbTransaction::DestroyJettyTpMap(uint32_t jettyNum)
+ {
++    UnindexJettyRtpReference(jettyNum);
+     m_jettyRtpReferences.erase(jettyNum);
+     m_jettyTpgMaterializations.erase(jettyNum);
+     m_jettyTpNextIndex.erase(jettyNum);
+@@ -592,9 +641,31 @@ UbTransaction::GetJettiesUsingTpn(uint32_t tpn)
+ {
+     NS_LOG_DEBUG(this);
+     std::vector<Ptr<UbJetty>> jetties;
+-    for (const auto& [jettyNum, reference] : m_jettyRtpReferences)
++    std::set<uint32_t> candidates;
++    const auto direct = m_directJettiesByTpn.find(tpn);
++    if (direct != m_directJettiesByTpn.end())
++    {
++        candidates.insert(direct->second.begin(), direct->second.end());
++    }
++    Ptr<UbController> controller = GetOwnerController();
++    Ptr<UbTransportChannelManager> manager =
++        controller == nullptr ? nullptr : controller->GetTransportChannelManager();
++    UbLifecycleResourceIdentity identity;
++    if (manager != nullptr && manager->TryGetEndpointIdentity(tpn, identity))
++    {
++        Ptr<UbTransportGroup> group = controller->ResolveRtpTpGroupForMember(identity);
++        if (group != nullptr)
++        {
++            const auto grouped = m_jettiesByTpg.find(group->GetLifecycleIdentity().localId);
++            if (grouped != m_jettiesByTpg.end())
++            {
++                candidates.insert(grouped->second.begin(), grouped->second.end());
++            }
++        }
++    }
++    // Match the old ordered binding scan, including exact-generation liveness checks.
++    for (uint32_t jettyNum : candidates)
+     {
+-        (void)reference;
+         const std::vector<Ptr<UbTransportChannel>> transports = GetJettyLiveTps(jettyNum);
+         const bool jettyUsesTpn =
+             std::any_of(transports.begin(),
+@@ -2910,6 +2981,8 @@ UbTransaction::DoDispose()
+     m_transportByTpn.clear();
+     m_orderedWqeIdsByJetty.clear();
+     m_jettyRtpReferences.clear();
++    m_directJettiesByTpn.clear();
++    m_jettiesByTpg.clear();
+     m_jettyTpgMaterializations.clear();
+     for (auto& it : m_remoteRtpWqeSegmentsByTpn)
+     {
+diff --git a/src/unified-bus/model/protocol/ub-transaction.h b/src/unified-bus/model/protocol/ub-transaction.h
+index d02919b..04ce114 100644
+--- a/src/unified-bus/model/protocol/ub-transaction.h
++++ b/src/unified-bus/model/protocol/ub-transaction.h
+@@ -16,6 +16,7 @@
+ #include <deque>
+ #include <map>
+ #include <optional>
++#include <set>
+ #include <tuple>
+ #include <unordered_map>
+ #include <vector>
+@@ -591,7 +592,13 @@ namespace ns3 {
+ 
+         // Tpn和Tp的对应map
+         std::map<uint32_t, Ptr<UbTransportChannel>> m_transportByTpn;
++        void IndexJettyRtpReference(uint32_t jettyNum);
++        void UnindexJettyRtpReference(uint32_t jettyNum);
+         std::map<uint32_t, UbRtpTransportReference> m_jettyRtpReferences;
++        // Candidate IDs only: canonical references still validate exact live generations.
++        std::map<uint32_t, std::set<uint32_t>> m_directJettiesByTpn;
++        // Compose with the Controller's TP-to-TPG index so membership changes are immediate.
++        std::map<uint64_t, std::set<uint32_t>> m_jettiesByTpg;
+         std::map<uint32_t, RtpTpgMaterialization> m_jettyTpgMaterializations;
+         // 每个 Jetty 下次从哪个 TP 开始调度，避免短 WQE 总被第一个 TP 抢占。
+         std::map<uint32_t, uint32_t> m_jettyTpNextIndex;
+diff --git a/src/unified-bus/test/ub-test.cc b/src/unified-bus/test/ub-test.cc
+index c785133..57875a7 100644
+--- a/src/unified-bus/test/ub-test.cc
++++ b/src/unified-bus/test/ub-test.cc
+@@ -10237,6 +10237,141 @@ class UbRtpValidatedResolutionReuseTest : public TestCase
+     bool m_useTpg;
+ };
+ 
++class UbTpnJettyReverseIndexTest : public TestCase
++{
++  public:
++    UbTpnJettyReverseIndexTest()
++        : TestCase("UnifiedBus - TPN reverse index matches ordered live binding scan")
++    {
++    }
++
++    void DoRun() override
++    {
++        Config::Reset();
++        LocalTpTopology topo = BuildLocalTpTopology();
++        InstallStaticTpPair(topo);
++        InstallAdditionalTpPair(topo, 303, 404);
++        InstallAdditionalTpPair(topo, 305, 406);
++        Ptr<UbController> controller = topo.sender->GetObject<UbController>();
++        Ptr<UbFunction> function = controller->GetUbFunction();
++        Ptr<UbTransaction> transaction = controller->GetUbTransaction();
++        const uint32_t first = kUrmaWriteRegressionSenderTpn;
++        // Intentionally bind out of order, mixing direct and shared-group users.
++        const std::vector<uint32_t> ids{71, 12, 90, 35, 66};
++        for (uint32_t id : ids)
++        {
++            function->CreateJetty(topo.sender->GetId(), topo.receiver->GetId(), id);
++        }
++        const auto bind = [&](uint32_t id, bool group, std::vector<uint32_t> tpns) {
++            NS_TEST_ASSERT_MSG_EQ(transaction->JettyBindTp(topo.sender->GetId(),
++                                                           topo.receiver->GetId(),
++                                                           id,
++                                                           group,
++                                                           tpns),
++                                  true,
++                                  "Reverse-index fixture binding should succeed");
++        };
++        bind(71, false, {first});
++        bind(12, true, {first, 303});
++        bind(90, true, {first, 303});
++        bind(35, false, {first});
++        bind(66, false, {305});
++        const auto check = [&]() {
++            for (uint32_t tpn : {first, 303u, 305u, UINT32_MAX})
++            {
++                std::vector<Ptr<UbJetty>> expected;
++                // Preserve the pre-index implementation as an independent candidate oracle.
++                for (uint32_t id : {12u, 35u, 66u, 71u, 90u})
++                {
++                    const auto transports = transaction->GetJettyLiveTps(id);
++                    const bool uses = std::any_of(
++                        transports.begin(), transports.end(),
++                        [tpn](const Ptr<UbTransportChannel>& tp) {
++                            return tp != nullptr && tp->GetTpn() == tpn;
++                        });
++                    Ptr<UbJetty> jetty = uses ? transaction->GetJetty(id) : nullptr;
++                    if (jetty != nullptr)
++                    {
++                        expected.push_back(jetty);
++                    }
++                }
++                const auto actual = transaction->GetJettiesUsingTpn(tpn);
++                NS_TEST_ASSERT_MSG_EQ(actual.size(), expected.size(),
++                                      "Indexed membership must match the old scan");
++                for (size_t i = 0; i < std::min(actual.size(), expected.size()); ++i)
++                {
++                    NS_TEST_ASSERT_MSG_EQ(actual[i], expected[i],
++                                          "Indexed results must preserve ascending Jetty order");
++                }
++            }
++        };
++        check();
++        const auto groupIdentity = transaction->FindRtpTransportReference(12)->GetIdentity();
++        Ptr<UbTransportGroup> group = controller->ResolveRtpTpGroup(groupIdentity);
++        const auto thirdIdentity = controller->GetTransportChannelManager()->GetTp(305)
++                                       ->GetLifecycleOwner();
++        NS_TEST_ASSERT_MSG_EQ(static_cast<uint32_t>(controller->AddRtpTpGroupMember(
++                                  groupIdentity, thirdIdentity)),
++                              static_cast<uint32_t>(UbTpgMemberMutationStatus::ADDED),
++                              "Dynamic addition should appear for every bound Jetty");
++        check();
++        group->MarkMemberRetiring(0);
++        group->FreezeNewOperations();
++        check(); // Retiring and frozen members remain visible while their TP is live.
++        group->ResumeNewOperations();
++        NS_TEST_ASSERT_MSG_EQ(static_cast<uint32_t>(controller->RemoveRtpTpGroupMember(
++                                  groupIdentity, thirdIdentity, UbDestroyReason::EXPLICIT)),
++                              static_cast<uint32_t>(UbTpgMemberMutationStatus::REMOVED),
++                              "Dynamic removal should disappear for every bound Jetty");
++        check();
++        bind(71, false, {305});
++        bind(35, true, {first, 303});
++        bind(90, false, {305});
++        check();
++        NS_TEST_ASSERT_MSG_EQ(transaction->JettyBindTp(topo.sender->GetId(),
++                                                       topo.receiver->GetId(), 71, false, {}),
++                              false, "Failed rebind must retain the old index entry");
++        check();
++        transaction->DestroyJettyTpMap(66);
++        transaction->DestroyJettyTpMap(66);
++        check();
++        NS_TEST_ASSERT_MSG_EQ(static_cast<uint32_t>(function->DestroyJetty(71)),
++                              static_cast<uint32_t>(UbDestroyStatus::COMPLETED),
++                              "Jetty destruction should erase its index entry");
++        function->CreateJetty(topo.sender->GetId(), topo.receiver->GetId(), 71);
++        bind(71, false, {first});
++        check();
++        NS_TEST_ASSERT_MSG_EQ(static_cast<uint32_t>(controller->DestroyRtpTpGroup(groupIdentity)),
++                              static_cast<uint32_t>(UbDestroyStatus::COMPLETED),
++                              "Group destruction should erase shared reverse bindings");
++        check();
++        bind(12, false, {303});
++        Ptr<UbTransportChannelManager> manager = controller->GetTransportChannelManager();
++        const auto oldIdentity = manager->GetTp(303)->GetLifecycleOwner();
++        NS_TEST_ASSERT_MSG_EQ(static_cast<uint32_t>(manager->DestroyTp(303)),
++                              static_cast<uint32_t>(UbDestroyStatus::PENDING),
++                              "Bound endpoint should drain until its reference is released");
++        check(); // Draining endpoints must disappear even while candidates remain indexed.
++        transaction->ReleaseCompletedJettyTransportBinding(12, false);
++        NS_TEST_ASSERT_MSG_EQ(manager->Contains(303), false,
++                              "Releasing the last direct binding should finalize endpoint drain");
++        check();
++        NS_TEST_ASSERT_MSG_EQ(manager->CreateTp(topo.sender->GetId(), topo.receiver->GetId(),
++                                                topo.senderPort->GetIfIndex(),
++                                                topo.receiverPort->GetIfIndex(),
++                                                kUrmaWriteRegressionPriority, 303, 404,
++                                                UbCongestionControl::Create(UB_DEVICE)),
++                              true, "Endpoint number should be reusable");
++        NS_TEST_ASSERT_MSG_NE(manager->GetTp(303)->GetLifecycleOwner().generation,
++                              oldIdentity.generation, "Reused endpoint needs a new generation");
++        check(); // Endpoint reuse must not resurrect an erased Jetty binding.
++        bind(12, false, {303});
++        check();
++        Simulator::Destroy();
++        Config::Reset();
++    }
++};
++
+ class UbRtpTpgMaterializationReuseTest : public TestCase
+ {
+   public:
+@@ -12305,6 +12440,9 @@ class UbLifecycleLastTpgMemberRemovalWaitsForUseLeaseTest : public TestCase
+             m_groupIdentity,
+             m_lastTp->GetLifecycleOwner(),
+             UbDestroyReason::EXPLICIT);
++        NS_TEST_ASSERT_MSG_EQ(m_transaction->GetJettiesUsingTpn(m_lastTp->GetTpn()).size(),
++                              1u,
++                              "Pending last-member removal must retain the live reverse binding");
+         Ptr<UbFunction> function = m_controller->GetUbFunction();
+         Ptr<UbWqe> rejected = function->CreateWqe(m_lastTp->GetSrc(),
+                                                   m_lastTp->GetDest(),
+@@ -12553,6 +12691,12 @@ class UbLifecyclePendingLastRemovalAddMemberWakesHolderTest : public TestCase
+         m_addStatus = m_controller->AddRtpTpGroupMember(
+             m_groupIdentity,
+             m_newTp->GetLifecycleOwner());
++        NS_TEST_ASSERT_MSG_EQ(m_transaction->GetJettiesUsingTpn(m_oldTp->GetTpn()).empty(),
++                              true,
++                              "Replacement must remove the old member's reverse binding");
++        NS_TEST_ASSERT_MSG_EQ(m_transaction->GetJettiesUsingTpn(m_newTp->GetTpn()).size(),
++                              1u,
++                              "Replacement must immediately expose the new member's binding");
+         m_pendingClearedAfterAdd = !m_group->HasPendingLastMemberRemoval();
+         m_acceptingAfterAdd = m_group->IsAcceptingNewOperations();
+     }
+@@ -34022,6 +34166,7 @@ class UbRtpResolutionFocusedTestSuite : public TestSuite
+         AddTestCase(new UbRtpValidatedResolutionReuseTest(false), TestCase::Duration::QUICK);
+         AddTestCase(new UbRtpValidatedResolutionReuseTest(true), TestCase::Duration::QUICK);
+         AddTestCase(new UbRtpTpgMaterializationReuseTest(), TestCase::Duration::QUICK);
++        AddTestCase(new UbTpnJettyReverseIndexTest(), TestCase::Duration::QUICK);
+     }
+ };
+ 

@@ -1,0 +1,383 @@
+[01:49:08] [traffic] Load ub-traffic-config-endpoint-port-fields.csv
+[01:49:08] [traffic] Load ub-traffic-config-endpoint-port-fields.csv
+[01:49:08] [traffic] Load ub-traffic-config-entity-fields.csv
+aborted. cond="next != header.size()", msg="traffic.csv optional groups must be srcPortId,dstPortId then atomicSubOperation,requestPayloadBytes; Entity columns are not supported", file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/ub-utils.cc, line=471
+NS_FATAL, terminating
+terminate called without an active exception
+[01:49:08] [traffic] Load ub-traffic-config-entity-and-port-fields.csv
+aborted. cond="next != header.size()", msg="traffic.csv optional groups must be srcPortId,dstPortId then atomicSubOperation,requestPayloadBytes; Entity columns are not supported", file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/ub-utils.cc, line=471
+NS_FATAL, terminating
+terminate called without an active exception
+[01:49:08] [traffic] Load ub-traffic-config-source-port-15.csv
+[01:49:08] [traffic] Load ub-traffic-config-destination-port-15.csv
+aborted. cond="task.hasSrcPortId && task.srcPortId > CTP_MAX_CNA16_PORT_ID", msg="CTP source port 15 cannot be encoded as CNA16", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/ub-app.cc, line=231
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="task.hasDstPortId && task.dstPortId > CTP_MAX_CNA16_PORT_ID", msg="CTP destination port 15 cannot be encoded as CNA16", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/ub-app.cc, line=233
+NS_FATAL, terminating
+terminate called without an active exception
+[01:49:08] [traffic] Load ub-traffic-config-row-width-mismatch.csv
+aborted. cond="actualFieldCount != expectedFieldCount", msg="traffic.csv row has 9 fields, expected 11 fields from the header", file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/ub-utils.cc, line=481
+NS_FATAL, terminating
+terminate called without an active exception
+[01:49:08] [traffic] Index phase dependencies from ub-traffic-config-row-width-mismatch.csv
+aborted. cond="actualFieldCount != expectedFieldCount", msg="traffic.csv row has 9 fields, expected 11 fields from the header", file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/ub-utils.cc, line=481
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="m_ctpEntitiesFrozen", msg="Cannot create a CTP Entity after the registry is frozen", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/ub-controller.cc, line=636
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="entityId == 0 || entityId > UB_COMPACT_EID_MAX", msg="CTP Entity ID must be in the non-zero compact EID range: 0", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/ub-controller.cc, line=637
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="entityId == 0 || entityId > UB_COMPACT_EID_MAX", msg="CTP Entity ID must be in the non-zero compact EID range: 1048576", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/ub-controller.cc, line=637
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="memberPorts.empty()", msg="Cannot create an empty CTP Entity 2", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/ub-controller.cc, line=639
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="m_ctpEntityPorts.contains(entityId)", msg="Duplicate CTP Entity ID 2", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/ub-controller.cc, line=640
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="portId > CTP_MAX_CNA16_PORT_ID", msg="CTP Entity 2 port 15 cannot be encoded as CNA16", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/ub-controller.cc, line=650
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="port == nullptr", msg="CTP Entity 2 port 1 is not a UB port on node 0", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/ub-controller.cc, line=663
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="sw == nullptr || sw->GetNodeType() != UB_DEVICE", msg="CTP Entity registry can only be installed on a UB_DEVICE host", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/ub-controller.cc, line=644
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="portId > CTP_MAX_CNA16_PORT_ID", msg="CTP Entity 1 port 15 cannot be encoded as CNA16", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/ub-controller.cc, line=650
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="!controller->IsCtpEntityPortMember(dstEntityId, receivePort)", msg="CTP ingress port 1 is not a member of Entity 1", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-ctp.cc, line=1331
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="!controller->IsCtpEntityPortMember(dstEntityId, receivePort)", msg="CTP ingress port 1 is not a member of Entity 1", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-ctp.cc, line=1331
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="!controller->IsCtpEntityPortMember(dstEntityId, receivePort)", msg="CTP ingress port 1 is not a member of Entity 1", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-ctp.cc, line=1331
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="!controller->IsCtpEntityPortMember(dstEntityId, receivePort)", msg="CTP ingress port 1 is not a member of Entity 1", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-ctp.cc, line=1331
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="utils::Cna16ToPortId(cnaHeader.GetDcna()) != receivePort", msg="Explicit CTP destination CNA does not match the ingress port", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-ctp.cc, line=1336
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="!controller->HasCtpEntity(dstEntityId)", msg="CTP destination Entity 2 is not configured on node 0", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-ctp.cc, line=1302
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="!peerController->HasCtpEntity(routeKey.dstEntityId)", msg="CTP destination Entity 2 is not configured on node 1", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-ctp.cc, line=1762
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="srcPortId != UINT32_MAX && srcPortId > CTP_MAX_CNA16_PORT_ID", msg="CTP source port cannot be encoded as CNA16: 15", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-ctp.cc, line=136
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="dstPortId != UINT32_MAX && dstPortId > CTP_MAX_CNA16_PORT_ID", msg="CTP destination port cannot be encoded as CNA16: 15", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-ctp.cc, line=138
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="dstPortId != UINT32_MAX && dstPortId > CTP_MAX_CNA16_PORT_ID", msg="CTP destination port cannot be encoded as CNA16: 16", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-ctp.cc, line=138
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="packet == nullptr", msg="Cannot enqueue null CTP packet", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-ctp.cc, line=472
+NS_FATAL, terminating
+terminate called without an active exception
+[01:49:08] [setup] Load node.csv
+[01:49:08] [setup] Load node.csv
+[01:49:08] [setup] Load topology.csv
+[01:49:08] [setup] Load node.csv
+[01:49:08] [setup] Load node.csv
+[01:49:08] [setup] Load node.csv
+aborted. cond="ingressQueue->m_allocatorOwner != nullptr", msg="Ingress queue is already registered with an allocator", file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/ub-switch-allocator.cc, line=376
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="m_allocatorOwner != nullptr && m_outPortId != outPortId", msg="A registered ingress queue cannot move between output ports", file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/ub-ingress-queue.h, line=58
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="config != UbDatalinkHeaderConfig::CONTROL && packetVl == 0", msg="Unified-bus reserves priority 0 for locally generated control frames in the simulator model. Data packets must use priority 1..15.", file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-datalink.cc, line=65
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="GetPacketType(packet) != UB_CONTROL_FRAME", msg="SendControlFrame expects a real UB control-credit packet", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/ub-switch.cc, line=1355
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="m_cbfcCfg.m_flitLen == 0 || m_cbfcCfg.m_nFlitPerCell == 0", msg="CBFC requires non-zero cell geometry (flitLen and nFlitPerCell)", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-cbfc.cc, line=79
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="m_pfcCfg.m_portpfcUpThld < 0 || m_pfcCfg.m_portpfcLowThld < 0", msg="PFC_FIXED requires non-negative hi/lo thresholds", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-pfc.cc, line=144
+NS_FATAL, terminating
+terminate called without an active exception
+[01:49:08] [setup] Load node.csv
+[01:49:08] [setup] Load transport_channel.csv
+PASS unified-bus 0.160 s
+  PASS UnifiedBus - Core functionality test 0.000 s
+  PASS UnifiedBus - controller lazily creates CTP transport service 0.010 s
+  PASS UnifiedBus - controller protocol delay attributes 0.000 s
+  PASS UnifiedBus - transaction target execution delay attribute 0.000 s
+  PASS UnifiedBus - target execution delay pipelines complete TA units 0.000 s
+  PASS UnifiedBus - RTP dispatch delay starts independent WQEs after admission 0.000 s
+  PASS UnifiedBus - CTP dispatch delay starts independent WQEs after admission 0.000 s
+  PASS UnifiedBus - traffic parser accepts optional source and destination endpoint ports 0.000 s
+  PASS UnifiedBus - traffic parser rejects Entity columns 0.002 s
+  PASS UnifiedBus - traffic parser preserves ports outside the CTP CNA16 range 0.000 s
+  PASS UnifiedBus - CTP App rejects traffic ports outside the CNA16 range 0.002 s
+  PASS UnifiedBus - traffic parser rejects rows with a different width than the header 0.001 s
+  PASS UnifiedBus - app CTP transport mode enters CTP service without RTP TP setup 0.000 s
+  PASS UnifiedBus - runtime task conversion preserves endpoint port fields and presence 0.000 s
+  PASS UnifiedBus - app CTP runtime task uses App Entity and WQE ports 0.000 s
+  PASS UnifiedBus - Jetty copies CTP endpoint ports from WQE to segment 0.000 s
+  PASS UnifiedBus - CTP endpoint constraints stay local to each task 0.000 s
+  PASS UnifiedBus - multiple CTP Apps select independent host Entities 0.000 s
+  PASS UnifiedBus - app CTP path does not consume Jetty segments under admission backpressure 0.000 s
+  PASS UnifiedBus - app CTP path forwards routing type to CTP service 0.000 s
+  PASS UnifiedBus - traffic generator keeps phase dependency memory linear 0.000 s
+  PASS UnifiedBus - traffic generator preserves dependencies for sparse task ids 0.000 s
+  PASS UnifiedBus - traffic generator accepts reserve hints without behavior change 0.000 s
+  PASS UnifiedBus - traffic generator stores contiguous tasks densely 0.000 s
+  PASS UnifiedBus - duplicate dependency phases count once 0.000 s
+  PASS UnifiedBus - traffic generator record view matches dependency semantics 0.000 s
+  PASS UnifiedBus - ready task collection preserves ascending task order 0.000 s
+  PASS UnifiedBus - compute resources serialize per UBPU and overlap communication 0.000 s
+  PASS UnifiedBus - traffic generator integer delay fast parser matches Time 0.000 s
+  PASS UnifiedBus - traffic dependency visibility defaults to 100ns 0.000 s
+  PASS UnifiedBus - CTPH round-trips compact fields 0.000 s
+  PASS UnifiedBus - MAETAH round-trips address, TokenID, and length 0.000 s
+  PASS UnifiedBus - compact MAETAH round-trips address, TokenID, and length 0.000 s
+  PASS UnifiedBus - transaction reports caller-prepared Jetty TP binding 0.000 s
+  PASS UnifiedBus - CTP Jetty preparation has one persistent key and explicit cleanup 0.000 s
+  PASS UnifiedBus - one Jetty cannot be prepared for RTP and CTP 0.000 s
+  PASS UnifiedBus - Controller rejects URMA WQE without a prepared transport path 0.000 s
+  PASS UnifiedBus - Controller submits URMA WQE through prepared RTP Jetty 0.000 s
+  PASS UnifiedBus - Controller validates and submits bound CTP URMA WQE 0.000 s
+  PASS UnifiedBus - Controller preserves per-WQE destinations for unbound CTP Jetty 0.000 s
+  PASS UnifiedBus - CTP TAACK HOL blocks transaction admission 0.000 s
+  PASS UnifiedBus - CTP reports transaction constraints without mutating Jetty 0.000 s
+  PASS UnifiedBus - CTP transaction admission is bounded by ack bitmap window 0.000 s
+  PASS UnifiedBus - CTP context and send path do not create RTP transport channels 0.000 s
+  PASS UnifiedBus - CTP Entity registry supports membership and freeze 0.001 s
+  PASS UnifiedBus - CTP Entity registry rejects invalid definitions 0.007 s
+  PASS UnifiedBus - standard runner provisions default CTP Entity 1 0.000 s
+  PASS UnifiedBus - default CTP Entity rejects a host port above CNA16 range 0.001 s
+  PASS UnifiedBus - CTP data packet builds reference compact CTP header stack 0.000 s
+  PASS UnifiedBus - CTP CNA16 encodes wildcard and endpoint port boundaries 0.000 s
+  PASS UnifiedBus - CTP receive validates Entity membership before opcode handling 0.006 s
+  PASS UnifiedBus - CTP TAACK response uses compact ACK transaction header 0.000 s
+  PASS UnifiedBus - local CTP data packet generates a compact TAACK 0.000 s
+  PASS UnifiedBus - delayed CTP remote processor preserves reversed endpoint ports 0.000 s
+  PASS UnifiedBus - target execution disposal cancels delayed inbound callbacks 0.000 s
+  PASS UnifiedBus - CTP TAACK inherits packet-spray routing policy 0.000 s
+  PASS UnifiedBus - CTP compact queue carries local generation metadata 0.000 s
+  PASS UnifiedBus - CTP wire TAACK completes the source Jetty 0.000 s
+  PASS UnifiedBus - CTP wire TAACK continues an inflight-limited WQE 0.000 s
+  PASS UnifiedBus - CTP terminal recovery without TAACK continues a waiting WQE 0.000 s
+  PASS UnifiedBus - CTP wire TAACK completes contiguous Jetty range after out-of-order ACK 0.000 s
+  PASS UnifiedBus - CTP out-of-order wire TAACK traces arrival immediately 0.000 s
+  PASS UnifiedBus - CTP CNP records congestion without TAACK completion 0.000 s
+  PASS UnifiedBus - CTP congestion contexts aggregate by destination and VL 0.000 s
+  PASS UnifiedBus - CTP TAACK helper advances complete UNA while CNP does not 0.000 s
+  PASS UnifiedBus - CTP wire TAACK does not fallback across entity contexts 0.000 s
+  PASS UnifiedBus - CTP wire TAACK completes reverse Entity context 0.000 s
+  PASS UnifiedBus - CTP wire TAACK rejects an unknown destination Entity 0.000 s
+  PASS UnifiedBus - CTP wire TAACK unwraps logical TASSN 0.000 s
+  PASS UnifiedBus - CTP SendSegment rejects an oversized Transaction segment 0.000 s
+  PASS UnifiedBus - CTP rejects a segment with an MTU remainder 0.000 s
+  PASS UnifiedBus - rejected oversized CTP segment preserves the next TASSN 0.000 s
+  PASS UnifiedBus - CTP SendSegment admits once and queues one packet 0.000 s
+  PASS UnifiedBus - CTP rejected segment does not create queue or require route 0.000 s
+  PASS UnifiedBus - CTP explicit source port still requires the peer Entity 0.001 s
+  PASS UnifiedBus - CTP endpoint ports reject unencodable CNA16 values 0.002 s
+  PASS UnifiedBus - CTP SendSegment selects outPort, registers queue, and triggers allocator 0.000 s
+  PASS UnifiedBus - CTP backpressure preserves packet and allocator registration 0.000 s
+  PASS UnifiedBus - LDST routing key keeps legacy source port decoding 0.000 s
+  PASS UnifiedBus - CTP routing key matches reference CNA16 source decode 0.000 s
+  PASS UnifiedBus - switch classifies CNA16 CTPH packets as CTP data 0.000 s
+  PASS UnifiedBus - switch forwards CNA16 CTPH packets by CNA destination 0.000 s
+  PASS UnifiedBus - local CTP sink passes CNP packets to transport service 0.000 s
+  PASS UnifiedBus - compact channel prioritizes CNP then ACK then data 0.000 s
+  PASS UnifiedBus - compact channel rejects null packets at enqueue 0.000 s
+  PASS UnifiedBus - DCQCN factory creates host and switch implementations 0.000 s
+  PASS UnifiedBus - DCQCN host default ACK CETPH generation does not throw 0.000 s
+  PASS UnifiedBus - CAQM host RTT estimate uses EWMA instead of latching min RTT 0.000 s
+  PASS UnifiedBus - DCQCN CNP header round-trips ECN and location in spec layout 0.000 s
+  PASS UnifiedBus - DCQCN excludes processing bytes but marks queued backlog 0.000 s
+  PASS UnifiedBus - CAQM excludes processing bytes from congestion credit 0.000 s
+  PASS UnifiedBus - CAQM accounts queued backlog in congestion credit 0.000 s
+  PASS UnifiedBus - DCQCN switch marks FECN when packet enters congested outport backlog 0.000 s
+  PASS UnifiedBus - DCQCN switch preserves headers when enqueue does not mark 0.000 s
+  PASS UnifiedBus - DCQCN switch marks with probability one above Kmax 0.000 s
+  PASS UnifiedBus - DCQCN receiver emits at most one CNP per suppression window 0.000 s
+  PASS UnifiedBus - transport dequeues CNP before ACK 0.000 s
+  PASS UnifiedBus - CAQM receiver aggregates logical PSN ranges across wrap 0.000 s
+  PASS UnifiedBus - modulo sequence maps wire ids to logical ids 0.000 s
+  PASS UnifiedBus - SAETPH round-trips bitmap sizes 0.000 s
+  PASS UnifiedBus - SAETPH bitmap has no offset equal to bit count 0.000 s
+  PASS UnifiedBus - SAETPH bitmap-size encoding is spec visible 0.000 s
+  PASS UnifiedBus - SAETPH reserved bitmap-size encodings are malformed 0.000 s
+  PASS UnifiedBus - SAETPH bitmap serialization is LSB-first within each byte 0.000 s
+  PASS UnifiedBus - transport response status fields are explicit 0.000 s
+  PASS UnifiedBus - fault classification uses transport response RSPST 0.000 s
+  PASS UnifiedBus - selective retransmission mode is opt-in 0.000 s
+  PASS UnifiedBus - disabled retransmission does not retain sent packets 0.000 s
+  PASS UnifiedBus - transport shallow pipeline ignores unacked segments 0.000 s
+  PASS UnifiedBus - ACK_WITHOUT_CETPH wire packet carries no CETPH header 0.000 s
+  PASS UnifiedBus - disabled retransmission receive gap does not emit SACK 0.000 s
+  PASS UnifiedBus - selective receiver emits TPSACK for receive gap 0.000 s
+  PASS UnifiedBus - receiver unwraps RTPH PSN across 24-bit wrap 0.000 s
+  PASS UnifiedBus - receiver rejected future PSN does not pollute MaxRcvPSN 0.000 s
+  PASS UnifiedBus - selective receiver returns to TPACK after receive gap closes 0.000 s
+  PASS UnifiedBus - selective receiver honors explicit SAETPH bitmap width 0.000 s
+  PASS UnifiedBus - selective receiver represents first-packet loss without ACK underflow 0.000 s
+  PASS UnifiedBus - selective receiver repeats TPSACK for duplicate packet while gap remains 0.000 s
+  PASS UnifiedBus - selective receiver serializes TPSACK-CC with CETPH before SAETPH 0.000 s
+  PASS UnifiedBus - sender transport safely consumes TPSACK headers 0.000 s
+  PASS UnifiedBus - local sink dispatches TPSACK to transport response path 0.000 s
+  PASS UnifiedBus - local sink rejects reserved transport opcode 0.000 s
+  PASS UnifiedBus - default GBN receiver keeps out-of-order ACK silent 0.000 s
+  PASS UnifiedBus - GBN receiver emits TPNAK as TPACK opcode with RSPST 3 0.000 s
+  PASS UnifiedBus - GBN TPNAK-CC carries and consumes CETPH 0.000 s
+  PASS UnifiedBus - sender records TPSACK holes without fast selective retransmission 0.000 s
+  PASS UnifiedBus - sender fast selective retransmission queues missing PSNs once 0.000 s
+  PASS UnifiedBus - selective retransmission trace reports sparse missing PSN 0.000 s
+  PASS UnifiedBus - sender ignores TPSACK zero padding beyond MaxRcvPSN 0.000 s
+  PASS UnifiedBus - sender ignores TPSACK zero padding beyond MaxRcvPSN 0.000 s
+  PASS UnifiedBus - sender unwraps TPSACK wire PSNs across 24-bit wrap 0.000 s
+  PASS UnifiedBus - sender ignores out-of-window TPSACK across 24-bit wrap 0.000 s
+  PASS UnifiedBus - sender accepts TPSACK at current cumulative ACK base 0.000 s
+  PASS UnifiedBus - sender unwraps plain TPACK across 24-bit wrap 0.000 s
+  PASS UnifiedBus - GBN sender unwraps TPNAK across 24-bit wrap 0.000 s
+  PASS UnifiedBus - GBN sender ignores TPNAK for retired descriptor 0.000 s
+  PASS UnifiedBus - stale GBN cleanup preserves same-PSN replacement 0.001 s
+  PASS UnifiedBus - stale selective cleanup preserves same-PSN replacement 0.000 s
+  PASS UnifiedBus - GBN cumulative ACK retires descriptor prefix 0.000 s
+  PASS UnifiedBus - final GBN ACK with pending TA response leaves timer stopped 0.000 s
+  PASS UnifiedBus - sender cumulative ACK clears retained PSN state 0.000 s
+  PASS UnifiedBus - selective ACKed gap state keeps state but skips retransmit 0.000 s
+  PASS UnifiedBus - sender selective retransmission rebuilds missing descriptor 0.000 s
+  PASS UnifiedBus - sender selective retransmission participates in TP queue contract 0.000 s
+  PASS UnifiedBus - sender drops stale selective retransmission entries after ACK 0.000 s
+  PASS UnifiedBus - sender queue priority keeps control responses before selective retransmission 0.000 s
+  PASS UnifiedBus - selective RTO enqueues retained outstanding PSNs 0.000 s
+  PASS UnifiedBus - selective retransmission updates DCQCN sender accounting 0.000 s
+  PASS UnifiedBus - selective retransmission congestion control uses payload bytes 0.000 s
+  PASS UnifiedBus - GBN timeout rolls back CAQM descriptor payload bytes 0.000 s
+  PASS UnifiedBus - CAQM accounts selective feedback without SAETPH dependency 0.000 s
+  PASS UnifiedBus - TPSACK-CC reports newly missing selective bytes once 0.000 s
+  PASS UnifiedBus - DCQCN CNP is a valid transport opcode 0.000 s
+  PASS UnifiedBus - routing process resolves compressed destination ranges 0.000 s
+  PASS UnifiedBus - restricted routing alone allocates fallback filter containers 0.000 s
+  PASS UnifiedBus - DCQCN switch leaves already-marked FECN packets unchanged 0.000 s
+  PASS UnifiedBus - DCQCN sender cuts rate and blocks send after CNP 0.000 s
+  PASS UnifiedBus - DCQCN CNP does not advance reliable ACK state 0.000 s
+  PASS UnifiedBus - DCQCN recovery timer raises sender rate after CNP cut 0.000 s
+  PASS UnifiedBus - DCQCN byte counter increases rate before timer expiry 0.000 s
+  PASS UnifiedBus - DCQCN hyper increase uses the configured HAI step 0.000 s
+  PASS UnifiedBus - DCQCN sender rate never exceeds configured line rate 0.000 s
+  PASS UnifiedBus - DCQCN busy host starts second flow below line rate 0.000 s
+  PASS UnifiedBus - DCQCN pacing wakeup resumes queued sends without external events 0.001 s
+  PASS UnifiedBus - DCQCN CNP rescales outstanding pacing debt to the reduced rate 0.000 s
+  PASS UnifiedBus - completed DCQCN flow releases host active-flow slot 0.000 s
+  PASS UnifiedBus - idle DCQCN sender cancels and resets recovery state 0.000 s
+  PASS UnifiedBus - URMA_READ WQE metadata propagates through Jetty segmentation 0.000 s
+  PASS UnifiedBus - Jetty preserves WQE remote address across segmentation 0.000 s
+  PASS UnifiedBus - remote address offset uses segment TASSN 0.000 s
+  PASS UnifiedBus - WQE segment keeps logical TA sequence values 0.000 s
+  PASS UnifiedBus - Jetty completes logical TASSN across 16-bit wrap 0.000 s
+  PASS UnifiedBus - inbound TA key uses logical TPMSN across 24-bit wrap 0.000 s
+  PASS UnifiedBus - URMA_WRITE completes on TA response instead of request TP ACK 0.000 s
+  PASS UnifiedBus - SEND completes once, only after its transaction response 0.000 s
+  PASS UnifiedBus - a partially answered multi-segment WQE stays incomplete 0.000 s
+  PASS UnifiedBus - URMA_READ completes on READ_RESPONSE instead of request TP ACK 0.000 s
+  PASS UnifiedBus - RTP WRITE MAETAH carries the transaction segment length 0.000 s
+  PASS UnifiedBus - multi-packet URMA_READ generates one READ_RESPONSE 0.000 s
+  PASS UnifiedBus - multi-slice URMA_READ request packets carry zero payload 0.001 s
+  PASS UnifiedBus - Trace directory setup tolerates missing runlog 0.000 s
+  PASS UnifiedBus - CSV traces preserve missing packet endpoints 0.000 s
+  PASS UnifiedBus - algorithm trace files stay off by default even when trace path exists 0.000 s
+  PASS UnifiedBus - algorithm trace category gates independently control flow and congestion traces 0.000 s
+  PASS UnifiedBus - queue trace gate independently controls queue trace files 0.000 s
+  PASS UnifiedBus - CTP packet trace obeys trace gates 0.000 s
+  PASS UnifiedBus - CTP trace connect does not create CTP service 0.000 s
+  PASS UnifiedBus - CTP packet trace connects lazy CTP service 0.000 s
+  PASS UnifiedBus - queue sampler keeps only one pending event per port 0.000 s
+  PASS UnifiedBus - trace batching keeps file contents intact under concurrent writers 0.049 s
+  PASS UnifiedBus - ExtractMpiRank follows MPI rank encoding rules 0.000 s
+  PASS UnifiedBus - IsSameMpiRank compares MPI rank instead of raw packed systemId 0.000 s
+  PASS UnifiedBus - IsSystemOwnedByRank follows packed MPI ownership rules 0.000 s
+  PASS UnifiedBus - CreateNode honors systemId column 0.001 s
+  PASS UnifiedBus - CSV readers trim CRLF line endings from fields 0.000 s
+  PASS UnifiedBus - CreateNode maps forwardDelay and allocationDelay separately 0.000 s
+  PASS UnifiedBus - switch allocator defaults to a 5ns scheduling round 0.000 s
+  PASS UnifiedBus - CreateNode forwardDelay no longer changes AllocationTime 0.000 s
+  PASS UnifiedBus - CreateNode legacy four-column forwardDelay maps to AllocationTime 0.000 s
+  PASS UnifiedBus - UbSwitch flow-control mode attribute round-trips 0.000 s
+  PASS UnifiedBus - UbSwitch local runtime config overrides global buffer and PFC defaults 0.000 s
+  PASS UnifiedBus - control frames keep dedicated occupancy accounting 0.000 s
+  PASS UnifiedBus - PFC_FIXED counts headroom occupancy 0.000 s
+  PASS UnifiedBus - PFC_DYNAMIC pauses and resumes from shared occupancy 0.000 s
+  PASS UnifiedBus - queue manager exposes unified dynamic PFC pause resume decisions 0.000 s
+  PASS UnifiedBus - PFC_DYNAMIC keeps empty queues resumed when xoff collapses to zero 0.000 s
+  PASS UnifiedBus - PFC_DYNAMIC_PAPER follows paper threshold and 2-MTU resume gap 0.000 s
+  PASS UnifiedBus - queue manager exposes unified paper PFC pause resume decisions 0.000 s
+  PASS UnifiedBus - PFC_DYNAMIC_PAPER admission should not be limited by old dynamic alpha shift 0.000 s
+  PASS UnifiedBus - PFC_DYNAMIC_PAPER threshold tracks real switch global occupancy 0.000 s
+  PASS UnifiedBus - total buffered bytes keeps VOQ and egress occupancy consistent 0.000 s
+  PASS UnifiedBus - in-port processing bytes are visible before VOQ 0.000 s
+  PASS UnifiedBus - UbSwitch InPortProcessingDelay hides forwarded packets from allocator 0.000 s
+  PASS UnifiedBus - UbSwitch InPortProcessingDelay does not delay TP source queues 0.000 s
+  PASS UnifiedBus - zero processing delay preserves enqueue callback ordering 0.000 s
+  PASS UnifiedBus - control frames bypass switch processing delay 0.000 s
+  PASS UnifiedBus - forwarding path uses the ingress port's PFC configuration 0.000 s
+  PASS UnifiedBus - flow-control release hook observes post-dequeue ingress occupancy 0.000 s
+  PASS UnifiedBus - allocator keeps ingress packet when egress queue is full 0.000 s
+  PASS UnifiedBus - reserve-only admission allows exact-fit enqueue and keeps shared state at zero 0.000 s
+  PASS UnifiedBus - sticky headroom accounts whole packets consistently 0.000 s
+  PASS UnifiedBus - queue manager exposes structured ingress port occupancy view 0.000 s
+  PASS UnifiedBus - sliding bitmap window preserves out-of-order marks while advancing 0.000 s
+  PASS UnifiedBus - sliding bitmap window reuses slots without reviving stale marks 0.000 s
+  PASS UnifiedBus - busy port arrival still prefetches next packet into egress queue 0.000 s
+  PASS UnifiedBus - UbSwitch creates VOQs only when packets arrive 0.000 s
+  PASS UnifiedBus - drained VOQ uses the explicit safe destruction gate 0.000 s
+  PASS UnifiedBus - VOQ destruction waits for allocator and accounting gates 0.000 s
+  PASS UnifiedBus - RR allocator coalesces same-port wakeups 0.000 s
+  PASS UnifiedBus - DWRR allocator coalesces same-port wakeups 0.000 s
+  PASS UnifiedBus - RR allocator commits the selection made at wakeup 0.000 s
+  PASS UnifiedBus - DWRR allocator commits the selection made at wakeup 0.000 s
+  PASS UnifiedBus - RR allocator commits wakeup grant after flow-control changes 0.000 s
+  PASS UnifiedBus - DWRR allocator commits wakeup grant after flow-control changes 0.000 s
+  PASS UnifiedBus - RR allocator rolls back selection after egress block 0.000 s
+  PASS UnifiedBus - DWRR allocator rolls back selection after egress block 0.000 s
+  PASS UnifiedBus - DWRR restores deficit when flow control and egress block combine 0.000 s
+  PASS UnifiedBus - allocator isolates simultaneous pending output-port owners 0.000 s
+  PASS UnifiedBus - forced stop preserves running allocator callback and exact residue 0.000 s
+  PASS UnifiedBus - RR allocator selection reentrant stop preserves ingress 0.000 s
+  PASS UnifiedBus - DWRR allocator selection reentrant stop preserves ingress 0.000 s
+  PASS UnifiedBus - DWRR selection stop does not scan a later non-empty VL 0.000 s
+  PASS UnifiedBus - RR allocator egress-commit reentrant stop finishes current accounting 0.000 s
+  PASS UnifiedBus - DWRR allocator egress-commit reentrant stop finishes current accounting 0.000 s
+  PASS UnifiedBus - allocator non-empty summary counts queue transitions exactly 0.003 s
+  PASS UnifiedBus - RR allocator summary preserves burst followup rounds 0.000 s
+  PASS UnifiedBus - DWRR allocator summary preserves burst followup rounds 0.000 s
+  PASS UnifiedBus - allocator ignores wakeup without output-port ownership state 0.000 s
+  PASS UnifiedBus - switch disposal cancels queue events and records residue 0.000 s
+  PASS UnifiedBus - VOQ allocator preserves ingress queue slot phase 0.000 s
+  PASS UnifiedBus - DWRR allocator preserves ingress queue slots across VLs 0.000 s
+  PASS UnifiedBus - DWRR allocator keeps non-VOQ queues after VOQ slots 0.000 s
+  PASS UnifiedBus - direct allocation completion starts an idle egress port 0.000 s
+  PASS UnifiedBus - scheduled allocation completion remains available 0.000 s
+  PASS UnifiedBus - UbPacketQueue inline storage preserves FIFO 0.000 s
+  PASS UnifiedBus - UbSmallFifoQueue keeps small FIFO inline and releases heap 0.000 s
+  PASS UnifiedBus - data packet headers reject priority 0 in this simulator model 0.000 s
+  PASS UnifiedBus - SendControlFrame rejects non-control packets 0.001 s
+  PASS UnifiedBus - CBFC rejects zero cell geometry at init 0.001 s
+  PASS UnifiedBus - PFC_FIXED rejects negative thresholds at init 0.001 s
+  PASS UnifiedBus - UbSwitch local CBFC config overrides global defaults 0.000 s
+  PASS UnifiedBus - CBFC piggyback target VL can differ from packet VL 0.000 s
+  PASS UnifiedBus - CBFC piggyback restore is consumed locally and clears header state 0.000 s
+  PASS UnifiedBus - CBFC does not emit control frame below ctrl-credit-return threshold without data packet 0.000 s
+  PASS UnifiedBus - CBFC switches to control-frame credit return once pending threshold is reached 0.000 s
+  PASS UnifiedBus - CBFC ctrl-credit-return flushes every VL already eligible for control return 0.000 s
+  PASS UnifiedBus - CBFC ctrl-credit-return chunks large pending credit into multiple control frames 0.000 s
+  PASS UnifiedBus - CBFC forwarded release checks threshold state on the ingress port instance 0.000 s
+  PASS UnifiedBus - CBFC forwarded ingress enqueue does not accumulate return credit 0.000 s
+  PASS UnifiedBus - CreateTp preloads TP instances from config 0.000 s

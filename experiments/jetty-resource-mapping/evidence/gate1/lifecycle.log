@@ -1,0 +1,111 @@
+aborted. cond="!inserted && (cleanupIt->second.ownerNodeId != cleanupRequest->ownerNodeId || cleanupIt->second.ownerApplicationIndex != cleanupRequest->ownerApplicationIndex || cleanupIt->second.jettyNum != cleanupRequest->jettyNum || cleanupIt->second.destroyTaskScopedJetty != cleanupRequest->destroyTaskScopedJetty || cleanupIt->second.destroyPlannedTpConnections != cleanupRequest->destroyPlannedTpConnections)", msg="Conflicting task cleanup request for task 900007", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/ub-traffic-gen.cc, line=929
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="m_psnSndUna < segmentEnd", msg="Forced segment removal lost unacknowledged TP work", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-transport.cc, line=2538
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="!active.activeLeases.empty()", msg="Cannot retire lifecycle generation with active leases", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/ub-lifecycle.cc, line=370
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="operation == m_operations.end()", msg="Transaction outcome references an unknown, duplicate, or stale operation", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-transaction.cc, line=2897
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="wqe == record->second.wqes.end() || wqe->second != identity", msg="Transaction outcome references an unknown, duplicate, or stale WQE", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-function.cc, line=747
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="operation != m_operations.end() && operation->second.wqe != wqe", msg="WqeFinish references a stale WQE instance", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-transaction.cc, line=2654
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="operation == m_operations.end() && wqe->IsLifecycleManaged()", msg="WqeFinish references an unknown, duplicate, or stale direct WQE", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-transaction.cc, line=2656
+NS_FATAL, terminating
+terminate called without an active exception
+PASS unified-bus-lifecycle 0.078 s
+  PASS UnifiedBus - direct TP WQE submission is atomic 0.009 s
+  PASS UnifiedBus - duplicate direct WQE submission is rejected atomically 0.001 s
+  PASS UnifiedBus - stale direct and TPG references reject before WQE generation 0.001 s
+  PASS UnifiedBus - two-member TPG submission uses the lifecycle RTP path 0.000 s
+  PASS UnifiedBus - all-full TPG defers without advancing cursors 0.000 s
+  PASS UnifiedBus - TPG skips a full member for an eligible member 0.000 s
+  PASS UnifiedBus - direct TP capacity transition wakes one deferred source 0.000 s
+  PASS UnifiedBus - RTP Tx queue entries report fixed RR fairness and throughput 0.000 s
+  PASS UnifiedBus - local and remote RTP Tx entries share fixed TP order 0.000 s
+  PASS UnifiedBus - real member ACKs coalesce one TPG capacity wake 0.000 s
+  PASS UnifiedBus - live TPG destroy releases only its exact Jetty binding 0.000 s
+  PASS UnifiedBus - AddMember validates ownership and restores an active empty TPG 0.000 s
+  PASS UnifiedBus - last TPG member removal waits for use lease assignment 0.000 s
+  PASS UnifiedBus - AddMember replaces pending last member and wakes its holder 0.000 s
+  PASS UnifiedBus - non-last member removal pins old work and redirects continuation 0.000 s
+  PASS UnifiedBus - active-use TPG destroy pends and finalizes exactly once 0.000 s
+  PASS UnifiedBus - repeated deferred TPG destroy retires the exact RTP Tx queue 0.000 s
+  PASS UnifiedBus - error TPG cleanup terminates blocked tail exactly once 0.000 s
+  PASS UnifiedBus - simulation-stop TPG cleanup terminates blocked tail exactly once 0.000 s
+  PASS UnifiedBus - error last TPG member removal terminates active use 0.000 s
+  PASS UnifiedBus - simulation-stop last TPG member removal terminates active use 0.000 s
+  PASS UnifiedBus - reentrant typed cleanup repeats same group 0.001 s
+  PASS UnifiedBus - reentrant typed cleanup destroys another group 0.001 s
+  PASS UnifiedBus - Controller dispose force-cleans canonical TPG 0.000 s
+  PASS UnifiedBus - multi-segment TPG round robin pins each TP generation 0.000 s
+  PASS UnifiedBus - TPG retransmission stays on the resolved TP generation 0.000 s
+  PASS UnifiedBus - TPG round robin preserves cross-Jetty initial phase 0.000 s
+  PASS UnifiedBus - same-Jetty lifecycle WQEs make independent progress 0.000 s
+  PASS UnifiedBus - strong-order failed pre-admission front wakes accepted successor 0.000 s
+  PASS UnifiedBus - strong-order canceled pre-admission front wakes accepted successor 0.000 s
+  PASS UnifiedBus - strong-order failed post-admission front wakes accepted successor 0.000 s
+  PASS UnifiedBus - strong-order canceled post-admission front wakes accepted successor 0.000 s
+  PASS UnifiedBus - strong-order failed pre-admission synchronous front wakes accepted successor 0.000 s
+  PASS UnifiedBus - strong-order canceled pre-admission synchronous front wakes accepted successor 0.000 s
+  PASS UnifiedBus - shared TP non-tail unsent failed compacts later admission 0.000 s
+  PASS UnifiedBus - shared TP non-tail unsent canceled compacts later admission 0.000 s
+  PASS UnifiedBus - started failed work retains correlation until response cleanup 0.000 s
+  PASS UnifiedBus - started canceled work retains correlation until response cleanup 0.000 s
+  PASS UnifiedBus - error pending tombstone upgrades to simulation-stop force 0.000 s
+  PASS UnifiedBus - GBN retransmission trace cleanup error 0.001 s
+  PASS UnifiedBus - GBN retransmission trace cleanup simulation-stop 0.001 s
+  PASS UnifiedBus - GBN retransmission trace cleanup replacement identity 0.001 s
+  PASS UnifiedBus - selective retransmission trace cleanup error 0.001 s
+  PASS UnifiedBus - selective retransmission trace cleanup simulation-stop 0.001 s
+  PASS UnifiedBus - selective retransmission trace cleanup replacement identity 0.001 s
+  PASS UnifiedBus - response-bearing TP ACK precedes failed terminal 0.000 s
+  PASS UnifiedBus - response-bearing TP ACK precedes canceled terminal 0.000 s
+  PASS UnifiedBus - Jetty lifetime is explicit and scoped to one generation 0.000 s
+  PASS UnifiedBus - app RTP Jetty is task-scoped at creation 0.000 s
+  PASS UnifiedBus - app convenience destroy policies default on and stay independent 0.000 s
+  PASS UnifiedBus - planned TP policy closes only owned connections after final use 0.000 s
+  PASS UnifiedBus - task completion is visible before Jetty retirement drains 0.000 s
+  PASS UnifiedBus - CTP task completion does not schedule RTP cleanup 0.000 s
+  PASS UnifiedBus - duplicate task cleanup submission schedules exactly once 0.001 s
+  PASS UnifiedBus - pending task cleanup does not retain its app 0.001 s
+  PASS UnifiedBus - forced removal rejects missing unacknowledged segment 0.001 s
+  PASS UnifiedBus - explicit graceful drain continues accepted strong-order successor 0.000 s
+  PASS UnifiedBus - protocol-complete graceful drain continues accepted strong-order successor 0.000 s
+  PASS UnifiedBus - explicit pending drain upgrades monotonically to error abort 0.000 s
+  PASS UnifiedBus - error strong-order drain does not wake successor 0.000 s
+  PASS UnifiedBus - simulation-stop strong-order drain does not wake successor 0.000 s
+  PASS UnifiedBus - accepted segment work blocks TP generation retirement 0.001 s
+  PASS UnifiedBus - rejected direct TP admission preserves lazy segment cursor 0.000 s
+  PASS UnifiedBus - scheduler race backpressure preserves direct admission state 0.000 s
+  PASS UnifiedBus - direct TP WRITE retires one atomic ownership chain 0.000 s
+  PASS UnifiedBus - segment completion requires the resolved TP generation 0.000 s
+  PASS UnifiedBus - late completion cannot finish a reused Jetty WQE and TASSN 0.000 s
+  PASS UnifiedBus - late completion cannot finish a different WQE on reused TASSN 0.000 s
+  PASS UnifiedBus - Transaction failure produces one typed WQE terminal 0.000 s
+  PASS UnifiedBus - cancel and flush retain distinct typed WQE terminals 0.000 s
+  PASS UnifiedBus - idle Jetty destroy completes synchronously without callback 0.000 s
+  PASS UnifiedBus - Jetty destroy releases CTP binding without destroying service 0.000 s
+  PASS UnifiedBus - forced Jetty disposal flushes accepted work synchronously 0.000 s
+  PASS UnifiedBus - active Jetty freezes admission and finalizes once after drain 0.000 s
+  PASS UnifiedBus - forced stop cancels tracked schedule work across Jetty generations 0.001 s
+  PASS UnifiedBus - reentrant forced stop defers running finish retirement 0.001 s
+  PASS UnifiedBus - reentrant pending cleanup preserves replacement Jetty generation 0.001 s
+  PASS UnifiedBus - reentrant direct forced drain refreshes manager WQE state 0.001 s
+  PASS UnifiedBus - reentrant legacy forced flush refreshes Jetty WQE state 0.001 s
+  PASS UnifiedBus - forced stop pending finish releases TP scheduler ownership 0.001 s
+  PASS UnifiedBus - cancel between tracked schedule phases cannot revive stale work 0.001 s
+  PASS UnifiedBus - stale finish cannot commit into same-Jetty reused WQE key 0.001 s
+  PASS UnifiedBus - app CTP cached Jetty rejects WQE admission while draining 0.000 s
+  PASS UnifiedBus - accepted response work drains an explicit Jetty destroy 0.000 s
+  PASS UnifiedBus - duplicate Transaction outcome fails before second notification 0.002 s
+  PASS UnifiedBus - stale direct WQE finish cannot terminate a reused operation key 0.002 s
+  PASS UnifiedBus - fault parser view preserves packet identity and accounting 0.000 s
+  PASS UnifiedBus - normal and detached channel failures terminalize packets 0.000 s
+  PASS UnifiedBus - RTP ingress admission failure records one typed drop 0.000 s

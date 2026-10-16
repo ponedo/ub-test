@@ -1,0 +1,8 @@
+aborted. cond="shortestCandidates.empty() && nonShortestCandidates.empty()", msg="Requested LDST source endpoint port is unreachable for destination 10.0.1.4", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-ldst-api.cc, line=203
+NS_FATAL, terminating
+terminate called without an active exception
+PASS unified-bus-ldst-lifecycle 0.014 s
+  PASS UnifiedBus - LDST completion retires active records and rejects stale ACKs 0.000 s
+  PASS UnifiedBus - LDST selects traffic endpoint ports 0.010 s
+  PASS UnifiedBus - LDST rejects an explicit destination port without an exact route 0.002 s
+  PASS UnifiedBus - LDST tracked events and forced-stop residue 0.000 s

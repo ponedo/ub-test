@@ -1,0 +1,374 @@
+{
+  "callchain_requested": true,
+  "decode_command": [
+    "/workspace/shared/cpu_sampler/perf",
+    "script",
+    "-i",
+    "/workspace/scratch/c6ba02920254/jetty-mapping-raw/50000-B-sampled/perf.data",
+    "--max-stack",
+    "1024",
+    "-F",
+    "comm,pid,tid,time,event,ip,sym,dso",
+    "--symfs",
+    "/workspace/scratch/c6ba02920254/jetty-mapping-raw/analysis-50000-B/symfs"
+  ],
+  "events": {
+    "cpu-clock:u": 10160
+  },
+  "hotspot_subtrees": {
+    "CreateJetty": {
+      "percent": 0.20669291338582677,
+      "samples": 21,
+      "stack_pattern": "ns3::UbFunction::CreateJetty("
+    },
+    "GetJettiesUsingTpn": {
+      "percent": 35.482283464566926,
+      "samples": 3605,
+      "stack_pattern": "ns3::UbTransaction::GetJettiesUsingTpn("
+    },
+    "ResolveWqeLifecycleLocalId": {
+      "percent": 14.320866141732283,
+      "samples": 1455,
+      "stack_pattern": "ns3::UbJettyManager::ResolveWqeLifecycleLocalId("
+    },
+    "SubmitWqe": {
+      "percent": 15.167322834645669,
+      "samples": 1541,
+      "stack_pattern": "ns3::UbFunction::SubmitWqe("
+    }
+  },
+  "inclusive_caveat": "Observed stack membership, not complete attribution when unwinding is truncated. Recursion deduplicated per sample.",
+  "inclusive_top20": [
+    {
+      "percent": 99.97047244094489,
+      "samples": 10157,
+      "symbol": "main (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/ns3.44-multi-npu-relay)"
+    },
+    {
+      "percent": 99.28149606299213,
+      "samples": 10087,
+      "symbol": "Layer::Run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/ns3.44-multi-npu-relay)"
+    },
+    {
+      "percent": 98.55314960629921,
+      "samples": 10013,
+      "symbol": "ns3::DefaultSimulatorImpl::Run() (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-core.so)"
+    },
+    {
+      "percent": 98.52362204724409,
+      "samples": 10010,
+      "symbol": "ns3::DefaultSimulatorImpl::ProcessOneEvent() (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-core.so)"
+    },
+    {
+      "percent": 98.39566929133858,
+      "samples": 9997,
+      "symbol": "[unknown] (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+    },
+    {
+      "percent": 97.56889763779527,
+      "samples": 9913,
+      "symbol": "__libc_start_main (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+    },
+    {
+      "percent": 97.27362204724409,
+      "samples": 9883,
+      "symbol": "_start (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/ns3.44-multi-npu-relay)"
+    },
+    {
+      "percent": 68.7992125984252,
+      "samples": 6990,
+      "symbol": "[unknown] ([unknown])"
+    },
+    {
+      "percent": 50.246062992125985,
+      "samples": 5105,
+      "symbol": "[unknown] ([heap])"
+    },
+    {
+      "percent": 44.911417322834644,
+      "samples": 4563,
+      "symbol": "ns3::UbTransportChannel::TryContinueJettyTransmission() (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 44.76377952755905,
+      "samples": 4548,
+      "symbol": "ns3::UbTransaction::TryContinueJettyTransmission(ns3::Ptr<ns3::UbTransportChannel>) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 38.976377952755904,
+      "samples": 3960,
+      "symbol": "std::_Function_handler<void (), std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)> >::_M_invoke(std::_Any_data const&) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 38.976377952755904,
+      "samples": 3960,
+      "symbol": "std::__invoke_result<void (ns3::UbSwitchAllocator::*&)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*&, ns3::Ptr<ns3::UbPort>&>::type std::__invoke<void (ns3::UbSwitchAllocator::*&)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*&, ns3::Ptr<ns3::UbPort>&>(void (ns3::UbSwitchAllocator::*&)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*&, ns3::Ptr<ns3::UbPort>&) (inlined)"
+    },
+    {
+      "percent": 38.976377952755904,
+      "samples": 3960,
+      "symbol": "std::enable_if<is_invocable_r_v<void, std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>&>, void>::type std::__invoke_r<void, std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>&>(std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>&) (inlined)"
+    },
+    {
+      "percent": 38.976377952755904,
+      "samples": 3960,
+      "symbol": "void std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>::__call<void, , 0ul, 1ul>(std::tuple<>&&, std::_Index_tuple<0ul, 1ul>) (inlined)"
+    },
+    {
+      "percent": 38.976377952755904,
+      "samples": 3960,
+      "symbol": "void std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>::operator()<, void>() (inlined)"
+    },
+    {
+      "percent": 38.976377952755904,
+      "samples": 3960,
+      "symbol": "void std::__invoke_impl<void, std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>&>(std::__invoke_other, std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>&) (inlined)"
+    },
+    {
+      "percent": 38.976377952755904,
+      "samples": 3960,
+      "symbol": "void std::__invoke_impl<void, void (ns3::UbSwitchAllocator::*&)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*&, ns3::Ptr<ns3::UbPort>&>(std::__invoke_memfun_deref, void (ns3::UbSwitchAllocator::*&)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*&, ns3::Ptr<ns3::UbPort>&) (inlined)"
+    },
+    {
+      "percent": 38.88779527559055,
+      "samples": 3951,
+      "symbol": "ns3::UbSwitchAllocator::RunAllocation(ns3::Ptr<ns3::UbPort>) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 38.818897637795274,
+      "samples": 3944,
+      "symbol": "ns3::UbRoundRobinAllocator::AllocateNextPacket(ns3::Ptr<ns3::UbPort>) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so)"
+    }
+  ],
+  "leaf_only_observed": false,
+  "lost_samples_reported": 0,
+  "pid_tid_scope": [
+    {
+      "comm": "ns3.44-multi-np",
+      "pid": 11,
+      "samples": 10160,
+      "tid": 11
+    }
+  ],
+  "recorder": {
+    "bytes": 87379592,
+    "child_exit": 0,
+    "lost": 0,
+    "samples": 10160
+  },
+  "records": {
+    "COMM": 1,
+    "EXIT": 1,
+    "LOST": 0,
+    "LOST_SAMPLES": 0,
+    "MMAP2": 14529,
+    "SAMPLE": 10160,
+    "THROTTLE": 0,
+    "UNTHROTTLE": 0
+  },
+  "sample_count": 10160,
+  "sample_type_masks": [
+    12583
+  ],
+  "samples_without_frames": 0,
+  "self_top20": [
+    {
+      "percent": 18.90748031496063,
+      "samples": 1921,
+      "symbol": "std::_Rb_tree_increment(std::_Rb_tree_node_base const*) (/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)"
+    },
+    {
+      "percent": 16.131889763779526,
+      "samples": 1639,
+      "symbol": "ns3::UbTransaction::GetJettyLiveTps(unsigned int) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 9.104330708661417,
+      "samples": 925,
+      "symbol": "ns3::UbFunction::GetJetty(unsigned int) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 6.0137795275590555,
+      "samples": 611,
+      "symbol": "[unknown] (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+    },
+    {
+      "percent": 4.2421259842519685,
+      "samples": 431,
+      "symbol": "ns3::UbTransaction::TryContinueJettyTransmission(unsigned int) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 2.7460629921259843,
+      "samples": 279,
+      "symbol": "ns3::UbJettyManager::ResolveWqeLifecycleLocalId(unsigned int, unsigned int) const (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 2.0669291338582676,
+      "samples": 210,
+      "symbol": "ns3::UbTransportChannel::GetNextPacketSize() (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 1.6929133858267718,
+      "samples": 172,
+      "symbol": "cfree (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+    },
+    {
+      "percent": 1.486220472440945,
+      "samples": 151,
+      "symbol": "ns3::UbTransaction::IsOrderedByInitiator(unsigned int, ns3::Ptr<ns3::UbWqe>) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 1.437007874015748,
+      "samples": 146,
+      "symbol": "malloc (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+    },
+    {
+      "percent": 1.2992125984251968,
+      "samples": 132,
+      "symbol": "ns3::UbRoundRobinAllocator::SelectNextIngressQueue(ns3::Ptr<ns3::UbPort>) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 1.2893700787401574,
+      "samples": 131,
+      "symbol": "std::_Rb_tree<ns3::UbLifecycleCoordinator::ResourceKey, std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState>, std::_Select1st<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> >, std::less<ns3::UbLifecycleCoordinator::ResourceKey>, std::allocator<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> > >::find(ns3::UbLifecycleCoordinator::ResourceKey const&) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 1.2303149606299213,
+      "samples": 125,
+      "symbol": "ns3::UbRetransController::GetRetransEnable() const (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 0.9448818897637795,
+      "samples": 96,
+      "symbol": "utils::UbUtils::AppendTraceLine(utils::UbUtils::TraceSinkHandle const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 0.9251968503937008,
+      "samples": 94,
+      "symbol": "ns3::UbTransaction::GetJettiesUsingTpn(unsigned int) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 0.8858267716535433,
+      "samples": 90,
+      "symbol": "ns3::UbTransaction::TryContinueJettyTransmission(ns3::Ptr<ns3::UbTransportChannel>) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 0.8661417322834646,
+      "samples": 88,
+      "symbol": "ns3::UbTransportChannel::IsEmpty() (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 0.8169291338582677,
+      "samples": 83,
+      "symbol": "(anonymous namespace)::CsvRow(std::initializer_list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 0.7480314960629921,
+      "samples": 76,
+      "symbol": "ns3::UbSwitchAllocator::FindNextEligibleIngressQueue(unsigned int, unsigned int, unsigned int, ns3::Ptr<ns3::UbPort>) const (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 0.7283464566929134,
+      "samples": 74,
+      "symbol": "std::_Rb_tree<ns3::UbLifecycleCoordinator::ResourceKey, std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState>, std::_Select1st<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> >, std::less<ns3::UbLifecycleCoordinator::ResourceKey>, std::allocator<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> > >::find(ns3::UbLifecycleCoordinator::ResourceKey const&) const (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so)"
+    }
+  ],
+  "stack_depth_histogram": {
+    "7": 2,
+    "8": 3,
+    "9": 4,
+    "10": 5,
+    "11": 23,
+    "12": 37,
+    "13": 23,
+    "14": 70,
+    "15": 73,
+    "16": 40,
+    "17": 1253,
+    "18": 60,
+    "19": 112,
+    "20": 370,
+    "21": 154,
+    "22": 170,
+    "23": 178,
+    "24": 231,
+    "25": 193,
+    "26": 232,
+    "27": 335,
+    "28": 184,
+    "29": 763,
+    "30": 1105,
+    "31": 178,
+    "32": 539,
+    "33": 1100,
+    "34": 447,
+    "35": 354,
+    "36": 335,
+    "37": 230,
+    "38": 343,
+    "39": 116,
+    "40": 102,
+    "41": 177,
+    "42": 71,
+    "43": 82,
+    "44": 53,
+    "45": 52,
+    "46": 44,
+    "47": 40,
+    "48": 35,
+    "49": 17,
+    "50": 40,
+    "51": 15,
+    "52": 3,
+    "53": 2,
+    "55": 2,
+    "56": 2,
+    "57": 3,
+    "58": 8,
+    "59": 3,
+    "60": 2,
+    "61": 3,
+    "62": 4,
+    "63": 34,
+    "64": 3,
+    "65": 2,
+    "66": 1,
+    "67": 3,
+    "68": 1,
+    "70": 2,
+    "72": 4,
+    "73": 3,
+    "74": 1,
+    "75": 4,
+    "76": 2,
+    "77": 3,
+    "78": 1,
+    "79": 1,
+    "80": 3,
+    "81": 1,
+    "138": 4,
+    "139": 1,
+    "140": 1,
+    "141": 3,
+    "142": 1,
+    "145": 1,
+    "146": 4,
+    "148": 6,
+    "149": 14,
+    "150": 5,
+    "151": 2,
+    "152": 3,
+    "153": 4,
+    "154": 2,
+    "155": 1,
+    "156": 2,
+    "157": 11,
+    "164": 2,
+    "169": 1,
+    "183": 1
+  },
+  "unknown_any_frame_samples": 10120,
+  "unknown_self_samples": 616,
+  "user_stack_requested": true,
+  "weighting": "one per SAMPLE record; never period weighted"
+}

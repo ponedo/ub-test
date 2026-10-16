@@ -1,0 +1,21 @@
+symbol,samples,percent
+main (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/ns3.44-multi-npu-relay),10157,99.97047244094489
+"Layer::Run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/ns3.44-multi-npu-relay)",10087,99.28149606299213
+ns3::DefaultSimulatorImpl::Run() (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-core.so),10013,98.55314960629921
+ns3::DefaultSimulatorImpl::ProcessOneEvent() (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-core.so),10010,98.52362204724409
+[unknown] (/usr/lib/x86_64-linux-gnu/libc.so.6),9997,98.39566929133858
+__libc_start_main (/usr/lib/x86_64-linux-gnu/libc.so.6),9913,97.56889763779527
+_start (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/ns3.44-multi-npu-relay),9883,97.27362204724409
+[unknown] ([unknown]),6990,68.7992125984252
+[unknown] ([heap]),5105,50.246062992125985
+ns3::UbTransportChannel::TryContinueJettyTransmission() (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so),4563,44.911417322834644
+ns3::UbTransaction::TryContinueJettyTransmission(ns3::Ptr<ns3::UbTransportChannel>) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so),4548,44.76377952755905
+"std::_Function_handler<void (), std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)> >::_M_invoke(std::_Any_data const&) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so)",3960,38.976377952755904
+"std::__invoke_result<void (ns3::UbSwitchAllocator::*&)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*&, ns3::Ptr<ns3::UbPort>&>::type std::__invoke<void (ns3::UbSwitchAllocator::*&)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*&, ns3::Ptr<ns3::UbPort>&>(void (ns3::UbSwitchAllocator::*&)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*&, ns3::Ptr<ns3::UbPort>&) (inlined)",3960,38.976377952755904
+"std::enable_if<is_invocable_r_v<void, std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>&>, void>::type std::__invoke_r<void, std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>&>(std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>&) (inlined)",3960,38.976377952755904
+"void std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>::__call<void, , 0ul, 1ul>(std::tuple<>&&, std::_Index_tuple<0ul, 1ul>) (inlined)",3960,38.976377952755904
+"void std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>::operator()<, void>() (inlined)",3960,38.976377952755904
+"void std::__invoke_impl<void, std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>&>(std::__invoke_other, std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>&) (inlined)",3960,38.976377952755904
+"void std::__invoke_impl<void, void (ns3::UbSwitchAllocator::*&)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*&, ns3::Ptr<ns3::UbPort>&>(std::__invoke_memfun_deref, void (ns3::UbSwitchAllocator::*&)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*&, ns3::Ptr<ns3::UbPort>&) (inlined)",3960,38.976377952755904
+ns3::UbSwitchAllocator::RunAllocation(ns3::Ptr<ns3::UbPort>) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so),3951,38.88779527559055
+ns3::UbRoundRobinAllocator::AllocateNextPacket(ns3::Ptr<ns3::UbPort>) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so),3944,38.818897637795274

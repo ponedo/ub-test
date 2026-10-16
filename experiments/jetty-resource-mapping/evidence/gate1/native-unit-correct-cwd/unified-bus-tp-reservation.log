@@ -1,0 +1,37 @@
+aborted. msg="Received unreserved or mismatched TP channel key. node=3 srcTpn=1 dstTpn=0 sourceIp=10.0.0.1 destinationIp=10.0.3.1 priority=8 packetUid=0", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/ub-switch.cc, line=856
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. msg="Received unreserved or mismatched TP channel key. node=3 srcTpn=0 dstTpn=0 sourceIp=10.0.1.1 destinationIp=10.0.3.1 priority=8 packetUid=0", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/ub-switch.cc, line=856
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. msg="Received unreserved or mismatched TP channel key. node=3 srcTpn=0 dstTpn=0 sourceIp=10.0.0.2 destinationIp=10.0.3.1 priority=8 packetUid=0", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/ub-switch.cc, line=856
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. msg="Received unreserved or mismatched TP channel key. node=3 srcTpn=0 dstTpn=0 sourceIp=10.0.0.1 destinationIp=10.0.3.2 priority=8 packetUid=0", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/ub-switch.cc, line=856
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. msg="Received unreserved or mismatched TP channel key. node=3 srcTpn=0 dstTpn=0 sourceIp=10.0.0.1 destinationIp=10.0.3.1 priority=7 packetUid=0", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/ub-switch.cc, line=856
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="m_tpnSpaceExhausted", msg="Exhausted the 24-bit TPN space without safe reuse", file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/ub-tp-connection-manager.cc, line=1867
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="m_nextTpn == kMaxWireTpn", msg="Exhausted the 24-bit TPN space without safe reuse", file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/ub-tp-connection-manager.cc, line=1871
+NS_FATAL, terminating
+terminate called without an active exception
+PASS unified-bus-tp-reservation 0.024 s
+  PASS UnifiedBus - CreateTp uses per-port IP addresses 0.008 s
+  PASS UnifiedBus - RTP reservation does not fall back for an explicit destination port 0.001 s
+  PASS UnifiedBus - missing TPN lookup does not insert a null TP 0.000 s
+  PASS UnifiedBus - compact TP connection indexes preserve public lookup behavior 0.000 s
+  PASS UnifiedBus - traffic-driven TP reservation leaves receiver TP lazy 0.000 s
+  PASS UnifiedBus - reserved receiver TPN materializes locally 0.000 s
+  PASS UnifiedBus - inbound RTP packet must match the reserved channel key 0.007 s
+  PASS UnifiedBus - repeated TP resolution reuses reservation 0.000 s
+  PASS UnifiedBus - unreserved receiver TPN does not materialize 0.000 s
+  PASS UnifiedBus - explicit TP destroy drains and preserves reservation 0.000 s
+  PASS UnifiedBus - explicit TP close assessment reports owner-local blockers 0.000 s
+  PASS UnifiedBus - TP quiescence reports direct, TPG, and remote transaction blockers 0.000 s
+  PASS UnifiedBus - TPN allocation stops at the 24-bit wire boundary 0.000 s
+  PASS UnifiedBus - explicit connection destroy aggregates both endpoints 0.000 s
+  PASS UnifiedBus - explicit connection destroy drains an admitted write 0.001 s

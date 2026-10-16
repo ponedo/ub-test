@@ -1,0 +1,33 @@
+[01:04:31] [setup] Load node.csv
+[01:04:31] [setup] Load node.csv
+[01:04:31] [setup] Load topology.csv
+[01:04:31] [setup] Load node.csv
+[01:04:31] [setup] Load node.csv
+[01:04:31] [setup] Load node.csv
+[01:04:31] [setup] Load node.csv
+[01:04:31] [setup] Load transport_channel.csv
+PASS unified-bus-runtime-tools 0.037 s
+  PASS UnifiedBus - Trace directory setup tolerates missing runlog 0.000 s
+  PASS UnifiedBus - CSV traces preserve missing packet endpoints 0.000 s
+  PASS UnifiedBus - algorithm trace files stay off by default even when trace path exists 0.000 s
+  PASS UnifiedBus - algorithm trace category gates independently control flow and congestion traces 0.000 s
+  PASS UnifiedBus - queue trace gate independently controls queue trace files 0.011 s
+  PASS UnifiedBus - CTP packet trace obeys trace gates 0.000 s
+  PASS UnifiedBus - CTP trace connect does not create CTP service 0.000 s
+  PASS UnifiedBus - CTP packet trace connects lazy CTP service 0.000 s
+  PASS UnifiedBus - queue sampler keeps only one pending event per port 0.000 s
+  PASS UnifiedBus - trace batching keeps file contents intact under concurrent writers 0.018 s
+  PASS UnifiedBus - ExtractMpiRank follows MPI rank encoding rules 0.000 s
+  PASS UnifiedBus - IsSameMpiRank compares MPI rank instead of raw packed systemId 0.000 s
+  PASS UnifiedBus - IsSystemOwnedByRank follows packed MPI ownership rules 0.000 s
+  PASS UnifiedBus - CreateNode honors systemId column 0.000 s
+  PASS UnifiedBus - CSV readers trim CRLF line endings from fields 0.000 s
+  PASS UnifiedBus - CreateNode maps forwardDelay and allocationDelay separately 0.000 s
+  PASS UnifiedBus - switch allocator defaults to a 5ns scheduling round 0.000 s
+  PASS UnifiedBus - CreateNode forwardDelay no longer changes AllocationTime 0.000 s
+  PASS UnifiedBus - CreateNode legacy four-column forwardDelay maps to AllocationTime 0.000 s
+  PASS UnifiedBus - UbSwitch local runtime config overrides global buffer and PFC defaults 0.000 s
+  PASS UnifiedBus - sliding bitmap window preserves out-of-order marks while advancing 0.000 s
+  PASS UnifiedBus - sliding bitmap window reuses slots without reviving stale marks 0.000 s
+  PASS UnifiedBus - busy port arrival still prefetches next packet into egress queue 0.000 s
+  PASS UnifiedBus - CreateTp preloads TP instances from config 0.000 s

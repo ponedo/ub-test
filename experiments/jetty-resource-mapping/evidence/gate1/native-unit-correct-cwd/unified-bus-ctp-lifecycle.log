@@ -1,0 +1,17 @@
+aborted. cond="packet == nullptr", msg="Cannot enqueue null CTP packet", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-ctp.cc, line=472
+NS_FATAL, terminating
+terminate called without an active exception
+PASS unified-bus-ctp-lifecycle 0.013 s
+  PASS UnifiedBus - CTP congestion contexts aggregate by destination and VL 0.010 s
+  PASS UnifiedBus - CTP data packet builds reference compact CTP header stack 0.000 s
+  PASS UnifiedBus - CTP TAACK response uses compact ACK transaction header 0.000 s
+  PASS UnifiedBus - CTP TAACK inherits packet-spray routing policy 0.000 s
+  PASS UnifiedBus - CTP compact queue carries local generation metadata 0.000 s
+  PASS UnifiedBus - CTP SendSegment selects outPort, registers queue, and triggers allocator 0.000 s
+  PASS UnifiedBus - CTP backpressure preserves packet and allocator registration 0.000 s
+  PASS UnifiedBus - CTP DATA and ACK clean up Transaction state 0.000 s
+  PASS UnifiedBus - CTP route loss keeps unresolved Transaction state 0.000 s
+  PASS UnifiedBus - delayed CTP TAACK tracks event and retires finite state 0.000 s
+  PASS UnifiedBus - CTP dispose cancels delayed TAACK without completing work 0.000 s
+  PASS UnifiedBus - compact channel prioritizes CNP then ACK then data 0.000 s
+  PASS UnifiedBus - compact channel rejects null packets at enqueue 0.000 s

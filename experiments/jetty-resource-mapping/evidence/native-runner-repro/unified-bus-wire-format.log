@@ -1,0 +1,18 @@
+Rejected CTP transaction: missing or malformed extension header
+aborted. cond="config != UbDatalinkHeaderConfig::CONTROL && packetVl == 0", msg="Unified-bus reserves priority 0 for locally generated control frames in the simulator model. Data packets must use priority 1..15.", file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-datalink.cc, line=65
+NS_FATAL, terminating
+terminate called without an active exception
+PASS unified-bus-wire-format 0.012 s
+  PASS UnifiedBus - RTP transaction header layout follows the rule plan 0.009 s
+  PASS UnifiedBus - CTP decodes the planned layout and rejects a missing header 0.000 s
+  PASS UnifiedBus - DCQCN CNP header round-trips ECN and location in spec layout 0.000 s
+  PASS UnifiedBus - SAETPH round-trips bitmap sizes 0.000 s
+  PASS UnifiedBus - SAETPH bitmap has no offset equal to bit count 0.000 s
+  PASS UnifiedBus - SAETPH bitmap-size encoding is spec visible 0.000 s
+  PASS UnifiedBus - SAETPH reserved bitmap-size encodings are malformed 0.000 s
+  PASS UnifiedBus - SAETPH bitmap serialization is LSB-first within each byte 0.000 s
+  PASS UnifiedBus - transport response status fields are explicit 0.000 s
+  PASS UnifiedBus - fault classification uses transport response RSPST 0.000 s
+  PASS UnifiedBus - ACK_WITHOUT_CETPH wire packet carries no CETPH header 0.000 s
+  PASS UnifiedBus - DCQCN CNP is a valid transport opcode 0.000 s
+  PASS UnifiedBus - data packet headers reject priority 0 in this simulator model 0.000 s

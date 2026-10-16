@@ -1,0 +1,17 @@
+PASS unified-bus-packet-rate-control 0.001 s
+  PASS static mode pads a DLLDP below the minimum interval 0.000 s
+  PASS static mode leaves a DLLDP at or above the interval alone 0.000 s
+  PASS static mode rounds a partial trailing flit up 0.000 s
+  PASS static mode counts the interframe gap as part of the interval 0.000 s
+  PASS packet rate control never pads a control frame 0.000 s
+  PASS packet rate control in NONE mode is inert 0.000 s
+  PASS dynamic mode selects branches from the deficit counters 0.000 s
+  PASS dynamic mode pads to the one target whose deficit is over budget 0.000 s
+  PASS dynamic mode pads to the longer target when both counters are over budget 0.000 s
+  PASS dynamic mode does not underflow on a negative deficit 0.000 s
+  PASS dynamic mode resets a counter overshot by a long DLLDP 0.000 s
+  PASS dynamic mode freezes a counter that is over budget 0.000 s
+  PASS packet rate control keeps per-port state separate 0.000 s
+  PASS static mode spaces consecutive DLLDPs on the real egress path 0.000 s
+  PASS NONE mode does not space DLLDPs on the real egress path 0.000 s
+  PASS a rejected transmission does not advance the deficit counters 0.000 s

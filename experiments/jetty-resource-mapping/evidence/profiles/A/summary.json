@@ -1,0 +1,377 @@
+{
+  "callchain_requested": true,
+  "decode_command": [
+    "/workspace/shared/cpu_sampler/perf",
+    "script",
+    "-i",
+    "/workspace/scratch/c6ba02920254/jetty-mapping-raw/50000-A-sampled/perf.data",
+    "--max-stack",
+    "1024",
+    "-F",
+    "comm,pid,tid,time,event,ip,sym,dso",
+    "--symfs",
+    "/workspace/scratch/c6ba02920254/jetty-mapping-raw/analysis-50000-A/symfs"
+  ],
+  "events": {
+    "cpu-clock:u": 35283
+  },
+  "hotspot_subtrees": {
+    "CreateJetty": {
+      "percent": 0.07085565286398549,
+      "samples": 25,
+      "stack_pattern": "ns3::UbFunction::CreateJetty("
+    },
+    "GetJettiesUsingTpn": {
+      "percent": 76.7990250262166,
+      "samples": 27097,
+      "stack_pattern": "ns3::UbTransaction::GetJettiesUsingTpn("
+    },
+    "ResolveWqeLifecycleLocalId": {
+      "percent": 4.54043023552419,
+      "samples": 1602,
+      "stack_pattern": "ns3::UbJettyManager::ResolveWqeLifecycleLocalId("
+    },
+    "SubmitWqe": {
+      "percent": 4.775671003032622,
+      "samples": 1685,
+      "stack_pattern": "ns3::UbFunction::SubmitWqe("
+    }
+  },
+  "inclusive_caveat": "Observed stack membership, not complete attribution when unwinding is truncated. Recursion deduplicated per sample.",
+  "inclusive_top20": [
+    {
+      "percent": 99.98866309554177,
+      "samples": 35279,
+      "symbol": "main (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/A/ns3.44-multi-npu-relay)"
+    },
+    {
+      "percent": 99.79876994586628,
+      "samples": 35212,
+      "symbol": "Layer::Run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/A/ns3.44-multi-npu-relay)"
+    },
+    {
+      "percent": 99.61171102230536,
+      "samples": 35146,
+      "symbol": "ns3::DefaultSimulatorImpl::Run() (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/A/lib/libns3.44-core.so)"
+    },
+    {
+      "percent": 99.58903721338888,
+      "samples": 35138,
+      "symbol": "ns3::DefaultSimulatorImpl::ProcessOneEvent() (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/A/lib/libns3.44-core.so)"
+    },
+    {
+      "percent": 99.49267352549387,
+      "samples": 35104,
+      "symbol": "[unknown] (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+    },
+    {
+      "percent": 99.22342204461071,
+      "samples": 35009,
+      "symbol": "__libc_start_main (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+    },
+    {
+      "percent": 99.11005300002834,
+      "samples": 34969,
+      "symbol": "_start (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/A/ns3.44-multi-npu-relay)"
+    },
+    {
+      "percent": 80.42116600062353,
+      "samples": 28375,
+      "symbol": "ns3::UbTransportChannel::TryContinueJettyTransmission() (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/A/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 80.35597879998866,
+      "samples": 28352,
+      "symbol": "ns3::UbTransaction::TryContinueJettyTransmission(ns3::Ptr<ns3::UbTransportChannel>) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/A/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 76.7990250262166,
+      "samples": 27097,
+      "symbol": "ns3::UbTransaction::GetJettiesUsingTpn(unsigned int) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/A/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 56.42944194087804,
+      "samples": 19910,
+      "symbol": "std::_Function_handler<void (), std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)> >::_M_invoke(std::_Any_data const&) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/A/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 56.426607714763485,
+      "samples": 19909,
+      "symbol": "std::__invoke_result<void (ns3::UbSwitchAllocator::*&)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*&, ns3::Ptr<ns3::UbPort>&>::type std::__invoke<void (ns3::UbSwitchAllocator::*&)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*&, ns3::Ptr<ns3::UbPort>&>(void (ns3::UbSwitchAllocator::*&)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*&, ns3::Ptr<ns3::UbPort>&) (inlined)"
+    },
+    {
+      "percent": 56.426607714763485,
+      "samples": 19909,
+      "symbol": "std::enable_if<is_invocable_r_v<void, std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>&>, void>::type std::__invoke_r<void, std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>&>(std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>&) (inlined)"
+    },
+    {
+      "percent": 56.426607714763485,
+      "samples": 19909,
+      "symbol": "void std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>::__call<void, , 0ul, 1ul>(std::tuple<>&&, std::_Index_tuple<0ul, 1ul>) (inlined)"
+    },
+    {
+      "percent": 56.426607714763485,
+      "samples": 19909,
+      "symbol": "void std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>::operator()<, void>() (inlined)"
+    },
+    {
+      "percent": 56.426607714763485,
+      "samples": 19909,
+      "symbol": "void std::__invoke_impl<void, std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>&>(std::__invoke_other, std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)>&) (inlined)"
+    },
+    {
+      "percent": 56.426607714763485,
+      "samples": 19909,
+      "symbol": "void std::__invoke_impl<void, void (ns3::UbSwitchAllocator::*&)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*&, ns3::Ptr<ns3::UbPort>&>(std::__invoke_memfun_deref, void (ns3::UbSwitchAllocator::*&)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*&, ns3::Ptr<ns3::UbPort>&) (inlined)"
+    },
+    {
+      "percent": 56.37275741858686,
+      "samples": 19890,
+      "symbol": "ns3::UbSwitchAllocator::RunAllocation(ns3::Ptr<ns3::UbPort>) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/A/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 56.34441515744126,
+      "samples": 19880,
+      "symbol": "ns3::UbRoundRobinAllocator::AllocateNextPacket(ns3::Ptr<ns3::UbPort>) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/A/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 53.25510869257149,
+      "samples": 18790,
+      "symbol": "ns3::UbTransportChannel::GetNextPacket() (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/A/lib/libns3.44-unified-bus.so)"
+    }
+  ],
+  "leaf_only_observed": false,
+  "lost_samples_reported": 0,
+  "pid_tid_scope": [
+    {
+      "comm": "ns3.44-multi-np",
+      "pid": 7,
+      "samples": 35283,
+      "tid": 7
+    }
+  ],
+  "recorder": {
+    "bytes": 299588264,
+    "child_exit": 0,
+    "lost": 0,
+    "samples": 35283
+  },
+  "records": {
+    "COMM": 1,
+    "EXIT": 1,
+    "LOST": 0,
+    "LOST_SAMPLES": 0,
+    "MMAP2": 14531,
+    "SAMPLE": 35283,
+    "THROTTLE": 0,
+    "UNTHROTTLE": 0
+  },
+  "sample_count": 35283,
+  "sample_type_masks": [
+    12583
+  ],
+  "samples_without_frames": 0,
+  "self_top20": [
+    {
+      "percent": 41.09911288722614,
+      "samples": 14501,
+      "symbol": "std::_Rb_tree_increment(std::_Rb_tree_node_base*) (/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)"
+    },
+    {
+      "percent": 12.167332709803588,
+      "samples": 4293,
+      "symbol": "ns3::UbTransaction::GetJettyLiveTps(unsigned int) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/A/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 10.189042881841113,
+      "samples": 3595,
+      "symbol": "ns3::UbTransportChannelManager::ResolveLiveTp(unsigned int, ns3::UbLifecycleResourceIdentity const&) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/A/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 5.784655499815775,
+      "samples": 2041,
+      "symbol": "ns3::UbFunction::GetJetty(unsigned int) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/A/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 3.7185046623019584,
+      "samples": 1312,
+      "symbol": "std::_Rb_tree_increment(std::_Rb_tree_node_base const*) (/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)"
+    },
+    {
+      "percent": 1.9301079840149646,
+      "samples": 681,
+      "symbol": "cfree (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+    },
+    {
+      "percent": 1.85641810503642,
+      "samples": 655,
+      "symbol": "ns3::UbTransaction::GetJettiesUsingTpn(unsigned int) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/A/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 1.6721934075900575,
+      "samples": 590,
+      "symbol": "[unknown] (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+    },
+    {
+      "percent": 1.5219794235184083,
+      "samples": 537,
+      "symbol": "__dynamic_cast (/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)"
+    },
+    {
+      "percent": 1.4029419267069128,
+      "samples": 495,
+      "symbol": "malloc (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+    },
+    {
+      "percent": 1.3660969872176403,
+      "samples": 482,
+      "symbol": "ns3::UbTransaction::TryContinueJettyTransmission(unsigned int) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/A/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 0.8219255732222317,
+      "samples": 290,
+      "symbol": "ns3::UbJettyManager::ResolveWqeLifecycleLocalId(unsigned int, unsigned int) const (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/A/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 0.790749085962078,
+      "samples": 279,
+      "symbol": "ns3::UbTransportChannel::GetNextPacketSize() (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/A/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 0.6915511719524984,
+      "samples": 244,
+      "symbol": "ns3::UbTransaction::IsOrderedByInitiator(unsigned int, ns3::Ptr<ns3::UbWqe>) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/A/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 0.5583425445682056,
+      "samples": 197,
+      "symbol": "ns3::UbRetransController::GetRetransEnable() const (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/A/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 0.4789842133605419,
+      "samples": 169,
+      "symbol": "pthread_mutex_lock (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+    },
+    {
+      "percent": 0.4364708216421506,
+      "samples": 154,
+      "symbol": "ns3::UbController::GetTransportChannelManager() const (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/A/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 0.4251339171839129,
+      "samples": 150,
+      "symbol": "ns3::UbRoundRobinAllocator::SelectNextIngressQueue(ns3::Ptr<ns3::UbPort>) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/A/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 0.405294334381997,
+      "samples": 143,
+      "symbol": "utils::UbUtils::AppendTraceLine(utils::UbUtils::TraceSinkHandle const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/A/lib/libns3.44-unified-bus.so)"
+    },
+    {
+      "percent": 0.39962588215287814,
+      "samples": 141,
+      "symbol": "ns3::Ptr<ns3::UbTransportChannelManager>::~Ptr() (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/A/ns3.44-multi-npu-relay)"
+    }
+  ],
+  "stack_depth_histogram": {
+    "6": 1,
+    "7": 1,
+    "8": 3,
+    "9": 1,
+    "10": 4,
+    "11": 37,
+    "12": 47,
+    "13": 34,
+    "14": 78,
+    "15": 78,
+    "16": 65,
+    "17": 1393,
+    "18": 72,
+    "19": 161,
+    "20": 429,
+    "21": 186,
+    "22": 254,
+    "23": 242,
+    "24": 442,
+    "25": 349,
+    "26": 9886,
+    "27": 826,
+    "28": 654,
+    "29": 5699,
+    "30": 3289,
+    "31": 1052,
+    "32": 1209,
+    "33": 4034,
+    "34": 983,
+    "35": 689,
+    "36": 1463,
+    "37": 366,
+    "38": 185,
+    "39": 129,
+    "40": 129,
+    "41": 138,
+    "42": 87,
+    "43": 72,
+    "44": 58,
+    "45": 66,
+    "46": 38,
+    "47": 44,
+    "48": 34,
+    "49": 25,
+    "50": 46,
+    "51": 9,
+    "52": 3,
+    "53": 4,
+    "54": 1,
+    "55": 2,
+    "56": 4,
+    "57": 2,
+    "58": 7,
+    "59": 5,
+    "60": 2,
+    "61": 3,
+    "62": 12,
+    "63": 36,
+    "64": 4,
+    "66": 2,
+    "67": 3,
+    "68": 1,
+    "69": 2,
+    "70": 1,
+    "71": 2,
+    "72": 4,
+    "74": 3,
+    "75": 3,
+    "77": 2,
+    "78": 3,
+    "79": 1,
+    "81": 1,
+    "137": 1,
+    "138": 4,
+    "139": 2,
+    "140": 3,
+    "144": 1,
+    "145": 1,
+    "146": 1,
+    "148": 9,
+    "149": 9,
+    "150": 5,
+    "151": 6,
+    "152": 7,
+    "153": 16,
+    "154": 2,
+    "155": 3,
+    "156": 2,
+    "157": 5,
+    "158": 1,
+    "159": 1,
+    "160": 1,
+    "162": 1,
+    "164": 1,
+    "183": 1
+  },
+  "unknown_any_frame_samples": 35246,
+  "unknown_self_samples": 603,
+  "user_stack_requested": true,
+  "weighting": "one per SAMPLE record; never period weighted"
+}

@@ -1,0 +1,503 @@
+{
+  "mode": "no-balancing",
+  "strategy": "direct",
+  "readiness": "whole-expert",
+  "group_chunk_count": 0,
+  "group_waits": [],
+  "weight_WQEs": 0,
+  "weight_TAs": 0,
+  "weight_send_bytes_per_npu": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "pipeline_overlaps": [],
+  "native_pipeline_overlaps": [],
+  "combine_sha256": "87e50aae81c7170156989f55dbdf8f969041b1d56e69c93f0ea840d268d57b39",
+  "npus": 64,
+  "tokens": 625,
+  "assignments": 5000,
+  "layer_latency_ps": 136649168,
+  "replicas": 0,
+  "max_npu_load": 987,
+  "per_npu_load": [
+    987,
+    581,
+    397,
+    326,
+    221,
+    205,
+    152,
+    141,
+    112,
+    92,
+    96,
+    72,
+    72,
+    64,
+    70,
+    69,
+    66,
+    58,
+    46,
+    49,
+    51,
+    49,
+    44,
+    43,
+    52,
+    30,
+    50,
+    32,
+    35,
+    31,
+    31,
+    26,
+    37,
+    27,
+    28,
+    28,
+    35,
+    20,
+    26,
+    22,
+    26,
+    24,
+    24,
+    27,
+    18,
+    19,
+    27,
+    23,
+    14,
+    16,
+    14,
+    17,
+    20,
+    16,
+    23,
+    14,
+    10,
+    10,
+    10,
+    12,
+    14,
+    17,
+    9,
+    23
+  ],
+  "weight_target_duration_ps": 0,
+  "weight_sender_end_ps": 1000,
+  "weight_bytes": 0,
+  "verified_bytes": [
+    640000,
+    640000,
+    0
+  ],
+  "remote_bytes": [
+    630400,
+    630400,
+    0
+  ],
+  "local_bytes": [
+    9600,
+    9600,
+    0
+  ],
+  "target_segments": 9850,
+  "remote_WQEs": 9850,
+  "timeline": {
+    "layer_start": 1000,
+    "planning_end": 1000,
+    "reroute_end": 1000,
+    "weights_end": 1000,
+    "dispatch_gate": 1000,
+    "layer_end": 136650168
+  },
+  "compute_intervals": [
+    {
+      "node": 0,
+      "start_ps": 18476120,
+      "end_ps": 115702168
+    },
+    {
+      "node": 1,
+      "start_ps": 11356960,
+      "end_ps": 68671584
+    },
+    {
+      "node": 2,
+      "start_ps": 8671880,
+      "end_ps": 47898568
+    },
+    {
+      "node": 3,
+      "start_ps": 6802840,
+      "end_ps": 39049944
+    },
+    {
+      "node": 4,
+      "start_ps": 4962760,
+      "end_ps": 26887944
+    },
+    {
+      "node": 5,
+      "start_ps": 4600680,
+      "end_ps": 24953000
+    },
+    {
+      "node": 6,
+      "start_ps": 3709480,
+      "end_ps": 18851688
+    },
+    {
+      "node": 7,
+      "start_ps": 3142880,
+      "end_ps": 17203744
+    },
+    {
+      "node": 8,
+      "start_ps": 2827400,
+      "end_ps": 14037448
+    },
+    {
+      "node": 9,
+      "start_ps": 2183440,
+      "end_ps": 11427408
+    },
+    {
+      "node": 10,
+      "start_ps": 2427400,
+      "end_ps": 12064584
+    },
+    {
+      "node": 11,
+      "start_ps": 1632280,
+      "end_ps": 8910168
+    },
+    {
+      "node": 12,
+      "start_ps": 1692240,
+      "end_ps": 8970128
+    },
+    {
+      "node": 13,
+      "start_ps": 1701360,
+      "end_ps": 8192816
+    },
+    {
+      "node": 14,
+      "start_ps": 1694280,
+      "end_ps": 8775560
+    },
+    {
+      "node": 15,
+      "start_ps": 1749280,
+      "end_ps": 8732256
+    },
+    {
+      "node": 16,
+      "start_ps": 1786720,
+      "end_ps": 8474784
+    },
+    {
+      "node": 17,
+      "start_ps": 1333160,
+      "end_ps": 7234792
+    },
+    {
+      "node": 18,
+      "start_ps": 1218120,
+      "end_ps": 5940104
+    },
+    {
+      "node": 19,
+      "start_ps": 1387160,
+      "end_ps": 6404056
+    },
+    {
+      "node": 20,
+      "start_ps": 1170720,
+      "end_ps": 6384224
+    },
+    {
+      "node": 21,
+      "start_ps": 1129280,
+      "end_ps": 6146176
+    },
+    {
+      "node": 22,
+      "start_ps": 1455560,
+      "end_ps": 5980936
+    },
+    {
+      "node": 23,
+      "start_ps": 1123440,
+      "end_ps": 5550512
+    },
+    {
+      "node": 24,
+      "start_ps": 1488040,
+      "end_ps": 6799848
+    },
+    {
+      "node": 25,
+      "start_ps": 950120,
+      "end_ps": 4099240
+    },
+    {
+      "node": 26,
+      "start_ps": 1645920,
+      "end_ps": 6761120
+    },
+    {
+      "node": 27,
+      "start_ps": 940840,
+      "end_ps": 4286568
+    },
+    {
+      "node": 28,
+      "start_ps": 969520,
+      "end_ps": 4610160
+    },
+    {
+      "node": 29,
+      "start_ps": 1345560,
+      "end_ps": 4592984
+    },
+    {
+      "node": 30,
+      "start_ps": 1128280,
+      "end_ps": 4375704
+    },
+    {
+      "node": 31,
+      "start_ps": 1117760,
+      "end_ps": 3873664
+    },
+    {
+      "node": 32,
+      "start_ps": 1065000,
+      "end_ps": 4902248
+    },
+    {
+      "node": 33,
+      "start_ps": 1075320,
+      "end_ps": 3929528
+    },
+    {
+      "node": 34,
+      "start_ps": 1286200,
+      "end_ps": 4238712
+    },
+    {
+      "node": 35,
+      "start_ps": 1070920,
+      "end_ps": 4023432
+    },
+    {
+      "node": 36,
+      "start_ps": 1115760,
+      "end_ps": 4756400
+    },
+    {
+      "node": 37,
+      "start_ps": 1501480,
+      "end_ps": 3667560
+    },
+    {
+      "node": 38,
+      "start_ps": 1596320,
+      "end_ps": 4352224
+    },
+    {
+      "node": 39,
+      "start_ps": 852600,
+      "end_ps": 3215288
+    },
+    {
+      "node": 40,
+      "start_ps": 917520,
+      "end_ps": 3673424
+    },
+    {
+      "node": 41,
+      "start_ps": 970160,
+      "end_ps": 3529456
+    },
+    {
+      "node": 42,
+      "start_ps": 1825760,
+      "end_ps": 4385056
+    },
+    {
+      "node": 43,
+      "start_ps": 1125920,
+      "end_ps": 3980128
+    },
+    {
+      "node": 44,
+      "start_ps": 776200,
+      "end_ps": 2745672
+    },
+    {
+      "node": 45,
+      "start_ps": 1305200,
+      "end_ps": 3372976
+    },
+    {
+      "node": 46,
+      "start_ps": 1123200,
+      "end_ps": 3977408
+    },
+    {
+      "node": 47,
+      "start_ps": 1691600,
+      "end_ps": 4152592
+    },
+    {
+      "node": 48,
+      "start_ps": 1373520,
+      "end_ps": 2949776
+    },
+    {
+      "node": 49,
+      "start_ps": 1191600,
+      "end_ps": 2964464
+    },
+    {
+      "node": 50,
+      "start_ps": 1079360,
+      "end_ps": 2655616
+    },
+    {
+      "node": 51,
+      "start_ps": 1175360,
+      "end_ps": 3046528
+    },
+    {
+      "node": 52,
+      "start_ps": 1563920,
+      "end_ps": 3730000
+    },
+    {
+      "node": 53,
+      "start_ps": 815680,
+      "end_ps": 2588544
+    },
+    {
+      "node": 54,
+      "start_ps": 1118880,
+      "end_ps": 3579872
+    },
+    {
+      "node": 55,
+      "start_ps": 1526560,
+      "end_ps": 3102816
+    },
+    {
+      "node": 56,
+      "start_ps": 788280,
+      "end_ps": 1971320
+    },
+    {
+      "node": 57,
+      "start_ps": 881960,
+      "end_ps": 2065000
+    },
+    {
+      "node": 58,
+      "start_ps": 657800,
+      "end_ps": 1840840
+    },
+    {
+      "node": 59,
+      "start_ps": 1169520,
+      "end_ps": 2549168
+    },
+    {
+      "node": 60,
+      "start_ps": 902120,
+      "end_ps": 2478376
+    },
+    {
+      "node": 61,
+      "start_ps": 902920,
+      "end_ps": 2774088
+    },
+    {
+      "node": 62,
+      "start_ps": 973320,
+      "end_ps": 2058056
+    },
+    {
+      "node": 63,
+      "start_ps": 1147880,
+      "end_ps": 3608872
+    }
+  ],
+  "computation": "three-matrix SwiGLU GEMM FLOPs",
+  "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+  "empty": false
+}

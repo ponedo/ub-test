@@ -1,0 +1,50 @@
+aborted. cond="task.hasSrcPortId && task.srcPortId > CTP_MAX_CNA16_PORT_ID", msg="CTP source port 15 cannot be encoded as CNA16", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/ub-app.cc, line=231
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="task.hasDstPortId && task.dstPortId > CTP_MAX_CNA16_PORT_ID", msg="CTP destination port 15 cannot be encoded as CNA16", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/ub-app.cc, line=233
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="!controller->IsCtpEntityPortMember(dstEntityId, receivePort)", msg="CTP ingress port 1 is not a member of Entity 1", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-ctp.cc, line=1331
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="!controller->IsCtpEntityPortMember(dstEntityId, receivePort)", msg="CTP ingress port 1 is not a member of Entity 1", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-ctp.cc, line=1331
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="!controller->IsCtpEntityPortMember(dstEntityId, receivePort)", msg="CTP ingress port 1 is not a member of Entity 1", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-ctp.cc, line=1331
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="!controller->IsCtpEntityPortMember(dstEntityId, receivePort)", msg="CTP ingress port 1 is not a member of Entity 1", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-ctp.cc, line=1331
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="utils::Cna16ToPortId(cnaHeader.GetDcna()) != receivePort", msg="Explicit CTP destination CNA does not match the ingress port", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-ctp.cc, line=1336
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="!peerController->HasCtpEntity(routeKey.dstEntityId)", msg="CTP destination Entity 2 is not configured on node 1", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-ctp.cc, line=1762
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="srcPortId != UINT32_MAX && srcPortId > CTP_MAX_CNA16_PORT_ID", msg="CTP source port cannot be encoded as CNA16: 15", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-ctp.cc, line=136
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="dstPortId != UINT32_MAX && dstPortId > CTP_MAX_CNA16_PORT_ID", msg="CTP destination port cannot be encoded as CNA16: 15", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-ctp.cc, line=138
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="dstPortId != UINT32_MAX && dstPortId > CTP_MAX_CNA16_PORT_ID", msg="CTP destination port cannot be encoded as CNA16: 16", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/jetty-index-native/src/unified-bus/model/protocol/ub-ctp.cc, line=138
+NS_FATAL, terminating
+terminate called without an active exception
+PASS unified-bus-ctp-endpoint 0.021 s
+  PASS UnifiedBus - runtime task conversion preserves endpoint port fields and presence 0.000 s
+  PASS UnifiedBus - app CTP runtime task uses App Entity and WQE ports 0.008 s
+  PASS UnifiedBus - Jetty copies CTP endpoint ports from WQE to segment 0.000 s
+  PASS UnifiedBus - CTP endpoint constraints stay local to each task 0.000 s
+  PASS UnifiedBus - multiple CTP Apps select independent host Entities 0.000 s
+  PASS UnifiedBus - CTP wildcard destination routes to a Peer Entity member 0.000 s
+  PASS UnifiedBus - CTP App rejects traffic ports outside the CNA16 range 0.001 s
+  PASS UnifiedBus - CTP source Entity rejects routes outside its members 0.001 s
+  PASS UnifiedBus - CTP data packet builds reference compact CTP header stack 0.000 s
+  PASS UnifiedBus - CTP CNA16 encodes wildcard and endpoint port boundaries 0.000 s
+  PASS UnifiedBus - CTP receive validates Entity membership before opcode handling 0.004 s
+  PASS UnifiedBus - delayed CTP remote processor preserves reversed endpoint ports 0.000 s
+  PASS UnifiedBus - switch routes CTP Primary CNA to a destination Entity member 0.000 s
+  PASS UnifiedBus - CTP READ response reverses explicit and wildcard ports 0.000 s
+  PASS UnifiedBus - CTP explicit source port still requires the peer Entity 0.001 s
+  PASS UnifiedBus - CTP endpoint ports reject unencodable CNA16 values 0.001 s

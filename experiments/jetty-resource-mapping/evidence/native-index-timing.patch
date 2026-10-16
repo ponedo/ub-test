@@ -1,0 +1,324 @@
+--- a/src/unified-bus/model/ub-sliding-bitmap-window.h
++++ b/src/unified-bus/model/ub-sliding-bitmap-window.h
+@@ -6,6 +6,62 @@
+ #include <cstdint>
+ #include <limits>
+ #include <vector>
++
++// BEGIN opt-in native CPU diagnostics. Single-threaded simulator only.
++#include <chrono>
++#include <cstdio>
++#include <cstdlib>
++#include <cstring>
++#include <ctime>
++namespace ns3 { namespace ubcpu {
++enum TimerId { CreateJettyBound,CreateJettyUnbound,CreateObjectJetty,JettyInit,RegisterJetty,ResolveWqeLifecycleLocalId,SubmitWqe,SubmitCtpWqe,RegisterWqe,AckResize,AckReset,AppRun,AppRead,AppTopology,AppWriteArtifacts,AppWritePayloads,AppSimulatorRun,AppSimulatorDestroy,AppValidate,AppTargetExecutor,AppTargetCompletion,AppEvent,AppSend,AppUbUtilsDestroy,AppLogClose,AppLayerDestroy,TransactionInboundTaUnit,TransactionSegmentComplete,GetJettiesUsingTpn,TransactionExecuteInbound,NativeAppendTrace,NativeCommitTrace,NativeFlushTrace,PortDispatchReceive,TransportParseData,TransportHandleAck,AppPair,AppInit, TimerCount };
++enum CounterId { LifecycleCandidates,JettyRecordsScanned,WqeEntriesCompared,AckResizeSlots,AckResizeBytes,AckCapacityGrowthRequests,AckResetSlots,AckResetBytes,TpnLookupJettyRecordsScanned,TpnLookupTransportEntriesCompared,TpnLookupLiveTransportVectorSlots,TpnLookupMatchedJetties, CounterCount };
++inline bool Enabled() {
++    static const bool enabled = [] { const char* p = std::getenv("NATIVE_CPU_PROFILE");
++        return p && *p && std::strcmp(p, "0") != 0; }();
++    return enabled;
++}
++inline bool Detailed() {
++    static const bool enabled = [] { const char* p = std::getenv("NATIVE_CPU_PROFILE_DETAIL");
++        return p && *p && std::strcmp(p, "0") != 0; }(); return enabled;
++}
++struct Stat { uint64_t calls=0, wall=0, cpu=0, selfWall=0, selfCpu=0; };
++struct State { Stat timers[TimerCount]; uint64_t counters[CounterCount]{}; uint64_t clockErrors=0; };
++#if defined(__GNUC__)
++#define NS3_UBCPU_EXPORT __attribute__((visibility("default")))
++#else
++#define NS3_UBCPU_EXPORT
++#endif
++NS3_UBCPU_EXPORT void Report();
++NS3_UBCPU_EXPORT State& Data();
++inline uint64_t Wall() { return std::chrono::duration_cast<std::chrono::nanoseconds>(
++    std::chrono::steady_clock::now().time_since_epoch()).count(); }
++inline uint64_t Cpu() { struct timespec ts{};
++    if (clock_gettime(CLOCK_THREAD_CPUTIME_ID, &ts) != 0) { ++Data().clockErrors; return 0; }
++    return uint64_t(ts.tv_sec)*1000000000ULL + uint64_t(ts.tv_nsec); }
++inline void Count(CounterId id, uint64_t n=1) { if (Enabled()) Data().counters[id]+=n; }
++struct Scope;
++NS3_UBCPU_EXPORT Scope*& Top();
++struct Scope {
++    TimerId id; bool active; Scope* parent=nullptr;
++    uint64_t wall=0,cpu=0,childWall=0,childCpu=0;
++    explicit Scope(TimerId i, bool detailed=false): id(i), active(Enabled() && (!detailed || Detailed())) {
++        if (!active) return;
++        ++Data().timers[id].calls; parent=Top(); Top()=this; wall=Wall(); cpu=Cpu();
++    }
++    ~Scope() {
++        if (!active) return;
++        const auto endCpu=Cpu(), endWall=Wall();
++        const auto w=endWall-wall, c=endCpu>=cpu?endCpu-cpu:0;
++        auto& s=Data().timers[id]; s.wall+=w; s.cpu+=c;
++        s.selfWall+=w>=childWall?w-childWall:0; s.selfCpu+=c>=childCpu?c-childCpu:0;
++        Top()=parent; if(parent){parent->childWall+=w; parent->childCpu+=c;}
++    }
++    Scope(const Scope&)=delete; Scope& operator=(const Scope&)=delete;
++};
++}} // ns3::ubcpu
++// END opt-in native CPU diagnostics.
++
+ 
+ namespace ns3 {
+ 
+@@ -19,12 +75,19 @@
+ 
+     void Resize(uint32_t windowSize)
+     {
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::AckResize);
++        ns3::ubcpu::Count(ns3::ubcpu::AckResizeSlots, windowSize);
++        ns3::ubcpu::Count(ns3::ubcpu::AckResizeBytes, uint64_t(windowSize)*sizeof(uint64_t));
++        if (windowSize > m_slots.capacity()) ns3::ubcpu::Count(ns3::ubcpu::AckCapacityGrowthRequests);
+         m_windowSize = windowSize;
+         m_slots.assign(windowSize, kInvalidSequence);
+     }
+ 
+     void Reset(uint64_t baseSequence = 0)
+     {
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::AckReset);
++        ns3::ubcpu::Count(ns3::ubcpu::AckResetSlots, m_slots.size());
++        ns3::ubcpu::Count(ns3::ubcpu::AckResetBytes, uint64_t(m_slots.size())*sizeof(uint64_t));
+         m_baseSequence = baseSequence;
+         std::fill(m_slots.begin(), m_slots.end(), kInvalidSequence);
+     }
+--- a/src/unified-bus/model/protocol/ub-function.cc
++++ b/src/unified-bus/model/protocol/ub-function.cc
+@@ -58,9 +58,13 @@
+ void
+ UbFunction::CreateJetty(uint32_t src, uint32_t dest, uint32_t jettyNum, UbJettyLifetime lifetime)
+ {
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::CreateJettyBound);
+     NS_LOG_DEBUG(this << src << dest << jettyNum);
+     // 创建新的Jetty
+-    Ptr<UbJetty> jetty = CreateObject<UbJetty>();
++    Ptr<UbJetty> jetty = [] {
++        ns3::ubcpu::Scope allocationScope(ns3::ubcpu::CreateObjectJetty);
++        return CreateObject<UbJetty>();
++    }();
+     jetty->Init();
+     jetty->SetNodeId(m_nodeId);
+     jetty->SetJettyNum(jettyNum);
+@@ -74,8 +78,12 @@
+ void
+ UbFunction::CreateJetty(uint32_t src, uint32_t jettyNum, UbJettyLifetime lifetime)
+ {
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::CreateJettyUnbound);
+     NS_LOG_DEBUG(this << src << jettyNum);
+-    Ptr<UbJetty> jetty = CreateObject<UbJetty>();
++    Ptr<UbJetty> jetty = [] {
++        ns3::ubcpu::Scope allocationScope(ns3::ubcpu::CreateObjectJetty);
++        return CreateObject<UbJetty>();
++    }();
+     jetty->Init();
+     jetty->SetNodeId(m_nodeId);
+     jetty->SetJettyNum(jettyNum);
+@@ -154,6 +162,7 @@
+ 
+ UbWqeSubmissionResult UbFunction::SubmitWqe(Ptr<UbWqe> wqe, uint32_t jettyNum)
+ {
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::SubmitWqe);
+     NS_LOG_DEBUG(this);
+     Ptr<UbJetty> ubJetty = GetJetty(jettyNum);
+     if (ubJetty == nullptr) {
+@@ -246,6 +255,7 @@
+                          uint32_t jettyNum,
+                          const UbCtpEntityKey& key)
+ {
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::SubmitCtpWqe);
+     Ptr<UbJetty> jetty = GetJetty(jettyNum);
+     if (jetty == nullptr)
+     {
+@@ -522,6 +532,7 @@
+ void
+ UbJettyManager::RegisterJetty(Ptr<UbJetty> jetty, UbJettyLifetime lifetime)
+ {
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::RegisterJetty);
+     NS_ABORT_MSG_IF(jetty == nullptr, "Cannot register a null Jetty");
+     const uint32_t jettyNum = jetty->GetJettyNum();
+     NS_ABORT_MSG_IF(m_jettyRecordsByNum.find(jettyNum) != m_jettyRecordsByNum.end(),
+@@ -685,6 +696,7 @@
+                             uint32_t wqeId,
+                             const UbLifecycleResourceIdentity& identity)
+ {
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::RegisterWqe);
+     auto it = m_jettyRecordsByNum.find(jettyNum);
+     NS_ABORT_MSG_IF(it == m_jettyRecordsByNum.end() ||
+                         it->second.state != UbJettyLifecycleState::ACTIVE,
+@@ -696,13 +708,17 @@
+ uint64_t
+ UbJettyManager::ResolveWqeLifecycleLocalId(uint32_t jettyNum, uint32_t wqeId) const
+ {
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::ResolveWqeLifecycleLocalId);
+     const auto isInUse = [this](uint64_t localId) {
++        ns3::ubcpu::Count(ns3::ubcpu::LifecycleCandidates);
+         for (const auto& [candidateJettyNum, record] : m_jettyRecordsByNum)
+         {
++            ns3::ubcpu::Count(ns3::ubcpu::JettyRecordsScanned);
+             (void)candidateJettyNum;
+             if (std::any_of(record.wqes.begin(),
+                             record.wqes.end(),
+                             [localId](const auto& entry) {
++                                ns3::ubcpu::Count(ns3::ubcpu::WqeEntriesCompared);
+                                 return entry.second.localId == localId;
+                             }))
+             {
+@@ -1041,6 +1057,7 @@
+ 
+ void UbJetty::Init()
+ {
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::JettyInit);
+     ResetSsnAckBitset(m_oooAckThreshold);
+ }
+ 
+@@ -1651,3 +1668,25 @@
+ 
+ 
+ } // namespace ns3
++
++namespace ns3 { namespace ubcpu {
++State& Data() { static State* p = [] { auto* s = new State;
++    std::atexit(Report); return s; }(); return *p; }
++Scope*& Top() { static thread_local Scope* p=nullptr; return p; }
++void Report() {
++    if (!Enabled()) return;
++    const char* path=std::getenv("NATIVE_CPU_PROFILE_OUT");
++    FILE* f=path&&*path?std::fopen(path,"w"):stderr;
++    if(!f){ std::fprintf(stderr,"native_cpu_profile: cannot open output; using stderr\n"); f=stderr; }
++    const char* timers[]={"CreateJettyBound","CreateJettyUnbound","CreateObjectJetty","JettyInit","RegisterJetty","ResolveWqeLifecycleLocalId","SubmitWqe","SubmitCtpWqe","RegisterWqe","AckResize","AckReset","AppRun","AppRead","AppTopology","AppWriteArtifacts","AppWritePayloads","AppSimulatorRun","AppSimulatorDestroy","AppValidate","AppTargetExecutor","AppTargetCompletion","AppEvent","AppSend","AppUbUtilsDestroy","AppLogClose","AppLayerDestroy","TransactionInboundTaUnit","TransactionSegmentComplete","GetJettiesUsingTpn","TransactionExecuteInbound","NativeAppendTrace","NativeCommitTrace","NativeFlushTrace","PortDispatchReceive","TransportParseData","TransportHandleAck","AppPair","AppInit"}; const char* counters[]={"LifecycleCandidates","JettyRecordsScanned","WqeEntriesCompared","AckResizeSlots","AckResizeBytes","AckCapacityGrowthRequests","AckResetSlots","AckResetBytes","TpnLookupJettyRecordsScanned","TpnLookupTransportEntriesCompared","TpnLookupLiveTransportVectorSlots","TpnLookupMatchedJetties"};
++    std::fprintf(f,"kind\tname\tcalls_or_count\tinclusive_wall_ns\tinclusive_thread_cpu_ns\texclusive_wall_ns\texclusive_thread_cpu_ns\n");
++    for(unsigned i=0;i<TimerCount;++i){const auto& s=Data().timers[i];
++        std::fprintf(f,"timer\t%s\t%llu\t%llu\t%llu\t%llu\t%llu\n",timers[i],
++        (unsigned long long)s.calls,(unsigned long long)s.wall,(unsigned long long)s.cpu,
++        (unsigned long long)s.selfWall,(unsigned long long)s.selfCpu);}
++    for(unsigned i=0;i<CounterCount;++i) std::fprintf(f,"counter\t%s\t%llu\t0\t0\t0\t0\n",
++        counters[i],(unsigned long long)Data().counters[i]);
++    std::fprintf(f,"counter\tClockErrors\t%llu\t0\t0\t0\t0\n",(unsigned long long)Data().clockErrors);
++    if(f!=stderr) std::fclose(f); else std::fflush(f);
++}
++}} // ns3::ubcpu
+--- a/src/unified-bus/model/protocol/ub-transaction.cc
++++ b/src/unified-bus/model/protocol/ub-transaction.cc
+@@ -639,6 +639,7 @@
+ std::vector<Ptr<UbJetty>>
+ UbTransaction::GetJettiesUsingTpn(uint32_t tpn)
+ {
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::GetJettiesUsingTpn);
+     NS_LOG_DEBUG(this);
+     std::vector<Ptr<UbJetty>> jetties;
+     std::set<uint32_t> candidates;
+@@ -666,16 +667,20 @@
+     // Match the old ordered binding scan, including exact-generation liveness checks.
+     for (uint32_t jettyNum : candidates)
+     {
++        ns3::ubcpu::Count(ns3::ubcpu::TpnLookupJettyRecordsScanned);
+         const std::vector<Ptr<UbTransportChannel>> transports = GetJettyLiveTps(jettyNum);
++        ns3::ubcpu::Count(ns3::ubcpu::TpnLookupLiveTransportVectorSlots, transports.size());
+         const bool jettyUsesTpn =
+             std::any_of(transports.begin(),
+                         transports.end(),
+                         [tpn](const Ptr<UbTransportChannel>& transport) {
++                            ns3::ubcpu::Count(ns3::ubcpu::TpnLookupTransportEntriesCompared);
+                             return transport != nullptr && transport->GetTpn() == tpn;
+                         });
+         Ptr<UbJetty> jetty = jettyUsesTpn ? GetJetty(jettyNum) : nullptr;
+         if (jetty != nullptr)
+         {
++            ns3::ubcpu::Count(ns3::ubcpu::TpnLookupMatchedJetties);
+             jetties.push_back(jetty);
+         }
+     }
+@@ -1920,6 +1925,7 @@
+ 
+ bool UbTransaction::ProcessWqeSegmentComplete(Ptr<UbWqeSegment> wqeSegment)
+ {
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::TransactionSegmentComplete);
+     if (wqeSegment == nullptr) {
+         return false;
+     }
+@@ -1952,6 +1958,7 @@
+ 
+ void UbTransaction::HandleInboundTaUnit(uint32_t localTpn, Ptr<UbWqeSegment> segment)
+ {
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::TransactionInboundTaUnit);
+     if (segment == nullptr) {
+         return;
+     }
+@@ -1970,6 +1977,7 @@
+                                           Ptr<UbWqeSegment> request,
+                                           UbTransactionResponseSink sink)
+ {
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::TransactionExecuteInbound, true);
+     if (request == nullptr)
+         return;
+     const auto* rule = FindTransactionRule(request->GetType());
+--- a/src/unified-bus/model/ub-utils.cc
++++ b/src/unified-bus/model/ub-utils.cc
+@@ -1,3 +1,4 @@
++#include "ns3/ub-sliding-bitmap-window.h"
+ // SPDX-License-Identifier: GPL-2.0-only
+ #include "ub-utils.h"
+ 
+@@ -1617,6 +1618,7 @@
+ void
+ UbUtils::CommitTraceChunk(TraceFileState& fileState, std::string& chunk)
+ {
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::NativeCommitTrace, true);
+     if (chunk.empty())
+     {
+         return;
+@@ -1708,6 +1710,7 @@
+ void
+ UbUtils::AppendTraceLine(const TraceSinkHandle& sink, std::string line)
+ {
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::NativeAppendTrace, true);
+     const uint64_t epoch = trace_writer_epoch.load(std::memory_order_acquire);
+     NS_ABORT_MSG_IF(!sink.IsValid() || sink.epoch != epoch, "Stale or invalid trace sink handle");
+     auto& fileState = *static_cast<TraceFileState*>(sink.state);
+@@ -1787,6 +1790,7 @@
+ void
+ UbUtils::FlushTraceFile(TraceFileState& fileState)
+ {
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::NativeFlushTrace, true);
+     std::vector<TraceOwnerState*> owners;
+     {
+         std::lock_guard<std::mutex> filesGuard(files_mutex);
+--- a/src/unified-bus/model/ub-port.cc
++++ b/src/unified-bus/model/ub-port.cc
+@@ -1,3 +1,4 @@
++#include "ns3/ub-sliding-bitmap-window.h"
+ // SPDX-License-Identifier: GPL-2.0-only
+ #include "ns3/ub-port.h"
+ #include "ns3/ub-cbfc.h"
+@@ -897,6 +898,7 @@
+ void
+ UbPort::DispatchReceive(Ptr<Packet> packet)
+ {
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::PortDispatchReceive, true);
+     if (!m_receiveHandler.IsNull())
+     {
+         m_receiveHandler(this, packet);
+--- a/src/unified-bus/model/protocol/ub-transport.cc
++++ b/src/unified-bus/model/protocol/ub-transport.cc
+@@ -1,3 +1,4 @@
++#include "ns3/ub-sliding-bitmap-window.h"
+ // SPDX-License-Identifier: GPL-2.0-only
+ #include "ns3/ub-transport.h"
+ 
+@@ -1642,6 +1643,7 @@
+                                             uint64_t previousSndUna,
+                                             UbRetransAckResult& ackResult)
+ {
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::TransportHandleAck, true);
+     if (ctx.hasCetph && !ctx.hasSaetph) {
+         const uint64_t ackPsn =
+             UbTpPsnSequence::Unwrap(ctx.transportHeader.GetPsn(), m_psnSndUna);
+@@ -1917,6 +1919,7 @@
+ UbTransportChannel::ParseReceivedDataPacket(Ptr<Packet> packet,
+                                             ReceivedDataPacketContext& ctx)
+ {
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::TransportParseData, true);
+     if (packet == nullptr) {
+         NS_LOG_ERROR("Null packet received");
+         return false;

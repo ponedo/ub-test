@@ -1,0 +1,612 @@
+{
+  "partial": true,
+  "captured_utc": "2026-10-16T16:27:01.804227+00:00",
+  "raw": "/workspace/scratch/c6ba02920254/jetty-mapping-raw",
+  "invocation": [
+    "jetty-resource-mapping/experiments/jetty-resource-mapping/summarize.py",
+    "--raw",
+    "jetty-mapping-raw",
+    "--out",
+    "jetty-resource-mapping/experiments/jetty-resource-mapping/evidence/measurements-timing",
+    "--sizes",
+    "5000",
+    "10000",
+    "20000",
+    "50000"
+  ],
+  "selected_sizes": [
+    5000,
+    10000,
+    20000,
+    50000
+  ],
+  "attempts": [
+    {
+      "attempt": "10000-A-instrumented",
+      "assignments": 10000,
+      "arm": "A",
+      "phase": "instrumented",
+      "status": "not_run",
+      "selected_size": true,
+      "source": null
+    },
+    {
+      "attempt": "10000-A-timing",
+      "assignments": 10000,
+      "arm": "A",
+      "phase": "timing",
+      "status": "success",
+      "selected_size": true,
+      "source": "jetty-mapping-raw/10000-A-timing/attempt.json",
+      "wall_seconds": 18.308328024984803,
+      "user_cpu_seconds": 17.881279,
+      "system_cpu_seconds": 0.310239,
+      "cpu_seconds": 18.191518,
+      "peak_rss_mib": 487.6875,
+      "strict_verify": "PASS",
+      "output_files": 398,
+      "remote_WQEs": 19674,
+      "target_TAs": 19674,
+      "layer_latency_ps": 271031968
+    },
+    {
+      "attempt": "10000-B-instrumented",
+      "assignments": 10000,
+      "arm": "B",
+      "phase": "instrumented",
+      "status": "not_run",
+      "selected_size": true,
+      "source": null
+    },
+    {
+      "attempt": "10000-B-timing",
+      "assignments": 10000,
+      "arm": "B",
+      "phase": "timing",
+      "status": "success",
+      "selected_size": true,
+      "source": "jetty-mapping-raw/10000-B-timing/attempt.json",
+      "wall_seconds": 9.028683754033409,
+      "user_cpu_seconds": 8.514255,
+      "system_cpu_seconds": 0.264026,
+      "cpu_seconds": 8.778281,
+      "peak_rss_mib": 488.94921875,
+      "strict_verify": "PASS",
+      "output_files": 398,
+      "remote_WQEs": 19674,
+      "target_TAs": 19674,
+      "layer_latency_ps": 271031968
+    },
+    {
+      "attempt": "10000-C-instrumented",
+      "assignments": 10000,
+      "arm": "C",
+      "phase": "instrumented",
+      "status": "not_run",
+      "selected_size": true,
+      "source": null
+    },
+    {
+      "attempt": "10000-C-timing",
+      "assignments": 10000,
+      "arm": "C",
+      "phase": "timing",
+      "status": "not_run",
+      "selected_size": true,
+      "source": null
+    },
+    {
+      "attempt": "100000-A-instrumented",
+      "assignments": 100000,
+      "arm": "A",
+      "phase": "instrumented",
+      "status": "not_run",
+      "selected_size": false,
+      "source": null
+    },
+    {
+      "attempt": "100000-A-timing",
+      "assignments": 100000,
+      "arm": "A",
+      "phase": "timing",
+      "status": "not_run",
+      "selected_size": false,
+      "source": null
+    },
+    {
+      "attempt": "100000-B-instrumented",
+      "assignments": 100000,
+      "arm": "B",
+      "phase": "instrumented",
+      "status": "not_run",
+      "selected_size": false,
+      "source": null
+    },
+    {
+      "attempt": "100000-B-timing",
+      "assignments": 100000,
+      "arm": "B",
+      "phase": "timing",
+      "status": "not_run",
+      "selected_size": false,
+      "source": null
+    },
+    {
+      "attempt": "100000-C-instrumented",
+      "assignments": 100000,
+      "arm": "C",
+      "phase": "instrumented",
+      "status": "not_run",
+      "selected_size": false,
+      "source": null
+    },
+    {
+      "attempt": "100000-C-timing",
+      "assignments": 100000,
+      "arm": "C",
+      "phase": "timing",
+      "status": "not_run",
+      "selected_size": false,
+      "source": null
+    },
+    {
+      "attempt": "20000-A-instrumented",
+      "assignments": 20000,
+      "arm": "A",
+      "phase": "instrumented",
+      "status": "not_run",
+      "selected_size": true,
+      "source": null
+    },
+    {
+      "attempt": "20000-A-timing",
+      "assignments": 20000,
+      "arm": "A",
+      "phase": "timing",
+      "status": "success",
+      "selected_size": true,
+      "source": "jetty-mapping-raw/20000-A-timing/attempt.json",
+      "wall_seconds": 64.95426672999747,
+      "user_cpu_seconds": 64.35473,
+      "system_cpu_seconds": 0.51357,
+      "cpu_seconds": 64.8683,
+      "peak_rss_mib": 860.53515625,
+      "strict_verify": "PASS",
+      "output_files": 398,
+      "remote_WQEs": 39354,
+      "target_TAs": 39354,
+      "layer_latency_ps": 543165776
+    },
+    {
+      "attempt": "20000-B-instrumented",
+      "assignments": 20000,
+      "arm": "B",
+      "phase": "instrumented",
+      "status": "not_run",
+      "selected_size": true,
+      "source": null
+    },
+    {
+      "attempt": "20000-B-timing",
+      "assignments": 20000,
+      "arm": "B",
+      "phase": "timing",
+      "status": "success",
+      "selected_size": true,
+      "source": "jetty-mapping-raw/20000-B-timing/attempt.json",
+      "wall_seconds": 23.567117238009814,
+      "user_cpu_seconds": 22.890566,
+      "system_cpu_seconds": 0.623558,
+      "cpu_seconds": 23.514124,
+      "peak_rss_mib": 862.91015625,
+      "strict_verify": "PASS",
+      "output_files": 398,
+      "remote_WQEs": 39354,
+      "target_TAs": 39354,
+      "layer_latency_ps": 543165776
+    },
+    {
+      "attempt": "20000-C-instrumented",
+      "assignments": 20000,
+      "arm": "C",
+      "phase": "instrumented",
+      "status": "not_run",
+      "selected_size": true,
+      "source": null
+    },
+    {
+      "attempt": "20000-C-timing",
+      "assignments": 20000,
+      "arm": "C",
+      "phase": "timing",
+      "status": "not_run",
+      "selected_size": true,
+      "source": null
+    },
+    {
+      "attempt": "5000-A-instrumented",
+      "assignments": 5000,
+      "arm": "A",
+      "phase": "instrumented",
+      "status": "success",
+      "selected_size": true,
+      "source": "jetty-mapping-raw/5000-A-instrumented/attempt.json",
+      "wall_seconds": 5.517711400985718,
+      "user_cpu_seconds": 5.20607,
+      "system_cpu_seconds": 0.267997,
+      "cpu_seconds": 5.474067000000001,
+      "peak_rss_mib": 288.328125,
+      "strict_verify": "PASS",
+      "output_files": 398,
+      "remote_WQEs": 9850,
+      "target_TAs": 9850,
+      "layer_latency_ps": 136649168,
+      "tpn_query_calls": 36736,
+      "tpn_records_scanned": 9952287,
+      "tpn_entries_compared": 9952287,
+      "tpn_live_vector_slots": 9952287,
+      "tpn_matched_jetties": 269080,
+      "jetty_create_calls": 9850,
+      "tpn_query_thread_cpu_seconds": 2.009166568
+    },
+    {
+      "attempt": "5000-A-timing",
+      "assignments": 5000,
+      "arm": "A",
+      "phase": "timing",
+      "status": "success",
+      "selected_size": true,
+      "source": "jetty-mapping-raw/5000-A-timing/attempt.json",
+      "wall_seconds": 6.0197045230306685,
+      "user_cpu_seconds": 5.630395,
+      "system_cpu_seconds": 0.18006799999999998,
+      "cpu_seconds": 5.810463,
+      "peak_rss_mib": 288.23046875,
+      "strict_verify": "PASS",
+      "output_files": 398,
+      "remote_WQEs": 9850,
+      "target_TAs": 9850,
+      "layer_latency_ps": 136649168
+    },
+    {
+      "attempt": "5000-B-instrumented",
+      "assignments": 5000,
+      "arm": "B",
+      "phase": "instrumented",
+      "status": "success",
+      "selected_size": true,
+      "source": "jetty-mapping-raw/5000-B-instrumented/attempt.json",
+      "wall_seconds": 3.7641960839973763,
+      "user_cpu_seconds": 3.311731,
+      "system_cpu_seconds": 0.265111,
+      "cpu_seconds": 3.576842,
+      "peak_rss_mib": 288.890625,
+      "strict_verify": "PASS",
+      "output_files": 398,
+      "remote_WQEs": 9850,
+      "target_TAs": 9850,
+      "layer_latency_ps": 136649168,
+      "tpn_query_calls": 36736,
+      "tpn_records_scanned": 269080,
+      "tpn_entries_compared": 269080,
+      "tpn_live_vector_slots": 269080,
+      "tpn_matched_jetties": 269080,
+      "jetty_create_calls": 9850,
+      "tpn_query_thread_cpu_seconds": 0.340343158
+    },
+    {
+      "attempt": "5000-B-timing",
+      "assignments": 5000,
+      "arm": "B",
+      "phase": "timing",
+      "status": "success",
+      "selected_size": true,
+      "source": "jetty-mapping-raw/5000-B-timing/attempt.json",
+      "wall_seconds": 3.512687308015302,
+      "user_cpu_seconds": 3.154744,
+      "system_cpu_seconds": 0.136849,
+      "cpu_seconds": 3.2915929999999998,
+      "peak_rss_mib": 288.98046875,
+      "strict_verify": "PASS",
+      "output_files": 398,
+      "remote_WQEs": 9850,
+      "target_TAs": 9850,
+      "layer_latency_ps": 136649168
+    },
+    {
+      "attempt": "5000-C-instrumented",
+      "assignments": 5000,
+      "arm": "C",
+      "phase": "instrumented",
+      "status": "not_run",
+      "selected_size": true,
+      "source": null
+    },
+    {
+      "attempt": "5000-C-timing",
+      "assignments": 5000,
+      "arm": "C",
+      "phase": "timing",
+      "status": "not_run",
+      "selected_size": true,
+      "source": null
+    },
+    {
+      "attempt": "50000-A-instrumented",
+      "assignments": 50000,
+      "arm": "A",
+      "phase": "instrumented",
+      "status": "not_run",
+      "selected_size": true,
+      "source": null
+    },
+    {
+      "attempt": "50000-A-sampled",
+      "assignments": 50000,
+      "arm": "A",
+      "phase": "sampled",
+      "status": "running",
+      "selected_size": true,
+      "source": "jetty-mapping-raw/50000-A-sampled/attempt.json"
+    },
+    {
+      "attempt": "50000-A-timing",
+      "assignments": 50000,
+      "arm": "A",
+      "phase": "timing",
+      "status": "success",
+      "selected_size": true,
+      "source": "jetty-mapping-raw/50000-A-timing/attempt.json",
+      "wall_seconds": 370.12387856200803,
+      "user_cpu_seconds": 367.571366,
+      "system_cpu_seconds": 2.343662,
+      "cpu_seconds": 369.915028,
+      "peak_rss_mib": 1950.203125,
+      "strict_verify": "PASS",
+      "output_files": 398,
+      "remote_WQEs": 98386,
+      "target_TAs": 98386,
+      "layer_latency_ps": 1353604768
+    },
+    {
+      "attempt": "50000-B-instrumented",
+      "assignments": 50000,
+      "arm": "B",
+      "phase": "instrumented",
+      "status": "not_run",
+      "selected_size": true,
+      "source": null
+    },
+    {
+      "attempt": "50000-B-sampled",
+      "assignments": 50000,
+      "arm": "B",
+      "phase": "sampled",
+      "status": "not_run",
+      "selected_size": true,
+      "source": null
+    },
+    {
+      "attempt": "50000-B-timing",
+      "assignments": 50000,
+      "arm": "B",
+      "phase": "timing",
+      "status": "success",
+      "selected_size": true,
+      "source": "jetty-mapping-raw/50000-B-timing/attempt.json",
+      "wall_seconds": 105.55579833098454,
+      "user_cpu_seconds": 103.916184,
+      "system_cpu_seconds": 1.445485,
+      "cpu_seconds": 105.361669,
+      "peak_rss_mib": 1955.12890625,
+      "strict_verify": "PASS",
+      "output_files": 398,
+      "remote_WQEs": 98386,
+      "target_TAs": 98386,
+      "layer_latency_ps": 1353604768
+    },
+    {
+      "attempt": "50000-C-instrumented",
+      "assignments": 50000,
+      "arm": "C",
+      "phase": "instrumented",
+      "status": "not_run",
+      "selected_size": true,
+      "source": null
+    },
+    {
+      "attempt": "50000-C-sampled",
+      "assignments": 50000,
+      "arm": "C",
+      "phase": "sampled",
+      "status": "not_run",
+      "selected_size": true,
+      "source": null
+    },
+    {
+      "attempt": "50000-C-timing",
+      "assignments": 50000,
+      "arm": "C",
+      "phase": "timing",
+      "status": "not_run",
+      "selected_size": true,
+      "source": null
+    }
+  ],
+  "parity": [
+    {
+      "attempt": "10000-B-timing",
+      "reference": "10000-A-timing",
+      "status": "compared_saved_sha256",
+      "files_reference": 398,
+      "files_attempt": 398,
+      "all_398_byte_identical": true,
+      "differing_files": "",
+      "payload_bytes_identical": true,
+      "events_including_time_identical": true,
+      "summary_identical": true,
+      "inputs_identical": true,
+      "strict_verify": "PASS"
+    },
+    {
+      "attempt": "20000-B-timing",
+      "reference": "20000-A-timing",
+      "status": "compared_saved_sha256",
+      "files_reference": 398,
+      "files_attempt": 398,
+      "all_398_byte_identical": true,
+      "differing_files": "",
+      "payload_bytes_identical": true,
+      "events_including_time_identical": true,
+      "summary_identical": true,
+      "inputs_identical": true,
+      "strict_verify": "PASS"
+    },
+    {
+      "attempt": "5000-A-instrumented",
+      "reference": "5000-A-timing",
+      "status": "compared_saved_sha256",
+      "files_reference": 398,
+      "files_attempt": 398,
+      "all_398_byte_identical": true,
+      "differing_files": "",
+      "payload_bytes_identical": true,
+      "events_including_time_identical": true,
+      "summary_identical": true,
+      "inputs_identical": true,
+      "strict_verify": "PASS"
+    },
+    {
+      "attempt": "5000-B-instrumented",
+      "reference": "5000-B-timing",
+      "status": "compared_saved_sha256",
+      "files_reference": 398,
+      "files_attempt": 398,
+      "all_398_byte_identical": true,
+      "differing_files": "",
+      "payload_bytes_identical": true,
+      "events_including_time_identical": true,
+      "summary_identical": true,
+      "inputs_identical": true,
+      "strict_verify": "PASS"
+    },
+    {
+      "attempt": "5000-B-timing",
+      "reference": "5000-A-timing",
+      "status": "compared_saved_sha256",
+      "files_reference": 398,
+      "files_attempt": 398,
+      "all_398_byte_identical": true,
+      "differing_files": "",
+      "payload_bytes_identical": true,
+      "events_including_time_identical": true,
+      "summary_identical": true,
+      "inputs_identical": true,
+      "strict_verify": "PASS"
+    },
+    {
+      "attempt": "50000-B-timing",
+      "reference": "50000-A-timing",
+      "status": "compared_saved_sha256",
+      "files_reference": 398,
+      "files_attempt": 398,
+      "all_398_byte_identical": true,
+      "differing_files": "",
+      "payload_bytes_identical": true,
+      "events_including_time_identical": true,
+      "summary_identical": true,
+      "inputs_identical": true,
+      "strict_verify": "PASS"
+    }
+  ],
+  "provenance": {
+    "jetty-mapping-raw/10000-A-timing/attempt.json": {
+      "sha256": "d001a434b6dad041381008fb5f6bbc0b28b055da4d4972d8273e895517b6bf0f",
+      "status": "success"
+    },
+    "jetty-mapping-raw/10000-B-timing/attempt.json": {
+      "sha256": "c140b1f21bc99963c676a97b49fdc4ef98aa8724353a7a307f9676910b1a8423",
+      "status": "success"
+    },
+    "jetty-mapping-raw/20000-A-timing/attempt.json": {
+      "sha256": "fc84fa77939ff2b9f25ac1e7c5ea5f0223b2502e298d3552cf4bd5f8c80cdb9c",
+      "status": "success"
+    },
+    "jetty-mapping-raw/20000-B-timing/attempt.json": {
+      "sha256": "c98905d0dcccd580e14d401173ff6dd8fbac07c1ef7594ff9fb332e867764ee5",
+      "status": "success"
+    },
+    "jetty-mapping-raw/5000-A-instrumented/attempt.json": {
+      "sha256": "c5ad4e2978ef5b98c8eb6204de0f5227c9e63903bc4a3e425da67f7d1659878d",
+      "status": "success"
+    },
+    "jetty-mapping-raw/5000-A-timing/attempt.json": {
+      "sha256": "0fb35dc8f1f2208fc9457052b4efac02d5a0855d05b76b2adf3455510a7187cd",
+      "status": "success"
+    },
+    "jetty-mapping-raw/5000-B-instrumented/attempt.json": {
+      "sha256": "cff09e4e95bcd068a8cfeab62a696f997cd6ed58f6dc14ee9a37b4d957ca6347",
+      "status": "success"
+    },
+    "jetty-mapping-raw/5000-B-timing/attempt.json": {
+      "sha256": "130dfb394915064e20c2a8c71aca61eb709b62372216db8dc83c42fb18e556d8",
+      "status": "success"
+    },
+    "jetty-mapping-raw/50000-A-sampled/attempt.json": {
+      "sha256": "19431937581fb6d2bccd3dc5102b8492bcde7ec903697bd81105817c2759d8f7",
+      "status": "running"
+    },
+    "jetty-mapping-raw/50000-A-timing/attempt.json": {
+      "sha256": "2f1b46df113fa512a8f13350d8b296d83599f087d9852c39895372c83677771c",
+      "status": "success"
+    },
+    "jetty-mapping-raw/50000-B-timing/attempt.json": {
+      "sha256": "9af5ac95d676a5441489324cf36e77fe91add41a9709b9a5199474e9896c5d89",
+      "status": "success"
+    },
+    "jetty-mapping-raw/10000-A-timing/run/summary.json": {
+      "sha256": "cfdc85837e5dfe17cb4a7b6c2881ba4ba39b9888321160c3f71c66c3135601f6"
+    },
+    "jetty-mapping-raw/10000-B-timing/run/summary.json": {
+      "sha256": "cfdc85837e5dfe17cb4a7b6c2881ba4ba39b9888321160c3f71c66c3135601f6"
+    },
+    "jetty-mapping-raw/20000-A-timing/run/summary.json": {
+      "sha256": "7b83fe143c2a37b06be0d27249ed49675c85307253fb0527687715971c1562ef"
+    },
+    "jetty-mapping-raw/20000-B-timing/run/summary.json": {
+      "sha256": "7b83fe143c2a37b06be0d27249ed49675c85307253fb0527687715971c1562ef"
+    },
+    "jetty-mapping-raw/5000-A-instrumented/run/summary.json": {
+      "sha256": "fb453f70c5efacb58abd71a90d45de69d6be411f0873fff9e65e884101b08716"
+    },
+    "jetty-mapping-raw/5000-A-instrumented/timing.tsv": {
+      "sha256": "60578898cb8e15b379899235e2bea0d48a9bbfcbf53a7497ef684ce6154802bc"
+    },
+    "jetty-mapping-raw/5000-A-timing/run/summary.json": {
+      "sha256": "fb453f70c5efacb58abd71a90d45de69d6be411f0873fff9e65e884101b08716"
+    },
+    "jetty-mapping-raw/5000-B-instrumented/run/summary.json": {
+      "sha256": "fb453f70c5efacb58abd71a90d45de69d6be411f0873fff9e65e884101b08716"
+    },
+    "jetty-mapping-raw/5000-B-instrumented/timing.tsv": {
+      "sha256": "d45d9c8caee7fddeaa6e0600dabce64dff316e493f3203c44d046c173348f268"
+    },
+    "jetty-mapping-raw/5000-B-timing/run/summary.json": {
+      "sha256": "fb453f70c5efacb58abd71a90d45de69d6be411f0873fff9e65e884101b08716"
+    },
+    "jetty-mapping-raw/50000-A-timing/run/summary.json": {
+      "sha256": "8c2864e891d3de3c63b2b4ce8173f7612bcea80d800644bd5c945d7dd930f936"
+    },
+    "jetty-mapping-raw/50000-B-timing/run/summary.json": {
+      "sha256": "8c2864e891d3de3c63b2b4ce8173f7612bcea80d800644bd5c945d7dd930f936"
+    }
+  },
+  "notes": [
+    "No benchmarks launched. Reads only saved small metadata and timing TSV files.",
+    "Byte parity uses recorded per-file SHA256 from completed guarded runs; raw payloads/events were not rehashed during this concurrent-safe summary.",
+    "C not run is missing evidence, not a zero-cost result.",
+    "Single-trial measurements are descriptive; no significance claim.",
+    "Jetty create calls measured only in instrumented runs; no resource count inferred from WQE count.",
+    "Curves include successful selected sizes only. Entire declared matrix, failures, and running attempts remain in CSV/JSON."
+  ]
+}

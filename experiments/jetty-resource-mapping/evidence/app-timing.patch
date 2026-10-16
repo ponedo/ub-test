@@ -1,0 +1,124 @@
+--- a/experiments/multi-npu-relay/multi-npu-relay.cc
++++ b/experiments/multi-npu-relay/multi-npu-relay.cc
+@@ -1,3 +1,5 @@
++#include "ns3/ub-sliding-bitmap-window.h"
++#include <optional>
+ // SPDX-License-Identifier: GPL-2.0-only
+ #include "ns3/core-module.h"
+ #include "ns3/network-module.h"
+@@ -23,6 +25,9 @@
+ };
+ class Layer {
+ public:
++    struct CpuCleanupTail { std::optional<ns3::ubcpu::Scope> scope; } cpuCleanupTail;
++    ~Layer(){cpuCleanupTail.scope.emplace(ns3::ubcpu::AppLayerDestroy);}
++
+     uint32_t n,e,k,t,dim,ff,dtype,segment,peak,util,setup,seed,linkGbps,linkDelayNs;
+     uint32_t matrices,weightBytes,planningNs,rerouteNs,weightCompleteNs,balanced,strategy;
+     uint32_t bytes,receivedTokens=0,senderCount=0,remoteCount=0,pendingWeights=0;
+@@ -45,6 +50,7 @@
+     static constexpr uint64_t startPs=1000;
+     PhysicalExpert& P(uint32_t id){Require(pIndex.count(id),"unknown physical ID");return physical[pIndex.at(id)];}
+     void Event(std::string event,int stage=-1,int id=-1,int node=-1,uint64_t off=0,uint64_t len=0,int task=-1){
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::AppEvent);
+         log<<Simulator::Now().GetPicoSeconds()<<','<<event<<','<<stage<<','<<id<<','<<node<<','<<off<<','<<len<<','<<task<<'\n';
+     }
+     void TE(std::string event,uint32_t task,uint32_t node,uint64_t off=0,uint64_t len=0){auto& x=transfers.at(task);Event(event,x.stage,x.id,node,off,len,task);}
+@@ -58,6 +64,7 @@
+         Transfer x{stage,id,src,dst,pid,size};x.tracker=std::make_unique<ChunkTracker>(size);x.data.resize(size);transfers.push_back(std::move(x));
+     }
+     void Read(const std::string& path){
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::AppRead);
+         std::ifstream f(path);Require(bool(f),"missing input");
+         uint64_t v[14];for(auto& x:v)Require(bool(f>>x)&&x<=UINT32_MAX,"invalid integer config");
+         n=v[0];e=v[1];k=v[2];t=v[3];dim=v[4];ff=v[5];dtype=v[6];segment=v[7];peak=v[8];util=v[9];setup=v[10];seed=v[11];linkGbps=v[12];linkDelayNs=v[13];
+@@ -130,6 +137,7 @@
+     }
+   Ptr<UbController> Ctrl(uint32_t node) {return nodes[node]->GetObject<UbController>();}
+   void Init(uint32_t node,bool host,uint32_t count) {
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::AppInit);
+     nodes[node]=CreateObject<Node>();auto sw=CreateObject<UbSwitch>();nodes[node]->AggregateObject(sw);sw->SetNodeType(host?UB_DEVICE:UB_SWITCH);
+     if(host) {auto c=CreateObject<UbController>();nodes[node]->AggregateObject(c);c->CreateUbFunction();c->CreateUbTransaction();}
+     for(uint32_t p=0;p<count;++p) {
+@@ -145,6 +153,7 @@
+   uint32_t Tpn(uint32_t a,uint32_t b) const {return a*n+b+1;}
+ 
+     void Pair(uint32_t a,uint32_t b){
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::AppPair);
+         Connection c;c.ownerNodeId=a;c.node1=a;c.node2=b;c.port1=c.port2=0;c.tpn1=Tpn(a,b);c.tpn2=Tpn(b,a);c.priority=7;c.metrics=0;
+         Ctrl(a)->GetTpConnManager()->AddUnilateralConnection(c,a);Ctrl(b)->GetTpConnManager()->AddUnilateralConnection(c,b);
+         for(auto [src,dst]:{std::pair{a,b},std::pair{b,a}}){
+@@ -155,6 +164,7 @@
+         }
+     }
+     void Topology(const std::string& out){
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::AppTopology);
+         GlobalValue::Bind("UB_CC_ENABLED",BooleanValue(false));UbUtils::Get();
+         for(auto key:{"UB_TRACE_ENABLE","UB_PACKET_TRACE_ENABLE","UB_PORT_TRACE_ENABLE","UB_RECORD_PKT_TRACE"})GlobalValue::Bind(key,BooleanValue(true));
+         std::filesystem::create_directories(out+"/native/runlog");UbUtils::SetTracePathForTest(out+"/native");traceOn=true;
+@@ -168,6 +178,7 @@
+             jetty->SetClientCallback(Callback<void,uint32_t,uint32_t>([this,task](uint32_t,uint32_t){auto& x=transfers.at(task);Require(!x.senderDone,"duplicate sender completion");x.senderDone=true;++senderCount;TE("sender_complete",task,x.source);}));
+         }
+         for(uint32_t node=0;node<n;++node)Require(Ctrl(node)->GetUbTransaction()->SetTargetExecutor(UbTargetExecutor([this,node](Ptr<const UbWqeSegment> req,const UbTransactionRule&,UbTargetCompletion done){
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::AppTargetExecutor);
+             uint32_t task=req->GetTaskId();auto& x=transfers.at(task);
+             Require(req->GetSrc()==x.source&&req->GetDest()==node&&node==x.target&&req->GetType()==UbTransactionOpcode::WRITE&&req->HasTransactionResolved()&&x.sent,"target identity");
+             uint64_t off=uint64_t(req->GetTaSsn())*segment,len=req->GetLogicalBytes();
+@@ -175,6 +186,7 @@
+             TE("target_received",task,node,off,len);std::vector<uint8_t> data(len);req->GetExplicitPayload()->CopyData(data.data(),len);Validate(task,off,data);TE("payload_verified",task,node,off,len);
+             // Target execution completion, not sender WQE completion, grants ready.
+             auto complete=[this,task,node,off,len,ssn=req->GetTaSsn(),done]{
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::AppTargetCompletion);
+                 done(UbWorkExecutionResult{});TE("target_complete",task,node,off,len);
+                 bool fresh=transfers[task].tracker->Notify(ssn,off,len);
+                 if(fault=="duplicate-notify"&&transfers[task].stage==2){
+@@ -190,8 +202,10 @@
+         })),"target executor");
+         UbUtils::Get()->TopoTraceConnect();for(auto [a,b]:pairs){UbUtils::Get()->SingleTpTraceConnect(a,Tpn(a,b));UbUtils::Get()->SingleTpTraceConnect(b,Tpn(b,a));}
+     }
+-    void Validate(uint32_t task,uint64_t off,const std::vector<uint8_t>& data){auto& x=transfers.at(task);for(size_t i=0;i<data.size();++i){Require(data[i]==ExpectedByte(task,off+i),"payload byte mismatch");x.data[off+i]=data[i];if(x.stage==2)weightData[pIndex.at(x.physical)][x.offset+off+i]=data[i];}}
+-    void Send(uint32_t task){auto& x=transfers.at(task);Require(!x.sent,"duplicate forwarding");
++    void Validate(uint32_t task,uint64_t off,const std::vector<uint8_t>& data){
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::AppValidate);auto& x=transfers.at(task);for(size_t i=0;i<data.size();++i){Require(data[i]==ExpectedByte(task,off+i),"payload byte mismatch");x.data[off+i]=data[i];if(x.stage==2)weightData[pIndex.at(x.physical)][x.offset+off+i]=data[i];}}
++    void Send(uint32_t task){
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::AppSend);auto& x=transfers.at(task);Require(!x.sent,"duplicate forwarding");
+         Require(planningDone,"send before planning");if(x.stage==0)Require(dispatchStarted,"dispatch gate");if(x.stage==1)Require(finished[x.source],"combine before compute");
+         if(x.stage==2)for(auto parent:x.dependencies)Require(transfers[parent].ready,"relay before target chunk ready (including group)");
+         if(x.stage==2&&strategy==2&&P(x.sourcePhysical).replica){
+@@ -247,6 +261,7 @@
+         if(--pendingWeights==0){weightsDone=true;Event("weights_end");Gate();}
+     }
+     void WriteArtifacts(const std::string& out){
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::AppWriteArtifacts);
+         std::ofstream graph(out+"/executed-transfers.csv");
+         graph<<"task,stage,id,source,target,physical,bytes,source_physical,offset,dependencies\n";
+         for(uint32_t task=0;task<transfers.size();++task){auto& x=transfers[task];
+@@ -256,6 +271,7 @@
+         }
+     }
+     void WritePayloads(const std::string& out){
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::AppWritePayloads);
+         std::ofstream data(out+"/received-payloads.bin",std::ios::binary),index(out+"/payload-index.csv");
+         index<<"task,offset,bytes\n";uint64_t off=0;
+         for(uint32_t task=0;task<transfers.size();++task){auto& x=transfers[task];
+@@ -276,8 +292,9 @@
+         });
+     }
+     void Run(const std::string& input,const std::string& out){
++    ns3::ubcpu::Scope cpuScope(ns3::ubcpu::AppRun);
+         Read(input);std::filesystem::create_directories(out);log.open(out+"/events.csv");Require(bool(log),"log");log<<"time_ps,event,stage,id,node,offset,bytes,task\n";
+-        WriteArtifacts(out);Topology(out);Simulator::Schedule(PicoSeconds(startPs),&Layer::Start,this);Simulator::Stop(Seconds(10));Simulator::Run();
++        WriteArtifacts(out);Topology(out);Simulator::Schedule(PicoSeconds(startPs),&Layer::Start,this);Simulator::Stop(Seconds(10));{ns3::ubcpu::Scope stageScope(ns3::ubcpu::AppSimulatorRun);Simulator::Run();}
+         if(!capacityMetrics.empty()){
+             std::ofstream metrics(capacityMetrics);Require(bool(metrics),"capacity metrics file");
+             metrics<<"{\"simulator_events\":"<<Simulator::GetEventCount()<<",\"assignments\":"<<assignments.size()
+@@ -286,7 +303,7 @@
+         }
+         Require(dispatchStarted&&receivedTokens==t&&pendingWeights==0&&senderCount==remoteCount,"unfinished layer");for(auto& x:transfers)Require(x.sent&&x.ready,"missing transfer");for(auto r:weightReady)Require(r,"missing weight");
+         std::cout<<"PASS forward: N="<<n<<" assignments="<<assignments.size()<<" replicas="<<physical.size()-e<<" remote_WQEs="<<remoteCount<<" target-verified bytes\n";
+-        WritePayloads(out);log.close();UbUtils::Get()->Destroy();traceOn=false;Simulator::Destroy();
++        WritePayloads(out);{ns3::ubcpu::Scope stageScope(ns3::ubcpu::AppLogClose);log.close();}{ns3::ubcpu::Scope cleanupScope(ns3::ubcpu::AppUbUtilsDestroy);UbUtils::Get()->Destroy();}traceOn=false;{ns3::ubcpu::Scope stageScope(ns3::ubcpu::AppSimulatorDestroy);Simulator::Destroy();}
+     }
+ };
+-int main(int argc,char** argv){Time::SetResolution(Time::PS);Layer layer;std::string input,out;CommandLine cmd;cmd.AddValue("input","validated execution input",input);cmd.AddValue("out","output directory",out);cmd.AddValue("capacityMetrics","optional post-run capacity counters",layer.capacityMetrics);cmd.AddValue("fault","test-only fault injection",layer.fault);cmd.Parse(argc,argv);try{Require(layer.fault.empty()||layer.fault=="weight-byte"||layer.fault=="premature-ready"||layer.fault=="duplicate-weight"||layer.fault=="early-compute"||layer.fault=="early-group"||layer.fault=="relay-byte"||layer.fault=="relay-buffer-byte"||layer.fault=="duplicate-notify"||layer.fault=="early-relay"||layer.fault=="early-final-ready","unknown fault");Require(!input.empty()&&!out.empty(),"input/out");layer.Run(input,out);}catch(const std::exception& ex){if(layer.log){layer.Event("error");layer.log.flush();}if(layer.traceOn)UbUtils::Get()->Destroy();std::cerr<<"ERROR: "<<ex.what()<<'\n';return 2;}return 0;}
++int main(int argc,char** argv){Time::SetResolution(Time::PS);Layer layer;std::string input,out;CommandLine cmd;cmd.AddValue("input","validated execution input",input);cmd.AddValue("out","output directory",out);cmd.AddValue("capacityMetrics","optional post-run capacity counters",layer.capacityMetrics);cmd.AddValue("fault","test-only fault injection",layer.fault);cmd.Parse(argc,argv);try{Require(layer.fault.empty()||layer.fault=="weight-byte"||layer.fault=="premature-ready"||layer.fault=="duplicate-weight"||layer.fault=="early-compute"||layer.fault=="early-group"||layer.fault=="relay-byte"||layer.fault=="relay-buffer-byte"||layer.fault=="duplicate-notify"||layer.fault=="early-relay"||layer.fault=="early-final-ready","unknown fault");Require(!input.empty()&&!out.empty(),"input/out");layer.Run(input,out);}catch(const std::exception& ex){if(layer.log){layer.Event("error");layer.log.flush();}if(layer.traceOn){ns3::ubcpu::Scope cleanupScope(ns3::ubcpu::AppUbUtilsDestroy);UbUtils::Get()->Destroy();}std::cerr<<"ERROR: "<<ex.what()<<'\n';return 2;}return 0;}

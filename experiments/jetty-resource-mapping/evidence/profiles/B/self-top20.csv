@@ -1,0 +1,21 @@
+symbol,samples,percent
+std::_Rb_tree_increment(std::_Rb_tree_node_base const*) (/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33),1921,18.90748031496063
+ns3::UbTransaction::GetJettyLiveTps(unsigned int) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so),1639,16.131889763779526
+ns3::UbFunction::GetJetty(unsigned int) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so),925,9.104330708661417
+[unknown] (/usr/lib/x86_64-linux-gnu/libc.so.6),611,6.0137795275590555
+ns3::UbTransaction::TryContinueJettyTransmission(unsigned int) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so),431,4.2421259842519685
+"ns3::UbJettyManager::ResolveWqeLifecycleLocalId(unsigned int, unsigned int) const (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so)",279,2.7460629921259843
+ns3::UbTransportChannel::GetNextPacketSize() (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so),210,2.0669291338582676
+cfree (/usr/lib/x86_64-linux-gnu/libc.so.6),172,1.6929133858267718
+"ns3::UbTransaction::IsOrderedByInitiator(unsigned int, ns3::Ptr<ns3::UbWqe>) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so)",151,1.486220472440945
+malloc (/usr/lib/x86_64-linux-gnu/libc.so.6),146,1.437007874015748
+ns3::UbRoundRobinAllocator::SelectNextIngressQueue(ns3::Ptr<ns3::UbPort>) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so),132,1.2992125984251968
+"std::_Rb_tree<ns3::UbLifecycleCoordinator::ResourceKey, std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState>, std::_Select1st<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> >, std::less<ns3::UbLifecycleCoordinator::ResourceKey>, std::allocator<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> > >::find(ns3::UbLifecycleCoordinator::ResourceKey const&) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so)",131,1.2893700787401574
+ns3::UbRetransController::GetRetransEnable() const (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so),125,1.2303149606299213
+"utils::UbUtils::AppendTraceLine(utils::UbUtils::TraceSinkHandle const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so)",96,0.9448818897637795
+ns3::UbTransaction::GetJettiesUsingTpn(unsigned int) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so),94,0.9251968503937008
+ns3::UbTransaction::TryContinueJettyTransmission(ns3::Ptr<ns3::UbTransportChannel>) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so),90,0.8858267716535433
+ns3::UbTransportChannel::IsEmpty() (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so),88,0.8661417322834646
+"(anonymous namespace)::CsvRow(std::initializer_list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >) (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so)",83,0.8169291338582677
+"ns3::UbSwitchAllocator::FindNextEligibleIngressQueue(unsigned int, unsigned int, unsigned int, ns3::Ptr<ns3::UbPort>) const (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so)",76,0.7480314960629921
+"std::_Rb_tree<ns3::UbLifecycleCoordinator::ResourceKey, std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState>, std::_Select1st<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> >, std::less<ns3::UbLifecycleCoordinator::ResourceKey>, std::allocator<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> > >::find(ns3::UbLifecycleCoordinator::ResourceKey const&) const (/workspace/scratch/c6ba02920254/jetty-mapping-raw/frozen/B/lib/libns3.44-unified-bus.so)",74,0.7283464566929134

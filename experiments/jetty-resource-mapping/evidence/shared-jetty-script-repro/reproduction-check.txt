@@ -1,0 +1,3 @@
+A: known premature-completion failure reproduced; callback 70309 ns < SSN9 completion 70335 ns. Eventual byte coverage complete; terminal UNA==NXT alone does not prove all responses were received.
+B: known premature-completion failure reproduced; callback 70309 ns < SSN9 completion 70335 ns. Eventual byte coverage complete; terminal UNA==NXT alone does not prove all responses were received.
+EXPECTED_BASELINE_FAILURE_REPRODUCED: controls pass; concurrent multi-WQE capability fails equally in A and B. This is not a capability PASS.
