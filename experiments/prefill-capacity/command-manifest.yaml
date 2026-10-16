@@ -1,0 +1,672 @@
+[
+  {
+    "case_id": "no-balancing-50000",
+    "stages": [
+      {
+        "stage": "generate",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "generate",
+          "--case",
+          "/workspace/prefill-capacity-raw/no-balancing-50000",
+          "--assignments",
+          "50000",
+          "--mode",
+          "no-balancing"
+        ]
+      },
+      {
+        "stage": "planner",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "planner",
+          "--case",
+          "/workspace/prefill-capacity-raw/no-balancing-50000",
+          "--assignments",
+          "50000",
+          "--mode",
+          "no-balancing"
+        ]
+      },
+      {
+        "stage": "adapter",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "adapter",
+          "--case",
+          "/workspace/prefill-capacity-raw/no-balancing-50000",
+          "--assignments",
+          "50000",
+          "--mode",
+          "no-balancing"
+        ]
+      },
+      {
+        "stage": "verify",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "verify",
+          "--case",
+          "/workspace/prefill-capacity-raw/no-balancing-50000",
+          "--assignments",
+          "50000",
+          "--mode",
+          "no-balancing"
+        ]
+      }
+    ],
+    "ns3_argv": [
+      "/workspace/ns-3-ub/build/scratch/ns3.44-multi-npu-relay",
+      "--input=/workspace/prefill-capacity-raw/no-balancing-50000/run/input.txt",
+      "--out=/workspace/prefill-capacity-raw/no-balancing-50000/run",
+      "--capacityMetrics=/workspace/prefill-capacity-raw/no-balancing-50000/run/simulator-metrics.json"
+    ]
+  },
+  {
+    "case_id": "no-balancing-100000",
+    "stages": [
+      {
+        "stage": "generate",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "generate",
+          "--case",
+          "/workspace/prefill-capacity-raw/no-balancing-100000",
+          "--assignments",
+          "100000",
+          "--mode",
+          "no-balancing"
+        ]
+      },
+      {
+        "stage": "planner",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "planner",
+          "--case",
+          "/workspace/prefill-capacity-raw/no-balancing-100000",
+          "--assignments",
+          "100000",
+          "--mode",
+          "no-balancing"
+        ]
+      },
+      {
+        "stage": "adapter",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "adapter",
+          "--case",
+          "/workspace/prefill-capacity-raw/no-balancing-100000",
+          "--assignments",
+          "100000",
+          "--mode",
+          "no-balancing"
+        ]
+      },
+      {
+        "stage": "verify",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "verify",
+          "--case",
+          "/workspace/prefill-capacity-raw/no-balancing-100000",
+          "--assignments",
+          "100000",
+          "--mode",
+          "no-balancing"
+        ]
+      }
+    ],
+    "ns3_argv": [
+      "/workspace/ns-3-ub/build/scratch/ns3.44-multi-npu-relay",
+      "--input=/workspace/prefill-capacity-raw/no-balancing-100000/run/input.txt",
+      "--out=/workspace/prefill-capacity-raw/no-balancing-100000/run",
+      "--capacityMetrics=/workspace/prefill-capacity-raw/no-balancing-100000/run/simulator-metrics.json"
+    ]
+  },
+  {
+    "case_id": "no-balancing-200000",
+    "stages": [
+      {
+        "stage": "generate",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "generate",
+          "--case",
+          "/workspace/prefill-capacity-raw/no-balancing-200000",
+          "--assignments",
+          "200000",
+          "--mode",
+          "no-balancing"
+        ]
+      },
+      {
+        "stage": "planner",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "planner",
+          "--case",
+          "/workspace/prefill-capacity-raw/no-balancing-200000",
+          "--assignments",
+          "200000",
+          "--mode",
+          "no-balancing"
+        ]
+      },
+      {
+        "stage": "adapter",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "adapter",
+          "--case",
+          "/workspace/prefill-capacity-raw/no-balancing-200000",
+          "--assignments",
+          "200000",
+          "--mode",
+          "no-balancing"
+        ]
+      },
+      {
+        "stage": "verify",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "verify",
+          "--case",
+          "/workspace/prefill-capacity-raw/no-balancing-200000",
+          "--assignments",
+          "200000",
+          "--mode",
+          "no-balancing"
+        ]
+      }
+    ],
+    "ns3_argv": [
+      "/workspace/ns-3-ub/build/scratch/ns3.44-multi-npu-relay",
+      "--input=/workspace/prefill-capacity-raw/no-balancing-200000/run/input.txt",
+      "--out=/workspace/prefill-capacity-raw/no-balancing-200000/run",
+      "--capacityMetrics=/workspace/prefill-capacity-raw/no-balancing-200000/run/simulator-metrics.json"
+    ]
+  },
+  {
+    "case_id": "no-balancing-500000",
+    "stages": [
+      {
+        "stage": "generate",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "generate",
+          "--case",
+          "/workspace/prefill-capacity-raw/no-balancing-500000",
+          "--assignments",
+          "500000",
+          "--mode",
+          "no-balancing"
+        ]
+      },
+      {
+        "stage": "planner",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "planner",
+          "--case",
+          "/workspace/prefill-capacity-raw/no-balancing-500000",
+          "--assignments",
+          "500000",
+          "--mode",
+          "no-balancing"
+        ]
+      },
+      {
+        "stage": "adapter",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "adapter",
+          "--case",
+          "/workspace/prefill-capacity-raw/no-balancing-500000",
+          "--assignments",
+          "500000",
+          "--mode",
+          "no-balancing"
+        ]
+      },
+      {
+        "stage": "verify",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "verify",
+          "--case",
+          "/workspace/prefill-capacity-raw/no-balancing-500000",
+          "--assignments",
+          "500000",
+          "--mode",
+          "no-balancing"
+        ]
+      }
+    ],
+    "ns3_argv": [
+      "/workspace/ns-3-ub/build/scratch/ns3.44-multi-npu-relay",
+      "--input=/workspace/prefill-capacity-raw/no-balancing-500000/run/input.txt",
+      "--out=/workspace/prefill-capacity-raw/no-balancing-500000/run",
+      "--capacityMetrics=/workspace/prefill-capacity-raw/no-balancing-500000/run/simulator-metrics.json"
+    ]
+  },
+  {
+    "case_id": "no-balancing-1000000",
+    "stages": [
+      {
+        "stage": "generate",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "generate",
+          "--case",
+          "/workspace/prefill-capacity-raw/no-balancing-1000000",
+          "--assignments",
+          "1000000",
+          "--mode",
+          "no-balancing"
+        ]
+      },
+      {
+        "stage": "planner",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "planner",
+          "--case",
+          "/workspace/prefill-capacity-raw/no-balancing-1000000",
+          "--assignments",
+          "1000000",
+          "--mode",
+          "no-balancing"
+        ]
+      },
+      {
+        "stage": "adapter",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "adapter",
+          "--case",
+          "/workspace/prefill-capacity-raw/no-balancing-1000000",
+          "--assignments",
+          "1000000",
+          "--mode",
+          "no-balancing"
+        ]
+      },
+      {
+        "stage": "verify",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "verify",
+          "--case",
+          "/workspace/prefill-capacity-raw/no-balancing-1000000",
+          "--assignments",
+          "1000000",
+          "--mode",
+          "no-balancing"
+        ]
+      }
+    ],
+    "ns3_argv": [
+      "/workspace/ns-3-ub/build/scratch/ns3.44-multi-npu-relay",
+      "--input=/workspace/prefill-capacity-raw/no-balancing-1000000/run/input.txt",
+      "--out=/workspace/prefill-capacity-raw/no-balancing-1000000/run",
+      "--capacityMetrics=/workspace/prefill-capacity-raw/no-balancing-1000000/run/simulator-metrics.json"
+    ]
+  },
+  {
+    "case_id": "ultraep-50000",
+    "stages": [
+      {
+        "stage": "generate",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "generate",
+          "--case",
+          "/workspace/prefill-capacity-raw/ultraep-50000",
+          "--assignments",
+          "50000",
+          "--mode",
+          "ultraep"
+        ]
+      },
+      {
+        "stage": "planner",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "planner",
+          "--case",
+          "/workspace/prefill-capacity-raw/ultraep-50000",
+          "--assignments",
+          "50000",
+          "--mode",
+          "ultraep"
+        ]
+      },
+      {
+        "stage": "adapter",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "adapter",
+          "--case",
+          "/workspace/prefill-capacity-raw/ultraep-50000",
+          "--assignments",
+          "50000",
+          "--mode",
+          "ultraep"
+        ]
+      },
+      {
+        "stage": "verify",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "verify",
+          "--case",
+          "/workspace/prefill-capacity-raw/ultraep-50000",
+          "--assignments",
+          "50000",
+          "--mode",
+          "ultraep"
+        ]
+      }
+    ],
+    "ns3_argv": [
+      "/workspace/ns-3-ub/build/scratch/ns3.44-multi-npu-relay",
+      "--input=/workspace/prefill-capacity-raw/ultraep-50000/run/input.txt",
+      "--out=/workspace/prefill-capacity-raw/ultraep-50000/run",
+      "--capacityMetrics=/workspace/prefill-capacity-raw/ultraep-50000/run/simulator-metrics.json"
+    ]
+  },
+  {
+    "case_id": "ultraep-100000",
+    "stages": [
+      {
+        "stage": "generate",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "generate",
+          "--case",
+          "/workspace/prefill-capacity-raw/ultraep-100000",
+          "--assignments",
+          "100000",
+          "--mode",
+          "ultraep"
+        ]
+      },
+      {
+        "stage": "planner",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "planner",
+          "--case",
+          "/workspace/prefill-capacity-raw/ultraep-100000",
+          "--assignments",
+          "100000",
+          "--mode",
+          "ultraep"
+        ]
+      },
+      {
+        "stage": "adapter",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "adapter",
+          "--case",
+          "/workspace/prefill-capacity-raw/ultraep-100000",
+          "--assignments",
+          "100000",
+          "--mode",
+          "ultraep"
+        ]
+      },
+      {
+        "stage": "verify",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "verify",
+          "--case",
+          "/workspace/prefill-capacity-raw/ultraep-100000",
+          "--assignments",
+          "100000",
+          "--mode",
+          "ultraep"
+        ]
+      }
+    ],
+    "ns3_argv": [
+      "/workspace/ns-3-ub/build/scratch/ns3.44-multi-npu-relay",
+      "--input=/workspace/prefill-capacity-raw/ultraep-100000/run/input.txt",
+      "--out=/workspace/prefill-capacity-raw/ultraep-100000/run",
+      "--capacityMetrics=/workspace/prefill-capacity-raw/ultraep-100000/run/simulator-metrics.json"
+    ]
+  },
+  {
+    "case_id": "ultraep-200000",
+    "stages": [
+      {
+        "stage": "generate",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "generate",
+          "--case",
+          "/workspace/prefill-capacity-raw/ultraep-200000",
+          "--assignments",
+          "200000",
+          "--mode",
+          "ultraep"
+        ]
+      },
+      {
+        "stage": "planner",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "planner",
+          "--case",
+          "/workspace/prefill-capacity-raw/ultraep-200000",
+          "--assignments",
+          "200000",
+          "--mode",
+          "ultraep"
+        ]
+      },
+      {
+        "stage": "adapter",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "adapter",
+          "--case",
+          "/workspace/prefill-capacity-raw/ultraep-200000",
+          "--assignments",
+          "200000",
+          "--mode",
+          "ultraep"
+        ]
+      },
+      {
+        "stage": "verify",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "verify",
+          "--case",
+          "/workspace/prefill-capacity-raw/ultraep-200000",
+          "--assignments",
+          "200000",
+          "--mode",
+          "ultraep"
+        ]
+      }
+    ],
+    "ns3_argv": [
+      "/workspace/ns-3-ub/build/scratch/ns3.44-multi-npu-relay",
+      "--input=/workspace/prefill-capacity-raw/ultraep-200000/run/input.txt",
+      "--out=/workspace/prefill-capacity-raw/ultraep-200000/run",
+      "--capacityMetrics=/workspace/prefill-capacity-raw/ultraep-200000/run/simulator-metrics.json"
+    ]
+  },
+  {
+    "case_id": "ultraep-500000",
+    "stages": [
+      {
+        "stage": "generate",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "generate",
+          "--case",
+          "/workspace/prefill-capacity-raw/ultraep-500000",
+          "--assignments",
+          "500000",
+          "--mode",
+          "ultraep"
+        ]
+      },
+      {
+        "stage": "planner",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "planner",
+          "--case",
+          "/workspace/prefill-capacity-raw/ultraep-500000",
+          "--assignments",
+          "500000",
+          "--mode",
+          "ultraep"
+        ]
+      },
+      {
+        "stage": "adapter",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "adapter",
+          "--case",
+          "/workspace/prefill-capacity-raw/ultraep-500000",
+          "--assignments",
+          "500000",
+          "--mode",
+          "ultraep"
+        ]
+      },
+      {
+        "stage": "verify",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "verify",
+          "--case",
+          "/workspace/prefill-capacity-raw/ultraep-500000",
+          "--assignments",
+          "500000",
+          "--mode",
+          "ultraep"
+        ]
+      }
+    ],
+    "ns3_argv": [
+      "/workspace/ns-3-ub/build/scratch/ns3.44-multi-npu-relay",
+      "--input=/workspace/prefill-capacity-raw/ultraep-500000/run/input.txt",
+      "--out=/workspace/prefill-capacity-raw/ultraep-500000/run",
+      "--capacityMetrics=/workspace/prefill-capacity-raw/ultraep-500000/run/simulator-metrics.json"
+    ]
+  },
+  {
+    "case_id": "ultraep-1000000",
+    "stages": [
+      {
+        "stage": "generate",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "generate",
+          "--case",
+          "/workspace/prefill-capacity-raw/ultraep-1000000",
+          "--assignments",
+          "1000000",
+          "--mode",
+          "ultraep"
+        ]
+      },
+      {
+        "stage": "planner",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "planner",
+          "--case",
+          "/workspace/prefill-capacity-raw/ultraep-1000000",
+          "--assignments",
+          "1000000",
+          "--mode",
+          "ultraep"
+        ]
+      },
+      {
+        "stage": "adapter",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "adapter",
+          "--case",
+          "/workspace/prefill-capacity-raw/ultraep-1000000",
+          "--assignments",
+          "1000000",
+          "--mode",
+          "ultraep"
+        ]
+      },
+      {
+        "stage": "verify",
+        "argv": [
+          "python3.12",
+          "experiments/prefill-capacity/stage.py",
+          "verify",
+          "--case",
+          "/workspace/prefill-capacity-raw/ultraep-1000000",
+          "--assignments",
+          "1000000",
+          "--mode",
+          "ultraep"
+        ]
+      }
+    ],
+    "ns3_argv": [
+      "/workspace/ns-3-ub/build/scratch/ns3.44-multi-npu-relay",
+      "--input=/workspace/prefill-capacity-raw/ultraep-1000000/run/input.txt",
+      "--out=/workspace/prefill-capacity-raw/ultraep-1000000/run",
+      "--capacityMetrics=/workspace/prefill-capacity-raw/ultraep-1000000/run/simulator-metrics.json"
+    ]
+  }
+]

@@ -1,0 +1,833 @@
+[
+  {
+    "case_id": "no-balancing-50000",
+    "mode": "no-balancing",
+    "assignments": 50000,
+    "tokens": 6250,
+    "status": "success",
+    "selection": "sequential NoBalance",
+    "raw_dir": "/workspace/prefill-capacity-raw/no-balancing-50000",
+    "stages": {
+      "generate": {
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+          "/workspace/ub-test/experiments/prefill-capacity/stage.py",
+          "generate",
+          "--case",
+          "/workspace/prefill-capacity-raw/no-balancing-50000",
+          "--assignments",
+          "50000",
+          "--mode",
+          "no-balancing"
+        ],
+        "cwd": "/workspace/ub-test",
+        "start": "2026-10-16T08:32:28.211465+00:00",
+        "wall_seconds": 0.503101037000306,
+        "returncode": 0,
+        "status": "PASS",
+        "guard": null,
+        "peak_rss_kib": 12416,
+        "sampled_peak_tree_rss_bytes": 1892352,
+        "sampled_peak_cgroup_bytes": 1614258176,
+        "user_cpu_seconds": 0.219307,
+        "system_cpu_seconds": 0.0,
+        "final_case_bytes": 358644,
+        "limits": {
+          "wall_seconds": 180,
+          "tree_rss_bytes": 8589934592,
+          "cgroup_bytes": 12884901888,
+          "address_space_bytes": 12884901888,
+          "case_disk_bytes": 6442450944,
+          "min_disk_free_bytes": 8589934592
+        },
+        "host_before": {
+          "utc": "2026-10-16T08:32:28.211465+00:00",
+          "memory_max": "17179869184",
+          "memory_current": 1613099008,
+          "cpu_max": "400000 100000",
+          "pids_max": "max",
+          "disk_free": 30075006976,
+          "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        16388176 kB\nMemAvailable:   17584132 kB\nBuffers:           26520 kB\nCached:          1405984 kB\nSwapCached:            0 kB\nActive:          1063844 kB\nInactive:         394560 kB\nActive(anon):        188 kB\nInactive(anon):    55888 kB\nActive(file):    1063656 kB\nInactive(file):   338672 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:             26836 kB\nWriteback:             0 kB\nAnonPages:         56116 kB\nMapped:            79568 kB\nShmem:               184 kB\nKReclaimable:     119036 kB\nSlab:             163076 kB\nSReclaimable:     119036 kB\nSUnreclaim:        44040 kB\nKernelStack:        2208 kB\nPageTables:         2252 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351516 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4496 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    282624 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       73728 kB\nDirectMap2M:     7337984 kB\nDirectMap1G:    28311552 kB\n"
+        },
+        "host_after": {
+          "utc": "2026-10-16T08:32:28.715064+00:00",
+          "memory_max": "17179869184",
+          "memory_current": 1613680640,
+          "cpu_max": "400000 100000",
+          "pids_max": "max",
+          "disk_free": 30074642432,
+          "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        16380800 kB\nMemAvailable:   17577168 kB\nBuffers:           26520 kB\nCached:          1406356 kB\nSwapCached:            0 kB\nActive:          1063932 kB\nInactive:         395132 kB\nActive(anon):        192 kB\nInactive(anon):    56144 kB\nActive(file):    1063740 kB\nInactive(file):   338988 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:             27204 kB\nWriteback:             0 kB\nAnonPages:         56320 kB\nMapped:            79696 kB\nShmem:               184 kB\nKReclaimable:     119060 kB\nSlab:             163104 kB\nSReclaimable:     119060 kB\nSUnreclaim:        44044 kB\nKernelStack:        2224 kB\nPageTables:         2340 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351516 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4480 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    282624 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       73728 kB\nDirectMap2M:     7337984 kB\nDirectMap1G:    28311552 kB\n"
+        }
+      },
+      "planner": {
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+          "/workspace/ub-test/experiments/prefill-capacity/stage.py",
+          "planner",
+          "--case",
+          "/workspace/prefill-capacity-raw/no-balancing-50000",
+          "--assignments",
+          "50000",
+          "--mode",
+          "no-balancing"
+        ],
+        "cwd": "/workspace/ub-test",
+        "start": "2026-10-16T08:32:28.716219+00:00",
+        "wall_seconds": 0.5025258400000894,
+        "returncode": 0,
+        "status": "PASS",
+        "guard": null,
+        "peak_rss_kib": 16476,
+        "sampled_peak_tree_rss_bytes": 942080,
+        "sampled_peak_cgroup_bytes": 1614086144,
+        "user_cpu_seconds": 0.048125,
+        "system_cpu_seconds": 0.017629,
+        "final_case_bytes": 1208033,
+        "limits": {
+          "wall_seconds": 180,
+          "tree_rss_bytes": 8589934592,
+          "cgroup_bytes": 12884901888,
+          "address_space_bytes": 12884901888,
+          "case_disk_bytes": 6442450944,
+          "min_disk_free_bytes": 8589934592
+        },
+        "host_before": {
+          "utc": "2026-10-16T08:32:28.716219+00:00",
+          "memory_max": "17179869184",
+          "memory_current": 1613672448,
+          "cpu_max": "400000 100000",
+          "pids_max": "max",
+          "disk_free": 30074617856,
+          "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        16380800 kB\nMemAvailable:   17577168 kB\nBuffers:           26524 kB\nCached:          1406352 kB\nSwapCached:            0 kB\nActive:          1063932 kB\nInactive:         395132 kB\nActive(anon):        192 kB\nInactive(anon):    56144 kB\nActive(file):    1063740 kB\nInactive(file):   338988 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:             27204 kB\nWriteback:             0 kB\nAnonPages:         56320 kB\nMapped:            79696 kB\nShmem:               184 kB\nKReclaimable:     119060 kB\nSlab:             163104 kB\nSReclaimable:     119060 kB\nSUnreclaim:        44044 kB\nKernelStack:        2224 kB\nPageTables:         2340 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351516 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4480 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    282624 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       73728 kB\nDirectMap2M:     7337984 kB\nDirectMap1G:    28311552 kB\n"
+        },
+        "host_after": {
+          "utc": "2026-10-16T08:32:29.219142+00:00",
+          "memory_max": "17179869184",
+          "memory_current": 1614569472,
+          "cpu_max": "400000 100000",
+          "pids_max": "max",
+          "disk_free": 30073765888,
+          "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        16376252 kB\nMemAvailable:   17573576 kB\nBuffers:           26532 kB\nCached:          1407276 kB\nSwapCached:            0 kB\nActive:          1063944 kB\nInactive:         396148 kB\nActive(anon):        192 kB\nInactive(anon):    56236 kB\nActive(file):    1063752 kB\nInactive(file):   339912 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:             28056 kB\nWriteback:             0 kB\nAnonPages:         56332 kB\nMapped:            79720 kB\nShmem:               184 kB\nKReclaimable:     119100 kB\nSlab:             163140 kB\nSReclaimable:     119100 kB\nSUnreclaim:        44040 kB\nKernelStack:        2224 kB\nPageTables:         2340 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351516 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4464 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    282624 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       73728 kB\nDirectMap2M:     7337984 kB\nDirectMap1G:    28311552 kB\n"
+        }
+      },
+      "adapter": {
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+          "/workspace/ub-test/experiments/prefill-capacity/stage.py",
+          "adapter",
+          "--case",
+          "/workspace/prefill-capacity-raw/no-balancing-50000",
+          "--assignments",
+          "50000",
+          "--mode",
+          "no-balancing"
+        ],
+        "cwd": "/workspace/ub-test",
+        "start": "2026-10-16T08:32:29.220232+00:00",
+        "wall_seconds": 2.5079595669994887,
+        "returncode": 0,
+        "status": "PASS",
+        "guard": null,
+        "peak_rss_kib": 338076,
+        "sampled_peak_tree_rss_bytes": 288731136,
+        "sampled_peak_cgroup_bytes": 1934512128,
+        "user_cpu_seconds": 2.189438,
+        "system_cpu_seconds": 0.28606,
+        "final_case_bytes": 69238462,
+        "limits": {
+          "wall_seconds": 180,
+          "tree_rss_bytes": 8589934592,
+          "cgroup_bytes": 12884901888,
+          "address_space_bytes": 12884901888,
+          "case_disk_bytes": 6442450944,
+          "min_disk_free_bytes": 8589934592
+        },
+        "host_before": {
+          "utc": "2026-10-16T08:32:29.220232+00:00",
+          "memory_max": "17179869184",
+          "memory_current": 1614561280,
+          "cpu_max": "400000 100000",
+          "pids_max": "max",
+          "disk_free": 30073741312,
+          "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        16376252 kB\nMemAvailable:   17573576 kB\nBuffers:           26536 kB\nCached:          1407272 kB\nSwapCached:            0 kB\nActive:          1063944 kB\nInactive:         396148 kB\nActive(anon):        192 kB\nInactive(anon):    56236 kB\nActive(file):    1063752 kB\nInactive(file):   339912 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:             28056 kB\nWriteback:             0 kB\nAnonPages:         56332 kB\nMapped:            79720 kB\nShmem:               184 kB\nKReclaimable:     119100 kB\nSlab:             163140 kB\nSReclaimable:     119100 kB\nSUnreclaim:        44040 kB\nKernelStack:        2224 kB\nPageTables:         2340 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351740 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4464 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    282624 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       73728 kB\nDirectMap2M:     7337984 kB\nDirectMap1G:    28311552 kB\n"
+        },
+        "host_after": {
+          "utc": "2026-10-16T08:32:31.728740+00:00",
+          "memory_max": "17179869184",
+          "memory_current": 1684836352,
+          "cpu_max": "400000 100000",
+          "pids_max": "max",
+          "disk_free": 30005678080,
+          "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        16068004 kB\nMemAvailable:   17332772 kB\nBuffers:           26552 kB\nCached:          1473760 kB\nSwapCached:            0 kB\nActive:          1066312 kB\nInactive:         460352 kB\nActive(anon):        192 kB\nInactive(anon):    56248 kB\nActive(file):    1066120 kB\nInactive(file):   404104 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:             94496 kB\nWriteback:             0 kB\nAnonPages:         56348 kB\nMapped:            79724 kB\nShmem:               184 kB\nKReclaimable:     120872 kB\nSlab:             165136 kB\nSReclaimable:     120872 kB\nSUnreclaim:        44264 kB\nKernelStack:        2224 kB\nPageTables:         2344 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351740 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4464 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    333824 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       73728 kB\nDirectMap2M:     7337984 kB\nDirectMap1G:    28311552 kB\n"
+        }
+      },
+      "ns3": {
+        "command": [
+          "/workspace/ns-3-ub/build/scratch/ns3.44-multi-npu-relay",
+          "--input=/workspace/prefill-capacity-raw/no-balancing-50000/run/input.txt",
+          "--out=/workspace/prefill-capacity-raw/no-balancing-50000/run",
+          "--capacityMetrics=/workspace/prefill-capacity-raw/no-balancing-50000/run/simulator-metrics.json"
+        ],
+        "cwd": "/workspace/ub-test",
+        "start": "2026-10-16T08:32:31.730394+00:00",
+        "wall_seconds": 283.4040208719998,
+        "returncode": 0,
+        "status": "PASS",
+        "guard": null,
+        "peak_rss_kib": 1996768,
+        "sampled_peak_tree_rss_bytes": 2044792832,
+        "sampled_peak_cgroup_bytes": 4181762048,
+        "user_cpu_seconds": 281.654041,
+        "system_cpu_seconds": 1.240334,
+        "final_case_bytes": 499646572,
+        "limits": {
+          "wall_seconds": 300,
+          "tree_rss_bytes": 8589934592,
+          "cgroup_bytes": 12884901888,
+          "address_space_bytes": 12884901888,
+          "case_disk_bytes": 6442450944,
+          "min_disk_free_bytes": 8589934592
+        },
+        "host_before": {
+          "utc": "2026-10-16T08:32:31.730394+00:00",
+          "memory_max": "17179869184",
+          "memory_current": 1684819968,
+          "cpu_max": "400000 100000",
+          "pids_max": "max",
+          "disk_free": 30005657600,
+          "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        16067808 kB\nMemAvailable:   17332576 kB\nBuffers:           26556 kB\nCached:          1473756 kB\nSwapCached:            0 kB\nActive:          1066312 kB\nInactive:         460352 kB\nActive(anon):        192 kB\nInactive(anon):    56248 kB\nActive(file):    1066120 kB\nInactive(file):   404104 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:             94496 kB\nWriteback:             0 kB\nAnonPages:         56348 kB\nMapped:            79724 kB\nShmem:               184 kB\nKReclaimable:     120872 kB\nSlab:             165136 kB\nSReclaimable:     120872 kB\nSUnreclaim:        44264 kB\nKernelStack:        2224 kB\nPageTables:         2344 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351740 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4464 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    333824 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       73728 kB\nDirectMap2M:     7337984 kB\nDirectMap1G:    28311552 kB\n"
+        },
+        "host_after": {
+          "utc": "2026-10-16T08:37:15.137800+00:00",
+          "memory_max": "17179869184",
+          "memory_current": 2148757504,
+          "cpu_max": "400000 100000",
+          "pids_max": "max",
+          "disk_free": 29574422528,
+          "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        15941884 kB\nMemAvailable:   17648060 kB\nBuffers:           26712 kB\nCached:          1904828 kB\nSwapCached:            0 kB\nActive:          1067708 kB\nInactive:         890716 kB\nActive(anon):        224 kB\nInactive(anon):    56848 kB\nActive(file):    1067484 kB\nInactive(file):   833868 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:            145280 kB\nWriteback:             0 kB\nAnonPages:         56932 kB\nMapped:            79732 kB\nShmem:               184 kB\nKReclaimable:     141432 kB\nSlab:             186936 kB\nSReclaimable:     141432 kB\nSUnreclaim:        45504 kB\nKernelStack:        2256 kB\nPageTables:         2336 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351944 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4560 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    333824 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       79872 kB\nDirectMap2M:     7331840 kB\nDirectMap1G:    28311552 kB\n"
+        }
+      },
+      "verify": {
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+          "/workspace/ub-test/experiments/prefill-capacity/stage.py",
+          "verify",
+          "--case",
+          "/workspace/prefill-capacity-raw/no-balancing-50000",
+          "--assignments",
+          "50000",
+          "--mode",
+          "no-balancing"
+        ],
+        "cwd": "/workspace/ub-test",
+        "start": "2026-10-16T08:37:15.140275+00:00",
+        "wall_seconds": 46.15077637600007,
+        "returncode": 0,
+        "status": "PASS",
+        "guard": null,
+        "peak_rss_kib": 697436,
+        "sampled_peak_tree_rss_bytes": 708972544,
+        "sampled_peak_cgroup_bytes": 2854543360,
+        "user_cpu_seconds": 45.755816,
+        "system_cpu_seconds": 0.244742,
+        "final_case_bytes": 499689480,
+        "limits": {
+          "wall_seconds": 300,
+          "tree_rss_bytes": 8589934592,
+          "cgroup_bytes": 12884901888,
+          "address_space_bytes": 12884901888,
+          "case_disk_bytes": 6442450944,
+          "min_disk_free_bytes": 8589934592
+        },
+        "host_before": {
+          "utc": "2026-10-16T08:37:15.140275+00:00",
+          "memory_max": "17179869184",
+          "memory_current": 2148892672,
+          "cpu_max": "400000 100000",
+          "pids_max": "max",
+          "disk_free": 29574373376,
+          "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        15941884 kB\nMemAvailable:   17648060 kB\nBuffers:           26716 kB\nCached:          1904824 kB\nSwapCached:            0 kB\nActive:          1067708 kB\nInactive:         890716 kB\nActive(anon):        224 kB\nInactive(anon):    56848 kB\nActive(file):    1067484 kB\nInactive(file):   833868 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:            145280 kB\nWriteback:             0 kB\nAnonPages:         56932 kB\nMapped:            79732 kB\nShmem:               184 kB\nKReclaimable:     141432 kB\nSlab:             186936 kB\nSReclaimable:     141432 kB\nSUnreclaim:        45504 kB\nKernelStack:        2256 kB\nPageTables:         2336 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351944 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4560 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    333824 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       79872 kB\nDirectMap2M:     7331840 kB\nDirectMap1G:    28311552 kB\n"
+        },
+        "host_after": {
+          "utc": "2026-10-16T08:38:01.294156+00:00",
+          "memory_max": "17179869184",
+          "memory_current": 2148630528,
+          "cpu_max": "400000 100000",
+          "pids_max": "max",
+          "disk_free": 29574361088,
+          "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        15905564 kB\nMemAvailable:   17611940 kB\nBuffers:           26716 kB\nCached:          1904916 kB\nSwapCached:            0 kB\nActive:          1067748 kB\nInactive:         890772 kB\nActive(anon):        224 kB\nInactive(anon):    56752 kB\nActive(file):    1067524 kB\nInactive(file):   834020 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:             45980 kB\nWriteback:             0 kB\nAnonPages:         56808 kB\nMapped:            79732 kB\nShmem:               184 kB\nKReclaimable:     141448 kB\nSlab:             186916 kB\nSReclaimable:     141448 kB\nSUnreclaim:        45468 kB\nKernelStack:        2288 kB\nPageTables:         2336 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351944 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4560 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    333824 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       79872 kB\nDirectMap2M:     7331840 kB\nDirectMap1G:    28311552 kB\n"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "no-balancing-100000",
+    "mode": "no-balancing",
+    "assignments": 100000,
+    "tokens": 12500,
+    "status": "failed",
+    "selection": "sequential NoBalance",
+    "raw_dir": "/workspace/prefill-capacity-raw/no-balancing-100000",
+    "stages": {
+      "generate": {
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+          "/workspace/ub-test/experiments/prefill-capacity/stage.py",
+          "generate",
+          "--case",
+          "/workspace/prefill-capacity-raw/no-balancing-100000",
+          "--assignments",
+          "100000",
+          "--mode",
+          "no-balancing"
+        ],
+        "cwd": "/workspace/ub-test",
+        "start": "2026-10-16T08:38:49.421826+00:00",
+        "wall_seconds": 0.5026707850001912,
+        "returncode": 0,
+        "status": "PASS",
+        "guard": null,
+        "peak_rss_kib": 15104,
+        "sampled_peak_tree_rss_bytes": 1052672,
+        "sampled_peak_cgroup_bytes": 2148864000,
+        "user_cpu_seconds": 0.401968,
+        "system_cpu_seconds": 0.0,
+        "final_case_bytes": 716372,
+        "limits": {
+          "wall_seconds": 180,
+          "tree_rss_bytes": 8589934592,
+          "cgroup_bytes": 12884901888,
+          "address_space_bytes": 12884901888,
+          "case_disk_bytes": 6442450944,
+          "min_disk_free_bytes": 8589934592,
+          "min_tmp_disk_free_bytes": 2147483648
+        },
+        "host_before": {
+          "utc": "2026-10-16T08:38:49.421826+00:00",
+          "memory_max": "17179869184",
+          "memory_current": 2148544512,
+          "cpu_max": "400000 100000",
+          "pids_max": "max",
+          "disk_free": 29574295552,
+          "tmp_disk_free": 9441173504,
+          "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        15968160 kB\nMemAvailable:   17674596 kB\nBuffers:           26744 kB\nCached:          1904944 kB\nSwapCached:            0 kB\nActive:          1067800 kB\nInactive:         890324 kB\nActive(anon):        192 kB\nInactive(anon):    56320 kB\nActive(file):    1067608 kB\nInactive(file):   834004 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:             14604 kB\nWriteback:             0 kB\nAnonPages:         56500 kB\nMapped:            79648 kB\nShmem:               184 kB\nKReclaimable:     141428 kB\nSlab:             186692 kB\nSReclaimable:     141428 kB\nSUnreclaim:        45264 kB\nKernelStack:        2256 kB\nPageTables:         2360 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351768 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4464 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    333824 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       79872 kB\nDirectMap2M:     7331840 kB\nDirectMap1G:    28311552 kB\n"
+        },
+        "host_after": {
+          "utc": "2026-10-16T08:38:49.924990+00:00",
+          "memory_max": "17179869184",
+          "memory_current": 2149224448,
+          "cpu_max": "400000 100000",
+          "pids_max": "max",
+          "disk_free": 29573574656,
+          "tmp_disk_free": 9441173504,
+          "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        15970564 kB\nMemAvailable:   17677724 kB\nBuffers:           26744 kB\nCached:          1905660 kB\nSwapCached:            0 kB\nActive:          1067800 kB\nInactive:         891036 kB\nActive(anon):        192 kB\nInactive(anon):    56324 kB\nActive(file):    1067608 kB\nInactive(file):   834712 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:             15336 kB\nWriteback:             0 kB\nAnonPages:         56628 kB\nMapped:            79764 kB\nShmem:               184 kB\nKReclaimable:     141460 kB\nSlab:             186724 kB\nSReclaimable:     141460 kB\nSUnreclaim:        45264 kB\nKernelStack:        2256 kB\nPageTables:         2360 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351768 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4464 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    333824 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       79872 kB\nDirectMap2M:     7331840 kB\nDirectMap1G:    28311552 kB\n"
+        }
+      },
+      "planner": {
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+          "/workspace/ub-test/experiments/prefill-capacity/stage.py",
+          "planner",
+          "--case",
+          "/workspace/prefill-capacity-raw/no-balancing-100000",
+          "--assignments",
+          "100000",
+          "--mode",
+          "no-balancing"
+        ],
+        "cwd": "/workspace/ub-test",
+        "start": "2026-10-16T08:38:49.926376+00:00",
+        "wall_seconds": 0.503090818999226,
+        "returncode": 0,
+        "status": "PASS",
+        "guard": null,
+        "peak_rss_kib": 23240,
+        "sampled_peak_tree_rss_bytes": 950272,
+        "sampled_peak_cgroup_bytes": 2149646336,
+        "user_cpu_seconds": 0.082064,
+        "system_cpu_seconds": 0.015867,
+        "final_case_bytes": 2396789,
+        "limits": {
+          "wall_seconds": 180,
+          "tree_rss_bytes": 8589934592,
+          "cgroup_bytes": 12884901888,
+          "address_space_bytes": 12884901888,
+          "case_disk_bytes": 6442450944,
+          "min_disk_free_bytes": 8589934592,
+          "min_tmp_disk_free_bytes": 2147483648
+        },
+        "host_before": {
+          "utc": "2026-10-16T08:38:49.926376+00:00",
+          "memory_max": "17179869184",
+          "memory_current": 2149195776,
+          "cpu_max": "400000 100000",
+          "pids_max": "max",
+          "disk_free": 29573550080,
+          "tmp_disk_free": 9441173504,
+          "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        15970564 kB\nMemAvailable:   17677724 kB\nBuffers:           26752 kB\nCached:          1905652 kB\nSwapCached:            0 kB\nActive:          1067800 kB\nInactive:         891036 kB\nActive(anon):        192 kB\nInactive(anon):    56324 kB\nActive(file):    1067608 kB\nInactive(file):   834712 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:             15336 kB\nWriteback:             0 kB\nAnonPages:         56628 kB\nMapped:            79764 kB\nShmem:               184 kB\nKReclaimable:     141460 kB\nSlab:             186724 kB\nSReclaimable:     141460 kB\nSUnreclaim:        45264 kB\nKernelStack:        2256 kB\nPageTables:         2360 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351768 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4464 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    333824 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       79872 kB\nDirectMap2M:     7331840 kB\nDirectMap1G:    28311552 kB\n"
+        },
+        "host_after": {
+          "utc": "2026-10-16T08:38:50.429820+00:00",
+          "memory_max": "17179869184",
+          "memory_current": 2150985728,
+          "cpu_max": "400000 100000",
+          "pids_max": "max",
+          "disk_free": 29571866624,
+          "tmp_disk_free": 9441173504,
+          "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        15953340 kB\nMemAvailable:   17662196 kB\nBuffers:           26752 kB\nCached:          1907324 kB\nSwapCached:            0 kB\nActive:          1067808 kB\nInactive:         892664 kB\nActive(anon):        192 kB\nInactive(anon):    56292 kB\nActive(file):    1067616 kB\nInactive(file):   836372 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:             17004 kB\nWriteback:             0 kB\nAnonPages:         56664 kB\nMapped:            79784 kB\nShmem:               184 kB\nKReclaimable:     141520 kB\nSlab:             186784 kB\nSReclaimable:     141520 kB\nSUnreclaim:        45264 kB\nKernelStack:        2256 kB\nPageTables:         2356 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351768 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4448 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    333824 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       79872 kB\nDirectMap2M:     7331840 kB\nDirectMap1G:    28311552 kB\n"
+        }
+      },
+      "adapter": {
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+          "/workspace/ub-test/experiments/prefill-capacity/stage.py",
+          "adapter",
+          "--case",
+          "/workspace/prefill-capacity-raw/no-balancing-100000",
+          "--assignments",
+          "100000",
+          "--mode",
+          "no-balancing"
+        ],
+        "cwd": "/workspace/ub-test",
+        "start": "2026-10-16T08:38:50.430876+00:00",
+        "wall_seconds": 5.015952837000441,
+        "returncode": 0,
+        "status": "PASS",
+        "guard": null,
+        "peak_rss_kib": 641444,
+        "sampled_peak_tree_rss_bytes": 506134528,
+        "sampled_peak_cgroup_bytes": 2723049472,
+        "user_cpu_seconds": 4.446749,
+        "system_cpu_seconds": 0.530886,
+        "final_case_bytes": 139084364,
+        "limits": {
+          "wall_seconds": 180,
+          "tree_rss_bytes": 8589934592,
+          "cgroup_bytes": 12884901888,
+          "address_space_bytes": 12884901888,
+          "case_disk_bytes": 6442450944,
+          "min_disk_free_bytes": 8589934592,
+          "min_tmp_disk_free_bytes": 2147483648
+        },
+        "host_before": {
+          "utc": "2026-10-16T08:38:50.430876+00:00",
+          "memory_max": "17179869184",
+          "memory_current": 2150952960,
+          "cpu_max": "400000 100000",
+          "pids_max": "max",
+          "disk_free": 29571846144,
+          "tmp_disk_free": 9441173504,
+          "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        15953340 kB\nMemAvailable:   17662196 kB\nBuffers:           26756 kB\nCached:          1907320 kB\nSwapCached:            0 kB\nActive:          1067808 kB\nInactive:         892664 kB\nActive(anon):        192 kB\nInactive(anon):    56292 kB\nActive(file):    1067616 kB\nInactive(file):   836372 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:             17004 kB\nWriteback:             0 kB\nAnonPages:         56664 kB\nMapped:            79784 kB\nShmem:               184 kB\nKReclaimable:     141520 kB\nSlab:             186784 kB\nSReclaimable:     141520 kB\nSUnreclaim:        45264 kB\nKernelStack:        2256 kB\nPageTables:         2356 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351768 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4448 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    333824 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       79872 kB\nDirectMap2M:     7331840 kB\nDirectMap1G:    28311552 kB\n"
+        },
+        "host_after": {
+          "utc": "2026-10-16T08:38:55.447406+00:00",
+          "memory_max": "17179869184",
+          "memory_current": 2291695616,
+          "cpu_max": "400000 100000",
+          "pids_max": "max",
+          "disk_free": 29435121664,
+          "tmp_disk_free": 9441173504,
+          "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        15461284 kB\nMemAvailable:   17305428 kB\nBuffers:           26768 kB\nCached:          2040852 kB\nSwapCached:            0 kB\nActive:          1072348 kB\nInactive:        1021872 kB\nActive(anon):        192 kB\nInactive(anon):    56496 kB\nActive(file):    1072156 kB\nInactive(file):   965376 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:            150544 kB\nWriteback:             0 kB\nAnonPages:         56696 kB\nMapped:            79784 kB\nShmem:               184 kB\nKReclaimable:     145008 kB\nSlab:             190684 kB\nSReclaimable:     145008 kB\nSUnreclaim:        45676 kB\nKernelStack:        2256 kB\nPageTables:         2360 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351768 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4480 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    442368 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       79872 kB\nDirectMap2M:     7331840 kB\nDirectMap1G:    28311552 kB\n"
+        }
+      },
+      "ns3": {
+        "command": [
+          "/workspace/ns-3-ub/build/scratch/ns3.44-multi-npu-relay",
+          "--input=/workspace/prefill-capacity-raw/no-balancing-100000/run/input.txt",
+          "--out=/workspace/prefill-capacity-raw/no-balancing-100000/run",
+          "--capacityMetrics=/workspace/prefill-capacity-raw/no-balancing-100000/run/simulator-metrics.json"
+        ],
+        "cwd": "/workspace/ub-test",
+        "start": "2026-10-16T08:38:55.448623+00:00",
+        "wall_seconds": 300.95840431599936,
+        "returncode": -15,
+        "status": "FAIL",
+        "guard": "wall_guard",
+        "peak_rss_kib": 3850580,
+        "sampled_peak_tree_rss_bytes": 3943010304,
+        "sampled_peak_cgroup_bytes": 6485528576,
+        "user_cpu_seconds": 298.817162,
+        "system_cpu_seconds": 1.675335,
+        "final_case_bytes": 387315979,
+        "limits": {
+          "wall_seconds": 300,
+          "tree_rss_bytes": 8589934592,
+          "cgroup_bytes": 12884901888,
+          "address_space_bytes": 12884901888,
+          "case_disk_bytes": 6442450944,
+          "min_disk_free_bytes": 8589934592,
+          "min_tmp_disk_free_bytes": 2147483648
+        },
+        "host_before": {
+          "utc": "2026-10-16T08:38:55.448623+00:00",
+          "memory_max": "17179869184",
+          "memory_current": 2291920896,
+          "cpu_max": "400000 100000",
+          "pids_max": "max",
+          "disk_free": 29435097088,
+          "tmp_disk_free": 9441173504,
+          "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        15461284 kB\nMemAvailable:   17305428 kB\nBuffers:           26772 kB\nCached:          2040848 kB\nSwapCached:            0 kB\nActive:          1072348 kB\nInactive:        1021872 kB\nActive(anon):        192 kB\nInactive(anon):    56496 kB\nActive(file):    1072156 kB\nInactive(file):   965376 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:            150544 kB\nWriteback:             0 kB\nAnonPages:         56696 kB\nMapped:            79784 kB\nShmem:               184 kB\nKReclaimable:     145008 kB\nSlab:             190684 kB\nSReclaimable:     145008 kB\nSUnreclaim:        45676 kB\nKernelStack:        2256 kB\nPageTables:         2360 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351768 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4480 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    442368 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       79872 kB\nDirectMap2M:     7331840 kB\nDirectMap1G:    28311552 kB\n"
+        },
+        "host_after": {
+          "utc": "2026-10-16T08:43:56.410300+00:00",
+          "memory_max": "17179869184",
+          "memory_current": 2550116352,
+          "cpu_max": "400000 100000",
+          "pids_max": "max",
+          "disk_free": 29185904640,
+          "tmp_disk_free": 9441173504,
+          "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        15546216 kB\nMemAvailable:   17637848 kB\nBuffers:           26904 kB\nCached:          2284200 kB\nSwapCached:            0 kB\nActive:          1072540 kB\nInactive:        1265804 kB\nActive(anon):        224 kB\nInactive(anon):    57104 kB\nActive(file):    1072316 kB\nInactive(file):  1208700 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:             41024 kB\nWriteback:             0 kB\nAnonPages:         57184 kB\nMapped:            79796 kB\nShmem:               184 kB\nKReclaimable:     153016 kB\nSlab:             198488 kB\nSReclaimable:     153016 kB\nSUnreclaim:        45472 kB\nKernelStack:        2240 kB\nPageTables:         2368 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351972 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4544 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    442368 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       81920 kB\nDirectMap2M:     7329792 kB\nDirectMap1G:    28311552 kB\n"
+        }
+      }
+    },
+    "failed_stage": "ns3",
+    "reason": "wall_guard"
+  },
+  {
+    "case_id": "no-balancing-200000",
+    "mode": "no-balancing",
+    "assignments": 200000,
+    "tokens": 25000,
+    "status": "not_attempted",
+    "selection": "sequential NoBalance",
+    "raw_dir": "/workspace/prefill-capacity-raw/no-balancing-200000",
+    "reason": "Sequential expansion stopped after no-balancing-100000 ns3: wall_guard"
+  },
+  {
+    "case_id": "no-balancing-500000",
+    "mode": "no-balancing",
+    "assignments": 500000,
+    "tokens": 62500,
+    "status": "not_attempted",
+    "selection": "sequential NoBalance",
+    "raw_dir": "/workspace/prefill-capacity-raw/no-balancing-500000",
+    "reason": "Sequential expansion stopped after no-balancing-100000 ns3: wall_guard"
+  },
+  {
+    "case_id": "no-balancing-1000000",
+    "mode": "no-balancing",
+    "assignments": 1000000,
+    "tokens": 125000,
+    "status": "not_attempted",
+    "selection": "sequential NoBalance",
+    "raw_dir": "/workspace/prefill-capacity-raw/no-balancing-1000000",
+    "reason": "20-bit wire Jetty ID preflight rejects approximately 2M global task IDs; original T cap also exceeded; no remapping or protocol change authorized"
+  },
+  {
+    "case_id": "ultraep-50000",
+    "mode": "ultraep",
+    "assignments": 50000,
+    "tokens": 6250,
+    "status": "success",
+    "selection": "only first and largest fully successful NoBalance scale; other rows not_selected",
+    "raw_dir": "/workspace/prefill-capacity-raw/ultraep-50000",
+    "stages": {
+      "generate": {
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+          "/workspace/ub-test/experiments/prefill-capacity/stage.py",
+          "generate",
+          "--case",
+          "/workspace/prefill-capacity-raw/ultraep-50000",
+          "--assignments",
+          "50000",
+          "--mode",
+          "ultraep"
+        ],
+        "cwd": "/workspace/ub-test",
+        "start": "2026-10-16T08:44:03.238113+00:00",
+        "wall_seconds": 0.5027971360004813,
+        "returncode": 0,
+        "status": "PASS",
+        "guard": null,
+        "peak_rss_kib": 12416,
+        "sampled_peak_tree_rss_bytes": 876544,
+        "sampled_peak_cgroup_bytes": 2549608448,
+        "user_cpu_seconds": 0.232643,
+        "system_cpu_seconds": 0.0,
+        "final_case_bytes": 358644,
+        "limits": {
+          "wall_seconds": 180,
+          "tree_rss_bytes": 8589934592,
+          "cgroup_bytes": 12884901888,
+          "address_space_bytes": 12884901888,
+          "case_disk_bytes": 6442450944,
+          "min_disk_free_bytes": 8589934592,
+          "min_tmp_disk_free_bytes": 2147483648
+        },
+        "host_before": {
+          "utc": "2026-10-16T08:44:03.238113+00:00",
+          "memory_max": "17179869184",
+          "memory_current": 2549211136,
+          "cpu_max": "400000 100000",
+          "pids_max": "max",
+          "disk_free": 29185843200,
+          "tmp_disk_free": 9441173504,
+          "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        15576668 kB\nMemAvailable:   17668360 kB\nBuffers:           26920 kB\nCached:          2284200 kB\nSwapCached:            0 kB\nActive:          1072488 kB\nInactive:        1264628 kB\nActive(anon):        172 kB\nInactive(anon):    55868 kB\nActive(file):    1072316 kB\nInactive(file):  1208760 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:             41124 kB\nWriteback:             0 kB\nAnonPages:         56112 kB\nMapped:            79616 kB\nShmem:               152 kB\nKReclaimable:     153016 kB\nSlab:             198424 kB\nSReclaimable:     153016 kB\nSUnreclaim:        45408 kB\nKernelStack:        2176 kB\nPageTables:         2504 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351608 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4480 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    442368 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       81920 kB\nDirectMap2M:     7329792 kB\nDirectMap1G:    28311552 kB\n"
+        },
+        "host_after": {
+          "utc": "2026-10-16T08:44:03.741276+00:00",
+          "memory_max": "17179869184",
+          "memory_current": 2549518336,
+          "cpu_max": "400000 100000",
+          "pids_max": "max",
+          "disk_free": 29185478656,
+          "tmp_disk_free": 9441173504,
+          "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        15571960 kB\nMemAvailable:   17664020 kB\nBuffers:           26920 kB\nCached:          2284604 kB\nSwapCached:            0 kB\nActive:          1072528 kB\nInactive:        1265172 kB\nActive(anon):        192 kB\nInactive(anon):    56072 kB\nActive(file):    1072336 kB\nInactive(file):  1209100 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:             41504 kB\nWriteback:             0 kB\nAnonPages:         56352 kB\nMapped:            79696 kB\nShmem:               184 kB\nKReclaimable:     153032 kB\nSlab:             198432 kB\nSReclaimable:     153032 kB\nSUnreclaim:        45400 kB\nKernelStack:        2256 kB\nPageTables:         2324 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351608 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4464 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    442368 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       81920 kB\nDirectMap2M:     7329792 kB\nDirectMap1G:    28311552 kB\n"
+        }
+      },
+      "planner": {
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+          "/workspace/ub-test/experiments/prefill-capacity/stage.py",
+          "planner",
+          "--case",
+          "/workspace/prefill-capacity-raw/ultraep-50000",
+          "--assignments",
+          "50000",
+          "--mode",
+          "ultraep"
+        ],
+        "cwd": "/workspace/ub-test",
+        "start": "2026-10-16T08:44:03.742399+00:00",
+        "wall_seconds": 0.5028168509998068,
+        "returncode": 0,
+        "status": "PASS",
+        "guard": null,
+        "peak_rss_kib": 24188,
+        "sampled_peak_tree_rss_bytes": 929792,
+        "sampled_peak_cgroup_bytes": 2549886976,
+        "user_cpu_seconds": 0.44292099999999995,
+        "system_cpu_seconds": 0.1172,
+        "final_case_bytes": 1602190,
+        "limits": {
+          "wall_seconds": 180,
+          "tree_rss_bytes": 8589934592,
+          "cgroup_bytes": 12884901888,
+          "address_space_bytes": 12884901888,
+          "case_disk_bytes": 6442450944,
+          "min_disk_free_bytes": 8589934592,
+          "min_tmp_disk_free_bytes": 2147483648
+        },
+        "host_before": {
+          "utc": "2026-10-16T08:44:03.742399+00:00",
+          "memory_max": "17179869184",
+          "memory_current": 2549469184,
+          "cpu_max": "400000 100000",
+          "pids_max": "max",
+          "disk_free": 29185454080,
+          "tmp_disk_free": 9441173504,
+          "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        15571960 kB\nMemAvailable:   17664020 kB\nBuffers:           26924 kB\nCached:          2284600 kB\nSwapCached:            0 kB\nActive:          1072528 kB\nInactive:        1265172 kB\nActive(anon):        192 kB\nInactive(anon):    56072 kB\nActive(file):    1072336 kB\nInactive(file):  1209100 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:             41504 kB\nWriteback:             0 kB\nAnonPages:         56352 kB\nMapped:            79696 kB\nShmem:               184 kB\nKReclaimable:     153032 kB\nSlab:             198432 kB\nSReclaimable:     153032 kB\nSUnreclaim:        45400 kB\nKernelStack:        2256 kB\nPageTables:         2324 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351608 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4464 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    442368 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       81920 kB\nDirectMap2M:     7329792 kB\nDirectMap1G:    28311552 kB\n"
+        },
+        "host_after": {
+          "utc": "2026-10-16T08:44:04.245537+00:00",
+          "memory_max": "17179869184",
+          "memory_current": 2551300096,
+          "cpu_max": "400000 100000",
+          "pids_max": "max",
+          "disk_free": 29184208896,
+          "tmp_disk_free": 9441173504,
+          "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        15545608 kB\nMemAvailable:   17639016 kB\nBuffers:           26924 kB\nCached:          2285940 kB\nSwapCached:            0 kB\nActive:          1072692 kB\nInactive:        1266608 kB\nActive(anon):        192 kB\nInactive(anon):    56340 kB\nActive(file):    1072500 kB\nInactive(file):  1210268 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:             42740 kB\nWriteback:             0 kB\nAnonPages:         56376 kB\nMapped:            79720 kB\nShmem:               184 kB\nKReclaimable:     153064 kB\nSlab:             198504 kB\nSReclaimable:     153064 kB\nSUnreclaim:        45440 kB\nKernelStack:        2256 kB\nPageTables:         2336 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351608 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4576 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    442368 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       81920 kB\nDirectMap2M:     7329792 kB\nDirectMap1G:    28311552 kB\n"
+        }
+      },
+      "adapter": {
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+          "/workspace/ub-test/experiments/prefill-capacity/stage.py",
+          "adapter",
+          "--case",
+          "/workspace/prefill-capacity-raw/ultraep-50000",
+          "--assignments",
+          "50000",
+          "--mode",
+          "ultraep"
+        ],
+        "cwd": "/workspace/ub-test",
+        "start": "2026-10-16T08:44:04.247005+00:00",
+        "wall_seconds": 3.0081659389998094,
+        "returncode": 0,
+        "status": "PASS",
+        "guard": null,
+        "peak_rss_kib": 342432,
+        "sampled_peak_tree_rss_bytes": 240836608,
+        "sampled_peak_cgroup_bytes": 2825846784,
+        "user_cpu_seconds": 2.432685,
+        "system_cpu_seconds": 0.19319499999999998,
+        "final_case_bytes": 73035705,
+        "limits": {
+          "wall_seconds": 180,
+          "tree_rss_bytes": 8589934592,
+          "cgroup_bytes": 12884901888,
+          "address_space_bytes": 12884901888,
+          "case_disk_bytes": 6442450944,
+          "min_disk_free_bytes": 8589934592,
+          "min_tmp_disk_free_bytes": 2147483648
+        },
+        "host_before": {
+          "utc": "2026-10-16T08:44:04.247005+00:00",
+          "memory_max": "17179869184",
+          "memory_current": 2551164928,
+          "cpu_max": "400000 100000",
+          "pids_max": "max",
+          "disk_free": 29184188416,
+          "tmp_disk_free": 9441173504,
+          "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        15545412 kB\nMemAvailable:   17638820 kB\nBuffers:           26928 kB\nCached:          2285936 kB\nSwapCached:            0 kB\nActive:          1072692 kB\nInactive:        1266608 kB\nActive(anon):        192 kB\nInactive(anon):    56340 kB\nActive(file):    1072500 kB\nInactive(file):  1210268 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:             42740 kB\nWriteback:             0 kB\nAnonPages:         56376 kB\nMapped:            79720 kB\nShmem:               184 kB\nKReclaimable:     153064 kB\nSlab:             198504 kB\nSReclaimable:     153064 kB\nSUnreclaim:        45440 kB\nKernelStack:        2256 kB\nPageTables:         2336 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351608 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4576 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    442368 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       81920 kB\nDirectMap2M:     7329792 kB\nDirectMap1G:    28311552 kB\n"
+        },
+        "host_after": {
+          "utc": "2026-10-16T08:44:07.255777+00:00",
+          "memory_max": "17179869184",
+          "memory_current": 2624868352,
+          "cpu_max": "400000 100000",
+          "pids_max": "max",
+          "disk_free": 29112721408,
+          "tmp_disk_free": 9441173504,
+          "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        15206436 kB\nMemAvailable:   17370592 kB\nBuffers:           26940 kB\nCached:          2355740 kB\nSwapCached:            0 kB\nActive:          1076156 kB\nInactive:        1332888 kB\nActive(anon):        192 kB\nInactive(anon):    56256 kB\nActive(file):    1075964 kB\nInactive(file):  1276632 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:            112552 kB\nWriteback:             0 kB\nAnonPages:         56396 kB\nMapped:            79720 kB\nShmem:               184 kB\nKReclaimable:     154900 kB\nSlab:             200564 kB\nSReclaimable:     154900 kB\nSUnreclaim:        45664 kB\nKernelStack:        2256 kB\nPageTables:         2328 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351608 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4560 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    497664 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       81920 kB\nDirectMap2M:     7329792 kB\nDirectMap1G:    28311552 kB\n"
+        }
+      },
+      "ns3": {
+        "command": [
+          "/workspace/ns-3-ub/build/scratch/ns3.44-multi-npu-relay",
+          "--input=/workspace/prefill-capacity-raw/ultraep-50000/run/input.txt",
+          "--out=/workspace/prefill-capacity-raw/ultraep-50000/run",
+          "--capacityMetrics=/workspace/prefill-capacity-raw/ultraep-50000/run/simulator-metrics.json"
+        ],
+        "cwd": "/workspace/ub-test",
+        "start": "2026-10-16T08:44:07.257047+00:00",
+        "wall_seconds": 182.11713311199946,
+        "returncode": 0,
+        "status": "PASS",
+        "guard": null,
+        "peak_rss_kib": 1999804,
+        "sampled_peak_tree_rss_bytes": 2047836160,
+        "sampled_peak_cgroup_bytes": 5111361536,
+        "user_cpu_seconds": 180.282313,
+        "system_cpu_seconds": 1.340142,
+        "final_case_bytes": 507385700,
+        "limits": {
+          "wall_seconds": 300,
+          "tree_rss_bytes": 8589934592,
+          "cgroup_bytes": 12884901888,
+          "address_space_bytes": 12884901888,
+          "case_disk_bytes": 6442450944,
+          "min_disk_free_bytes": 8589934592,
+          "min_tmp_disk_free_bytes": 2147483648
+        },
+        "host_before": {
+          "utc": "2026-10-16T08:44:07.257047+00:00",
+          "memory_max": "17179869184",
+          "memory_current": 2624811008,
+          "cpu_max": "400000 100000",
+          "pids_max": "max",
+          "disk_free": 29112696832,
+          "tmp_disk_free": 9441173504,
+          "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        15206240 kB\nMemAvailable:   17370396 kB\nBuffers:           26944 kB\nCached:          2355736 kB\nSwapCached:            0 kB\nActive:          1076156 kB\nInactive:        1332888 kB\nActive(anon):        192 kB\nInactive(anon):    56256 kB\nActive(file):    1075964 kB\nInactive(file):  1276632 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:            112552 kB\nWriteback:             0 kB\nAnonPages:         56396 kB\nMapped:            79720 kB\nShmem:               184 kB\nKReclaimable:     154900 kB\nSlab:             200564 kB\nSReclaimable:     154900 kB\nSUnreclaim:        45664 kB\nKernelStack:        2256 kB\nPageTables:         2328 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351608 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4560 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    497664 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       81920 kB\nDirectMap2M:     7329792 kB\nDirectMap1G:    28311552 kB\n"
+        },
+        "host_after": {
+          "utc": "2026-10-16T08:47:09.377788+00:00",
+          "memory_max": "17179869184",
+          "memory_current": 3074805760,
+          "cpu_max": "400000 100000",
+          "pids_max": "max",
+          "disk_free": 28677484544,
+          "tmp_disk_free": 9441173504,
+          "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        15029388 kB\nMemAvailable:   17625164 kB\nBuffers:           27072 kB\nCached:          2780744 kB\nSwapCached:            0 kB\nActive:          1076448 kB\nInactive:        1758168 kB\nActive(anon):        236 kB\nInactive(anon):    56736 kB\nActive(file):    1076212 kB\nInactive(file):  1701432 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:            194428 kB\nWriteback:             0 kB\nAnonPages:         56932 kB\nMapped:            79732 kB\nShmem:               184 kB\nKReclaimable:     168048 kB\nSlab:             217680 kB\nSReclaimable:     168048 kB\nSUnreclaim:        49632 kB\nKernelStack:        2272 kB\nPageTables:         2320 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351812 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4592 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    497664 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       86016 kB\nDirectMap2M:     7325696 kB\nDirectMap1G:    28311552 kB\n"
+        }
+      },
+      "verify": {
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+          "/workspace/ub-test/experiments/prefill-capacity/stage.py",
+          "verify",
+          "--case",
+          "/workspace/prefill-capacity-raw/ultraep-50000",
+          "--assignments",
+          "50000",
+          "--mode",
+          "ultraep"
+        ],
+        "cwd": "/workspace/ub-test",
+        "start": "2026-10-16T08:47:09.380292+00:00",
+        "wall_seconds": 51.68615848599984,
+        "returncode": 0,
+        "status": "PASS",
+        "guard": null,
+        "peak_rss_kib": 705968,
+        "sampled_peak_tree_rss_bytes": 713035776,
+        "sampled_peak_cgroup_bytes": 3784949760,
+        "user_cpu_seconds": 51.162316,
+        "system_cpu_seconds": 0.32201599999999997,
+        "final_case_bytes": 507485031,
+        "limits": {
+          "wall_seconds": 300,
+          "tree_rss_bytes": 8589934592,
+          "cgroup_bytes": 12884901888,
+          "address_space_bytes": 12884901888,
+          "case_disk_bytes": 6442450944,
+          "min_disk_free_bytes": 8589934592,
+          "min_tmp_disk_free_bytes": 2147483648
+        },
+        "host_before": {
+          "utc": "2026-10-16T08:47:09.380292+00:00",
+          "memory_max": "17179869184",
+          "memory_current": 3075002368,
+          "cpu_max": "400000 100000",
+          "pids_max": "max",
+          "disk_free": 28677447680,
+          "tmp_disk_free": 9441173504,
+          "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        15029388 kB\nMemAvailable:   17625188 kB\nBuffers:           27080 kB\nCached:          2780768 kB\nSwapCached:            0 kB\nActive:          1076452 kB\nInactive:        1758308 kB\nActive(anon):        236 kB\nInactive(anon):    56860 kB\nActive(file):    1076216 kB\nInactive(file):  1701448 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:            194468 kB\nWriteback:             0 kB\nAnonPages:         56940 kB\nMapped:            79732 kB\nShmem:               184 kB\nKReclaimable:     168052 kB\nSlab:             217684 kB\nSReclaimable:     168052 kB\nSUnreclaim:        49632 kB\nKernelStack:        2272 kB\nPageTables:         2320 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351964 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4592 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    497664 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       86016 kB\nDirectMap2M:     7325696 kB\nDirectMap1G:    28311552 kB\n"
+        },
+        "host_after": {
+          "utc": "2026-10-16T08:48:01.069643+00:00",
+          "memory_max": "17179869184",
+          "memory_current": 3074973696,
+          "cpu_max": "400000 100000",
+          "pids_max": "max",
+          "disk_free": 28677365760,
+          "tmp_disk_free": 9441173504,
+          "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        14997164 kB\nMemAvailable:   17593140 kB\nBuffers:           27080 kB\nCached:          2780856 kB\nSwapCached:            0 kB\nActive:          1110512 kB\nInactive:        1724504 kB\nActive(anon):        236 kB\nInactive(anon):    56928 kB\nActive(file):    1110276 kB\nInactive(file):  1667576 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:             17564 kB\nWriteback:             0 kB\nAnonPages:         57008 kB\nMapped:            79732 kB\nShmem:               184 kB\nKReclaimable:     168032 kB\nSlab:             217500 kB\nSReclaimable:     168032 kB\nSUnreclaim:        49468 kB\nKernelStack:        2272 kB\nPageTables:         2324 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351964 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4560 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    497664 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       86016 kB\nDirectMap2M:     7325696 kB\nDirectMap1G:    28311552 kB\n"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "ultraep-100000",
+    "mode": "ultraep",
+    "assignments": 100000,
+    "tokens": 12500,
+    "status": "not_selected",
+    "selection": "only first and largest fully successful NoBalance scale; other rows not_selected",
+    "raw_dir": "/workspace/prefill-capacity-raw/ultraep-100000",
+    "reason": "Representative treatment rule selects first/largest fully verified NoBalance scale only; no full strategy matrix"
+  },
+  {
+    "case_id": "ultraep-200000",
+    "mode": "ultraep",
+    "assignments": 200000,
+    "tokens": 25000,
+    "status": "not_selected",
+    "selection": "only first and largest fully successful NoBalance scale; other rows not_selected",
+    "raw_dir": "/workspace/prefill-capacity-raw/ultraep-200000",
+    "reason": "Representative treatment rule selects first/largest fully verified NoBalance scale only; no full strategy matrix"
+  },
+  {
+    "case_id": "ultraep-500000",
+    "mode": "ultraep",
+    "assignments": 500000,
+    "tokens": 62500,
+    "status": "not_selected",
+    "selection": "only first and largest fully successful NoBalance scale; other rows not_selected",
+    "raw_dir": "/workspace/prefill-capacity-raw/ultraep-500000",
+    "reason": "Representative treatment rule selects first/largest fully verified NoBalance scale only; no full strategy matrix"
+  },
+  {
+    "case_id": "ultraep-1000000",
+    "mode": "ultraep",
+    "assignments": 1000000,
+    "tokens": 125000,
+    "status": "not_attempted",
+    "selection": "only first and largest fully successful NoBalance scale; other rows not_selected",
+    "raw_dir": "/workspace/prefill-capacity-raw/ultraep-1000000",
+    "reason": "20-bit wire Jetty ID preflight rejects approximately 2M global task IDs; original T cap also exceeded; no remapping or protocol change authorized"
+  }
+]

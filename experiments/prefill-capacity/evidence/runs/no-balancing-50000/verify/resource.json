@@ -1,0 +1,51 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+    "/workspace/ub-test/experiments/prefill-capacity/stage.py",
+    "verify",
+    "--case",
+    "/workspace/prefill-capacity-raw/no-balancing-50000",
+    "--assignments",
+    "50000",
+    "--mode",
+    "no-balancing"
+  ],
+  "cwd": "/workspace/ub-test",
+  "start": "2026-10-16T08:37:15.140275+00:00",
+  "wall_seconds": 46.15077637600007,
+  "returncode": 0,
+  "status": "PASS",
+  "guard": null,
+  "peak_rss_kib": 697436,
+  "sampled_peak_tree_rss_bytes": 708972544,
+  "sampled_peak_cgroup_bytes": 2854543360,
+  "user_cpu_seconds": 45.755816,
+  "system_cpu_seconds": 0.244742,
+  "final_case_bytes": 499689480,
+  "limits": {
+    "wall_seconds": 300,
+    "tree_rss_bytes": 8589934592,
+    "cgroup_bytes": 12884901888,
+    "address_space_bytes": 12884901888,
+    "case_disk_bytes": 6442450944,
+    "min_disk_free_bytes": 8589934592
+  },
+  "host_before": {
+    "utc": "2026-10-16T08:37:15.140275+00:00",
+    "memory_max": "17179869184",
+    "memory_current": 2148892672,
+    "cpu_max": "400000 100000",
+    "pids_max": "max",
+    "disk_free": 29574373376,
+    "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        15941884 kB\nMemAvailable:   17648060 kB\nBuffers:           26716 kB\nCached:          1904824 kB\nSwapCached:            0 kB\nActive:          1067708 kB\nInactive:         890716 kB\nActive(anon):        224 kB\nInactive(anon):    56848 kB\nActive(file):    1067484 kB\nInactive(file):   833868 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:            145280 kB\nWriteback:             0 kB\nAnonPages:         56932 kB\nMapped:            79732 kB\nShmem:               184 kB\nKReclaimable:     141432 kB\nSlab:             186936 kB\nSReclaimable:     141432 kB\nSUnreclaim:        45504 kB\nKernelStack:        2256 kB\nPageTables:         2336 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351944 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4560 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    333824 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       79872 kB\nDirectMap2M:     7331840 kB\nDirectMap1G:    28311552 kB\n"
+  },
+  "host_after": {
+    "utc": "2026-10-16T08:38:01.294156+00:00",
+    "memory_max": "17179869184",
+    "memory_current": 2148630528,
+    "cpu_max": "400000 100000",
+    "pids_max": "max",
+    "disk_free": 29574361088,
+    "proc_meminfo": "MemTotal:       18440136 kB\nMemFree:        15905564 kB\nMemAvailable:   17611940 kB\nBuffers:           26716 kB\nCached:          1904916 kB\nSwapCached:            0 kB\nActive:          1067748 kB\nInactive:         890772 kB\nActive(anon):        224 kB\nInactive(anon):    56752 kB\nActive(file):    1067524 kB\nInactive(file):   834020 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:             45980 kB\nWriteback:             0 kB\nAnonPages:         56808 kB\nMapped:            79732 kB\nShmem:               184 kB\nKReclaimable:     141448 kB\nSlab:             186916 kB\nSReclaimable:     141448 kB\nSUnreclaim:        45468 kB\nKernelStack:        2288 kB\nPageTables:         2336 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     9220068 kB\nCommitted_AS:     351944 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        4560 kB\nVmallocChunk:          0 kB\nPercpu:             1296 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:    333824 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       79872 kB\nDirectMap2M:     7331840 kB\nDirectMap1G:    28311552 kB\n"
+  }
+}

@@ -35,7 +35,7 @@ public:
     std::vector<Transfer> transfers;
     std::vector<Ptr<Node>> nodes;
     std::ofstream log;
-    std::string fault;
+    std::string fault,capacityMetrics;
     WeightDistributionOptions weightOptions;
     uint32_t reorderNs=0,slowRelayRank=UINT32_MAX,slowRelayNs=0;
     std::set<std::tuple<uint32_t,uint32_t,uint32_t>> readyGroups;
@@ -278,9 +278,15 @@ public:
     void Run(const std::string& input,const std::string& out){
         Read(input);std::filesystem::create_directories(out);log.open(out+"/events.csv");Require(bool(log),"log");log<<"time_ps,event,stage,id,node,offset,bytes,task\n";
         WriteArtifacts(out);Topology(out);Simulator::Schedule(PicoSeconds(startPs),&Layer::Start,this);Simulator::Stop(Seconds(10));Simulator::Run();
+        if(!capacityMetrics.empty()){
+            std::ofstream metrics(capacityMetrics);Require(bool(metrics),"capacity metrics file");
+            metrics<<"{\"simulator_events\":"<<Simulator::GetEventCount()<<",\"assignments\":"<<assignments.size()
+                   <<",\"tasks\":"<<transfers.size()<<",\"remote_WQEs\":"<<remoteCount
+                   <<",\"sender_completions\":"<<senderCount<<",\"completed_tokens\":"<<receivedTokens<<"}\n";
+        }
         Require(dispatchStarted&&receivedTokens==t&&pendingWeights==0&&senderCount==remoteCount,"unfinished layer");for(auto& x:transfers)Require(x.sent&&x.ready,"missing transfer");for(auto r:weightReady)Require(r,"missing weight");
         std::cout<<"PASS forward: N="<<n<<" assignments="<<assignments.size()<<" replicas="<<physical.size()-e<<" remote_WQEs="<<remoteCount<<" target-verified bytes\n";
         WritePayloads(out);log.close();UbUtils::Get()->Destroy();traceOn=false;Simulator::Destroy();
     }
 };
-int main(int argc,char** argv){Time::SetResolution(Time::PS);Layer layer;std::string input,out;CommandLine cmd;cmd.AddValue("input","validated execution input",input);cmd.AddValue("out","output directory",out);cmd.AddValue("fault","test-only fault injection",layer.fault);cmd.Parse(argc,argv);try{Require(layer.fault.empty()||layer.fault=="weight-byte"||layer.fault=="premature-ready"||layer.fault=="duplicate-weight"||layer.fault=="early-compute"||layer.fault=="early-group"||layer.fault=="relay-byte"||layer.fault=="relay-buffer-byte"||layer.fault=="duplicate-notify"||layer.fault=="early-relay"||layer.fault=="early-final-ready","unknown fault");Require(!input.empty()&&!out.empty(),"input/out");layer.Run(input,out);}catch(const std::exception& ex){if(layer.log){layer.Event("error");layer.log.flush();}if(layer.traceOn)UbUtils::Get()->Destroy();std::cerr<<"ERROR: "<<ex.what()<<'\n';return 2;}return 0;}
+int main(int argc,char** argv){Time::SetResolution(Time::PS);Layer layer;std::string input,out;CommandLine cmd;cmd.AddValue("input","validated execution input",input);cmd.AddValue("out","output directory",out);cmd.AddValue("capacityMetrics","optional post-run capacity counters",layer.capacityMetrics);cmd.AddValue("fault","test-only fault injection",layer.fault);cmd.Parse(argc,argv);try{Require(layer.fault.empty()||layer.fault=="weight-byte"||layer.fault=="premature-ready"||layer.fault=="duplicate-weight"||layer.fault=="early-compute"||layer.fault=="early-group"||layer.fault=="relay-byte"||layer.fault=="relay-buffer-byte"||layer.fault=="duplicate-notify"||layer.fault=="early-relay"||layer.fault=="early-final-ready","unknown fault");Require(!input.empty()&&!out.empty(),"input/out");layer.Run(input,out);}catch(const std::exception& ex){if(layer.log){layer.Event("error");layer.log.flush();}if(layer.traceOn)UbUtils::Get()->Destroy();std::cerr<<"ERROR: "<<ex.what()<<'\n';return 2;}return 0;}

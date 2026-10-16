@@ -1,0 +1,12 @@
+Attributes for TypeId ns3::UbLink
+    --ns3::UbLink::Delay=[+100000ps]
+        Propagation delay of the point-to-point link.
+    --ns3::UbLink::EnableReliableRerouting=[false]
+        Arm eligible switch-to-switch link endpoints for UB 2.1 packet-level reliable rerouting.
+    --ns3::UbLink::FailureDetectionDelay=[+0ps]
+        Modeled physical-failure to endpoint-detection interval for reliable rerouting.
+    --ns3::UbLink::LastAckDelay=[+0ps]
+        Modeled detection to LastAck receipt interval for reliable rerouting.
+Attributes defined in parent class ns3::Channel
+    --ns3::Channel::Id=[0]
+        The id (unique integer) of this Channel.

@@ -1,0 +1,7 @@
+COMMAND ['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12', '/workspace/ub-test/experiments/prefill-capacity/stage.py', 'generate', '--case', '/workspace/prefill-capacity-raw/negative-wire-1m', '--assignments', '1000000']
+RETURN 1
+Traceback (most recent call last):
+  File "/workspace/ub-test/experiments/prefill-capacity/stage.py", line 10, in <module>
+    if 2*a.assignments+20000>2**20:raise ValueError('wire Jetty ID limit: 2*A+20000 exceeds 20-bit task namespace; no remapping authorized')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: wire Jetty ID limit: 2*A+20000 exceeds 20-bit task namespace; no remapping authorized

@@ -1,0 +1,19 @@
+Global values:
+    --ChecksumEnabled=[false]
+        A global switch to enable all checksums for all protocols
+    --RngRun=[1]
+        The substream index used for all streams
+    --RngSeed=[1]
+        The global seed of all rng streams
+    --SchedulerType=[ns3::MapScheduler]
+        The object class to use as the scheduler implementation
+    --SimulatorImplementationType=[ns3::DefaultSimulatorImpl]
+        The object class to use as the simulator implementation
+    --UB_CC_ALGO=[CAQM]
+        Host/switch congestion control algorithm.
+    --UB_CC_ENABLED=[false]
+        Enable end-to-end congestion control on all transport channels.
+    --UB_PRIORITY_NUM=[16]
+        Number of priority levels (1-16).
+    --UB_VL_NUM=[16]
+        Number of virtual lanes (1-16); currently mapped 1:1 to priorities.

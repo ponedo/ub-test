@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+    "./ns3",
+    "run",
+    "--no-build",
+    "no-balancing-layer --input=/tmp/multi-relay-prior-qq74xztv/legacy-parity/input.txt --out=/tmp/multi-relay-prior-qq74xztv/legacy-parity"
+  ],
+  "layer_latency_ps": 955008,
+  "same_npu_loads": true,
+  "model": "two-matrix, identical trace and all common parameters"
+}
