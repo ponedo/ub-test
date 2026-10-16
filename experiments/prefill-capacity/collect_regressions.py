@@ -15,3 +15,7 @@ for p in source.rglob('*'):
    for b in iter(lambda:f.read(1024*1024),b''):h.update(b)
   files[str(p.relative_to(source))]=dict(bytes=p.stat().st_size,sha256=h.hexdigest())
 (dest/'raw-artifacts.json').write_text(json.dumps(files,indent=2)+'\n');print('regression evidence collected:',len(files),'raw files')
+
+# Public text copies use LF; raw regression artifacts retain their original bytes.
+for sample in out.rglob('*resource-samples.csv'):
+ sample.write_bytes(sample.read_bytes().replace(b'\r\n',b'\n'))

@@ -51,3 +51,7 @@ with (OUT/'capacity.csv').open('w') as f:
  w=csv.DictWriter(f,fieldnames=list(table[0]),lineterminator='\n');w.writeheader();w.writerows(table)
 (OUT/'capacity.json').write_text(json.dumps(table,indent=2)+'\n')
 print('collected',len(table),'matrix rows; fully verified',sum(x['strictly_verified'] for x in table))
+
+# Normalize only public CSV text copies; raw archives/manifests retain original bytes.
+for sample in OUT.rglob('*resource-samples.csv'):
+ sample.write_bytes(sample.read_bytes().replace(b'\r\n',b'\n'))
