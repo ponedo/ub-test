@@ -1,0 +1,83 @@
+{
+  "base_commit": "6fb74a83cdf025036ea9f9487aef69669b3c5d3f",
+  "ultraep_reference": "94cab099b44fffa99a82fea99e7c12d89cf65e4f",
+  "tokenizer": {
+    "repo": "Qwen/Qwen3-235B-A22B",
+    "revision": "8efa61729e24bd65b1d152b5ab5409052aa80e65",
+    "files": [
+      "tokenizer.json",
+      "tokenizer_config.json",
+      "vocab.json",
+      "merges.txt",
+      "config.json"
+    ]
+  },
+  "codeforces": {
+    "repo": "open-r1/codeforces",
+    "revision": "fbe3f6e903ee854eec2e69e9d96d0306cde59baf",
+    "selection": "data/train-*.parquet and data/test-*.parquet; statement fields only; excludes verifiable-prompts duplicates"
+  },
+  "swe_bench": {
+    "repo": "princeton-nlp/SWE-bench",
+    "revision": "e48e2bd1e9fecd5bbd641e9414ac59da9f2e69f6",
+    "files": [
+      "data/test-00000-of-00001.parquet"
+    ]
+  },
+  "dapo": {
+    "repo": "BytedTsinghua-SIA/DAPO-Math-17k",
+    "revision": "65877096c24ffa7abc4e4fa5edb95cf3413a5674",
+    "files": [
+      "data/dapo-math-17k.parquet"
+    ],
+    "dedup": "SHA256 of exact canonical JSON prompt messages; verify content equality on collision"
+  },
+  "gpqa": {
+    "repo": "idavidrein/gpqa",
+    "revision": "56686c06f5e19865c153de0fdb11be3890014df7",
+    "distribution": "official author GitHub dataset.zip; password documented by author README; no HF login or acceptance"
+  },
+  "longbench": {
+    "repo": "zai-org/LongBench",
+    "revision": "5e628be450b7e67fb7ae6e201bd6d8f7056f7672",
+    "files": [
+      "data.zip"
+    ],
+    "prompt_repo": "THUDM/LongBench",
+    "prompt_revision": "2e00731f8d0bff23dc4325161044d0ed8af94c1e",
+    "prompt_path": "LongBench/config/dataset2prompt.json",
+    "selection": "original 21 v1 subtasks; exclude _e length-balanced duplicate variant"
+  },
+  "openscience": {
+    "repo": "nvidia/OpenScience",
+    "revision": "7bd0437e4756f761768fe7e5cebeaa75480a4fd6",
+    "parquet_revision": "cd074349b32136a4110d3cd029766a5ef6bf2d57",
+    "sample_per_config": 5000,
+    "seed": 20261016,
+    "selection": "uniform without replacement over ALL rows in pinned converted parquet for each config; partial-train configs explicitly partial, never full corpus representative"
+  },
+  "measurement": {
+    "raw": "explicit task prompt, no chat wrapper, add_special_tokens=false",
+    "chat": "same task prompt as one user message, no system, add_generation_prompt=true, enable_thinking=false, tokenize=true",
+    "truncate": false,
+    "filter": "only missing/non-string/empty required input rejected and counted; no length filter",
+    "batch_seed": 20261016,
+    "batch_repetitions": 100000,
+    "batch_sizes": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32
+    ],
+    "replacement": true,
+    "quantile": "numpy linear interpolation",
+    "limits_report_only": [
+      12500,
+      32768,
+      40960,
+      131072
+    ]
+  }
+}

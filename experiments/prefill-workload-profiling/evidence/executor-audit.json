@@ -1,0 +1,65 @@
+{
+  "base": "6fb74a83cdf025036ea9f9487aef69669b3c5d3f",
+  "sources": {
+    "experiments/multi-npu-relay/multi-npu-relay.cc": {
+      "sha256": "5c9e1ebbdb5d4e7f44ae7847789bdb3b8a3a3adf1f24d6ada6e5e3fe20c29fde",
+      "matches_base": true
+    },
+    "experiments/multi-npu-relay/verify.py": {
+      "sha256": "0f49f668eec04e39c1daaf4200227c1ccce3b8bbffc6cf8e49ff9f13f1a5653f",
+      "matches_base": true
+    },
+    "experiments/direct-weight-forward/adapter.py": {
+      "sha256": "a4f32db2c6dda0261eaa32bd3c18202770cbe71b95c8b48c05568e7f6fdf82a9",
+      "matches_base": true
+    },
+    "planner/quota/planner.py": {
+      "sha256": "f1f3e3d24f6f2386fdf7fe4e063bda7fdfbcce558f2cb4978ee71ea3a1d89803",
+      "matches_base": true
+    },
+    "planner/quota/upstream.py": {
+      "sha256": "04b30e148c5d475e8a4952f1f76fc44d54e62db5a914ec5654db5dc61fd652fd",
+      "matches_base": true
+    },
+    "planner/quota/reference/replication_adapter.cpp": {
+      "sha256": "ad4582acf2a7d0ffeae421302c8d7b515033df5f78204b552a9bc1a806366e3c",
+      "matches_base": true
+    }
+  },
+  "existing_fixed64_evidence": {
+    "npus": 64,
+    "tokens": 128,
+    "assignments": 256,
+    "replicas": 31,
+    "weight_WQEs": 372,
+    "weight_TAs": 1488,
+    "remote_WQEs": 752,
+    "target_segments": 1868,
+    "weight_bytes": 1523712,
+    "verified_bytes": [
+      32768,
+      32768,
+      1523712
+    ],
+    "layer_latency_ps": 45750904,
+    "event_rows": 13058,
+    "artifact_bytes": 10594044,
+    "new_execution": false
+  },
+  "formula": "A=T*k; checked bytes=2*A*H*dtype+R*W; retained payload arrays=2*A*H*dtype+2*R*W, excluding transient/native/Python overhead",
+  "limits": {
+    "assignments": 100000,
+    "checked_payload_bytes": 268435456,
+    "expert_weight_bytes": 67108864,
+    "weight_tasks": 20000,
+    "planner_assignments": 2000000,
+    "cpu_reference_threads": 128
+  },
+  "EP64": {
+    "max_undirected_pairs": 2016,
+    "max_directional_TPs": 4032,
+    "host_plus_switch_nodes": 65,
+    "ports": 128
+  },
+  "runtime_estimate": null
+}

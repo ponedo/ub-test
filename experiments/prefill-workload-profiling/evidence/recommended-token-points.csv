@@ -1,0 +1,9 @@
+series,request_count,mode,quantile,measured_tokens,suggested_global_tokens,rounding_multiple,top_k,assignments,scaled_R31_checked_bytes,scaled_executor_algebraic_fit,planner_assignment_bound_fit,real_qwen_R31_payload_fit,executed
+gpqa_main,1,chat,P50,185.0,256,256,8,2048,2048000,True,True,False,False
+dapo_unique,8,chat,P90,1472.0,1536,256,8,12288,4669440,True,True,False,False
+codeforces_train,4,chat,P50,2489.0,2560,256,8,20480,6766592,True,True,False,False
+codeforces_train,8,chat,P90,6112.0,6144,256,8,49152,14106624,True,True,False,False
+longbench_qasper,1,chat,P90,7646.0,7680,256,8,61440,17252352,True,True,False,False
+longbench_narrativeqa,1,chat,P90,60435.0,60672,256,8,485376,125779968,False,True,False,False
+longbench_narrativeqa,8,chat,P90,303739.5000000001,303872,256,8,2430976,623853568,False,False,False,False
+longbench_narrativeqa,32,chat,P99,1192462.07,1192704,256,8,9541632,2444181504,False,False,False,False

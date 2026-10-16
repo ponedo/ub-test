@@ -1,0 +1,9 @@
+None of PyTorch, TensorFlow >= 2.0, or Flax have been found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+Traceback (most recent call last):
+  File "/workspace/ub-test/experiments/prefill-workload-profiling/profile.py", line 164, in <module>
+    p=argparse.ArgumentParser();p.add_argument('--cache',default='/workspace/prefill-profile-cache/run');p.add_argument('--out',default=str(ROOT/'evidence'));p.add_argument('--only');run(p.parse_args())
+                                                                                                                                                                                       ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/ub-test/experiments/prefill-workload-profiling/profile.py", line 38, in run
+    (out/'tokenizer-manifest.json').write_text(json.dumps(dict(**lock['tokenizer'],files=tokfiles,chat_template_sha256=digest(tokenizer.chat_template),special_tokens_map=tokenizer.special_tokens_map,tokenizer_class=type(tokenizer).__name__,model_max_length=tokenizer.model_max_length),indent=2)+'\n')
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: dict() got multiple values for keyword argument 'files'
