@@ -1,0 +1,117 @@
+$ /workspace/prefill-cpu-tools/root/usr/bin/perf report --stdio --no-children --percent-limit 0 -i /workspace/ub-test/experiments/prefill-cpu-profiling/evidence/probe.data
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 10  of event 'cpu-clock:u'
+# Event count (approx.): 101010100
+#
+# Overhead  Command  Shared Object  Symbol                      
+# ........  .......  .............  ............................
+#
+    30.00%  python3  python3.12     [.] _PyEval_EvalFrameDefault
+            |
+            ---_PyEval_EvalFrameDefault
+               gen_iternext
+               builtin_sum
+               cfunction_vectorcall_FASTCALL_KEYWORDS.llvm.2305966719422422379
+               _PyEval_EvalFrameDefault
+               PyEval_EvalCode
+               run_mod.llvm.10142647837896989511
+               PyRun_SimpleStringFlags
+               Py_RunMain.warm
+               pymain_main.llvm.3121965821471187960
+               main
+               0x7fdf66009ca7
+               __libc_start_main
+               _start
+
+    20.00%  python3  python3.12     [.] PyLong_AsLongAndOverflow
+            |
+            ---PyLong_AsLongAndOverflow
+               builtin_sum.cold
+               cfunction_vectorcall_FASTCALL_KEYWORDS.llvm.2305966719422422379
+               _PyEval_EvalFrameDefault
+               PyEval_EvalCode
+               run_mod.llvm.10142647837896989511
+               PyRun_SimpleStringFlags
+               Py_RunMain.warm
+               pymain_main.llvm.3121965821471187960
+               main
+               0x7fdf66009ca7
+               __libc_start_main
+               _start
+
+    20.00%  python3  python3.12     [.] builtin_sum
+            |
+            ---builtin_sum
+               cfunction_vectorcall_FASTCALL_KEYWORDS.llvm.2305966719422422379
+               _PyEval_EvalFrameDefault
+               PyEval_EvalCode
+               run_mod.llvm.10142647837896989511
+               PyRun_SimpleStringFlags
+               Py_RunMain.warm
+               pymain_main.llvm.3121965821471187960
+               main
+               0x7fdf66009ca7
+               __libc_start_main
+               _start
+
+    10.00%  python3  python3.12     [.] _PyObject_Free
+            |
+            ---_PyObject_Free
+               builtin_sum
+               cfunction_vectorcall_FASTCALL_KEYWORDS.llvm.2305966719422422379
+               _PyEval_EvalFrameDefault
+               PyEval_EvalCode
+               run_mod.llvm.10142647837896989511
+               PyRun_SimpleStringFlags
+               Py_RunMain.warm
+               pymain_main.llvm.3121965821471187960
+               main
+               0x7fdf66009ca7
+               __libc_start_main
+               _start
+
+    10.00%  python3  python3.12     [.] _PyObject_Malloc
+            |
+            ---_PyObject_Malloc
+               _PyEval_EvalFrameDefault
+               gen_iternext
+               builtin_sum
+               cfunction_vectorcall_FASTCALL_KEYWORDS.llvm.2305966719422422379
+               _PyEval_EvalFrameDefault
+               PyEval_EvalCode
+               run_mod.llvm.10142647837896989511
+               PyRun_SimpleStringFlags
+               Py_RunMain.warm
+               pymain_main.llvm.3121965821471187960
+               main
+               0x7fdf66009ca7
+               __libc_start_main
+               _start
+
+    10.00%  python3  python3.12     [.] long_dealloc
+            |
+            ---long_dealloc
+               _PyEval_EvalFrameDefault
+               gen_iternext
+               builtin_sum
+               cfunction_vectorcall_FASTCALL_KEYWORDS.llvm.2305966719422422379
+               _PyEval_EvalFrameDefault
+               PyEval_EvalCode
+               run_mod.llvm.10142647837896989511
+               PyRun_SimpleStringFlags
+               Py_RunMain.warm
+               pymain_main.llvm.3121965821471187960
+               main
+               0x7fdf66009ca7
+               __libc_start_main
+               _start
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

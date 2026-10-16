@@ -1,0 +1,8 @@
+{
+  "native_build_command": "bash experiments/prefill-cpu-profiling/build.sh > /workspace/prefill-cpu-raw/build-timed.txt 2>&1",
+  "final_timer_library_command": "c++ -O3 -g -shared -fPIC experiments/prefill-cpu-profiling/scopes.cc -o /workspace/prefill-cpu-native/libcpuscopes.so",
+  "final_timer_library_timing": "After native build completed and before capture.py / first 5K trial. Added coarse CPU and RSS accounting; ABI unchanged. All timed trials used this final library.",
+  "capture_command": "python3 experiments/prefill-cpu-profiling/capture.py",
+  "original_executor": "Existing accepted release ELF reused; SHA256 in binary-sha256.json. No optimization level change.",
+  "compile_profile": "Original O3 DNDEBUG; timed O3 DNDEBUG g, forced scopes.h include, linked libcpuscopes.so. Exact flags in build-original/build-timed."
+}

@@ -1,0 +1,216 @@
+{
+  "driver": "python3 experiments/prefill-cpu-profiling/execute.py --assignments A",
+  "preparation": [
+    "generate",
+    "planner",
+    "adapter"
+  ],
+  "cases": [
+    {
+      "id": "5000-baseline",
+      "assignments": 5000,
+      "variant": "baseline",
+      "status": "pending",
+      "command": [
+        "/workspace/ns-3-ub/build/scratch/ns3.44-multi-npu-relay",
+        "--input=/workspace/prefill-cpu-raw/5000-baseline/run/input.txt",
+        "--out=/workspace/prefill-cpu-raw/5000-baseline/run",
+        "--capacityMetrics=/workspace/prefill-cpu-raw/5000-baseline/run/simulator-metrics.json"
+      ]
+    },
+    {
+      "id": "5000-perf",
+      "assignments": 5000,
+      "variant": "perf",
+      "status": "pending",
+      "command": [
+        "env",
+        "LD_LIBRARY_PATH=/workspace/prefill-cpu-tools/root/usr/lib/x86_64-linux-gnu",
+        "/workspace/prefill-cpu-tools/root/usr/bin/perf",
+        "record",
+        "-o",
+        "/workspace/prefill-cpu-raw/5000-perf/perf.data",
+        "-e",
+        "cpu-clock:u",
+        "-F",
+        "99",
+        "--call-graph",
+        "dwarf,8192",
+        "--",
+        "/workspace/ns-3-ub/build/scratch/ns3.44-multi-npu-relay",
+        "--input=/workspace/prefill-cpu-raw/5000-perf/run/input.txt",
+        "--out=/workspace/prefill-cpu-raw/5000-perf/run",
+        "--capacityMetrics=/workspace/prefill-cpu-raw/5000-perf/run/simulator-metrics.json"
+      ]
+    },
+    {
+      "id": "5000-timed",
+      "assignments": 5000,
+      "variant": "timed",
+      "status": "pending",
+      "command": [
+        "env",
+        "CPU_SCOPE_OUTPUT=/workspace/prefill-cpu-raw/5000-timed/scopes.csv",
+        "/workspace/prefill-cpu-native/build/scratch/ns3.44-multi-npu-relay",
+        "--input=/workspace/prefill-cpu-raw/5000-timed/run/input.txt",
+        "--out=/workspace/prefill-cpu-raw/5000-timed/run",
+        "--capacityMetrics=/workspace/prefill-cpu-raw/5000-timed/run/simulator-metrics.json"
+      ]
+    },
+    {
+      "id": "10000-baseline",
+      "assignments": 10000,
+      "variant": "baseline",
+      "status": "pending",
+      "command": [
+        "/workspace/ns-3-ub/build/scratch/ns3.44-multi-npu-relay",
+        "--input=/workspace/prefill-cpu-raw/10000-baseline/run/input.txt",
+        "--out=/workspace/prefill-cpu-raw/10000-baseline/run",
+        "--capacityMetrics=/workspace/prefill-cpu-raw/10000-baseline/run/simulator-metrics.json"
+      ]
+    },
+    {
+      "id": "10000-perf",
+      "assignments": 10000,
+      "variant": "perf",
+      "status": "pending",
+      "command": [
+        "env",
+        "LD_LIBRARY_PATH=/workspace/prefill-cpu-tools/root/usr/lib/x86_64-linux-gnu",
+        "/workspace/prefill-cpu-tools/root/usr/bin/perf",
+        "record",
+        "-o",
+        "/workspace/prefill-cpu-raw/10000-perf/perf.data",
+        "-e",
+        "cpu-clock:u",
+        "-F",
+        "99",
+        "--call-graph",
+        "dwarf,8192",
+        "--",
+        "/workspace/ns-3-ub/build/scratch/ns3.44-multi-npu-relay",
+        "--input=/workspace/prefill-cpu-raw/10000-perf/run/input.txt",
+        "--out=/workspace/prefill-cpu-raw/10000-perf/run",
+        "--capacityMetrics=/workspace/prefill-cpu-raw/10000-perf/run/simulator-metrics.json"
+      ]
+    },
+    {
+      "id": "10000-timed",
+      "assignments": 10000,
+      "variant": "timed",
+      "status": "pending",
+      "command": [
+        "env",
+        "CPU_SCOPE_OUTPUT=/workspace/prefill-cpu-raw/10000-timed/scopes.csv",
+        "/workspace/prefill-cpu-native/build/scratch/ns3.44-multi-npu-relay",
+        "--input=/workspace/prefill-cpu-raw/10000-timed/run/input.txt",
+        "--out=/workspace/prefill-cpu-raw/10000-timed/run",
+        "--capacityMetrics=/workspace/prefill-cpu-raw/10000-timed/run/simulator-metrics.json"
+      ]
+    },
+    {
+      "id": "20000-baseline",
+      "assignments": 20000,
+      "variant": "baseline",
+      "status": "pending",
+      "command": [
+        "/workspace/ns-3-ub/build/scratch/ns3.44-multi-npu-relay",
+        "--input=/workspace/prefill-cpu-raw/20000-baseline/run/input.txt",
+        "--out=/workspace/prefill-cpu-raw/20000-baseline/run",
+        "--capacityMetrics=/workspace/prefill-cpu-raw/20000-baseline/run/simulator-metrics.json"
+      ]
+    },
+    {
+      "id": "20000-perf",
+      "assignments": 20000,
+      "variant": "perf",
+      "status": "pending",
+      "command": [
+        "env",
+        "LD_LIBRARY_PATH=/workspace/prefill-cpu-tools/root/usr/lib/x86_64-linux-gnu",
+        "/workspace/prefill-cpu-tools/root/usr/bin/perf",
+        "record",
+        "-o",
+        "/workspace/prefill-cpu-raw/20000-perf/perf.data",
+        "-e",
+        "cpu-clock:u",
+        "-F",
+        "99",
+        "--call-graph",
+        "dwarf,8192",
+        "--",
+        "/workspace/ns-3-ub/build/scratch/ns3.44-multi-npu-relay",
+        "--input=/workspace/prefill-cpu-raw/20000-perf/run/input.txt",
+        "--out=/workspace/prefill-cpu-raw/20000-perf/run",
+        "--capacityMetrics=/workspace/prefill-cpu-raw/20000-perf/run/simulator-metrics.json"
+      ]
+    },
+    {
+      "id": "20000-timed",
+      "assignments": 20000,
+      "variant": "timed",
+      "status": "pending",
+      "command": [
+        "env",
+        "CPU_SCOPE_OUTPUT=/workspace/prefill-cpu-raw/20000-timed/scopes.csv",
+        "/workspace/prefill-cpu-native/build/scratch/ns3.44-multi-npu-relay",
+        "--input=/workspace/prefill-cpu-raw/20000-timed/run/input.txt",
+        "--out=/workspace/prefill-cpu-raw/20000-timed/run",
+        "--capacityMetrics=/workspace/prefill-cpu-raw/20000-timed/run/simulator-metrics.json"
+      ]
+    },
+    {
+      "id": "50000-baseline",
+      "assignments": 50000,
+      "variant": "baseline",
+      "status": "pending",
+      "command": [
+        "/workspace/ns-3-ub/build/scratch/ns3.44-multi-npu-relay",
+        "--input=/workspace/prefill-cpu-raw/50000-baseline/run/input.txt",
+        "--out=/workspace/prefill-cpu-raw/50000-baseline/run",
+        "--capacityMetrics=/workspace/prefill-cpu-raw/50000-baseline/run/simulator-metrics.json"
+      ]
+    },
+    {
+      "id": "50000-perf",
+      "assignments": 50000,
+      "variant": "perf",
+      "status": "pending",
+      "command": [
+        "env",
+        "LD_LIBRARY_PATH=/workspace/prefill-cpu-tools/root/usr/lib/x86_64-linux-gnu",
+        "/workspace/prefill-cpu-tools/root/usr/bin/perf",
+        "record",
+        "-o",
+        "/workspace/prefill-cpu-raw/50000-perf/perf.data",
+        "-e",
+        "cpu-clock:u",
+        "-F",
+        "99",
+        "--call-graph",
+        "dwarf,8192",
+        "--",
+        "/workspace/ns-3-ub/build/scratch/ns3.44-multi-npu-relay",
+        "--input=/workspace/prefill-cpu-raw/50000-perf/run/input.txt",
+        "--out=/workspace/prefill-cpu-raw/50000-perf/run",
+        "--capacityMetrics=/workspace/prefill-cpu-raw/50000-perf/run/simulator-metrics.json"
+      ]
+    },
+    {
+      "id": "50000-timed",
+      "assignments": 50000,
+      "variant": "timed",
+      "status": "pending",
+      "command": [
+        "env",
+        "CPU_SCOPE_OUTPUT=/workspace/prefill-cpu-raw/50000-timed/scopes.csv",
+        "/workspace/prefill-cpu-native/build/scratch/ns3.44-multi-npu-relay",
+        "--input=/workspace/prefill-cpu-raw/50000-timed/run/input.txt",
+        "--out=/workspace/prefill-cpu-raw/50000-timed/run",
+        "--capacityMetrics=/workspace/prefill-cpu-raw/50000-timed/run/simulator-metrics.json"
+      ]
+    }
+  ],
+  "verification": "accepted stage.py verify --case CASE",
+  "guards": "experiment-plan.md"
+}

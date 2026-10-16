@@ -1,0 +1,766 @@
+# ========
+# captured on    : Fri Oct 16 09:58:50 2026
+# header version : 1
+# data offset    : 296
+# data size      : 258311888
+# feat offset    : 258312184
+# hostname : f972a8f01f3f
+# os release : 6.18.44
+# perf version : 6.12.107
+# arch : x86_64
+# nrcpus online : 5
+# nrcpus avail : 5
+# cpudesc : AMD EPYC 9V74 80-Core Processor
+# cpuid : AuthenticAMD,25,17,1
+# total memory : 18440136 kB
+# cmdline : /workspace/prefill-cpu-tools/root/usr/bin/perf record -o /workspace/prefill-cpu-raw/50000-perf/perf.data -e cpu-clock:u -F 99 --call-graph dwarf,8192 -- /workspace/ns-3-ub/build/scratch/ns3.44-multi-npu-relay --input=/workspace/prefill-cpu-raw/50000-perf/run/input.txt --out=/workspace/prefill-cpu-raw/50000-perf/run --capacityMetrics=/workspace/prefill-cpu-raw/50000-perf/run/simulator-metrics.json 
+# event : name = cpu-clock:u, , id = { 88, 89, 90, 91, 92 }, type = 1 (software), size = 136, config = 0 (PERF_COUNT_SW_CPU_CLOCK), { sample_period, sample_freq } = 99, sample_type = IP|TID|TIME|ADDR|CALLCHAIN|PERIOD|REGS_USER|STACK_USER|DATA_SRC, read_format = ID|LOST, disabled = 1, inherit = 1, exclude_kernel = 1, exclude_hv = 1, mmap = 1, comm = 1, freq = 1, enable_on_exec = 1, task = 1, mmap_data = 1, sample_id_all = 1, exclude_guest = 1, exclude_callchain_user = 1, mmap2 = 1, comm_exec = 1, ksymbol = 1, bpf_event = 1, sample_regs_user = 0xff0fff, sample_stack_user = 8192
+# CPU_TOPOLOGY info available, use -I to display
+# NUMA_TOPOLOGY info available, use -I to display
+# pmu mappings: cpu = 4, breakpoint = 5, msr = 8, software = 1
+# CACHE info available, use -I to display
+# time of first sample : 9804.861542
+# time of last sample : 10113.788357
+# sample duration : 308926.814 ms
+# MEM_TOPOLOGY info available, use -I to display
+# cpu pmu capabilities: not available
+# missing features: TRACING_DATA BRANCH_STACK GROUP_DESC AUXTRACE STAT CLOCKID DIR_FORMAT COMPRESSED CLOCK_DATA HYBRID_TOPOLOGY 
+# ========
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 30K of event 'cpu-clock:u'
+# Event count (approx.): 307464643390
+#
+# Overhead  Command          Shared Object                Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+# ........  ...............  ...........................  .........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    35.37%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::_Rb_tree_increment(std::_Rb_tree_node_base*)
+    13.87%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::GetJettyLiveTps(unsigned int)
+    11.46%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannelManager::ResolveLiveTp(unsigned int, ns3::UbLifecycleResourceIdentity const&)
+     6.08%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbFunction::GetJetty(unsigned int)
+     3.40%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::_Rb_tree_increment(std::_Rb_tree_node_base const*)
+     2.43%  ns3.44-multi-np  libc.so.6                    [.] cfree
+     2.04%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::GetJettiesUsingTpn(unsigned int)
+     1.76%  ns3.44-multi-np  libc.so.6                    [.] malloc
+     1.73%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] __dynamic_cast
+     1.45%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::TryContinueJettyTransmission(unsigned int)
+     0.96%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::GetNextPacketSize()
+     0.69%  ns3.44-multi-np  libc.so.6                    [.] pthread_mutex_lock
+     0.67%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbJettyManager::ResolveWqeLifecycleLocalId(unsigned int, unsigned int) const
+     0.63%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::IsOrderedByInitiator(unsigned int, ns3::Ptr<ns3::UbWqe>)
+     0.55%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbController::GetTransportChannelManager() const
+     0.44%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbRetransController::GetRetransEnable() const
+     0.42%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::IsEmpty()
+     0.38%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbRoundRobinAllocator::SelectNextIngressQueue(ns3::Ptr<ns3::UbPort>)
+     0.38%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Rb_tree<ns3::UbLifecycleCoordinator::ResourceKey, std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState>, std::_Select1st<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> >, std::less<ns3::UbLifecycleCoordinator::ResourceKey>, std::allocator<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> > >::find(ns3::UbLifecycleCoordinator::ResourceKey const&)
+     0.36%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] utils::UbUtils::AppendTraceLine(utils::UbUtils::TraceSinkHandle const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)
+     0.34%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::NodeList::GetNNodes()
+     0.33%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbSwitchAllocator::FindNextEligibleIngressQueue(unsigned int, unsigned int, unsigned int, ns3::Ptr<ns3::UbPort>) const
+     0.31%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] ns3::Ptr<ns3::UbTransportChannelManager>::~Ptr()
+     0.30%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::TryContinueJettyTransmission(ns3::Ptr<ns3::UbTransportChannel>)
+     0.29%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] operator new(unsigned long)
+     0.28%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] (anonymous namespace)::CsvRow(std::initializer_list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >)
+     0.28%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] utils::UbUtils::GetCachedTraceSink(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+     0.25%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::Ptr<ns3::UbTransportChannel>::~Ptr()
+     0.24%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] operator delete(void*)
+     0.22%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::MapScheduler::Insert(ns3::Scheduler::Event const&)
+     0.19%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbPacketQueue::GetNextPacketSize()
+     0.19%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbParallelLifecycleAdapter::IsExecutionOwner(unsigned int)
+     0.19%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Rb_tree<ns3::UbLifecycleCoordinator::ResourceKey, std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState>, std::_Select1st<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> >, std::less<ns3::UbLifecycleCoordinator::ResourceKey>, std::allocator<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> > >::find(ns3::UbLifecycleCoordinator::ResourceKey const&) const
+     0.18%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::TracedCallback<unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag>::operator()(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag) const
+     0.18%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+     0.16%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannelManager::ResolveInboundTp(unsigned int, unsigned int, ns3::Ipv4Address, ns3::Ipv4Address, unsigned char)
+     0.16%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::CompleteAckedWqeSegments(ns3::UbTransportChannel::TransportResponseContext const&)
+     0.15%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::TrackInboundTaPacket(ns3::UbTransportChannel::BufferedInboundPacket const&)
+     0.13%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::IsLimited()
+     0.13%  ns3.44-multi-np  libc.so.6                    [.] 0x0000000000172246
+     0.13%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::__cxx11::to_string(unsigned int)
+     0.12%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::PacketTagList::Remove(ns3::Tag&)
+     0.12%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Rb_tree<std::pair<unsigned int, unsigned int>, std::pair<std::pair<unsigned int, unsigned int> const, ns3::UbTransaction::OperationRecord>, std::_Select1st<std::pair<std::pair<unsigned int, unsigned int> const, ns3::UbTransaction::OperationRecord> >, std::less<std::pair<unsigned int, unsigned int> >, std::allocator<std::pair<std::pair<unsigned int, unsigned int> const, ns3::UbTransaction::OperationRecord> > >::find(std::pair<unsigned int, unsigned int> const&)
+     0.11%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::DefaultSimulatorImpl::ProcessOneEvent()
+     0.11%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbLifecycleCoordinator::FindCompactHistory(ns3::UbLifecycleResourceKind, unsigned long) const
+     0.11%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Rb_tree<ns3::UbTransaction::RtpTxQueueKey, std::pair<ns3::UbTransaction::RtpTxQueueKey const, ns3::UbTransaction::RtpTxQueue>, std::_Select1st<std::pair<ns3::UbTransaction::RtpTxQueueKey const, ns3::UbTransaction::RtpTxQueue> >, std::less<ns3::UbTransaction::RtpTxQueueKey>, std::allocator<std::pair<ns3::UbTransaction::RtpTxQueueKey const, ns3::UbTransaction::RtpTxQueue> > >::find(ns3::UbTransaction::RtpTxQueueKey const&)
+     0.11%  ns3.44-multi-np  libc.so.6                    [.] pthread_mutex_unlock
+     0.11%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] utils::UbUtils::TpRecvNotify(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag)
+     0.11%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] ns3::Ptr<ns3::UbController>::~Ptr()
+     0.11%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbPort::Receive(ns3::Ptr<ns3::Packet>)
+     0.10%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbRoundRobinAllocator::AllocateNextPacket(ns3::Ptr<ns3::UbPort>)
+     0.10%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbParallelLifecycleAdapter::IsExecutionOwner(unsigned int)@plt
+     0.10%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::NotifyDataPacketSent(ns3::UbGbnPacketDescriptor const&, ns3::Ptr<ns3::Packet>)
+     0.09%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000009eb21
+     0.09%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::DeclareRequestHeaderPresence(ns3::UbTransactionRule const&, ns3::UbTransactionFields const&)
+     0.09%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbPort::TransmitPacket(ns3::Ptr<ns3::Packet>, ns3::Time)
+     0.09%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a18cc
+     0.09%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::FinishWqe(unsigned int, ns3::Ptr<ns3::UbWqe>, ns3::UbWorkOutcome, ns3::UbTransaction::WqeTerminalMode)
+     0.08%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbCbfc::IsFcLimited(ns3::Ptr<ns3::UbIngressQueue>)
+     0.08%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000009eb1b
+     0.08%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long)
+     0.07%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbPacketQueue::GetIngressQueueType()
+     0.07%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+     0.07%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::GetIngressQueueType()
+     0.07%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::WqeSegmentTriggerPortTransmit(ns3::Ptr<ns3::UbWqeSegment>)
+     0.07%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] operator delete(void*, unsigned long)
+     0.07%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017585e
+     0.07%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Function_handler<void (), std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)> >::_M_invoke(std::_Any_data const&)
+     0.07%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::map<ns3::UbTransaction::RtpTxQueueKey, ns3::UbTransaction::RtpTxQueue, std::less<ns3::UbTransaction::RtpTxQueueKey>, std::allocator<std::pair<ns3::UbTransaction::RtpTxQueueKey const, ns3::UbTransaction::RtpTxQueue> > >::operator[](ns3::UbTransaction::RtpTxQueueKey const&)
+     0.06%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000009749c
+     0.06%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000009ec26
+     0.06%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::GlobalValue::GetValueByNameFailSafe(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::AttributeValue&)
+     0.06%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::Node::GetDevice(unsigned int) const
+     0.06%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::Object::DoDelete()
+     0.06%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Function_handler<void (unsigned int, unsigned int, unsigned int), ns3::Callback<void, unsigned int, unsigned int, unsigned int>::Callback<void (*)(unsigned int, unsigned int, unsigned int), , 0>(void (*)(unsigned int, unsigned int, unsigned int))::{lambda((auto:1&&)...)#1}>::_M_invoke(std::_Any_data const&, unsigned int&&, unsigned int&&, unsigned int&&)
+     0.06%  ns3.44-multi-np  libns3.44-point-to-point.so  [.] ns3::PointToPointNetDevice::GetNode() const
+     0.06%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::Ptr<ns3::Packet>::~Ptr()
+     0.06%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbLifecycleCoordinator::ReleaseLease(ns3::UbLifecycleLeaseIdentity const&)
+     0.06%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbPort::TriggerTransmit()
+     0.06%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::GetDataPacketHeaderBytes(ns3::UbTransactionOpcode, ns3::UbTransactionSegmentKind, ns3::UbTransactionFields const&) const
+     0.06%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Function_handler<void (unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int), ns3::Callback<void, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int>::Callback<void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int), , 0>(void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))::{lambda((auto:1&&)...)#1}>::_M_invoke(std::_Any_data const&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&)
+     0.06%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) [clone .constprop.0]
+     0.06%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] ns3::Ptr<ns3::UbPort>::~Ptr()
+     0.05%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a18ec
+     0.05%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::Buffer::AddAtStart(unsigned int)
+     0.05%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::NotifyLastPacketReceived(ns3::UbTransportChannel::ReceivedDataPacketContext const&)
+     0.05%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannelManager::NotifyStateChanged(unsigned int)
+     0.05%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Rb_tree<ns3::UbLifecycleCoordinator::ResourceKey, std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState>, std::_Select1st<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> >, std::less<ns3::UbLifecycleCoordinator::ResourceKey>, std::allocator<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> > >::equal_range(ns3::UbLifecycleCoordinator::ResourceKey const&)
+     0.05%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::Object::DoGetObject(ns3::TypeId) const
+     0.05%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbDatalinkHeader::Deserialize(ns3::Buffer::Iterator)
+     0.05%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbRoutingTable::LookupShortest(unsigned int) const
+     0.05%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::EnqueueRtpWqe(unsigned int, ns3::Ptr<ns3::UbWqe>, bool)
+     0.05%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::basic_ios<char, std::char_traits<char> >::_M_cache_locale(std::locale const&)
+     0.05%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000009747e
+     0.05%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbDatalinkPacketHeader::Deserialize(ns3::Buffer::Iterator)
+     0.05%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbLifecycleCoordinator::AcquireLease(ns3::UbLifecycleResourceIdentity const&, ns3::UbLifecycleLeaseKind, ns3::UbLifecycleResourceIdentity const&)
+     0.05%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] pthread_mutex_unlock@plt
+     0.04%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::Ptr<ns3::UbController>::~Ptr()@plt
+     0.04%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::Ptr<ns3::UbTransportChannelManager>::~Ptr()@plt
+     0.04%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbCbfc::TryAttachPiggybackCredit(ns3::Ptr<ns3::Packet>)
+     0.04%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbFunction::TrackJettyEvent(unsigned int)
+     0.04%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbSwitch::GetOrCreateVoqSlot(unsigned long, unsigned int)
+     0.04%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbSwitchAllocator::RunAllocation(ns3::Ptr<ns3::UbPort>)
+     0.04%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] malloc@plt
+     0.04%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)
+     0.04%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] Layer::Topology(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)::{lambda(ns3::Ptr<ns3::UbWqeSegment const>, ns3::UbTransactionRule const&, ns3::Callback<void, ns3::UbWorkExecutionResult>)#1}::operator()(ns3::Ptr<ns3::UbWqeSegment const>, ns3::UbTransactionRule const&, ns3::Callback<void, ns3::UbWorkExecutionResult>) const
+     0.04%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017b874
+     0.04%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::PacketTagList::Peek(ns3::Tag&) const
+     0.04%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbSwitchAllocator::ScheduleAllocation(ns3::Ptr<ns3::UbPort>) [clone .part.0]
+     0.04%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::CompleteInboundTaUnits(std::vector<ns3::Ptr<ns3::UbWqeSegment>, std::allocator<ns3::Ptr<ns3::UbWqeSegment> > > const&)
+     0.04%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::_Hash_bytes(void const*, unsigned long, unsigned long)
+     0.04%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::basic_streambuf<char, std::char_traits<char> >::xsputn(char const*, long)
+     0.04%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] Layer::Send(unsigned int)
+     0.04%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000009eb03
+     0.04%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a10d8
+     0.04%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::TypeId::GetParent() const
+     0.04%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbLink::TransmitStart(ns3::Ptr<ns3::Packet>, ns3::Ptr<ns3::UbPort>, ns3::Time, unsigned long)
+     0.04%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::ostream::sentry::sentry(std::ostream&)
+     0.03%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000974c4
+     0.03%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::Packet::AddHeader(ns3::Header const&)
+     0.03%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbLifecycleCoordinator::TakeCompactHistory(ns3::UbLifecycleResourceKind, unsigned long, ns3::UbLifecycleCoordinator::CompactResourceHistory&)
+     0.03%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Function_handler<void (), std::_Bind<void (ns3::UbPort::*(ns3::UbPort*))()> >::_M_invoke(std::_Any_data const&)
+     0.03%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Function_handler<void (), std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)> >::_M_invoke(std::_Any_data const&)
+     0.03%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Function_handler<void (unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag), ns3::Callback<void, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag>::Callback<void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag), , 0>(void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag))::{lambda((auto:1&&)...)#1}>::_M_invoke(std::_Any_data const&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, ns3::PacketType&&, unsigned int&&, unsigned int&&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, ns3::UbPacketTraceTag&&)
+     0.03%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > (anonymous namespace)::CsvVector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)
+     0.03%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] Layer::Ready(unsigned int)
+     0.03%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] ns3::Ptr<ns3::Packet const>::~Ptr()
+     0.03%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000009ec83
+     0.03%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::Packet::RemoveHeader(ns3::Header&)
+     0.03%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbPort::DequeuePacket()
+     0.03%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::RecvTpAck(ns3::Ptr<ns3::Packet>)
+     0.03%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::UpdateReceiveWindowAndCollectCompletedTa(ns3::UbTransportChannel::ReceivedDataPacketContext const&, ns3::UbRetransReceiveDecision const&, unsigned long&, unsigned long&, std::vector<ns3::Ptr<ns3::UbWqeSegment>, std::allocator<ns3::Ptr<ns3::UbWqeSegment> > >&)
+     0.03%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] operator delete(void*, unsigned long)@plt
+     0.03%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Rb_tree_increment(std::_Rb_tree_node_base*)@plt
+     0.03%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&)
+     0.03%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] utils::UbUtils::AppendCsvRow(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+     0.03%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::_Rb_tree_decrement(std::_Rb_tree_node_base*)
+     0.03%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a1d3a
+     0.03%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::DefaultSimulatorImpl::Now() const
+     0.03%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::ObjectBase::~ObjectBase()
+     0.03%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::Ptr<ns3::Packet>::operator=(ns3::Ptr<ns3::Packet> const&) [clone .isra.0]
+     0.03%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbEgressQueue::DoDequeue()
+     0.03%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbJetty::GenWqeSegment(ns3::Ptr<ns3::UbWqe>, unsigned int)
+     0.03%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbJetty::PrepareNextWqeSegment(ns3::Ptr<ns3::UbWqe>, unsigned int)
+     0.03%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbPort::HandleWithUbSwitch(ns3::Ptr<ns3::Packet>)
+     0.03%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTaHeaderPlan::ForRequest(ns3::UbTransactionRule const&, ns3::UbTaHeaderPresence)
+     0.03%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::EnqueueRemoteRtpWqeSegment(unsigned int, ns3::Ptr<ns3::UbWqeSegment>)
+     0.03%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] operator new(unsigned long)@plt
+     0.03%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Function_handler<void (unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int), ns3::Callback<void, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int>::Callback<void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int), , 0>(void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))::{lambda((auto:1&&)...)#1}>::_M_invoke(std::_Any_data const&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&)
+     0.03%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::__detail::_Prime_rehash_policy::_M_need_rehash(unsigned long, unsigned long, unsigned long) const
+     0.03%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::ostream::put(char)
+     0.03%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] std::_Function_handler<void (unsigned int, unsigned int), Layer::Topology(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)::{lambda(unsigned int, unsigned int)#1}>::_M_invoke(std::_Any_data const&, unsigned int&&, unsigned int&&)
+     0.02%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a1240
+     0.02%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a126b
+     0.02%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a145a
+     0.02%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::MapScheduler::RemoveNext()
+     0.02%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::Object::GetInstanceTypeId() const
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbController::GetUbTransaction()
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbHostCaqm::IsCcLimited(unsigned int)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbLifecycleCoordinator::RecordWorkTerminal(ns3::UbLifecycleResourceIdentity const&, ns3::UbWorkOutcome)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbPacketQueue::IsEmpty()
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbPacketTraceTag::Deserialize(ns3::TagBuffer)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbPacketTraceTag::Serialize(ns3::TagBuffer) const
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbSwitch::GetAllocator()
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::ProcessInboundTaResponse(ns3::Ptr<ns3::UbWqeSegment>)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::RunTrackedPrepareRtpWqeSegment(unsigned int, ns3::Ptr<ns3::UbWqe>, ns3::UbTransaction::RtpTxQueueKey, unsigned long)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::StartRtpWqeSegmentTx(unsigned int, ns3::Ptr<ns3::UbWqe>)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Function_handler<void (unsigned int), ns3::Callback<void, unsigned int>::Callback<void (ns3::UbTransportChannelManager::*)(unsigned int), ns3::UbTransportChannelManager*, 0>(void (ns3::UbTransportChannelManager::*)(unsigned int), ns3::UbTransportChannelManager*)::{lambda((auto:1&&)...)#1}>::_M_invoke(std::_Any_data const&, unsigned int&&)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::append(char const*)
+     0.02%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::ios_base::ios_base()
+     0.02%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::locale::locale()
+     0.02%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)2>::_M_release()
+     0.02%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a12f9
+     0.02%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017b82a
+     0.02%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017b835
+     0.02%  ns3.44-multi-np  libgcc_s.so.1                [.] __udivmodti4
+     0.02%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::EventId::EventId(ns3::Ptr<ns3::EventImpl> const&, unsigned long, unsigned int, unsigned int)
+     0.02%  ns3.44-multi-np  libns3.44-core.so            [.] std::_Rb_tree<ns3::Scheduler::EventKey, std::pair<ns3::Scheduler::EventKey const, ns3::EventImpl*>, std::_Select1st<std::pair<ns3::Scheduler::EventKey const, ns3::EventImpl*> >, std::less<ns3::Scheduler::EventKey>, std::allocator<std::pair<ns3::Scheduler::EventKey const, ns3::EventImpl*> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<ns3::Scheduler::EventKey const, ns3::EventImpl*> >, ns3::Scheduler::EventKey const&)
+     0.02%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::Header::~Header()
+     0.02%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::NodeList::GetNode(unsigned int)
+     0.02%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::Packet::PeekHeader(ns3::Header&) const
+     0.02%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::TagBuffer::ReadU64()
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbCbfc::CbfcConsumeCrd(ns3::Ptr<ns3::Packet>)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbJettyManager::RegisterJetty(ns3::Ptr<ns3::UbJetty>, ns3::UbJettyLifetime)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbSwitch::HandleURMADataPacket(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::AddWqe(unsigned int, ns3::Ptr<ns3::UbWqe>)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::RecvDataPacket(ns3::Ptr<ns3::Packet>)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportHeader::Deserialize(ns3::Buffer::Iterator)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] pthread_mutex_lock@plt
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [clone .constprop.0]
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] utils::UbUtils::TpLastPacketReceivesNotify(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int)
+     0.02%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::__detail::_Prime_rehash_policy::_M_next_bkt(unsigned long) const
+     0.02%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a135a
+     0.02%  ns3.44-multi-np  libc.so.6                    [.] 0x0000000000175864
+     0.02%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017b853
+     0.02%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017b863
+     0.02%  ns3.44-multi-np  libns3.44-internet.so        [.] ns3::Ipv4Header::Deserialize(ns3::Buffer::Iterator)
+     0.02%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::Buffer::CreateFragment(unsigned int, unsigned int) const
+     0.02%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::Buffer::~Buffer()
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::FindTransactionRule(ns3::UbTransactionOpcode)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::Ptr<ns3::UbJetty>::~Ptr()
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::Ptr<ns3::UbTransportChannel>::~Ptr()@plt
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::Ptr<ns3::UbWqeSegment>::~Ptr()
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbCbfc::AccumulateReturnedCredit(ns3::Ptr<ns3::Packet>, unsigned int)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbCbfc::RestoreDataPacketCredit(ns3::Ptr<ns3::Packet>)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbController::GetTypeId()
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbFunction::BeginJettyEvent(unsigned int, unsigned long)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbFunction::ResolveJettyEvent(unsigned int, unsigned long)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbIpBasedNetworkHeader::Deserialize(ns3::Buffer::Iterator)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbPacketTraceTag::UbPacketTraceTag(ns3::UbPacketTraceTag const&)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbQueueManager::CheckIngressAdmission(unsigned int, unsigned int, unsigned int)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbRoutingProcess::GetShortestOutPorts(unsigned int, std::vector<unsigned short, std::allocator<unsigned short> >&) const
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbSwitch::SwitchHandlePacket(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbSwitchAllocator::TriggerAllocator(ns3::Ptr<ns3::UbPort>)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTrackedEventSet::Track(ns3::UbLifecycleResourceIdentity const&)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::RunRtpTx(ns3::UbTransaction::RtpTxQueueKey)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::RunTrackedAdmitRtpWqeSegment(ns3::Ptr<ns3::UbWqeSegment>, ns3::Ptr<ns3::UbWqe>, ns3::UbTransaction::RtpTxQueueKey, unsigned long)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::EnqueueTransportResponse(ns3::Ptr<ns3::Packet>, char const*, unsigned long)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::FinalizeTransportAckProgress(ns3::UbTransportChannel::TransportResponseContext const&, unsigned long)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::ParseReceivedDataPacket(ns3::Ptr<ns3::Packet>, ns3::UbTransportChannel::ReceivedDataPacketContext&)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::TraceReceivedDataPacket(ns3::UbTransportChannel::ReceivedDataPacketContext const&)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::TryContinueAcceptedWqeSegment(ns3::Ptr<ns3::UbWqeSegment>)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Function_handler<void (ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe>), ns3::Callback<void, ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe> >::Callback<void (ns3::UbTransaction::*)(ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe>), ns3::UbTransaction*, 0>(void (ns3::UbTransaction::*)(ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe>), ns3::UbTransaction*)::{lambda((auto:1&&)...)#1}>::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::__detail::_Map_base<unsigned int, std::pair<unsigned int const, ns3::PortTrace>, std::allocator<std::pair<unsigned int const, ns3::PortTrace> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](unsigned int const&)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::map<unsigned int, ns3::TransactionServiceMode, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, ns3::TransactionServiceMode> > >::operator[](unsigned int const&)
+     0.02%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] utils::UbUtils::TpLastPacketACKsNotify(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int)
+     0.02%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::ios_base::_M_init()
+     0.02%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::ostream& std::ostream::_M_insert<unsigned long>(unsigned long)
+     0.02%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] std::_Function_handler<void (unsigned int, unsigned int, unsigned int), Layer::Pair(unsigned int, unsigned int)::{lambda(unsigned int, unsigned int, unsigned int)#1}>::_M_invoke(std::_Any_data const&, unsigned int&&, unsigned int&&, unsigned int&&)
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] inet_pton
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000009748b
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000009eda5
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a030c
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a0321
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a19b0
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017b800
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017b83d
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017b87e
+     0.01%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::DefaultSimulatorImpl::ScheduleWithContext(unsigned int, ns3::Time const&, ns3::EventImpl*)
+     0.01%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::Simulator::Now()
+     0.01%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::TypeId::GetName[abi:cxx11]() const
+     0.01%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::internal::MakeIntegerChecker(long, long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)::IntegerChecker::Copy(ns3::AttributeValue const&, ns3::AttributeValue&) const
+     0.01%  ns3.44-multi-np  libns3.44-internet.so        [.] ns3::Ipv4Header::GetSerializedSize() const
+     0.01%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::Buffer::AddAtEnd(ns3::Buffer const&)
+     0.01%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::ByteTagList::AddAtStart(int)
+     0.01%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::Node::GetId() const
+     0.01%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::PacketMetadata::CreateFragment(unsigned int, unsigned int) const
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::Ptr<ns3::Packet>::operator=(ns3::Ptr<ns3::Packet> const&) [clone .isra.0]
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::Ptr<ns3::UbSwitch> ns3::Object::GetObject<ns3::UbSwitch>() const
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::Time::ToInteger(ns3::Time::Unit) const [clone .part.0] [clone .constprop.0]
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::TracedCallback<ns3::Ptr<ns3::Packet> >::operator()(ns3::Ptr<ns3::Packet>) const
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbDatalinkPacketHeader::Serialize(ns3::Buffer::Iterator) const
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbIpBasedNetworkHeader::~UbIpBasedNetworkHeader()
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbLifecycleCoordinator::StoreCompactHistory(ns3::UbLifecycleResourceKind, unsigned long, ns3::UbLifecycleCoordinator::CompactResourceHistory const&)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbPacketQueue::Push(ns3::Ptr<ns3::Packet>)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbPort::GetUbQueue()
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbPort::TransmitComplete()
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbQueueManager::PushToInPortProcessing(unsigned int, unsigned int, unsigned int, unsigned int)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbReliableRerouting::CreateAttempt(ns3::Ptr<ns3::Packet const>, unsigned int, unsigned int)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbSwitch::GetOrCreateVoq(unsigned int, unsigned int, unsigned int)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbSwitchAllocator::UpdateIngressSummary(ns3::UbIngressQueue*, bool)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTrackedEventSet::Attach(ns3::UbLifecycleResourceIdentity const&, unsigned long, ns3::EventId, ns3::Callback<void>)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::RunRemoteRtpWqeSegmentTx(ns3::UbTransaction::RtpTxQueueKey const&, ns3::UbTransaction::RtpTxQueueEntry const&)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::TryAdmitRtpSegment(unsigned int, ns3::Ptr<ns3::UbWqe>, ns3::Ptr<ns3::UbWqeSegment>, ns3::Ptr<ns3::UbTransportChannel>&)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::TryContinueRtpTxQueue(ns3::UbTransaction::RtpTxQueueKey const&, bool)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::BuildRtpDataPacket(ns3::UbGbnPacketDescriptor const&)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannelManager::ResolveTpForAcceptedWork(unsigned int, ns3::UbLifecycleResourceIdentity const&)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannelManager::TryGetEndpointIdentity(unsigned int, ns3::UbLifecycleResourceIdentity&) const
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::ValidateTransactionRequest(ns3::UbTransactionRequestInput const&)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Rb_tree_increment(std::_Rb_tree_node_base const*)@plt
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::append(char const*, unsigned long)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::__cxx11::to_string(unsigned long)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] utils::UbUtils::PortTxNotify(unsigned int, unsigned int, unsigned int)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] utils::UbUtils::SwitchLastPacketTraversesNotify(unsigned int, ns3::UbTransportHeader)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] utils::UbUtils::TpFirstPacketSendsNotify(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] utils::UbUtils::TpLastPacketSendsNotify(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int)
+     0.01%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::basic_filebuf<char, std::char_traits<char> >::xsputn(char const*, long)
+     0.01%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::ios_base::_M_dispose_callbacks()
+     0.01%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] 0x000000000012e312
+     0.01%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose()
+     0.01%  ns3.44-multi-np  ld-linux-x86-64.so.2         [.] __tls_get_addr
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x0000000000097473
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a0357
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a1074
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a18d2
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a1968
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a1b54
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x0000000000172200
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x0000000000172221
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x0000000000172227
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x0000000000172266
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017b85c
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017b88b
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017b8a7
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017c10e
+     0.01%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::AttributeValue::AttributeValue()
+     0.01%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::GlobalValue::GetValue(ns3::AttributeValue&) const
+     0.01%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::MakeSimpleAttributeChecker<ns3::BooleanValue, ns3::BooleanChecker>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)::SimpleAttributeChecker::Copy(ns3::AttributeValue const&, ns3::AttributeValue&) const
+     0.01%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::MapScheduler::IsEmpty() const
+     0.01%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::int64x64_t::Udiv(unsigned __int128, unsigned __int128)
+     0.01%  ns3.44-multi-np  libns3.44-internet.so        [.] ns3::Ipv4Header::GetDestination() const
+     0.01%  ns3.44-multi-np  libns3.44-internet.so        [.] ns3::Ipv4Header::Serialize(ns3::Buffer::Iterator) const
+     0.01%  ns3.44-multi-np  libns3.44-internet.so        [.] ns3::UdpHeader::Deserialize(ns3::Buffer::Iterator)
+     0.01%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::DataRate::CalculateBytesTxTime(unsigned int) const
+     0.01%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::Node::GetTypeId()
+     0.01%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::Packet::RemovePacketTag(ns3::Tag&)
+     0.01%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::PacketMetadata::GetUid() const
+     0.01%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::PacketMetadata::Recycle(ns3::PacketMetadata::Data*)
+     0.01%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::TagBuffer::WriteU64(unsigned long)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::Callback<void, ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe> >::Callback<void (ns3::UbTransaction::*)(ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe>), ns3::UbTransaction*, 0>(void (ns3::UbTransaction::*)(ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe>), ns3::UbTransaction*)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::Ptr<ns3::UbSwitchAllocator>::~Ptr()
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbCbfc::OnEgressEnqueued(ns3::UbFlowControlEventContext const&)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbEgressQueue::DoEnqueue(std::tuple<unsigned int, unsigned int, ns3::Ptr<ns3::Packet> >)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbIpBasedNetworkHeader::UbIpBasedNetworkHeader()
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbJetty::ApplyWqeTerminal(unsigned int, ns3::UbWorkOutcome)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbJetty::CheckAndRemoveCompletedWqe()
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbJettyManager::AttachEvent(unsigned int, unsigned long, ns3::EventId, ns3::Callback<void>)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbLifecycleCoordinator::ValidateMutable(ns3::UbLifecycleResourceIdentity const&)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbPacketTraceTag::GetInstanceTypeId() const
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbPort::EnqueueToEgress(std::tuple<unsigned int, unsigned int, ns3::Ptr<ns3::Packet> >)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbPort::GetIfIndex() const
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbQueueManager::MoveInPortProcessingToVoq(unsigned int, unsigned int, unsigned int, unsigned int)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbQueueManager::PopFromVoq(unsigned int, unsigned int, unsigned int, unsigned int)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbRecoveredCreditTag::GetInstanceTypeId() const
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbRetransController::HasPendingGbnRetransmission() const
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::DetachRtpTxEntry(ns3::UbTransaction::OperationRecord&)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::JettyBindTp(unsigned int, unsigned int, unsigned int, bool, std::vector<unsigned int, std::allocator<unsigned int> >, unsigned int)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::TryAdmitRtpWqe(unsigned int, ns3::Ptr<ns3::UbWqe>, ns3::UbLifecycleResourceIdentity const&, ns3::UbTransaction::RtpTransportResolution const&)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::ValidateRoiServiceModeOrDie(unsigned int, ns3::Ptr<ns3::UbWqeSegment> const&)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::AdvanceNewDataSendState(ns3::UbTransportChannel::NewDataSendContext const&, ns3::Ptr<ns3::Packet>)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::BuildNextDataSendContext(ns3::UbTransportChannel::NewDataSendContext&)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::HandleRepeatedDataPacket(ns3::UbTransportChannel::ReceivedDataPacketContext const&)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::TpRecvNotify(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportHeader::GetInstanceTypeId() const
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbWqe::~UbWqe()
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Function_handler<void (), std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Function_handler<void (unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int), void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int)>::_M_invoke(std::_Any_data const&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, ns3::UbLifecycleCoordinator::CompactHistoryRun>, std::_Select1st<std::pair<unsigned long const, ns3::UbLifecycleCoordinator::CompactHistoryRun> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ns3::UbLifecycleCoordinator::CompactHistoryRun> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ns3::UbLifecycleCoordinator::CompactHistoryRun> >*) [clone .isra.0]
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::__cxx11::to_string(long)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] utils::UbUtils::GetTraceOwner(unsigned int)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] utils::UbUtils::PortRxNotify(unsigned int, unsigned int, unsigned int)
+     0.01%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] __cxxabiv1::__si_class_type_info::__do_dyncast(long, __cxxabiv1::__class_type_info::__sub_kind, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__dyncast_result&) const
+     0.01%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::overflow(int)
+     0.01%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::ios_base::~ios_base()
+     0.01%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, unsigned long) const
+     0.01%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const
+     0.01%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<unsigned long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, unsigned long) const
+     0.01%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] ChunkTracker::Notify(unsigned long, unsigned long, unsigned long)
+     0.01%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] Layer::~Layer()
+     0.01%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] ns3::Ptr<ns3::UbWqe>::~Ptr()
+     0.01%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] std::_Function_handler<void (unsigned int, unsigned int), ns3::Callback<void, unsigned int, unsigned int>::Callback<Layer::Topology(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)::{lambda(unsigned int, unsigned int)#1}, , 0>(Layer::Topology(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)::{lambda(unsigned int, unsigned int)#1})::{lambda((auto:1&&)...)#1}>::_M_invoke(std::_Any_data const&, unsigned int&&, unsigned int&&)
+     0.01%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) [clone .constprop.0]
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] fileno_unlocked
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x0000000000097463
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x0000000000097485
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000009749e
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000009ecd3
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000009ed14
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a0284
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a02e0
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a0381
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a10f1
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a1147
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a1581
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a1852
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a1e38
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017224d
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x0000000000172253
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x0000000000175862
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017b80f
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017b843
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017b84d
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017b899
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017b9fd
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017ba04
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017c086
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017c107
+     0.01%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017c115
+     0.01%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::DefaultSimulatorImpl::Schedule(ns3::Time const&, ns3::EventImpl*)
+     0.01%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::EventId::GetUid() const
+     0.01%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::GetStaticHash()
+     0.01%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::Hash::Function::Murmur3::GetHash64(char const*, unsigned long)
+     0.01%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::ObjectBase::ConstructSelf(ns3::AttributeConstructionList const&)
+     0.01%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::Simulator::GetSystemId()
+     0.01%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::TypeId::GetAttribute(unsigned long) const
+     0.01%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::TypeId::GetAttributeN() const
+     0.01%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::TypeId::GetUid() const
+     0.01%  ns3.44-multi-np  libns3.44-internet.so        [.] ns3::Ipv4Header::Ipv4Header()
+     0.01%  ns3.44-multi-np  libns3.44-internet.so        [.] ns3::Ipv4Header::SetProtocol(unsigned char)
+     0.01%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::Buffer::Buffer()
+     0.01%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::Buffer::Buffer(unsigned int)
+     0.01%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::Buffer::Iterator::GetSize() const
+     0.01%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::Buffer::RemoveAtStart(unsigned int)
+     0.01%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::ByteTagList::Add(ns3::ByteTagList const&)
+     0.01%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::NodeListPriv::DoGet()
+     0.01%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::Packet::AddPacketTag(ns3::Tag const&) const
+     0.01%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::PacketMetadata::Create(unsigned int)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::MakeEvent<void (ns3::UbPort::*)(ns3::Ptr<ns3::Packet>), ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet> >(void (ns3::UbPort::*)(ns3::Ptr<ns3::Packet>), ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>)::EventMemberImpl::Notify()
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::MakeEvent<void (ns3::UbSwitchAllocator::*)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort> >(void (ns3::UbSwitchAllocator::*)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>)::EventMemberImpl::~EventMemberImpl()
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::MakeEvent<void (ns3::UbTransaction::*)(ns3::Ptr<ns3::UbWqeSegment>, ns3::Ptr<ns3::UbWqe>, ns3::UbTransaction::RtpTxQueueKey, unsigned long), ns3::UbTransaction*, ns3::Ptr<ns3::UbWqeSegment>, ns3::Ptr<ns3::UbWqe>, ns3::UbTransaction::RtpTxQueueKey, unsigned long>(void (ns3::UbTransaction::*)(ns3::Ptr<ns3::UbWqeSegment>, ns3::Ptr<ns3::UbWqe>, ns3::UbTransaction::RtpTxQueueKey, unsigned long), ns3::UbTransaction*, ns3::Ptr<ns3::UbWqeSegment>, ns3::Ptr<ns3::UbWqe>, ns3::UbTransaction::RtpTxQueueKey, unsigned long)::EventMemberImpl::~EventMemberImpl()
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::Node::GetId() const@plt
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::Ptr<ns3::CallbackImpl<void> > ns3::Create<ns3::CallbackImpl<void>, ns3::Callback<void, ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe> >::BindImpl<, ns3::UbTransaction::RtpTxQueueKey const&, unsigned int&, ns3::Ptr<ns3::UbWqe>&>(std::integer_sequence<unsigned long>, ns3::UbTransaction::RtpTxQueueKey const&, unsigned int&, ns3::Ptr<ns3::UbWqe>&)::{lambda((auto:1&&)...)#1}, std::vector<std::shared_ptr<ns3::CallbackComponentBase>, std::allocator<std::shared_ptr<ns3::CallbackComponentBase> > >&>(ns3::UbTransaction::RtpTxQueueKey const&, unsigned int&)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::Ptr<ns3::UbIngressQueue>::~Ptr()@plt
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbFunction::AttachJettyEvent(unsigned int, unsigned long, ns3::EventId, ns3::Callback<void>)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbIngressQueue::IsControlFrame()
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbIngressQueue::RefreshAllocatorSummary()
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbIpBasedNetworkHeader::Serialize(ns3::Buffer::Iterator) const
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbLifecycleCoordinator::IsResourceActive(ns3::UbLifecycleResourceIdentity const&) const
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbLink::TransmitStart(ns3::Ptr<ns3::Packet>, ns3::Ptr<ns3::UbPort>, ns3::Time)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbMAExtTah::UbMAExtTah()
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbPort::AddUdpHeader(ns3::Ptr<ns3::Packet>, ns3::Ptr<ns3::UbTransportChannel>)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbPort::NotifyAllocationFinish()
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbQueueManager::RemoveFromIngressAdmission(unsigned int, unsigned int, unsigned int)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbRoutingPolicy::Count(ns3::UbRoutingCandidateView const&)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbSwitch::GetQueueManager()
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbSwitch::GetTypeId()
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbSwitch::ResolveURMAOutput(ns3::Ptr<ns3::Packet>, ns3::ParsedURMAHeaders const&, unsigned int, ns3::RoutingKey&, bool&)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbSwitch::SinkTpDataPacket(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>, ns3::ParsedURMAHeaders const&)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbSwitchAllocator::CheckDeadlock()
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbSwitchAllocator::ScheduleTriggerAllocator(ns3::Ptr<ns3::UbPort>)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTaHeaderPlan::ForResponse(ns3::UbTransactionRule const&)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTrackedEventSet::Begin(ns3::UbLifecycleResourceIdentity const&, unsigned long)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::BuildTransactionResponse(unsigned int, ns3::Ptr<ns3::UbWqeSegment>, ns3::UbTransactionRule const&, ns3::UbWorkExecutionResult) const
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::EnqueueRtpWqeAfterBackpressure(unsigned int, ns3::Ptr<ns3::UbWqe>)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::FindRtpTransportReference(unsigned int) const
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::ResolveRtpTransportReference(ns3::UbRtpTransportReference const&, ns3::UbTransaction::RtpTransportResolution&) const
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::RunInboundTransaction(unsigned int, ns3::Ptr<ns3::UbWqeSegment>, ns3::Callback<void, ns3::Ptr<ns3::UbWqeSegment> >)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransactionCorrelationTag::GetTypeId()
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::BuildGbnPacketDescriptor(ns3::UbTransportChannel::NewDataSendContext const&, unsigned long) const
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::HandleReceivedAckOrSack(ns3::UbTransportChannel::TransportResponseContext const&, unsigned long, ns3::UbRetransAckResult&)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::HasPendingTransmitWork()
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportHeader::~UbTransportHeader()
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportHeader::~UbTransportHeader()@plt
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Function_handler<void (), std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>))()> >::_M_invoke(std::_Any_data const&)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Function_handler<void (ns3::UbLifecycleResourceIdentity), ns3::Callback<void, ns3::UbLifecycleResourceIdentity>::Callback<void (ns3::UbTransportChannelManager::*)(ns3::UbLifecycleResourceIdentity), ns3::UbTransportChannelManager*, 0>(void (ns3::UbTransportChannelManager::*)(ns3::UbLifecycleResourceIdentity), ns3::UbTransportChannelManager*)::{lambda((auto:1&&)...)#1}>::_M_invoke(std::_Any_data const&, ns3::UbLifecycleResourceIdentity&&)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Function_handler<void (unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag), void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag)>::_M_invoke(std::_Any_data const&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, ns3::PacketType&&, unsigned int&&, unsigned int&&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, ns3::UbPacketTraceTag&&)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Function_handler<void (unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int), void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int)>::_M_invoke(std::_Any_data const&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Hashtable<unsigned int, std::pair<unsigned int const, ns3::PortTrace>, std::allocator<std::pair<unsigned int const, ns3::PortTrace> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned int const, ns3::PortTrace>, false>*, unsigned long)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Rb_tree<ns3::UbLifecycleCoordinator::ResourceKey, std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState>, std::_Select1st<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> >, std::less<ns3::UbLifecycleCoordinator::ResourceKey>, std::allocator<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> > >::_M_erase(std::_Rb_tree_node<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> >*) [clone .isra.0]
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Rb_tree<ns3::UbTransaction::RemoteRtpWqeSegmentKey, std::pair<ns3::UbTransaction::RemoteRtpWqeSegmentKey const, ns3::UbTransaction::RemoteRtpWqeSegmentState>, std::_Select1st<std::pair<ns3::UbTransaction::RemoteRtpWqeSegmentKey const, ns3::UbTransaction::RemoteRtpWqeSegmentState> >, std::less<ns3::UbTransaction::RemoteRtpWqeSegmentKey>, std::allocator<std::pair<ns3::UbTransaction::RemoteRtpWqeSegmentKey const, ns3::UbTransaction::RemoteRtpWqeSegmentState> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<ns3::UbTransaction::RemoteRtpWqeSegmentKey const, ns3::UbTransaction::RemoteRtpWqeSegmentState> >, ns3::UbTransaction::RemoteRtpWqeSegmentKey const&)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Rb_tree<std::pair<unsigned int, unsigned int>, std::pair<std::pair<unsigned int, unsigned int> const, ns3::UbTransaction::OperationRecord>, std::_Select1st<std::pair<std::pair<unsigned int, unsigned int> const, ns3::UbTransaction::OperationRecord> >, std::less<std::pair<unsigned int, unsigned int> >, std::allocator<std::pair<std::pair<unsigned int, unsigned int> const, ns3::UbTransaction::OperationRecord> > >::_M_erase_aux(std::_Rb_tree_const_iterator<std::pair<std::pair<unsigned int, unsigned int> const, ns3::UbTransaction::OperationRecord> >)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Rb_tree<std::pair<unsigned int, unsigned int>, std::pair<std::pair<unsigned int, unsigned int> const, unsigned int>, std::_Select1st<std::pair<std::pair<unsigned int, unsigned int> const, unsigned int> >, std::less<std::pair<unsigned int, unsigned int> >, std::allocator<std::pair<std::pair<unsigned int, unsigned int> const, unsigned int> > >::_M_erase(std::_Rb_tree_node<std::pair<std::pair<unsigned int, unsigned int> const, unsigned int> >*) [clone .isra.0]
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Sp_counted_ptr_inplace<ns3::CallbackComponent<ns3::UbTransaction::RtpTxQueueKey, true>, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_dispose()
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::__cxx11::_List_base<ns3::Callback<void, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int>, std::allocator<ns3::Callback<void, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int> > >::_M_clear()
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) [clone .constprop.0]
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve(unsigned long)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::enable_if<is_member_pointer_v<void (ns3::UbSwitchAllocator::*)(ns3::Ptr<ns3::UbPort>)>, ns3::EventImpl*>::type ns3::MakeEvent<void (ns3::UbSwitchAllocator::*)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort> >(void (ns3::UbSwitchAllocator::*)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>)
+     0.01%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::map<unsigned int, unsigned int, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> > >::operator[](unsigned int const&)
+     0.01%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::_M_pbump(char*, char*, long)
+     0.01%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::basic_ios<char, std::char_traits<char> >::init(std::basic_streambuf<char, std::char_traits<char> >*)
+     0.01%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::codecvt<char, char, __mbstate_t>::do_always_noconv() const
+     0.01%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::ios_base::_M_call_callbacks(std::ios_base::event)
+     0.01%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::locale::operator=(std::locale const&)
+     0.01%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::ostream::operator<<(int)
+     0.01%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::ostream::sentry::sentry(std::ostream&)@plt
+     0.01%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] 0x00000000001321a1
+     0.01%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] Layer::Event(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, int, int, unsigned long, unsigned long, int)
+     0.01%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] ns3::Ptr<ns3::Node>::~Ptr()
+     0.01%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] ns3::Ptr<ns3::UbSwitch>::~Ptr()
+     0.01%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] std::_Function_handler<void (unsigned int, unsigned int, unsigned int), ns3::Callback<void, unsigned int, unsigned int, unsigned int>::Callback<Layer::Pair(unsigned int, unsigned int)::{lambda(unsigned int, unsigned int, unsigned int)#1}, , 0>(Layer::Pair(unsigned int, unsigned int)::{lambda(unsigned int, unsigned int, unsigned int)#1})::{lambda((auto:1&&)...)#1}>::_M_invoke(std::_Any_data const&, unsigned int&&, unsigned int&&, unsigned int&&)
+     0.01%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector()
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x0000000000097465
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x0000000000097480
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x0000000000097494
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x0000000000097496
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000009eb37
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000009ebf0
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000009ec30
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000009ec34
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000009ec4a
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000009ec79
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000009eca4
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000009ecb7
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000009ee35
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a01d0
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a020f
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a0280
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a02e9
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a0353
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a0393
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a0fe3
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a102b
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a10d0
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a1105
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a121a
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a134e
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a1445
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a1456
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a1593
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a15f1
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a15f6
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a1664
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a18f3
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a1d50
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000000a1d54
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x0000000000127184
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000001271eb
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000001271f2
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000012723b
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017220b
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x0000000000172225
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x0000000000172272
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000001724b1
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x0000000000175040
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x0000000000175042
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x0000000000175047
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017538e
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000001753c1
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000001753f4
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x0000000000175400
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x0000000000175403
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x0000000000175840
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x0000000000175848
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x0000000000175883
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017588e
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x0000000000175894
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000001758ba
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x00000000001758e0
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017b86a
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017b884
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017b8aa
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017b8b2
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017b8bb
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017b9f6
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017ba0b
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017baa2
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017bacb
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017c063
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017c09e
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017c0a6
+     0.00%  ns3.44-multi-np  libc.so.6                    [.] 0x000000000017c100
+     0.00%  ns3.44-multi-np  libns3.44-core.so            [.] MRG32k3a::MatVecModM(double const (*) [3], double const*, double*, double) [clone .constprop.1]
+     0.00%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::AttributeValue::~AttributeValue()
+     0.00%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::BooleanValue::BooleanValue()
+     0.00%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::EventImpl::EventImpl()
+     0.00%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::GetImpl()
+     0.00%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::Hash::Function::Murmur3::clear()
+     0.00%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::Hash::Function::Murmur3Implementation::MurmurHash3_x86_128_incr(void const*, unsigned long, unsigned int*, void*)
+     0.00%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::IidManager::AddAttribute(unsigned short, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned int, ns3::Ptr<ns3::AttributeValue const>, ns3::Ptr<ns3::AttributeAccessor const>, ns3::Ptr<ns3::AttributeChecker const>, ns3::TypeId::SupportLevel, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+     0.00%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::IntegerValue::Get() const
+     0.00%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::Object::GetTypeId()
+     0.00%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::Object::~Object()
+     0.00%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::ObjectBase::GetTypeId()
+     0.00%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::Simulator::IsExpired(ns3::EventId const&)
+     0.00%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::Simulator::ScheduleWithContext(unsigned int, ns3::Time const&, ns3::EventImpl*)
+     0.00%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::Singleton<ns3::IidManager>::Get()
+     0.00%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::TypeId::GetAttributeFullName[abi:cxx11](unsigned long) const
+     0.00%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::TypeId::LookupTraceSourceByName(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::TypeId::TraceSourceInformation*) const
+     0.00%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::int64x64_t::Div(ns3::int64x64_t const&)
+     0.00%  ns3.44-multi-np  libns3.44-core.so            [.] ns3::int64x64_t::Mul(ns3::int64x64_t const&)
+     0.00%  ns3.44-multi-np  libns3.44-core.so            [.] operator delete(void*, unsigned long)@plt
+     0.00%  ns3.44-multi-np  libns3.44-internet.so        [.] ns3::Ipv4Header::SetTtl(unsigned char)
+     0.00%  ns3.44-multi-np  libns3.44-internet.so        [.] ns3::UdpHeader::GetInstanceTypeId() const
+     0.00%  ns3.44-multi-np  libns3.44-internet.so        [.] ns3::UdpHeader::GetSerializedSize() const
+     0.00%  ns3.44-multi-np  libns3.44-internet.so        [.] ns3::UdpHeader::GetSourcePort() const
+     0.00%  ns3.44-multi-np  libns3.44-internet.so        [.] ns3::UdpHeader::SetDestinationPort(unsigned short)
+     0.00%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::Buffer::CopyData(unsigned char*, unsigned int) const
+     0.00%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::Buffer::Iterator::WriteHtonU64(unsigned long)
+     0.00%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::Buffer::Iterator::WriteU16(unsigned short)
+     0.00%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::ByteTagList::AddAtStart(int)@plt
+     0.00%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::ByteTagList::ByteTagList()
+     0.00%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::Ipv4Address::Ipv4Address()
+     0.00%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::Ipv4Mask::Ipv4Mask(char const*)
+     0.00%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::Packet::CopyData(unsigned char*, unsigned int) const
+     0.00%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::Packet::GetUid() const
+     0.00%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::PacketMetadata::AddHeader(ns3::Header const&, unsigned int)
+     0.00%  ns3.44-multi-np  libns3.44-network.so         [.] ns3::PacketTagList::Add(ns3::Tag const&) const
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] __dynamic_cast@plt
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] __tls_get_addr@plt
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] free@plt
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] memcmp@plt
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] memcpy@plt
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::(anonymous namespace)::FormatSimpleAckInfo(char const*, unsigned long)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::CallbackImpl<void, ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe> >::~CallbackImpl()
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::CallbackImpl<void>::~CallbackImpl()
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::IsAtomicTransaction(ns3::UbTransactionOpcode)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::MakeEvent<void (ns3::UbPort::*)(), ns3::UbPort*>(void (ns3::UbPort::*)(), ns3::UbPort*)::EventMemberImpl::Notify()
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::MakeEvent<void (ns3::UbSwitchAllocator::*)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort> >(void (ns3::UbSwitchAllocator::*)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>)::EventMemberImpl::Notify()
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::MakeEvent<void (ns3::UbTransaction::*)(ns3::UbTransaction::RtpTxQueueKey), ns3::UbTransaction*, ns3::UbTransaction::RtpTxQueueKey>(void (ns3::UbTransaction::*)(ns3::UbTransaction::RtpTxQueueKey), ns3::UbTransaction*, ns3::UbTransaction::RtpTxQueueKey)::EventMemberImpl::Notify()
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::NodeList::GetNNodes()@plt
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::Object::DoGetObject(ns3::TypeId) const@plt
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::Ptr<ns3::CallbackImpl<void, ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe> > > ns3::Create<ns3::CallbackImpl<void, ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe> >, ns3::Callback<void, ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe> >::Callback<void (ns3::UbTransaction::*)(ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe>), ns3::UbTransaction*, 0>(void (ns3::UbTransaction::*)(ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe>), ns3::UbTransaction*)::{lambda((auto:1&&)...)#1}, std::vector<std::shared_ptr<ns3::CallbackComponentBase>, std::allocator<std::shared_ptr<ns3::CallbackComponentBase> > >&>(ns3::Callback<void, ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe> >::Callback<void (ns3::UbTransaction::*)(ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe>), ns3::UbTransaction*, 0>(void (ns3::UbTransaction::*)(ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe>), ns3::UbTransaction*)::{lambda((auto:1&&)...)#1}&&, std::vector<std::shared_ptr<ns3::CallbackComponentBase>, std::allocator<std::shared_ptr<ns3::CallbackComponentBase> > >&)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::Ptr<ns3::Packet const>::operator=(ns3::Ptr<ns3::Packet const> const&) [clone .isra.0]
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::Ptr<ns3::Packet const>::operator=(ns3::Ptr<ns3::Packet const> const&) [clone .isra.0]
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::Ptr<ns3::UbIngressQueue>::~Ptr()
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::Ptr<ns3::UbLifecycleCoordinator>::~Ptr()
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::Ptr<ns3::UbPort>::~Ptr()@plt
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::Ptr<ns3::UbWqeSegment> ns3::CreateObject<ns3::UbWqeSegment>()
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::TagBuffer::WriteU64(unsigned long)@plt
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbAckTransactionHeader::Deserialize(ns3::Buffer::Iterator)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbAckTransactionHeader::GetIniRcId() const
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbAckTransactionHeader::GetSerializedSize() const
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbAckTransactionHeader::Serialize(ns3::Buffer::Iterator) const
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbAckTransactionHeader::UbAckTransactionHeader()
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbCbfc::MaybeQueueControlReturn(unsigned int)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbCnpExtTph::~UbCnpExtTph()
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbCongestionExtTph::~UbCongestionExtTph()
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbController::GetTransportChannelManager() const@plt
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbDataLink::AddPacketHeader(ns3::Ptr<ns3::Packet>, bool, bool, unsigned char, unsigned char, ns3::RoutingType, ns3::UbDatalinkHeaderConfig)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbDatalinkPacketHeader::GetCreditTargetVL() const
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbDatalinkPacketHeader::GetInstanceTypeId() const
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbDatalinkPacketHeader::GetPacketVL() const
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbDatalinkPacketHeader::GetSerializedSize() const
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbDatalinkPacketHeader::SetCredit(bool)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbDatalinkPacketHeader::SetCreditTargetVL(unsigned char)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbDatalinkPacketHeader::UbDatalinkPacketHeader()
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbEgressQueue::IsEmpty()
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbFunction::SubmitWqe(ns3::Ptr<ns3::UbWqe>, unsigned int)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbHostCaqm::OnReceiverPrepareAckCongestionHeader(unsigned long, unsigned long)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbHostCaqm::OnSenderDataPacketSent(unsigned int, unsigned int)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbIngressQueue::IsGeneratedDataPacket()
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbIpBasedNetworkHeader::GetInstanceTypeId() const
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbIpBasedNetworkHeader::GetSerializedSize() const
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbIpBasedNetworkHeader::SetHint(unsigned char)@plt
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbJetty::CommitWqeSegmentAdmission(ns3::Ptr<ns3::UbWqeSegment>)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbJetty::DoDispose()
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbJetty::PrepareNextWqeSegment(ns3::Ptr<ns3::UbWqe>)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbJetty::PushWqe(ns3::Ptr<ns3::UbWqe>, unsigned int)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbJetty::UbJetty()
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbJettyManager::DestroyJetty(unsigned int, ns3::UbDestroyReason, ns3::Callback<void, ns3::UbLifecycleResourceIdentity, ns3::UbDestroyStatus>)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbJettyManager::ReplaceRtpBinding(unsigned int, ns3::UbLifecycleResourceIdentity const&)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbJettyManager::TryFinalizeJettyDestroy(unsigned int)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbLifecycleCoordinator::OpenResource(ns3::UbLifecycleResourceKind, unsigned long)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbLifecycleCoordinator::RetireResource(ns3::UbLifecycleResourceIdentity const&)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbMAExtTah::Deserialize(ns3::Buffer::Iterator)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbPacketTraceTag::~UbPacketTraceTag()
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbPort::AddIpv4Header(ns3::Ptr<ns3::Packet>, ns3::Ptr<ns3::UbTransportChannel>)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbPort::ComputePacketRateNobTime(ns3::Ptr<ns3::Packet>) const
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbPort::TraComEventNotify(ns3::Ptr<ns3::Packet>, ns3::Time)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbQueueManager::AddEgressBufferedBytes(unsigned int)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbQueueManager::CheckInPortSpace(unsigned int, unsigned int, unsigned int)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbQueueManager::RemoveEgressBufferedBytes(unsigned int)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbRetransController::GetRetransEnable() const@plt
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbRoundRobinAllocator::PickNextIngressQueue(ns3::Ptr<ns3::UbPort>)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbRoutingProcess::GetOutPortForEndpoint(ns3::RoutingKey&, bool&, unsigned short)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbRoutingProcess::GetOutPortForEndpointInternal(ns3::RoutingKey&, std::vector<unsigned short, std::allocator<unsigned short> > const*, bool&, unsigned short)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbSelectiveAckExtTph::~UbSelectiveAckExtTph()
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbSwitch::ForwardDataPacket(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>, ns3::ParsedURMAHeaders const&)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbSwitch::GetAllocator()@plt
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbSwitch::GetPacketType(ns3::Ptr<ns3::Packet>) [clone .constprop.0]
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbSwitch::LastPacketTraversesNotify(unsigned int, ns3::UbTransportHeader)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTaHeaderPlan::GetExtensionBytes(unsigned int, ns3::UbTransactionFields const&) const
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTrackedEventSet::Resolve(ns3::UbLifecycleResourceIdentity const&, unsigned long)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::ExecuteInboundTransaction(unsigned int, ns3::Ptr<ns3::UbWqeSegment>, ns3::Callback<void, ns3::Ptr<ns3::UbWqeSegment> >)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::HasWqeOperation(unsigned int, unsigned int) const
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::RecordSegmentSuccess(unsigned int, unsigned int, unsigned int, ns3::Ptr<ns3::UbWqeSegment>)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::RtpTxQueueKey::operator<(ns3::UbTransaction::RtpTxQueueKey const&) const
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransaction::WqeFinish(unsigned int, ns3::Ptr<ns3::UbWqe>, ns3::UbWorkOutcome)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransactionCorrelationTag::GetIdentity() const
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransactionCorrelationTag::GetInstanceTypeId() const
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransactionCorrelationTag::Serialize(ns3::TagBuffer) const
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransactionHeader::GetInstanceTypeId() const
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransactionHeader::GetUbTransactionOpcode() const
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::AdvanceSenderAckFromPlainTpack(ns3::UbTransportChannel::TransportResponseContext const&, unsigned long)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::BufferedInboundPacket::~BufferedInboundPacket()
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::CanContinueAcceptedWqeSegment(ns3::Ptr<ns3::UbWqeSegment const>) const
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::CanTrySendNewDataPacket()
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::HandleReceivedTpNak(ns3::UbTransportChannel::TransportResponseContext const&)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::ReceivedDataPacketContext::~ReceivedDataPacketContext()
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::TryContinueJettyTransmission()
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannel::UpdateSenderAfterTransportAck(ns3::UbTransportChannel::TransportResponseContext const&, unsigned long)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportChannelManager::NotifyLifecycleStateChanged(ns3::UbLifecycleResourceIdentity)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportHeader::GetLastPacket() const
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportHeader::GetSerializedSize() const
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportHeader::SetDestTpn(unsigned int)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportHeader::SetTPOpcode(unsigned char)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbTransportHeader::UbTransportHeader()
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbWqeSegment::GetResolvedTpIdentity() const
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbWqeSegment::GetTransactionSegmentIdentity() const
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbWqeSegment::GetTypeId()
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UbWqeSegment::~UbWqeSegment()
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] ns3::UdpHeader::GetSerializedSize() const@plt
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Function_handler<void (), ns3::Callback<void, ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe> >::BindImpl<, ns3::UbTransaction::RtpTxQueueKey const&, unsigned int&, ns3::Ptr<ns3::UbWqe>&>(std::integer_sequence<unsigned long>, ns3::UbTransaction::RtpTxQueueKey const&, unsigned int&, ns3::Ptr<ns3::UbWqe>&)::{lambda((auto:1&&)...)#1}>::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Function_handler<void (), std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>))()> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Function_handler<void (), std::_Bind<void (ns3::UbPort::*(ns3::UbPort*))()> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Function_handler<void (), std::_Bind<void (ns3::UbTransaction::*(ns3::UbTransaction*, ns3::Ptr<ns3::UbWqeSegment>, ns3::Ptr<ns3::UbWqe>, ns3::UbTransaction::RtpTxQueueKey, unsigned long))(ns3::Ptr<ns3::UbWqeSegment>, ns3::Ptr<ns3::UbWqe>, ns3::UbTransaction::RtpTxQueueKey, unsigned long)> >::_M_invoke(std::_Any_data const&)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Function_handler<void (ns3::UbSwitch*, unsigned int, unsigned int), void (ns3::UbSwitch::*)(unsigned int, unsigned int)>::_M_invoke(std::_Any_data const&, ns3::UbSwitch*&&, unsigned int&&, unsigned int&&)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Function_handler<void (ns3::UbTransaction*, ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe>), void (ns3::UbTransaction::*)(ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe>)>::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Function_handler<void (ns3::UbWorkExecutionResult), ns3::Callback<void, ns3::UbWorkExecutionResult>::Callback<ns3::UbTransaction::RunInboundTransaction(unsigned int, ns3::Ptr<ns3::UbWqeSegment>, ns3::Callback<void, ns3::Ptr<ns3::UbWqeSegment> >)::{lambda(ns3::UbWorkExecutionResult)#1}, , 0>(ns3::UbTransaction::RunInboundTransaction(unsigned int, ns3::Ptr<ns3::UbWqeSegment>, ns3::Callback<void, ns3::Ptr<ns3::UbWqeSegment> >)::{lambda(ns3::UbWorkExecutionResult)#1})::{lambda((auto:1&&)...)#1}>::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Function_handler<void (unsigned int, ns3::UbTransportHeader), void (*)(unsigned int, ns3::UbTransportHeader)>::_M_invoke(std::_Any_data const&, unsigned int&&, ns3::UbTransportHeader&&)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Function_handler<void (unsigned int, unsigned int), ns3::Callback<void, unsigned int, unsigned int>::Callback<void (ns3::UbSwitch::*)(unsigned int, unsigned int), ns3::UbSwitch*, 0>(void (ns3::UbSwitch::*)(unsigned int, unsigned int), ns3::UbSwitch*)::{lambda((auto:1&&)...)#1}>::_M_invoke(std::_Any_data const&, unsigned int&&, unsigned int&&)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Function_handler<void (unsigned int, unsigned int, unsigned int), void (*)(unsigned int, unsigned int, unsigned int)>::_M_invoke(std::_Any_data const&, unsigned int&&, unsigned int&&, unsigned int&&)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Rb_tree<ns3::UbTransaction::RtpTxQueueKey, std::pair<ns3::UbTransaction::RtpTxQueueKey const, ns3::UbTransaction::RtpTxQueue>, std::_Select1st<std::pair<ns3::UbTransaction::RtpTxQueueKey const, ns3::UbTransaction::RtpTxQueue> >, std::less<ns3::UbTransaction::RtpTxQueueKey>, std::allocator<std::pair<ns3::UbTransaction::RtpTxQueueKey const, ns3::UbTransaction::RtpTxQueue> > >::find(ns3::UbTransaction::RtpTxQueueKey const&)@plt
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Rb_tree<std::pair<unsigned int, unsigned int>, std::pair<std::pair<unsigned int, unsigned int> const, ns3::UbTransaction::OperationRecord>, std::_Select1st<std::pair<std::pair<unsigned int, unsigned int> const, ns3::UbTransaction::OperationRecord> >, std::less<std::pair<unsigned int, unsigned int> >, std::allocator<std::pair<std::pair<unsigned int, unsigned int> const, ns3::UbTransaction::OperationRecord> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<std::pair<unsigned int, unsigned int> const, ns3::UbTransaction::OperationRecord> >, std::pair<unsigned int, unsigned int> const&)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Rb_tree<std::pair<unsigned int, unsigned int>, std::pair<std::pair<unsigned int, unsigned int> const, unsigned int>, std::_Select1st<std::pair<std::pair<unsigned int, unsigned int> const, unsigned int> >, std::less<std::pair<unsigned int, unsigned int> >, std::allocator<std::pair<std::pair<unsigned int, unsigned int> const, unsigned int> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<std::pair<unsigned int, unsigned int> const, unsigned int> >, std::pair<unsigned int, unsigned int> const&)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Rb_tree<std::pair<unsigned int, unsigned long>, std::pair<std::pair<unsigned int, unsigned long> const, ns3::UbTransportChannel::InboundTaUnitState>, std::_Select1st<std::pair<std::pair<unsigned int, unsigned long> const, ns3::UbTransportChannel::InboundTaUnitState> >, std::less<std::pair<unsigned int, unsigned long> >, std::allocator<std::pair<std::pair<unsigned int, unsigned long> const, ns3::UbTransportChannel::InboundTaUnitState> > >::equal_range(std::pair<unsigned int, unsigned long> const&)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Rb_tree<unsigned int, std::pair<unsigned int const, std::vector<unsigned int, std::allocator<unsigned int> > >, std::_Select1st<std::pair<unsigned int const, std::vector<unsigned int, std::allocator<unsigned int> > > >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, std::vector<unsigned int, std::allocator<unsigned int> > > > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned int const, std::vector<unsigned int, std::allocator<unsigned int> > > >*) [clone .isra.0]
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, ns3::UbTransportChannel::BufferedInboundPacket>, std::_Select1st<std::pair<unsigned long const, ns3::UbTransportChannel::BufferedInboundPacket> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ns3::UbTransportChannel::BufferedInboundPacket> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<unsigned long const, ns3::UbTransportChannel::BufferedInboundPacket> >, unsigned long const&) [clone .isra.0]
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@plt
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::_Rb_tree_iterator<std::pair<unsigned long const, ns3::UbTrackedEventSet::Record> > std::_Rb_tree<unsigned long, std::pair<unsigned long const, ns3::UbTrackedEventSet::Record>, std::_Select1st<std::pair<unsigned long const, ns3::UbTrackedEventSet::Record> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ns3::UbTrackedEventSet::Record> > >::_M_emplace_hint_unique<unsigned long const&, ns3::UbTrackedEventSet::Record&>(std::_Rb_tree_const_iterator<std::pair<unsigned long const, ns3::UbTrackedEventSet::Record> >, unsigned long const&, ns3::UbTrackedEventSet::Record&)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::append(char const*)@plt
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::__cxx11::to_string(unsigned int)@plt
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::__detail::_Prime_rehash_policy::_M_need_rehash(unsigned long, unsigned long, unsigned long) const@plt
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::enable_if<is_member_pointer_v<void (ns3::UbPort::*)()>, ns3::EventImpl*>::type ns3::MakeEvent<void (ns3::UbPort::*)(), ns3::Ptr<ns3::UbPort>>(void (ns3::UbPort::*)(), ns3::Ptr<ns3::UbPort>)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] std::enable_if<is_member_pointer_v<void (ns3::UbTransaction::*)(unsigned int, ns3::Ptr<ns3::UbWqe>, ns3::UbTransaction::RtpTxQueueKey, unsigned long)>, ns3::EventImpl*>::type ns3::MakeEvent<void (ns3::UbTransaction::*)(unsigned int, ns3::Ptr<ns3::UbWqe>, ns3::UbTransaction::RtpTxQueueKey, unsigned long), ns3::UbTransaction*, unsigned int, ns3::Ptr<ns3::UbWqe>, ns3::UbTransaction::RtpTxQueueKey, unsigned long>(void (ns3::UbTransaction::*)(unsigned int, ns3::Ptr<ns3::UbWqe>, ns3::UbTransaction::RtpTxQueueKey, unsigned long), ns3::UbTransaction*, unsigned int, ns3::Ptr<ns3::UbWqe>, ns3::UbTransaction::RtpTxQueueKey, unsigned long)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] strlen@plt
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] utils::UbUtils::CbfcCreditLevelNotify(unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned int, int, int, unsigned int)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] utils::UbUtils::IsTpDebugEnabledFor(unsigned int, unsigned int)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] utils::UbUtils::TpWqeSegmentCompletesNotify(unsigned int, unsigned int, unsigned int)
+     0.00%  ns3.44-multi-np  libns3.44-unified-bus.so     [.] utils::UbUtils::TpWqeSegmentSendsNotify(unsigned int, unsigned int, unsigned int)
+     0.00%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] memcpy@plt
+     0.00%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] operator new[](unsigned long)
+     0.00%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::_Rb_tree_decrement(std::_Rb_tree_node_base const*)
+     0.00%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::basic_filebuf<char, std::char_traits<char> >::sync()
+     0.00%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::istreambuf_iterator<char, std::char_traits<char> > std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > >::_M_extract_int<unsigned int>(std::istreambuf_iterator<char, std::char_traits<char> >, std::istreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, std::_Ios_Iostate&, unsigned int&) const
+     0.00%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::locale::id::_M_id() const@plt
+     0.00%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const
+     0.00%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] std::ostream& std::ostream::_M_insert<long>(long)
+     0.00%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] 0x00000000000de1f0
+     0.00%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] 0x00000000000de1fe
+     0.00%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] 0x000000000012e315
+     0.00%  ns3.44-multi-np  libstdc++.so.6.0.33          [.] 0x0000000000132183
+     0.00%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] Layer::Gate()
+     0.00%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] Layer::Run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+     0.00%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] Layer::TE(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned int, unsigned int, unsigned long, unsigned long) [clone .isra.0]
+     0.00%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] ns3::CallbackImpl<void, unsigned int, unsigned int>::~CallbackImpl()
+     0.00%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] ns3::Object::DoDelete()@plt
+     0.00%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] ns3::Ptr<ns3::UbController> ns3::Object::GetObject<ns3::UbController>() const
+     0.00%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] std::pair<std::_Rb_tree_iterator<std::pair<unsigned int, unsigned int> >, bool> std::_Rb_tree<std::pair<unsigned int, unsigned int>, std::pair<unsigned int, unsigned int>, std::_Identity<std::pair<unsigned int, unsigned int> >, std::less<std::pair<unsigned int, unsigned int> >, std::allocator<std::pair<unsigned int, unsigned int> > >::_M_insert_unique<std::pair<unsigned int, unsigned int> >(std::pair<unsigned int, unsigned int>&&)
+     0.00%  ns3.44-multi-np  ns3.44-multi-npu-relay       [.] void std::vector<unsigned int, std::allocator<unsigned int> >::_M_realloc_append<unsigned int const&>(unsigned int const&)
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

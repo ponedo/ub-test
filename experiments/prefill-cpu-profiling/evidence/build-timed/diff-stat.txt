@@ -1,0 +1,8 @@
+$ git -C /workspace/prefill-cpu-native diff --stat
+ src/unified-bus/model/protocol/ub-function.cc    | 18 ++++++++++++++++++
+ src/unified-bus/model/protocol/ub-function.h     |  2 ++
+ src/unified-bus/model/protocol/ub-transaction.cc |  8 ++++++++
+ src/unified-bus/model/protocol/ub-transport.cc   |  4 ++++
+ src/unified-bus/model/ub-port.cc                 |  2 ++
+ src/unified-bus/model/ub-utils.cc                |  6 ++++++
+ 6 files changed, 40 insertions(+)

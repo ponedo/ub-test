@@ -1,0 +1,1599 @@
+{
+  "samples": 1330,
+  "unknown_leaf": 70,
+  "mean_depth": 18.053383458646618,
+  "top20": [
+    {
+      "symbol": "std::_Rb_tree_increment(std::_Rb_tree_node_base*)",
+      "samples": 203,
+      "percent": 15.263157894736842
+    },
+    {
+      "symbol": "ns3::UbTransportChannelManager::ResolveLiveTp(unsigned int, ns3::UbLifecycleResourceIdentity const&)",
+      "samples": 169,
+      "percent": 12.706766917293233
+    },
+    {
+      "symbol": "ns3::UbTransaction::GetJettyLiveTps(unsigned int)",
+      "samples": 160,
+      "percent": 12.030075187969924
+    },
+    {
+      "symbol": "[unknown]",
+      "samples": 70,
+      "percent": 5.2631578947368425
+    },
+    {
+      "symbol": "ns3::UbFunction::GetJetty(unsigned int)",
+      "samples": 60,
+      "percent": 4.511278195488722
+    },
+    {
+      "symbol": "cfree",
+      "samples": 51,
+      "percent": 3.8345864661654137
+    },
+    {
+      "symbol": "malloc",
+      "samples": 34,
+      "percent": 2.556390977443609
+    },
+    {
+      "symbol": "__dynamic_cast",
+      "samples": 24,
+      "percent": 1.8045112781954886
+    },
+    {
+      "symbol": "ns3::UbTransaction::GetJettiesUsingTpn(unsigned int)",
+      "samples": 22,
+      "percent": 1.6541353383458646
+    },
+    {
+      "symbol": "ns3::UbRetransController::GetRetransEnable() const",
+      "samples": 18,
+      "percent": 1.3533834586466165
+    },
+    {
+      "symbol": "ns3::UbTransportChannel::IsEmpty()",
+      "samples": 17,
+      "percent": 1.2781954887218046
+    },
+    {
+      "symbol": "utils::UbUtils::AppendTraceLine(utils::UbUtils::TraceSinkHandle const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)",
+      "samples": 16,
+      "percent": 1.2030075187969924
+    },
+    {
+      "symbol": "ns3::UbTransaction::TryContinueJettyTransmission(unsigned int)",
+      "samples": 16,
+      "percent": 1.2030075187969924
+    },
+    {
+      "symbol": "ns3::UbTransportChannel::GetNextPacketSize()",
+      "samples": 15,
+      "percent": 1.1278195488721805
+    },
+    {
+      "symbol": "std::_Rb_tree_increment(std::_Rb_tree_node_base const*)",
+      "samples": 12,
+      "percent": 0.9022556390977443
+    },
+    {
+      "symbol": "ns3::UbRoundRobinAllocator::SelectNextIngressQueue(ns3::Ptr<ns3::UbPort>)",
+      "samples": 11,
+      "percent": 0.8270676691729323
+    },
+    {
+      "symbol": "ns3::UbSwitchAllocator::FindNextEligibleIngressQueue(unsigned int, unsigned int, unsigned int, ns3::Ptr<ns3::UbPort>) const",
+      "samples": 11,
+      "percent": 0.8270676691729323
+    },
+    {
+      "symbol": "std::_Rb_tree<ns3::UbLifecycleCoordinator::ResourceKey, std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState>, std::_Select1st<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> >, std::less<ns3::UbLifecycleCoordinator::ResourceKey>, std::allocator<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> > >::find(ns3::UbLifecycleCoordinator::ResourceKey const&)",
+      "samples": 10,
+      "percent": 0.7518796992481203
+    },
+    {
+      "symbol": "ns3::TracedCallback<unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag>::operator()(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag) const",
+      "samples": 10,
+      "percent": 0.7518796992481203
+    },
+    {
+      "symbol": "(anonymous namespace)::CsvRow(std::initializer_list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >)",
+      "samples": 10,
+      "percent": 0.7518796992481203
+    }
+  ],
+  "all_self": [
+    {
+      "symbol": "std::_Rb_tree_increment(std::_Rb_tree_node_base*)",
+      "samples": 203,
+      "percent": 15.263157894736842
+    },
+    {
+      "symbol": "ns3::UbTransportChannelManager::ResolveLiveTp(unsigned int, ns3::UbLifecycleResourceIdentity const&)",
+      "samples": 169,
+      "percent": 12.706766917293233
+    },
+    {
+      "symbol": "ns3::UbTransaction::GetJettyLiveTps(unsigned int)",
+      "samples": 160,
+      "percent": 12.030075187969924
+    },
+    {
+      "symbol": "[unknown]",
+      "samples": 70,
+      "percent": 5.2631578947368425
+    },
+    {
+      "symbol": "ns3::UbFunction::GetJetty(unsigned int)",
+      "samples": 60,
+      "percent": 4.511278195488722
+    },
+    {
+      "symbol": "cfree",
+      "samples": 51,
+      "percent": 3.8345864661654137
+    },
+    {
+      "symbol": "malloc",
+      "samples": 34,
+      "percent": 2.556390977443609
+    },
+    {
+      "symbol": "__dynamic_cast",
+      "samples": 24,
+      "percent": 1.8045112781954886
+    },
+    {
+      "symbol": "ns3::UbTransaction::GetJettiesUsingTpn(unsigned int)",
+      "samples": 22,
+      "percent": 1.6541353383458646
+    },
+    {
+      "symbol": "ns3::UbRetransController::GetRetransEnable() const",
+      "samples": 18,
+      "percent": 1.3533834586466165
+    },
+    {
+      "symbol": "ns3::UbTransportChannel::IsEmpty()",
+      "samples": 17,
+      "percent": 1.2781954887218046
+    },
+    {
+      "symbol": "utils::UbUtils::AppendTraceLine(utils::UbUtils::TraceSinkHandle const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)",
+      "samples": 16,
+      "percent": 1.2030075187969924
+    },
+    {
+      "symbol": "ns3::UbTransaction::TryContinueJettyTransmission(unsigned int)",
+      "samples": 16,
+      "percent": 1.2030075187969924
+    },
+    {
+      "symbol": "ns3::UbTransportChannel::GetNextPacketSize()",
+      "samples": 15,
+      "percent": 1.1278195488721805
+    },
+    {
+      "symbol": "std::_Rb_tree_increment(std::_Rb_tree_node_base const*)",
+      "samples": 12,
+      "percent": 0.9022556390977443
+    },
+    {
+      "symbol": "ns3::UbRoundRobinAllocator::SelectNextIngressQueue(ns3::Ptr<ns3::UbPort>)",
+      "samples": 11,
+      "percent": 0.8270676691729323
+    },
+    {
+      "symbol": "ns3::UbSwitchAllocator::FindNextEligibleIngressQueue(unsigned int, unsigned int, unsigned int, ns3::Ptr<ns3::UbPort>) const",
+      "samples": 11,
+      "percent": 0.8270676691729323
+    },
+    {
+      "symbol": "std::_Rb_tree<ns3::UbLifecycleCoordinator::ResourceKey, std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState>, std::_Select1st<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> >, std::less<ns3::UbLifecycleCoordinator::ResourceKey>, std::allocator<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> > >::find(ns3::UbLifecycleCoordinator::ResourceKey const&)",
+      "samples": 10,
+      "percent": 0.7518796992481203
+    },
+    {
+      "symbol": "ns3::TracedCallback<unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag>::operator()(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag) const",
+      "samples": 10,
+      "percent": 0.7518796992481203
+    },
+    {
+      "symbol": "(anonymous namespace)::CsvRow(std::initializer_list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >)",
+      "samples": 10,
+      "percent": 0.7518796992481203
+    },
+    {
+      "symbol": "std::_Rb_tree<ns3::UbLifecycleCoordinator::ResourceKey, std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState>, std::_Select1st<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> >, std::less<ns3::UbLifecycleCoordinator::ResourceKey>, std::allocator<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> > >::find(ns3::UbLifecycleCoordinator::ResourceKey const&) const",
+      "samples": 9,
+      "percent": 0.6766917293233082
+    },
+    {
+      "symbol": "ns3::UbTransaction::IsOrderedByInitiator(unsigned int, ns3::Ptr<ns3::UbWqe>)",
+      "samples": 7,
+      "percent": 0.5263157894736842
+    },
+    {
+      "symbol": "std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)",
+      "samples": 7,
+      "percent": 0.5263157894736842
+    },
+    {
+      "symbol": "utils::UbUtils::GetCachedTraceSink(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)",
+      "samples": 7,
+      "percent": 0.5263157894736842
+    },
+    {
+      "symbol": "ns3::UbTransportChannel::CompleteAckedWqeSegments(ns3::UbTransportChannel::TransportResponseContext const&)",
+      "samples": 7,
+      "percent": 0.5263157894736842
+    },
+    {
+      "symbol": "ns3::Ptr<ns3::UbTransportChannelManager>::~Ptr()",
+      "samples": 6,
+      "percent": 0.45112781954887216
+    },
+    {
+      "symbol": "std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)",
+      "samples": 6,
+      "percent": 0.45112781954887216
+    },
+    {
+      "symbol": "ns3::UbController::GetTransportChannelManager() const",
+      "samples": 6,
+      "percent": 0.45112781954887216
+    },
+    {
+      "symbol": "utils::UbUtils::TpRecvNotify(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag)",
+      "samples": 6,
+      "percent": 0.45112781954887216
+    },
+    {
+      "symbol": "ns3::UbJettyManager::ResolveWqeLifecycleLocalId(unsigned int, unsigned int) const",
+      "samples": 6,
+      "percent": 0.45112781954887216
+    },
+    {
+      "symbol": "std::_Function_handler<void (unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int), ns3::Callback<void, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int>::Callback<void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int), , 0>(void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))::{lambda((auto:1&&)...)#1}>::_M_invoke(std::_Any_data const&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&)",
+      "samples": 5,
+      "percent": 0.37593984962406013
+    },
+    {
+      "symbol": "ns3::UbTransportChannel::NotifyDataPacketSent(ns3::UbGbnPacketDescriptor const&, ns3::Ptr<ns3::Packet>)",
+      "samples": 5,
+      "percent": 0.37593984962406013
+    },
+    {
+      "symbol": "ns3::Packet::RemoveHeader(ns3::Header&)",
+      "samples": 5,
+      "percent": 0.37593984962406013
+    },
+    {
+      "symbol": "ns3::UbTransportChannel::NotifyLastPacketReceived(ns3::UbTransportChannel::ReceivedDataPacketContext const&)",
+      "samples": 5,
+      "percent": 0.37593984962406013
+    },
+    {
+      "symbol": "operator delete(void*)",
+      "samples": 5,
+      "percent": 0.37593984962406013
+    },
+    {
+      "symbol": "operator new(unsigned long)",
+      "samples": 5,
+      "percent": 0.37593984962406013
+    },
+    {
+      "symbol": "ns3::PacketTagList::Remove(ns3::Tag&)",
+      "samples": 4,
+      "percent": 0.3007518796992481
+    },
+    {
+      "symbol": "ns3::UbDatalinkHeader::Deserialize(ns3::Buffer::Iterator)",
+      "samples": 4,
+      "percent": 0.3007518796992481
+    },
+    {
+      "symbol": "ns3::Object::DoGetObject(ns3::TypeId) const",
+      "samples": 4,
+      "percent": 0.3007518796992481
+    },
+    {
+      "symbol": "std::_Function_handler<void (unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag), ns3::Callback<void, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag>::Callback<void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag), , 0>(void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag))::{lambda((auto:1&&)...)#1}>::_M_invoke(std::_Any_data const&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, ns3::PacketType&&, unsigned int&&, unsigned int&&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, ns3::UbPacketTraceTag&&)",
+      "samples": 4,
+      "percent": 0.3007518796992481
+    },
+    {
+      "symbol": "std::_Hash_bytes(void const*, unsigned long, unsigned long)",
+      "samples": 4,
+      "percent": 0.3007518796992481
+    },
+    {
+      "symbol": "ns3::UbTransportChannel::RecvTpAck(ns3::Ptr<ns3::Packet>)",
+      "samples": 4,
+      "percent": 0.3007518796992481
+    },
+    {
+      "symbol": "ns3::UbCbfc::IsFcLimited(ns3::Ptr<ns3::UbIngressQueue>)",
+      "samples": 4,
+      "percent": 0.3007518796992481
+    },
+    {
+      "symbol": "ns3::MapScheduler::Insert(ns3::Scheduler::Event const&)",
+      "samples": 4,
+      "percent": 0.3007518796992481
+    },
+    {
+      "symbol": "ns3::UbTransportChannel::GetIngressQueueType()",
+      "samples": 4,
+      "percent": 0.3007518796992481
+    },
+    {
+      "symbol": "std::_Rb_tree<ns3::UbTransaction::RtpTxQueueKey, std::pair<ns3::UbTransaction::RtpTxQueueKey const, ns3::UbTransaction::RtpTxQueue>, std::_Select1st<std::pair<ns3::UbTransaction::RtpTxQueueKey const, ns3::UbTransaction::RtpTxQueue> >, std::less<ns3::UbTransaction::RtpTxQueueKey>, std::allocator<std::pair<ns3::UbTransaction::RtpTxQueueKey const, ns3::UbTransaction::RtpTxQueue> > >::find(ns3::UbTransaction::RtpTxQueueKey const&)",
+      "samples": 4,
+      "percent": 0.3007518796992481
+    },
+    {
+      "symbol": "ns3::Ptr<ns3::UbTransportChannel>::~Ptr()",
+      "samples": 4,
+      "percent": 0.3007518796992481
+    },
+    {
+      "symbol": "ns3::UbTransportChannel::IsLimited()",
+      "samples": 4,
+      "percent": 0.3007518796992481
+    },
+    {
+      "symbol": "ns3::UbSwitchAllocator::CheckDeadlock()",
+      "samples": 4,
+      "percent": 0.3007518796992481
+    },
+    {
+      "symbol": "std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) [clone .constprop.0]",
+      "samples": 3,
+      "percent": 0.22556390977443608
+    },
+    {
+      "symbol": "ns3::UbJetty::GenWqeSegment(ns3::Ptr<ns3::UbWqe>, unsigned int)",
+      "samples": 3,
+      "percent": 0.22556390977443608
+    },
+    {
+      "symbol": "std::__cxx11::to_string(unsigned int)",
+      "samples": 3,
+      "percent": 0.22556390977443608
+    },
+    {
+      "symbol": "ns3::UbPacketQueue::GetIngressQueueType()",
+      "samples": 3,
+      "percent": 0.22556390977443608
+    },
+    {
+      "symbol": "ns3::DefaultSimulatorImpl::ProcessOneEvent()",
+      "samples": 3,
+      "percent": 0.22556390977443608
+    },
+    {
+      "symbol": "std::_Function_handler<void (unsigned int, unsigned int, unsigned int), ns3::Callback<void, unsigned int, unsigned int, unsigned int>::Callback<void (*)(unsigned int, unsigned int, unsigned int), , 0>(void (*)(unsigned int, unsigned int, unsigned int))::{lambda((auto:1&&)...)#1}>::_M_invoke(std::_Any_data const&, unsigned int&&, unsigned int&&, unsigned int&&)",
+      "samples": 3,
+      "percent": 0.22556390977443608
+    },
+    {
+      "symbol": "ns3::UbPort::TransmitPacket(ns3::Ptr<ns3::Packet>, ns3::Time)",
+      "samples": 3,
+      "percent": 0.22556390977443608
+    },
+    {
+      "symbol": "ns3::Ptr<ns3::Packet>::~Ptr()",
+      "samples": 3,
+      "percent": 0.22556390977443608
+    },
+    {
+      "symbol": "std::locale::locale()",
+      "samples": 3,
+      "percent": 0.22556390977443608
+    },
+    {
+      "symbol": "ns3::UbLifecycleCoordinator::ReleaseLease(ns3::UbLifecycleLeaseIdentity const&)",
+      "samples": 3,
+      "percent": 0.22556390977443608
+    },
+    {
+      "symbol": "std::__cxx11::to_string(long)",
+      "samples": 3,
+      "percent": 0.22556390977443608
+    },
+    {
+      "symbol": "ns3::UbTransaction::TryContinueJettyTransmission(ns3::Ptr<ns3::UbTransportChannel>)",
+      "samples": 3,
+      "percent": 0.22556390977443608
+    },
+    {
+      "symbol": "Layer::Send(unsigned int)",
+      "samples": 3,
+      "percent": 0.22556390977443608
+    },
+    {
+      "symbol": "ns3::Ptr<ns3::UbPort>::~Ptr()",
+      "samples": 3,
+      "percent": 0.22556390977443608
+    },
+    {
+      "symbol": "ns3::UbTransaction::FinishWqe(unsigned int, ns3::Ptr<ns3::UbWqe>, ns3::UbWorkOutcome, ns3::UbTransaction::WqeTerminalMode)",
+      "samples": 3,
+      "percent": 0.22556390977443608
+    },
+    {
+      "symbol": "ns3::GlobalValue::GetValueByNameFailSafe(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::AttributeValue&)",
+      "samples": 3,
+      "percent": 0.22556390977443608
+    },
+    {
+      "symbol": "std::ostream::put(char)",
+      "samples": 3,
+      "percent": 0.22556390977443608
+    },
+    {
+      "symbol": "ns3::UbLifecycleCoordinator::FindCompactHistory(ns3::UbLifecycleResourceKind, unsigned long) const",
+      "samples": 3,
+      "percent": 0.22556390977443608
+    },
+    {
+      "symbol": "std::ostream& std::ostream::_M_insert<unsigned long>(unsigned long)",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "std::_Function_handler<void (unsigned int, unsigned int, unsigned int), ns3::Callback<void, unsigned int, unsigned int, unsigned int>::Callback<Layer::Pair(unsigned int, unsigned int)::{lambda(unsigned int, unsigned int, unsigned int)#1}, , 0>(Layer::Pair(unsigned int, unsigned int)::{lambda(unsigned int, unsigned int, unsigned int)#1})::{lambda((auto:1&&)...)#1}>::_M_invoke(std::_Any_data const&, unsigned int&&, unsigned int&&, unsigned int&&)",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "std::_Function_handler<void (unsigned int, unsigned int, unsigned int), Layer::Pair(unsigned int, unsigned int)::{lambda(unsigned int, unsigned int, unsigned int)#1}>::_M_invoke(std::_Any_data const&, unsigned int&&, unsigned int&&, unsigned int&&)",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "ns3::UbRoundRobinAllocator::AllocateNextPacket(ns3::Ptr<ns3::UbPort>)",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "ns3::DeclareRequestHeaderPresence(ns3::UbTransactionRule const&, ns3::UbTransactionFields const&)",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "ns3::TagBuffer::ReadU64()",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "ns3::Ipv4Address::Ipv4Address()",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "ns3::UbCbfc::CbfcConsumeCrd(ns3::Ptr<ns3::Packet>)",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "std::__cxx11::to_string(unsigned long)",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "ns3::PacketTagList::Peek(ns3::Tag&) const",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "ns3::UbTransportChannel::WqeSegmentTriggerPortTransmit(ns3::Ptr<ns3::UbWqeSegment>)",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "ns3::MakeEvent<void (ns3::UbPort::*)(), ns3::UbPort*>(void (ns3::UbPort::*)(), ns3::UbPort*)::EventMemberImpl::Notify()",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "std::basic_ios<char, std::char_traits<char> >::init(std::basic_streambuf<char, std::char_traits<char> >*)",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "ns3::UbReliableRerouting::CreateAttempt(ns3::Ptr<ns3::Packet const>, unsigned int, unsigned int)",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "ns3::Callback<void, ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe> >::Callback<void (ns3::UbTransaction::*)(ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe>), ns3::UbTransaction*, 0>(void (ns3::UbTransaction::*)(ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe>), ns3::UbTransaction*)",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "ns3::UbFunction::ResolveJettyEvent(unsigned int, unsigned long)",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "ns3::UbDatalinkPacketHeader::GetSerializedSize() const",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "ns3::UbLifecycleCoordinator::OpenResource(ns3::UbLifecycleResourceKind, unsigned long)",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "ns3::Ptr<ns3::UbTransportChannel>::~Ptr()@plt",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "std::ostream::sentry::sentry(std::ostream&)",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "ns3::UbDatalinkPacketHeader::Deserialize(ns3::Buffer::Iterator)",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "ns3::UbRoutingTable::LookupShortest(unsigned int) const",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "ns3::NodeList::GetNNodes()",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "__udivmodti4",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "malloc@plt",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "ns3::MapScheduler::RemoveNext()",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "ns3::UbTransportChannel::TrackInboundTaPacket(ns3::UbTransportChannel::BufferedInboundPacket const&)",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "ns3::UbParallelLifecycleAdapter::IsExecutionOwner(unsigned int)",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "ns3::UbPacketTraceTag::Deserialize(ns3::TagBuffer)",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "ns3::UbTransportChannel::CompleteInboundTaUnits(std::vector<ns3::Ptr<ns3::UbWqeSegment>, std::allocator<ns3::Ptr<ns3::UbWqeSegment> > > const&)",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "ns3::Ptr<ns3::Packet>::operator=(ns3::Ptr<ns3::Packet> const&) [clone .isra.0]",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "ns3::UbTransportChannel::PopQueuedPacket(std::queue<ns3::Ptr<ns3::Packet>, std::deque<ns3::Ptr<ns3::Packet>, std::allocator<ns3::Ptr<ns3::Packet> > > >&)",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "ns3::UbSwitchAllocator::ScheduleAllocation(ns3::Ptr<ns3::UbPort>) [clone .part.0]",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "ns3::UbTransportChannel::UpdateReceiveWindowAndCollectCompletedTa(ns3::UbTransportChannel::ReceivedDataPacketContext const&, ns3::UbRetransReceiveDecision const&, unsigned long&, unsigned long&, std::vector<ns3::Ptr<ns3::UbWqeSegment>, std::allocator<ns3::Ptr<ns3::UbWqeSegment> > >&)",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "__cxxabiv1::__si_class_type_info::__do_dyncast(long, __cxxabiv1::__class_type_info::__sub_kind, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__dyncast_result&) const",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "std::map<ns3::UbTransaction::RtpTxQueueKey, ns3::UbTransaction::RtpTxQueue, std::less<ns3::UbTransaction::RtpTxQueueKey>, std::allocator<std::pair<ns3::UbTransaction::RtpTxQueueKey const, ns3::UbTransaction::RtpTxQueue> > >::operator[](ns3::UbTransaction::RtpTxQueueKey const&)",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "ns3::UbTransaction::RecordSegmentSuccess(unsigned int, unsigned int, unsigned int, ns3::Ptr<ns3::UbWqeSegment>)",
+      "samples": 2,
+      "percent": 0.15037593984962405
+    },
+    {
+      "symbol": "ns3::TypeId ns3::TypeId::AddConstructor<ns3::UbJettyManager>()",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "MRG32k3a::MatVecModM(double const (*) [3], double const*, double*, double) [clone .constprop.1]",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "utils::TpConnectionManager::NotifyEndpointMaterializedLocked(unsigned int, unsigned int, utils::EndpointSlotState)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::TypeId::GetAttribute(unsigned long) const",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::Ptr<ns3::UbController> ns3::Object::GetObject<ns3::UbController>() const",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbJettyManager::RegisterJetty(ns3::Ptr<ns3::UbJetty>, ns3::UbJettyLifetime)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "std::map<unsigned int, ns3::TransactionServiceMode, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, ns3::TransactionServiceMode> > >::operator[](unsigned int const&)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "std::vector<std::shared_ptr<ns3::CallbackComponentBase>, std::allocator<std::shared_ptr<ns3::CallbackComponentBase> > >::vector(std::vector<std::shared_ptr<ns3::CallbackComponentBase>, std::allocator<std::shared_ptr<ns3::CallbackComponentBase> > > const&)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)2>::_M_release()",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::Callback<void, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int>::Callback<void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int), , 0>(void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::ValidateTransactionRequest(ns3::UbTransactionRequestInput const&)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbFunction::SubmitWqe(ns3::Ptr<ns3::UbWqe>, unsigned int)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbTrackedEventSet::Begin(ns3::UbLifecycleResourceIdentity const&, unsigned long)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbTrackedEventSet::Resolve(ns3::UbLifecycleResourceIdentity const&, unsigned long)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbSwitch::ForwardDataPacket(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>, ns3::ParsedURMAHeaders const&)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::TypeId::GetParent() const@plt",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "std::filesystem::__cxx11::path::_M_split_cmpts()",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::Ipv4Header::GetInstanceTypeId() const",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbTransportChannelManager::ResolveInboundTp(unsigned int, unsigned int, ns3::Ipv4Address, ns3::Ipv4Address, unsigned char)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbSwitch::GetAllocator()",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::PointToPointNetDevice::GetNode() const",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "operator delete(void*, unsigned long)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose()@plt",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "utils::UbUtils::TpLastPacketReceivesNotify(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbTransportHeader::SetNLP(unsigned char)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::PacketMetadata::GetUid() const",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::Ptr<ns3::CallbackImpl<void, ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe> > > ns3::Create<ns3::CallbackImpl<void, ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe> >, ns3::Callback<void, ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe> >::Callback<void (ns3::UbTransaction::*)(ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe>), ns3::UbTransaction*, 0>(void (ns3::UbTransaction::*)(ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe>), ns3::UbTransaction*)::{lambda((auto:1&&)...)#1}, std::vector<std::shared_ptr<ns3::CallbackComponentBase>, std::allocator<std::shared_ptr<ns3::CallbackComponentBase> > >&>(ns3::Callback<void, ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe> >::Callback<void (ns3::UbTransaction::*)(ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe>), ns3::UbTransaction*, 0>(void (ns3::UbTransaction::*)(ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe>), ns3::UbTransaction*)::{lambda((auto:1&&)...)#1}&&, std::vector<std::shared_ptr<ns3::CallbackComponentBase>, std::allocator<std::shared_ptr<ns3::CallbackComponentBase> > >&)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbTransaction::EnqueueRemoteRtpWqeSegment(unsigned int, ns3::Ptr<ns3::UbWqeSegment>)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "utils::UbUtils::AppendCsvRow(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::Ipv4Header::SetProtocol(unsigned char)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbLifecycleCoordinator::RecordWorkTerminal(ns3::UbLifecycleResourceIdentity const&, ns3::UbWorkOutcome)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbLink::TransmitStart(ns3::Ptr<ns3::Packet>, ns3::Ptr<ns3::UbPort>, ns3::Time, unsigned long)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::MakeEvent<void (ns3::UbSwitchAllocator::*)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort> >(void (ns3::UbSwitchAllocator::*)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>)::EventMemberImpl::Notify()",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbLifecycleCoordinator::AcquireLease(ns3::UbLifecycleResourceIdentity const&, ns3::UbLifecycleLeaseKind, ns3::UbLifecycleResourceIdentity const&)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "std::_Rb_tree<std::pair<unsigned int, unsigned int>, std::pair<std::pair<unsigned int, unsigned int> const, ns3::UbTransaction::OperationRecord>, std::_Select1st<std::pair<std::pair<unsigned int, unsigned int> const, ns3::UbTransaction::OperationRecord> >, std::less<std::pair<unsigned int, unsigned int> >, std::allocator<std::pair<std::pair<unsigned int, unsigned int> const, ns3::UbTransaction::OperationRecord> > >::find(std::pair<unsigned int, unsigned int> const&)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbTransportChannel::BuildGbnPacketDescriptor(ns3::UbTransportChannel::NewDataSendContext const&, unsigned long) const",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::MapScheduler::IsEmpty() const",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "std::_Function_handler<void (), std::_Bind<void (ns3::UbPort::*(ns3::UbPort*))()> >::_M_invoke(std::_Any_data const&)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbSwitch::GetQueueManager()",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::PacketTagList::Add(ns3::Tag const&) const",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "Layer::Ready(unsigned int)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbTransportChannel::GetNextPacket()",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::Buffer::AddAtStart(unsigned int)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "std::_Rb_tree_decrement(std::_Rb_tree_node_base*)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::Ptr<ns3::CallbackImpl<void> > ns3::Create<ns3::CallbackImpl<void>, ns3::Callback<void, ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe> >::BindImpl<, ns3::UbTransaction::RtpTxQueueKey const&, unsigned int&, ns3::Ptr<ns3::UbWqe>&>(std::integer_sequence<unsigned long>, ns3::UbTransaction::RtpTxQueueKey const&, unsigned int&, ns3::Ptr<ns3::UbWqe>&)::{lambda((auto:1&&)...)#1}, std::vector<std::shared_ptr<ns3::CallbackComponentBase>, std::allocator<std::shared_ptr<ns3::CallbackComponentBase> > >&>(ns3::UbTransaction::RtpTxQueueKey const&, unsigned int&)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "std::enable_if<is_member_pointer_v<void (ns3::UbSwitchAllocator::*)(ns3::Ptr<ns3::UbPort>)>, ns3::EventImpl*>::type ns3::MakeEvent<void (ns3::UbSwitchAllocator::*)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort> >(void (ns3::UbSwitchAllocator::*)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::MakeEvent<void (ns3::UbPort::*)(), ns3::UbPort*>(void (ns3::UbPort::*)(), ns3::UbPort*)::EventMemberImpl::~EventMemberImpl()",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::AttributeValue::AttributeValue()",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbRoutingProcess::SelectCandidateFromView(ns3::RoutingKey&, ns3::UbRoutingCandidateView const&, bool&, unsigned short)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "std::ios_base::_M_dispose_callbacks()",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "utils::UbUtils::TpLastPacketSendsNotify(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "std::ios_base::~ios_base()",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::Packet::AddHeader(ns3::Header const&)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::Buffer::~Buffer()",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::Packet::AddPacketTag(ns3::Tag const&) const",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbPacketQueue::GetNextPacketSize()",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbIngressQueue::IsControlFrame()",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "std::_Rb_tree<ns3::Scheduler::EventKey, std::pair<ns3::Scheduler::EventKey const, ns3::EventImpl*>, std::_Select1st<std::pair<ns3::Scheduler::EventKey const, ns3::EventImpl*> >, std::less<ns3::Scheduler::EventKey>, std::allocator<std::pair<ns3::Scheduler::EventKey const, ns3::EventImpl*> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<ns3::Scheduler::EventKey const, ns3::EventImpl*> >, ns3::Scheduler::EventKey const&)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::Object::~Object()",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbTransportChannel::TryContinueAcceptedWqeSegment(ns3::Ptr<ns3::UbWqeSegment>)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbRoutingProcess::GetOutPortForEndpoint(ns3::RoutingKey&, bool&, unsigned short)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbPort::GetIfIndex() const",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "std::ios_base::ios_base()",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::Time::ToInteger(ns3::Time::Unit) const [clone .part.0] [clone .constprop.0]",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::Packet::PeekHeader(ns3::Header&) const",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbTransportChannel::HandleRepeatedDataPacket(ns3::UbTransportChannel::ReceivedDataPacketContext const&)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "pthread_mutex_lock@plt",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::NodeList::GetNode(unsigned int)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbPacketQueue::IsEmpty()",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "strlen@plt",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::BooleanValue::BooleanValue()",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbCnpExtTph::UbCnpExtTph()",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbTransportChannel::FinalizeTransportAckProgress(ns3::UbTransportChannel::TransportResponseContext const&, unsigned long)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbDatalinkPacketHeader::Serialize(ns3::Buffer::Iterator) const",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbEgressQueue::DoDequeue()",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbWqeSegment::~UbWqeSegment()",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::Object::DoDelete()",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbTransactionHeader::SetIniTaSsn(unsigned short)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::Packet::GetUid() const",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbPort::HandleWithUbSwitch(ns3::Ptr<ns3::Packet>)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "pthread_mutex_unlock",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbPort::DispatchReceive(ns3::Ptr<ns3::Packet>)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<unsigned long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, unsigned long) const",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > (anonymous namespace)::CsvVector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbSwitch::FinalizeForwardedPacketEnqueue(ns3::Ptr<ns3::Packet>, unsigned int, unsigned int, unsigned int, bool)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::Simulator::DoScheduleNow(ns3::EventImpl*)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbTransaction::RunInboundTransaction(unsigned int, ns3::Ptr<ns3::UbWqeSegment>, ns3::Callback<void, ns3::Ptr<ns3::UbWqeSegment> >)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbSwitch::HandleURMADataPacket(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::Header::~Header()",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "pthread_mutex_lock",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::Ptr<ns3::UbTransportGroup>::~Ptr()",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbTransactionHeader::GetIniRcId() const",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::Node::GetDevice(unsigned int) const",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbTransaction::ExecuteInboundTransaction(unsigned int, ns3::Ptr<ns3::UbWqeSegment>, ns3::Callback<void, ns3::Ptr<ns3::UbWqeSegment> >)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbSwitch::SwitchHandlePacket(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbQueueManager::MoveInPortProcessingToVoq(unsigned int, unsigned int, unsigned int, unsigned int)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbPacketTraceTag::Serialize(ns3::TagBuffer) const",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::Simulator::DoSchedule(ns3::Time const&, ns3::EventImpl*)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbJettyManager::AttachEvent(unsigned int, unsigned long, ns3::EventId, ns3::Callback<void>)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbTransaction::RunTrackedAdmitRtpWqeSegment(ns3::Ptr<ns3::UbWqeSegment>, ns3::Ptr<ns3::UbWqe>, ns3::UbTransaction::RtpTxQueueKey, unsigned long)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbJetty::CommitWqeSegmentAdmission(ns3::Ptr<ns3::UbWqeSegment>)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [clone .constprop.0]",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbJettyManager::TryFinalizeJettyDestroy(unsigned int)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "std::ostream::operator<<(int)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbPort::EnqueueToEgress(std::tuple<unsigned int, unsigned int, ns3::Ptr<ns3::Packet> >)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "pthread_mutex_unlock@plt",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbSwitchAllocator::UpdateIngressSummary(ns3::UbIngressQueue*, bool)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbFunction::BeginJettyEvent(unsigned int, unsigned long)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbSwitchAllocator::TriggerAllocator(ns3::Ptr<ns3::UbPort>)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbLifecycleCoordinator::RetireResource(ns3::UbLifecycleResourceIdentity const&)",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "ns3::UbTransportChannel::~UbTransportChannel()",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    },
+    {
+      "symbol": "std::_Rb_tree<unsigned long, std::pair<unsigned long const, ns3::UbLifecycleCoordinator::CompactHistoryRun>, std::_Select1st<std::pair<unsigned long const, ns3::UbLifecycleCoordinator::CompactHistoryRun> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ns3::UbLifecycleCoordinator::CompactHistoryRun> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ns3::UbLifecycleCoordinator::CompactHistoryRun> >*) [clone .isra.0]",
+      "samples": 1,
+      "percent": 0.07518796992481203
+    }
+  ],
+  "inclusive_stack_samples": {
+    "ns3::UbJettyManager::GetTypeId()": 1,
+    "_GLOBAL__sub_I_ub_function.cc": 1,
+    "ns3::TypeId ns3::TypeId::AddConstructor<ns3::UbJettyManager>()": 1,
+    "[unknown]": 1300,
+    "std::ostream& std::ostream::_M_insert<unsigned long>(unsigned long)": 3,
+    "main": 1328,
+    "Layer::Run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)": 1316,
+    "__libc_start_main": 1289,
+    "_start": 1284,
+    "Layer::Topology(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)": 13,
+    "MRG32k3a::PowerOfTwoMatrix(int, double (*) [3], double (*) [3])": 1,
+    "ns3::RandomVariableStream::SetStream(long)": 1,
+    "MRG32k3a::PowerOfTwoConstants()": 1,
+    "utils::TpConnectionManager::TpConnectionManager()": 1,
+    "ns3::ObjectBase::DoSet(ns3::Ptr<ns3::AttributeAccessor const>, ns3::Ptr<ns3::AttributeChecker const>, ns3::AttributeValue const&)": 1,
+    "MRG32k3a::MatVecModM(double const (*) [3], double const*, double*, double) [clone .constprop.1]": 1,
+    "ns3::RngStream::RngStream(unsigned int, unsigned long, unsigned long)": 1,
+    "ns3::UbController::UbController()": 1,
+    "ns3::AccessorHelper<ns3::RandomVariableStream, ns3::IntegerValue>::Set(ns3::ObjectBase*, ns3::AttributeValue const&) const": 1,
+    "ns3::ObjectBase::ConstructSelf(ns3::AttributeConstructionList const&)": 3,
+    "Layer::Pair(unsigned int, unsigned int)": 3,
+    "utils::TpConnectionManager::NotifyEndpointMaterialized(unsigned int, unsigned int, bool)": 1,
+    "utils::TpConnectionManager::NotifyEndpointMaterializedLocked(unsigned int, unsigned int, utils::EndpointSlotState)": 1,
+    "ns3::UbTransportChannelManager::CreateTp(unsigned int, unsigned int, unsigned char, unsigned char, unsigned char, unsigned int, unsigned int, ns3::Ptr<ns3::UbCongestionControl>, bool)": 3,
+    "ns3::TypeId::GetAttribute(unsigned long) const": 1,
+    "ns3::Callback<void, unsigned int>::Callback<void (ns3::UbTransportChannelManager::*)(unsigned int), ns3::UbTransportChannelManager*, 0>(void (ns3::UbTransportChannelManager::*)(unsigned int), ns3::UbTransportChannelManager*)": 1,
+    "malloc": 57,
+    "operator new(unsigned long)": 64,
+    "ns3::Ptr<ns3::UbController> ns3::Object::GetObject<ns3::UbController>() const": 1,
+    "ns3::UbFunction::CreateJetty(unsigned int, unsigned int, unsigned int, ns3::UbJettyLifetime)": 3,
+    "cfree": 60,
+    "ns3::TypeId::GetAttributeFullName[abi:cxx11](unsigned long) const": 1,
+    "ns3::UbJetty::UbJetty()": 1,
+    "ns3::UbJettyManager::RegisterJetty(ns3::Ptr<ns3::UbJetty>, ns3::UbJettyLifetime)": 1,
+    "std::map<unsigned int, ns3::TransactionServiceMode, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, ns3::TransactionServiceMode> > >::operator[](unsigned int const&)": 1,
+    "ns3::UbTransaction::JettyBindTp(unsigned int, unsigned int, unsigned int, bool, std::vector<unsigned int, std::allocator<unsigned int> >, unsigned int)": 2,
+    "ns3::UbTransportChannelManager::ResolveLiveTp(unsigned int, ns3::UbLifecycleResourceIdentity const&)": 199,
+    "utils::UbUtils::TopoTraceConnect()": 1,
+    "ns3::Ptr<ns3::CallbackImpl<void, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag> > ns3::Create<ns3::CallbackImpl<void, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag>, ns3::Callback<void, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag>::Callback<void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag), , 0>(void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag))::{lambda((auto:1&&)...)#1}, std::vector<std::shared_ptr<ns3::CallbackComponentBase>, std::allocator<std::shared_ptr<ns3::CallbackComponentBase> > >&>(ns3::Callback<void, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag>::Callback<void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag), , 0>(void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag))::{lambda((auto:1&&)...)#1}&&, std::vector<std::shared_ptr<ns3::CallbackComponentBase>, std::allocator<std::shared_ptr<ns3::CallbackComponentBase> > >&)": 1,
+    "ns3::Callback<void, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag>::Callback<void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag), , 0>(void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag))": 1,
+    "std::vector<std::shared_ptr<ns3::CallbackComponentBase>, std::allocator<std::shared_ptr<ns3::CallbackComponentBase> > >::vector(std::vector<std::shared_ptr<ns3::CallbackComponentBase>, std::allocator<std::shared_ptr<ns3::CallbackComponentBase> > > const&)": 1,
+    "ns3::Callback<void, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int>::Callback<void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int), , 0>(void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))": 2,
+    "std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)2>::_M_release()": 1,
+    "utils::UbUtils::SingleTpTraceConnect(unsigned int, unsigned int)": 2,
+    "ns3::DefaultSimulatorImpl::Run()": 1302,
+    "Layer::Gate()": 9,
+    "Layer::Send(unsigned int)": 32,
+    "std::_Rb_tree_increment(std::_Rb_tree_node_base const*)": 12,
+    "ns3::UbFunction::SubmitWqe(ns3::Ptr<ns3::UbWqe>, unsigned int)": 26,
+    "ns3::DefaultSimulatorImpl::ProcessOneEvent()": 1301,
+    "ns3::UbJettyManager::ResolveWqeLifecycleLocalId(unsigned int, unsigned int) const": 17,
+    "ns3::UbTransaction::PreflightRtpOperation(ns3::UbRtpTransportReference const&, ns3::UbTransaction::RtpTransportResolution&) const": 3,
+    "ns3::UbTransaction::ResolveRtpTransportReference(ns3::UbRtpTransportReference const&, ns3::UbTransaction::RtpTransportResolution&) const": 6,
+    "ns3::ValidateTransactionRequest(ns3::UbTransactionRequestInput const&)": 1,
+    "ns3::UbLifecycleCoordinator::IsResourceActive(ns3::UbLifecycleResourceIdentity const&) const": 7,
+    "std::_Rb_tree<ns3::UbLifecycleCoordinator::ResourceKey, std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState>, std::_Select1st<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> >, std::less<ns3::UbLifecycleCoordinator::ResourceKey>, std::allocator<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> > >::find(ns3::UbLifecycleCoordinator::ResourceKey const&) const": 9,
+    "ns3::UbTransaction::RunTrackedPrepareRtpWqeSegment(unsigned int, ns3::Ptr<ns3::UbWqe>, ns3::UbTransaction::RtpTxQueueKey, unsigned long)": 15,
+    "std::_Function_handler<void (), std::_Bind<void (ns3::UbTransaction::*(ns3::UbTransaction*, unsigned int, ns3::Ptr<ns3::UbWqe>, ns3::UbTransaction::RtpTxQueueKey, unsigned long))(unsigned int, ns3::Ptr<ns3::UbWqe>, ns3::UbTransaction::RtpTxQueueKey, unsigned long)> >::_M_invoke(std::_Any_data const&)": 19,
+    "std::_Function_handler<void (), std::_Bind<void (ns3::UbTransaction::*(ns3::UbTransaction*, ns3::Ptr<ns3::UbWqeSegment>, ns3::Ptr<ns3::UbWqe>, ns3::UbTransaction::RtpTxQueueKey, unsigned long))(ns3::Ptr<ns3::UbWqeSegment>, ns3::Ptr<ns3::UbWqe>, ns3::UbTransaction::RtpTxQueueKey, unsigned long)> >::_M_invoke(std::_Any_data const&)": 19,
+    "std::_Function_handler<void (unsigned int, unsigned int, unsigned int), ns3::Callback<void, unsigned int, unsigned int, unsigned int>::Callback<Layer::Pair(unsigned int, unsigned int)::{lambda(unsigned int, unsigned int, unsigned int)#1}, , 0>(Layer::Pair(unsigned int, unsigned int)::{lambda(unsigned int, unsigned int, unsigned int)#1})::{lambda((auto:1&&)...)#1}>::_M_invoke(std::_Any_data const&, unsigned int&&, unsigned int&&, unsigned int&&)": 6,
+    "ns3::UbTransportChannel::WqeSegmentTriggerPortTransmit(ns3::Ptr<ns3::UbWqeSegment>)": 19,
+    "ns3::UbTransaction::RunTrackedAdmitRtpWqeSegment(ns3::Ptr<ns3::UbWqeSegment>, ns3::Ptr<ns3::UbWqe>, ns3::UbTransaction::RtpTxQueueKey, unsigned long)": 19,
+    "ns3::UbTransaction::TryAdmitRtpSegment(unsigned int, ns3::Ptr<ns3::UbWqe>, ns3::Ptr<ns3::UbWqeSegment>, ns3::Ptr<ns3::UbTransportChannel>&)": 7,
+    "std::_Function_handler<void (unsigned int, unsigned int, unsigned int), Layer::Pair(unsigned int, unsigned int)::{lambda(unsigned int, unsigned int, unsigned int)#1}>::_M_invoke(std::_Any_data const&, unsigned int&&, unsigned int&&, unsigned int&&)": 4,
+    "ns3::UbLifecycleCoordinator::AcquireLease(ns3::UbLifecycleResourceIdentity const&, ns3::UbLifecycleLeaseKind, ns3::UbLifecycleResourceIdentity const&)": 9,
+    "ns3::UbTrackedEventSet::Track(ns3::UbLifecycleResourceIdentity const&)": 7,
+    "std::_Rb_tree<ns3::UbLifecycleCoordinator::ResourceKey, std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState>, std::_Select1st<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> >, std::less<ns3::UbLifecycleCoordinator::ResourceKey>, std::allocator<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> > >::find(ns3::UbLifecycleCoordinator::ResourceKey const&)": 10,
+    "ns3::UbLifecycleCoordinator::ValidateMutable(ns3::UbLifecycleResourceIdentity const&)": 10,
+    "ns3::UbTrackedEventSet::Begin(ns3::UbLifecycleResourceIdentity const&, unsigned long)": 1,
+    "ns3::UbTrackedEventSet::Resolve(ns3::UbLifecycleResourceIdentity const&, unsigned long)": 2,
+    "ns3::UbFunction::ResolveJettyEvent(unsigned int, unsigned long)": 4,
+    "ns3::UbSwitchAllocator::RunAllocation(ns3::Ptr<ns3::UbPort>)": 557,
+    "ns3::UbTransaction::TryContinueJettyTransmission(ns3::Ptr<ns3::UbTransportChannel>)": 732,
+    "ns3::UbRoundRobinAllocator::AllocateNextPacket(ns3::Ptr<ns3::UbPort>)": 557,
+    "ns3::UbTransportChannel::GetNextPacket()": 479,
+    "std::_Function_handler<void (), std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)> >::_M_invoke(std::_Any_data const&)": 557,
+    "ns3::UbTransportChannel::SendNewDataPacket(ns3::UbTransportChannel::NewDataSendContext const&)": 476,
+    "ns3::UbTransaction::GetJettiesUsingTpn(unsigned int)": 697,
+    "ns3::UbTransportChannel::TryGetNextNewDataPacket()": 476,
+    "ns3::UbTransportChannel::AdvanceNewDataSendState(ns3::UbTransportChannel::NewDataSendContext const&, ns3::Ptr<ns3::Packet>)": 447,
+    "ns3::UbTransportChannel::TryContinueJettyTransmission()": 734,
+    "ns3::GlobalValue::GetValueByNameFailSafe(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::AttributeValue&)": 15,
+    "utils::UbUtils::IsTpDebugEnabledFor(unsigned int, unsigned int)": 7,
+    "utils::UbUtils::TpDebugStateNotify(unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long, unsigned long, unsigned long, unsigned long, bool, bool, bool, unsigned int, unsigned int, unsigned int, unsigned int)": 7,
+    "ns3::UbRoundRobinAllocator::SelectNextIngressQueue(ns3::Ptr<ns3::UbPort>)": 88,
+    "ns3::UbSwitchAllocator::TriggerAllocator(ns3::Ptr<ns3::UbPort>)": 99,
+    "ns3::UbTransportChannel::IsEmpty()": 34,
+    "ns3::UbRoundRobinAllocator::PickNextIngressQueue(ns3::Ptr<ns3::UbPort>)": 88,
+    "ns3::UbSwitchAllocator::FindNextEligibleIngressQueue(unsigned int, unsigned int, unsigned int, ns3::Ptr<ns3::UbPort>) const": 69,
+    "ns3::UbPort::DequeuePacket()": 60,
+    "ns3::UbSwitchAllocator::ScheduleTriggerAllocator(ns3::Ptr<ns3::UbPort>)": 65,
+    "ns3::UbSwitch::HandleURMADataPacket(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>)": 541,
+    "std::_Function_handler<void (), std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)> >::_M_invoke(std::_Any_data const&)": 578,
+    "ns3::UbPort::DispatchReceive(ns3::Ptr<ns3::Packet>)": 557,
+    "ns3::UbPort::HandleWithUbSwitch(ns3::Ptr<ns3::Packet>)": 556,
+    "ns3::UbSwitch::SwitchHandlePacket(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>)": 553,
+    "ns3::UbPort::Receive(ns3::Ptr<ns3::Packet>)": 578,
+    "ns3::UbSwitch::ForwardDataPacket(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>, ns3::ParsedURMAHeaders const&)": 33,
+    "ns3::UbTransaction::GetJettyLiveTps(unsigned int)": 392,
+    "std::_Function_handler<void (unsigned int, ns3::UbTransportHeader), void (*)(unsigned int, ns3::UbTransportHeader)>::_M_invoke(std::_Any_data const&, unsigned int&&, ns3::UbTransportHeader&&)": 8,
+    "std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) [clone .constprop.0]": 9,
+    "std::_Function_handler<void (unsigned int, ns3::UbTransportHeader), ns3::Callback<void, unsigned int, ns3::UbTransportHeader>::Callback<void (*)(unsigned int, ns3::UbTransportHeader), , 0>(void (*)(unsigned int, ns3::UbTransportHeader))::{lambda((auto:1&&)...)#1}>::_M_invoke(std::_Any_data const&, unsigned int&&, ns3::UbTransportHeader&&)": 8,
+    "utils::UbUtils::SwitchLastPacketTraversesNotify(unsigned int, ns3::UbTransportHeader)": 8,
+    "ns3::UbSwitch::LastPacketTraversesNotify(unsigned int, ns3::UbTransportHeader)": 8,
+    "utils::UbUtils::AppendCsvRow(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)": 56,
+    "utils::UbUtils::PortTxNotify(unsigned int, unsigned int, unsigned int)": 11,
+    "utils::UbUtils::AppendTraceLine(utils::UbUtils::TraceSinkHandle const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)": 34,
+    "std::_Function_handler<void (unsigned int, unsigned int, unsigned int), ns3::Callback<void, unsigned int, unsigned int, unsigned int>::Callback<void (*)(unsigned int, unsigned int, unsigned int), , 0>(void (*)(unsigned int, unsigned int, unsigned int))::{lambda((auto:1&&)...)#1}>::_M_invoke(std::_Any_data const&, unsigned int&&, unsigned int&&, unsigned int&&)": 47,
+    "ns3::UbPort::TransmitPacket(ns3::Ptr<ns3::Packet>, ns3::Time)": 27,
+    "ns3::UbJetty::PrepareNextWqeSegment(ns3::Ptr<ns3::UbWqe>)": 4,
+    "ns3::UbJetty::GenWqeSegment(ns3::Ptr<ns3::UbWqe>, unsigned int)": 3,
+    "ns3::UbJetty::PrepareNextWqeSegment(ns3::Ptr<ns3::UbWqe>, unsigned int)": 4,
+    "std::_Rb_tree_increment(std::_Rb_tree_node_base*)": 203,
+    "ns3::UbRetransController::GetRetransEnable() const": 18,
+    "ns3::UbTransaction::TryContinueJettyTransmission(unsigned int)": 28,
+    "ns3::UbCbfc::OnEgressEnqueued(ns3::UbFlowControlEventContext const&)": 15,
+    "utils::UbUtils::IsTraceEnabled()": 9,
+    "utils::UbUtils::CbfcCreditLevelNotify(unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned int, int, int, unsigned int)": 11,
+    "ns3::UbCbfc::CbfcConsumeCrd(ns3::Ptr<ns3::Packet>)": 11,
+    "utils::UbUtils::IsFlowControlTraceEnabled()": 11,
+    "ns3::UbTransportChannel::NotifyDataPacketSent(ns3::UbGbnPacketDescriptor const&, ns3::Ptr<ns3::Packet>)": 26,
+    "std::_Function_handler<void (unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int), ns3::Callback<void, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int>::Callback<void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int), , 0>(void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))::{lambda((auto:1&&)...)#1}>::_M_invoke(std::_Any_data const&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&)": 32,
+    "std::__cxx11::to_string(unsigned int)": 3,
+    "utils::UbUtils::TpFirstPacketSendsNotify(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int)": 11,
+    "ns3::UbTransportChannel::RecvDataPacket(ns3::Ptr<ns3::Packet>)": 138,
+    "ns3::UbSwitch::SinkTpDataPacket(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>, ns3::ParsedURMAHeaders const&)": 502,
+    "ns3::UbTransportChannel::CompleteInboundTaUnits(std::vector<ns3::Ptr<ns3::UbWqeSegment>, std::allocator<ns3::Ptr<ns3::UbWqeSegment> > > const&)": 67,
+    "utils::UbUtils::TpWqeSegmentCompletesNotify(unsigned int, unsigned int, unsigned int)": 9,
+    "Layer::Topology(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)::{lambda(ns3::Ptr<ns3::UbWqeSegment const>, ns3::UbTransactionRule const&, ns3::Callback<void, ns3::UbWorkExecutionResult>)#1}::operator()(ns3::Ptr<ns3::UbWqeSegment const>, ns3::UbTransactionRule const&, ns3::Callback<void, ns3::UbWorkExecutionResult>) const": 24,
+    "std::_Function_handler<void (ns3::Ptr<ns3::UbWqeSegment const>, ns3::UbTransactionRule const&, ns3::Callback<void, ns3::UbWorkExecutionResult>), ns3::Callback<void, ns3::Ptr<ns3::UbWqeSegment const>, ns3::UbTransactionRule const&, ns3::Callback<void, ns3::UbWorkExecutionResult> >::Callback<Layer::Topology(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)::{lambda(ns3::Ptr<ns3::UbWqeSegment const>, ns3::UbTransactionRule const&, ns3::Callback<void, ns3::UbWorkExecutionResult>)#1}, , 0>(Layer::Topology(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)::{lambda(ns3::Ptr<ns3::UbWqeSegment const>, ns3::UbTransactionRule const&, ns3::Callback<void, ns3::UbWorkExecutionResult>)#1})::{lambda((auto:1&&)...)#1}>::_M_invoke(std::_Any_data const&, ns3::Ptr<ns3::UbWqeSegment const>&&, ns3::UbTransactionRule const&, ns3::Callback<void, ns3::UbWorkExecutionResult>&&)": 24,
+    "ns3::UbTransaction::RunRtpTx(ns3::UbTransaction::RtpTxQueueKey)": 24,
+    "std::_Function_handler<void (ns3::UbWorkExecutionResult), ns3::UbTransaction::RunInboundTransaction(unsigned int, ns3::Ptr<ns3::UbWqeSegment>, ns3::Callback<void, ns3::Ptr<ns3::UbWqeSegment> >)::{lambda(ns3::UbWorkExecutionResult)#1}>::_M_invoke(std::_Any_data const&, ns3::UbWorkExecutionResult&&)": 18,
+    "std::_Function_handler<void (ns3::Ptr<ns3::UbWqeSegment const>, ns3::UbTransactionRule const&, ns3::Callback<void, ns3::UbWorkExecutionResult>), Layer::Topology(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)::{lambda(ns3::Ptr<ns3::UbWqeSegment const>, ns3::UbTransactionRule const&, ns3::Callback<void, ns3::UbWorkExecutionResult>)#2}>::_M_invoke(std::_Any_data const&, ns3::Ptr<ns3::UbWqeSegment const>&&, ns3::UbTransactionRule const&, ns3::Callback<void, ns3::UbWorkExecutionResult>&&)": 24,
+    "std::_Rb_tree<unsigned int, std::pair<unsigned int const, std::map<ns3::UbTransaction::RemoteRtpWqeSegmentKey, ns3::UbTransaction::RemoteRtpWqeSegmentState, std::less<ns3::UbTransaction::RemoteRtpWqeSegmentKey>, std::allocator<std::pair<ns3::UbTransaction::RemoteRtpWqeSegmentKey const, ns3::UbTransaction::RemoteRtpWqeSegmentState> > > >, std::_Select1st<std::pair<unsigned int const, std::map<ns3::UbTransaction::RemoteRtpWqeSegmentKey, ns3::UbTransaction::RemoteRtpWqeSegmentState, std::less<ns3::UbTransaction::RemoteRtpWqeSegmentKey>, std::allocator<std::pair<ns3::UbTransaction::RemoteRtpWqeSegmentKey const, ns3::UbTransaction::RemoteRtpWqeSegmentState> > > > >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, std::map<ns3::UbTransaction::RemoteRtpWqeSegmentKey, ns3::UbTransaction::RemoteRtpWqeSegmentState, std::less<ns3::UbTransaction::RemoteRtpWqeSegmentKey>, std::allocator<std::pair<ns3::UbTransaction::RemoteRtpWqeSegmentKey const, ns3::UbTransaction::RemoteRtpWqeSegmentState> > > > > >::_M_erase_aux(std::_Rb_tree_const_iterator<std::pair<unsigned int const, std::map<ns3::UbTransaction::RemoteRtpWqeSegmentKey, ns3::UbTransaction::RemoteRtpWqeSegmentState, std::less<ns3::UbTransaction::RemoteRtpWqeSegmentKey>, std::allocator<std::pair<ns3::UbTransaction::RemoteRtpWqeSegmentKey const, ns3::UbTransaction::RemoteRtpWqeSegmentState> > > > >)": 1,
+    "ns3::UbTransaction::EnqueueRemoteRtpWqeSegment(unsigned int, ns3::Ptr<ns3::UbWqeSegment>)": 18,
+    "ns3::UbTransaction::RunInboundTransaction(unsigned int, ns3::Ptr<ns3::UbWqeSegment>, ns3::Callback<void, ns3::Ptr<ns3::UbWqeSegment> >)": 27,
+    "ns3::UbTransaction::ExecuteInboundTransaction(unsigned int, ns3::Ptr<ns3::UbWqeSegment>, ns3::Callback<void, ns3::Ptr<ns3::UbWqeSegment> >)": 28,
+    "std::_Function_handler<void (ns3::UbWorkExecutionResult), ns3::Callback<void, ns3::UbWorkExecutionResult>::Callback<ns3::UbTransaction::RunInboundTransaction(unsigned int, ns3::Ptr<ns3::UbWqeSegment>, ns3::Callback<void, ns3::Ptr<ns3::UbWqeSegment> >)::{lambda(ns3::UbWorkExecutionResult)#1}, , 0>(ns3::UbTransaction::RunInboundTransaction(unsigned int, ns3::Ptr<ns3::UbWqeSegment>, ns3::Callback<void, ns3::Ptr<ns3::UbWqeSegment> >)::{lambda(ns3::UbWorkExecutionResult)#1})::{lambda((auto:1&&)...)#1}>::_M_invoke(std::_Any_data const&, ns3::UbWorkExecutionResult&&)": 18,
+    "ns3::UbTransaction::HandleInboundTaUnit(unsigned int, ns3::Ptr<ns3::UbWqeSegment>)": 55,
+    "ns3::UbTransaction::RunRemoteRtpWqeSegmentTx(ns3::UbTransaction::RtpTxQueueKey const&, ns3::UbTransaction::RtpTxQueueEntry const&)": 12,
+    "ns3::UbTransportChannel::FinalizeTransportAckProgress(ns3::UbTransportChannel::TransportResponseContext const&, unsigned long)": 354,
+    "ns3::UbTransportChannel::RecvTpAck(ns3::Ptr<ns3::Packet>)": 360,
+    "ns3::UbTransportChannel::CompleteAckedWqeSegments(ns3::UbTransportChannel::TransportResponseContext const&)": 311,
+    "ns3::UbTransportChannel::GetNextPacketSize()": 20,
+    "ns3::UbCbfc::IsFcLimited(ns3::Ptr<ns3::UbIngressQueue>)": 23,
+    "ns3::UbFunction::GetJetty(unsigned int)": 60,
+    "ns3::PacketTagList::Remove(ns3::Tag&)": 6,
+    "ns3::TypeId::GetParent() const@plt": 1,
+    "ns3::UbTransportChannelManager::ResolveTpForAcceptedWork(unsigned int, ns3::UbLifecycleResourceIdentity const&)": 5,
+    "ns3::UbLifecycleCoordinator::GetOrCreate(ns3::Ptr<ns3::Node>)": 2,
+    "ns3::Object::DoGetObject(ns3::TypeId) const": 5,
+    "utils::UbUtils::TpWqeSegmentSendsNotify(unsigned int, unsigned int, unsigned int)": 9,
+    "std::filesystem::__cxx11::path::parent_path() const": 1,
+    "std::filesystem::__cxx11::path::_M_split_cmpts()": 1,
+    "utils::UbUtils::CommitTraceChunk(utils::UbUtils::TraceFileState&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&)": 4,
+    "ns3::UbPacketQueue::GetIngressQueueType()": 3,
+    "ns3::UbTransportChannel::GetDataPacketHeaderBytes(ns3::UbTransactionOpcode, ns3::UbTransactionSegmentKind, ns3::UbTransactionFields const&) const": 5,
+    "ns3::DeclareRequestHeaderPresence(ns3::UbTransactionRule const&, ns3::UbTransactionFields const&)": 2,
+    "std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long)": 21,
+    "std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::append(char const*, unsigned long)": 10,
+    "ns3::Packet::RemoveHeader(ns3::Header&)": 7,
+    "ns3::PacketMetadata::RemoveHeader(ns3::Header const&, unsigned int)": 1,
+    "ns3::Ipv4Header::GetInstanceTypeId() const": 1,
+    "ns3::TagBuffer::ReadU64()": 2,
+    "ns3::UbPacketTraceTag::Deserialize(ns3::TagBuffer)": 3,
+    "ns3::UbTransportChannelManager::ResolveInboundTp(unsigned int, unsigned int, ns3::Ipv4Address, ns3::Ipv4Address, unsigned char)": 2,
+    "ns3::Packet::PeekHeader(ns3::Header&) const": 6,
+    "ns3::UbSwitch::GetPacketType(ns3::Ptr<ns3::Packet>) [clone .constprop.0]": 5,
+    "ns3::UbDatalinkHeader::Deserialize(ns3::Buffer::Iterator)": 4,
+    "std::_Function_handler<void (), std::_Bind<void (ns3::UbTransaction::*(ns3::UbTransaction*, ns3::UbTransaction::RtpTxQueueKey))(ns3::UbTransaction::RtpTxQueueKey)> >::_M_invoke(std::_Any_data const&)": 12,
+    "ns3::UbTransaction::StartRtpWqeSegmentTx(unsigned int, ns3::Ptr<ns3::UbWqe>)": 11,
+    "std::_Function_handler<void (unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int), ns3::Callback<void, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int>::Callback<void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int), , 0>(void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))::{lambda((auto:1&&)...)#1}>::_M_invoke(std::_Any_data const&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&)": 8,
+    "utils::UbUtils::TpLastPacketReceivesNotify(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int)": 8,
+    "ns3::UbTransportChannel::NotifyLastPacketReceived(ns3::UbTransportChannel::ReceivedDataPacketContext const&)": 13,
+    "ns3::UbPort::TriggerTransmit()": 36,
+    "ns3::UbSwitch::GetAllocator()": 1,
+    "ns3::UbSwitch::FinalizeForwardedPacketEnqueue(ns3::Ptr<ns3::Packet>, unsigned int, unsigned int, unsigned int, bool)": 17,
+    "ns3::UbSwitch::ForwardDataPacketAfterAdmission(ns3::Ptr<ns3::Packet>, unsigned int, unsigned int, unsigned int)": 18,
+    "utils::UbUtils::GetCachedTraceSink(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)": 18,
+    "ns3::PointToPointNetDevice::GetNode() const": 1,
+    "ns3::UbTransaction::IsOrderedByInitiator(unsigned int, ns3::Ptr<ns3::UbWqe>)": 7,
+    "utils::UbUtils::TpLastPacketSendsNotify(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int)": 8,
+    "(anonymous namespace)::CsvRow(std::initializer_list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >)": 22,
+    "ns3::UbTransaction::RecordSegmentSuccess(unsigned int, unsigned int, unsigned int, ns3::Ptr<ns3::UbWqeSegment>)": 14,
+    "ns3::UbTransaction::ProcessInboundTaResponse(ns3::Ptr<ns3::UbWqeSegment>)": 27,
+    "ns3::UbTransaction::ProcessWqeSegmentComplete(ns3::Ptr<ns3::UbWqeSegment>)": 26,
+    "std::_Rb_tree<ns3::UbLifecycleCoordinator::ResourceKey, std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState>, std::_Select1st<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> >, std::less<ns3::UbLifecycleCoordinator::ResourceKey>, std::allocator<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> > >::erase(ns3::UbLifecycleCoordinator::ResourceKey const&)": 3,
+    "ns3::UbLifecycleCoordinator::RetireResource(ns3::UbLifecycleResourceIdentity const&)": 9,
+    "std::_Function_handler<void (unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag), ns3::Callback<void, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag>::Callback<void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag), , 0>(void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag))::{lambda((auto:1&&)...)#1}>::_M_invoke(std::_Any_data const&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, ns3::PacketType&&, unsigned int&&, unsigned int&&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, ns3::UbPacketTraceTag&&)": 49,
+    "ns3::TracedCallback<unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag>::operator()(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag) const": 68,
+    "ns3::UbTransportChannel::TpRecvNotify(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag)": 68,
+    "ns3::UbTransportChannel::TraceReceivedDataPacket(ns3::UbTransportChannel::ReceivedDataPacketContext const&)": 35,
+    "ns3::MapScheduler::RemoveNext()": 7,
+    "std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)": 7,
+    "ns3::Ipv4Header::Ipv4Header()": 2,
+    "ns3::Ipv4Address::Ipv4Address()": 2,
+    "utils::UbUtils::TpLastPacketACKsNotify(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int)": 8,
+    "operator delete(void*, unsigned long)": 1,
+    "utils::UbUtils::TpRecvNotify(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag)": 42,
+    "std::_Hash_bytes(void const*, unsigned long, unsigned long)": 4,
+    "std::_Function_handler<void (unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag), void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, ns3::PacketType, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, ns3::UbPacketTraceTag)>::_M_invoke(std::_Any_data const&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, unsigned int&&, ns3::PacketType&&, unsigned int&&, unsigned int&&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, ns3::UbPacketTraceTag&&)": 45,
+    "std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)": 2,
+    "ns3::(anonymous namespace)::FormatSimpleAckInfo(char const*, unsigned long)": 3,
+    "utils::UbUtils::PortRxNotify(unsigned int, unsigned int, unsigned int)": 15,
+    "ns3::UbTransportChannel::ParseReceivedDataPacket(ns3::Ptr<ns3::Packet>, ns3::UbTransportChannel::ReceivedDataPacketContext&)": 5,
+    "std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose()@plt": 1,
+    "ns3::UbTransportChannel::BuildRtpDataPacket(ns3::UbGbnPacketDescriptor const&)": 1,
+    "ns3::UbTransportHeader::SetNLP(unsigned char)": 1,
+    "__dynamic_cast": 28,
+    "ns3::Ptr<ns3::UbTransportChannelManager>::~Ptr()": 6,
+    "ns3::PacketMetadata::GetUid() const": 1,
+    "ns3::Callback<void, ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe> >::Callback<void (ns3::UbTransaction::*)(ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe>), ns3::UbTransaction*, 0>(void (ns3::UbTransaction::*)(ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe>), ns3::UbTransaction*)": 4,
+    "ns3::Ptr<ns3::CallbackImpl<void, ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe> > > ns3::Create<ns3::CallbackImpl<void, ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe> >, ns3::Callback<void, ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe> >::Callback<void (ns3::UbTransaction::*)(ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe>), ns3::UbTransaction*, 0>(void (ns3::UbTransaction::*)(ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe>), ns3::UbTransaction*)::{lambda((auto:1&&)...)#1}, std::vector<std::shared_ptr<ns3::CallbackComponentBase>, std::allocator<std::shared_ptr<ns3::CallbackComponentBase> > >&>(ns3::Callback<void, ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe> >::Callback<void (ns3::UbTransaction::*)(ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe>), ns3::UbTransaction*, 0>(void (ns3::UbTransaction::*)(ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe>), ns3::UbTransaction*)::{lambda((auto:1&&)...)#1}&&, std::vector<std::shared_ptr<ns3::CallbackComponentBase>, std::allocator<std::shared_ptr<ns3::CallbackComponentBase> > >&)": 2,
+    "std::__cxx11::to_string(unsigned long)": 2,
+    "ns3::PacketTagList::Peek(ns3::Tag&) const": 4,
+    "std::_Function_handler<void (), std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)": 2,
+    "ns3::MakeEvent<void (ns3::UbPort::*)(ns3::Ptr<ns3::Packet>), ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet> >(void (ns3::UbPort::*)(ns3::Ptr<ns3::Packet>), ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>)::EventMemberImpl::~EventMemberImpl()": 2,
+    "ns3::Ptr<ns3::Packet>::~Ptr()": 4,
+    "ns3::MakeEvent<void (ns3::UbPort::*)(), ns3::UbPort*>(void (ns3::UbPort::*)(), ns3::UbPort*)::EventMemberImpl::Notify()": 2,
+    "ns3::DefaultSimulatorImpl::Schedule(ns3::Time const&, ns3::EventImpl*)": 6,
+    "ns3::MapScheduler::Insert(ns3::Scheduler::Event const&)": 8,
+    "std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)": 6,
+    "ns3::Simulator::DoSchedule(ns3::Time const&, ns3::EventImpl*)": 7,
+    "ns3::UbTransportChannel::BuildTransportResponsePacket(ns3::UbTransportChannel::ReceivedDataPacketContext const&, ns3::UbTransportChannel::AckResponseContext const&)": 2,
+    "ns3::UbPort::AddIpv4Header(ns3::Ptr<ns3::Packet>, ns3::Ipv4Address, ns3::Ipv4Address)": 1,
+    "ns3::Ipv4Header::SetProtocol(unsigned char)": 1,
+    "ns3::UbLifecycleCoordinator::RecordWorkTerminal(ns3::UbLifecycleResourceIdentity const&, ns3::UbWorkOutcome)": 3,
+    "ns3::UbLink::TransmitStart(ns3::Ptr<ns3::Packet>, ns3::Ptr<ns3::UbPort>, ns3::Time, unsigned long)": 3,
+    "ns3::UbLink::TransmitStart(ns3::Ptr<ns3::Packet>, ns3::Ptr<ns3::UbPort>, ns3::Time)": 3,
+    "ns3::MakeEvent<void (ns3::UbSwitchAllocator::*)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort> >(void (ns3::UbSwitchAllocator::*)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>)::EventMemberImpl::Notify()": 1,
+    "std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > (anonymous namespace)::CsvVector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)": 13,
+    "std::basic_ios<char, std::char_traits<char> >::init(std::basic_streambuf<char, std::char_traits<char> >*)": 2,
+    "std::_Rb_tree<std::pair<unsigned int, unsigned int>, std::pair<std::pair<unsigned int, unsigned int> const, ns3::UbTransaction::OperationRecord>, std::_Select1st<std::pair<std::pair<unsigned int, unsigned int> const, ns3::UbTransaction::OperationRecord> >, std::less<std::pair<unsigned int, unsigned int> >, std::allocator<std::pair<std::pair<unsigned int, unsigned int> const, ns3::UbTransaction::OperationRecord> > >::find(std::pair<unsigned int, unsigned int> const&)": 1,
+    "ns3::UbCbfc::TryAttachPiggybackCredit(ns3::Ptr<ns3::Packet>)": 4,
+    "ns3::UbTransportChannel::BuildGbnPacketDescriptor(ns3::UbTransportChannel::NewDataSendContext const&, unsigned long) const": 1,
+    "ns3::UbReliableRerouting::CreateAttempt(ns3::Ptr<ns3::Packet const>, unsigned int, unsigned int)": 2,
+    "ns3::UbController::GetTransportChannelManager() const": 6,
+    "ns3::MapScheduler::IsEmpty() const": 1,
+    "std::_Function_handler<void (), std::_Bind<void (ns3::UbPort::*(ns3::UbPort*))()> >::_M_invoke(std::_Any_data const&)": 1,
+    "ns3::UbTransportChannel::GetIngressQueueType()": 4,
+    "std::locale::locale()": 3,
+    "ns3::UbPort::EnqueueToEgress(std::tuple<unsigned int, unsigned int, ns3::Ptr<ns3::Packet> >)": 3,
+    "ns3::UbSwitch::GetQueueManager()": 1,
+    "ns3::UbLifecycleCoordinator::OpenResource(ns3::UbLifecycleResourceKind, unsigned long)": 3,
+    "ns3::UbLifecycleCoordinator::ReleaseLease(ns3::UbLifecycleLeaseIdentity const&)": 6,
+    "ns3::UbDatalinkPacketHeader::GetSerializedSize() const": 2,
+    "ns3::UbTransaction::TryContinueRtpTxQueue(ns3::UbTransaction::RtpTxQueueKey const&, bool)": 3,
+    "std::_Rb_tree<ns3::UbTransaction::RtpTxQueueKey, std::pair<ns3::UbTransaction::RtpTxQueueKey const, ns3::UbTransaction::RtpTxQueue>, std::_Select1st<std::pair<ns3::UbTransaction::RtpTxQueueKey const, ns3::UbTransaction::RtpTxQueue> >, std::less<ns3::UbTransaction::RtpTxQueueKey>, std::allocator<std::pair<ns3::UbTransaction::RtpTxQueueKey const, ns3::UbTransaction::RtpTxQueue> > >::find(ns3::UbTransaction::RtpTxQueueKey const&)": 4,
+    "std::_Function_handler<void (ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe>), ns3::Callback<void, ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe> >::Callback<void (ns3::UbTransaction::*)(ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe>), ns3::UbTransaction*, 0>(void (ns3::UbTransaction::*)(ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe>), ns3::UbTransaction*)::{lambda((auto:1&&)...)#1}>::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)": 5,
+    "ns3::PacketTagList::Add(ns3::Tag const&) const": 2,
+    "Layer::Ready(unsigned int)": 1,
+    "ns3::UbLifecycleCoordinator::StoreCompactHistory(ns3::UbLifecycleResourceKind, unsigned long, ns3::UbLifecycleCoordinator::CompactResourceHistory const&)": 5,
+    "ns3::Ptr<ns3::UbTransportChannel>::~Ptr()": 5,
+    "ns3::Ptr<ns3::UbTransportChannel>::~Ptr()@plt": 2,
+    "std::__cxx11::to_string(long)": 3,
+    "ns3::Packet::AddHeader(ns3::Header const&)": 3,
+    "ns3::Buffer::AddAtStart(unsigned int)": 1,
+    "ns3::UbTransportChannel::IsLimited()": 4,
+    "ns3::UbSwitchAllocator::ScheduleAllocation(ns3::Ptr<ns3::UbPort>) [clone .part.0]": 10,
+    "std::_Rb_tree_decrement(std::_Rb_tree_node_base*)": 1,
+    "std::_Rb_tree<ns3::Scheduler::EventKey, std::pair<ns3::Scheduler::EventKey const, ns3::EventImpl*>, std::_Select1st<std::pair<ns3::Scheduler::EventKey const, ns3::EventImpl*> >, std::less<ns3::Scheduler::EventKey>, std::allocator<std::pair<ns3::Scheduler::EventKey const, ns3::EventImpl*> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<ns3::Scheduler::EventKey const, ns3::EventImpl*> >, ns3::Scheduler::EventKey const&)": 2,
+    "ns3::Ptr<ns3::CallbackImpl<void> > ns3::Create<ns3::CallbackImpl<void>, ns3::Callback<void, ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe> >::BindImpl<, ns3::UbTransaction::RtpTxQueueKey const&, unsigned int&, ns3::Ptr<ns3::UbWqe>&>(std::integer_sequence<unsigned long>, ns3::UbTransaction::RtpTxQueueKey const&, unsigned int&, ns3::Ptr<ns3::UbWqe>&)::{lambda((auto:1&&)...)#1}, std::vector<std::shared_ptr<ns3::CallbackComponentBase>, std::allocator<std::shared_ptr<ns3::CallbackComponentBase> > >&>(ns3::UbTransaction::RtpTxQueueKey const&, unsigned int&)": 2,
+    "ns3::UbTransportChannel::EnqueueTransportResponse(ns3::Ptr<ns3::Packet>, char const*, unsigned long)": 7,
+    "std::enable_if<is_member_pointer_v<void (ns3::UbSwitchAllocator::*)(ns3::Ptr<ns3::UbPort>)>, ns3::EventImpl*>::type ns3::MakeEvent<void (ns3::UbSwitchAllocator::*)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort> >(void (ns3::UbSwitchAllocator::*)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>)": 2,
+    "ns3::UbTransportChannel::TriggerTransportTransmit()": 7,
+    "ns3::MakeEvent<void (ns3::UbPort::*)(), ns3::UbPort*>(void (ns3::UbPort::*)(), ns3::UbPort*)::EventMemberImpl::~EventMemberImpl()": 1,
+    "ns3::BooleanValue::BooleanValue()": 2,
+    "ns3::AttributeValue::AttributeValue()": 1,
+    "std::ostream::sentry::sentry(std::ostream&)": 2,
+    "std::ostream::put(char)": 4,
+    "std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [clone .constprop.0]": 4,
+    "Layer::Event(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, int, int, unsigned long, unsigned long, int)": 4,
+    "Layer::TE(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned int, unsigned int, unsigned long, unsigned long) [clone .isra.0]": 4,
+    "ns3::UbDatalinkPacketHeader::Deserialize(ns3::Buffer::Iterator)": 2,
+    "ns3::UbSwitch::ResolveURMAOutput(ns3::Ptr<ns3::Packet>, ns3::ParsedURMAHeaders const&, unsigned int, ns3::RoutingKey&, bool&)": 5,
+    "ns3::UbRoutingProcess::GetOutPortForEndpointInternal(ns3::RoutingKey&, std::vector<unsigned short, std::allocator<unsigned short> > const*, bool&, unsigned short)": 4,
+    "ns3::UbRoutingTable::LookupShortest(unsigned int) const": 2,
+    "ns3::UbRoutingProcess::GetShortestOutPorts(unsigned int, std::vector<unsigned short, std::allocator<unsigned short> >&) const": 2,
+    "ns3::UbRoutingProcess::SelectCandidateFromView(ns3::RoutingKey&, ns3::UbRoutingCandidateView const&, bool&, unsigned short)": 1,
+    "std::ios_base::_M_dispose_callbacks()": 1,
+    "std::ios_base::~ios_base()": 2,
+    "ns3::MakeEvent<Layer::Compute(unsigned int)::{lambda()#3}>(Layer::Compute(unsigned int)::{lambda()#3})::EventImplFunctional::Notify()": 23,
+    "std::_Function_handler<void (), std::_Bind<void (ns3::UbSwitchAllocator::*(ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>))(ns3::Ptr<ns3::UbPort>)> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)": 3,
+    "ns3::MakeEvent<void (ns3::UbSwitchAllocator::*)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort> >(void (ns3::UbSwitchAllocator::*)(ns3::Ptr<ns3::UbPort>), ns3::UbSwitchAllocator*, ns3::Ptr<ns3::UbPort>)::EventMemberImpl::~EventMemberImpl()": 3,
+    "ns3::Ptr<ns3::UbPort>::~Ptr()": 3,
+    "ns3::Ptr<ns3::Node> ns3::Object::GetObject<ns3::Node>() const": 2,
+    "std::ostream::write(char const*, long)": 2,
+    "std::basic_streambuf<char, std::char_traits<char> >::xsputn(char const*, long)": 3,
+    "ns3::NodeList::GetNNodes()": 2,
+    "ns3::UbParallelLifecycleAdapter::IsExecutionOwner(unsigned int)": 4,
+    "ns3::UbJetty::ProcessWqeSegmentComplete(unsigned int)": 9,
+    "ns3::UbTransaction::WqeFinish(unsigned int, ns3::Ptr<ns3::UbWqe>, ns3::UbWorkOutcome)": 7,
+    "ns3::UbJetty::CheckAndRemoveCompletedWqe()": 9,
+    "ns3::UbTransaction::FinishWqe(unsigned int, ns3::Ptr<ns3::UbWqe>, ns3::UbWorkOutcome, ns3::UbTransaction::WqeTerminalMode)": 7,
+    "__udivmodti4": 2,
+    "ns3::DataRate::CalculateBytesTxTime(unsigned int) const": 2,
+    "ns3::int64x64_t::Div(ns3::int64x64_t const&)": 2,
+    "ns3::int64x64_t::Udiv(unsigned __int128, unsigned __int128)": 2,
+    "ns3::Object::DoDelete()": 17,
+    "ns3::Buffer::~Buffer()": 1,
+    "ns3::UbWqe::~UbWqe()": 1,
+    "malloc@plt": 2,
+    "std::enable_if<is_member_pointer_v<void (ns3::UbPort::*)()>, ns3::EventImpl*>::type ns3::MakeEvent<void (ns3::UbPort::*)(), ns3::Ptr<ns3::UbPort>>(void (ns3::UbPort::*)(), ns3::Ptr<ns3::UbPort>)": 1,
+    "ns3::UbCbfc::OnDataPacketReceived(ns3::Ptr<ns3::Packet>)": 6,
+    "ns3::UbCbfc::RestoreDataPacketCredit(ns3::Ptr<ns3::Packet>)": 6,
+    "std::enable_if<is_member_pointer_v<void (ns3::UbPort::*)()>, ns3::EventImpl*>::type ns3::MakeEvent<void (ns3::UbPort::*)(), ns3::UbPort*>(void (ns3::UbPort::*)(), ns3::UbPort*)": 1,
+    "ns3::Packet::AddPacketTag(ns3::Tag const&) const": 1,
+    "ns3::UbPacketQueue::GetNextPacketSize()": 1,
+    "ns3::UbIngressQueue::IsControlFrame()": 1,
+    "operator delete(void*)": 5,
+    "ns3::DefaultSimulatorImpl::ScheduleWithContext(unsigned int, ns3::Time const&, ns3::EventImpl*)": 2,
+    "std::vector<ns3::Ptr<ns3::UbWqeSegment>, std::allocator<ns3::Ptr<ns3::UbWqeSegment> > >::~vector()": 1,
+    "ns3::Object::~Object()": 1,
+    "ns3::UbWqeSegment::~UbWqeSegment()": 2,
+    "ns3::UbTransactionCorrelationTag::Deserialize(ns3::TagBuffer)": 1,
+    "ns3::UbTransportChannel::TrackInboundTaPacket(ns3::UbTransportChannel::BufferedInboundPacket const&)": 4,
+    "ns3::UbTransportChannel::UpdateReceiveWindowAndCollectCompletedTa(ns3::UbTransportChannel::ReceivedDataPacketContext const&, ns3::UbRetransReceiveDecision const&, unsigned long&, unsigned long&, std::vector<ns3::Ptr<ns3::UbWqeSegment>, std::allocator<ns3::Ptr<ns3::UbWqeSegment> > >&)": 6,
+    "ns3::UbTransportChannel::TryContinueAcceptedWqeSegment(ns3::Ptr<ns3::UbWqeSegment>)": 1,
+    "ns3::UbRoutingProcess::GetOutPortForEndpoint(ns3::RoutingKey&, bool&, unsigned short)": 1,
+    "ns3::UbPort::GetIfIndex() const": 1,
+    "std::ios_base::ios_base()": 1,
+    "ns3::UbTransaction::StartDispatchGate(unsigned int, unsigned int, bool)": 1,
+    "ns3::UbTransaction::EnqueueRtpWqe(unsigned int, ns3::Ptr<ns3::UbWqe>, bool)": 2,
+    "ns3::Time::ToInteger(ns3::Time::Unit) const [clone .part.0] [clone .constprop.0]": 1,
+    "std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const": 2,
+    "std::ostream& std::ostream::_M_insert<long>(long)": 2,
+    "ns3::UbTransportChannel::HandleRepeatedDataPacket(ns3::UbTransportChannel::ReceivedDataPacketContext const&)": 1,
+    "pthread_mutex_lock@plt": 1,
+    "ns3::NodeList::GetNode(unsigned int)": 1,
+    "ns3::UbPacketQueue::IsEmpty()": 1,
+    "strlen@plt": 1,
+    "ns3::UbCnpExtTph::UbCnpExtTph()": 1,
+    "ns3::Ptr<ns3::Packet>::operator=(ns3::Ptr<ns3::Packet> const&) [clone .isra.0]": 2,
+    "ns3::UbPacketQueue::GetNextPacket()": 1,
+    "ns3::UbDatalinkPacketHeader::Serialize(ns3::Buffer::Iterator) const": 1,
+    "ns3::UbEgressQueue::DoDequeue()": 1,
+    "ns3::UbTransportChannel::PopQueuedPacket(std::queue<ns3::Ptr<ns3::Packet>, std::deque<ns3::Ptr<ns3::Packet>, std::allocator<ns3::Ptr<ns3::Packet> > > >&)": 2,
+    "std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&)": 1,
+    "ns3::UbLifecycleCoordinator::FindCompactHistory(ns3::UbLifecycleResourceKind, unsigned long) const": 3,
+    "ns3::UbTransactionHeader::SetIniTaSsn(unsigned short)": 1,
+    "ns3::Packet::GetUid() const": 1,
+    "ns3::UbLifecycleCoordinator::Validate(ns3::UbLifecycleResourceIdentity const&) const": 2,
+    "__cxxabiv1::__si_class_type_info::__do_dyncast(long, __cxxabiv1::__class_type_info::__sub_kind, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__dyncast_result&) const": 2,
+    "ns3::Ptr<ns3::UbSwitch> ns3::Object::GetObject<ns3::UbSwitch>() const": 2,
+    "pthread_mutex_unlock": 1,
+    "ns3::UbTransportChannel::ParseTransportResponsePacket(ns3::Ptr<ns3::Packet>, ns3::UbTransportChannel::TransportResponseContext&)": 1,
+    "std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::append(char const*)": 2,
+    "std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<unsigned long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, unsigned long) const": 1,
+    "std::map<ns3::UbTransaction::RtpTxQueueKey, ns3::UbTransaction::RtpTxQueue, std::less<ns3::UbTransaction::RtpTxQueueKey>, std::allocator<std::pair<ns3::UbTransaction::RtpTxQueueKey const, ns3::UbTransaction::RtpTxQueue> > >::operator[](ns3::UbTransaction::RtpTxQueueKey const&)": 2,
+    "ns3::Simulator::DoScheduleNow(ns3::EventImpl*)": 1,
+    "ns3::Header::~Header()": 1,
+    "pthread_mutex_lock": 1,
+    "ns3::Ptr<ns3::UbTransportGroup>::~Ptr()": 1,
+    "ns3::UbTransaction::TryAdmitRtpWqe(unsigned int, ns3::Ptr<ns3::UbWqe>, ns3::UbLifecycleResourceIdentity const&, ns3::UbTransaction::RtpTransportResolution const&)": 1,
+    "ns3::UbTransactionHeader::GetIniRcId() const": 1,
+    "ns3::Node::GetDevice(unsigned int) const": 1,
+    "ns3::UbQueueManager::MoveInPortProcessingToVoq(unsigned int, unsigned int, unsigned int, unsigned int)": 1,
+    "ns3::UbSwitch::MoveInPortProcessingToVoq(ns3::Ptr<ns3::Packet>, unsigned int, unsigned int, unsigned int)": 1,
+    "ns3::UbPacketTraceTag::Serialize(ns3::TagBuffer) const": 1,
+    "ns3::Ptr<ns3::CallbackImpl<void> > ns3::Create<ns3::CallbackImpl<void>, ns3::Callback<void, ns3::UbTransaction::RtpTxQueueKey, unsigned int, ns3::Ptr<ns3::UbWqe> >::BindImpl<, ns3::UbTransaction::RtpTxQueueKey&, unsigned int&, ns3::Ptr<ns3::UbWqe>&>(std::integer_sequence<unsigned long>, ns3::UbTransaction::RtpTxQueueKey&, unsigned int&, ns3::Ptr<ns3::UbWqe>&)::{lambda((auto:1&&)...)#1}, std::vector<std::shared_ptr<ns3::CallbackComponentBase>, std::allocator<std::shared_ptr<ns3::CallbackComponentBase> > >&>(ns3::UbTransaction::RtpTxQueueKey&, unsigned int&)": 3,
+    "ns3::UbJetty::PushWqe(ns3::Ptr<ns3::UbWqe>)": 1,
+    "ns3::UbJetty::PushWqe(ns3::Ptr<ns3::UbWqe>, unsigned int)": 1,
+    "ns3::UbFunction::AttachJettyEvent(unsigned int, unsigned long, ns3::EventId, ns3::Callback<void>)": 1,
+    "ns3::UbJettyManager::AttachEvent(unsigned int, unsigned long, ns3::EventId, ns3::Callback<void>)": 1,
+    "ns3::UbJetty::CommitWqeSegmentAdmission(ns3::Ptr<ns3::UbWqeSegment>)": 1,
+    "ns3::UbJettyManager::ApplyWqeOutcome(unsigned int, unsigned int, ns3::UbLifecycleResourceIdentity const&, ns3::UbWorkOutcome)": 1,
+    "ns3::UbJettyManager::TryFinalizeJettyDestroy(unsigned int)": 1,
+    "std::ostream::operator<<(int)": 1,
+    "pthread_mutex_unlock@plt": 1,
+    "ns3::UbSwitchAllocator::UpdateIngressSummary(ns3::UbIngressQueue*, bool)": 1,
+    "ns3::UbIngressQueue::RefreshAllocatorSummary()": 1,
+    "ns3::UbFunction::BeginJettyEvent(unsigned int, unsigned long)": 1,
+    "ns3::UbSwitchAllocator::CheckDeadlock()": 9,
+    "ns3::UbSwitchAllocator::ScheduleDeadlockCheck()": 1,
+    "ns3::DefaultSimulatorImpl::Destroy()": 11,
+    "ns3::UbJettyManager::DisposeAll()": 4,
+    "ns3::NodeListPriv::Delete()": 11,
+    "ns3::UbJettyManager::FinalizeDestroy(unsigned int)": 4,
+    "ns3::UbController::DoDispose()": 8,
+    "ns3::NodeListPriv::DoDispose()": 11,
+    "ns3::Simulator::Destroy()": 11,
+    "ns3::Object::Dispose()": 11,
+    "ns3::UbJettyManager::DestroyJetty(unsigned int, ns3::UbDestroyReason, ns3::Callback<void, ns3::UbLifecycleResourceIdentity, ns3::UbDestroyStatus>)": 4,
+    "ns3::UbFunction::DoDispose()": 4,
+    "ns3::UbTransaction::DoDispose()": 4,
+    "std::_Rb_tree<unsigned int, std::pair<unsigned int const, ns3::TransactionServiceMode>, std::_Select1st<std::pair<unsigned int const, ns3::TransactionServiceMode> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, ns3::TransactionServiceMode> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned int const, ns3::TransactionServiceMode> >*) [clone .isra.0]": 1,
+    "ns3::UbTransportChannel::~UbTransportChannel()": 2,
+    "std::_Rb_tree<unsigned int, std::pair<unsigned int const, ns3::Ptr<ns3::UbTransportChannel> >, std::_Select1st<std::pair<unsigned int const, ns3::Ptr<ns3::UbTransportChannel> > >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, ns3::Ptr<ns3::UbTransportChannel> > > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned int const, ns3::Ptr<ns3::UbTransportChannel> > >*) [clone .isra.0]": 2,
+    "std::_Rb_tree<ns3::UbTransaction::RtpTxQueueKey, std::pair<ns3::UbTransaction::RtpTxQueueKey const, ns3::UbTransaction::RtpTxQueue>, std::_Select1st<std::pair<ns3::UbTransaction::RtpTxQueueKey const, ns3::UbTransaction::RtpTxQueue> >, std::less<ns3::UbTransaction::RtpTxQueueKey>, std::allocator<std::pair<ns3::UbTransaction::RtpTxQueueKey const, ns3::UbTransaction::RtpTxQueue> > >::_M_erase(std::_Rb_tree_node<std::pair<ns3::UbTransaction::RtpTxQueueKey const, ns3::UbTransaction::RtpTxQueue> >*) [clone .isra.0]": 1,
+    "std::__cxx11::_List_base<ns3::Callback<void, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int>, std::allocator<ns3::Callback<void, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int> > >::_M_clear()": 1,
+    "ns3::UbJetty::~UbJetty()": 1,
+    "ns3::UbQueueManager::~UbQueueManager()": 3,
+    "ns3::UbSwitch::DoDispose()": 3,
+    "ns3::UbLifecycleCoordinator::~UbLifecycleCoordinator()": 1,
+    "std::_Rb_tree<unsigned long, std::pair<unsigned long const, ns3::UbLifecycleCoordinator::CompactHistoryRun>, std::_Select1st<std::pair<unsigned long const, ns3::UbLifecycleCoordinator::CompactHistoryRun> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ns3::UbLifecycleCoordinator::CompactHistoryRun> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ns3::UbLifecycleCoordinator::CompactHistoryRun> >*) [clone .isra.0]": 1,
+    "std::_Rb_tree<ns3::UbLifecycleResourceKind, std::pair<ns3::UbLifecycleResourceKind const, std::map<unsigned long, ns3::UbLifecycleCoordinator::CompactHistoryRun, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ns3::UbLifecycleCoordinator::CompactHistoryRun> > > >, std::_Select1st<std::pair<ns3::UbLifecycleResourceKind const, std::map<unsigned long, ns3::UbLifecycleCoordinator::CompactHistoryRun, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ns3::UbLifecycleCoordinator::CompactHistoryRun> > > > >, std::less<ns3::UbLifecycleResourceKind>, std::allocator<std::pair<ns3::UbLifecycleResourceKind const, std::map<unsigned long, ns3::UbLifecycleCoordinator::CompactHistoryRun, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ns3::UbLifecycleCoordinator::CompactHistoryRun> > > > > >::_M_erase(std::_Rb_tree_node<std::pair<ns3::UbLifecycleResourceKind const, std::map<unsigned long, ns3::UbLifecycleCoordinator::CompactHistoryRun, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ns3::UbLifecycleCoordinator::CompactHistoryRun> > > > >*) [clone .isra.0]": 1,
+    "Layer::~Layer()": 2,
+    "ns3::UbSwitch::~UbSwitch()": 1
+  }
+}

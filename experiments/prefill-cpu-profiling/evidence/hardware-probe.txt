@@ -1,0 +1,12 @@
+$ /workspace/prefill-cpu-tools/root/usr/bin/perf stat -e cycles:u -- /bin/true
+
+ Performance counter stats for '/bin/true':
+
+   <not supported>      cycles:u                                                              
+
+       0.000781071 seconds time elapsed
+
+       0.000874000 seconds user
+       0.000000000 seconds sys
+
+

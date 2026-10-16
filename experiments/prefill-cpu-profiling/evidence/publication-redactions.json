@@ -1,0 +1,28 @@
+{
+  "original_raw_root": "/workspace/prefill-cpu-raw",
+  "published_export_root": "/workspace/prefill-cpu-export",
+  "scope": "Equal-length redaction of inherited credential strings in raw DWARF stack bytes only. Original raw profiles remain local and are not published. All other raw files are byte-identical. Decoded perf script output is byte-identical before/after for every redacted profile.",
+  "known_credential_values_audited": 1,
+  "changes": [
+    {
+      "file": "5000-perf/perf.data",
+      "original_sha256": "593eb06b54aa8909fa06a240273a0540bbea95b2c2d933c1ae79497ee5901fbc",
+      "published_sha256": "8cbc808d6dc46ef7f7ecdc028c9de80fb9d21982224b1963862a54efa5f6eeaa",
+      "full_value_occurrences": 110,
+      "truncated_fragments": 1,
+      "bytes_preserved": 3844716,
+      "decoded_stack_sha256": "89af73bad9df5f2faf873883a0f4418313f680da31596f220b2ff0847b6bbcdf",
+      "decoded_stack_byte_parity": true
+    },
+    {
+      "file": "probes/probe.data.old",
+      "original_sha256": "66ab598b7dd5664b562f9da05a2c889b3073e77af4c52a4ba1ee221aefb09b61",
+      "published_sha256": "f251f877984521076849056df9398c9523d5179dfe9700349a1c3da9e5c36a5e",
+      "full_value_occurrences": 10,
+      "truncated_fragments": 0,
+      "bytes_preserved": 98768,
+      "decoded_stack_sha256": "dccac3dcebfd3daa386deaa470d339c93cd00463158b2c919beb9d6cde5f61f1",
+      "decoded_stack_byte_parity": true
+    }
+  ]
+}

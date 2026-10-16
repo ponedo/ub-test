@@ -1,0 +1,203 @@
+diff --git a/src/unified-bus/model/protocol/ub-function.cc b/src/unified-bus/model/protocol/ub-function.cc
+index 5fa3f56d..ed646e6b 100644
+--- a/src/unified-bus/model/protocol/ub-function.cc
++++ b/src/unified-bus/model/protocol/ub-function.cc
+@@ -58,6 +58,8 @@ UbFunction::BindTransaction(Ptr<UbTransaction> transaction)
+ void
+ UbFunction::CreateJetty(uint32_t src, uint32_t dest, uint32_t jettyNum, UbJettyLifetime lifetime)
+ {
++CpuScope cpuScope12(12);
++
+     NS_LOG_DEBUG(this << src << dest << jettyNum);
+     // 创建新的Jetty
+     Ptr<UbJetty> jetty = CreateObject<UbJetty>();
+@@ -74,6 +76,8 @@ UbFunction::CreateJetty(uint32_t src, uint32_t dest, uint32_t jettyNum, UbJettyL
+ void
+ UbFunction::CreateJetty(uint32_t src, uint32_t jettyNum, UbJettyLifetime lifetime)
+ {
++CpuScope cpuScope12(12);
++
+     NS_LOG_DEBUG(this << src << jettyNum);
+     Ptr<UbJetty> jetty = CreateObject<UbJetty>();
+     jetty->Init();
+@@ -154,6 +158,8 @@ void UbFunction::PushWqeToJetty(Ptr<UbWqe> wqe, uint32_t jettyNum)
+ 
+ UbWqeSubmissionResult UbFunction::SubmitWqe(Ptr<UbWqe> wqe, uint32_t jettyNum)
+ {
++CpuScope cpuScope13(13);
++
+     NS_LOG_DEBUG(this);
+     Ptr<UbJetty> ubJetty = GetJetty(jettyNum);
+     if (ubJetty == nullptr) {
+@@ -522,6 +528,8 @@ UbJettyManager::GetTransaction() const
+ void
+ UbJettyManager::RegisterJetty(Ptr<UbJetty> jetty, UbJettyLifetime lifetime)
+ {
++CpuScope cpuScope15(15);
++
+     NS_ABORT_MSG_IF(jetty == nullptr, "Cannot register a null Jetty");
+     const uint32_t jettyNum = jetty->GetJettyNum();
+     NS_ABORT_MSG_IF(m_jettyRecordsByNum.find(jettyNum) != m_jettyRecordsByNum.end(),
+@@ -538,12 +546,16 @@ UbJettyManager::RegisterJetty(Ptr<UbJetty> jetty, UbJettyLifetime lifetime)
+ bool
+ UbJettyManager::IsJettyExists(uint32_t jettyNum) const
+ {
++CpuScope cpuScope18(18);
++
+     return m_jettyRecordsByNum.find(jettyNum) != m_jettyRecordsByNum.end();
+ }
+ 
+ Ptr<UbJetty>
+ UbJettyManager::GetJetty(uint32_t jettyNum) const
+ {
++CpuScope cpuScope17(17);
++
+     const auto it = m_jettyRecordsByNum.find(jettyNum);
+     return it == m_jettyRecordsByNum.end() ? nullptr : it->second.jetty;
+ }
+@@ -685,6 +697,8 @@ UbJettyManager::RegisterWqe(uint32_t jettyNum,
+                             uint32_t wqeId,
+                             const UbLifecycleResourceIdentity& identity)
+ {
++CpuScope cpuScope16(16);
++
+     auto it = m_jettyRecordsByNum.find(jettyNum);
+     NS_ABORT_MSG_IF(it == m_jettyRecordsByNum.end() ||
+                         it->second.state != UbJettyLifecycleState::ACTIVE,
+@@ -696,6 +710,8 @@ UbJettyManager::RegisterWqe(uint32_t jettyNum,
+ uint64_t
+ UbJettyManager::ResolveWqeLifecycleLocalId(uint32_t jettyNum, uint32_t wqeId) const
+ {
++CpuScope cpuScope14(14);
++
+     const auto isInUse = [this](uint64_t localId) {
+         for (const auto& [candidateJettyNum, record] : m_jettyRecordsByNum)
+         {
+@@ -1041,6 +1057,8 @@ UbJetty::UbJetty()
+ 
+ void UbJetty::Init()
+ {
++CpuScope cpuScope19(19);
++
+     ResetSsnAckBitset(m_oooAckThreshold);
+ }
+ 
+diff --git a/src/unified-bus/model/protocol/ub-function.h b/src/unified-bus/model/protocol/ub-function.h
+index 927c26bc..7ad17823 100644
+--- a/src/unified-bus/model/protocol/ub-function.h
++++ b/src/unified-bus/model/protocol/ub-function.h
+@@ -376,6 +376,8 @@ namespace ns3 {
+ 
+         void ResetSsnAckBitset(uint32_t taOooAckThreshold)
+         {
++CpuScope cpuScope30(30);
++
+             m_ssnAckWindow.Resize(taOooAckThreshold);
+             m_ssnAckWindow.Reset(m_taSsnSndUna);
+         }
+diff --git a/src/unified-bus/model/protocol/ub-transaction.cc b/src/unified-bus/model/protocol/ub-transaction.cc
+index a820f51d..4934171e 100644
+--- a/src/unified-bus/model/protocol/ub-transaction.cc
++++ b/src/unified-bus/model/protocol/ub-transaction.cc
+@@ -616,6 +616,8 @@ UbTransaction::TriggerScheduleWqeSegment(uint32_t jettyNum,
+                                          Ptr<UbWqe> originatingWqe,
+                                          bool lifecycleOperation)
+ {
++CpuScope cpuScope23(23);
++
+     NS_ABORT_MSG_IF(!lifecycleOperation,
+                     "Non-lifecycle local RTP scheduling has no live caller");
+     if (originatingWqe != nullptr)
+@@ -1849,6 +1851,8 @@ UbTransaction::RecordSegmentSuccess(uint32_t jettyNum,
+ 
+ bool UbTransaction::ProcessWqeSegmentComplete(Ptr<UbWqeSegment> wqeSegment)
+ {
++CpuScope cpuScope21(21);
++
+     if (wqeSegment == nullptr) {
+         return false;
+     }
+@@ -1899,6 +1903,8 @@ UbTransaction::ExecuteInboundTransaction(uint32_t localTpn,
+                                           Ptr<UbWqeSegment> request,
+                                           UbTransactionResponseSink sink)
+ {
++CpuScope cpuScope20(20);
++
+     if (request == nullptr)
+         return;
+     const auto* rule = FindTransactionRule(request->GetType());
+@@ -2192,6 +2198,8 @@ bool UbTransaction::IsUnreliable(Ptr<UbWqe> wqe)
+ 
+ void UbTransaction::AddWqe(uint32_t jettyNum, Ptr<UbWqe> wqe)
+ {
++CpuScope cpuScope22(22);
++
+     if (m_serviceMode.find(jettyNum) != m_serviceMode.end()) {
+         // ROI模式且wqe是RO或SO
+         if (m_serviceMode[jettyNum] == TransactionServiceMode::ROI
+diff --git a/src/unified-bus/model/protocol/ub-transport.cc b/src/unified-bus/model/protocol/ub-transport.cc
+index 38dc543f..6af95ad7 100644
+--- a/src/unified-bus/model/protocol/ub-transport.cc
++++ b/src/unified-bus/model/protocol/ub-transport.cc
+@@ -1642,6 +1642,8 @@ UbTransportChannel::HandleReceivedAckOrSack(const TransportResponseContext& ctx,
+                                             uint64_t previousSndUna,
+                                             UbRetransAckResult& ackResult)
+ {
++CpuScope cpuScope29(29);
++
+     if (ctx.hasCetph && !ctx.hasSaetph) {
+         const uint64_t ackPsn =
+             UbTpPsnSequence::Unwrap(ctx.transportHeader.GetPsn(), m_psnSndUna);
+@@ -1917,6 +1919,8 @@ bool
+ UbTransportChannel::ParseReceivedDataPacket(Ptr<Packet> packet,
+                                             ReceivedDataPacketContext& ctx)
+ {
++CpuScope cpuScope28(28);
++
+     if (packet == nullptr) {
+         NS_LOG_ERROR("Null packet received");
+         return false;
+diff --git a/src/unified-bus/model/ub-port.cc b/src/unified-bus/model/ub-port.cc
+index 7238704c..1e86b3b4 100644
+--- a/src/unified-bus/model/ub-port.cc
++++ b/src/unified-bus/model/ub-port.cc
+@@ -897,6 +897,8 @@ void UbPort::Receive(Ptr<Packet> packet)
+ void
+ UbPort::DispatchReceive(Ptr<Packet> packet)
+ {
++CpuScope cpuScope27(27);
++
+     if (!m_receiveHandler.IsNull())
+     {
+         m_receiveHandler(this, packet);
+diff --git a/src/unified-bus/model/ub-utils.cc b/src/unified-bus/model/ub-utils.cc
+index 0b91375f..3886d244 100644
+--- a/src/unified-bus/model/ub-utils.cc
++++ b/src/unified-bus/model/ub-utils.cc
+@@ -1617,6 +1617,8 @@ UbUtils::CloseTraceFile(TraceFileState& fileState, bool lruClose)
+ void
+ UbUtils::CommitTraceChunk(TraceFileState& fileState, std::string& chunk)
+ {
++CpuScope cpuScope25(25);
++
+     if (chunk.empty())
+     {
+         return;
+@@ -1708,6 +1710,8 @@ UbUtils::CommitTraceChunk(TraceFileState& fileState, std::string& chunk)
+ void
+ UbUtils::AppendTraceLine(const TraceSinkHandle& sink, std::string line)
+ {
++CpuScope cpuScope24(24);
++
+     const uint64_t epoch = trace_writer_epoch.load(std::memory_order_acquire);
+     NS_ABORT_MSG_IF(!sink.IsValid() || sink.epoch != epoch, "Stale or invalid trace sink handle");
+     auto& fileState = *static_cast<TraceFileState*>(sink.state);
+@@ -1787,6 +1791,8 @@ UbUtils::AppendTraceInfoNoTs(const TraceSinkHandle& sink, const std::string& inf
+ void
+ UbUtils::FlushTraceFile(TraceFileState& fileState)
+ {
++CpuScope cpuScope26(26);
++
+     std::vector<TraceOwnerState*> owners;
+     {
+         std::lock_guard<std::mutex> filesGuard(files_mutex);

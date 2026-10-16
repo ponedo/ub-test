@@ -1,0 +1,21 @@
+symbol,samples,percent
+std::_Rb_tree_increment(std::_Rb_tree_node_base*),10765,35.36581359440192
+ns3::UbTransaction::GetJettyLiveTps(unsigned int),4223,13.8736489372187
+"ns3::UbTransportChannelManager::ResolveLiveTp(unsigned int, ns3::UbLifecycleResourceIdentity const&)",3487,11.455698281809521
+ns3::UbFunction::GetJetty(unsigned int),1851,6.081014487992378
+std::_Rb_tree_increment(std::_Rb_tree_node_base const*),1035,3.400243109169158
+cfree,741,2.4343769506225565
+ns3::UbTransaction::GetJettiesUsingTpn(unsigned int),622,2.0434311245441705
+malloc,535,1.7576135878314005
+[unknown],530,1.741187292618023
+__dynamic_cast,528,1.734616774532672
+ns3::UbTransaction::TryContinueJettyTransmission(unsigned int),442,1.4520844968625777
+ns3::UbTransportChannel::GetNextPacketSize(),291,0.9560103814185749
+pthread_mutex_lock,210,0.6899043989618582
+"ns3::UbJettyManager::ResolveWqeLifecycleLocalId(unsigned int, unsigned int) const",203,0.6669075856631296
+"ns3::UbTransaction::IsOrderedByInitiator(unsigned int, ns3::Ptr<ns3::UbWqe>)",191,0.6274844771510234
+ns3::UbController::GetTransportChannelManager() const,168,0.5519235191694866
+ns3::UbRetransController::GetRetransEnable() const,133,0.4369394526758435
+ns3::UbTransportChannel::IsEmpty(),127,0.4172278984197904
+"std::_Rb_tree<ns3::UbLifecycleCoordinator::ResourceKey, std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState>, std::_Select1st<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> >, std::less<ns3::UbLifecycleCoordinator::ResourceKey>, std::allocator<std::pair<ns3::UbLifecycleCoordinator::ResourceKey const, ns3::UbLifecycleCoordinator::ResourceState> > >::find(ns3::UbLifecycleCoordinator::ResourceKey const&)",117,0.38437530799303526
+ns3::UbRoundRobinAllocator::SelectNextIngressQueue(ns3::Ptr<ns3::UbPort>),117,0.38437530799303526

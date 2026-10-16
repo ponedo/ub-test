@@ -1,0 +1,29 @@
+# ========
+# captured on    : Fri Oct 16 09:43:06 2026
+# header version : 1
+# data offset    : 296
+# data size      : 3838216
+# feat offset    : 3838512
+# hostname : f972a8f01f3f
+# os release : 6.18.44
+# perf version : 6.12.107
+# arch : x86_64
+# nrcpus online : 5
+# nrcpus avail : 5
+# cpudesc : AMD EPYC 9V74 80-Core Processor
+# cpuid : AuthenticAMD,25,17,1
+# total memory : 18440136 kB
+# cmdline : /workspace/prefill-cpu-tools/root/usr/bin/perf record -o /workspace/prefill-cpu-raw/5000-perf/perf.data -e cpu-clock:u -F 99 --call-graph dwarf,8192 -- /workspace/ns-3-ub/build/scratch/ns3.44-multi-npu-relay --input=/workspace/prefill-cpu-raw/5000-perf/run/input.txt --out=/workspace/prefill-cpu-raw/5000-perf/run --capacityMetrics=/workspace/prefill-cpu-raw/5000-perf/run/simulator-metrics.json 
+# event : name = cpu-clock:u, , id = { 52, 53, 54, 55, 56 }, type = 1 (software), size = 136, config = 0 (PERF_COUNT_SW_CPU_CLOCK), { sample_period, sample_freq } = 99, sample_type = IP|TID|TIME|ADDR|CALLCHAIN|PERIOD|REGS_USER|STACK_USER|DATA_SRC, read_format = ID|LOST, disabled = 1, inherit = 1, exclude_kernel = 1, exclude_hv = 1, mmap = 1, comm = 1, freq = 1, enable_on_exec = 1, task = 1, mmap_data = 1, sample_id_all = 1, exclude_guest = 1, exclude_callchain_user = 1, mmap2 = 1, comm_exec = 1, ksymbol = 1, bpf_event = 1, sample_regs_user = 0xff0fff, sample_stack_user = 8192
+# CPU_TOPOLOGY info available, use -I to display
+# NUMA_TOPOLOGY info available, use -I to display
+# pmu mappings: cpu = 4, breakpoint = 5, msr = 8, software = 1
+# CACHE info available, use -I to display
+# time of first sample : 9164.987833
+# time of last sample : 9169.412772
+# sample duration :   4424.939 ms
+# MEM_TOPOLOGY info available, use -I to display
+# cpu pmu capabilities: not available
+# missing features: TRACING_DATA BRANCH_STACK GROUP_DESC AUXTRACE STAT CLOCKID DIR_FORMAT COMPRESSED CLOCK_DATA HYBRID_TOPOLOGY 
+# ========
+#

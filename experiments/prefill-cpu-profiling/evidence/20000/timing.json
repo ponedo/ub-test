@@ -1,0 +1,281 @@
+[
+  {
+    "name": "app.Read",
+    "calls": 1,
+    "inclusive_seconds": 0.011908853,
+    "exclusive_seconds": 0.011908853,
+    "cpu_inclusive_seconds": 0.011914066,
+    "cpu_exclusive_seconds": 0.011914066,
+    "rss_highwater_kib": 31924
+  },
+  {
+    "name": "app.WriteArtifacts",
+    "calls": 1,
+    "inclusive_seconds": 0.010498172,
+    "exclusive_seconds": 0.010498172,
+    "cpu_inclusive_seconds": 0.010495684,
+    "cpu_exclusive_seconds": 0.010495684,
+    "rss_highwater_kib": 31924
+  },
+  {
+    "name": "app.Topology",
+    "calls": 1,
+    "inclusive_seconds": 0.469040418,
+    "exclusive_seconds": 0.114429952,
+    "cpu_inclusive_seconds": 0.469034677,
+    "cpu_exclusive_seconds": 0.469034677,
+    "rss_highwater_kib": 811732
+  },
+  {
+    "name": "app.Pair",
+    "calls": 1959,
+    "inclusive_seconds": 0.083200715,
+    "exclusive_seconds": 0.083200715,
+    "cpu_inclusive_seconds": null,
+    "cpu_exclusive_seconds": null,
+    "rss_highwater_kib": null
+  },
+  {
+    "name": "app.Init",
+    "calls": 65,
+    "inclusive_seconds": 0.010939249,
+    "exclusive_seconds": 0.010939249,
+    "cpu_inclusive_seconds": null,
+    "cpu_exclusive_seconds": null,
+    "rss_highwater_kib": null
+  },
+  {
+    "name": "app.Validate",
+    "calls": 40000,
+    "inclusive_seconds": 0.092090728,
+    "exclusive_seconds": 0.092090728,
+    "cpu_inclusive_seconds": null,
+    "cpu_exclusive_seconds": null,
+    "rss_highwater_kib": null
+  },
+  {
+    "name": "app.Send",
+    "calls": 40000,
+    "inclusive_seconds": 1.898342018,
+    "exclusive_seconds": 0.086091542,
+    "cpu_inclusive_seconds": null,
+    "cpu_exclusive_seconds": null,
+    "rss_highwater_kib": null
+  },
+  {
+    "name": "app.Event",
+    "calls": 319791,
+    "inclusive_seconds": 0.226161921,
+    "exclusive_seconds": 0.226161921,
+    "cpu_inclusive_seconds": null,
+    "cpu_exclusive_seconds": null,
+    "rss_highwater_kib": null
+  },
+  {
+    "name": "app.WritePayloads",
+    "calls": 1,
+    "inclusive_seconds": 0.005984361,
+    "exclusive_seconds": 0.005984361,
+    "cpu_inclusive_seconds": 0.005987022,
+    "cpu_exclusive_seconds": 0.005987022,
+    "rss_highwater_kib": 881108
+  },
+  {
+    "name": "app.main",
+    "calls": 1,
+    "inclusive_seconds": 54.774307316,
+    "exclusive_seconds": 0.047360907,
+    "cpu_inclusive_seconds": 54.765817236,
+    "cpu_exclusive_seconds": 0.047334858,
+    "rss_highwater_kib": 881108
+  },
+  {
+    "name": "phase.SimulatorRun",
+    "calls": 1,
+    "inclusive_seconds": 54.042823279,
+    "exclusive_seconds": 28.793578593,
+    "cpu_inclusive_seconds": 54.034352467,
+    "cpu_exclusive_seconds": 54.034352467,
+    "rss_highwater_kib": 881108
+  },
+  {
+    "name": "phase.cleanup",
+    "calls": 1,
+    "inclusive_seconds": 0.186691326,
+    "exclusive_seconds": 0.185202963,
+    "cpu_inclusive_seconds": 0.186698462,
+    "cpu_exclusive_seconds": 0.186698462,
+    "rss_highwater_kib": 881108
+  },
+  {
+    "name": "UbFunction::CreateJetty",
+    "calls": 39354,
+    "inclusive_seconds": 0.257108376,
+    "exclusive_seconds": 0.209410812,
+    "cpu_inclusive_seconds": null,
+    "cpu_exclusive_seconds": null,
+    "rss_highwater_kib": null
+  },
+  {
+    "name": "UbFunction::SubmitWqe",
+    "calls": 39354,
+    "inclusive_seconds": 1.791542298,
+    "exclusive_seconds": 0.167532012,
+    "cpu_inclusive_seconds": null,
+    "cpu_exclusive_seconds": null,
+    "rss_highwater_kib": null
+  },
+  {
+    "name": "UbJettyManager::ResolveWqeLifecycleLocalId",
+    "calls": 39354,
+    "inclusive_seconds": 1.544087979,
+    "exclusive_seconds": 1.544087979,
+    "cpu_inclusive_seconds": null,
+    "cpu_exclusive_seconds": null,
+    "rss_highwater_kib": null
+  },
+  {
+    "name": "UbJettyManager::RegisterJetty",
+    "calls": 39354,
+    "inclusive_seconds": 0.030024994,
+    "exclusive_seconds": 0.030024994,
+    "cpu_inclusive_seconds": null,
+    "cpu_exclusive_seconds": null,
+    "rss_highwater_kib": null
+  },
+  {
+    "name": "UbJettyManager::RegisterWqe",
+    "calls": 39354,
+    "inclusive_seconds": 0.008072258,
+    "exclusive_seconds": 0.008072258,
+    "cpu_inclusive_seconds": null,
+    "cpu_exclusive_seconds": null,
+    "rss_highwater_kib": null
+  },
+  {
+    "name": "UbJettyManager::GetJetty",
+    "calls": 7984604,
+    "inclusive_seconds": 3.038691841,
+    "exclusive_seconds": 3.038691841,
+    "cpu_inclusive_seconds": null,
+    "cpu_exclusive_seconds": null,
+    "rss_highwater_kib": null
+  },
+  {
+    "name": "UbJetty::Init",
+    "calls": 39354,
+    "inclusive_seconds": 0.01767257,
+    "exclusive_seconds": 0.00220128,
+    "cpu_inclusive_seconds": null,
+    "cpu_exclusive_seconds": null,
+    "rss_highwater_kib": null
+  },
+  {
+    "name": "UbTransaction::ExecuteInboundTransaction",
+    "calls": 39354,
+    "inclusive_seconds": 0.743246948,
+    "exclusive_seconds": 0.497101502,
+    "cpu_inclusive_seconds": null,
+    "cpu_exclusive_seconds": null,
+    "rss_highwater_kib": null
+  },
+  {
+    "name": "UbTransaction::ProcessWqeSegmentComplete",
+    "calls": 39354,
+    "inclusive_seconds": 0.80908016,
+    "exclusive_seconds": 0.714905284,
+    "cpu_inclusive_seconds": null,
+    "cpu_exclusive_seconds": null,
+    "rss_highwater_kib": null
+  },
+  {
+    "name": "UbTransaction::AddWqe",
+    "calls": 39354,
+    "inclusive_seconds": 0.014996806,
+    "exclusive_seconds": 0.014996806,
+    "cpu_inclusive_seconds": null,
+    "cpu_exclusive_seconds": null,
+    "rss_highwater_kib": null
+  },
+  {
+    "name": "UbTransaction::TriggerScheduleWqeSegment",
+    "calls": 39354,
+    "inclusive_seconds": 0.043938832,
+    "exclusive_seconds": 0.043938832,
+    "cpu_inclusive_seconds": null,
+    "cpu_exclusive_seconds": null,
+    "rss_highwater_kib": null
+  },
+  {
+    "name": "UbUtils::AppendTraceLine",
+    "calls": 2676076,
+    "inclusive_seconds": 0.995029207,
+    "exclusive_seconds": 0.807704415,
+    "cpu_inclusive_seconds": null,
+    "cpu_exclusive_seconds": null,
+    "rss_highwater_kib": null
+  },
+  {
+    "name": "UbUtils::CommitTraceChunk",
+    "calls": 24824,
+    "inclusive_seconds": 0.188813155,
+    "exclusive_seconds": 0.188813155,
+    "cpu_inclusive_seconds": null,
+    "cpu_exclusive_seconds": null,
+    "rss_highwater_kib": null
+  },
+  {
+    "name": "UbPort::DispatchReceive",
+    "calls": 314834,
+    "inclusive_seconds": 21.120690634,
+    "exclusive_seconds": 17.705503195,
+    "cpu_inclusive_seconds": null,
+    "cpu_exclusive_seconds": null,
+    "rss_highwater_kib": null
+  },
+  {
+    "name": "UbTransportChannel::ParseReceivedDataPacket",
+    "calls": 78708,
+    "inclusive_seconds": 0.100497546,
+    "exclusive_seconds": 0.100497546,
+    "cpu_inclusive_seconds": null,
+    "cpu_exclusive_seconds": null,
+    "rss_highwater_kib": null
+  },
+  {
+    "name": "UbTransportChannel::HandleReceivedAckOrSack",
+    "calls": 78708,
+    "inclusive_seconds": 0.017906159,
+    "exclusive_seconds": 0.017906159,
+    "cpu_inclusive_seconds": null,
+    "cpu_exclusive_seconds": null,
+    "rss_highwater_kib": null
+  },
+  {
+    "name": "Jetty.AckWindow.ResizeReset",
+    "calls": 39354,
+    "inclusive_seconds": 0.01547129,
+    "exclusive_seconds": 0.01547129,
+    "cpu_inclusive_seconds": null,
+    "cpu_exclusive_seconds": null,
+    "rss_highwater_kib": null
+  },
+  {
+    "name": "UbJettyManager::IsJettyExists",
+    "calls": 0,
+    "inclusive_seconds": 0.0,
+    "exclusive_seconds": 0.0,
+    "cpu_inclusive_seconds": null,
+    "cpu_exclusive_seconds": null,
+    "rss_highwater_kib": null
+  },
+  {
+    "name": "UbUtils::FlushTraceFile",
+    "calls": 0,
+    "inclusive_seconds": 0.0,
+    "exclusive_seconds": 0.0,
+    "cpu_inclusive_seconds": null,
+    "cpu_exclusive_seconds": null,
+    "rss_highwater_kib": null
+  }
+]

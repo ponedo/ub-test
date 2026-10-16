@@ -1,0 +1,92 @@
+$ readelf -n -S /workspace/prefill-cpu-native/build/lib/libns3.44-core.so
+There are 38 section headers, starting at offset 0x15056b8:
+
+Section Headers:
+  [Nr] Name              Type             Address           Offset
+       Size              EntSize          Flags  Link  Info  Align
+  [ 0]                   NULL             0000000000000000  00000000
+       0000000000000000  0000000000000000           0     0     0
+  [ 1] .note.gnu.bu[...] NOTE             0000000000000238  00000238
+       0000000000000024  0000000000000000   A       0     0     4
+  [ 2] .gnu.hash         GNU_HASH         0000000000000260  00000260
+       000000000000579c  0000000000000000   A       3     0     8
+  [ 3] .dynsym           DYNSYM           0000000000005a00  00005a00
+       0000000000013128  0000000000000018   A       4     1     8
+  [ 4] .dynstr           STRTAB           0000000000018b28  00018b28
+       000000000003808c  0000000000000000   A       0     0     1
+  [ 5] .gnu.version      VERSYM           0000000000050bb4  00050bb4
+       000000000000196e  0000000000000002   A       3     0     2
+  [ 6] .gnu.version_r    VERNEED          0000000000052528  00052528
+       0000000000000210  0000000000000000   A       4     4     8
+  [ 7] .rela.dyn         RELA             0000000000052738  00052738
+       00000000000105f0  0000000000000018   A       3     0     8
+  [ 8] .rela.plt         RELA             0000000000062d28  00062d28
+       0000000000003660  0000000000000018  AI       3    23     8
+  [ 9] .init             PROGBITS         0000000000067000  00067000
+       0000000000000017  0000000000000000  AX       0     0     4
+  [10] .plt              PROGBITS         0000000000067020  00067020
+       0000000000002450  0000000000000010  AX       0     0     16
+  [11] .plt.got          PROGBITS         0000000000069470  00069470
+       0000000000000030  0000000000000008  AX       0     0     8
+  [12] .text             PROGBITS         00000000000694c0  000694c0
+       00000000000d5887  0000000000000000  AX       0     0     64
+  [13] .fini             PROGBITS         000000000013ed48  0013ed48
+       0000000000000009  0000000000000000  AX       0     0     4
+  [14] .rodata           PROGBITS         000000000013f000  0013f000
+       0000000000009947  0000000000000000   A       0     0     32
+  [15] .eh_frame_hdr     PROGBITS         0000000000148948  00148948
+       00000000000058a4  0000000000000000   A       0     0     4
+  [16] .eh_frame         PROGBITS         000000000014e1f0  0014e1f0
+       000000000001fa28  0000000000000000   A       0     0     8
+  [17] .gcc_except_table PROGBITS         000000000016dc18  0016dc18
+       00000000000079c6  0000000000000000   A       0     0     4
+  [18] .init_array       INIT_ARRAY       0000000000176080  00176080
+       00000000000001f8  0000000000000008  WA       0     0     8
+  [19] .fini_array       FINI_ARRAY       0000000000176278  00176278
+       0000000000000008  0000000000000008  WA       0     0     8
+  [20] .data.rel.ro      PROGBITS         0000000000176280  00176280
+       0000000000004b20  0000000000000000  WA       0     0     32
+  [21] .dynamic          DYNAMIC          000000000017ada0  0017ada0
+       0000000000000220  0000000000000010  WA       4     0     8
+  [22] .got              PROGBITS         000000000017afc0  0017afc0
+       0000000000001020  0000000000000008  WA       0     0     8
+  [23] .got.plt          PROGBITS         000000000017bfe8  0017bfe8
+       0000000000001238  0000000000000008  WA       0     0     8
+  [24] .data             PROGBITS         000000000017d220  0017d220
+       00000000000004e8  0000000000000000  WA       0     0     32
+  [25] .bss              NOBITS           000000000017d720  0017d708
+       0000000000008f48  0000000000000000  WA       0     0     32
+  [26] .comment          PROGBITS         0000000000000000  0017d708
+       000000000000001f  0000000000000001  MS       0     0     1
+  [27] .debug_aranges    PROGBITS         0000000000000000  0017d727
+       0000000000005900  0000000000000000           0     0     1
+  [28] .debug_info       PROGBITS         0000000000000000  00183027
+       0000000000999494  0000000000000000           0     0     1
+  [29] .debug_abbrev     PROGBITS         0000000000000000  00b1c4bb
+       000000000004a694  0000000000000000           0     0     1
+  [30] .debug_line       PROGBITS         0000000000000000  00b66b4f
+       000000000018eef7  0000000000000000           0     0     1
+  [31] .debug_str        PROGBITS         0000000000000000  00cf5a46
+       00000000002fa067  0000000000000001  MS       0     0     1
+  [32] .debug_line_str   PROGBITS         0000000000000000  00fefaad
+       0000000000001ffd  0000000000000001  MS       0     0     1
+  [33] .debug_loclists   PROGBITS         0000000000000000  00ff1aaa
+       00000000003e64f7  0000000000000000           0     0     1
+  [34] .debug_rnglists   PROGBITS         0000000000000000  013d7fa1
+       00000000000c12a2  0000000000000000           0     0     1
+  [35] .symtab           SYMTAB           0000000000000000  01499248
+       000000000001c080  0000000000000018          36   1530     8
+  [36] .strtab           STRTAB           0000000000000000  014b52c8
+       000000000005026d  0000000000000000           0     0     1
+  [37] .shstrtab         STRTAB           0000000000000000  01505535
+       0000000000000180  0000000000000000           0     0     1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  R (retain), D (mbind), l (large), p (processor specific)
+
+Displaying notes found in: .note.gnu.build-id
+  Owner                Data size 	Description
+  GNU                  0x00000014	NT_GNU_BUILD_ID (unique build ID bitstring)
+    Build ID: 259edcc39023c845eb16b23fd55880df9704365b

@@ -1,0 +1,94 @@
+$ readelf -n -S /workspace/prefill-cpu-native/build/lib/libns3.44-unified-bus.so
+There are 39 section headers, starting at offset 0x4129308:
+
+Section Headers:
+  [Nr] Name              Type             Address           Offset
+       Size              EntSize          Flags  Link  Info  Align
+  [ 0]                   NULL             0000000000000000  00000000
+       0000000000000000  0000000000000000           0     0     0
+  [ 1] .note.gnu.bu[...] NOTE             0000000000000270  00000270
+       0000000000000024  0000000000000000   A       0     0     4
+  [ 2] .gnu.hash         GNU_HASH         0000000000000298  00000298
+       000000000000ce5c  0000000000000000   A       3     0     8
+  [ 3] .dynsym           DYNSYM           000000000000d0f8  0000d0f8
+       000000000002bed8  0000000000000018   A       4     1     8
+  [ 4] .dynstr           STRTAB           0000000000038fd0  00038fd0
+       00000000000a032d  0000000000000000   A       0     0     1
+  [ 5] .gnu.version      VERSYM           00000000000d92fe  000d92fe
+       0000000000003a92  0000000000000002   A       3     0     2
+  [ 6] .gnu.version_r    VERNEED          00000000000dcd90  000dcd90
+       00000000000001f0  0000000000000000   A       4     5     8
+  [ 7] .rela.dyn         RELA             00000000000dcf80  000dcf80
+       00000000000251e8  0000000000000018   A       3     0     8
+  [ 8] .rela.plt         RELA             0000000000102168  00102168
+       000000000000ac80  0000000000000018  AI       3    24     8
+  [ 9] .init             PROGBITS         000000000010d000  0010d000
+       0000000000000017  0000000000000000  AX       0     0     4
+  [10] .plt              PROGBITS         000000000010d020  0010d020
+       0000000000007310  0000000000000010  AX       0     0     16
+  [11] .plt.got          PROGBITS         0000000000114330  00114330
+       00000000000001c8  0000000000000008  AX       0     0     8
+  [12] .text             PROGBITS         0000000000114500  00114500
+       0000000000271b4e  0000000000000000  AX       0     0     64
+  [13] .fini             PROGBITS         0000000000386050  00386050
+       0000000000000009  0000000000000000  AX       0     0     4
+  [14] .rodata           PROGBITS         0000000000387000  00387000
+       000000000002839d  0000000000000000   A       0     0     32
+  [15] .eh_frame_hdr     PROGBITS         00000000003af3a0  003af3a0
+       000000000000c50c  0000000000000000   A       0     0     4
+  [16] .eh_frame         PROGBITS         00000000003bb8b0  003bb8b0
+       000000000004b598  0000000000000000   A       0     0     8
+  [17] .gcc_except_table PROGBITS         0000000000406e48  00406e48
+       00000000000183be  0000000000000000   A       0     0     4
+  [18] .tbss             NOBITS           0000000000420098  00420098
+       0000000000000060  0000000000000000 WAT       0     0     8
+  [19] .init_array       INIT_ARRAY       0000000000420098  00420098
+       0000000000000160  0000000000000008  WA       0     0     8
+  [20] .fini_array       FINI_ARRAY       00000000004201f8  004201f8
+       0000000000000008  0000000000000008  WA       0     0     8
+  [21] .data.rel.ro      PROGBITS         0000000000420200  00420200
+       000000000000ad18  0000000000000000  WA       0     0     32
+  [22] .dynamic          DYNAMIC          000000000042af18  0042af18
+       0000000000000290  0000000000000010  WA       4     0     8
+  [23] .got              PROGBITS         000000000042b1a8  0042b1a8
+       0000000000002e40  0000000000000008  WA       0     0     8
+  [24] .got.plt          PROGBITS         000000000042dfe8  0042dfe8
+       0000000000003998  0000000000000008  WA       0     0     8
+  [25] .data             PROGBITS         0000000000431980  00431980
+       00000000000007c0  0000000000000000  WA       0     0     32
+  [26] .bss              NOBITS           0000000000432140  00432140
+       0000000000002ee8  0000000000000000  WA       0     0     32
+  [27] .comment          PROGBITS         0000000000000000  00432140
+       000000000000001f  0000000000000001  MS       0     0     1
+  [28] .debug_aranges    PROGBITS         0000000000000000  0043215f
+       000000000000eda0  0000000000000000           0     0     1
+  [29] .debug_info       PROGBITS         0000000000000000  00440eff
+       0000000001de4ecb  0000000000000000           0     0     1
+  [30] .debug_abbrev     PROGBITS         0000000000000000  02225dca
+       0000000000050334  0000000000000000           0     0     1
+  [31] .debug_line       PROGBITS         0000000000000000  022760fe
+       00000000004a5ac5  0000000000000000           0     0     1
+  [32] .debug_str        PROGBITS         0000000000000000  0271bbc3
+       0000000000bb7e3a  0000000000000001  MS       0     0     1
+  [33] .debug_line_str   PROGBITS         0000000000000000  032d39fd
+       0000000000001ef1  0000000000000001  MS       0     0     1
+  [34] .debug_loclists   PROGBITS         0000000000000000  032d58ee
+       0000000000b1ffa5  0000000000000000           0     0     1
+  [35] .debug_rnglists   PROGBITS         0000000000000000  03df5893
+       0000000000223118  0000000000000000           0     0     1
+  [36] .symtab           SYMTAB           0000000000000000  040189b0
+       000000000003c8d0  0000000000000018          37   2838     8
+  [37] .strtab           STRTAB           0000000000000000  04055280
+       00000000000d3efe  0000000000000000           0     0     1
+  [38] .shstrtab         STRTAB           0000000000000000  0412917e
+       0000000000000186  0000000000000000           0     0     1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  R (retain), D (mbind), l (large), p (processor specific)
+
+Displaying notes found in: .note.gnu.build-id
+  Owner                Data size 	Description
+  GNU                  0x00000014	NT_GNU_BUILD_ID (unique build ID bitstring)
+    Build ID: a92c779ec99b3c220798c7779a8e91cc68701bd2
