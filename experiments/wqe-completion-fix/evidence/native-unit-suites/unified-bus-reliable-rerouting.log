@@ -1,0 +1,37 @@
+aborted. msg="Only one distinct link may fail per simulation; link attached to node 1 port 2 is already failed", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-link.cc, line=255
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="!m_reroutingArmed", msg="Reliable rerouting is not enabled on this link; enable ns3::UbLink::EnableReliableRerouting on an eligible switch-to-switch link before traffic starts", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-link.cc, line=232
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="!m_reroutingArmed", msg="Reliable rerouting is not enabled on this link; enable ns3::UbLink::EnableReliableRerouting on an eligible switch-to-switch link before traffic starts", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-link.cc, line=232
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="m_failureDetectionDelay != m_armedFailureDetectionDelay || m_lastAckDelay != m_armedLastAckDelay", msg="Reliable rerouting configuration is armed before traffic starts and cannot change later: link attached to node 1 port 1", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-link.cc, line=240
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. msg="Received unreserved or mismatched TP channel key. node=3 srcTpn=100 dstTpn=200 sourceIp=10.0.0.0 destinationIp=10.0.3.0 priority=7 packetUid=16", +0.000000074s 3 file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-switch.cc, line=856
+NS_FATAL, terminating
+terminate called without an active exception
+PASS unified-bus-reliable-rerouting 0.036 s
+  PASS Reliable rerouting - arming scope, idempotence, and rejected failures 0.017 s
+  PASS Reliable rerouting - complete receipt before failure delivers 0.000 s
+  PASS Reliable rerouting - failure before complete receipt suppresses delivery 0.000 s
+  PASS Reliable rerouting - bilateral in-flight recovery after LastAck 0.000 s
+  PASS Reliable rerouting - in-flight recovery with positive delays 0.000 s
+  PASS Reliable rerouting - healthy traffic with feature disabled 0.000 s
+  PASS Reliable rerouting - healthy traffic with feature enabled 0.000 s
+  PASS Reliable rerouting - no legal candidate after detection is fatal 0.001 s
+  PASS Reliable rerouting - backlog waits for LastAck, new traffic uses the alternate 0.000 s
+  PASS Reliable rerouting - disposal cancels recovery without a false drain 0.000 s
+  PASS Reliable rerouting - VOQ backlog recovers after a cancelled grant 0.001 s
+  PASS Reliable rerouting - egress backlog migrates after LastAck 0.000 s
+  PASS Reliable rerouting - delayed processing ready before LastAck 0.000 s
+  PASS Reliable rerouting - delayed processing ready after LastAck 0.000 s
+  PASS Reliable rerouting - blocked admission resumes without drop or busy loop 0.000 s
+  PASS Reliable rerouting - upstream credit is returned at most once 0.000 s
+  PASS Reliable rerouting - retained control frame is disposed, not rerouted 0.000 s
+  PASS Reliable rerouting - PFC observes the recovered packet's occupancy release 0.000 s
+  PASS Reliable rerouting - routed protocol families recover byte-identically 0.002 s
+  PASS Reliable rerouting - table, index, restricted and selector candidates filter 0.000 s
+  PASS Reliable rerouting - original and transport resend are distinct attempts 0.000 s

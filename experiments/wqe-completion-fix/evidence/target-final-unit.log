@@ -1,0 +1,6 @@
+PASS unified-bus-target-execution 0.041 s
+  PASS cancel and failure wake completed successors after terminal cleanup 0.014 s
+  PASS concurrent segmented WQEs complete only after all actual target executions 0.023 s
+  PASS all four transaction types reach the executor and complete the initiator 0.001 s
+  PASS target execution delay moves the executor call by exactly its value 0.000 s
+  PASS target completion is asynchronous, deferred, and deduplicated 0.000 s

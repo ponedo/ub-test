@@ -1,0 +1,15 @@
+PASS unified-bus-transaction-urma 0.020 s
+  PASS UnifiedBus - URMA_READ WQE metadata propagates through Jetty segmentation 0.010 s
+  PASS UnifiedBus - Jetty preserves WQE remote address across segmentation 0.000 s
+  PASS UnifiedBus - remote address offset uses segment TASSN 0.000 s
+  PASS UnifiedBus - WQE segment keeps logical TA sequence values 0.000 s
+  PASS UnifiedBus - Jetty completes logical TASSN across 16-bit wrap 0.000 s
+  PASS UnifiedBus - inbound TA key uses logical TPMSN across 24-bit wrap 0.000 s
+  PASS UnifiedBus - URMA_WRITE completes on TA response instead of request TP ACK 0.001 s
+  PASS UnifiedBus - SEND completes once, only after its transaction response 0.000 s
+  PASS UnifiedBus - a partially answered multi-segment WQE stays incomplete 0.001 s
+  PASS UnifiedBus - URMA_READ completes on READ_RESPONSE instead of request TP ACK 0.000 s
+  PASS UnifiedBus - RTP WRITE MAETAH carries the transaction segment length 0.000 s
+  PASS UnifiedBus - multi-packet URMA_READ generates one READ_RESPONSE 0.000 s
+  PASS UnifiedBus - multi-slice URMA_READ request packets carry zero payload 0.001 s
+  PASS UnifiedBus - out-of-order URMA_WRITE request slice still completes at TA 0.000 s

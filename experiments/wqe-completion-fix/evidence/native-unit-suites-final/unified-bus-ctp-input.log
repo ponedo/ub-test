@@ -1,0 +1,56 @@
+[03:05:21] [traffic] Load ub-traffic-config-endpoint-port-fields.csv
+[03:05:21] [traffic] Load ub-traffic-config-endpoint-port-fields.csv
+[03:05:21] [traffic] Load ub-traffic-config-entity-fields.csv
+aborted. cond="next != header.size()", msg="traffic.csv optional groups must be srcPortId,dstPortId then atomicSubOperation,requestPayloadBytes; Entity columns are not supported", file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-utils.cc, line=470
+NS_FATAL, terminating
+terminate called without an active exception
+[03:05:21] [traffic] Load ub-traffic-config-entity-and-port-fields.csv
+aborted. cond="next != header.size()", msg="traffic.csv optional groups must be srcPortId,dstPortId then atomicSubOperation,requestPayloadBytes; Entity columns are not supported", file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-utils.cc, line=470
+NS_FATAL, terminating
+terminate called without an active exception
+[03:05:21] [traffic] Load ub-traffic-config-source-port-15.csv
+[03:05:21] [traffic] Load ub-traffic-config-destination-port-15.csv
+[03:05:21] [traffic] Load ub-traffic-config-row-width-mismatch.csv
+aborted. cond="actualFieldCount != expectedFieldCount", msg="traffic.csv row has 9 fields, expected 11 fields from the header", file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-utils.cc, line=480
+NS_FATAL, terminating
+terminate called without an active exception
+[03:05:21] [traffic] Index phase dependencies from ub-traffic-config-row-width-mismatch.csv
+aborted. cond="actualFieldCount != expectedFieldCount", msg="traffic.csv row has 9 fields, expected 11 fields from the header", file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-utils.cc, line=480
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="m_ctpEntitiesFrozen", msg="Cannot create a CTP Entity after the registry is frozen", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-controller.cc, line=636
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="entityId == 0 || entityId > UB_COMPACT_EID_MAX", msg="CTP Entity ID must be in the non-zero compact EID range: 0", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-controller.cc, line=637
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="entityId == 0 || entityId > UB_COMPACT_EID_MAX", msg="CTP Entity ID must be in the non-zero compact EID range: 1048576", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-controller.cc, line=637
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="memberPorts.empty()", msg="Cannot create an empty CTP Entity 2", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-controller.cc, line=639
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="m_ctpEntityPorts.contains(entityId)", msg="Duplicate CTP Entity ID 2", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-controller.cc, line=640
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="portId > CTP_MAX_CNA16_PORT_ID", msg="CTP Entity 2 port 15 cannot be encoded as CNA16", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-controller.cc, line=650
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="port == nullptr", msg="CTP Entity 2 port 1 is not a UB port on node 0", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-controller.cc, line=663
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="sw == nullptr || sw->GetNodeType() != UB_DEVICE", msg="CTP Entity registry can only be installed on a UB_DEVICE host", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-controller.cc, line=644
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="portId > CTP_MAX_CNA16_PORT_ID", msg="CTP Entity 1 port 15 cannot be encoded as CNA16", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-controller.cc, line=650
+NS_FATAL, terminating
+terminate called without an active exception
+PASS unified-bus-ctp-input 0.022 s
+  PASS UnifiedBus - traffic parser accepts optional source and destination endpoint ports 0.000 s
+  PASS UnifiedBus - traffic parser rejects Entity columns 0.001 s
+  PASS UnifiedBus - traffic parser preserves ports outside the CTP CNA16 range 0.000 s
+  PASS UnifiedBus - traffic parser rejects rows with a different width than the header 0.001 s
+  PASS UnifiedBus - CTP Entity registry supports membership and freeze 0.009 s
+  PASS UnifiedBus - CTP Entity registry rejects invalid definitions 0.006 s
+  PASS UnifiedBus - standard runner provisions default CTP Entity 1 0.000 s
+  PASS UnifiedBus - default CTP Entity rejects a host port above CNA16 range 0.001 s

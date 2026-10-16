@@ -1,0 +1,45 @@
+diff --git a/experiments/direct-weight-forward/build.sh b/experiments/direct-weight-forward/build.sh
+index ff85663..94d9211 100644
+--- a/experiments/direct-weight-forward/build.sh
++++ b/experiments/direct-weight-forward/build.sh
+@@ -6,7 +6,7 @@ BUILD_TOOLS=${BUILD_TOOLS:-/workspace/build-tools}
+ export PATH="$BUILD_TOOLS/bin:$PATH" PYTHONPATH="$BUILD_TOOLS${PYTHONPATH:+:$PYTHONPATH}"
+ BUILD_EVIDENCE=${EVIDENCE:-"$HERE/evidence"}
+ mkdir -p "$BUILD_EVIDENCE"
+-test "$(git -C "$NS3_ROOT" rev-parse HEAD)" = d6aa9e242d5a93f5bbd1ad54f39b1620c1b8757b
++test "$(git -C "$NS3_ROOT" rev-parse HEAD)" = 26abe117f2903a4d6fc27c8d015a0f6ec25b6ffa
+ test "$(git -C "$NS3_ROOT/scratch/ns-3-ub-tools" rev-parse HEAD)" = 29009175f1778f76a22d929063c3a0821cb91e56
+ cp "$HERE/direct-weight-forward.cc" "$NS3_ROOT/scratch/"
+ cp "$HERE/weight-distribution.h" "$NS3_ROOT/scratch/"
+diff --git a/experiments/multi-npu-relay/build.sh b/experiments/multi-npu-relay/build.sh
+index 16d371b..6a683c1 100644
+--- a/experiments/multi-npu-relay/build.sh
++++ b/experiments/multi-npu-relay/build.sh
+@@ -7,7 +7,7 @@ export PATH="$BUILD_TOOLS/bin:$PATH" PYTHONPATH="$BUILD_TOOLS${PYTHONPATH:+:$PYT
+ EVIDENCE=${EVIDENCE:-"$HERE/evidence"}
+ RELAY_GRAPH_TOOL=${RELAY_GRAPH_TOOL:-/tmp/ub-relay-build/graph-tool}
+ mkdir -p "$EVIDENCE" "$(dirname "$RELAY_GRAPH_TOOL")"
+-test "$(git -C "$NS3_ROOT" rev-parse HEAD)" = d6aa9e242d5a93f5bbd1ad54f39b1620c1b8757b
++test "$(git -C "$NS3_ROOT" rev-parse HEAD)" = 26abe117f2903a4d6fc27c8d015a0f6ec25b6ffa
+ test "$(git -C "$NS3_ROOT/scratch/ns-3-ub-tools" rev-parse HEAD)" = 29009175f1778f76a22d929063c3a0821cb91e56
+ c++ -std=c++20 -Wall -Wextra -O2 "$HERE/graph-tool.cc" -o "$RELAY_GRAPH_TOOL" > "$EVIDENCE/graph-build.txt" 2>&1
+ c++ -std=c++20 -O2 "$HERE/reference/oracle.cc" -o "$(dirname "$RELAY_GRAPH_TOOL")/reference-oracle" > "$EVIDENCE/oracle-build.txt" 2>&1
+diff --git a/poc/chunk-relay/run.sh b/poc/chunk-relay/run.sh
+index d96949c..006d141 100644
+--- a/poc/chunk-relay/run.sh
++++ b/poc/chunk-relay/run.sh
+@@ -6,11 +6,11 @@ BUILD_TOOLS=${BUILD_TOOLS:-/workspace/build-tools}
+ PYTHON=${PYTHON:-python3.12}
+ OUT=${OUT:-"$POC_DIR/evidence"}
+ mkdir -p "$OUT"
+-if [[ ! -d "$NS3_ROOT/.git" ]]; then
++if ! git -C "$NS3_ROOT" rev-parse --git-dir >/dev/null 2>&1; then
+   git clone --no-checkout https://gitcode.com/open-usim/ns-3-ub.git "$NS3_ROOT"
+-  git -C "$NS3_ROOT" checkout --detach d6aa9e242d5a93f5bbd1ad54f39b1620c1b8757b
++  git -C "$NS3_ROOT" checkout --detach 26abe117f2903a4d6fc27c8d015a0f6ec25b6ffa
+ fi
+-test "$(git -C "$NS3_ROOT" rev-parse HEAD)" = d6aa9e242d5a93f5bbd1ad54f39b1620c1b8757b
++test "$(git -C "$NS3_ROOT" rev-parse HEAD)" = 26abe117f2903a4d6fc27c8d015a0f6ec25b6ffa
+ git -C "$NS3_ROOT" diff --quiet --ignore-submodules=all
+ git -C "$NS3_ROOT" diff --cached --quiet --ignore-submodules=all
+ if git -C "$NS3_ROOT/scratch/ns-3-ub-tools" rev-parse --show-toplevel 2>/dev/null | grep -q '/ns-3-ub-tools$'; then

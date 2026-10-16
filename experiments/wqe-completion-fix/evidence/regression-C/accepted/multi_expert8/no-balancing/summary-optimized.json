@@ -1,0 +1,81 @@
+{
+  "mode": "no-balancing",
+  "strategy": "direct",
+  "readiness": "whole-expert",
+  "group_chunk_count": 0,
+  "group_waits": [],
+  "weight_WQEs": 0,
+  "weight_TAs": 0,
+  "weight_send_bytes_per_npu": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "pipeline_overlaps": [],
+  "native_pipeline_overlaps": [],
+  "combine_sha256": "04064e7fc5432c2fcf6f78d98db7a53e612b9d108cd0f7c505178a75da04c76c",
+  "npus": 8,
+  "tokens": 160,
+  "assignments": 160,
+  "layer_latency_ps": 10917320,
+  "replicas": 0,
+  "max_npu_load": 80,
+  "per_npu_load": [
+    80,
+    80,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "weight_target_duration_ps": 0,
+  "weight_sender_end_ps": 1000,
+  "weight_bytes": 0,
+  "verified_bytes": [
+    20480,
+    20480,
+    0
+  ],
+  "remote_bytes": [
+    17920,
+    17920,
+    0
+  ],
+  "local_bytes": [
+    2560,
+    2560,
+    0
+  ],
+  "target_segments": 280,
+  "remote_WQEs": 280,
+  "timeline": {
+    "layer_start": 1000,
+    "planning_end": 1000,
+    "reroute_end": 1000,
+    "weights_end": 1000,
+    "dispatch_gate": 1000,
+    "layer_end": 10918320
+  },
+  "compute_intervals": [
+    {
+      "node": 0,
+      "start_ps": 1261000,
+      "end_ps": 9325320
+    },
+    {
+      "node": 1,
+      "start_ps": 1265920,
+      "end_ps": 9330240
+    }
+  ],
+  "computation": "three-matrix SwiGLU GEMM FLOPs",
+  "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+  "empty": false
+}

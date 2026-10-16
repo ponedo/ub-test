@@ -1,0 +1,41 @@
+PASS unified-bus-transport-retrans 0.023 s
+  PASS UnifiedBus - selective retransmission mode is opt-in 0.000 s
+  PASS UnifiedBus - disabled retransmission does not retain sent packets 0.000 s
+  PASS UnifiedBus - transport shallow pipeline ignores unacked segments 0.000 s
+  PASS UnifiedBus - disabled retransmission receive gap does not emit SACK 0.009 s
+  PASS UnifiedBus - selective receiver emits TPSACK for receive gap 0.000 s
+  PASS UnifiedBus - receiver unwraps RTPH PSN across 24-bit wrap 0.000 s
+  PASS UnifiedBus - receiver rejected future PSN does not pollute MaxRcvPSN 0.000 s
+  PASS UnifiedBus - selective receiver returns to TPACK after receive gap closes 0.000 s
+  PASS UnifiedBus - selective receiver honors explicit SAETPH bitmap width 0.000 s
+  PASS UnifiedBus - selective receiver represents first-packet loss without ACK underflow 0.000 s
+  PASS UnifiedBus - selective receiver repeats TPSACK for duplicate packet while gap remains 0.000 s
+  PASS UnifiedBus - selective receiver serializes TPSACK-CC with CETPH before SAETPH 0.000 s
+  PASS UnifiedBus - sender transport safely consumes TPSACK headers 0.000 s
+  PASS UnifiedBus - local sink dispatches TPSACK to transport response path 0.000 s
+  PASS UnifiedBus - local sink rejects reserved transport opcode 0.000 s
+  PASS UnifiedBus - default GBN receiver keeps out-of-order ACK silent 0.000 s
+  PASS UnifiedBus - GBN receiver emits TPNAK as TPACK opcode with RSPST 3 0.000 s
+  PASS UnifiedBus - GBN TPNAK-CC carries and consumes CETPH 0.000 s
+  PASS UnifiedBus - sender records TPSACK holes without fast selective retransmission 0.000 s
+  PASS UnifiedBus - sender fast selective retransmission queues missing PSNs once 0.000 s
+  PASS UnifiedBus - selective retransmission trace reports sparse missing PSN 0.000 s
+  PASS UnifiedBus - sender ignores TPSACK zero padding beyond MaxRcvPSN 0.000 s
+  PASS UnifiedBus - sender ignores TPSACK zero padding beyond MaxRcvPSN 0.000 s
+  PASS UnifiedBus - sender unwraps TPSACK wire PSNs across 24-bit wrap 0.000 s
+  PASS UnifiedBus - sender ignores out-of-window TPSACK across 24-bit wrap 0.000 s
+  PASS UnifiedBus - sender accepts TPSACK at current cumulative ACK base 0.000 s
+  PASS UnifiedBus - sender unwraps plain TPACK across 24-bit wrap 0.000 s
+  PASS UnifiedBus - GBN sender unwraps TPNAK across 24-bit wrap 0.000 s
+  PASS UnifiedBus - GBN sender ignores TPNAK for retired descriptor 0.000 s
+  PASS UnifiedBus - stale GBN cleanup preserves same-PSN replacement 0.001 s
+  PASS UnifiedBus - stale selective cleanup preserves same-PSN replacement 0.001 s
+  PASS UnifiedBus - GBN cumulative ACK retires descriptor prefix 0.000 s
+  PASS UnifiedBus - final GBN ACK with pending TA response leaves timer stopped 0.000 s
+  PASS UnifiedBus - sender cumulative ACK clears retained PSN state 0.000 s
+  PASS UnifiedBus - selective ACKed gap state keeps state but skips retransmit 0.000 s
+  PASS UnifiedBus - sender selective retransmission rebuilds missing descriptor 0.000 s
+  PASS UnifiedBus - sender selective retransmission participates in TP queue contract 0.000 s
+  PASS UnifiedBus - sender drops stale selective retransmission entries after ACK 0.000 s
+  PASS UnifiedBus - sender queue priority keeps control responses before selective retransmission 0.000 s
+  PASS UnifiedBus - selective RTO enqueues retained outstanding PSNs 0.000 s

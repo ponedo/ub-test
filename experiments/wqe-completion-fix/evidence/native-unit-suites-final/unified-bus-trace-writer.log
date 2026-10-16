@@ -1,0 +1,16 @@
+aborted. cond="ec", msg="Failed to create trace parent dir: "/dev/null" err=Not a directory", file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-utils.cc, line=1653
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="fileState.stream.fail()", msg="Failed to write trace file: /dev/null", file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-utils.cc, line=1690
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="fileState.stream.fail()", msg="Failed to flush trace file: /dev/null", file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-utils.cc, line=1693
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="fileState.stream.fail()", msg="Failed to close trace file: /dev/null", file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-utils.cc, line=1607
+NS_FATAL, terminating
+terminate called without an active exception
+PASS unified-bus-trace-writer 0.028 s
+  PASS UnifiedBus - trace chunks are lazy and owner pressure is bounded 0.000 s
+  PASS UnifiedBus - trace descriptor LRU reopens files in append mode 0.004 s
+  PASS UnifiedBus - trace batching keeps file contents intact under concurrent writers 0.023 s

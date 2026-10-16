@@ -1,0 +1,830 @@
+{
+  "status": "PASS",
+  "public_oracle_cases": 120,
+  "order_sensitive_cases": 79,
+  "cross_expert_load_sensitive_cases": 99,
+  "live_faults": [
+    {
+      "fault": "weight-byte",
+      "returncode": 2,
+      "expected": "payload byte mismatch",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+        "./ns3",
+        "run",
+        "--no-build",
+        "multi-npu-relay --input=/workspace/scratch/c6ba02920254/wqe-completion-raw/regression-C/accepted/multi4_force/chunk-streaming/input.txt --out=/workspace/scratch/c6ba02920254/wqe-completion-raw/regression-C/accepted/negative/weight-byte --fault=weight-byte"
+      ]
+    },
+    {
+      "fault": "relay-byte",
+      "returncode": 2,
+      "expected": "payload byte mismatch",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+        "./ns3",
+        "run",
+        "--no-build",
+        "multi-npu-relay --input=/workspace/scratch/c6ba02920254/wqe-completion-raw/regression-C/accepted/multi4_force/chunk-streaming/input.txt --out=/workspace/scratch/c6ba02920254/wqe-completion-raw/regression-C/accepted/negative/relay-byte --fault=relay-byte"
+      ]
+    },
+    {
+      "fault": "relay-buffer-byte",
+      "returncode": 2,
+      "expected": "payload byte mismatch",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+        "./ns3",
+        "run",
+        "--no-build",
+        "multi-npu-relay --input=/workspace/scratch/c6ba02920254/wqe-completion-raw/regression-C/accepted/multi4_force/chunk-streaming/input.txt --out=/workspace/scratch/c6ba02920254/wqe-completion-raw/regression-C/accepted/negative/relay-buffer-byte --fault=relay-buffer-byte"
+      ]
+    },
+    {
+      "fault": "early-relay",
+      "returncode": 2,
+      "expected": "relay before target chunk ready",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+        "./ns3",
+        "run",
+        "--no-build",
+        "multi-npu-relay --input=/workspace/scratch/c6ba02920254/wqe-completion-raw/regression-C/accepted/multi4_force/chunk-streaming/input.txt --out=/workspace/scratch/c6ba02920254/wqe-completion-raw/regression-C/accepted/negative/early-relay --fault=early-relay"
+      ]
+    },
+    {
+      "fault": "early-final-ready",
+      "returncode": 2,
+      "expected": "final ready before full weight coverage",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+        "./ns3",
+        "run",
+        "--no-build",
+        "multi-npu-relay --input=/workspace/scratch/c6ba02920254/wqe-completion-raw/regression-C/accepted/multi4_force/chunk-streaming/input.txt --out=/workspace/scratch/c6ba02920254/wqe-completion-raw/regression-C/accepted/negative/early-final-ready --fault=early-final-ready"
+      ]
+    },
+    {
+      "fault": "premature-ready",
+      "returncode": 2,
+      "expected": "ready before target completion coverage",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+        "./ns3",
+        "run",
+        "--no-build",
+        "multi-npu-relay --input=/workspace/scratch/c6ba02920254/wqe-completion-raw/regression-C/accepted/multi4_force/chunk-streaming/input.txt --out=/workspace/scratch/c6ba02920254/wqe-completion-raw/regression-C/accepted/negative/premature-ready --fault=premature-ready"
+      ]
+    },
+    {
+      "fault": "duplicate-weight",
+      "returncode": 2,
+      "expected": "duplicate forwarding",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+        "./ns3",
+        "run",
+        "--no-build",
+        "multi-npu-relay --input=/workspace/scratch/c6ba02920254/wqe-completion-raw/regression-C/accepted/multi4_force/chunk-streaming/input.txt --out=/workspace/scratch/c6ba02920254/wqe-completion-raw/regression-C/accepted/negative/duplicate-weight --fault=duplicate-weight"
+      ]
+    },
+    {
+      "fault": "early-group",
+      "returncode": 2,
+      "expected": "relay before target chunk ready",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+        "./ns3",
+        "run",
+        "--no-build",
+        "multi-npu-relay --input=/workspace/scratch/c6ba02920254/wqe-completion-raw/regression-C/accepted/slow_relay8/chunk-streaming/input.txt --out=/workspace/scratch/c6ba02920254/wqe-completion-raw/regression-C/accepted/negative/early-group --fault=early-group"
+      ]
+    }
+  ],
+  "duplicate_notifications": "idempotent, same final timing/payloads",
+  "event_payload_tamper_rejections": 2,
+  "slow_relay_max_fast_wait_ps": 17784400,
+  "coverage": "48 runs, EP4/8/64, partial chunks/TAs, actual target completion reordering, pipeline overlap, legacy Direct parity",
+  "oracle_records": [
+    {
+      "trial": 0,
+      "npus": 4,
+      "edges": 9,
+      "status": "PASS"
+    },
+    {
+      "trial": 1,
+      "npus": 8,
+      "edges": 17,
+      "status": "PASS"
+    },
+    {
+      "trial": 2,
+      "npus": 64,
+      "edges": 194,
+      "status": "PASS"
+    },
+    {
+      "trial": 3,
+      "npus": 4,
+      "edges": 10,
+      "status": "PASS"
+    },
+    {
+      "trial": 4,
+      "npus": 8,
+      "edges": 26,
+      "status": "PASS"
+    },
+    {
+      "trial": 5,
+      "npus": 64,
+      "edges": 211,
+      "status": "PASS"
+    },
+    {
+      "trial": 6,
+      "npus": 4,
+      "edges": 12,
+      "status": "PASS"
+    },
+    {
+      "trial": 7,
+      "npus": 8,
+      "edges": 24,
+      "status": "PASS"
+    },
+    {
+      "trial": 8,
+      "npus": 64,
+      "edges": 144,
+      "status": "PASS"
+    },
+    {
+      "trial": 9,
+      "npus": 4,
+      "edges": 14,
+      "status": "PASS"
+    },
+    {
+      "trial": 10,
+      "npus": 8,
+      "edges": 25,
+      "status": "PASS"
+    },
+    {
+      "trial": 11,
+      "npus": 64,
+      "edges": 152,
+      "status": "PASS"
+    },
+    {
+      "trial": 12,
+      "npus": 4,
+      "edges": 12,
+      "status": "PASS"
+    },
+    {
+      "trial": 13,
+      "npus": 8,
+      "edges": 13,
+      "status": "PASS"
+    },
+    {
+      "trial": 14,
+      "npus": 64,
+      "edges": 191,
+      "status": "PASS"
+    },
+    {
+      "trial": 15,
+      "npus": 4,
+      "edges": 11,
+      "status": "PASS"
+    },
+    {
+      "trial": 16,
+      "npus": 8,
+      "edges": 15,
+      "status": "PASS"
+    },
+    {
+      "trial": 17,
+      "npus": 64,
+      "edges": 264,
+      "status": "PASS"
+    },
+    {
+      "trial": 18,
+      "npus": 4,
+      "edges": 11,
+      "status": "PASS"
+    },
+    {
+      "trial": 19,
+      "npus": 8,
+      "edges": 24,
+      "status": "PASS"
+    },
+    {
+      "trial": 20,
+      "npus": 64,
+      "edges": 135,
+      "status": "PASS"
+    },
+    {
+      "trial": 21,
+      "npus": 4,
+      "edges": 13,
+      "status": "PASS"
+    },
+    {
+      "trial": 22,
+      "npus": 8,
+      "edges": 22,
+      "status": "PASS"
+    },
+    {
+      "trial": 23,
+      "npus": 64,
+      "edges": 239,
+      "status": "PASS"
+    },
+    {
+      "trial": 24,
+      "npus": 4,
+      "edges": 12,
+      "status": "PASS"
+    },
+    {
+      "trial": 25,
+      "npus": 8,
+      "edges": 24,
+      "status": "PASS"
+    },
+    {
+      "trial": 26,
+      "npus": 64,
+      "edges": 184,
+      "status": "PASS"
+    },
+    {
+      "trial": 27,
+      "npus": 4,
+      "edges": 10,
+      "status": "PASS"
+    },
+    {
+      "trial": 28,
+      "npus": 8,
+      "edges": 35,
+      "status": "PASS"
+    },
+    {
+      "trial": 29,
+      "npus": 64,
+      "edges": 193,
+      "status": "PASS"
+    },
+    {
+      "trial": 30,
+      "npus": 4,
+      "edges": 13,
+      "status": "PASS"
+    },
+    {
+      "trial": 31,
+      "npus": 8,
+      "edges": 25,
+      "status": "PASS"
+    },
+    {
+      "trial": 32,
+      "npus": 64,
+      "edges": 228,
+      "status": "PASS"
+    },
+    {
+      "trial": 33,
+      "npus": 4,
+      "edges": 9,
+      "status": "PASS"
+    },
+    {
+      "trial": 34,
+      "npus": 8,
+      "edges": 29,
+      "status": "PASS"
+    },
+    {
+      "trial": 35,
+      "npus": 64,
+      "edges": 104,
+      "status": "PASS"
+    },
+    {
+      "trial": 36,
+      "npus": 4,
+      "edges": 13,
+      "status": "PASS"
+    },
+    {
+      "trial": 37,
+      "npus": 8,
+      "edges": 26,
+      "status": "PASS"
+    },
+    {
+      "trial": 38,
+      "npus": 64,
+      "edges": 262,
+      "status": "PASS"
+    },
+    {
+      "trial": 39,
+      "npus": 4,
+      "edges": 12,
+      "status": "PASS"
+    },
+    {
+      "trial": 40,
+      "npus": 8,
+      "edges": 35,
+      "status": "PASS"
+    },
+    {
+      "trial": 41,
+      "npus": 64,
+      "edges": 195,
+      "status": "PASS"
+    },
+    {
+      "trial": 42,
+      "npus": 4,
+      "edges": 14,
+      "status": "PASS"
+    },
+    {
+      "trial": 43,
+      "npus": 8,
+      "edges": 35,
+      "status": "PASS"
+    },
+    {
+      "trial": 44,
+      "npus": 64,
+      "edges": 171,
+      "status": "PASS"
+    },
+    {
+      "trial": 45,
+      "npus": 4,
+      "edges": 12,
+      "status": "PASS"
+    },
+    {
+      "trial": 46,
+      "npus": 8,
+      "edges": 20,
+      "status": "PASS"
+    },
+    {
+      "trial": 47,
+      "npus": 64,
+      "edges": 206,
+      "status": "PASS"
+    },
+    {
+      "trial": 48,
+      "npus": 4,
+      "edges": 13,
+      "status": "PASS"
+    },
+    {
+      "trial": 49,
+      "npus": 8,
+      "edges": 24,
+      "status": "PASS"
+    },
+    {
+      "trial": 50,
+      "npus": 64,
+      "edges": 207,
+      "status": "PASS"
+    },
+    {
+      "trial": 51,
+      "npus": 4,
+      "edges": 14,
+      "status": "PASS"
+    },
+    {
+      "trial": 52,
+      "npus": 8,
+      "edges": 23,
+      "status": "PASS"
+    },
+    {
+      "trial": 53,
+      "npus": 64,
+      "edges": 166,
+      "status": "PASS"
+    },
+    {
+      "trial": 54,
+      "npus": 4,
+      "edges": 12,
+      "status": "PASS"
+    },
+    {
+      "trial": 55,
+      "npus": 8,
+      "edges": 25,
+      "status": "PASS"
+    },
+    {
+      "trial": 56,
+      "npus": 64,
+      "edges": 218,
+      "status": "PASS"
+    },
+    {
+      "trial": 57,
+      "npus": 4,
+      "edges": 11,
+      "status": "PASS"
+    },
+    {
+      "trial": 58,
+      "npus": 8,
+      "edges": 24,
+      "status": "PASS"
+    },
+    {
+      "trial": 59,
+      "npus": 64,
+      "edges": 100,
+      "status": "PASS"
+    },
+    {
+      "trial": 60,
+      "npus": 4,
+      "edges": 14,
+      "status": "PASS"
+    },
+    {
+      "trial": 61,
+      "npus": 8,
+      "edges": 22,
+      "status": "PASS"
+    },
+    {
+      "trial": 62,
+      "npus": 64,
+      "edges": 265,
+      "status": "PASS"
+    },
+    {
+      "trial": 63,
+      "npus": 4,
+      "edges": 8,
+      "status": "PASS"
+    },
+    {
+      "trial": 64,
+      "npus": 8,
+      "edges": 25,
+      "status": "PASS"
+    },
+    {
+      "trial": 65,
+      "npus": 64,
+      "edges": 202,
+      "status": "PASS"
+    },
+    {
+      "trial": 66,
+      "npus": 4,
+      "edges": 14,
+      "status": "PASS"
+    },
+    {
+      "trial": 67,
+      "npus": 8,
+      "edges": 23,
+      "status": "PASS"
+    },
+    {
+      "trial": 68,
+      "npus": 64,
+      "edges": 224,
+      "status": "PASS"
+    },
+    {
+      "trial": 69,
+      "npus": 4,
+      "edges": 15,
+      "status": "PASS"
+    },
+    {
+      "trial": 70,
+      "npus": 8,
+      "edges": 24,
+      "status": "PASS"
+    },
+    {
+      "trial": 71,
+      "npus": 64,
+      "edges": 176,
+      "status": "PASS"
+    },
+    {
+      "trial": 72,
+      "npus": 4,
+      "edges": 14,
+      "status": "PASS"
+    },
+    {
+      "trial": 73,
+      "npus": 8,
+      "edges": 27,
+      "status": "PASS"
+    },
+    {
+      "trial": 74,
+      "npus": 64,
+      "edges": 209,
+      "status": "PASS"
+    },
+    {
+      "trial": 75,
+      "npus": 4,
+      "edges": 13,
+      "status": "PASS"
+    },
+    {
+      "trial": 76,
+      "npus": 8,
+      "edges": 19,
+      "status": "PASS"
+    },
+    {
+      "trial": 77,
+      "npus": 64,
+      "edges": 190,
+      "status": "PASS"
+    },
+    {
+      "trial": 78,
+      "npus": 4,
+      "edges": 11,
+      "status": "PASS"
+    },
+    {
+      "trial": 79,
+      "npus": 8,
+      "edges": 29,
+      "status": "PASS"
+    },
+    {
+      "trial": 80,
+      "npus": 64,
+      "edges": 225,
+      "status": "PASS"
+    },
+    {
+      "trial": 81,
+      "npus": 4,
+      "edges": 15,
+      "status": "PASS"
+    },
+    {
+      "trial": 82,
+      "npus": 8,
+      "edges": 20,
+      "status": "PASS"
+    },
+    {
+      "trial": 83,
+      "npus": 64,
+      "edges": 230,
+      "status": "PASS"
+    },
+    {
+      "trial": 84,
+      "npus": 4,
+      "edges": 13,
+      "status": "PASS"
+    },
+    {
+      "trial": 85,
+      "npus": 8,
+      "edges": 25,
+      "status": "PASS"
+    },
+    {
+      "trial": 86,
+      "npus": 64,
+      "edges": 216,
+      "status": "PASS"
+    },
+    {
+      "trial": 87,
+      "npus": 4,
+      "edges": 9,
+      "status": "PASS"
+    },
+    {
+      "trial": 88,
+      "npus": 8,
+      "edges": 26,
+      "status": "PASS"
+    },
+    {
+      "trial": 89,
+      "npus": 64,
+      "edges": 169,
+      "status": "PASS"
+    },
+    {
+      "trial": 90,
+      "npus": 4,
+      "edges": 12,
+      "status": "PASS"
+    },
+    {
+      "trial": 91,
+      "npus": 8,
+      "edges": 22,
+      "status": "PASS"
+    },
+    {
+      "trial": 92,
+      "npus": 64,
+      "edges": 232,
+      "status": "PASS"
+    },
+    {
+      "trial": 93,
+      "npus": 4,
+      "edges": 16,
+      "status": "PASS"
+    },
+    {
+      "trial": 94,
+      "npus": 8,
+      "edges": 31,
+      "status": "PASS"
+    },
+    {
+      "trial": 95,
+      "npus": 64,
+      "edges": 136,
+      "status": "PASS"
+    },
+    {
+      "trial": 96,
+      "npus": 4,
+      "edges": 9,
+      "status": "PASS"
+    },
+    {
+      "trial": 97,
+      "npus": 8,
+      "edges": 37,
+      "status": "PASS"
+    },
+    {
+      "trial": 98,
+      "npus": 64,
+      "edges": 106,
+      "status": "PASS"
+    },
+    {
+      "trial": 99,
+      "npus": 4,
+      "edges": 13,
+      "status": "PASS"
+    },
+    {
+      "trial": 100,
+      "npus": 8,
+      "edges": 17,
+      "status": "PASS"
+    },
+    {
+      "trial": 101,
+      "npus": 64,
+      "edges": 212,
+      "status": "PASS"
+    },
+    {
+      "trial": 102,
+      "npus": 4,
+      "edges": 11,
+      "status": "PASS"
+    },
+    {
+      "trial": 103,
+      "npus": 8,
+      "edges": 26,
+      "status": "PASS"
+    },
+    {
+      "trial": 104,
+      "npus": 64,
+      "edges": 172,
+      "status": "PASS"
+    },
+    {
+      "trial": 105,
+      "npus": 4,
+      "edges": 17,
+      "status": "PASS"
+    },
+    {
+      "trial": 106,
+      "npus": 8,
+      "edges": 22,
+      "status": "PASS"
+    },
+    {
+      "trial": 107,
+      "npus": 64,
+      "edges": 197,
+      "status": "PASS"
+    },
+    {
+      "trial": 108,
+      "npus": 4,
+      "edges": 9,
+      "status": "PASS"
+    },
+    {
+      "trial": 109,
+      "npus": 8,
+      "edges": 34,
+      "status": "PASS"
+    },
+    {
+      "trial": 110,
+      "npus": 64,
+      "edges": 212,
+      "status": "PASS"
+    },
+    {
+      "trial": 111,
+      "npus": 4,
+      "edges": 14,
+      "status": "PASS"
+    },
+    {
+      "trial": 112,
+      "npus": 8,
+      "edges": 18,
+      "status": "PASS"
+    },
+    {
+      "trial": 113,
+      "npus": 64,
+      "edges": 242,
+      "status": "PASS"
+    },
+    {
+      "trial": 114,
+      "npus": 4,
+      "edges": 13,
+      "status": "PASS"
+    },
+    {
+      "trial": 115,
+      "npus": 8,
+      "edges": 24,
+      "status": "PASS"
+    },
+    {
+      "trial": 116,
+      "npus": 64,
+      "edges": 233,
+      "status": "PASS"
+    },
+    {
+      "trial": 117,
+      "npus": 4,
+      "edges": 13,
+      "status": "PASS"
+    },
+    {
+      "trial": 118,
+      "npus": 8,
+      "edges": 29,
+      "status": "PASS"
+    },
+    {
+      "trial": 119,
+      "npus": 64,
+      "edges": 132,
+      "status": "PASS"
+    }
+  ]
+}

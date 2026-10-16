@@ -1,0 +1,26 @@
+aborted. cond="m_ctpEntitiesFrozen", msg="Cannot create a CTP Entity after the registry is frozen", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-controller.cc, line=636
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="!controller->HasCtpEntity(dstEntityId)", msg="CTP destination Entity 2 is not configured on node 0", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/protocol/ub-ctp.cc, line=1302
+NS_FATAL, terminating
+terminate called without an active exception
+PASS unified-bus-ctp-transaction 0.014 s
+  PASS UnifiedBus - CTP TAACK HOL blocks transaction admission 0.000 s
+  PASS UnifiedBus - CTP reports transaction constraints without mutating Jetty 0.008 s
+  PASS UnifiedBus - CTP transaction admission is bounded by ack bitmap window 0.000 s
+  PASS UnifiedBus - finite CTP Transaction state creates send context lazily 0.000 s
+  PASS UnifiedBus - CTP context and send path do not create RTP transport channels 0.000 s
+  PASS UnifiedBus - CTP Entity registry supports membership and freeze 0.001 s
+  PASS UnifiedBus - CTP wire TAACK continues an inflight-limited WQE 0.000 s
+  PASS UnifiedBus - CTP CNP records congestion without TAACK completion 0.000 s
+  PASS UnifiedBus - CTP congestion contexts aggregate by destination and VL 0.000 s
+  PASS UnifiedBus - CTP TAACK helper advances complete UNA while CNP does not 0.000 s
+  PASS UnifiedBus - CTP wire TAACK does not fallback across entity contexts 0.000 s
+  PASS UnifiedBus - CTP wire TAACK completes reverse Entity context 0.000 s
+  PASS UnifiedBus - CTP wire TAACK rejects an unknown destination Entity 0.001 s
+  PASS UnifiedBus - CTP wire TAACK unwraps logical TASSN 0.000 s
+  PASS UnifiedBus - CTP SendSegment rejects an oversized Transaction segment 0.000 s
+  PASS UnifiedBus - CTP rejects a segment with an MTU remainder 0.000 s
+  PASS UnifiedBus - rejected oversized CTP segment preserves the next TASSN 0.000 s
+  PASS UnifiedBus - CTP READ and WRITE use Transaction-owned lifecycle 0.000 s
+  PASS UnifiedBus - CTP forced terminal cleans Transaction-owned state 0.000 s

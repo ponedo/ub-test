@@ -1,0 +1,39 @@
+aborted. cond="ingressQueue->m_allocatorOwner != nullptr", msg="Ingress queue is already registered with an allocator", file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-switch-allocator.cc, line=376
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="m_allocatorOwner != nullptr && m_outPortId != outPortId", msg="A registered ingress queue cannot move between output ports", file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-ingress-queue.h, line=58
+NS_FATAL, terminating
+terminate called without an active exception
+PASS unified-bus-switch-voq 0.016 s
+  PASS UnifiedBus - round robin allocator seeds different initial queue phases per out port 0.009 s
+  PASS UnifiedBus - UbSwitch creates VOQs only when packets arrive 0.000 s
+  PASS UnifiedBus - drained VOQ uses the explicit safe destruction gate 0.000 s
+  PASS UnifiedBus - VOQ destruction waits for allocator and accounting gates 0.000 s
+  PASS UnifiedBus - RR allocator coalesces same-port wakeups 0.000 s
+  PASS UnifiedBus - DWRR allocator coalesces same-port wakeups 0.000 s
+  PASS UnifiedBus - RR allocator commits the selection made at wakeup 0.000 s
+  PASS UnifiedBus - DWRR allocator commits the selection made at wakeup 0.000 s
+  PASS UnifiedBus - RR allocator commits wakeup grant after flow-control changes 0.000 s
+  PASS UnifiedBus - DWRR allocator commits wakeup grant after flow-control changes 0.000 s
+  PASS UnifiedBus - RR allocator rolls back selection after egress block 0.000 s
+  PASS UnifiedBus - DWRR allocator rolls back selection after egress block 0.000 s
+  PASS UnifiedBus - DWRR restores deficit when flow control and egress block combine 0.000 s
+  PASS UnifiedBus - allocator isolates simultaneous pending output-port owners 0.000 s
+  PASS UnifiedBus - forced stop preserves running allocator callback and exact residue 0.000 s
+  PASS UnifiedBus - RR allocator selection reentrant stop preserves ingress 0.000 s
+  PASS UnifiedBus - DWRR allocator selection reentrant stop preserves ingress 0.000 s
+  PASS UnifiedBus - DWRR selection stop does not scan a later non-empty VL 0.000 s
+  PASS UnifiedBus - RR allocator egress-commit reentrant stop finishes current accounting 0.000 s
+  PASS UnifiedBus - DWRR allocator egress-commit reentrant stop finishes current accounting 0.000 s
+  PASS UnifiedBus - allocator non-empty summary counts queue transitions exactly 0.002 s
+  PASS UnifiedBus - RR allocator summary preserves burst followup rounds 0.000 s
+  PASS UnifiedBus - DWRR allocator summary preserves burst followup rounds 0.000 s
+  PASS UnifiedBus - allocator ignores wakeup without output-port ownership state 0.000 s
+  PASS UnifiedBus - switch disposal cancels queue events and records residue 0.000 s
+  PASS UnifiedBus - VOQ allocator preserves ingress queue slot phase 0.000 s
+  PASS UnifiedBus - DWRR allocator preserves ingress queue slots across VLs 0.000 s
+  PASS UnifiedBus - DWRR allocator keeps non-VOQ queues after VOQ slots 0.000 s
+  PASS UnifiedBus - direct allocation completion starts an idle egress port 0.000 s
+  PASS UnifiedBus - scheduled allocation completion remains available 0.000 s
+  PASS UnifiedBus - UbPacketQueue inline storage preserves FIFO 0.000 s
+  PASS UnifiedBus - UbSmallFifoQueue keeps small FIFO inline and releases heap 0.000 s

@@ -1,0 +1,106 @@
+{
+  "mode": "ultraep",
+  "strategy": "direct",
+  "readiness": "whole-expert",
+  "group_chunk_count": 0,
+  "group_waits": [],
+  "weight_WQEs": 6,
+  "weight_TAs": 288,
+  "weight_send_bytes_per_npu": [
+    294912,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "pipeline_overlaps": [],
+  "native_pipeline_overlaps": [],
+  "combine_sha256": "f9b0d2310c2f4ddd7508fd5ac50921924ed2d859bd611190261a3f52510ad32b",
+  "npus": 8,
+  "tokens": 64,
+  "assignments": 64,
+  "layer_latency_ps": 37136920,
+  "replicas": 6,
+  "max_npu_load": 10,
+  "per_npu_load": [
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    4,
+    0
+  ],
+  "weight_target_duration_ps": 35523160,
+  "weight_sender_end_ps": 35784080,
+  "weight_bytes": 294912,
+  "verified_bytes": [
+    8192,
+    8192,
+    294912
+  ],
+  "remote_bytes": [
+    1536,
+    1536,
+    294912
+  ],
+  "local_bytes": [
+    6656,
+    6656,
+    0
+  ],
+  "target_segments": 312,
+  "remote_WQEs": 30,
+  "timeline": {
+    "layer_start": 1000,
+    "planning_end": 201000,
+    "reroute_end": 301000,
+    "weights_end": 35724160,
+    "dispatch_gate": 35724160,
+    "layer_end": 37137920
+  },
+  "compute_intervals": [
+    {
+      "node": 0,
+      "start_ps": 35906000,
+      "end_ps": 36989040
+    },
+    {
+      "node": 1,
+      "start_ps": 35922480,
+      "end_ps": 37005520
+    },
+    {
+      "node": 2,
+      "start_ps": 35840080,
+      "end_ps": 36923120
+    },
+    {
+      "node": 3,
+      "start_ps": 35856560,
+      "end_ps": 36939600
+    },
+    {
+      "node": 4,
+      "start_ps": 35873040,
+      "end_ps": 36956080
+    },
+    {
+      "node": 5,
+      "start_ps": 35889520,
+      "end_ps": 36972560
+    },
+    {
+      "node": 6,
+      "start_ps": 35724160,
+      "end_ps": 36217376
+    }
+  ],
+  "computation": "three-matrix SwiGLU GEMM FLOPs",
+  "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+  "empty": false
+}

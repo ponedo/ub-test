@@ -1,0 +1,51 @@
+[03:05:21] [setup] Load ub-legacy-routing-attributes.txt
+[03:05:21] [setup] Adapt legacy network attributes: 10 line(s)
+[03:05:21] [setup] Load ub-conflicting-routing-type.txt
+aborted. cond="state.canonicalLine.has_value()", msg="Conflicting routing configuration in /tmp/ns-3.3.5.21.772390968/unified-bus-routing-modes/UnifiedBus_-_legacy_routing_adapter_rejects_ambiguous_or_invalid_input/ub-conflicting-routing-type.txt: legacy ns3::UbApp::UsePacketSpray/ns3::UbApp::UseShortestPaths cannot be combined with ns3::UbApp::RoutingType at line 2. Remove the legacy lines.", file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-utils.cc, line=950
+NS_FATAL, terminating
+terminate called without an active exception
+[03:05:21] [setup] Load ub-conflicting-selector.txt
+aborted. cond="canonicalSelectorLine.has_value()", msg="Conflicting routing configuration in /tmp/ns-3.3.5.21.772390968/unified-bus-routing-modes/UnifiedBus_-_legacy_routing_adapter_rejects_ambiguous_or_invalid_input/ub-conflicting-selector.txt: legacy ns3::UbRoutingProcess::RoutingAlgorithm at line 1 cannot be combined with ns3::UbRoutingProcess::MultipathSelector at line 2. Remove the legacy line.", file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-utils.cc, line=1009
+NS_FATAL, terminating
+terminate called without an active exception
+[03:05:21] [setup] Load ub-invalid-legacy-adaptive.txt
+WARNING: Legacy routing attributes are deprecated and may stop working in a future release. Replace them with:
+  /tmp/ns-3.3.5.21.772390968/unified-bus-routing-modes/UnifiedBus_-_legacy_routing_adapter_rejects_ambiguous_or_invalid_input/ub-invalid-legacy-adaptive.txt:1,2 -> default ns3::UbApp::RoutingType "PER_FLOW_SHORTEST_PATHS"
+  /tmp/ns-3.3.5.21.772390968/unified-bus-routing-modes/UnifiedBus_-_legacy_routing_adapter_rejects_ambiguous_or_invalid_input/ub-invalid-legacy-adaptive.txt:3,4 -> default ns3::UbTransportChannel::RoutingType "PER_FLOW_SHORTEST_PATHS"
+  /tmp/ns-3.3.5.21.772390968/unified-bus-routing-modes/UnifiedBus_-_legacy_routing_adapter_rejects_ambiguous_or_invalid_input/ub-invalid-legacy-adaptive.txt:5,6 -> default ns3::UbLdstApi::RoutingType "PER_FLOW_SHORTEST_PATHS"
+  /tmp/ns-3.3.5.21.772390968/unified-bus-routing-modes/UnifiedBus_-_legacy_routing_adapter_rejects_ambiguous_or_invalid_input/ub-invalid-legacy-adaptive.txt:7 -> default ns3::UbRoutingProcess::MultipathSelector "ADAPTIVE"
+[03:05:21] [setup] Adapt legacy network attributes: 7 line(s)
+aborted. msg="Invalid routing configuration in /tmp/ns-3.3.5.21.772390968/unified-bus-routing-modes/UnifiedBus_-_legacy_routing_adapter_rejects_ambiguous_or_invalid_input/ub-invalid-legacy-adaptive.txt: default ns3::UbApp::RoutingType "PER_FLOW_SHORTEST_PATHS" cannot be combined with default ns3::UbRoutingProcess::MultipathSelector "ADAPTIVE". Replace one line with either:
+  default ns3::UbApp::RoutingType "PER_PACKET_SHORTEST_PATHS"
+  default ns3::UbRoutingProcess::MultipathSelector "HASH64"", file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-utils.cc, line=307
+NS_FATAL, terminating
+terminate called without an active exception
+[03:05:21] [setup] Load ub-invalid-routing-matrix.txt
+aborted. msg="Invalid routing configuration in /tmp/ns-3.3.5.21.772390968/unified-bus-routing-modes/UnifiedBus_-_invalid_routing_matrix_is_rejected_during_config_load/ub-invalid-routing-matrix.txt: default ns3::UbApp::RoutingType "PER_FLOW_SHORTEST_PATHS" cannot be combined with default ns3::UbRoutingProcess::MultipathSelector "ADAPTIVE". Replace one line with either:
+  default ns3::UbApp::RoutingType "PER_PACKET_SHORTEST_PATHS"
+  default ns3::UbRoutingProcess::MultipathSelector "HASH64"", file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-utils.cc, line=307
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. msg="Invalid routing configuration for RTP transport channel: RoutingType "PER_FLOW_SHORTEST_PATHS" cannot be combined with MultipathSelector "ADAPTIVE". Use RoutingType "PER_PACKET_SHORTEST_PATHS" or MultipathSelector "HASH64".", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/protocol/ub-routing-process.cc, line=122
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. msg="Invalid routing configuration for CTP entity routing policy: RoutingType "PER_FLOW_SHORTEST_PATHS" cannot be combined with MultipathSelector "ADAPTIVE". Use RoutingType "PER_PACKET_SHORTEST_PATHS" or MultipathSelector "HASH64".", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/protocol/ub-routing-process.cc, line=122
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. msg="Invalid routing configuration for LDST routing policy: RoutingType "PER_FLOW_SHORTEST_PATHS" cannot be combined with MultipathSelector "ADAPTIVE". Use RoutingType "PER_PACKET_SHORTEST_PATHS" or MultipathSelector "HASH64".", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/protocol/ub-routing-process.cc, line=122
+NS_FATAL, terminating
+terminate called without an active exception
+PASS unified-bus-routing-modes 0.020 s
+  PASS UnifiedBus - routing type uses the UB specification bit encoding 0.000 s
+  PASS UnifiedBus - RTP response inherits request routing type 0.009 s
+  PASS UnifiedBus - hash multipath selectors use the complete routing key 0.000 s
+  PASS UnifiedBus - round robin multipath selector cycles the candidate set 0.000 s
+  PASS UnifiedBus - ingress port stripe maps ingress to candidate index 0.000 s
+  PASS UnifiedBus - ingress port stripe uses HASH64 for local injection 0.000 s
+  PASS UnifiedBus - multipath selector follows the routing type validity matrix 0.000 s
+  PASS UnifiedBus - adaptive multipath selector hashes equal-load candidates 0.000 s
+  PASS UnifiedBus - routing key uses routing type for candidate scope 0.000 s
+  PASS UnifiedBus - legacy routing configuration is adapted at the file boundary 0.001 s
+  PASS UnifiedBus - legacy routing adapter rejects ambiguous or invalid input 0.002 s
+  PASS UnifiedBus - invalid routing matrix is rejected during config load 0.000 s
+  PASS UnifiedBus - invalid programmatic routing matrix is rejected at object boundaries 0.003 s

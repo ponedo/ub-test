@@ -1,0 +1,17 @@
+1123,target_done,1002
+1132,target_done,1002
+100000,before_cancel,una=0,nxt=4,active=2,A=0,B=0,C=0
+callback,1001,outcome=2
+100000,callback_state,una=4,nxt=4,active=1,A=1,B=0,C=0
+100000,after_cancel,una=4,nxt=4,active=1,A=1,B=0,C=0
+150000,quiet_after_cancel,una=4,nxt=4,active=1,A=1,B=0,C=0
+200118,target_done,1001
+200127,target_done,1001
+201108,target_done,1003
+201112,target_done,1003
+callback,1002,outcome=0
+201214,callback_state,una=5,nxt=6,active=1,A=1,B=1,C=0
+callback,1003,outcome=0
+201219,callback_state,una=6,nxt=6,active=0,A=1,B=1,C=1
+300000,final,una=6,nxt=6,active=0,A=1,B=1,C=1
+hole_observed=1,errors=1

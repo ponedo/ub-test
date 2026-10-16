@@ -1,0 +1,162 @@
+diff --git a/src/unified-bus/model/protocol/ub-function.cc b/src/unified-bus/model/protocol/ub-function.cc
+index 5fa3f56..ab62e3e 100644
+--- a/src/unified-bus/model/protocol/ub-function.cc
++++ b/src/unified-bus/model/protocol/ub-function.cc
+@@ -1232,6 +1232,7 @@ void UbJetty::CommitWqeSegmentAdmission(Ptr<UbWqeSegment> segment)
+     }
+     wqe->SetCanSend(true);
+     wqe->UpdateSentBytes(segment->GetSize());
++    wqe->m_lastAdmittedTaSsn = segment->GetTaSsn();
+     IncreaseTaSsnSndNxt();
+ }
+ 
+@@ -1388,6 +1389,7 @@ void UbJetty::PushWqe(Ptr<UbWqe> ubWqe, uint32_t maxSegmentBytes)
+                     "WQE is not compatible with Jetty source/destination binding");
+     NS_ABORT_MSG_IF(maxSegmentBytes == 0 || maxSegmentBytes > UB_WQE_TA_SEGMENT_BYTE,
+                     "WQE segment limit must be in [1, UB_WQE_TA_SEGMENT_BYTE]");
++    ubWqe->m_lastAdmittedTaSsn.reset();
+     ubWqe->SetJettyNum(m_jettyNum);
+     ubWqe->SetTaMsn(m_taMsnCnt);
+     ubWqe->SetTaSsnStart(m_taSsnCnt);
+@@ -1631,13 +1633,12 @@ bool UbJetty::IsWqeCompleted(Ptr<UbWqe> wqe)
+         return false;
+     }
+ 
+-    // 检查WQE的所有分段是否都已确认
+-    uint32_t wqeStartSsn = wqe->GetTaSsnStart();
+-    uint32_t wqeSsnSize = wqe->GetTaSsnSize();
+-    uint32_t wqeEndSsn = wqeStartSsn + wqeSsnSize - 1;
+-
+-    // 如果WQE的最后一个分段已经被确认，则WQE完成
+-    return (wqeEndSsn < m_taSsnSndUna);
++    // Admission may interleave the SSNs of concurrent WQEs. The reserved start + count
++    // is therefore not a completion boundary. Retain the existing Jetty prefix-completion
++    // ordering: every admitted SSN through the actual last one must be below sndUna.
++    // The sent-complete gate prevents success while more segments still await admission.
++    return wqe->IsSentCompleted() && wqe->m_lastAdmittedTaSsn.has_value() &&
++           *wqe->m_lastAdmittedTaSsn < m_taSsnSndUna;
+ }
+ 
+ void UbJetty::DoDispose()
+diff --git a/src/unified-bus/model/ub-datatype.h b/src/unified-bus/model/ub-datatype.h
+index 0987e33..22bbe3a 100644
+--- a/src/unified-bus/model/ub-datatype.h
++++ b/src/unified-bus/model/ub-datatype.h
+@@ -1265,6 +1265,9 @@ private:
+ 
+     // ========== TA层动态信息 (追踪WQE segment的完成) ==========
+     uint32_t m_bytesLeft = 0; // 剩余的字节数
++    friend class UbJetty;
++    // Actual admission frontier, not the push-time contiguous SSN reservation.
++    std::optional<uint32_t> m_lastAdmittedTaSsn;
+ };
+ 
+ /**
+diff --git a/src/unified-bus/test/ub-target-execution-test.cc b/src/unified-bus/test/ub-target-execution-test.cc
+index 49b06ea..1fec3de 100644
+--- a/src/unified-bus/test/ub-target-execution-test.cc
++++ b/src/unified-bus/test/ub-target-execution-test.cc
+@@ -497,11 +497,103 @@ class UbTargetExecutorAsyncAndDedupTest : public TestCase
+     uint32_t m_responseCount{0};
+ };
+ 
++/** Preserve the global Jetty prefix barrier, but never use a reserved SSN interval. */
++class UbInterleavedWqeCompletionTest : public TestCase
++{
++  public:
++    UbInterleavedWqeCompletionTest()
++        : TestCase("concurrent segmented WQEs complete only after all actual target executions")
++    {
++    }
++
++  private:
++    void OnCompletion(uint32_t id, uint32_t jetty)
++    {
++        NS_TEST_ASSERT_MSG_EQ(jetty, kTargetExecutionJettyNum, "correct Jetty");
++        NS_TEST_ASSERT_MSG_EQ(++m_callbacks[id], 1u, "exactly one callback");
++        NS_TEST_ASSERT_MSG_EQ(m_completed[id], m_expected[id], "all owned TA executions precede success");
++    }
++
++    void RunCase(uint32_t count, uint32_t bytes, bool duplicate, bool late)
++    {
++        auto pair = BuildTargetExecutionPair();
++        m_callbacks.clear();
++        m_completed.clear();
++        m_expected.clear();
++        pair.senderJetty->SetTaSegmentBytes(1024);
++        pair.senderJetty->SetClientCallback(
++            MakeCallback(&UbInterleavedWqeCompletionTest::OnCompletion, this));
++        const bool installed = pair.receiverTransaction->SetTargetExecutor(UbTargetExecutor(
++            [this, duplicate](Ptr<const UbWqeSegment> request,
++                              const UbTransactionRule&,
++                              UbTargetCompletion done) {
++                const uint32_t id = request->GetTaskId();
++                const uint32_t ssn = request->GetTaSsn();
++                const uint64_t delay = 50000 + (id % 3) * 5000 + (ssn % 2) * 10000;
++                Simulator::Schedule(NanoSeconds(delay), [this, id, duplicate, done] {
++                    ++m_completed[id];
++                    done(UbWorkExecutionResult{});
++                    if (duplicate)
++                    {
++                        done(UbWorkExecutionResult{});
++                    }
++                });
++            }));
++        NS_TEST_ASSERT_MSG_EQ(installed, true, "install target executor");
++        for (uint32_t i = 0; i < count + (late ? 1u : 0u); ++i)
++        {
++            const uint32_t id = 1001 + i;
++            m_expected[id] = (bytes + 1023) / 1024;
++            Simulator::Schedule(NanoSeconds(i == count ? 25000 : 10), [&, id, bytes] {
++                auto wqe = pair.senderFunction->CreateWqe(pair.sender->GetId(),
++                                                          pair.receiver->GetId(), bytes, id,
++                                                          UbTransactionOpcode::WRITE);
++                wqe->SetOrderType(OrderType::ORDER_NO);
++                const auto result = pair.senderFunction->SubmitWqe(wqe, kTargetExecutionJettyNum);
++                NS_TEST_ASSERT_MSG_EQ(static_cast<uint32_t>(result.status),
++                                      static_cast<uint32_t>(UbWqeSubmissionStatus::ACCEPTED),
++                                      "concurrent WQE accepted without serialization");
++            });
++        }
++        Simulator::Stop(MilliSeconds(2));
++        Simulator::Run();
++        for (const auto& [id, expected] : m_expected)
++        {
++            NS_TEST_ASSERT_MSG_EQ(m_callbacks[id], 1u, "no missing callback");
++            NS_TEST_ASSERT_MSG_EQ(m_completed[id], expected, "all target executions complete");
++            NS_TEST_ASSERT_MSG_EQ(pair.senderTransaction->HasWqeOperation(kTargetExecutionJettyNum, id),
++                                  false, "operation is reclaimed");
++        }
++        NS_TEST_ASSERT_MSG_EQ(pair.senderTransaction->GetResidentOperationCount(), 0u,
++                              "all operation records reclaimed");
++        NS_TEST_ASSERT_MSG_EQ(pair.senderTransaction->GetResidentSegmentCount(), 0u, "all TA records reclaimed");
++        NS_TEST_ASSERT_MSG_EQ(pair.senderJetty->GetActiveWqeCount(), 0u, "all WQEs removed");
++        NS_TEST_ASSERT_MSG_EQ(pair.senderJetty->IsIdle(), true, "ACK prefix drained");
++        NS_TEST_ASSERT_MSG_EQ(pair.senderTp->GetOutstandingUnackedSegmentCount(), 0u,
++                              "sender transport state reclaimed");
++        NS_TEST_ASSERT_MSG_EQ(pair.receiverTp->GetOutstandingUnackedSegmentCount(), 0u,
++                              "response transport state reclaimed");
++        Simulator::Destroy();
++    }
++
++    void DoRun() override
++    {
++        RunCase(1, 64, false, false);
++        RunCase(1, 4128, false, false);
++        RunCase(3, 64, false, false);
++        RunCase(3, 4128, false, false);
++        RunCase(3, 4128, true, true);
++        RunCase(16, 32800, true, true);
++    }
++    std::map<uint32_t, uint32_t> m_expected, m_completed, m_callbacks;
++};
++
+ class UbTargetExecutionSeamSuite : public TestSuite
+ {
+   public:
+     UbTargetExecutionSeamSuite() : TestSuite("unified-bus-target-execution", Type::UNIT)
+     {
++        AddTestCase(new UbInterleavedWqeCompletionTest, TestCase::Duration::QUICK);
+         AddTestCase(new UbTargetExecutionInboundPathTest, TestCase::Duration::QUICK);
+         AddTestCase(new UbTargetExecutionDelayTimingTest, TestCase::Duration::QUICK);
+         AddTestCase(new UbTargetExecutorAsyncAndDedupTest, TestCase::Duration::QUICK);

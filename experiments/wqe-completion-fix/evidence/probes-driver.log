@@ -1,0 +1,404 @@
+[
+  {
+    "arm": "A",
+    "kind": "original",
+    "case": "original",
+    "rc": 1,
+    "wall_s": 0.0642070029862225,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/A-original",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/A-original-original"
+    ]
+  },
+  {
+    "arm": "A",
+    "kind": "expanded",
+    "case": "single-single",
+    "rc": 0,
+    "wall_s": 0.03183901001466438,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/A-expanded",
+      "--mode=singleonesegment",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/A-expanded-single-single"
+    ]
+  },
+  {
+    "arm": "A",
+    "kind": "expanded",
+    "case": "single-multi",
+    "rc": 0,
+    "wall_s": 0.03195003204746172,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/A-expanded",
+      "--mode=single",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/A-expanded-single-multi"
+    ]
+  },
+  {
+    "arm": "A",
+    "kind": "expanded",
+    "case": "multi-single",
+    "rc": 0,
+    "wall_s": 0.03192439896520227,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/A-expanded",
+      "--mode=onesegment",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/A-expanded-multi-single"
+    ]
+  },
+  {
+    "arm": "A",
+    "kind": "expanded",
+    "case": "original-multi",
+    "rc": 1,
+    "wall_s": 0.032045320025645196,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/A-expanded",
+      "--checkpointNs=70310",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/A-expanded-original-multi"
+    ]
+  },
+  {
+    "arm": "A",
+    "kind": "expanded",
+    "case": "late-overlap",
+    "rc": 1,
+    "wall_s": 0.031859131006058306,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/A-expanded",
+      "--lateNs=25000",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/A-expanded-late-overlap"
+    ]
+  },
+  {
+    "arm": "A",
+    "kind": "expanded",
+    "case": "staggered",
+    "rc": 0,
+    "wall_s": 0.03180033800890669,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/A-expanded",
+      "--delayedLastNs=20000",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/A-expanded-staggered"
+    ]
+  },
+  {
+    "arm": "A",
+    "kind": "expanded",
+    "case": "duplicate",
+    "rc": 1,
+    "wall_s": 0.03199964598752558,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/A-expanded",
+      "--duplicateDone=1",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/A-expanded-duplicate"
+    ]
+  },
+  {
+    "arm": "A",
+    "kind": "expanded",
+    "case": "pressure",
+    "rc": 1,
+    "wall_s": 0.06396219797898084,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/A-expanded",
+      "--count=16",
+      "--segments=32",
+      "--lateNs=25000",
+      "--duplicateDone=1",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/A-expanded-pressure"
+    ]
+  },
+  {
+    "arm": "A",
+    "kind": "expanded",
+    "case": "small-segments",
+    "rc": 1,
+    "wall_s": 0.031909942044876516,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/A-expanded",
+      "--segmentBytes=64",
+      "--count=8",
+      "--lateNs=25000",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/A-expanded-small-segments"
+    ]
+  },
+  {
+    "arm": "A",
+    "kind": "cancel",
+    "case": "cancel-hole",
+    "rc": 0,
+    "wall_s": 0.03185858397046104,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/A-cancel"
+    ]
+  },
+  {
+    "arm": "B",
+    "kind": "original",
+    "case": "original",
+    "rc": 1,
+    "wall_s": 0.06584323197603226,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/B-original",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/B-original-original"
+    ]
+  },
+  {
+    "arm": "B",
+    "kind": "expanded",
+    "case": "single-single",
+    "rc": 0,
+    "wall_s": 0.03193719498813152,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/B-expanded",
+      "--mode=singleonesegment",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/B-expanded-single-single"
+    ]
+  },
+  {
+    "arm": "B",
+    "kind": "expanded",
+    "case": "single-multi",
+    "rc": 0,
+    "wall_s": 0.03186581301270053,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/B-expanded",
+      "--mode=single",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/B-expanded-single-multi"
+    ]
+  },
+  {
+    "arm": "B",
+    "kind": "expanded",
+    "case": "multi-single",
+    "rc": 0,
+    "wall_s": 0.03181036398746073,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/B-expanded",
+      "--mode=onesegment",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/B-expanded-multi-single"
+    ]
+  },
+  {
+    "arm": "B",
+    "kind": "expanded",
+    "case": "original-multi",
+    "rc": 1,
+    "wall_s": 0.031898371991701424,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/B-expanded",
+      "--checkpointNs=70310",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/B-expanded-original-multi"
+    ]
+  },
+  {
+    "arm": "B",
+    "kind": "expanded",
+    "case": "late-overlap",
+    "rc": 1,
+    "wall_s": 0.031857414986006916,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/B-expanded",
+      "--lateNs=25000",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/B-expanded-late-overlap"
+    ]
+  },
+  {
+    "arm": "B",
+    "kind": "expanded",
+    "case": "staggered",
+    "rc": 0,
+    "wall_s": 0.03184300899738446,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/B-expanded",
+      "--delayedLastNs=20000",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/B-expanded-staggered"
+    ]
+  },
+  {
+    "arm": "B",
+    "kind": "expanded",
+    "case": "duplicate",
+    "rc": 1,
+    "wall_s": 0.0317278360016644,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/B-expanded",
+      "--duplicateDone=1",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/B-expanded-duplicate"
+    ]
+  },
+  {
+    "arm": "B",
+    "kind": "expanded",
+    "case": "pressure",
+    "rc": 1,
+    "wall_s": 0.06393493199720979,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/B-expanded",
+      "--count=16",
+      "--segments=32",
+      "--lateNs=25000",
+      "--duplicateDone=1",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/B-expanded-pressure"
+    ]
+  },
+  {
+    "arm": "B",
+    "kind": "expanded",
+    "case": "small-segments",
+    "rc": 1,
+    "wall_s": 0.031857580004725605,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/B-expanded",
+      "--segmentBytes=64",
+      "--count=8",
+      "--lateNs=25000",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/B-expanded-small-segments"
+    ]
+  },
+  {
+    "arm": "B",
+    "kind": "cancel",
+    "case": "cancel-hole",
+    "rc": 0,
+    "wall_s": 0.03187626099679619,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/B-cancel"
+    ]
+  },
+  {
+    "arm": "C",
+    "kind": "original",
+    "case": "original",
+    "rc": 0,
+    "wall_s": 0.06716266297735274,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/C-original",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/C-original-original"
+    ]
+  },
+  {
+    "arm": "C",
+    "kind": "expanded",
+    "case": "single-single",
+    "rc": 0,
+    "wall_s": 0.031937117979396135,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/C-expanded",
+      "--mode=singleonesegment",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/C-expanded-single-single"
+    ]
+  },
+  {
+    "arm": "C",
+    "kind": "expanded",
+    "case": "single-multi",
+    "rc": 0,
+    "wall_s": 0.03195752401370555,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/C-expanded",
+      "--mode=single",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/C-expanded-single-multi"
+    ]
+  },
+  {
+    "arm": "C",
+    "kind": "expanded",
+    "case": "multi-single",
+    "rc": 0,
+    "wall_s": 0.031946192029863596,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/C-expanded",
+      "--mode=onesegment",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/C-expanded-multi-single"
+    ]
+  },
+  {
+    "arm": "C",
+    "kind": "expanded",
+    "case": "original-multi",
+    "rc": 0,
+    "wall_s": 0.032276557001750916,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/C-expanded",
+      "--checkpointNs=70310",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/C-expanded-original-multi"
+    ]
+  },
+  {
+    "arm": "C",
+    "kind": "expanded",
+    "case": "late-overlap",
+    "rc": 0,
+    "wall_s": 0.031940563989337534,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/C-expanded",
+      "--lateNs=25000",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/C-expanded-late-overlap"
+    ]
+  },
+  {
+    "arm": "C",
+    "kind": "expanded",
+    "case": "staggered",
+    "rc": 0,
+    "wall_s": 0.03194260597229004,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/C-expanded",
+      "--delayedLastNs=20000",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/C-expanded-staggered"
+    ]
+  },
+  {
+    "arm": "C",
+    "kind": "expanded",
+    "case": "duplicate",
+    "rc": 0,
+    "wall_s": 0.03190937702311203,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/C-expanded",
+      "--duplicateDone=1",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/C-expanded-duplicate"
+    ]
+  },
+  {
+    "arm": "C",
+    "kind": "expanded",
+    "case": "pressure",
+    "rc": 0,
+    "wall_s": 0.06410358101129532,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/C-expanded",
+      "--count=16",
+      "--segments=32",
+      "--lateNs=25000",
+      "--duplicateDone=1",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/C-expanded-pressure"
+    ]
+  },
+  {
+    "arm": "C",
+    "kind": "expanded",
+    "case": "small-segments",
+    "rc": 0,
+    "wall_s": 0.031984649947844446,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/C-expanded",
+      "--segmentBytes=64",
+      "--count=8",
+      "--lateNs=25000",
+      "--output=/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/C-expanded-small-segments"
+    ]
+  },
+  {
+    "arm": "C",
+    "kind": "cancel",
+    "case": "cancel-hole",
+    "rc": 0,
+    "wall_s": 0.03169076796621084,
+    "command": [
+      "/workspace/scratch/c6ba02920254/wqe-completion-raw/probes/C-cancel"
+    ]
+  }
+]

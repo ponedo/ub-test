@@ -1,0 +1,48 @@
+Attributes for TypeId ns3::UbPort
+    --ns3::UbPort::CbfcCtrlCrdRtrThldCell=[1024]
+        Per-VL pending returned-credit threshold in cells. Once a VL reaches this threshold, CBFC switches to control-frame credit return instead of waiting for piggyback opportunities. Repo default 1024 cells.
+    --ns3::UbPort::CbfcFlitLenByte=[20]
+        Flit size in bytes; the fixed-size data link layer transfer unit (Spec §1.6: 20 bytes).
+    --ns3::UbPort::CbfcFlitsPerCell=[8]
+        Number of flits per credit cell (Spec FLOW_CTRL_SIZE). Valid: {1,2,4,8,16,32,64,128}; spec default 8 = 160 bytes/cell.
+    --ns3::UbPort::CbfcInitCreditCell=[6553]
+        Initial CBFC transmit credit in cells. In exclusive mode this equals floor(receive_buffer / cell_size); spec example: 1MB / 160B = 6553. In shared mode this is the per-VL reserved minimum and should be reduced.
+    --ns3::UbPort::CbfcRetCellGrainControlPacket=[32]
+        Credit return granularity in Crd_Ack Block for control packets (Spec CTRL_CREDIT_GRAIN_SIZE). Valid: {1,2,4,8,16,32,64,128} cells; repo default 32, spec default 1.
+    --ns3::UbPort::CbfcRetCellGrainDataPacket=[4]
+        Credit return granularity in DLLDP for data packets (Spec DATA_CREDIT_GRAIN_SIZE). Valid: {1,2,4,8,16,32,64,128} cells; spec default 4.
+    --ns3::UbPort::CbfcSharedInitCreditCell=[4096]
+        Shared credit pool size in cells for CBFC shared-credit mode. reserved + shared must not exceed per-VL buffer capacity in cells.
+    --ns3::UbPort::PacketRateAverageDuLengthFlits=[0]
+        Spec AVERAGE_DU_LENGTH (Table 4-9, Flit 4 bits 71:64, 8 bits): "Average data unit length, in flits. It is obtained by dividing the maximum bandwidth of the data link layer at the receiver by the maximum number of data units that can be processed by the receiver in a unit time. The calculation result is rounded up to the nearest flit." §4.7.2 notes that the device data unit processing capacity generally differs from its packet processing capacity. §4.7.2's worked example divides by the packet processing capacity in this case too, which reads as a typo for the data unit processing capacity. Used by DYNAMIC only. No default: §4.7.1 takes it from the peer receiver's Init Block, and the Table 4-9 note forbids sending only part of the initialization parameters. DYNAMIC aborts until it is set.
+    --ns3::UbPort::PacketRateAveragePacketLengthFlits=[0]
+        Spec AVERAGE_PACKET_LENGTH (Table 4-9, Flit 4 bits 55:48, 8 bits): "Average packet length in flits. It is obtained by dividing the maximum bandwidth of the data link layer by the maximum number of packets that can be processed by the receiver in a unit time. The calculation result is rounded up to the nearest flit." §4.7.2 works the example as X * 120/128 * 6656/6696 divided by the device packet processing capacity, for a physical layer rate X under RS(128,120) FEC. Used by DYNAMIC only. No default: §4.7.1 takes it from the peer receiver's Init Block, and the Table 4-9 note forbids sending only part of the initialization parameters. DYNAMIC aborts until it is set.
+    --ns3::UbPort::PacketRateBurstSizeFlits=[0]
+        Spec PACKET_BURST_SIZE (Table 4-9, Flit 4 bits 31:16, 16 bits): "Maximum number of burst flits supported by the peer receive buffer, in flits." Used by DYNAMIC only, and unlike the other dynamic parameters it is a plain field value rather than an invented default: the specification does not say whether 0 is legal, and this port reads 0 as "no burst allowance", so any positive deficit triggers padding. A peer whose buffer does absorb a burst has to be described explicitly.
+    --ns3::UbPort::PacketRateControl=[NONE]
+        Data link layer packet rate control mode (NONE, STATIC, DYNAMIC), UB Base Spec 2.1 §4.7. The sender fills No_Operation Blocks after small DLLDPs so the SOP-to-SOP interval between consecutive DLLDPs meets PACKET_MIN_INTERVAL, lowering the packet reception rate required of the peer receiver. DYNAMIC implements the §4.7.3.2 deficit counters directly. STATIC implements §4.7.3.1 per DLLDP instead of tracking the previous SOP: every DLLDP is padded against its own PACKET_MIN_INTERVAL, which agrees with the spec for back-to-back DLLDPs and is the more conservative reading after an idle period. DYNAMIC additionally needs the PacketRateAverage*/PacketRateDevice*/PacketRateBurst* parameters, which carry no defaults: §4.7.1 takes them from the peer receiver's Init Block, and the Table 4-9 note says "It is not allowed to send only part of the initialization parameters", so a partly configured DYNAMIC port aborts instead of assuming values. The parameters describe the peer receiver's capability and constrain this port's egress direction only; the two link directions are configured independently. Per §4.7.1 the mode is what the peer receiver advertised through the Init Block, so setting it here describes the peer, not this port. NONE is a simulator default rather than a specification-defined state: Table 4-9 encodes PACKET_RATE_CONTROL_MODE as a single bit with no disabled value.
+    --ns3::UbPort::PacketRateDeviceDuLengthFlits=[0]
+        Spec DEVICE_DU_LENGTH (Table 4-9, Flit 4 bits 79:72, 8 bits): "Length of the internal data unit of the device (advanced devices generally divide a packet into several data units of equal length for processing), in flits." §4.7.2 notes it may be identical with the number of flits contained in the cell negotiated by both ends of the link. Used by DYNAMIC only. No default: §4.7.1 takes it from the peer receiver's Init Block, and the Table 4-9 note forbids sending only part of the initialization parameters. DYNAMIC aborts until it is set.
+    --ns3::UbPort::PacketRateMinIntervalFlits=[32]
+        Spec PACKET_MIN_INTERVAL (Table 4-9, Flit 3 bits 55:48, 8 bits): "Minimum interval allowed between two consecutive DLLDPs received by the receiver. The value of this field indicates the minimum interval between the current DLLDP (header flit included) and the next DLLDP (header flit excluded). Unit: flit. This field does not require negotiation and is directly set to the received value." Required when PacketRateControl is STATIC or DYNAMIC; flits are sized by CbfcFlitLenByte. 32 is a simulator default, not a specification value: Table 4-9 carries this as a mandatory Init Block field the local end takes from the peer, and specifies no fallback. 0 is still rejected rather than read as "no minimum".
+    --ns3::UbPort::PfcLowThld=[655360]
+        PFC XON threshold in bytes; the PAUSE is released when the receive queue drains below this level.
+    --ns3::UbPort::PfcUpThld=[819200]
+        PFC XOFF threshold in bytes; a PAUSE frame is sent when the receive queue exceeds this level.
+    --ns3::UbPort::UbDataRate=[400000000000bps]
+        Port data rate for Unified Bus link transmission.
+    --ns3::UbPort::UbInterframeGap=[+0ps]
+        Minimum idle time inserted between consecutive packet transmissions.
+Attributes defined in parent class ns3::PointToPointNetDevice
+    --ns3::PointToPointNetDevice::Address=[ff:ff:ff:ff:ff:ff]
+        The MAC address of this device.
+    --ns3::PointToPointNetDevice::DataRate=[32768bps]
+        The default data rate for point to point links
+    --ns3::PointToPointNetDevice::InterframeGap=[+0ps]
+        The time to wait between packet (frame) transmissions
+    --ns3::PointToPointNetDevice::Mtu=[1500]
+        The MAC-level Maximum Transmission Unit
+    --ns3::PointToPointNetDevice::ReceiveErrorModel=[0]
+        The receiver error model used to simulate packet loss
+    --ns3::PointToPointNetDevice::TxQueue=[0]
+        A queue to use as the transmit queue in the device.

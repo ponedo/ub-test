@@ -1,0 +1,44 @@
+aborted. cond="GetPacketType(packet) != UB_CONTROL_FRAME", msg="SendControlFrame expects a real UB control-credit packet", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-switch.cc, line=1355
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="m_cbfcCfg.m_flitLen == 0 || m_cbfcCfg.m_nFlitPerCell == 0", msg="CBFC requires non-zero cell geometry (flitLen and nFlitPerCell)", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/protocol/ub-cbfc.cc, line=79
+NS_FATAL, terminating
+terminate called without an active exception
+aborted. cond="m_pfcCfg.m_portpfcUpThld < 0 || m_pfcCfg.m_portpfcLowThld < 0", msg="PFC_FIXED requires non-negative hi/lo thresholds", +0.000000000s -1 file=/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/protocol/ub-pfc.cc, line=144
+NS_FATAL, terminating
+terminate called without an active exception
+PASS unified-bus-flow-control 0.009 s
+  PASS UnifiedBus - UbSwitch flow-control mode attribute round-trips 0.000 s
+  PASS UnifiedBus - control frames keep dedicated occupancy accounting 0.000 s
+  PASS UnifiedBus - PFC_FIXED counts headroom occupancy 0.000 s
+  PASS UnifiedBus - PFC_DYNAMIC pauses and resumes from shared occupancy 0.000 s
+  PASS UnifiedBus - queue manager exposes unified dynamic PFC pause resume decisions 0.000 s
+  PASS UnifiedBus - PFC_DYNAMIC keeps empty queues resumed when xoff collapses to zero 0.000 s
+  PASS UnifiedBus - PFC_DYNAMIC_PAPER follows paper threshold and 2-MTU resume gap 0.000 s
+  PASS UnifiedBus - queue manager exposes unified paper PFC pause resume decisions 0.000 s
+  PASS UnifiedBus - PFC_DYNAMIC_PAPER admission should not be limited by old dynamic alpha shift 0.000 s
+  PASS UnifiedBus - PFC_DYNAMIC_PAPER threshold tracks real switch global occupancy 0.000 s
+  PASS UnifiedBus - total buffered bytes keeps VOQ and egress occupancy consistent 0.000 s
+  PASS UnifiedBus - in-port processing bytes are visible before VOQ 0.000 s
+  PASS UnifiedBus - UbSwitch InPortProcessingDelay hides forwarded packets from allocator 0.000 s
+  PASS UnifiedBus - UbSwitch InPortProcessingDelay does not delay TP source queues 0.000 s
+  PASS UnifiedBus - zero processing delay preserves enqueue callback ordering 0.000 s
+  PASS UnifiedBus - control frames bypass switch processing delay 0.000 s
+  PASS UnifiedBus - forwarding path uses the ingress port's PFC configuration 0.000 s
+  PASS UnifiedBus - flow-control release hook observes post-dequeue ingress occupancy 0.000 s
+  PASS UnifiedBus - allocator keeps ingress packet when egress queue is full 0.000 s
+  PASS UnifiedBus - reserve-only admission allows exact-fit enqueue and keeps shared state at zero 0.000 s
+  PASS UnifiedBus - sticky headroom accounts whole packets consistently 0.000 s
+  PASS UnifiedBus - queue manager exposes structured ingress port occupancy view 0.000 s
+  PASS UnifiedBus - SendControlFrame rejects non-control packets 0.001 s
+  PASS UnifiedBus - CBFC rejects zero cell geometry at init 0.001 s
+  PASS UnifiedBus - PFC_FIXED rejects negative thresholds at init 0.001 s
+  PASS UnifiedBus - UbSwitch local CBFC config overrides global defaults 0.000 s
+  PASS UnifiedBus - CBFC piggyback target VL can differ from packet VL 0.000 s
+  PASS UnifiedBus - CBFC piggyback restore is consumed locally and clears header state 0.000 s
+  PASS UnifiedBus - CBFC does not emit control frame below ctrl-credit-return threshold without data packet 0.000 s
+  PASS UnifiedBus - CBFC switches to control-frame credit return once pending threshold is reached 0.000 s
+  PASS UnifiedBus - CBFC ctrl-credit-return flushes every VL already eligible for control return 0.000 s
+  PASS UnifiedBus - CBFC ctrl-credit-return chunks large pending credit into multiple control frames 0.000 s
+  PASS UnifiedBus - CBFC forwarded release checks threshold state on the ingress port instance 0.000 s
+  PASS UnifiedBus - CBFC forwarded ingress enqueue does not accumulate return credit 0.000 s

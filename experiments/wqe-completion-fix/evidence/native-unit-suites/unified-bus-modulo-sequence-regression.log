@@ -1,0 +1,13 @@
+PASS unified-bus-modulo-sequence-regression 0.012 s
+  PASS UnifiedBus - modulo sequence maps wire ids to logical ids 0.000 s
+  PASS UnifiedBus - receiver unwraps RTPH PSN across 24-bit wrap 0.009 s
+  PASS UnifiedBus - receiver rejected future PSN does not pollute MaxRcvPSN 0.000 s
+  PASS UnifiedBus - sender unwraps TPSACK wire PSNs across 24-bit wrap 0.000 s
+  PASS UnifiedBus - sender ignores out-of-window TPSACK across 24-bit wrap 0.000 s
+  PASS UnifiedBus - sender accepts TPSACK at current cumulative ACK base 0.000 s
+  PASS UnifiedBus - sender unwraps plain TPACK across 24-bit wrap 0.000 s
+  PASS UnifiedBus - GBN sender unwraps TPNAK across 24-bit wrap 0.000 s
+  PASS UnifiedBus - CAQM receiver aggregates logical PSN ranges across wrap 0.000 s
+  PASS UnifiedBus - WQE segment keeps logical TA sequence values 0.000 s
+  PASS UnifiedBus - Jetty completes logical TASSN across 16-bit wrap 0.000 s
+  PASS UnifiedBus - inbound TA key uses logical TPMSN across 24-bit wrap 0.000 s

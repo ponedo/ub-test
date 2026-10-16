@@ -1,0 +1,41 @@
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/psutil/_pslinux.py", line 1593, in wrapper
+    return fun(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/psutil/_common.py", line 377, in wrapper
+    raise err from None
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/psutil/_common.py", line 375, in wrapper
+    return fun(self)
+           ^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/psutil/_pslinux.py", line 1718, in _read_status_file
+    with open_binary(f"{self._procfs_path}/{self.pid}/status") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/psutil/_common.py", line 682, in open_binary
+    return open(fname, "rb", buffering=FILE_READ_BUFFER_SIZE)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/proc/4110/status'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/scratch/c6ba02920254/wqe-completion-delivery/experiments/jetty-resource-mapping/regressions.py", line 31, in <module>
+    r=run(['bash',snapshot/'experiments/multi-npu-relay/run.sh'],a.out/'host',1800,cwd=snapshot,case=a.out,env=env)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/c6ba02920254/wqe-completion-delivery/experiments/prefill-cpu-profiling/guard.py", line 27, in run
+    max_threads=max(max_threads,max((p.num_threads() for p in procs if p.is_running()),default=0));peak=max(peak,rss);mem=psutil.virtual_memory();free=shutil.disk_usage(case).free;samples.append([round(elapsed,3),rss,mem.available,free])
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/c6ba02920254/wqe-completion-delivery/experiments/prefill-cpu-profiling/guard.py", line 27, in <genexpr>
+    max_threads=max(max_threads,max((p.num_threads() for p in procs if p.is_running()),default=0));peak=max(peak,rss);mem=psutil.virtual_memory();free=shutil.disk_usage(case).free;samples.append([round(elapsed,3),rss,mem.available,free])
+                                     ^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/psutil/__init__.py", line 939, in num_threads
+    return self._proc.num_threads()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/psutil/_pslinux.py", line 1593, in wrapper
+    return fun(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/psutil/_pslinux.py", line 2052, in num_threads
+    data = self._read_status_file()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/psutil/_pslinux.py", line 1605, in wrapper
+    raise NoSuchProcess(pid, name) from err
+psutil.NoSuchProcess: process no longer exists (pid=4110)

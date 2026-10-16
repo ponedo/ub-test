@@ -1,0 +1,390 @@
+{
+  "mode": "ultraep",
+  "strategy": "chunk-streaming",
+  "readiness": "upstream-group-chunk",
+  "group_chunk_count": 12,
+  "group_waits": [
+    {
+      "task": 76,
+      "own_ready_ps": 3765640,
+      "group_ready_ps": 3765640,
+      "wait_ps": 0
+    },
+    {
+      "task": 77,
+      "own_ready_ps": 3765640,
+      "group_ready_ps": 3765640,
+      "wait_ps": 0
+    },
+    {
+      "task": 78,
+      "own_ready_ps": 3853800,
+      "group_ready_ps": 3853800,
+      "wait_ps": 0
+    },
+    {
+      "task": 79,
+      "own_ready_ps": 3853800,
+      "group_ready_ps": 3853800,
+      "wait_ps": 0
+    },
+    {
+      "task": 80,
+      "own_ready_ps": 3956920,
+      "group_ready_ps": 3956920,
+      "wait_ps": 0
+    },
+    {
+      "task": 81,
+      "own_ready_ps": 3956920,
+      "group_ready_ps": 3956920,
+      "wait_ps": 0
+    },
+    {
+      "task": 82,
+      "own_ready_ps": 4045080,
+      "group_ready_ps": 4045080,
+      "wait_ps": 0
+    },
+    {
+      "task": 83,
+      "own_ready_ps": 4045080,
+      "group_ready_ps": 4045080,
+      "wait_ps": 0
+    },
+    {
+      "task": 84,
+      "own_ready_ps": 4133240,
+      "group_ready_ps": 4133240,
+      "wait_ps": 0
+    },
+    {
+      "task": 85,
+      "own_ready_ps": 4133240,
+      "group_ready_ps": 4133240,
+      "wait_ps": 0
+    },
+    {
+      "task": 86,
+      "own_ready_ps": 4236400,
+      "group_ready_ps": 4236400,
+      "wait_ps": 0
+    },
+    {
+      "task": 87,
+      "own_ready_ps": 4236400,
+      "group_ready_ps": 4236400,
+      "wait_ps": 0
+    },
+    {
+      "task": 88,
+      "own_ready_ps": 4334560,
+      "group_ready_ps": 4334560,
+      "wait_ps": 0
+    },
+    {
+      "task": 89,
+      "own_ready_ps": 4334560,
+      "group_ready_ps": 4334560,
+      "wait_ps": 0
+    },
+    {
+      "task": 90,
+      "own_ready_ps": 4447720,
+      "group_ready_ps": 4447720,
+      "wait_ps": 0
+    },
+    {
+      "task": 91,
+      "own_ready_ps": 4447720,
+      "group_ready_ps": 4447720,
+      "wait_ps": 0
+    },
+    {
+      "task": 92,
+      "own_ready_ps": 4535880,
+      "group_ready_ps": 4535880,
+      "wait_ps": 0
+    },
+    {
+      "task": 93,
+      "own_ready_ps": 4535880,
+      "group_ready_ps": 4535880,
+      "wait_ps": 0
+    },
+    {
+      "task": 94,
+      "own_ready_ps": 4634040,
+      "group_ready_ps": 4634040,
+      "wait_ps": 0
+    },
+    {
+      "task": 95,
+      "own_ready_ps": 4634040,
+      "group_ready_ps": 4634040,
+      "wait_ps": 0
+    },
+    {
+      "task": 96,
+      "own_ready_ps": 4732200,
+      "group_ready_ps": 4732200,
+      "wait_ps": 0
+    },
+    {
+      "task": 97,
+      "own_ready_ps": 4732200,
+      "group_ready_ps": 4732200,
+      "wait_ps": 0
+    },
+    {
+      "task": 98,
+      "own_ready_ps": 4830360,
+      "group_ready_ps": 4830360,
+      "wait_ps": 0
+    },
+    {
+      "task": 99,
+      "own_ready_ps": 4830360,
+      "group_ready_ps": 4830360,
+      "wait_ps": 0
+    }
+  ],
+  "weight_WQEs": 36,
+  "weight_TAs": 144,
+  "weight_send_bytes_per_npu": [
+    49152,
+    98304,
+    0,
+    0
+  ],
+  "pipeline_overlaps": [
+    {
+      "outgoing": 76,
+      "incoming": 65,
+      "overlap_ps": 88160
+    },
+    {
+      "outgoing": 77,
+      "incoming": 65,
+      "overlap_ps": 88160
+    },
+    {
+      "outgoing": 78,
+      "incoming": 66,
+      "overlap_ps": 103120
+    },
+    {
+      "outgoing": 79,
+      "incoming": 66,
+      "overlap_ps": 103120
+    },
+    {
+      "outgoing": 80,
+      "incoming": 67,
+      "overlap_ps": 88160
+    },
+    {
+      "outgoing": 81,
+      "incoming": 67,
+      "overlap_ps": 88160
+    },
+    {
+      "outgoing": 82,
+      "incoming": 68,
+      "overlap_ps": 88160
+    },
+    {
+      "outgoing": 83,
+      "incoming": 68,
+      "overlap_ps": 88160
+    },
+    {
+      "outgoing": 84,
+      "incoming": 69,
+      "overlap_ps": 103160
+    },
+    {
+      "outgoing": 85,
+      "incoming": 69,
+      "overlap_ps": 103160
+    },
+    {
+      "outgoing": 86,
+      "incoming": 70,
+      "overlap_ps": 98160
+    },
+    {
+      "outgoing": 87,
+      "incoming": 70,
+      "overlap_ps": 98160
+    },
+    {
+      "outgoing": 88,
+      "incoming": 71,
+      "overlap_ps": 113160
+    },
+    {
+      "outgoing": 89,
+      "incoming": 71,
+      "overlap_ps": 113160
+    },
+    {
+      "outgoing": 90,
+      "incoming": 72,
+      "overlap_ps": 88160
+    },
+    {
+      "outgoing": 91,
+      "incoming": 72,
+      "overlap_ps": 88160
+    },
+    {
+      "outgoing": 92,
+      "incoming": 73,
+      "overlap_ps": 98160
+    },
+    {
+      "outgoing": 93,
+      "incoming": 73,
+      "overlap_ps": 98160
+    },
+    {
+      "outgoing": 94,
+      "incoming": 74,
+      "overlap_ps": 98160
+    },
+    {
+      "outgoing": 95,
+      "incoming": 74,
+      "overlap_ps": 98160
+    },
+    {
+      "outgoing": 96,
+      "incoming": 75,
+      "overlap_ps": 98160
+    },
+    {
+      "outgoing": 97,
+      "incoming": 75,
+      "overlap_ps": 98160
+    }
+  ],
+  "native_pipeline_overlaps": [
+    {
+      "outgoing": 76,
+      "incoming": 65,
+      "overlap_ps": 88160
+    },
+    {
+      "outgoing": 77,
+      "incoming": 65,
+      "overlap_ps": 88160
+    },
+    {
+      "outgoing": 78,
+      "incoming": 69,
+      "overlap_ps": 98120
+    },
+    {
+      "outgoing": 79,
+      "incoming": 69,
+      "overlap_ps": 93120
+    },
+    {
+      "outgoing": 80,
+      "incoming": 71,
+      "overlap_ps": 113120
+    },
+    {
+      "outgoing": 81,
+      "incoming": 71,
+      "overlap_ps": 108120
+    },
+    {
+      "outgoing": 82,
+      "incoming": 72,
+      "overlap_ps": 4960
+    },
+    {
+      "outgoing": 83,
+      "incoming": 73,
+      "overlap_ps": 98120
+    },
+    {
+      "outgoing": 84,
+      "incoming": 74,
+      "overlap_ps": 4960
+    },
+    {
+      "outgoing": 85,
+      "incoming": 75,
+      "overlap_ps": 98120
+    }
+  ],
+  "combine_sha256": "c74c384b684ba4398821b25d97e78f4c32909dfeb685941f444cfa1579918d72",
+  "npus": 4,
+  "tokens": 32,
+  "assignments": 32,
+  "layer_latency_ps": 14321600,
+  "replicas": 3,
+  "max_npu_load": 10,
+  "per_npu_load": [
+    10,
+    10,
+    10,
+    2
+  ],
+  "weight_target_duration_ps": 12740800,
+  "weight_sender_end_ps": 13006720,
+  "weight_bytes": 147456,
+  "verified_bytes": [
+    4096,
+    4096,
+    147456
+  ],
+  "remote_bytes": [
+    768,
+    768,
+    147456
+  ],
+  "local_bytes": [
+    3328,
+    3328,
+    0
+  ],
+  "target_segments": 156,
+  "remote_WQEs": 48,
+  "timeline": {
+    "layer_start": 1000,
+    "planning_end": 201000,
+    "reroute_end": 301000,
+    "weights_end": 12941800,
+    "dispatch_gate": 12941800,
+    "layer_end": 14322600
+  },
+  "compute_intervals": [
+    {
+      "node": 0,
+      "start_ps": 13074200,
+      "end_ps": 14157240
+    },
+    {
+      "node": 1,
+      "start_ps": 13090680,
+      "end_ps": 14173720
+    },
+    {
+      "node": 2,
+      "start_ps": 13107160,
+      "end_ps": 14190200
+    },
+    {
+      "node": 3,
+      "start_ps": 12941800,
+      "end_ps": 13238408
+    }
+  ],
+  "computation": "three-matrix SwiGLU GEMM FLOPs",
+  "payload": "every explicit byte checked at target; synthetic weights/results, no numerical MLP",
+  "empty": false
+}

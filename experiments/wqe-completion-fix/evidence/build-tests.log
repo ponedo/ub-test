@@ -1,0 +1,73 @@
+ninja: Entering directory `cmake-cache'
+[0/2] Re-checking globbed directories...
+[1/11] Building CXX object src/unified-bus/CMakeFiles/unified-bus-test.dir/test/ub-test.cc.o
+/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/test/ub-test.cc: In member function ‘virtual void UbInitiatorProtocolDispatchDelayRtpTest::DoRun()’:
+/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/test/ub-test.cc:1193:25: warning: loop variable ‘<structured bindings>’ creates a copy from type ‘const std::pair<unsigned int, unsigned int>’ [-Wrange-loop-construct]
+ 1193 |         for (const auto [jettyNum, taskId] :
+      |                         ^~~~~~~~~~~~~~~~~~
+/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/test/ub-test.cc:1193:25: note: use reference type to prevent copying
+ 1193 |         for (const auto [jettyNum, taskId] :
+      |                         ^~~~~~~~~~~~~~~~~~
+      |                         &
+/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/test/ub-test.cc: In member function ‘virtual void UbTrafficGenIntegerDelayParserTest::DoRun()’:
+/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/test/ub-test.cc:3137:33: warning: loop variable ‘delay’ of type ‘const std::string&’ {aka ‘const std::__cxx11::basic_string<char>&’} binds to a temporary constructed from type ‘const char* const’ [-Wrange-loop-construct]
+ 3137 |         for (const std::string& delay : {"0ns", "10ns", "7us", "3ms", "2s", "1min"})
+      |                                 ^~~~~
+/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/test/ub-test.cc:3137:33: note: use non-reference type ‘const std::string’ {aka ‘const std::__cxx11::basic_string<char>’} to make the copy explicit or ‘const char* const&’ to prevent copying
+/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/test/ub-test.cc: In member function ‘virtual void UbSwitchRejectsReservedTpOpcodeTest::DoRun()’:
+/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/test/ub-test.cc:4936:36: warning: ‘static void ns3::UbDataLink::GenPacketHeader(ns3::Ptr<ns3::Packet>, bool, bool, uint8_t, uint8_t, ns3::RoutingType, ns3::UbDatalinkHeaderConfig)’ is deprecated: use AddPacketHeader [-Wdeprecated-declarations]
+ 4936 |         UbDataLink::GenPacketHeader(packet, false, true, kUrmaWriteRegressionPriority,
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 4937 |                                     kUrmaWriteRegressionPriority, RoutingType::PER_FLOW_SHORTEST_PATHS,
+      |                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 4938 |                                     UbDatalinkHeaderConfig::PACKET_IPV4);
+      |                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /workspace/scratch/c6ba02920254/wqe-completion-native/build/include/ns3/ub-datalink.h:1,
+                 from /workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-port.h:20,
+                 from /workspace/scratch/c6ba02920254/wqe-completion-native/build/include/ns3/ub-port.h:1,
+                 from /workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-controller.h:11,
+                 from /workspace/scratch/c6ba02920254/wqe-completion-native/build/include/ns3/ub-controller.h:1,
+                 from /workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/test/ub-node-test-fixture.h:4,
+                 from /workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/test/ub-test.cc:10:
+/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/protocol/ub-datalink.h:52:55: note: declared here
+   52 |     [[deprecated("use AddPacketHeader")]] static void GenPacketHeader(Ptr<Packet> packet,
+      |                                                       ^~~~~~~~~~~~~~~
+/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/test/ub-test.cc: At global scope:
+/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/test/ub-test.cc:35132:1: warning: ‘std::map<unsigned int, {anonymous}::TaskTimes> {anonymous}::ExtractCanonicalTaskTimes(const std::string&)’ defined but not used [-Wunused-function]
+35132 | ExtractCanonicalTaskTimes(const std::string& canonicalBytes)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/test/ub-test.cc:35105:1: warning: ‘void {anonymous}::WriteCanonicalClosNodeFile(const std::filesystem::__cxx11::path&, bool)’ defined but not used [-Wunused-function]
+35105 | WriteCanonicalClosNodeFile(const std::filesystem::path& caseDir, bool splitRanks)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/14/vector:66,
+                 from /workspace/scratch/c6ba02920254/wqe-completion-native/src/core/helper/csv-reader.h:17,
+                 from /workspace/scratch/c6ba02920254/wqe-completion-native/build/include/ns3/csv-reader.h:1,
+                 from /workspace/scratch/c6ba02920254/wqe-completion-native/build/include/ns3/core-module.h:8,
+                 from /workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-controller.h:5:
+In member function ‘constexpr std::vector<_Tp, _Alloc>::size_type std::vector<_Tp, _Alloc>::size() const [with _Tp = unsigned char; _Alloc = std::allocator<unsigned char>]’,
+    inlined from ‘constexpr std::vector<_Tp, _Alloc>::vector(const std::vector<_Tp, _Alloc>&) [with _Tp = unsigned char; _Alloc = std::allocator<unsigned char>]’ at /usr/include/c++/14/bits/stl_vector.h:603:61,
+    inlined from ‘constexpr ns3::UbByteEnableFields::UbByteEnableFields(const ns3::UbByteEnableFields&)’ at /workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-datatype.h:123:8,
+    inlined from ‘constexpr void std::_Construct(_Tp*, _Args&& ...) [with _Tp = ns3::UbByteEnableFields; _Args = {const ns3::UbByteEnableFields&}]’ at /usr/include/c++/14/bits/stl_construct.h:119:7,
+    inlined from ‘constexpr void std::_Optional_payload_base<_Tp>::_M_construct(_Args&& ...) [with _Args = {const ns3::UbByteEnableFields&}; _Tp = ns3::UbByteEnableFields]’ at /usr/include/c++/14/optional:274:19,
+    inlined from ‘constexpr void std::_Optional_payload_base<_Tp>::_M_copy_assign(const std::_Optional_payload_base<_Tp>&) [with _Tp = ns3::UbByteEnableFields]’ at /usr/include/c++/14/optional:177:26,
+    inlined from ‘constexpr std::_Optional_payload<_Tp, true, false, false>& std::_Optional_payload<_Tp, true, false, false>::operator=(const std::_Optional_payload<_Tp, true, false, false>&) [with _Tp = ns3::UbByteEnableFields]’ at /usr/include/c++/14/optional:407:22,
+    inlined from ‘constexpr std::_Optional_payload<_Tp, false, _Copy, _Move>& std::_Optional_payload<_Tp, false, _Copy, _Move>::operator=(const std::_Optional_payload<_Tp, false, _Copy, _Move>&) [with _Tp = ns3::UbByteEnableFields; bool _Copy = false; bool _Move = false]’ at /usr/include/c++/14/optional:433:26,
+    inlined from ‘constexpr std::_Optional_base<_Tp, <anonymous>, <anonymous> >& std::_Optional_base<_Tp, <anonymous>, <anonymous> >::operator=(const std::_Optional_base<_Tp, <anonymous>, <anonymous> >&) [with _Tp = ns3::UbByteEnableFields; bool <anonymous> = false; bool <anonymous> = false]’ at /usr/include/c++/14/optional:547:23,
+    inlined from ‘constexpr std::optional<ns3::UbByteEnableFields>& std::optional<ns3::UbByteEnableFields>::operator=(const std::optional<ns3::UbByteEnableFields>&)’ at /usr/include/c++/14/optional:703:11,
+    inlined from ‘constexpr ns3::UbTransactionFields& ns3::UbTransactionFields::operator=(const ns3::UbTransactionFields&)’ at /workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/model/ub-datatype.h:162:8,
+    inlined from ‘void UbTpQuiescenceAssessmentReportsTransactionReferencesTest::CheckRemoteTransportWork()’ at /workspace/scratch/c6ba02920254/wqe-completion-native/src/unified-bus/test/ub-test.cc:23864:60:
+/usr/include/c++/14/bits/stl_vector.h:993:40: warning: ‘((const std::vector<unsigned char, std::allocator<unsigned char> >*)((char*)request.m_ptr + 16))[17].std::vector<unsigned char>::std::_Vector_base<unsigned char, std::allocator<unsigned char> >.std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_impl.std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_impl::std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_impl_data.std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_impl_data::_M_finish’ may be used uninitialized [-Wmaybe-uninitialized]
+  993 |       { return size_type(this->_M_impl._M_finish - this->_M_impl._M_start); }
+      |                          ~~~~~~~~~~~~~~^~~~~~~~~
+/usr/include/c++/14/bits/stl_vector.h:993:66: warning: ‘((const std::vector<unsigned char, std::allocator<unsigned char> >*)((char*)request.m_ptr + 16))[17].std::vector<unsigned char>::std::_Vector_base<unsigned char, std::allocator<unsigned char> >.std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_impl.std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_impl::std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_impl_data.std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_impl_data::_M_start’ may be used uninitialized [-Wmaybe-uninitialized]
+  993 |       { return size_type(this->_M_impl._M_finish - this->_M_impl._M_start); }
+      |                                                    ~~~~~~~~~~~~~~^~~~~~~~
+[2/11] Building CXX object src/unified-bus/CMakeFiles/unified-bus-test.dir/test/ub-transaction-rules-test.cc.o
+[3/11] Building CXX object src/unified-bus/CMakeFiles/unified-bus-test.dir/test/ub-transaction-header-extension-test.cc.o
+[4/11] Building CXX object src/unified-bus/CMakeFiles/unified-bus-test.dir/test/ub-target-execution-test.cc.o
+[5/11] Building CXX object src/unified-bus/CMakeFiles/unified-bus-test.dir/test/ub-ldst-cfg-test.cc.o
+[6/11] Building CXX object src/unified-bus/CMakeFiles/unified-bus-test.dir/test/ub-link-fault-input-test.cc.o
+[7/11] Building CXX object src/unified-bus/CMakeFiles/unified-bus-test.dir/test/ub-reliable-rerouting-test.cc.o
+[8/11] Building CXX object src/unified-bus/CMakeFiles/unified-bus-test.dir/test/ub-structured-routing-test.cc.o
+[9/11] Building CXX object src/unified-bus/CMakeFiles/unified-bus-test.dir/test/ub-packet-rate-control-test.cc.o
+[10/11] Linking CXX shared library /workspace/scratch/c6ba02920254/wqe-completion-native/build/lib/libns3.44-unified-bus-test.so
