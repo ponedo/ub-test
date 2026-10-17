@@ -12,6 +12,10 @@
 #include <memory>
 #include <map>
 #include <deque>
+#include <chrono>
+#include <array>
+#include <iomanip>
+#include <sstream>
 using namespace ns3;
 void Require(bool ok,const std::string& why){if(!ok)throw std::runtime_error(why);}
 struct Assignment {uint32_t token,rank,expert,source,target,physical;};
@@ -41,7 +45,8 @@ public:
     std::ofstream log;
     std::string fault,capacityMetrics;
     WeightDistributionOptions weightOptions;
-    std::string jettyMode="pair";
+    std::string jettyMode="pair",logLevel="summary";bool combineLogged=false;
+#include "online-validation.inc"
     std::unique_ptr<PairJettyManager> pairJetties;
     std::map<std::pair<uint32_t,uint32_t>,uint32_t> nextSsn;
     std::ofstream admissions;
@@ -49,7 +54,9 @@ public:
     void SenderComplete(uint32_t task,uint32_t jetty){
         auto& x=transfers.at(task);Require(x.jettyId==jetty&&!x.senderDone,"sender identity/duplicate");
         Require(x.ready,"sender completed before target data ready");
+        if(fault=="missing-wqe")return;
         x.senderDone=true;++senderCount;TE("sender_complete",task,x.source);
+        if(fault=="duplicate-completion")TE("sender_complete",task,x.source);
     }
     uint32_t reorderNs=0,slowRelayRank=UINT32_MAX,slowRelayNs=0;
     std::set<std::tuple<uint32_t,uint32_t,uint32_t>> readyGroups;
@@ -59,6 +66,18 @@ public:
     static constexpr uint64_t startPs=1000;
     PhysicalExpert& P(uint32_t id){Require(pIndex.count(id),"unknown physical ID");return physical[pIndex.at(id)];}
     void Event(std::string event,int stage=-1,int id=-1,int node=-1,uint64_t off=0,uint64_t len=0,int task=-1){
+        Audit(event,stage,id,node,off,len,task);
+        if(logLevel=="events"){
+            auto key=[&](const std::string& name){log<<Simulator::Now().GetPicoSeconds()<<','<<name<<','<<stage<<','<<id<<','<<node<<','<<off<<','<<len<<','<<task<<'\n';};
+            if(event=="dispatch_gate"){key("dispatch_start");if(assignments.empty()){key("dispatch_end");key("combine_start");key("combine_end");}}
+            if(event=="data_ready"&&stage==0&&stageReadyCounts[0]==assignments.size())key("dispatch_end");
+            if(event=="send"&&stage==1&&spans["send"][0]<=Simulator::Now().GetPicoSeconds()&&!combineLogged){combineLogged=true;key("combine_start");}
+            if(event=="data_ready"&&stage==1&&stageReadyCounts[1]==assignments.size())key("combine_end");
+            if(event=="edge_ready")key("chunk_ready");
+            if(event=="weight_ready")key("replica_weight_ready");
+            if(event=="send"&&stage==2&&!transfers[task].dependencies.empty())key("relay_forward_start");
+        }
+        if(logLevel=="summary" || (logLevel=="events"&&!KeyEvent(event,stage,task)))return;
         log<<Simulator::Now().GetPicoSeconds()<<','<<event<<','<<stage<<','<<id<<','<<node<<','<<off<<','<<len<<','<<task<<'\n';
     }
     void TE(std::string event,uint32_t task,uint32_t node,uint64_t off=0,uint64_t len=0){auto& x=transfers.at(task);Event(event,x.stage,x.id,node,off,len,task);}
@@ -172,7 +191,7 @@ public:
                     uint32_t len=std::min<uint64_t>(segment,x.bytes-off);
                     Require(x.segmentOffsets.emplace(logical,off).second,"duplicate TA admission");
                     x.pendingResponses[ssn].push_back(logical);x.nextOffset+=len;++taCount;
-                    admissions<<Simulator::Now().GetPicoSeconds()<<','<<task<<','<<x.jettyId<<','<<logical<<','<<off<<','<<len<<'\n';
+                    if(logLevel=="debug")admissions<<Simulator::Now().GetPicoSeconds()<<','<<task<<','<<x.jettyId<<','<<logical<<','<<off<<','<<len<<'\n';
                     TE("ta_admitted",task,src,off,len);
                 }else{
                     // Responses retain the request SSN, never allocate payload offsets.
@@ -187,8 +206,8 @@ public:
     }
     void Topology(const std::string& out){
         GlobalValue::Bind("UB_CC_ENABLED",BooleanValue(false));UbUtils::Get();
-        for(auto key:{"UB_TRACE_ENABLE","UB_PACKET_TRACE_ENABLE","UB_PORT_TRACE_ENABLE","UB_RECORD_PKT_TRACE"})GlobalValue::Bind(key,BooleanValue(true));
-        std::filesystem::create_directories(out+"/native/runlog");UbUtils::SetTracePathForTest(out+"/native");traceOn=true;
+        for(auto key:{"UB_TRACE_ENABLE","UB_PACKET_TRACE_ENABLE","UB_PORT_TRACE_ENABLE","UB_RECORD_PKT_TRACE"})GlobalValue::Bind(key,BooleanValue(logLevel=="debug"));
+        if(logLevel=="debug"){std::filesystem::create_directories(out+"/native/runlog");UbUtils::SetTracePathForTest(out+"/native");}traceOn=true;
         nodes.resize(n+1);for(uint32_t i=0;i<n;++i)Init(i,true,1);Init(n,false,n);
         for(uint32_t i=0;i<n;++i){auto link=CreateObject<UbLink>();link->SetAttribute("Delay",TimeValue(NanoSeconds(linkDelayNs)));DynamicCast<UbPort>(nodes[i]->GetDevice(0))->Attach(link);DynamicCast<UbPort>(nodes[n]->GetDevice(i))->Attach(link);Route(n,i,i);for(uint32_t j=0;j<n;++j)if(i!=j)Route(i,j,0);}
         std::set<std::pair<uint32_t,uint32_t>> pairs;
@@ -228,9 +247,15 @@ public:
             if(x.stage==2&&!P(x.sourcePhysical).replica&&x.target==slowRelayRank)delay+=slowRelayNs;
             if(delay)Simulator::Schedule(NanoSeconds(delay),complete);else complete();
         })),"target executor");
-        UbUtils::Get()->TopoTraceConnect();for(auto [a,b]:pairs){UbUtils::Get()->SingleTpTraceConnect(a,Tpn(a,b));UbUtils::Get()->SingleTpTraceConnect(b,Tpn(b,a));}
+        txBytes.assign(n+1,0);rxBytes.assign(n+1,0);txPackets.assign(n+1,0);rxPackets.assign(n+1,0);
+        for(uint32_t rank=0;rank<nodes.size();++rank)for(uint32_t port=0;port<nodes[rank]->GetNDevices();++port){
+            auto p=DynamicCast<UbPort>(nodes[rank]->GetDevice(port));
+            p->TraceConnectWithoutContext("PortTxNotify",Callback<void,uint32_t,uint32_t,uint32_t>([this,rank](uint32_t,uint32_t,uint32_t size){++txPackets[rank];txBytes[rank]+=size;}));
+            p->TraceConnectWithoutContext("PortRxNotify",Callback<void,uint32_t,uint32_t,uint32_t>([this,rank](uint32_t,uint32_t,uint32_t size){++rxPackets[rank];rxBytes[rank]+=size;}));
+        }
+        if(logLevel=="debug"){UbUtils::Get()->TopoTraceConnect();for(auto [a,b]:pairs){UbUtils::Get()->SingleTpTraceConnect(a,Tpn(a,b));UbUtils::Get()->SingleTpTraceConnect(b,Tpn(b,a));}}
     }
-    void Validate(uint32_t task,uint64_t off,const std::vector<uint8_t>& data){auto& x=transfers.at(task);for(size_t i=0;i<data.size();++i){Require(data[i]==ExpectedByte(task,off+i),"payload byte mismatch");x.data[off+i]=data[i];if(x.stage==2)weightData[pIndex.at(x.physical)][x.offset+off+i]=data[i];}}
+    void Validate(uint32_t task,uint64_t off,const std::vector<uint8_t>& data){auto wall=std::chrono::steady_clock::now();auto& x=transfers.at(task);for(size_t i=0;i<data.size();++i){Require(data[i]==ExpectedByte(task,off+i),"payload byte mismatch");x.data[off+i]=data[i];if(x.stage==2)weightData[pIndex.at(x.physical)][x.offset+off+i]=data[i];}verificationNs+=std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now()-wall).count();}
     void Send(uint32_t task){auto& x=transfers.at(task);Require(!x.sent,"duplicate forwarding");
         Require(planningDone,"send before planning");if(x.stage==0)Require(dispatchStarted,"dispatch gate");if(x.stage==1)Require(finished[x.source],"combine before compute");
         if(x.stage==2)for(auto parent:x.dependencies)Require(transfers[parent].ready,"relay before target chunk ready (including group)");
@@ -248,7 +273,8 @@ public:
             TE("relay_buffer_read",task,x.source,x.offset,x.bytes);
             if(fault=="relay-byte")data.back()^=1;
         }
-        if(x.stage==2&&fault=="weight-byte")data.back()^=1;
+        if((x.stage==2&&fault=="weight-byte")||fault=="payload-byte")data.back()^=1;
+        if(fault=="early-wqe"&&x.source!=x.target)SenderComplete(task,x.jettyId);
         if(x.stage==2&&fault=="premature-ready")Ready(task);
         if(x.source==x.target){Simulator::ScheduleNow([this,task,data]{auto& x=transfers[task];Validate(task,0,data);TE("local_verified",task,x.target,0,x.bytes);Ready(task);});return;}
         auto fn=Ctrl(x.source)->GetUbFunction();auto wqe=fn->CreateWqe(x.source,x.target,x.bytes,task,UbTransactionOpcode::WRITE);wqe->SetExplicitPayload(Create<Packet>(data.data(),data.size()));Require(fn->SubmitWqe(wqe,x.jettyId).status==UbWqeSubmissionStatus::ACCEPTED,"WQE rejected");
@@ -286,8 +312,7 @@ public:
         Event("weight_ready",2,pid,P(pid).rank,0,weightBytes);
         if(--pendingWeights==0){weightsDone=true;Event("weights_end");Gate();}
     }
-    void WriteArtifacts(const std::string& out){
-        std::ofstream graph(out+"/executed-transfers.csv");
+    void Graph(std::ostream& graph){
         graph<<"task,stage,id,source,target,physical,bytes,source_physical,offset,dependencies\n";
         for(uint32_t task=0;task<transfers.size();++task){auto& x=transfers[task];
             graph<<task<<','<<x.stage<<','<<x.id<<','<<x.source<<','<<x.target<<','<<x.physical<<','<<x.bytes<<','<<x.sourcePhysical<<','<<x.offset<<',';
@@ -295,6 +320,8 @@ public:
             graph<<'\n';
         }
     }
+    std::string GraphHash(){std::ostringstream graph;Graph(graph);auto text=graph.str();return Hex(Hash(14695981039346656037ULL,text.data(),text.size()));}
+    void WriteArtifacts(const std::string& out){std::ofstream graph(out+"/executed-transfers.csv");Graph(graph);}
     void WritePayloads(const std::string& out){
         std::ofstream data(out+"/received-payloads.bin",std::ios::binary),index(out+"/payload-index.csv");
         index<<"task,offset,bytes\n";uint64_t off=0;
@@ -316,8 +343,10 @@ public:
         });
     }
     void Run(const std::string& input,const std::string& out){
-        Read(input);std::filesystem::create_directories(out);admissions.open(out+"/ta-identity.csv");admissions<<"time_ps,task,jetty,logical_ssn,offset,bytes\n";log.open(out+"/events.csv");Require(bool(log),"log");log<<"time_ps,event,stage,id,node,offset,bytes,task\n";
-        WriteArtifacts(out);Topology(out);Simulator::Schedule(PicoSeconds(startPs),&Layer::Start,this);Simulator::Stop(Seconds(10));Simulator::Run();
+        Read(input);InitAudit();std::filesystem::create_directories(out);
+        if(logLevel=="debug"){admissions.open(out+"/ta-identity.csv");admissions<<"time_ps,task,jetty,logical_ssn,offset,bytes\n";WriteArtifacts(out);}
+        if(logLevel!="summary"){log.open(out+"/events.csv");Require(bool(log),"log");log<<"time_ps,event,stage,id,node,offset,bytes,task\n";}
+        Topology(out);Simulator::Schedule(PicoSeconds(startPs),&Layer::Start,this);Simulator::Stop(Seconds(10));Simulator::Run();
         if(!capacityMetrics.empty()){
             std::ofstream metrics(capacityMetrics);Require(bool(metrics),"capacity metrics file");
             metrics<<"{\"simulator_events\":"<<Simulator::GetEventCount()<<",\"assignments\":"<<assignments.size()
@@ -326,8 +355,9 @@ public:
         }
         for(auto& x:transfers)if(x.source!=x.target)Require(x.nextOffset==x.bytes&&x.pendingResponses.empty(),"incomplete TA admission/response tracking");
         Require(dispatchStarted&&receivedTokens==t&&pendingWeights==0&&senderCount==remoteCount,"unfinished layer");for(auto& x:transfers)Require(x.sent&&x.ready,"missing transfer");for(auto r:weightReady)Require(r,"missing weight");
+        pairJetties->CheckIdle();FinalAudit();
         std::cout<<"PASS forward: N="<<n<<" assignments="<<assignments.size()<<" replicas="<<physical.size()-e<<" remote_WQEs="<<remoteCount<<" target-verified bytes\n";
-        pairJetties->CheckIdle();WritePayloads(out);admissions.close();log.close();UbUtils::Get()->Destroy();traceOn=false;Simulator::Destroy();
+        WriteSummary(out);if(logLevel=="debug")WritePayloads(out);admissions.close();log.close();UbUtils::Get()->Destroy();traceOn=false;Simulator::Destroy();
     }
 };
-int main(int argc,char** argv){Time::SetResolution(Time::PS);Layer layer;std::string input,out;CommandLine cmd;cmd.AddValue("input","validated execution input",input);cmd.AddValue("out","output directory",out);cmd.AddValue("capacityMetrics","optional post-run capacity counters",layer.capacityMetrics);cmd.AddValue("fault","test-only fault injection",layer.fault);cmd.AddValue("jettyMode","pair or per-wqe",layer.jettyMode);cmd.Parse(argc,argv);try{Require(layer.jettyMode=="pair"||layer.jettyMode=="per-wqe","unknown Jetty mode");Require(layer.fault.empty()||layer.fault=="weight-byte"||layer.fault=="premature-ready"||layer.fault=="duplicate-weight"||layer.fault=="early-compute"||layer.fault=="early-group"||layer.fault=="relay-byte"||layer.fault=="relay-buffer-byte"||layer.fault=="duplicate-notify"||layer.fault=="early-relay"||layer.fault=="early-final-ready","unknown fault");Require(!input.empty()&&!out.empty(),"input/out");layer.Run(input,out);}catch(const std::exception& ex){if(layer.log){layer.Event("error");layer.log.flush();}if(layer.traceOn)UbUtils::Get()->Destroy();std::cerr<<"ERROR: "<<ex.what()<<'\n';return 2;}return 0;}
+int main(int argc,char** argv){Time::SetResolution(Time::PS);Layer layer;std::string input,out;CommandLine cmd;cmd.AddValue("input","validated execution input",input);cmd.AddValue("out","output directory",out);cmd.AddValue("capacityMetrics","optional post-run capacity counters",layer.capacityMetrics);cmd.AddValue("fault","test-only fault injection",layer.fault);cmd.AddValue("logLevel","summary (default), events, debug",layer.logLevel);cmd.AddValue("jettyMode","pair or per-wqe",layer.jettyMode);cmd.Parse(argc,argv);try{Require(layer.logLevel=="summary"||layer.logLevel=="events"||layer.logLevel=="debug","unknown log level");Require(layer.jettyMode=="pair"||layer.jettyMode=="per-wqe","unknown Jetty mode");Require(layer.fault=="payload-byte"||layer.fault=="early-wqe"||layer.fault=="missing-wqe"||layer.fault=="duplicate-completion"||layer.fault.empty()||layer.fault=="weight-byte"||layer.fault=="premature-ready"||layer.fault=="duplicate-weight"||layer.fault=="early-compute"||layer.fault=="early-group"||layer.fault=="relay-byte"||layer.fault=="relay-buffer-byte"||layer.fault=="duplicate-notify"||layer.fault=="early-relay"||layer.fault=="early-final-ready","unknown fault");Require(!input.empty()&&!out.empty(),"input/out");layer.Run(input,out);}catch(const std::exception& ex){if(!out.empty()){std::filesystem::create_directories(out);std::ofstream failed(out+"/validation.json");failed<<"{\"status\":\"FAIL\",\"error\":\""<<ex.what()<<"\"}\n";}if(layer.log){layer.Event("error");layer.log.flush();}if(layer.traceOn)UbUtils::Get()->Destroy();std::cerr<<"ERROR: "<<ex.what()<<'\n';return 2;}return 0;}

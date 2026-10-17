@@ -93,7 +93,7 @@ def main():
         case_inputs(source, dest)
         command = [str(binary), '--input=' + str(dest / 'input.txt'), '--out=' + str(dest),
                    '--capacityMetrics=' + str(dest / 'simulator-metrics.json'),
-                   '--jettyMode=' + a.jetty_mode, '--fault=' + fault]
+                   '--jettyMode=' + a.jetty_mode, '--logLevel=debug', '--fault=' + fault]
         result = guard.run(command, case / 'host', 300, case=case,
                            env={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8','LD_LIBRARY_PATH':str(lib)})
         return dest, result, (case / 'host/console.txt').read_text()

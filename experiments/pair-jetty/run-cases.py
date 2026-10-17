@@ -21,7 +21,7 @@ try:
    case=a.out/caseid/mode;dest=case/'run';dest.mkdir(parents=True)
    for name in ['input.txt','config.json','plan.json','assignments.csv','transfers.csv','graph-input.txt','weight-edges.csv']:
     if (source/name).exists():shutil.copy2(source/name,dest/name)
-   cmd=[str(a.binary.resolve()),'--input='+str(dest/'input.txt'),'--out='+str(dest),'--capacityMetrics='+str(dest/'simulator-metrics.json'),'--jettyMode='+mode]
+   cmd=[str(a.binary.resolve()),'--input='+str(dest/'input.txt'),'--out='+str(dest),'--capacityMetrics='+str(dest/'simulator-metrics.json'),'--jettyMode='+mode,'--logLevel=debug']
    record={'case':caseid,'mode':mode,'inputs':{x.name:sha(x) for x in dest.iterdir()},'command':cmd}
    ledger.append(record)
    result=run(cmd,case/'host',300,case=case,env={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8','LD_LIBRARY_PATH':str(a.lib.resolve())})

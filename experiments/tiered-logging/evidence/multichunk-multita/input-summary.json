@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "mode": "ultraep",
+  "strategy": "chunk-streaming",
+  "topology": "single-switch",
+  "npus": 4,
+  "ep_degree": 4,
+  "experts": 4,
+  "top_k": 1,
+  "tokens": 32,
+  "runtime": {
+    "model_dim": 64,
+    "ff_dim": 128,
+    "dtype_bytes": 2,
+    "segment_bytes": 1024,
+    "peak_gflops": 1000,
+    "util_permille": 500,
+    "setup_ns": 100,
+    "seed": 20261015,
+    "link_gbps": 100,
+    "link_delay_ns": 20,
+    "matrices": 3,
+    "planning_ns": 200,
+    "reroute_ns": 100,
+    "weight_completion_ns": 0,
+    "weight_strategy": "chunk-streaming",
+    "weight_bytes": 49152,
+    "weight_size_kind": "matrix_exact",
+    "chunk_bytes": 4096,
+    "relay_min_replicas": 4,
+    "relay_max_relays": 8,
+    "relay_min_fanout_gain": 2,
+    "force_relay": true,
+    "reorder_ns": 0,
+    "slow_relay_rank": 4294967295,
+    "slow_relay_ns": 0
+  },
+  "planner_parameters": {
+    "schema_version": 1,
+    "npus": 4,
+    "experts": 4,
+    "top_k": 1,
+    "main_placement": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "slots": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "beta": "1.01",
+    "min_replica_quota": 1024,
+    "mode": "upstream-compatible",
+    "allow_zero_main": false,
+    "rounding": "code",
+    "oracle_epsilon": "0.01",
+    "kernel_stage": 1,
+    "locality_aware": true
+  },
+  "physical": [
+    {
+      "expert": 0,
+      "id": 0,
+      "rank": 0,
+      "quota": 10,
+      "kind": "main",
+      "slot": 0,
+      "weight_source_rank": 0,
+      "weight_source_physical": 0
+    },
+    {
+      "expert": 1,
+      "id": 2,
+      "rank": 1,
+      "quota": 0,
+      "kind": "main",
+      "slot": 0,
+      "weight_source_rank": 1,
+      "weight_source_physical": 2
+    },
+    {
+      "expert": 0,
+      "id": 3,
+      "rank": 1,
+      "quota": 10,
+      "kind": "replica",
+      "slot": 1,
+      "weight_source_rank": 0,
+      "weight_source_physical": 0
+    },
+    {
+      "expert": 2,
+      "id": 4,
+      "rank": 2,
+      "quota": 0,
+      "kind": "main",
+      "slot": 0,
+      "weight_source_rank": 2,
+      "weight_source_physical": 4
+    },
+    {
+      "expert": 0,
+      "id": 5,
+      "rank": 2,
+      "quota": 10,
+      "kind": "replica",
+      "slot": 1,
+      "weight_source_rank": 0,
+      "weight_source_physical": 0
+    },
+    {
+      "expert": 3,
+      "id": 6,
+      "rank": 3,
+      "quota": 0,
+      "kind": "main",
+      "slot": 0,
+      "weight_source_rank": 3,
+      "weight_source_physical": 6
+    },
+    {
+      "expert": 0,
+      "id": 7,
+      "rank": 3,
+      "quota": 2,
+      "kind": "replica",
+      "slot": 1,
+      "weight_source_rank": 0,
+      "weight_source_physical": 0
+    }
+  ],
+  "replicas": 3,
+  "per_npu_load": [
+    10,
+    10,
+    10,
+    2
+  ],
+  "max_npu_assignment_load": 10,
+  "npu_load_jain": 0.8421052631578947,
+  "expert_load": [
+    32,
+    0,
+    0,
+    0
+  ],
+  "expert_load_jain": 0.25,
+  "routing_seed": null,
+  "popularity": null,
+  "versions": {},
+  "input_hashes": {
+    "input.txt": "2c5255e8d87740bc2ab4767d8eb3f33d675736b868e470600e4645a1f1e12e61",
+    "config.json": "859c10bbeeef6e69a6f9950836e310e0e04dcee37153df749f1b973088e21ec3",
+    "plan.json": "650b39527ba68836d87a65367f727536b3fa7949bacfcdf22883cb8c5daf669d"
+  },
+  "validation": {
+    "status": "PASS",
+    "tokens": 32,
+    "assignments": 32,
+    "physical_experts": 7,
+    "replicas": 3,
+    "transfers": 100,
+    "input_sha256": "2c5255e8d87740bc2ab4767d8eb3f33d675736b868e470600e4645a1f1e12e61",
+    "executed_graph_sha256": "991d58d01fd6ba87fc15467090d8dbe4f9f99a34dd3efa7851c5da2a90eed76a",
+    "executed_graph_fnv1a64": "87cac9aed96c89ff",
+    "checks": [
+      "individual routing/physical identity",
+      "all physical quotas",
+      "main placement and weight provenance",
+      "replica slot budgets",
+      "accepted planner independent checker (UltraEP)",
+      "complete integer execution input contract",
+      "native weight graph and dependency reconstruction",
+      "executed graph when supplied"
+    ]
+  }
+}

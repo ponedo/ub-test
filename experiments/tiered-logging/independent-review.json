@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "scope": "Independent final review of frozen logging source, completed mode/fault matrix, regression ledger and small evidence package. Remote publication remains pending.",
+  "matrix_sha256": "6afafd005493dc55d35e8b739645cde056b58e4382de5f4f5609f1b6ceefbebd",
+  "simulation_runs": 20,
+  "same_input_case_comparisons": 5,
+  "legacy_artifacts_byte_identical": 534,
+  "fault_tests": 39,
+  "all_fault_tests_passed": true,
+  "findings": [
+    "Per-segment state and actual bytes are checked before persistence selection.",
+    "Preflight reconstructs config/plan/input and checks actual graph fingerprint.",
+    "Summary and events create no native trace or raw payload outputs in tested cases.",
+    "Native packet counts come from unconditional actual port notifications; all-hop totals include switch forwarding.",
+    "Verification wall time is nested in measured host wall time; file sizes exclude documented input fixture copies.",
+    "Debug outputs pass unchanged offline oracle and match accepted binary artifacts."
+  ],
+  "remaining_limits": [
+    "This is a representative matrix, not a new full EP64 token scaling scan.",
+    "No event filter CLI is implemented; events mode preserves all selected application key events.",
+    "Native protocol response semantics are unchanged and rely on accepted native implementation plus runtime association/idle checks."
+  ],
+  "packaged_matrix_sha256": "6afafd005493dc55d35e8b739645cde056b58e4382de5f4f5609f1b6ceefbebd",
+  "regression_stages_passed": [
+    "build-native-test",
+    "native-tests",
+    "pair-basic",
+    "pair-lifecycle",
+    "pair-nb",
+    "pair-weights",
+    "pair-negative",
+    "old-ultraep"
+  ],
+  "output_accounting": "EP64 simulator outputs: summary 7125 bytes, events 79777 bytes, debug 28982244 bytes. Input provenance 40326 bytes and shared input copies 2860051 bytes are separate; summary plus provenance is 47451 bytes.",
+  "cli_coverage": "pair-layer default summary runs in-process per-task/segment checks. Independent config/plan/input cross-checks require the provided scan runner or explicit pre/postflight."
+}

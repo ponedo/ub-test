@@ -1,0 +1,84 @@
+{
+  "status": "PASS",
+  "runs": [
+    {
+      "strategy": "no-balancing",
+      "status": "PASS",
+      "compared_summary_fields": [
+        "layer_latency_ps",
+        "tokens",
+        "assignments",
+        "npus",
+        "replicas",
+        "max_npu_load",
+        "per_npu_load",
+        "weight_bytes",
+        "weight_WQEs",
+        "weight_TAs",
+        "remote_WQEs",
+        "verified_bytes",
+        "remote_bytes",
+        "local_bytes",
+        "target_segments",
+        "timeline",
+        "compute_intervals"
+      ],
+      "exact_input_hashes": true,
+      "exact_simulator_metrics": true,
+      "exact_stage_spans": true
+    },
+    {
+      "strategy": "direct",
+      "status": "PASS",
+      "compared_summary_fields": [
+        "layer_latency_ps",
+        "tokens",
+        "assignments",
+        "npus",
+        "replicas",
+        "max_npu_load",
+        "per_npu_load",
+        "weight_bytes",
+        "weight_WQEs",
+        "weight_TAs",
+        "remote_WQEs",
+        "verified_bytes",
+        "remote_bytes",
+        "local_bytes",
+        "target_segments",
+        "timeline",
+        "compute_intervals"
+      ],
+      "exact_input_hashes": true,
+      "exact_simulator_metrics": true,
+      "exact_stage_spans": true
+    },
+    {
+      "strategy": "chunk-streaming",
+      "status": "PASS",
+      "compared_summary_fields": [
+        "layer_latency_ps",
+        "tokens",
+        "assignments",
+        "npus",
+        "replicas",
+        "max_npu_load",
+        "per_npu_load",
+        "weight_bytes",
+        "weight_WQEs",
+        "weight_TAs",
+        "remote_WQEs",
+        "verified_bytes",
+        "remote_bytes",
+        "local_bytes",
+        "target_segments",
+        "timeline",
+        "compute_intervals"
+      ],
+      "exact_input_hashes": true,
+      "exact_simulator_metrics": true,
+      "exact_stage_spans": true
+    }
+  ],
+  "scope": "N256 normal summary runner exact-input replay versus accepted prior debug scale evidence"
+}

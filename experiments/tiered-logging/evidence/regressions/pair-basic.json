@@ -1,0 +1,64 @@
+[
+  {
+    "case": "single-single",
+    "rc": 0,
+    "wall": 0.032533877005334944,
+    "command": [
+      "/workspace/scratch/c6ba02920254/tiered-logging-raw/build-final/pair-probe",
+      "--output=/workspace/scratch/c6ba02920254/tiered-logging-raw/regressions-final/pair-basic/single-single",
+      "--mode=singleonesegment"
+    ]
+  },
+  {
+    "case": "single-multi",
+    "rc": 0,
+    "wall": 0.03191103698918596,
+    "command": [
+      "/workspace/scratch/c6ba02920254/tiered-logging-raw/build-final/pair-probe",
+      "--output=/workspace/scratch/c6ba02920254/tiered-logging-raw/regressions-final/pair-basic/single-multi",
+      "--mode=single"
+    ]
+  },
+  {
+    "case": "multi-single",
+    "rc": 0,
+    "wall": 0.03180837497347966,
+    "command": [
+      "/workspace/scratch/c6ba02920254/tiered-logging-raw/build-final/pair-probe",
+      "--output=/workspace/scratch/c6ba02920254/tiered-logging-raw/regressions-final/pair-basic/multi-single",
+      "--mode=onesegment"
+    ]
+  },
+  {
+    "case": "multi-interleave",
+    "rc": 0,
+    "wall": 0.03179137996630743,
+    "command": [
+      "/workspace/scratch/c6ba02920254/tiered-logging-raw/build-final/pair-probe",
+      "--output=/workspace/scratch/c6ba02920254/tiered-logging-raw/regressions-final/pair-basic/multi-interleave"
+    ]
+  },
+  {
+    "case": "late-overlap",
+    "rc": 0,
+    "wall": 0.031874182051979005,
+    "command": [
+      "/workspace/scratch/c6ba02920254/tiered-logging-raw/build-final/pair-probe",
+      "--output=/workspace/scratch/c6ba02920254/tiered-logging-raw/regressions-final/pair-basic/late-overlap",
+      "--lateNs=25000"
+    ]
+  },
+  {
+    "case": "pressure",
+    "rc": 0,
+    "wall": 0.06415433104848489,
+    "command": [
+      "/workspace/scratch/c6ba02920254/tiered-logging-raw/build-final/pair-probe",
+      "--output=/workspace/scratch/c6ba02920254/tiered-logging-raw/regressions-final/pair-basic/pressure",
+      "--count=16",
+      "--segments=32",
+      "--lateNs=25000",
+      "--duplicateDone=1"
+    ]
+  }
+]

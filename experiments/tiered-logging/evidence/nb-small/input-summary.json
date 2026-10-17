@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "mode": "no-balancing",
+  "strategy": "direct",
+  "topology": "single-switch",
+  "npus": 4,
+  "ep_degree": 4,
+  "experts": 4,
+  "top_k": 1,
+  "tokens": 16,
+  "runtime": {
+    "model_dim": 64,
+    "ff_dim": 128,
+    "dtype_bytes": 2,
+    "segment_bytes": 1024,
+    "peak_gflops": 1000,
+    "util_permille": 500,
+    "setup_ns": 100,
+    "seed": 20261015,
+    "link_gbps": 100,
+    "link_delay_ns": 20,
+    "matrices": 3,
+    "planning_ns": 0,
+    "reroute_ns": 0,
+    "weight_completion_ns": 0,
+    "weight_strategy": "direct",
+    "weight_bytes": 49152,
+    "weight_size_kind": "matrix_exact",
+    "chunk_bytes": 4096,
+    "relay_min_replicas": 4,
+    "relay_max_relays": 8,
+    "relay_min_fanout_gain": 2,
+    "force_relay": false,
+    "reorder_ns": 0,
+    "slow_relay_rank": 4294967295,
+    "slow_relay_ns": 0
+  },
+  "planner_parameters": {
+    "schema_version": 1,
+    "npus": 4,
+    "experts": 4,
+    "top_k": 1,
+    "main_placement": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "slots": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "beta": "1.01",
+    "min_replica_quota": 1024,
+    "mode": "upstream-compatible",
+    "allow_zero_main": false,
+    "rounding": "code",
+    "oracle_epsilon": "0.01",
+    "kernel_stage": 1,
+    "locality_aware": true
+  },
+  "physical": [
+    {
+      "id": 0,
+      "expert": 0,
+      "rank": 0,
+      "kind": "main",
+      "slot": 0,
+      "quota": 8,
+      "weight_source_rank": 0,
+      "weight_source_physical": 0
+    },
+    {
+      "id": 2,
+      "expert": 1,
+      "rank": 1,
+      "kind": "main",
+      "slot": 0,
+      "quota": 0,
+      "weight_source_rank": 1,
+      "weight_source_physical": 2
+    },
+    {
+      "id": 4,
+      "expert": 2,
+      "rank": 2,
+      "kind": "main",
+      "slot": 0,
+      "quota": 4,
+      "weight_source_rank": 2,
+      "weight_source_physical": 4
+    },
+    {
+      "id": 6,
+      "expert": 3,
+      "rank": 3,
+      "kind": "main",
+      "slot": 0,
+      "quota": 4,
+      "weight_source_rank": 3,
+      "weight_source_physical": 6
+    }
+  ],
+  "replicas": 0,
+  "per_npu_load": [
+    8,
+    0,
+    4,
+    4
+  ],
+  "max_npu_assignment_load": 8,
+  "npu_load_jain": 0.6666666666666666,
+  "expert_load": [
+    8,
+    0,
+    4,
+    4
+  ],
+  "expert_load_jain": 0.6666666666666666,
+  "routing_seed": null,
+  "popularity": null,
+  "versions": {},
+  "input_hashes": {
+    "input.txt": "f280ad96091c4f2517ba37dd66f56788abfe7bd5ba8cc9aaeac9de40d173bc7a",
+    "config.json": "7d318836df127b782e390cdfefca59470f19070e3ffb154d86f74b359cd221e2",
+    "plan.json": "54b9ae35e1a60a6dac4c88f5aefff01f5d8d462fa7c2c6da183f817c9ca9014c"
+  },
+  "validation": {
+    "status": "PASS",
+    "tokens": 16,
+    "assignments": 16,
+    "physical_experts": 4,
+    "replicas": 0,
+    "transfers": 32,
+    "input_sha256": "f280ad96091c4f2517ba37dd66f56788abfe7bd5ba8cc9aaeac9de40d173bc7a",
+    "executed_graph_sha256": "5b27fbcdebc0b2a2a3fd58955691b1599cfd25928a493f41e7a73888ea5f2e46",
+    "executed_graph_fnv1a64": "15acd8cbf7694120",
+    "checks": [
+      "individual routing/physical identity",
+      "all physical quotas",
+      "main placement and weight provenance",
+      "replica slot budgets",
+      "accepted planner independent checker (UltraEP)",
+      "complete integer execution input contract",
+      "native weight graph and dependency reconstruction",
+      "executed graph when supplied"
+    ]
+  }
+}

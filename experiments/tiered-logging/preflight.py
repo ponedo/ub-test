@@ -1,0 +1,139 @@
+#!/usr/bin/env python3
+"""Independent input/plan/graph contract checks, without simulator trace files.
+
+Does not solve/replan, change inputs, or trust executor PASS text. The accepted
+weight graph tool reconstructs the graph directly from validated plan metadata.
+All assignments and quotas are compared individually, not just aggregate counts.
+"""
+import argparse
+import csv
+import hashlib
+import importlib.util
+import io
+import json
+import subprocess
+import sys
+from collections import Counter
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+KEYS = ['npus','experts','top_k','tokens','model_dim','ff_dim','dtype_bytes',
+        'segment_bytes','peak_gflops','util_permille','setup_ns','seed','link_gbps','link_delay_ns']
+FIELDS = ['task','stage','id','source','target','physical','bytes','source_physical','offset','dependencies']
+KINDS = {'direct':0,'two-stage':1,'chunk-streaming':2}
+
+def require(value, message):
+    if not value:
+        raise ValueError(message)
+
+def canonical_graph(transfers):
+    lines = [','.join(FIELDS)]
+    for x in transfers:
+        lines.append(','.join(';'.join(map(str,x[k])) if k=='dependencies' else str(x[k]) for k in FIELDS))
+    return '\n'.join(lines)+'\n'
+
+def fnv1a64(data):
+    value=14695981039346656037
+    for byte in data:
+        value=((value ^ byte)*1099511628211)&0xffffffffffffffff
+    return f'{value:016x}'
+
+def check(directory, graph_tool, execution_summary=None):
+    root=Path(directory);c=json.loads((root/'config.json').read_text());plan=json.loads((root/'plan.json').read_text())
+    pc=c['planner_input'];p=c['runtime'];n=pc['npus'];e=pc['experts'];k=pc['top_k'];mapping=pc['mapping'];physical=plan['physical'];byid={x['id']:x for x in physical}
+    require(c['mode'] in ('no-balancing','ultraep'),'mode')
+    require(len(byid)==len(physical),'duplicate physical ID')
+    require(len({(x['rank'],x['expert']) for x in physical})==len(physical),'duplicate rank/expert')
+    require(len(pc['main_placement'])==e,'main placement dimension')
+    for x in range(e):
+        mains=[ph for ph in physical if ph['expert']==x and ph['kind']=='main']
+        require(len(mains)==1 and mains[0]['rank']==pc['main_placement'][x],'main moved or missing')
+    replicas=Counter()
+    for ph in physical:
+        require(0<=ph['rank']<n and 0<=ph['expert']<e and type(ph['quota']) is int and ph['quota']>=0,'physical bounds/quota')
+        require(ph['kind'] in ('main','replica'),'physical kind')
+        source=byid[ph['weight_source_physical']]
+        require(source['kind']=='main' and source['expert']==ph['expert'] and source['rank']==ph['weight_source_rank'],'weight provenance')
+        if ph['kind']=='replica':replicas[ph['rank']]+=1
+    require(all(replicas[r]<=pc['slots'][r] for r in range(n)),'replica slots exceeded')
+    require(len(plan['token_mapping'])==len(mapping),'token mapping count')
+    assignments=[];counts=Counter()
+    for token,(inp,row) in enumerate(zip(mapping,plan['token_mapping'])):
+        require(0<=inp['source']<n and len(inp['experts'])==k and len(set(inp['experts']))==k,'routing top-k/source')
+        require(row['token']==token and row['source']==inp['source'] and row['logical_experts']==inp['experts'] and len(row['physical_experts'])==k,'routing identity')
+        for rank,(expert,pid) in enumerate(zip(inp['experts'],row['physical_experts'])):
+            require(0<=expert<e and byid[pid]['expert']==expert,'logical/physical expert identity')
+            assignments.append(dict(assignment=len(assignments),token=token,rank=rank,expert=expert,physical=pid,source=inp['source'],target=byid[pid]['rank']))
+            counts[pid]+=1
+    require(assignments==c['assignments'],'config assignments differ from token/plan identity')
+    require(all(counts[ph['id']]==ph['quota'] for ph in physical),'physical quota mismatch')
+    if c['mode']=='ultraep':
+        spec=importlib.util.spec_from_file_location('tiered_planner_checker',HERE.parents[1]/'planner/quota/checker.py')
+        mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod);mod.check(pc,plan)
+    else:
+        require(not replicas and not p['planning_ns'] and not p['reroute_ns'],'baseline replication/planning')
+    kind=KINDS[c['weight_strategy']]
+    order=plan.get('ordinal_physical_order',list(byid)) if kind else list(byid)
+    require(len(order)==len(physical) and set(order)==set(byid),'physical ordinal order')
+    cut=(p['matrices']-1)*p['model_dim']*p['ff_dim']*p['dtype_bytes'] if p['weight_size_kind']=='matrix_exact' else 0
+    opts=[p['chunk_bytes'],p['relay_min_replicas'],p['relay_max_relays'],p['relay_min_fanout_gain'],int(p['force_relay']),cut,p['reorder_ns'],p['slow_relay_rank'],p['slow_relay_ns']]
+    physrow=lambda ph:[ph['id'],ph['expert'],ph['rank'],int(ph['kind']=='replica'),ph['quota'],ph['weight_source_physical'],ph['weight_source_rank']]
+    head=dict(p,npus=n,experts=e,top_k=k,tokens=len(mapping))
+    expected=[head[key] for key in KEYS]+[p['matrices'],p['weight_bytes'],p['planning_ns'],p['reroute_ns'],p['weight_completion_ns'],int(c['mode']=='ultraep'),kind,len(physical)]+pc['main_placement']
+    for ph in physical:expected+=physrow(ph)
+    for row in plan['token_mapping']:
+        expected.append(row['source'])
+        for expert,pid in zip(row['logical_experts'],row['physical_experts']):expected.extend((expert,pid))
+    expected+=opts+[len(order)]+order
+    actual=[int(x) for x in (root/'input.txt').read_text().split()]
+    require(actual==expected,'input.txt differs from config/plan execution contract')
+    graph_input=' '.join(map(str,[kind,p['weight_bytes'],n]+opts[:6]+[len(order)]))+'\n'
+    graph_input+=''.join(' '.join(map(str,physrow(byid[pid])))+'\n' for pid in order)
+    output=subprocess.run([str(graph_tool)],input=graph_input,text=True,capture_output=True,check=True).stdout
+    edges=[{key:int(v) for key,v in row.items()} for row in csv.DictReader(io.StringIO(output))]
+    transfers=[]
+    for stage in (0,1):
+        for a in assignments:
+            transfers.append(dict(task=len(transfers),stage=stage,id=a['assignment'],source=a['source'] if stage==0 else a['target'],target=a['target'] if stage==0 else a['source'],physical=a['physical'],bytes=p['model_dim']*p['dtype_bytes'],source_physical=0,offset=0,dependencies=[]))
+    start=len(transfers)
+    for edge in edges:
+        src,dst=byid[edge['source_physical']],byid[edge['physical']]
+        transfers.append(dict(task=len(transfers),stage=2,id=dst['id'],source=src['rank'],target=dst['rank'],physical=dst['id'],bytes=edge['bytes'],source_physical=src['id'],offset=edge['offset'],dependencies=[]))
+    for task in range(start,len(transfers)):
+        x=transfers[task]
+        if byid[x['source_physical']]['kind']=='main':continue
+        if edges[task-start]['scope']==2:
+            x['dependencies']=[y['task'] for y in transfers[start:] if byid[y['source_physical']]['kind']=='main' and byid[y['physical']]['expert']==byid[x['physical']]['expert'] and (y['offset'],y['bytes'])==(x['offset'],x['bytes'])]
+        else:x['dependencies']=[y['task'] for y in transfers[start:] if y['physical']==x['source_physical']]
+        require(x['dependencies'],'missing relay dependency')
+    require(transfers==c['transfers'],'config transfer graph differs from accepted graph tool')
+    canonical=canonical_graph(transfers).encode()
+    if (root/'executed-transfers.csv').exists():
+        require((root/'executed-transfers.csv').read_bytes()==canonical,'actual executed transfer graph mismatch')
+    if execution_summary:
+        summary=json.loads(Path(execution_summary).read_text())
+        require(summary['executed_graph_fnv1a64']==fnv1a64(canonical),'executed graph fingerprint mismatch')
+    return dict(status='PASS',tokens=len(mapping),assignments=len(assignments),physical_experts=len(physical),replicas=sum(replicas.values()),transfers=len(transfers),input_sha256=hashlib.sha256((root/'input.txt').read_bytes()).hexdigest(),executed_graph_sha256=hashlib.sha256(canonical).hexdigest(),executed_graph_fnv1a64=fnv1a64(canonical),checks=['individual routing/physical identity','all physical quotas','main placement and weight provenance','replica slot budgets','accepted planner independent checker (UltraEP)','complete integer execution input contract','native weight graph and dependency reconstruction','executed graph when supplied'])
+
+def input_summary(directory, validation, provenance=None):
+    root=Path(directory);c=json.loads((root/'config.json').read_text());plan=json.loads((root/'plan.json').read_text())
+    pc=c['planner_input'];physical=plan['physical'];loads=[sum(ph['quota'] for ph in physical if ph['rank']==r) for r in range(pc['npus'])]
+    expert=[sum(ph['quota'] for ph in physical if ph['expert']==e) for e in range(pc['experts'])]
+    jain=lambda values: sum(values)**2/(len(values)*sum(v*v for v in values)) if any(values) else 1.0
+    metadata=json.loads(Path(provenance).read_text()) if provenance else {}
+    # Do not guess routing RNG seed from payload seed. Existing arbitrary fixtures
+    # need not have a stochastic generator; absent provenance is explicitly null.
+    return dict(schema_version=1,mode=c['mode'],strategy=c['weight_strategy'],topology='single-switch',npus=pc['npus'],ep_degree=pc['npus'],experts=pc['experts'],top_k=pc['top_k'],tokens=len(pc['mapping']),runtime=c['runtime'],planner_parameters={key:value for key,value in pc.items() if key!='mapping'},physical=physical,replicas=sum(x['kind']=='replica' for x in physical),per_npu_load=loads,max_npu_assignment_load=max(loads,default=0),npu_load_jain=jain(loads),expert_load=expert,expert_load_jain=jain(expert),routing_seed=metadata.get('routing_seed'),popularity=metadata.get('popularity'),versions={key:value for key,value in metadata.items() if 'commit' in key or 'tree' in key},input_hashes={name:hashlib.sha256((root/name).read_bytes()).hexdigest() for name in ('input.txt','config.json','plan.json')},validation=validation)
+
+def main():
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('directory',type=Path);parser.add_argument('--graph-tool',type=Path,required=True);parser.add_argument('--execution-summary',type=Path);parser.add_argument('--out',type=Path);parser.add_argument('--input-summary',type=Path);parser.add_argument('--provenance',type=Path)
+    args=parser.parse_args()
+    try:result=check(args.directory,args.graph_tool,args.execution_summary)
+    except Exception as exc:
+        result=dict(status='FAIL',error=str(exc))
+        if args.out:args.out.write_text(json.dumps(result,indent=2)+'\n')
+        print(json.dumps(result),file=sys.stderr);return 2
+    if args.out:args.out.write_text(json.dumps(result,indent=2)+'\n')
+    if args.input_summary:args.input_summary.write_text(json.dumps(input_summary(args.directory,result,args.provenance),indent=2)+'\n')
+    print(json.dumps(result,indent=2));return 0
+if __name__=='__main__':sys.exit(main())

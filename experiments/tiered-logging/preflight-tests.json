@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "case": "valid",
+      "status": "PASS"
+    },
+    {
+      "case": "input-seed",
+      "status": "PASS",
+      "detected": "input.txt differs from config/plan execution contract"
+    },
+    {
+      "case": "assignment-identity",
+      "status": "PASS",
+      "detected": "config assignments differ from token/plan identity"
+    },
+    {
+      "case": "physical-quota",
+      "status": "PASS",
+      "detected": "physical quota mismatch"
+    },
+    {
+      "case": "transfer-size",
+      "status": "PASS",
+      "detected": "config transfer graph differs from accepted graph tool"
+    },
+    {
+      "case": "transfer-dependency",
+      "status": "PASS",
+      "detected": "config transfer graph differs from accepted graph tool"
+    },
+    {
+      "case": "token-logical-expert",
+      "status": "PASS",
+      "detected": "routing identity"
+    },
+    {
+      "case": "duplicate-expert",
+      "status": "PASS",
+      "detected": "duplicate physical ID"
+    },
+    {
+      "case": "main-placement",
+      "status": "PASS",
+      "detected": "main moved or missing"
+    }
+  ]
+}
