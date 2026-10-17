@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "run": "direct-control",
+      "reference": "/workspace/scratch/c6ba02920254/qwen-model-size-raw/scan/tokens-256/direct/run/online-summary.json",
+      "same_stable_full_summary": true,
+      "excluded_fields": [
+        "verification_wall_ns"
+      ]
+    },
+    {
+      "run": "direct-sampled",
+      "reference": "/workspace/scratch/c6ba02920254/qwen-model-size-raw/scan/tokens-256/direct/run/online-summary.json",
+      "same_stable_full_summary": true,
+      "excluded_fields": [
+        "verification_wall_ns"
+      ]
+    },
+    {
+      "run": "direct-timed",
+      "reference": "/workspace/scratch/c6ba02920254/qwen-model-size-raw/scan/tokens-256/direct/run/online-summary.json",
+      "same_stable_full_summary": true,
+      "excluded_fields": [
+        "verification_wall_ns"
+      ]
+    },
+    {
+      "run": "no-balancing-control",
+      "reference": "/workspace/scratch/c6ba02920254/qwen-model-size-raw/scan/tokens-256/no-balancing/run/online-summary.json",
+      "same_stable_full_summary": true,
+      "excluded_fields": [
+        "verification_wall_ns"
+      ]
+    },
+    {
+      "run": "no-balancing-timed",
+      "reference": "/workspace/scratch/c6ba02920254/qwen-model-size-raw/scan/tokens-256/no-balancing/run/online-summary.json",
+      "same_stable_full_summary": true,
+      "excluded_fields": [
+        "verification_wall_ns"
+      ]
+    }
+  ],
+  "partial_chunk": "No completed Chunk summary; small event parity and static proof do not establish large-cutoff progress equality."
+}

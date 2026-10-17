@@ -1,0 +1,135 @@
+{
+  "status": "PASS",
+  "tests": [
+    {
+      "fault": "payload-byte",
+      "status": "PASS",
+      "returncode": 2,
+      "validation": {
+        "status": "FAIL",
+        "error": "payload byte mismatch"
+      },
+      "profiling_enabled": true
+    },
+    {
+      "fault": "duplicate-completion",
+      "status": "PASS",
+      "returncode": 2,
+      "validation": {
+        "status": "FAIL",
+        "error": "audit premature/duplicate sender completion"
+      },
+      "profiling_enabled": true
+    },
+    {
+      "fault": "early-wqe",
+      "status": "PASS",
+      "returncode": 2,
+      "validation": {
+        "status": "FAIL",
+        "error": "sender completed before target data ready"
+      },
+      "profiling_enabled": true
+    },
+    {
+      "fault": "missing-wqe",
+      "status": "PASS",
+      "returncode": 2,
+      "validation": {
+        "status": "FAIL",
+        "error": "unfinished layer"
+      },
+      "profiling_enabled": true
+    },
+    {
+      "fault": "weight-byte",
+      "status": "PASS",
+      "returncode": 2,
+      "validation": {
+        "status": "FAIL",
+        "error": "payload byte mismatch"
+      },
+      "profiling_enabled": true
+    },
+    {
+      "fault": "premature-ready",
+      "status": "PASS",
+      "returncode": 2,
+      "validation": {
+        "status": "FAIL",
+        "error": "ready before target completion coverage"
+      },
+      "profiling_enabled": true
+    },
+    {
+      "fault": "duplicate-weight",
+      "status": "PASS",
+      "returncode": 2,
+      "validation": {
+        "status": "FAIL",
+        "error": "duplicate forwarding"
+      },
+      "profiling_enabled": true
+    },
+    {
+      "fault": "early-compute",
+      "status": "PASS",
+      "returncode": 2,
+      "validation": {
+        "status": "FAIL",
+        "error": "compute token/gate dependency"
+      },
+      "profiling_enabled": true
+    },
+    {
+      "fault": "early-group",
+      "status": "PASS",
+      "returncode": 2,
+      "validation": {
+        "status": "FAIL",
+        "error": "relay before target chunk ready (including group)"
+      },
+      "profiling_enabled": true
+    },
+    {
+      "fault": "relay-byte",
+      "status": "PASS",
+      "returncode": 2,
+      "validation": {
+        "status": "FAIL",
+        "error": "payload byte mismatch"
+      },
+      "profiling_enabled": true
+    },
+    {
+      "fault": "relay-buffer-byte",
+      "status": "PASS",
+      "returncode": 2,
+      "validation": {
+        "status": "FAIL",
+        "error": "payload byte mismatch"
+      },
+      "profiling_enabled": true
+    },
+    {
+      "fault": "early-relay",
+      "status": "PASS",
+      "returncode": 2,
+      "validation": {
+        "status": "FAIL",
+        "error": "relay before target chunk ready (including group)"
+      },
+      "profiling_enabled": true
+    },
+    {
+      "fault": "early-final-ready",
+      "status": "PASS",
+      "returncode": 2,
+      "validation": {
+        "status": "FAIL",
+        "error": "final ready before full weight coverage"
+      },
+      "profiling_enabled": true
+    }
+  ]
+}

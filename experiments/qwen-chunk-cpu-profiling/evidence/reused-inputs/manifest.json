@@ -1,0 +1,26 @@
+[
+  {
+    "case": "chunk-streaming",
+    "path": "evidence/reused-inputs/chunk-streaming/input.txt",
+    "bytes": 17937,
+    "sha256": "f420e4874c55ec90f9c8bc22420e57ec04648ab7fd053bbc8e122f66bee54d9b",
+    "source": "qwen-model-size-raw/scan/tokens-256/chunk-streaming/run/input.txt",
+    "note": "Exact existing prepared simulator input; no new preparation required. Full independent preflight additionally requires accepted config/plan/graph artifacts."
+  },
+  {
+    "case": "direct",
+    "path": "evidence/reused-inputs/direct/input.txt",
+    "bytes": 17937,
+    "sha256": "6e18c4bda7579169639639714ad08aeb191ef80158e2b8af850e2c0377782e13",
+    "source": "qwen-chunk-profile-raw/inputs/direct/input.txt",
+    "note": "Exact existing prepared simulator input; no new preparation required. Full independent preflight additionally requires accepted config/plan/graph artifacts."
+  },
+  {
+    "case": "no-balancing",
+    "path": "evidence/reused-inputs/no-balancing/input.txt",
+    "bytes": 15188,
+    "sha256": "9c515139726e648f353a743c243ab150f5e9b16820f6526ca7fa9fdace32f722",
+    "source": "qwen-chunk-profile-raw/inputs/no-balancing/input.txt",
+    "note": "Exact existing prepared simulator input; no new preparation required. Full independent preflight additionally requires accepted config/plan/graph artifacts."
+  }
+]

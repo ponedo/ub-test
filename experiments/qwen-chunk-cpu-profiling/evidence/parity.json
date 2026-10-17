@@ -1,0 +1,412 @@
+{
+  "status": "PASS",
+  "excluded_json_fields": [
+    "verification_wall_ns"
+  ],
+  "tests": [
+    {
+      "case": "nb-small",
+      "mode": "summary",
+      "status": "PASS",
+      "input_sha256": "f280ad96091c4f2517ba37dd66f56788abfe7bd5ba8cc9aaeac9de40d173bc7a",
+      "checks": {
+        "online-summary.json": {
+          "equal": true,
+          "differences": []
+        },
+        "validation.json": {
+          "equal": true,
+          "differences": []
+        },
+        "simulator-metrics.json": {
+          "equal": true,
+          "differences": []
+        }
+      },
+      "simulator_events": 6051,
+      "layer_latency_ps": 1217152,
+      "TA_count": 24,
+      "remote_WQEs": 24,
+      "packet_tx_per_node": [
+        32,
+        16,
+        24,
+        24,
+        96
+      ],
+      "combine_fnv1a64": "7c42dc8e5523bf25"
+    },
+    {
+      "case": "nb-small",
+      "mode": "debug",
+      "status": "PASS",
+      "input_sha256": "f280ad96091c4f2517ba37dd66f56788abfe7bd5ba8cc9aaeac9de40d173bc7a",
+      "checks": {
+        "online-summary.json": {
+          "equal": true,
+          "differences": []
+        },
+        "validation.json": {
+          "equal": true,
+          "differences": []
+        },
+        "simulator-metrics.json": {
+          "equal": true,
+          "differences": []
+        },
+        "events.csv": {
+          "equal": true,
+          "sha256": [
+            "da592ee6f6a4e2a73a16119eba2c5258f47137113cacdb908af5e323aec3e0fe",
+            "da592ee6f6a4e2a73a16119eba2c5258f47137113cacdb908af5e323aec3e0fe"
+          ]
+        },
+        "ta-identity.csv": {
+          "equal": true,
+          "sha256": [
+            "3cefad7ccd7867046a416266960f72be03449b6397c26b08a2a60fd019199a2e",
+            "3cefad7ccd7867046a416266960f72be03449b6397c26b08a2a60fd019199a2e"
+          ]
+        },
+        "executed-transfers.csv": {
+          "equal": true,
+          "sha256": [
+            "5b27fbcdebc0b2a2a3fd58955691b1599cfd25928a493f41e7a73888ea5f2e46",
+            "5b27fbcdebc0b2a2a3fd58955691b1599cfd25928a493f41e7a73888ea5f2e46"
+          ]
+        },
+        "received-payloads.bin": {
+          "equal": true,
+          "sha256": [
+            "52974a580f92b4badfb044c6ac97aac0c6be46a5eb8a4790e7236ca384b7c0d4",
+            "52974a580f92b4badfb044c6ac97aac0c6be46a5eb8a4790e7236ca384b7c0d4"
+          ]
+        },
+        "payload-index.csv": {
+          "equal": true,
+          "sha256": [
+            "73b61a850e3178943ac6df73be25d521c76761fadaeef81f4a35d88dcc5cfa03",
+            "73b61a850e3178943ac6df73be25d521c76761fadaeef81f4a35d88dcc5cfa03"
+          ]
+        }
+      },
+      "simulator_events": 6051,
+      "layer_latency_ps": 1217152,
+      "TA_count": 24,
+      "remote_WQEs": 24,
+      "packet_tx_per_node": [
+        32,
+        16,
+        24,
+        24,
+        96
+      ],
+      "combine_fnv1a64": "7c42dc8e5523bf25"
+    },
+    {
+      "case": "direct-small",
+      "mode": "summary",
+      "status": "PASS",
+      "input_sha256": "26cd2f6197e54af37ec5cb3f7a65f9436e33c40ba3063e07aaf899be5664f14c",
+      "checks": {
+        "online-summary.json": {
+          "equal": true,
+          "differences": []
+        },
+        "validation.json": {
+          "equal": true,
+          "differences": []
+        },
+        "simulator-metrics.json": {
+          "equal": true,
+          "differences": []
+        }
+      },
+      "simulator_events": 12550,
+      "layer_latency_ps": 15095720,
+      "TA_count": 156,
+      "remote_WQEs": 15,
+      "packet_tx_per_node": [
+        296,
+        104,
+        104,
+        120,
+        624
+      ],
+      "combine_fnv1a64": "f69f2d11e6645a25"
+    },
+    {
+      "case": "direct-small",
+      "mode": "debug",
+      "status": "PASS",
+      "input_sha256": "26cd2f6197e54af37ec5cb3f7a65f9436e33c40ba3063e07aaf899be5664f14c",
+      "checks": {
+        "online-summary.json": {
+          "equal": true,
+          "differences": []
+        },
+        "validation.json": {
+          "equal": true,
+          "differences": []
+        },
+        "simulator-metrics.json": {
+          "equal": true,
+          "differences": []
+        },
+        "events.csv": {
+          "equal": true,
+          "sha256": [
+            "6791dcd4fc43e01804bce27fd3f3777004ce925e658c4c56cf073bdcec1a91a7",
+            "6791dcd4fc43e01804bce27fd3f3777004ce925e658c4c56cf073bdcec1a91a7"
+          ]
+        },
+        "ta-identity.csv": {
+          "equal": true,
+          "sha256": [
+            "ad22899bf5109a1c4b8d284fcf877962584341f4ee1422927078d5382c57125d",
+            "ad22899bf5109a1c4b8d284fcf877962584341f4ee1422927078d5382c57125d"
+          ]
+        },
+        "executed-transfers.csv": {
+          "equal": true,
+          "sha256": [
+            "d8fa16ea7ea4a08207db99ed17264e7eadd444ca0d5a3c5cdbfd4c7860e1d483",
+            "d8fa16ea7ea4a08207db99ed17264e7eadd444ca0d5a3c5cdbfd4c7860e1d483"
+          ]
+        },
+        "received-payloads.bin": {
+          "equal": true,
+          "sha256": [
+            "aaf170f5f6c0e739d32ef46e45a105dd67e3854099e3f3e28a94a3a83cc654cf",
+            "aaf170f5f6c0e739d32ef46e45a105dd67e3854099e3f3e28a94a3a83cc654cf"
+          ]
+        },
+        "payload-index.csv": {
+          "equal": true,
+          "sha256": [
+            "3759a811e21d1d0e31b1a25ea83639af9015ecc724f7d9c3e56c0e6672463287",
+            "3759a811e21d1d0e31b1a25ea83639af9015ecc724f7d9c3e56c0e6672463287"
+          ]
+        }
+      },
+      "simulator_events": 12550,
+      "layer_latency_ps": 15095720,
+      "TA_count": 156,
+      "remote_WQEs": 15,
+      "packet_tx_per_node": [
+        296,
+        104,
+        104,
+        120,
+        624
+      ],
+      "combine_fnv1a64": "f69f2d11e6645a25"
+    },
+    {
+      "case": "chunk-small",
+      "mode": "summary",
+      "status": "PASS",
+      "input_sha256": "19baddeea10bc764f06c911d4f6de448fe3b73c44a4e0331bfe9a2cf2e507cb6",
+      "checks": {
+        "online-summary.json": {
+          "equal": true,
+          "differences": []
+        },
+        "validation.json": {
+          "equal": true,
+          "differences": []
+        },
+        "simulator-metrics.json": {
+          "equal": true,
+          "differences": []
+        }
+      },
+      "simulator_events": 24058,
+      "layer_latency_ps": 17803720,
+      "TA_count": 312,
+      "remote_WQEs": 96,
+      "packet_tx_per_node": [
+        200,
+        296,
+        296,
+        104,
+        104,
+        104,
+        112,
+        32,
+        1248
+      ],
+      "combine_fnv1a64": "a0236cb7321d4125"
+    },
+    {
+      "case": "chunk-small",
+      "mode": "debug",
+      "status": "PASS",
+      "input_sha256": "19baddeea10bc764f06c911d4f6de448fe3b73c44a4e0331bfe9a2cf2e507cb6",
+      "checks": {
+        "online-summary.json": {
+          "equal": true,
+          "differences": []
+        },
+        "validation.json": {
+          "equal": true,
+          "differences": []
+        },
+        "simulator-metrics.json": {
+          "equal": true,
+          "differences": []
+        },
+        "events.csv": {
+          "equal": true,
+          "sha256": [
+            "8a62b9a7db8caa98c13c038d2fd8624c39e065cbdeaa255cadc7e565a8c8fe20",
+            "8a62b9a7db8caa98c13c038d2fd8624c39e065cbdeaa255cadc7e565a8c8fe20"
+          ]
+        },
+        "ta-identity.csv": {
+          "equal": true,
+          "sha256": [
+            "04d0cce6080cbcfdc29b280ce061a58942f368209d724bb2e685a08a6b4a40ab",
+            "04d0cce6080cbcfdc29b280ce061a58942f368209d724bb2e685a08a6b4a40ab"
+          ]
+        },
+        "executed-transfers.csv": {
+          "equal": true,
+          "sha256": [
+            "a4122a368fcdd1e1f21b3c79baba367f09d9e7faed29b31fe6f41932c1f889d1",
+            "a4122a368fcdd1e1f21b3c79baba367f09d9e7faed29b31fe6f41932c1f889d1"
+          ]
+        },
+        "received-payloads.bin": {
+          "equal": true,
+          "sha256": [
+            "b091f52abb47bb6ef28a2870a689b0b1f713ea6e378d14d4acb2c7ff106bd647",
+            "b091f52abb47bb6ef28a2870a689b0b1f713ea6e378d14d4acb2c7ff106bd647"
+          ]
+        },
+        "payload-index.csv": {
+          "equal": true,
+          "sha256": [
+            "92b7bfcb1a4350472ee2fa2fa9927043af058e64b03ff951e1828fe34aaacc4a",
+            "92b7bfcb1a4350472ee2fa2fa9927043af058e64b03ff951e1828fe34aaacc4a"
+          ]
+        }
+      },
+      "simulator_events": 24058,
+      "layer_latency_ps": 17803720,
+      "TA_count": 312,
+      "remote_WQEs": 96,
+      "packet_tx_per_node": [
+        200,
+        296,
+        296,
+        104,
+        104,
+        104,
+        112,
+        32,
+        1248
+      ],
+      "combine_fnv1a64": "a0236cb7321d4125"
+    },
+    {
+      "case": "multichunk-multita",
+      "mode": "summary",
+      "status": "PASS",
+      "input_sha256": "2c5255e8d87740bc2ab4767d8eb3f33d675736b868e470600e4645a1f1e12e61",
+      "checks": {
+        "online-summary.json": {
+          "equal": true,
+          "differences": []
+        },
+        "validation.json": {
+          "equal": true,
+          "differences": []
+        },
+        "simulator-metrics.json": {
+          "equal": true,
+          "differences": []
+        }
+      },
+      "simulator_events": 12500,
+      "layer_latency_ps": 14321600,
+      "TA_count": 156,
+      "remote_WQEs": 48,
+      "packet_tx_per_node": [
+        104,
+        296,
+        104,
+        120,
+        624
+      ],
+      "combine_fnv1a64": "f69f2d11e6645a25"
+    },
+    {
+      "case": "multichunk-multita",
+      "mode": "debug",
+      "status": "PASS",
+      "input_sha256": "2c5255e8d87740bc2ab4767d8eb3f33d675736b868e470600e4645a1f1e12e61",
+      "checks": {
+        "online-summary.json": {
+          "equal": true,
+          "differences": []
+        },
+        "validation.json": {
+          "equal": true,
+          "differences": []
+        },
+        "simulator-metrics.json": {
+          "equal": true,
+          "differences": []
+        },
+        "events.csv": {
+          "equal": true,
+          "sha256": [
+            "e853c7b96ee7ba10a9b2ae3e888a336e0f3d4af4e9f5b2c67fa9788be73def33",
+            "e853c7b96ee7ba10a9b2ae3e888a336e0f3d4af4e9f5b2c67fa9788be73def33"
+          ]
+        },
+        "ta-identity.csv": {
+          "equal": true,
+          "sha256": [
+            "34392b67ae60bd5ebab4f3f9c9b667ca60968568565e963bed255c390ab0ddbf",
+            "34392b67ae60bd5ebab4f3f9c9b667ca60968568565e963bed255c390ab0ddbf"
+          ]
+        },
+        "executed-transfers.csv": {
+          "equal": true,
+          "sha256": [
+            "991d58d01fd6ba87fc15467090d8dbe4f9f99a34dd3efa7851c5da2a90eed76a",
+            "991d58d01fd6ba87fc15467090d8dbe4f9f99a34dd3efa7851c5da2a90eed76a"
+          ]
+        },
+        "received-payloads.bin": {
+          "equal": true,
+          "sha256": [
+            "f1bbba680a19f46bc1b98d16c3481ad40b066bfefbb6f10596d21dafb861dc35",
+            "f1bbba680a19f46bc1b98d16c3481ad40b066bfefbb6f10596d21dafb861dc35"
+          ]
+        },
+        "payload-index.csv": {
+          "equal": true,
+          "sha256": [
+            "643ecbe57cef1509de64580f641be68218f69e2cb19f42ab84fa657a56b45a70",
+            "643ecbe57cef1509de64580f641be68218f69e2cb19f42ab84fa657a56b45a70"
+          ]
+        }
+      },
+      "simulator_events": 12500,
+      "layer_latency_ps": 14321600,
+      "TA_count": 156,
+      "remote_WQEs": 48,
+      "packet_tx_per_node": [
+        104,
+        296,
+        104,
+        120,
+        624
+      ],
+      "combine_fnv1a64": "f69f2d11e6645a25"
+    }
+  ]
+}

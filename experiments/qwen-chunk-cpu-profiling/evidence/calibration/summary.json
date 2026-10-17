@@ -1,0 +1,106 @@
+{
+  "callchain_requested": true,
+  "decode_command": [
+    "qwen-chunk-profile-raw/perf-local/perf",
+    "script",
+    "-i",
+    "qwen-chunk-profile-raw/calibration/perf.data",
+    "--max-stack",
+    "1024",
+    "-F",
+    "comm,pid,tid,time,event,ip,sym,dso"
+  ],
+  "events": {
+    "cpu-clock:u": 65
+  },
+  "hotspot_subtrees": {
+    "CreateJetty": {
+      "percent": 0.0,
+      "samples": 0,
+      "stack_pattern": "ns3::UbFunction::CreateJetty("
+    },
+    "GetJettiesUsingTpn": {
+      "percent": 0.0,
+      "samples": 0,
+      "stack_pattern": "ns3::UbTransaction::GetJettiesUsingTpn("
+    },
+    "ResolveWqeLifecycleLocalId": {
+      "percent": 0.0,
+      "samples": 0,
+      "stack_pattern": "ns3::UbJettyManager::ResolveWqeLifecycleLocalId("
+    },
+    "SubmitWqe": {
+      "percent": 0.0,
+      "samples": 0,
+      "stack_pattern": "ns3::UbFunction::SubmitWqe("
+    }
+  },
+  "inclusive_caveat": "Observed stack membership, not complete attribution when unwinding is truncated. Recursion deduplicated per sample.",
+  "inclusive_top20": [
+    {
+      "percent": 100.0,
+      "samples": 65,
+      "symbol": "[unknown] (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+    },
+    {
+      "percent": 100.0,
+      "samples": 65,
+      "symbol": "__libc_start_main (/usr/lib/x86_64-linux-gnu/libc.so.6)"
+    },
+    {
+      "percent": 100.0,
+      "samples": 65,
+      "symbol": "_start (/workspace/scratch/c6ba02920254/qwen-chunk-profile-raw/aux/calibration-hotloop)"
+    },
+    {
+      "percent": 100.0,
+      "samples": 65,
+      "symbol": "hot_loop (/workspace/scratch/c6ba02920254/qwen-chunk-profile-raw/aux/calibration-hotloop)"
+    },
+    {
+      "percent": 100.0,
+      "samples": 65,
+      "symbol": "main (/workspace/scratch/c6ba02920254/qwen-chunk-profile-raw/aux/calibration-hotloop)"
+    }
+  ],
+  "leaf_only_observed": false,
+  "lost_samples_reported": 0,
+  "pid_tid_scope": [
+    {
+      "comm": "calibration-hot",
+      "pid": 17,
+      "samples": 65,
+      "tid": 17
+    }
+  ],
+  "recorder": {},
+  "records": {
+    "COMM": 1,
+    "EXIT": 1,
+    "LOST": 0,
+    "LOST_SAMPLES": 0,
+    "MMAP2": 24,
+    "SAMPLE": 65,
+    "THROTTLE": 0,
+    "UNTHROTTLE": 0
+  },
+  "sample_count": 65,
+  "sample_type_masks": [
+    12583
+  ],
+  "samples_without_frames": 0,
+  "self_top20": [
+    {
+      "percent": 100.0,
+      "samples": 65,
+      "symbol": "hot_loop (/workspace/scratch/c6ba02920254/qwen-chunk-profile-raw/aux/calibration-hotloop)"
+    }
+  ],
+  "stack_depth_histogram": {
+    "5": 65
+  },
+  "unknown_any_frame_samples": 65,
+  "unknown_self_samples": 0,
+  "user_stack_requested": true,
+  "weighting": "one per SAMPLE record; never period weighted"
+}

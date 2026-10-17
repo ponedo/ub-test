@@ -1,0 +1,24 @@
+{
+  "case": "chunk-streaming",
+  "variant": "sampled",
+  "input_directory": "/workspace/scratch/c6ba02920254/qwen-model-size-raw/scan/tokens-256/chunk-streaming/run",
+  "input_sha256": "f420e4874c55ec90f9c8bc22420e57ec04648ab7fd053bbc8e122f66bee54d9b",
+  "binary": "/workspace/scratch/c6ba02920254/qwen-model-size-raw/build-capacity-v2/pair-layer",
+  "binary_sha256": "c4a99c3f6f2e4f6bbf22093cf410cc7acdfb7dcae37a86508a5458750f83e435",
+  "command": [
+    "/workspace/scratch/c6ba02920254/qwen-chunk-profile-raw/aux/record",
+    "/workspace/scratch/c6ba02920254/qwen-chunk-profile-raw/runtime/chunk-streaming-sampled/perf.data",
+    "19",
+    "--",
+    "/workspace/scratch/c6ba02920254/qwen-model-size-raw/build-capacity-v2/pair-layer",
+    "--input=/workspace/scratch/c6ba02920254/qwen-model-size-raw/scan/tokens-256/chunk-streaming/run/input.txt",
+    "--out=/workspace/scratch/c6ba02920254/qwen-chunk-profile-raw/runtime/chunk-streaming-sampled/run",
+    "--capacityMetrics=/workspace/scratch/c6ba02920254/qwen-chunk-profile-raw/runtime/chunk-streaming-sampled/run/simulator-metrics.json",
+    "--jettyMode=pair",
+    "--logLevel=summary",
+    "--payloadBudgetBytes=8589934592",
+    "--weightTaskLimit=1000000"
+  ],
+  "settings": "accepted summary/pair full validation; no input regeneration",
+  "sampling_hz": 19
+}

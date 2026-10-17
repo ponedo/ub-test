@@ -1,0 +1,64 @@
+{
+  "total": 5690,
+  "denominator": "One captured user CPU-clock SAMPLE record. Inclusive categories overlap; do not sum.",
+  "counter_status": "Unweighted sample counts; never static complexity-derived CPU percentages.",
+  "partial": true,
+  "source_binary": "provenance.json and ELF manifest in raw run; no ELF substitution",
+  "subtrees": [
+    {
+      "category": "initialization_Read",
+      "samples": 2201,
+      "percent_of_samples": 38.68189806678383
+    },
+    {
+      "category": "online_Audit",
+      "samples": 335,
+      "percent_of_samples": 5.8875219683655535
+    },
+    {
+      "category": "terminal_FinalAudit",
+      "samples": 0,
+      "percent_of_samples": 0.0
+    },
+    {
+      "category": "payload_Validate",
+      "samples": 338,
+      "percent_of_samples": 5.940246045694201
+    },
+    {
+      "category": "submission_Send",
+      "samples": 788,
+      "percent_of_samples": 13.848857644991213
+    },
+    {
+      "category": "completion_Ready",
+      "samples": 428,
+      "percent_of_samples": 7.521968365553603
+    },
+    {
+      "category": "native_WQE_Submit",
+      "samples": 75,
+      "percent_of_samples": 1.3181019332161688
+    },
+    {
+      "category": "native_TA",
+      "samples": 2627,
+      "percent_of_samples": 46.16871704745167
+    },
+    {
+      "category": "packet",
+      "samples": 69,
+      "percent_of_samples": 1.2126537785588751
+    },
+    {
+      "category": "buffer",
+      "samples": 42,
+      "percent_of_samples": 0.7381370826010545
+    },
+    {
+      "category": "simulator",
+      "samples": 3485,
+      "percent_of_samples": 61.24780316344464
+    }
+  ]
+}

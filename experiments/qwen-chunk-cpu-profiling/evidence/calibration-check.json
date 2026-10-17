@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "checks": {
+    "enough_samples": true,
+    "known_hot_loop_fraction": true,
+    "counts_agree": true,
+    "period_user_ratio": true,
+    "one_thread": true,
+    "stacks_have_callers": true,
+    "no_reported_loss_or_throttle": true
+  },
+  "sample_rate_hz": 19,
+  "samples": 65,
+  "known_hot_loop_samples": 65,
+  "period_user_ratio": 0.9965134420927102,
+  "stack_depth_histogram": {
+    "5": 65
+  },
+  "recorder": {
+    "samples": 65,
+    "period_sum_ns": 3421052570,
+    "lost_records": 0,
+    "lost_samples_reported": 0,
+    "throttle_records": 0,
+    "unthrottle_records": 0,
+    "bytes": 550704,
+    "child_user_seconds": 3.433022,
+    "child_system_seconds": 0.0,
+    "child_exit": 0
+  }
+}

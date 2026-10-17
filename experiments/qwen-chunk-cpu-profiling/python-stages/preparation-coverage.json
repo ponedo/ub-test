@@ -1,0 +1,24 @@
+{
+  "status": "COMPLETE",
+  "exitcode": 0,
+  "interrupted": null,
+  "wall_seconds": 203.3758892150363,
+  "cpu_seconds": 201.02822381800001,
+  "profile_clock": "wall",
+  "source_sha256": {
+    "/workspace/scratch/c6ba02920254/qwen-chunk-profile/experiments/qwen3-model-size/prepare.py": "417352179545a82228eef9c1196d87db21ddd427f273edfad4189d8e1b63e2c4",
+    "/workspace/scratch/c6ba02920254/qwen-chunk-profile/experiments/direct-weight-forward/adapter.py": "825786bc6b07af84784cc63da1ba8e51aa218286d6ea31d3ce6d71ea2983b8cc",
+    "/workspace/scratch/c6ba02920254/qwen-chunk-profile/experiments/multi-npu-relay/adapter.py": "a8b2079f1ada5ca1a582b560826a4ccd84b2f7b984fd9297a4c19bff4ee8a9e0"
+  },
+  "command": [
+    "/workspace/scratch/c6ba02920254/qwen-chunk-profile/experiments/qwen3-model-size/prepare.py",
+    "--tokens",
+    "256",
+    "--out",
+    "/workspace/scratch/c6ba02920254/qwen-chunk-profile-raw/python/prepared",
+    "--graph-tool",
+    "/workspace/scratch/c6ba02920254/ep64-scaling-raw/build/graph-tool"
+  ],
+  "coverage": "Python main process; subprocess waits included, child internals excluded",
+  "stage_note": "Inclusive statement spans; nested scopes overlap; RSS is cumulative process high-water mark"
+}

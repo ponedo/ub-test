@@ -1,0 +1,41 @@
+{
+  "samples": 2158,
+  "exclusive_phase_precedence": [
+    "Read",
+    "FinalAudit",
+    "Audit",
+    "Validate",
+    "Send",
+    "Ready",
+    "Other"
+  ],
+  "exclusive_sample_membership": {
+    "Other": 693,
+    "Send": 501,
+    "Validate": 434,
+    "Audit": 13,
+    "FinalAudit": 517
+  },
+  "uint32_to_uint32_map_lower_bound_self_samples_by_phase": {
+    "Send": 297,
+    "Validate": 231,
+    "Other": 15,
+    "FinalAudit": 240
+  },
+  "map_nearest_application_or_UB_caller": {
+    "Layer::P(unsigned int) (/workspace/scratch/c6ba02920254/qwen-model-size-raw/build-capacity-v2/pair-layer)": 457,
+    "Layer::Validate(unsigned int, unsigned long, std::vector<unsigned char, std::allocator<unsigned char> > const&) (/workspace/scratch/c6ba02920254/qwen-model-size-raw/build-capacity-v2/pair-layer)": 73,
+    "Layer::Pair(unsigned int, unsigned int)::{lambda(unsigned int, unsigned int, unsigned int)#1}::operator()(unsigned int, unsigned int, unsigned int) const (inlined)": 9,
+    "Layer::Topology(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)::{lambda(ns3::Ptr<ns3::UbWqeSegment const>, ns3::UbTransactionRule const&, ns3::Callback<void, ns3::UbWorkExecutionResult>)#1}::operator()(ns3::Ptr<ns3::UbWqeSegment const>, ns3::UbTransactionRule const&, ns3::Callback<void, ns3::UbWorkExecutionResult>) const (/workspace/scratch/c6ba02920254/qwen-model-size-raw/build-capacity-v2/pair-layer)": 4,
+    "Layer::P(unsigned int) (inlined)": 240
+  },
+  "native_inclusive_subtrees": {
+    "TryContinueJettyTransmission": 39,
+    "EnqueueRtpWqe": 14,
+    "MakeRtpTxQueueKey": 0,
+    "ResolveWqeLifecycleLocalId": 0,
+    "SubmitWqe": 1,
+    "ProcessEvent": 0
+  },
+  "caveat": "Unchanged-executable sample window. Phases partition by stack-pattern precedence, not timers. Shared map leaves use observed callstacks; native inclusive subtrees overlap callbacks and cannot be summed. Partial runs do not represent completed whole-run shares."
+}

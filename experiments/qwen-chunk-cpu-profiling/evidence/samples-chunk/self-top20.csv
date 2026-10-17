@@ -1,0 +1,21 @@
+symbol,samples,percent
+"std::_Rb_tree<unsigned int, std::pair<unsigned int const, unsigned int>, std::_Select1st<std::pair<unsigned int const, unsigned int> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<unsigned int const, unsigned int> > const*, std::_Rb_tree_node_base const*, unsigned int const&) const (inlined)",1049,18.43585237258348
+"std::_Rb_tree<unsigned int, std::pair<unsigned int const, unsigned int>, std::_Select1st<std::pair<unsigned int const, unsigned int> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<unsigned int const, unsigned int> >*, std::_Rb_tree_node_base*, unsigned int const&) (inlined)",883,15.518453427065026
+ns3::UbTransaction::TryContinueJettyTransmission(unsigned int) (/workspace/scratch/c6ba02920254/wqe-completion-native/build/lib/libns3.44-unified-bus.so),361,6.344463971880492
+std::_Rb_tree_increment(std::_Rb_tree_node_base*) (/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33),336,5.905096660808436
+cfree (/usr/lib/x86_64-linux-gnu/libc.so.6),278,4.885764499121265
+_ZNKSt8__detail10_Synth3wayclIjjEEDaRKT_RKT0_QrqXltfL0p_fL0p0_RNS_18__boolean_testableEXltfL0p0_fL0p_RNS_18__boolean_testableEE (inlined),243,4.270650263620387
+malloc (/usr/lib/x86_64-linux-gnu/libc.so.6),228,4.007029876977153
+ns3::UbTransaction::MakeRtpTxQueueKey(ns3::UbRtpTransportReference const&) (inlined),179,3.145869947275923
+[unknown] (/usr/lib/x86_64-linux-gnu/libc.so.6),154,2.7065026362038664
+"ns3::UbTransaction::EnqueueRtpWqe(unsigned int, ns3::Ptr<ns3::UbWqe>, bool) (/workspace/scratch/c6ba02920254/wqe-completion-native/build/lib/libns3.44-unified-bus.so)",134,2.3550087873462213
+Layer::P(unsigned int) (/workspace/scratch/c6ba02920254/qwen-model-size-raw/build-capacity-v2/pair-layer),101,1.7750439367311073
+"Layer::Read(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/workspace/scratch/c6ba02920254/qwen-model-size-raw/build-capacity-v2/pair-layer)",89,1.5641476274165202
+"std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) (inlined)",67,1.1775043936731107
+operator new(unsigned long) (/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33),65,1.1423550087873462
+std::_Rb_tree_increment(std::_Rb_tree_node_base const*) (/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33),65,1.1423550087873462
+"std::_Rb_tree<std::pair<unsigned int, unsigned int>, std::pair<std::pair<unsigned int, unsigned int> const, ns3::UbTransaction::OperationRecord>, std::_Select1st<std::pair<std::pair<unsigned int, unsigned int> const, ns3::UbTransaction::OperationRecord> >, std::less<std::pair<unsigned int, unsigned int> >, std::allocator<std::pair<std::pair<unsigned int, unsigned int> const, ns3::UbTransaction::OperationRecord> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<std::pair<unsigned int, unsigned int> const, ns3::UbTransaction::OperationRecord> >*, std::_Rb_tree_node_base*, std::pair<unsigned int, unsigned int> const&) (inlined)",58,1.0193321616871704
+"ns3::SimpleRefCount<ns3::Object, ns3::ObjectBase, ns3::ObjectDeleter>::Unref() const (inlined)",50,0.8787346221441125
+"std::_Rb_tree<std::pair<unsigned int, unsigned int>, std::pair<std::pair<unsigned int, unsigned int> const, ns3::UbTransaction::OperationRecord>, std::_Select1st<std::pair<std::pair<unsigned int, unsigned int> const, ns3::UbTransaction::OperationRecord> >, std::less<std::pair<unsigned int, unsigned int> >, std::allocator<std::pair<std::pair<unsigned int, unsigned int> const, ns3::UbTransaction::OperationRecord> > >::find(std::pair<unsigned int, unsigned int> const&) (/workspace/scratch/c6ba02920254/wqe-completion-native/build/lib/libns3.44-unified-bus.so)",47,0.8260105448154658
+malloc@plt (/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33),42,0.7381370826010545
+operator delete(void*) (/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33),37,0.6502636203866432

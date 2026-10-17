@@ -1,0 +1,1409 @@
+caller,callee,primitive_calls,total_calls,self_seconds,cumulative_seconds
+~ <built-in method builtins.exec>,experiments/qwen3-model-size/prepare.py:1 <module>,1,1,0.012731984,203.36582698
+experiments/qwen3-model-size/prepare.py:1 <module>,experiments/multi-npu-relay/adapter.py:8 emit,3,3,196.275778647,200.206730171
+python3.12/json/__init__.py:183 dumps,python3.12/json/encoder.py:183 encode,13,13,0.3645468,3.8298791060000004
+python3.12/json/encoder.py:183 encode,python3.12/json/encoder.py:414 _iterencode,4163429,4163429,0.5495658360000001,3.423990297
+experiments/multi-npu-relay/adapter.py:8 emit,python3.12/json/__init__.py:183 dumps,3,3,0.025671207,3.3160936480000003
+python3.12/json/encoder.py:414 _iterencode,python3.12/json/encoder.py:334 _iterencode_dict,4163429,4163429,0.6083998460000001,2.874420497
+lib/python3.12/subprocess.py:506 run,lib/python3.12/subprocess.py:1165 communicate,8,8,4.7509e-05,2.312752627
+experiments/qwen3-model-size/prepare.py:1 <module>,planner/quota/planner.py:173 solve,1,1,0.000408803,2.2894626650000003
+planner/quota/planner.py:173 solve,planner/quota/planner.py:179 solve_upstream,1,1,0.006089049,2.287232867
+lib/python3.12/subprocess.py:1165 communicate,lib/python3.12/subprocess.py:2062 _communicate,7,7,0.001275363,2.277943398
+lib/python3.12/subprocess.py:2062 _communicate,lib/python3.12/selectors.py:402 select,486,486,0.000644736,2.2729889190000003
+lib/python3.12/selectors.py:402 select,~ <method 'poll' of 'select.poll' objects>,486,486,2.272176687,2.272176687
+planner/quota/planner.py:179 solve_upstream,planner/quota/upstream.py:32 replication,1,1,5.2307000000000006e-05,2.248596741
+python3.12/json/encoder.py:334 _iterencode_dict,python3.12/json/encoder.py:278 _iterencode_list,4535342,4161665,0.790212264,2.24796895
+planner/quota/upstream.py:32 replication,planner/quota/upstream.py:15 prepare,1,1,0.00012176000000000001,2.023141841
+planner/quota/upstream.py:15 prepare,lib/python3.12/subprocess.py:506 run,2,2,3.0555e-05,2.0216966060000003
+python3.12/json/encoder.py:278 _iterencode_list,python3.12/json/encoder.py:334 _iterencode_dict,4147743,4139723,1.001777021,1.5198185320000002
+experiments/qwen3-model-size/prepare.py:1 <module>,experiments/direct-weight-forward/adapter.py:21 emit,2,2,0.012911826000000001,0.6915724310000001
+experiments/direct-weight-forward/adapter.py:21 emit,python3.12/json/__init__.py:183 dumps,4,4,0.0028861710000000003,0.537173348
+experiments/multi-npu-relay/adapter.py:8 emit,lib/python3.12/csv.py:163 writerow,74571,74571,0.027550041,0.393685979
+lib/python3.12/csv.py:163 writerow,~ <method 'writerow' of '_csv.writer' objects>,74578,74578,0.14141182200000002,0.312563859
+planner/quota/upstream.py:32 replication,lib/python3.12/subprocess.py:506 run,1,1,1.6807e-05,0.22512351400000002
+python3.12/json/encoder.py:334 _iterencode_dict,~ <built-in method builtins.isinstance>,2814127,2814127,0.218837323,0.218837323
+~ <method 'writerow' of '_csv.writer' objects>,lib/python3.12/csv.py:161 <genexpr>,820346,820346,0.11122941200000001,0.171152037
+python3.12/json/encoder.py:334 _iterencode_dict,python3.12/json/encoder.py:334 _iterencode_dict,126034,120455,0.01764581,0.12323561000000001
+python3.12/json/encoder.py:334 _iterencode_dict,~ <built-in method _json.encode_basestring_ascii>,887259,887259,0.11753732900000001,0.11753732900000001
+experiments/multi-npu-relay/adapter.py:8 emit,lib/python3.12/csv.py:112 __next__,62286,62286,0.06995685700000001,0.114274701
+planner/quota/checker.py:9 check,~ <built-in method builtins.sum>,17138,17138,0.0074672950000000005,0.09941013800000001
+~ <built-in method builtins.sum>,planner/quota/checker.py:50 <genexpr>,39296,39296,0.08856412100000001,0.08856412100000001
+experiments/qwen3-model-size/prepare.py:1 <module>,planner/quota/checker.py:9 check,1,1,0.012096331,0.08376299000000001
+experiments/direct-weight-forward/adapter.py:21 emit,planner/quota/checker.py:9 check,1,1,0.012094637,0.08355422700000001
+python3.12/json/encoder.py:278 _iterencode_list,~ <built-in method builtins.isinstance>,828423,828423,0.06812103,0.06812103
+lib/python3.12/csv.py:161 <genexpr>,~ <method 'get' of 'dict' objects>,832141,832141,0.067022573,0.067022573
+lib/python3.12/csv.py:163 writerow,lib/python3.12/csv.py:155 _dict_to_list,74578,74578,0.04685193,0.053683466000000006
+experiments/direct-weight-forward/adapter.py:21 emit,lib/python3.12/csv.py:166 writerows,4,4,5.668000000000001e-06,0.047288580000000004
+lib/python3.12/csv.py:166 writerows,~ <method 'writerows' of '_csv.writer' objects>,4,4,0.018914052,0.047282912
+planner/quota/checker.py:9 check,planner/quota/checker.py:72 check_upstream,2,2,0.022395163000000003,0.03990548
+python3.12/json/encoder.py:183 encode,~ <method 'join' of 'str' objects>,13,13,0.036271080000000004,0.036271080000000004
+experiments/qwen3-model-size/prepare.py:1 <module>,lib/python3.12/subprocess.py:506 run,1,1,9.506300000000001e-05,0.035181137
+python3.12/json/encoder.py:278 _iterencode_list,python3.12/json/encoder.py:278 _iterencode_list,92096,92096,0.028274663000000002,0.035037756
+lib/python3.12/subprocess.py:1259 wait,lib/python3.12/subprocess.py:2021 _wait,23,23,8.144800000000001e-05,0.03498371
+lib/python3.12/subprocess.py:2021 _wait,lib/python3.12/subprocess.py:2008 _try_wait,8,8,1.305e-05,0.034868279
+lib/python3.12/subprocess.py:2008 _try_wait,~ <built-in method posix.waitpid>,8,8,0.034855229,0.034855229
+lib/python3.12/subprocess.py:1165 communicate,lib/python3.12/subprocess.py:1259 wait,8,8,9.114000000000001e-06,0.034756661
+experiments/qwen3-model-size/prepare.py:1 <module>,experiments/qwen3-model-size/prepare.py:8 module,2,2,9.183e-06,0.030608511
+experiments/qwen3-model-size/prepare.py:8 module,<frozen importlib._bootstrap_external>:993 exec_module,2,2,7.952000000000001e-06,0.030341421
+experiments/multi-npu-relay/adapter.py:8 emit,lib/python3.12/subprocess.py:417 check_output,3,3,4.2644e-05,0.027663382
+lib/python3.12/subprocess.py:417 check_output,lib/python3.12/subprocess.py:506 run,3,3,4.7511e-05,0.027616311
+planner/quota/planner.py:179 solve_upstream,planner/quota/upstream.py:80 decomposition,1,1,0.008337876000000001,0.027022514
+<frozen importlib._bootstrap_external>:993 exec_module,qwen-chunk-cpu-profiling/python-stages/profile_stage.py:42 get_code,20,20,0.000248932,0.026987959000000002
+python3.12/json/__init__.py:299 loads,python3.12/json/decoder.py:333 decode,11,11,5.2799e-05,0.025852917000000003
+python3.12/json/decoder.py:333 decode,python3.12/json/decoder.py:344 raw_decode,11,11,0.02576142,0.02576142
+experiments/multi-npu-relay/adapter.py:8 emit,python3.12/json/__init__.py:299 loads,6,6,1.8558e-05,0.02518077
+lib/python3.12/csv.py:112 __next__,~ <built-in method builtins.next>,62286,62286,0.023678268000000002,0.023678268000000002
+~ <method 'writerows' of '_csv.writer' objects>,lib/python3.12/csv.py:161 <genexpr>,98712,98712,0.012931235000000001,0.020031183
+experiments/multi-npu-relay/adapter.py:8 emit,~ <method 'join' of 'str' objects>,75075,75075,0.017727083,0.017727083
+<frozen importlib._bootstrap>:1349 _find_and_load,<frozen importlib._bootstrap>:1304 _find_and_load_unlocked,23,5,4.7380000000000004e-05,0.017506959000000002
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:42 get_code,qwen-chunk-cpu-profiling/python-stages/profile_stage.py:34 compiled,2,2,4.3648e-05,0.017114050000000002
+<frozen importlib._bootstrap>:1304 _find_and_load_unlocked,<frozen importlib._bootstrap>:911 _load_unlocked,22,5,9.3713e-05,0.016976245
+<frozen importlib._bootstrap>:911 _load_unlocked,<frozen importlib._bootstrap_external>:993 exec_module,15,5,2.6044e-05,0.016518319
+<frozen importlib._bootstrap_external>:993 exec_module,<frozen importlib._bootstrap>:480 _call_with_frames_removed,20,8,9.441e-06,0.015283148000000002
+<frozen importlib._bootstrap>:480 _call_with_frames_removed,~ <built-in method builtins.exec>,20,8,5.9080000000000004e-05,0.015278531000000001
+planner/quota/checker.py:72 check_upstream,~ <built-in method builtins.sum>,17254,17254,0.004762866,0.014470914000000001
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:34 compiled,lib/python3.12/ast.py:199 fix_missing_locations,3,3,4.526e-06,0.01358808
+lib/python3.12/ast.py:199 fix_missing_locations,lib/python3.12/ast.py:207 _fix,3,3,5.5879000000000005e-05,0.013583554000000001
+lib/python3.12/ast.py:207 _fix,lib/python3.12/ast.py:207 _fix,5002,57,0.004902360000000001,0.0135022
+~ <built-in method builtins.exec>,experiments/direct-weight-forward/adapter.py:1 <module>,1,1,3.4198e-05,0.012991779
+experiments/direct-weight-forward/adapter.py:1 <module>,<frozen importlib._bootstrap>:1349 _find_and_load,2,2,1.0938000000000001e-05,0.012810337000000002
+experiments/multi-npu-relay/adapter.py:8 emit,lib/python3.12/pathlib.py:1039 write_text,12,12,7.6748e-05,0.012443541
+lib/python3.12/csv.py:112 __next__,lib/python3.12/csv.py:98 fieldnames,124569,124569,0.012136395000000001,0.012154872
+lib/python3.12/pathlib.py:1039 write_text,~ <method 'write' of '_io.TextIOWrapper' objects>,24,24,0.012033181,0.012033181
+python3.12/json/encoder.py:334 _iterencode_dict,~ <method 'items' of 'dict' objects>,95997,95997,0.010090334000000001,0.010090334000000001
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:42 get_code,<frozen importlib._bootstrap_external>:1066 get_code,18,18,0.00014350700000000002,0.009569506
+planner/quota/upstream.py:80 decomposition,planner/quota/upstream.py:46 repair_margins,128,128,0.0042849,0.009225348000000001
+lib/python3.12/csv.py:112 __next__,~ <built-in method builtins.len>,124566,124566,0.008484704000000001,0.008484704000000001
+~ <method 'writerows' of '_csv.writer' objects>,lib/python3.12/csv.py:155 _dict_to_list,12339,12339,0.006998806000000001,0.008337677
+~ <built-in method builtins.sum>,planner/quota/checker.py:93 <genexpr>,23168,23168,0.0060525050000000006,0.008263816
+lib/python3.12/csv.py:155 _dict_to_list,~ <method 'keys' of 'dict' objects>,86917,86917,0.008170407000000001,0.008170407000000001
+python3.12/json/encoder.py:334 _iterencode_dict,~ <built-in method builtins.id>,95997,95997,0.008073079,0.008073079
+lib/python3.12/ast.py:207 _fix,lib/python3.12/ast.py:269 iter_child_nodes,10007,10007,0.0037417820000000004,0.007542078000000001
+<frozen importlib._bootstrap_external>:1066 get_code,<frozen importlib._bootstrap_external>:1058 source_to_code,3,3,4.057e-06,0.00726771
+<frozen importlib._bootstrap_external>:1058 source_to_code,<frozen importlib._bootstrap>:480 _call_with_frames_removed,3,3,3.033e-06,0.007263653
+<frozen importlib._bootstrap>:480 _call_with_frames_removed,~ <built-in method builtins.compile>,3,3,0.007260620000000001,0.007260620000000001
+planner/quota/upstream.py:80 decomposition,lib/python3.12/subprocess.py:506 run,1,1,1.2799e-05,0.006789519000000001
+experiments/multi-npu-relay/adapter.py:8 emit,~ <method 'items' of 'dict' objects>,62283,62283,0.0058758280000000005,0.0058758280000000005
+python3.12/json/encoder.py:278 _iterencode_list,~ <built-in method builtins.id>,58430,58430,0.005431178,0.005431178
+experiments/qwen3-model-size/prepare.py:1 <module>,python3.12/json/__init__.py:183 dumps,4,4,1.4394000000000001e-05,0.005158045
+python3.12/json/encoder.py:183 encode,python3.12/json/encoder.py:205 iterencode,13,13,0.005014401,0.005052219
+experiments/multi-npu-relay/adapter.py:8 emit,~ <method 'append' of 'list' objects>,62769,62769,0.004874533,0.004874533
+experiments/multi-npu-relay/adapter.py:8 emit,~ <built-in method builtins.len>,62298,62298,0.004826878000000001,0.004826878000000001
+lib/python3.12/pathlib.py:1005 open,~ <built-in method _io.open>,59,59,0.002610246,0.004142876
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:34 compiled,lib/python3.12/ast.py:34 parse,3,3,0.0005028130000000001,0.0037076210000000004
+~ <built-in method builtins.exec>,planner/quota/planner.py:1 <module>,1,1,1.0465e-05,0.003532388
+planner/quota/planner.py:1 <module>,<frozen importlib._bootstrap>:1349 _find_and_load,1,1,6.149000000000001e-06,0.003510055
+experiments/direct-weight-forward/adapter.py:21 emit,planner/quota/planner.py:49 validate,2,2,0.00104714,0.0034891740000000003
+planner/quota/planner.py:49 validate,~ <built-in method builtins.all>,1032,1032,0.0007940380000000001,0.003462352
+lib/python3.12/subprocess.py:506 run,lib/python3.12/subprocess.py:807 __init__,8,8,0.00017770600000000002,0.00339937
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:34 compiled,~ <built-in method builtins.compile>,3,3,0.00339411,0.00339411
+lib/python3.12/ast.py:34 parse,~ <built-in method builtins.compile>,3,3,0.0032048080000000004,0.0032048080000000004
+planner/quota/planner.py:179 solve_upstream,~ <built-in method builtins.sum>,322,322,0.001390795,0.003148844
+experiments/qwen3-model-size/prepare.py:1 <module>,<frozen importlib._bootstrap>:1349 _find_and_load,2,2,1.2558e-05,0.0031466410000000004
+~ <built-in method builtins.exec>,lib/python3.12/fractions.py:1 <module>,1,1,2.3375000000000002e-05,0.003088023
+lib/python3.12/subprocess.py:807 __init__,lib/python3.12/subprocess.py:1791 _execute_child,8,8,0.0001628,0.002818161
+lib/python3.12/ast.py:269 iter_child_nodes,lib/python3.12/ast.py:257 iter_fields,13084,13084,0.002032962,0.002734053
+experiments/multi-npu-relay/adapter.py:8 emit,lib/python3.12/pathlib.py:1022 read_text,9,9,3.4602000000000005e-05,0.002659372
+lib/python3.12/pathlib.py:1039 write_text,lib/python3.12/pathlib.py:1005 open,24,24,2.2541e-05,0.002464846
+~ <built-in method builtins.all>,planner/quota/planner.py:64 <genexpr>,9216,9216,0.00151628,0.002450051
+~ <built-in method builtins.exec>,planner/quota/checker.py:1 <module>,1,1,6.910000000000001e-06,0.002425661
+planner/quota/checker.py:1 <module>,<frozen importlib._bootstrap>:1349 _find_and_load,1,1,3.907e-06,0.0023774490000000002
+lib/python3.12/pathlib.py:447 __fspath__,lib/python3.12/pathlib.py:437 __str__,120,120,0.000352811,0.002306849
+planner/quota/upstream.py:46 repair_margins,~ <built-in method builtins.sum>,8627,8627,0.00147689,0.0022499770000000002
+planner/quota/checker.py:9 check,planner/quota/checker.py:7 require,48328,48328,0.0022190120000000002,0.0022190120000000002
+lib/python3.12/pathlib.py:1022 read_text,~ <method 'read' of '_io.TextIOWrapper' objects>,16,16,0.001002764,0.002165844
+~ <built-in method builtins.exec>,lib/python3.12/subprocess.py:1 <module>,1,1,3.0235e-05,0.0021148960000000002
+~ <built-in method builtins.exec>,python3.12/ctypes/__init__.py:1 <module>,1,1,5.8602000000000006e-05,0.002066163
+lib/python3.12/subprocess.py:1791 _execute_child,~ <built-in method _posixsubprocess.fork_exec>,8,8,0.0020183510000000003,0.0020183510000000003
+lib/python3.12/pathlib.py:437 __str__,lib/python3.12/pathlib.py:551 drive,92,92,0.00013832500000000001,0.001955615
+lib/python3.12/subprocess.py:1 <module>,<frozen importlib._bootstrap>:1349 _find_and_load,6,6,2.0265e-05,0.0019137750000000002
+lib/python3.12/pathlib.py:551 drive,lib/python3.12/pathlib.py:407 _load_parts,90,90,0.00024157,0.00181729
+planner/quota/planner.py:173 solve,planner/quota/planner.py:49 validate,1,1,0.000573597,0.0018153070000000002
+python3.12/re/__init__.py:226 compile,python3.12/re/__init__.py:280 _compile,13,13,3.83e-05,0.001813036
+lib/python3.12/fractions.py:1 <module>,python3.12/re/__init__.py:226 compile,2,2,2.2820000000000003e-06,0.001798682
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:34 compiled,qwen-chunk-cpu-profiling/python-stages/profile_stage.py:25 wrap,3,3,0.0006944630000000001,0.0017656630000000002
+experiments/direct-weight-forward/adapter.py:21 emit,lib/python3.12/pathlib.py:1039 write_text,6,6,4.8990000000000004e-05,0.0017639620000000002
+lib/python3.12/subprocess.py:2062 _communicate,lib/python3.12/subprocess.py:1085 _translate_newlines,11,11,1.9142e-05,0.00176355
+python3.12/re/__init__.py:280 _compile,python3.12/re/_compiler.py:745 compile,2,2,1.2009000000000001e-05,0.001745033
+experiments/qwen3-model-size/prepare.py:1 <module>,planner/quota/planner.py:49 validate,1,1,0.00048670900000000005,0.00174357
+planner/quota/planner.py:179 solve_upstream,<frozen importlib._bootstrap>:1349 _find_and_load,1,1,8.543000000000001e-06,0.001739965
+<frozen importlib._bootstrap>:1304 _find_and_load_unlocked,<frozen importlib._bootstrap>:1240 _find_spec,23,23,0.00013217,0.001612724
+~ <built-in method _io.open>,lib/python3.12/pathlib.py:447 __fspath__,71,71,5.810800000000001e-05,0.001498917
+python3.12/ctypes/__init__.py:1 <module>,<frozen importlib._bootstrap>:1349 _find_and_load,3,3,1.0847000000000001e-05,0.00149674
+planner/quota/upstream.py:80 decomposition,~ <method 'split' of 'str' objects>,16320,16320,0.0014832640000000002,0.0014832640000000002
+planner/quota/checker.py:72 check_upstream,~ <method 'copy' of 'list' objects>,16384,16384,0.001445209,0.001445209
+~ <built-in method builtins.sum>,planner/quota/checker.py:47 <genexpr>,23270,23270,0.001424338,0.001424338
+<frozen importlib._bootstrap>:911 _load_unlocked,<frozen importlib._bootstrap>:806 module_from_spec,22,21,3.5434e-05,0.0014132950000000002
+planner/quota/checker.py:72 check_upstream,planner/quota/checker.py:7 require,28950,28950,0.0013260350000000001,0.0013260350000000001
+lib/python3.12/subprocess.py:1085 _translate_newlines,~ <method 'replace' of 'str' objects>,22,22,0.001309838,0.001309838
+~ <built-in method builtins.sum>,planner/quota/checker.py:91 <genexpr>,23270,23270,0.0013050050000000001,0.0013050050000000001
+experiments/multi-npu-relay/adapter.py:8 emit,lib/python3.12/shutil.py:230 copyfile,6,6,6.9177e-05,0.001300277
+planner/quota/checker.py:93 <genexpr>,~ <built-in method builtins.abs>,22912,22912,0.001276114,0.001276114
+<frozen importlib._bootstrap>:1240 _find_spec,<frozen importlib._bootstrap_external>:1524 find_spec,16,16,1.5875e-05,0.0012476990000000001
+<frozen importlib._bootstrap_external>:1524 find_spec,<frozen importlib._bootstrap_external>:1495 _get_spec,16,16,5.7512e-05,0.001231824
+lib/python3.12/pathlib.py:407 _load_parts,lib/python3.12/pathlib.py:387 _parse_path,95,95,0.000366857,0.001217507
+python3.12/re/_compiler.py:745 compile,python3.12/re/_parser.py:969 parse,2,2,1.2037e-05,0.001199556
+python3.12/collections/__init__.py:595 __init__,python3.12/collections/__init__.py:669 update,13,13,1.8597e-05,0.00118958
+python3.12/re/_parser.py:969 parse,python3.12/re/_parser.py:452 _parse_sub,2,2,1.9951000000000003e-05,0.001181619
+lib/python3.12/pathlib.py:719 __truediv__,lib/python3.12/pathlib.py:711 joinpath,93,93,0.00012294,0.0011742270000000001
+<frozen importlib._bootstrap>:1349 _find_and_load,<frozen importlib._bootstrap>:416 __enter__,23,23,2.1441e-05,0.0011662460000000001
+~ <method 'read' of '_io.TextIOWrapper' objects>,<frozen codecs>:319 decode,16,16,3.4809000000000005e-05,0.0011630800000000001
+python3.12/re/_parser.py:452 _parse_sub,python3.12/re/_parser.py:512 _parse,35,2,0.0004248,0.001159937
+lib/python3.12/fractions.py:1 <module>,<frozen importlib._bootstrap>:1349 _find_and_load,1,1,4.1050000000000005e-06,0.001154819
+<frozen codecs>:319 decode,~ <built-in method _codecs.utf_8_decode>,16,16,0.0011282710000000001,0.0011282710000000001
+python3.12/collections/__init__.py:669 update,~ <built-in method _collections._count_elements>,7,7,0.000634009,0.001120448
+<frozen importlib._bootstrap>:806 module_from_spec,<frozen importlib._bootstrap>:989 create_module,6,6,6.288000000000001e-06,0.001083371
+<frozen importlib._bootstrap>:989 create_module,<frozen importlib._bootstrap>:480 _call_with_frames_removed,6,6,3.226e-06,0.0010770830000000002
+<frozen importlib._bootstrap>:480 _call_with_frames_removed,~ <built-in method _imp.create_builtin>,6,6,0.000421359,0.0010738570000000001
+lib/python3.12/ast.py:269 iter_child_nodes,~ <built-in method builtins.isinstance>,14350,14350,0.0010662430000000001,0.0010662430000000001
+~ <built-in method builtins.sum>,planner/quota/checker.py:51 <genexpr>,614,614,0.001059559,0.001059559
+lib/python3.12/pathlib.py:711 joinpath,lib/python3.12/pathlib.py:380 with_segments,93,93,0.000397599,0.0010512870000000001
+experiments/direct-weight-forward/adapter.py:21 emit,~ <method 'append' of 'list' objects>,13158,13158,0.001047153,0.001047153
+planner/quota/checker.py:9 check,python3.12/collections/__init__.py:609 __missing__,23270,23270,0.000991932,0.000991932
+~ <built-in method builtins.exec>,lib/python3.12/decimal.py:1 <module>,1,1,1.2539000000000001e-05,0.0009780140000000001
+lib/python3.12/decimal.py:1 <module>,<frozen importlib._bootstrap>:1349 _find_and_load,1,1,4.098e-06,0.000965475
+<frozen importlib._bootstrap_external>:1495 _get_spec,<frozen importlib._bootstrap_external>:1597 find_spec,43,43,0.00022464000000000002,0.000953616
+planner/quota/upstream.py:46 repair_margins,~ <built-in method builtins.min>,7832,7832,0.000948239,0.000948239
+<frozen importlib._bootstrap_external>:1066 get_code,<frozen importlib._bootstrap_external>:755 _compile_bytecode,15,15,2.6594000000000003e-05,0.0009406210000000001
+planner/quota/checker.py:93 <genexpr>,~ <built-in method builtins.len>,16384,16384,0.000935197,0.000935197
+planner/quota/planner.py:64 <genexpr>,planner/quota/planner.py:9 integer,8192,8192,0.000933771,0.000933771
+<frozen importlib._bootstrap_external>:755 _compile_bytecode,~ <built-in method marshal.loads>,15,15,0.0008925360000000001,0.0008925360000000001
+<frozen importlib._bootstrap>:416 __enter__,<frozen importlib._bootstrap>:426 _get_module_lock,23,23,0.0008534570000000001,0.0008903330000000001
+~ <built-in method builtins.sum>,planner/quota/planner.py:212 <genexpr>,11520,11520,0.0008800460000000001,0.0008800460000000001
+experiments/direct-weight-forward/adapter.py:21 emit,~ <method 'join' of 'str' objects>,827,827,0.000866103,0.0008743850000000001
+~ <built-in method builtins.exec>,lib/python3.12/struct.py:1 <module>,1,1,4.597e-06,0.000872396
+experiments/direct-weight-forward/adapter.py:21 emit,~ <built-in method builtins.len>,12351,12351,0.0008721110000000001,0.0008721110000000001
+lib/python3.12/struct.py:1 <module>,<frozen importlib._bootstrap>:1349 _find_and_load,1,1,3.6070000000000004e-06,0.000867799
+planner/quota/upstream.py:46 repair_margins,~ <built-in method builtins.max>,7808,7808,0.000866888,0.000866888
+experiments/multi-npu-relay/adapter.py:8 emit,qwen-chunk-cpu-profiling/python-stages/profile_stage.py:19 __exit__,141,141,0.00047970600000000005,0.000822351
+experiments/qwen3-model-size/prepare.py:1 <module>,~ <method 'writerow' of '_csv.writer' objects>,2049,2049,0.000798079,0.000798079
+experiments/multi-npu-relay/adapter.py:8 emit,~ <method 'update' of 'dict' objects>,9,9,0.000793697,0.000793697
+lib/python3.12/pathlib.py:1022 read_text,lib/python3.12/pathlib.py:1005 open,16,16,1.2737e-05,0.000775912
+experiments/qwen3-model-size/prepare.py:1 <module>,experiments/direct-weight-forward/adapter.py:14 baseline,1,1,0.000275447,0.000736132
+python3.12/re/_parser.py:512 _parse,python3.12/re/_parser.py:452 _parse_sub,27,13,5.5944000000000005e-05,0.0007087220000000001
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:25 wrap,~ <method 'splitlines' of 'str' objects>,128,128,0.0007038550000000001,0.0007038550000000001
+lib/python3.12/ast.py:257 iter_fields,~ <built-in method builtins.getattr>,8079,8079,0.000701091,0.000701091
+experiments/multi-npu-relay/adapter.py:8 emit,lib/python3.12/pathlib.py:719 __truediv__,36,36,2.4029e-05,0.0007004310000000001
+planner/quota/upstream.py:46 repair_margins,~ <method 'copy' of 'list' objects>,8192,8192,0.000696374,0.000696374
+lib/python3.12/pathlib.py:1306 mkdir,~ <built-in method posix.mkdir>,6,6,0.00047369,0.0006768540000000001
+~ <built-in method builtins.sum>,planner/quota/upstream.py:55 <genexpr>,11635,11635,0.0006634960000000001,0.0006634960000000001
+~ <built-in method builtins.exec>,lib/python3.12/threading.py:1 <module>,1,1,0.000180072,0.0006414400000000001
+~ <built-in method builtins.sum>,planner/quota/checker.py:55 <genexpr>,486,486,0.000634654,0.000634895
+lib/python3.12/pathlib.py:387 _parse_path,~ <built-in method sys.intern>,719,719,0.0006149030000000001,0.0006149030000000001
+lib/python3.12/pathlib.py:380 with_segments,lib/python3.12/pathlib.py:1157 __init__,110,110,0.000159924,0.000607448
+experiments/qwen3-model-size/prepare.py:1 <module>,lib/python3.12/pathlib.py:1039 write_text,4,4,2.4204e-05,0.0005984250000000001
+lib/python3.12/shutil.py:230 copyfile,lib/python3.12/shutil.py:112 _fastcopy_sendfile,6,6,3.3558e-05,0.000575731
+lib/python3.12/pathlib.py:1015 read_bytes,lib/python3.12/pathlib.py:1005 open,11,11,0.00014734,0.0005678500000000001
+lib/python3.12/subprocess.py:2062 _communicate,~ <built-in method posix.read>,481,481,0.0005584030000000001,0.0005584030000000001
+experiments/direct-weight-forward/adapter.py:21 emit,python3.12/collections/__init__.py:595 __init__,2,2,4.7860000000000004e-06,0.000558235
+~ <built-in method posix.stat>,lib/python3.12/pathlib.py:447 __fspath__,33,33,1.4746e-05,0.000551553
+lib/python3.12/ast.py:207 _fix,~ <built-in method builtins.getattr>,6420,6420,0.0005456910000000001,0.0005456910000000001
+lib/python3.12/ast.py:207 _fix,~ <built-in method builtins.hasattr>,6420,6420,0.0005375460000000001,0.0005375460000000001
+lib/python3.12/shutil.py:112 _fastcopy_sendfile,~ <built-in method posix.sendfile>,12,12,0.00052696,0.00052696
+python3.12/re/_compiler.py:745 compile,python3.12/re/_compiler.py:578 _code,2,2,1.4541e-05,0.000526799
+planner/quota/upstream.py:80 decomposition,~ <method 'join' of 'str' objects>,129,129,0.000517685,0.000517685
+experiments/qwen3-model-size/prepare.py:1 <module>,python3.12/json/__init__.py:299 loads,4,4,7.018e-06,0.0005120050000000001
+experiments/qwen3-model-size/prepare.py:1 <module>,lib/python3.12/pathlib.py:1228 resolve,3,3,9.978e-06,0.000496544
+planner/quota/upstream.py:15 prepare,~ <method 'join' of 'bytes' objects>,2,2,4.655e-05,0.00048812100000000005
+planner/quota/upstream.py:80 decomposition,~ <method 'splitlines' of 'str' objects>,1,1,0.00048786,0.00048786
+~ <built-in method _imp.create_builtin>,<frozen importlib._bootstrap>:1349 _find_and_load,1,1,5.539000000000001e-06,0.000484876
+lib/python3.12/pathlib.py:1157 __init__,lib/python3.12/pathlib.py:358 __init__,129,129,0.00031348700000000004,0.000482696
+python3.12/re/_compiler.py:578 _code,python3.12/re/_compiler.py:37 _compile,2,2,3.3866000000000004e-05,0.00046816100000000003
+<frozen importlib._bootstrap_external>:1066 get_code,<frozen importlib._bootstrap_external>:1187 get_data,21,21,4.5827e-05,0.000442224
+~ <method 'join' of 'bytes' objects>,planner/quota/upstream.py:22 <genexpr>,9,9,3.2629e-05,0.00044157100000000003
+~ <built-in method builtins.sum>,planner/quota/planner.py:185 <genexpr>,8320,8320,0.00043754600000000003,0.00043754600000000003
+lib/python3.12/subprocess.py:1085 _translate_newlines,~ <method 'decode' of 'bytes' objects>,11,11,0.00043457,0.00043457
+lib/python3.12/shutil.py:230 copyfile,lib/python3.12/shutil.py:206 _samefile,6,6,2.5335e-05,0.000424616
+experiments/direct-weight-forward/adapter.py:21 emit,qwen-chunk-cpu-profiling/python-stages/profile_stage.py:19 __exit__,100,100,0.00023269500000000002,0.000414667
+python3.12/re/_compiler.py:37 _compile,python3.12/re/_compiler.py:37 _compile,67,16,0.00017150300000000001,0.000412546
+planner/quota/upstream.py:22 <genexpr>,lib/python3.12/pathlib.py:1015 read_bytes,7,7,9.622e-06,0.00040894200000000003
+<frozen importlib._bootstrap>:911 _load_unlocked,<frozen importlib._bootstrap>:1171 exec_module,1,1,1.322e-06,0.00039748500000000005
+<frozen importlib._bootstrap>:806 module_from_spec,<frozen importlib._bootstrap>:733 _init_module_attrs,27,27,0.000119808,0.000395499
+<frozen importlib._bootstrap>:1171 exec_module,~ <built-in method builtins.exec>,1,1,1.6620000000000001e-06,0.00039450000000000005
+~ <built-in method builtins.exec>,<frozen importlib.util>:1 <module>,1,1,1.9631000000000002e-05,0.000392838
+lib/python3.12/shutil.py:206 _samefile,<frozen genericpath>:106 samefile,6,6,8.956e-06,0.00039203700000000003
+python3.12/ctypes/__init__.py:1 <module>,~ <built-in method builtins.__build_class__>,21,21,0.00037684700000000003,0.000390462
+experiments/qwen3-model-size/prepare.py:1 <module>,lib/python3.12/argparse.py:1451 add_argument,3,3,1.8765e-05,0.000384936
+lib/python3.12/pathlib.py:407 _load_parts,<frozen posixpath>:71 join,79,79,0.000255706,0.000383948
+<frozen genericpath>:106 samefile,~ <built-in method posix.stat>,12,12,0.000129722,0.000383081
+lib/python3.12/argparse.py:1451 add_argument,lib/python3.12/argparse.py:2607 _get_formatter,4,4,4.457000000000001e-06,0.000377465
+lib/python3.12/argparse.py:2607 _get_formatter,lib/python3.12/argparse.py:164 __init__,4,4,1.7187e-05,0.00037300800000000003
+~ <built-in method builtins.exec>,lib/python3.12/selectors.py:1 <module>,1,1,1.8350000000000002e-05,0.00037288800000000004
+experiments/multi-npu-relay/adapter.py:8 emit,lib/python3.12/pathlib.py:1306 mkdir,3,3,4.004e-06,0.00035849600000000003
+lib/python3.12/pathlib.py:835 stat,~ <built-in method posix.stat>,9,9,6.0461e-05,0.000352918
+experiments/multi-npu-relay/adapter.py:8 emit,<frozen importlib._bootstrap_external>:993 exec_module,3,3,9.426000000000001e-06,0.00035271900000000004
+experiments/direct-weight-forward/adapter.py:21 emit,~ <method 'extend' of 'list' objects>,4096,4096,0.000347602,0.000347602
+lib/python3.12/pathlib.py:1228 resolve,<frozen posixpath>:420 realpath,5,5,1.1956e-05,0.000332597
+<frozen importlib._bootstrap_external>:140 _path_stat,~ <built-in method posix.stat>,96,96,0.00032621900000000004,0.00032621900000000004
+<frozen importlib._bootstrap_external>:1066 get_code,<frozen importlib._bootstrap_external>:1211 _cache_bytecode,3,3,6.691000000000001e-06,0.00032387400000000004
+planner/quota/planner.py:49 validate,~ <method 'get' of 'dict' objects>,2108,2108,0.000322195,0.000322195
+lib/python3.12/pathlib.py:1228 resolve,lib/python3.12/pathlib.py:835 stat,5,5,2.051e-06,0.00030244
+experiments/qwen3-model-size/prepare.py:1 <module>,python3.12/collections/__init__.py:595 __init__,1,1,5.318000000000001e-06,0.000302192
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:25 wrap,lib/python3.12/ast.py:182 copy_location,128,128,0.000192398,0.00029626500000000004
+experiments/direct-weight-forward/adapter.py:21 emit,experiments/direct-weight-forward/adapter.py:12 require,4733,4733,0.00029103800000000003,0.00029103800000000003
+<frozen importlib._bootstrap_external>:1211 _cache_bytecode,<frozen importlib._bootstrap_external>:1216 set_data,3,3,1.7883e-05,0.000288351
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:19 __exit__,~ <built-in method resource.getrusage>,272,272,0.000288066,0.000288066
+planner/quota/planner.py:49 validate,planner/quota/planner.py:22 validate_upstream_numeric,4,4,6.287e-05,0.000288051
+lib/python3.12/argparse.py:164 __init__,python3.12/re/__init__.py:226 compile,8,8,0.000272289,0.00028539900000000004
+lib/python3.12/pathlib.py:1039 write_text,~ <method '__exit__' of '_io._IOBase' objects>,24,24,0.000284857,0.000284857
+experiments/direct-weight-forward/adapter.py:14 baseline,python3.12/collections/__init__.py:595 __init__,1,1,2.103e-06,0.000274501
+~ <built-in method builtins.sum>,planner/quota/planner.py:211 <genexpr>,243,243,0.00027391000000000004,0.00027391000000000004
+experiments/qwen3-model-size/prepare.py:1 <module>,lib/python3.12/argparse.py:1772 __init__,1,1,1.2278e-05,0.000268762
+~ <built-in method builtins.exec>,lib/python3.12/numbers.py:1 <module>,1,1,7.563e-06,0.00026710000000000004
+experiments/multi-npu-relay/adapter.py:8 emit,qwen-chunk-cpu-profiling/python-stages/profile_stage.py:17 __enter__,141,141,0.00011689300000000001,0.00026104300000000003
+python3.12/re/_parser.py:512 _parse,python3.12/re/_parser.py:261 get,885,885,0.000147877,0.000259916
+experiments/qwen3-model-size/prepare.py:1 <module>,lib/python3.12/pathlib.py:719 __truediv__,22,22,1.5454e-05,0.00025889
+experiments/multi-npu-relay/adapter.py:8 emit,lib/python3.12/pathlib.py:1005 open,3,3,3.926e-06,0.00025579300000000004
+lib/python3.12/subprocess.py:807 __init__,lib/python3.12/subprocess.py:1688 _get_handles,8,8,6.381400000000001e-05,0.000255212
+<frozen importlib.util>:1 <module>,<frozen importlib._bootstrap>:1349 _find_and_load,1,1,4.424e-06,0.000255082
+<frozen importlib._bootstrap>:416 __enter__,<frozen importlib._bootstrap>:304 acquire,23,23,8.5288e-05,0.000254472
+lib/python3.12/subprocess.py:2062 _communicate,lib/python3.12/subprocess.py:1259 wait,7,7,1.6175e-05,0.000252077
+<frozen importlib._bootstrap_external>:1187 get_data,~ <built-in method _io.open_code>,21,21,0.00024733000000000003,0.00024733000000000003
+planner/quota/checker.py:72 check_upstream,python3.12/collections/__init__.py:609 __missing__,5752,5752,0.00023785400000000002,0.00023785400000000002
+~ <built-in method _collections._count_elements>,experiments/direct-weight-forward/adapter.py:41 <genexpr>,4098,4098,0.00023242300000000002,0.00023242300000000002
+<frozen importlib._bootstrap>:733 _init_module_attrs,<frozen importlib._bootstrap>:632 cached,40,40,2.0191e-05,0.00022649
+~ <built-in method builtins.__build_class__>,<frozen abc>:105 __new__,15,15,1.578e-05,0.00022527500000000001
+lib/python3.12/subprocess.py:1791 _execute_child,lib/python3.12/subprocess.py:1282 _close_pipe_fds,8,8,7.662100000000001e-05,0.000222823
+<frozen posixpath>:420 realpath,<frozen posixpath>:429 _joinrealpath,5,5,5.3660000000000005e-05,0.000222253
+experiments/direct-weight-forward/adapter.py:21 emit,lib/python3.12/pathlib.py:1005 open,4,4,3.5560000000000003e-06,0.00021964
+experiments/qwen3-model-size/prepare.py:1 <module>,experiments/qwen3-model-size/prepare.py:11 sha,2,2,9.656e-06,0.00021940900000000003
+experiments/qwen3-model-size/prepare.py:8 module,<frozen importlib._bootstrap_external>:806 spec_from_file_location,2,2,2.2377000000000003e-05,0.000216044
+<frozen importlib._bootstrap_external>:1495 _get_spec,<frozen importlib._bootstrap_external>:1473 _path_importer_cache,53,53,7.7404e-05,0.00021502900000000002
+experiments/direct-weight-forward/adapter.py:21 emit,lib/python3.12/pathlib.py:1306 mkdir,2,2,2.3440000000000003e-06,0.000214271
+experiments/qwen3-model-size/prepare.py:1 <module>,lib/python3.12/pathlib.py:1022 read_text,4,4,8.797e-06,0.00020984400000000002
+experiments/qwen3-model-size/prepare.py:1 <module>,~ <built-in method builtins.all>,1,1,1.9121000000000002e-05,0.00020979400000000002
+<frozen importlib._bootstrap>:632 cached,<frozen importlib._bootstrap_external>:615 _get_cached,20,20,2.8464e-05,0.000206299
+~ <built-in method posix.mkdir>,lib/python3.12/pathlib.py:447 __fspath__,6,6,5.478000000000001e-06,0.000203164
+lib/python3.12/subprocess.py:2062 _communicate,lib/python3.12/selectors.py:66 __len__,493,493,0.00014854900000000002,0.00020215800000000003
+<frozen importlib._bootstrap_external>:1597 find_spec,<frozen importlib._bootstrap_external>:126 _path_join,201,201,0.00011499600000000001,0.00020195600000000002
+lib/python3.12/threading.py:1 <module>,<frozen importlib._bootstrap>:1349 _find_and_load,1,1,3.806e-06,0.00019878700000000002
+planner/quota/planner.py:179 solve_upstream,~ <method 'append' of 'list' objects>,2304,2304,0.000198426,0.000198426
+planner/quota/upstream.py:32 replication,python3.12/json/__init__.py:299 loads,1,1,6.1690000000000006e-06,0.00019811600000000003
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:34 compiled,lib/python3.12/pathlib.py:1022 read_text,3,3,1.6856000000000003e-05,0.000196455
+lib/python3.12/numbers.py:1 <module>,~ <built-in method builtins.__build_class__>,5,5,1.6536000000000002e-05,0.000195421
+experiments/qwen3-model-size/prepare.py:1 <module>,qwen-chunk-cpu-profiling/python-stages/profile_stage.py:19 __exit__,31,31,9.9605e-05,0.000191587
+planner/quota/upstream.py:15 prepare,~ <built-in method _hashlib.openssl_sha256>,4,4,0.00019097500000000002,0.00019097500000000002
+~ <built-in method builtins.all>,experiments/qwen3-model-size/prepare.py:22 <genexpr>,257,257,0.000162552,0.000190673
+<frozen importlib._bootstrap_external>:1216 set_data,<frozen importlib._bootstrap_external>:195 _write_atomic,3,3,2.7784e-05,0.00018856300000000002
+planner/quota/planner.py:49 validate,planner/quota/planner.py:9 integer,1044,1044,0.000186114,0.000186114
+experiments/direct-weight-forward/adapter.py:21 emit,qwen-chunk-cpu-profiling/python-stages/profile_stage.py:17 __enter__,100,100,7.8093e-05,0.00018043600000000002
+<frozen importlib._bootstrap_external>:615 _get_cached,<frozen importlib._bootstrap_external>:486 cache_from_source,20,20,7.2314e-05,0.000171136
+experiments/qwen3-model-size/prepare.py:11 sha,lib/python3.12/pathlib.py:1015 read_bytes,2,2,7.109e-06,0.000170805
+lib/python3.12/pathlib.py:387 _parse_path,<frozen posixpath>:138 splitroot,95,95,0.000149621,0.000169907
+planner/quota/planner.py:49 validate,~ <built-in method builtins.len>,2068,2068,0.000167799,0.000167799
+planner/quota/upstream.py:15 prepare,lib/python3.12/pathlib.py:1015 read_bytes,2,2,9.934e-06,0.000165858
+<frozen importlib._bootstrap_external>:1066 get_code,<frozen importlib._bootstrap_external>:768 _code_to_timestamp_pyc,3,3,1.5783e-05,0.000164837
+<frozen abc>:105 __new__,~ <built-in method __new__ of type object at 0x144d380>,16,16,0.000164768,0.000164768
+planner/quota/checker.py:9 check,~ <built-in method builtins.len>,2528,2528,0.00016044600000000002,0.00016044600000000002
+experiments/qwen3-model-size/prepare.py:1 <module>,lib/python3.12/argparse.py:1903 parse_args,1,1,1.051e-06,0.000159459
+planner/quota/planner.py:179 solve_upstream,~ <method 'pop' of 'list' objects>,1582,1582,0.000158628,0.000158628
+lib/python3.12/argparse.py:1903 parse_args,lib/python3.12/argparse.py:1913 parse_known_args,1,1,2.505e-06,0.00015840800000000002
+planner/quota/planner.py:49 validate,~ <built-in method builtins.isinstance>,2060,2060,0.00015712200000000002,0.00015712200000000002
+planner/quota/planner.py:49 validate,planner/quota/planner.py:7 need,2124,2124,0.00015606500000000002,0.00015606500000000002
+planner/quota/upstream.py:15 prepare,lib/python3.12/pathlib.py:1039 write_text,2,2,1.0926e-05,0.00015598400000000002
+lib/python3.12/argparse.py:1913 parse_known_args,lib/python3.12/argparse.py:1916 _parse_known_args2,1,1,1.5603e-05,0.00015590300000000001
+lib/python3.12/shutil.py:230 copyfile,~ <built-in method _io.open>,12,12,0.00014409200000000002,0.000149182
+lib/python3.12/selectors.py:1 <module>,<frozen importlib._bootstrap>:1349 _find_and_load,1,1,3.3140000000000004e-06,0.000148683
+~ <built-in method builtins.sum>,planner/quota/planner.py:210 <genexpr>,192,192,0.000147565,0.000147565
+lib/python3.12/threading.py:1 <module>,lib/python3.12/threading.py:1441 __init__,1,1,7.190000000000001e-06,0.00014574800000000001
+<frozen importlib._bootstrap_external>:1597 find_spec,<frozen importlib._bootstrap_external>:140 _path_stat,43,43,1.2770000000000001e-05,0.000144298
+~ <built-in method builtins.all>,planner/quota/planner.py:53 <genexpr>,516,516,8.503200000000001e-05,0.00014339000000000002
+planner/quota/planner.py:49 validate,lib/python3.12/fractions.py:186 __new__,8,8,6.7276e-05,0.00014081800000000002
+~ <built-in method builtins.sum>,planner/quota/checker.py:53 <genexpr>,360,360,0.00012772600000000002,0.00013923
+~ <built-in method builtins.sum>,planner/quota/checker.py:92 <genexpr>,614,614,7.9701e-05,0.00013922700000000001
+lib/python3.12/subprocess.py:2062 _communicate,lib/python3.12/selectors.py:365 unregister,16,16,4.3089e-05,0.000139189
+~ <built-in method posix.fspath>,lib/python3.12/pathlib.py:447 __fspath__,10,10,7.1490000000000005e-06,0.000138696
+<frozen importlib._bootstrap_external>:1473 _path_importer_cache,<frozen importlib._bootstrap_external>:1460 _path_hooks,5,5,2.2714000000000003e-05,0.000137625
+~ <built-in method builtins.isinstance>,<frozen abc>:117 __instancecheck__,81,81,3.3688e-05,0.00013350500000000002
+lib/python3.12/subprocess.py:1 <module>,~ <built-in method builtins.__build_class__>,5,5,0.00010280300000000001,0.000133039
+~ <built-in method _imp.create_builtin>,python3.12/collections/__init__.py:355 namedtuple,1,1,6.286100000000001e-05,0.000133019
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:19 __exit__,~ <built-in method time.process_time>,272,272,0.000132149,0.000132149
+lib/python3.12/argparse.py:1916 _parse_known_args2,lib/python3.12/argparse.py:1954 _parse_known_args,1,1,2.633e-05,0.000132148
+lib/python3.12/subprocess.py:2062 _communicate,lib/python3.12/selectors.py:351 register,16,16,3.2912e-05,0.000130998
+lib/python3.12/subprocess.py:2062 _communicate,~ <method 'join' of 'bytes' objects>,11,11,0.000130053,0.000130053
+<frozen importlib._bootstrap_external>:768 _code_to_timestamp_pyc,~ <built-in method marshal.dumps>,3,3,0.000129204,0.000129204
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:17 __enter__,~ <built-in method resource.getrusage>,272,272,0.000126067,0.000126067
+lib/python3.12/pathlib.py:1015 read_bytes,~ <method 'read' of '_io.BufferedReader' objects>,11,11,0.00012577900000000002,0.00012577900000000002
+experiments/direct-weight-forward/adapter.py:14 baseline,experiments/direct-weight-forward/adapter.py:17 <genexpr>,192,192,0.00012291,0.00012291
+<frozen importlib._bootstrap>:304 acquire,<frozen importlib._bootstrap>:162 __enter__,24,24,2.6262e-05,0.000122826
+lib/python3.12/csv.py:151 writeheader,lib/python3.12/csv.py:163 writerow,7,7,1.1196000000000001e-05,0.000122583
+~ <built-in method builtins.sum>,planner/quota/checker.py:54 <genexpr>,360,360,8.217800000000001e-05,0.0001207
+planner/quota/planner.py:179 solve_upstream,planner/quota/planner.py:7 need,2048,2048,0.000120303,0.000120303
+experiments/direct-weight-forward/adapter.py:21 emit,lib/python3.12/pathlib.py:719 __truediv__,10,10,8.803e-06,0.00011986800000000001
+~ <built-in method _collections._count_elements>,experiments/direct-weight-forward/adapter.py:15 <genexpr>,2049,2049,0.000117374,0.000117374
+planner/quota/upstream.py:46 repair_margins,~ <built-in method builtins.len>,1688,1688,0.00011695700000000001,0.00011695700000000001
+experiments/multi-npu-relay/adapter.py:8 emit,<frozen importlib._bootstrap_external>:806 spec_from_file_location,3,3,5.1863e-05,0.000116174
+~ <built-in method _collections._count_elements>,experiments/qwen3-model-size/prepare.py:27 <genexpr>,2049,2049,0.00011256700000000001,0.00011256700000000001
+experiments/qwen3-model-size/prepare.py:1 <module>,lib/python3.12/pathlib.py:1306 mkdir,1,1,1.8940000000000002e-06,0.000112329
+<frozen importlib.util>:1 <module>,~ <built-in method builtins.__build_class__>,3,3,9.0654e-05,0.00011229700000000001
+~ <built-in method builtins.exec>,planner/quota/upstream.py:1 <module>,1,1,1.2800000000000001e-05,0.000112108
+python3.12/re/_parser.py:261 get,python3.12/re/_parser.py:240 __next,885,885,0.000112039,0.000112039
+planner/quota/upstream.py:15 prepare,lib/python3.12/pathlib.py:719 __truediv__,22,22,7.929e-06,0.000111093
+lib/python3.12/threading.py:1 <module>,~ <built-in method builtins.__build_class__>,11,11,8.8441e-05,0.000108441
+lib/python3.12/argparse.py:1772 __init__,lib/python3.12/gettext.py:616 gettext,3,3,1.5630000000000001e-06,0.000108132
+lib/python3.12/pathlib.py:380 with_segments,lib/python3.12/pathlib.py:1164 __new__,110,110,6.3446e-05,0.00010793200000000001
+lib/python3.12/gettext.py:616 gettext,lib/python3.12/gettext.py:578 dgettext,3,3,4.397e-06,0.000106569
+lib/python3.12/selectors.py:1 <module>,~ <built-in method builtins.__build_class__>,7,7,1.1407000000000001e-05,0.000105196
+<frozen importlib._bootstrap_external>:1597 find_spec,<frozen importlib._bootstrap_external>:1648 _fill_cache,6,6,1.5594e-05,0.000104166
+lib/python3.12/pathlib.py:358 __init__,~ <built-in method builtins.isinstance>,342,342,0.000102269,0.000102269
+python3.12/re/_compiler.py:37 _compile,python3.12/re/_compiler.py:243 _optimize_charset,27,27,6.6912e-05,0.00010225100000000001
+lib/python3.12/gettext.py:578 dgettext,lib/python3.12/gettext.py:519 translation,3,3,6.098000000000001e-06,0.000101661
+lib/python3.12/subprocess.py:1791 _execute_child,<frozen os>:654 get_exec_path,2,2,4.2504000000000005e-05,0.00010159200000000001
+<frozen abc>:117 __instancecheck__,~ <built-in method _abc._abc_instancecheck>,81,81,5.2056000000000004e-05,9.981700000000001e-05
+planner/quota/checker.py:9 check,~ <built-in method builtins.all>,6,6,3.8515e-05,9.981000000000001e-05
+<frozen importlib._bootstrap_external>:806 spec_from_file_location,~ <method 'endswith' of 'str' objects>,10,10,9.9288e-05,9.9288e-05
+lib/python3.12/subprocess.py:2062 _communicate,~ <method 'close' of '_io.TextIOWrapper' objects>,16,16,9.864800000000001e-05,9.864800000000001e-05
+experiments/direct-weight-forward/adapter.py:1 <module>,lib/python3.12/pathlib.py:1228 resolve,1,1,4.187e-06,9.8608e-05
+<frozen importlib._bootstrap_external>:1187 get_data,~ <method 'read' of '_io.BufferedReader' objects>,18,18,9.828e-05,9.828e-05
+planner/quota/checker.py:9 check,~ <method 'count' of 'list' objects>,128,128,9.7837e-05,9.7837e-05
+<frozen importlib._bootstrap_external>:1066 get_code,<frozen importlib._bootstrap_external>:486 cache_from_source,18,18,3.2826e-05,9.731900000000001e-05
+lib/python3.12/argparse.py:1772 __init__,lib/python3.12/argparse.py:1451 add_argument,1,1,1.394e-05,9.661500000000001e-05
+planner/quota/checker.py:9 check,lib/python3.12/fractions.py:186 __new__,4,4,4.8620000000000005e-05,9.616300000000001e-05
+lib/python3.12/threading.py:1441 __init__,lib/python3.12/threading.py:1042 _set_native_id,1,1,8.904300000000001e-05,9.566300000000001e-05
+lib/python3.12/gettext.py:519 translation,lib/python3.12/gettext.py:479 find,3,3,1.5402000000000003e-05,9.5563e-05
+lib/python3.12/argparse.py:1954 _parse_known_args,lib/python3.12/argparse.py:2021 consume_optional,3,3,4.9585e-05,9.5121e-05
+lib/python3.12/selectors.py:351 register,lib/python3.12/selectors.py:234 register,16,16,4.3797e-05,9.2509e-05
+<frozen importlib._bootstrap>:162 __enter__,<frozen importlib._bootstrap>:124 setdefault,24,24,4.1524000000000004e-05,9.1187e-05
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:17 __enter__,~ <built-in method time.process_time>,272,272,8.9404e-05,8.9404e-05
+python3.12/collections/__init__.py:355 namedtuple,~ <built-in method builtins.eval>,2,2,8.8492e-05,8.904400000000001e-05
+experiments/multi-npu-relay/adapter.py:8 emit,<frozen importlib._bootstrap>:806 module_from_spec,3,3,1.3651e-05,8.8893e-05
+lib/python3.12/selectors.py:1 <module>,python3.12/collections/__init__.py:355 namedtuple,1,1,3.4532e-05,8.864300000000001e-05
+lib/python3.12/selectors.py:365 unregister,lib/python3.12/selectors.py:247 unregister,16,16,1.7266e-05,8.8566e-05
+lib/python3.12/pathlib.py:437 __str__,lib/python3.12/pathlib.py:429 _format_parsed_parts,92,92,5.1907e-05,8.803000000000001e-05
+lib/python3.12/subprocess.py:1791 _execute_child,lib/python3.12/subprocess.py:1880 <genexpr>,28,28,1.7454000000000003e-05,8.78e-05
+planner/quota/upstream.py:1 <module>,lib/python3.12/pathlib.py:1228 resolve,1,1,4.757e-06,8.680000000000001e-05
+<frozen importlib._bootstrap_external>:1648 _fill_cache,~ <built-in method posix.listdir>,6,6,8.5337e-05,8.5337e-05
+<frozen importlib._bootstrap_external>:486 cache_from_source,<frozen importlib._bootstrap_external>:132 _path_split,38,38,3.5084000000000005e-05,8.4978e-05
+<frozen importlib._bootstrap_external>:1597 find_spec,<frozen importlib._bootstrap_external>:1592 _get_spec,15,15,2.3992e-05,8.4195e-05
+experiments/multi-npu-relay/adapter.py:8 emit,lib/python3.12/pathlib.py:628 with_name,3,3,1.7067e-05,8.4146e-05
+<frozen posixpath>:420 realpath,~ <built-in method posix.fspath>,5,5,3.7470000000000003e-06,8.3986e-05
+<frozen posixpath>:429 _joinrealpath,~ <built-in method posix.lstat>,33,33,8.3415e-05,8.3415e-05
+lib/python3.12/subprocess.py:807 __init__,~ <built-in method _io.open>,16,16,8.3325e-05,8.3325e-05
+<frozen importlib._bootstrap_external>:150 _path_is_mode_type,<frozen importlib._bootstrap_external>:140 _path_stat,27,27,7.942000000000001e-06,8.3107e-05
+<frozen importlib._bootstrap_external>:1066 get_code,<frozen importlib._bootstrap_external>:1206 path_stats,18,18,1.289e-05,8.2464e-05
+<frozen importlib._bootstrap>:1240 _find_spec,site-packages/_distutils_hack/__init__.py:101 find_spec,23,23,3.8335000000000005e-05,8.2262e-05
+~ <built-in method builtins.exec>,python3.12/ctypes/_endian.py:1 <module>,1,1,1.6124e-05,8.0821e-05
+<frozen importlib._bootstrap_external>:1597 find_spec,<frozen importlib._bootstrap_external>:159 _path_isfile,18,18,9.450000000000001e-06,8.050800000000001e-05
+<frozen importlib._bootstrap_external>:1597 find_spec,<frozen importlib._bootstrap_external>:71 _relax_case,43,43,7.9818e-05,7.9818e-05
+experiments/multi-npu-relay/capacity.py:2 weight_task_count,python3.12/collections/__init__.py:595 __init__,3,3,1.427e-05,7.9468e-05
+lib/python3.12/subprocess.py:2062 _communicate,lib/python3.12/subprocess.py:1247 _check_timeout,486,486,6.276e-05,7.825100000000001e-05
+lib/python3.12/selectors.py:215 _fileobj_lookup,lib/python3.12/selectors.py:21 _fileobj_to_fd,32,32,4.063e-05,7.819700000000001e-05
+experiments/multi-npu-relay/adapter.py:8 emit,~ <method 'splitlines' of 'str' objects>,3,3,7.7506e-05,7.7506e-05
+<frozen importlib._bootstrap>:1349 _find_and_load,<frozen importlib._bootstrap>:420 __exit__,23,23,1.1462000000000001e-05,7.669e-05
+python3.12/re/_parser.py:512 _parse,python3.12/re/_parser.py:168 __getitem__,222,222,5.2650000000000006e-05,7.5406e-05
+~ <built-in method builtins.__build_class__>,lib/python3.12/numbers.py:57 Complex,1,1,7.2167e-05,7.524200000000001e-05
+lib/python3.12/selectors.py:402 select,~ <method 'append' of 'list' objects>,490,490,7.4947e-05,7.4947e-05
+experiments/direct-weight-forward/adapter.py:21 emit,lib/python3.12/csv.py:151 writeheader,4,4,1.0727e-05,7.4913e-05
+~ <built-in method builtins.all>,planner/quota/planner.py:54 <genexpr>,260,260,4.6768000000000004e-05,7.4873e-05
+lib/python3.12/subprocess.py:2062 _communicate,lib/python3.12/subprocess.py:1239 _remaining_time,493,493,6.0125000000000005e-05,7.4453e-05
+lib/python3.12/pathlib.py:583 name,lib/python3.12/pathlib.py:569 _tail,7,7,1.6114000000000002e-05,7.4252e-05
+<frozen importlib._bootstrap_external>:132 _path_split,~ <built-in method builtins.max>,47,47,3.595e-05,7.3688e-05
+python3.12/re/_parser.py:512 _parse,python3.12/re/_parser.py:98 closegroup,19,19,9.392000000000001e-06,7.3389e-05
+~ <built-in method builtins.sum>,planner/quota/upstream.py:56 <genexpr>,307,307,4.0986000000000004e-05,7.3371e-05
+experiments/qwen3-model-size/prepare.py:1 <module>,qwen-chunk-cpu-profiling/python-stages/profile_stage.py:17 __enter__,31,31,3.2401000000000004e-05,7.2718e-05
+lib/python3.12/subprocess.py:2062 _communicate,~ <method 'append' of 'list' objects>,481,481,7.1969e-05,7.1969e-05
+<frozen importlib._bootstrap_external>:126 _path_join,~ <method 'rstrip' of 'str' objects>,518,518,7.194700000000001e-05,7.194700000000001e-05
+planner/quota/upstream.py:15 prepare,lib/python3.12/pathlib.py:852 exists,4,4,9.994000000000001e-06,7.1245e-05
+<frozen importlib._bootstrap_external>:159 _path_isfile,<frozen importlib._bootstrap_external>:150 _path_is_mode_type,18,18,1.0105e-05,7.105800000000001e-05
+<frozen abc>:105 __new__,~ <built-in method _abc._abc_init>,16,16,6.9954e-05,6.9954e-05
+<frozen importlib._bootstrap_external>:1206 path_stats,<frozen importlib._bootstrap_external>:140 _path_stat,18,18,5.5810000000000004e-06,6.957400000000001e-05
+lib/python3.12/selectors.py:402 select,lib/python3.12/selectors.py:275 _key_from_fd,490,490,6.8681e-05,6.8681e-05
+lib/python3.12/subprocess.py:1791 _execute_child,<frozen posixpath>:179 dirname,16,16,4.3794e-05,6.8652e-05
+lib/python3.12/subprocess.py:1688 _get_handles,~ <built-in method posix.pipe>,16,16,6.815900000000001e-05,6.815900000000001e-05
+experiments/multi-npu-relay/adapter.py:8 emit,lib/python3.12/csv.py:151 writeheader,3,3,9.675000000000001e-06,6.807200000000001e-05
+lib/python3.12/argparse.py:164 __init__,lib/python3.12/shutil.py:1404 get_terminal_size,4,4,1.7202000000000002e-05,6.6949e-05
+experiments/multi-npu-relay/adapter.py:8 emit,~ <method '__exit__' of '_io._IOBase' objects>,3,3,6.6939e-05,6.6939e-05
+planner/quota/planner.py:22 validate_upstream_numeric,lib/python3.12/fractions.py:186 __new__,16,16,3.7307e-05,6.587800000000001e-05
+lib/python3.12/pathlib.py:387 _parse_path,~ <method 'split' of 'str' objects>,95,95,6.584e-05,6.584e-05
+<frozen importlib._bootstrap>:420 __exit__,<frozen importlib._bootstrap>:372 release,23,23,4.4349000000000005e-05,6.5228e-05
+lib/python3.12/selectors.py:247 unregister,lib/python3.12/selectors.py:215 _fileobj_lookup,16,16,1.1397000000000001e-05,6.5119e-05
+lib/python3.12/subprocess.py:1282 _close_pipe_fds,lib/python3.12/contextlib.py:530 callback,16,16,3.9834000000000005e-05,6.4478e-05
+<frozen importlib._bootstrap_external>:806 spec_from_file_location,~ <built-in method posix.fspath>,20,20,5.767e-06,6.4224e-05
+lib/python3.12/numbers.py:1 <module>,<frozen abc>:110 register,3,3,5.421100000000001e-05,6.411600000000001e-05
+python3.12/re/_parser.py:98 closegroup,python3.12/re/_parser.py:178 getwidth,19,19,2.3381000000000002e-05,6.3997e-05
+planner/quota/upstream.py:15 prepare,lib/python3.12/pathlib.py:642 with_suffix,2,2,1.5914e-05,6.3154e-05
+<frozen posixpath>:429 _joinrealpath,<frozen posixpath>:71 join,33,33,3.8168000000000005e-05,6.2131e-05
+<frozen importlib._bootstrap_external>:806 spec_from_file_location,<frozen importlib._bootstrap_external>:982 is_package,5,5,2.0474e-05,6.1423e-05
+<frozen importlib._bootstrap_external>:1460 _path_hooks,<frozen importlib._bootstrap_external>:1689 path_hook_for_FileFinder,5,5,1.0907e-05,6.1061e-05
+<frozen importlib._bootstrap_external>:195 _write_atomic,~ <built-in method posix.open>,3,3,6.0831e-05,6.0831e-05
+experiments/direct-weight-forward/adapter.py:21 emit,~ <built-in method builtins.all>,2,2,2.5160000000000003e-05,6.0740000000000005e-05
+lib/python3.12/subprocess.py:1282 _close_pipe_fds,lib/python3.12/contextlib.py:567 __exit__,8,8,3.5976e-05,6.0442e-05
+planner/quota/checker.py:92 <genexpr>,~ <built-in method builtins.max>,358,358,5.9526000000000006e-05,5.9526000000000006e-05
+lib/python3.12/pathlib.py:1022 read_text,~ <method '__exit__' of '_io._IOBase' objects>,16,16,5.8811e-05,5.8811e-05
+lib/python3.12/subprocess.py:2062 _communicate,lib/python3.12/selectors.py:347 __init__,7,7,2.6134e-05,5.8635000000000004e-05
+<frozen abc>:121 __subclasscheck__,~ <built-in method _abc._abc_subclasscheck>,22,9,4.7268e-05,5.8627000000000006e-05
+planner/quota/planner.py:53 <genexpr>,planner/quota/planner.py:9 integer,512,512,5.8358000000000006e-05,5.8358000000000006e-05
+lib/python3.12/pathlib.py:569 _tail,lib/python3.12/pathlib.py:407 _load_parts,5,5,7.671e-06,5.8138000000000005e-05
+planner/quota/planner.py:22 validate_upstream_numeric,lib/python3.12/fractions.py:627 reverse,12,12,1.7367e-05,5.7957e-05
+experiments/qwen3-model-size/prepare.py:1 <module>,lib/python3.12/pathlib.py:1005 open,1,1,7.410000000000001e-07,5.7947000000000006e-05
+<frozen importlib._bootstrap>:911 _load_unlocked,<frozen importlib._bootstrap>:997 exec_module,6,6,2.793e-06,5.7526000000000005e-05
+<frozen importlib._bootstrap>:1240 _find_spec,<frozen importlib._bootstrap>:982 find_spec,23,23,1.2569000000000001e-05,5.7005e-05
+<frozen posixpath>:71 join,~ <method 'startswith' of 'str' objects>,178,178,5.6886000000000004e-05,5.6886000000000004e-05
+<frozen importlib._bootstrap_external>:486 cache_from_source,<frozen importlib._bootstrap_external>:126 _path_join,38,38,3.5658e-05,5.6827e-05
+lib/python3.12/ast.py:182 copy_location,~ <built-in method builtins.setattr>,512,512,5.6589e-05,5.6589e-05
+lib/python3.12/pathlib.py:852 exists,lib/python3.12/pathlib.py:835 stat,4,4,3.154e-06,5.5683e-05
+lib/python3.12/fractions.py:186 __new__,~ <built-in method builtins.isinstance>,54,54,2.1699e-05,5.5632000000000005e-05
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:19 __exit__,~ <built-in method time.perf_counter>,272,272,5.5505000000000005e-05,5.5505000000000005e-05
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:19 __exit__,~ <method 'pop' of 'list' objects>,272,272,5.5165000000000005e-05,5.5165000000000005e-05
+lib/python3.12/pathlib.py:420 _from_parsed_parts,lib/python3.12/pathlib.py:380 with_segments,12,12,1.3611e-05,5.5074e-05
+<frozen posixpath>:71 join,<frozen posixpath>:41 _get_sep,141,141,3.7073e-05,5.4912000000000006e-05
+<frozen importlib._bootstrap_external>:1592 _get_spec,<frozen importlib._bootstrap_external>:806 spec_from_file_location,15,15,3.3783000000000005e-05,5.4862000000000004e-05
+<frozen importlib._bootstrap>:997 exec_module,<frozen importlib._bootstrap>:480 _call_with_frames_removed,6,6,2.6150000000000004e-06,5.4733000000000006e-05
+experiments/multi-npu-relay/adapter.py:8 emit,experiments/multi-npu-relay/capacity.py:2 weight_task_count,1,1,1.7610000000000002e-05,5.4281000000000004e-05
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:42 get_code,~ <built-in method builtins.any>,20,20,1.985e-05,5.3919e-05
+<frozen importlib._bootstrap_external>:1460 _path_hooks,<frozen zipimport>:64 __init__,5,5,1.9538e-05,5.385e-05
+lib/python3.12/subprocess.py:1688 _get_handles,lib/python3.12/contextlib.py:299 helper,8,8,2.7712e-05,5.3621e-05
+lib/python3.12/selectors.py:66 __len__,~ <built-in method builtins.len>,493,493,5.3609e-05,5.3609e-05
+lib/python3.12/pathlib.py:1164 __new__,~ <built-in method __new__ of type object at 0x144d380>,129,129,5.2639e-05,5.2639e-05
+<frozen importlib._bootstrap>:480 _call_with_frames_removed,~ <built-in method _imp.exec_builtin>,6,6,5.2118000000000005e-05,5.2118000000000005e-05
+experiments/direct-weight-forward/adapter.py:21 emit,~ <method '__exit__' of '_io._IOBase' objects>,4,4,5.2107e-05,5.2107e-05
+experiments/direct-weight-forward/adapter.py:14 baseline,~ <method 'count' of 'list' objects>,64,64,5.0994e-05,5.0994e-05
+python3.12/collections/__init__.py:669 update,~ <built-in method builtins.isinstance>,7,7,1.0064e-05,5.0535e-05
+python3.12/re/_parser.py:178 getwidth,python3.12/re/_parser.py:178 getwidth,63,34,3.5834e-05,5.0522e-05
+experiments/qwen3-model-size/prepare.py:1 <module>,lib/python3.12/pathlib.py:731 parent,4,4,9.688000000000001e-06,5.0006e-05
+lib/python3.12/fractions.py:1 <module>,~ <built-in method builtins.__build_class__>,1,1,4.167e-06,4.9895e-05
+lib/python3.12/csv.py:138 __init__,~ <built-in method _csv.writer>,7,7,4.9855e-05,4.9855e-05
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:19 __exit__,~ <method 'append' of 'list' objects>,272,272,4.9586e-05,4.9586e-05
+<frozen importlib._bootstrap_external>:195 _write_atomic,~ <method 'write' of '_io.FileIO' objects>,3,3,4.9555e-05,4.9555e-05
+lib/python3.12/subprocess.py:1880 <genexpr>,<frozen posixpath>:71 join,26,26,3.224e-05,4.9385e-05
+lib/python3.12/fractions.py:186 __new__,~ <method 'match' of 're.Pattern' objects>,18,18,4.9301e-05,4.9301e-05
+python3.12/ctypes/_endian.py:1 <module>,~ <built-in method builtins.__build_class__>,5,5,4.7701e-05,4.9214e-05
+planner/quota/planner.py:179 solve_upstream,~ <method 'update' of 'dict' objects>,180,180,4.8467e-05,4.8467e-05
+lib/python3.12/pathlib.py:731 parent,lib/python3.12/pathlib.py:420 _from_parsed_parts,6,6,8.621000000000001e-06,4.8301000000000004e-05
+experiments/multi-npu-relay/adapter.py:8 emit,lib/python3.12/csv.py:138 __init__,3,3,1.0234e-05,4.8112e-05
+<frozen _collections_abc>:804 get,<frozen os>:709 __getitem__,11,11,2.3693e-05,4.8111e-05
+lib/python3.12/fractions.py:1 <module>,lib/python3.12/enum.py:1550 __or__,2,2,7.523000000000001e-06,4.7822000000000004e-05
+~ <built-in method _abc._abc_instancecheck>,<frozen abc>:121 __subclasscheck__,5,5,2.254e-06,4.7761000000000006e-05
+<frozen importlib._bootstrap_external>:1187 get_data,~ <method '__exit__' of '_io._IOBase' objects>,18,18,4.7412000000000006e-05,4.7412000000000006e-05
+lib/python3.12/pathlib.py:628 with_name,lib/python3.12/pathlib.py:583 name,3,3,2.7550000000000003e-06,4.7402000000000005e-05
+lib/python3.12/ast.py:182 copy_location,~ <built-in method builtins.getattr>,512,512,4.7278000000000004e-05,4.7278000000000004e-05
+lib/python3.12/subprocess.py:2062 _communicate,lib/python3.12/selectors.py:272 get_map,493,493,4.7204000000000004e-05,4.7204000000000004e-05
+<frozen importlib._bootstrap_external>:1216 set_data,~ <built-in method posix.mkdir>,1,1,4.655e-05,4.655e-05
+lib/python3.12/subprocess.py:1688 _get_handles,lib/python3.12/contextlib.py:141 __exit__,8,8,1.1369e-05,4.597e-05
+<frozen importlib._bootstrap_external>:1066 get_code,<frozen importlib._bootstrap_external>:670 _classify_pyc,15,15,2.1253e-05,4.596e-05
+lib/python3.12/subprocess.py:1791 _execute_child,~ <built-in method builtins.isinstance>,16,16,9.564e-06,4.5177000000000005e-05
+python3.12/re/_compiler.py:37 _compile,python3.12/re/_parser.py:168 __getitem__,155,155,3.2578e-05,4.4729000000000005e-05
+python3.12/re/_compiler.py:578 _code,python3.12/re/_compiler.py:516 _compile_info,2,2,1.0086000000000001e-05,4.3896e-05
+planner/quota/upstream.py:80 decomposition,lib/python3.12/pathlib.py:437 __str__,1,1,9.486e-06,4.3866e-05
+planner/quota/upstream.py:46 repair_margins,~ <method 'append' of 'list' objects>,401,401,4.3315e-05,4.3315e-05
+planner/quota/upstream.py:80 decomposition,~ <method 'append' of 'list' objects>,384,384,4.2368000000000005e-05,4.2368000000000005e-05
+~ <built-in method builtins.all>,planner/quota/checker.py:44 <genexpr>,130,130,2.8315000000000002e-05,4.2021e-05
+experiments/qwen3-model-size/prepare.py:8 module,<frozen importlib._bootstrap>:806 module_from_spec,2,2,4.558e-06,4.1863e-05
+lib/python3.12/shutil.py:230 copyfile,lib/python3.12/shutil.py:224 _stat,12,12,6.9910000000000005e-06,4.1082000000000004e-05
+lib/python3.12/pathlib.py:429 _format_parsed_parts,~ <method 'join' of 'str' objects>,104,104,4.0658e-05,4.0658e-05
+planner/quota/upstream.py:15 prepare,python3.12/json/__init__.py:183 dumps,2,2,5.139e-06,4.0481e-05
+lib/python3.12/subprocess.py:1791 _execute_child,~ <built-in method posix.close>,16,16,4.0139e-05,4.0139e-05
+<frozen importlib._bootstrap_external>:195 _write_atomic,~ <built-in method posix.replace>,3,3,3.9898e-05,3.9898e-05
+<frozen importlib._bootstrap>:1240 _find_spec,<frozen importlib._bootstrap>:1128 find_spec,17,17,1.5349e-05,3.9147e-05
+planner/quota/checker.py:9 check,~ <method 'index' of 'list' objects>,256,256,3.8982e-05,3.8982e-05
+planner/quota/planner.py:49 validate,lib/python3.12/fractions.py:967 __ge__,8,8,1.0527000000000001e-05,3.8778e-05
+lib/python3.12/fractions.py:967 __ge__,lib/python3.12/fractions.py:933 _richcmp,16,16,1.561e-05,3.8566e-05
+planner/quota/checker.py:54 <genexpr>,~ <built-in method builtins.min>,358,358,3.8522e-05,3.8522e-05
+planner/quota/checker.py:1 <module>,~ <built-in method builtins.__build_class__>,1,1,3.8238e-05,3.8458000000000003e-05
+python3.12/json/encoder.py:205 iterencode,python3.12/json/encoder.py:260 _make_iterencode,9,9,3.6037e-05,3.7818e-05
+planner/quota/upstream.py:32 replication,lib/python3.12/pathlib.py:437 __str__,1,1,7.39e-06,3.7817e-05
+planner/quota/planner.py:22 validate_upstream_numeric,lib/python3.12/fractions.py:613 forward,12,12,1.0155e-05,3.7815e-05
+lib/python3.12/gettext.py:479 find,lib/python3.12/gettext.py:224 _expand_lang,6,6,1.9351e-05,3.7786e-05
+~ <built-in method builtins.max>,<frozen importlib._bootstrap_external>:134 <genexpr>,94,94,2.4049000000000003e-05,3.7738000000000004e-05
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:25 wrap,~ <built-in method builtins.isinstance>,298,298,3.7436000000000005e-05,3.7436000000000005e-05
+lib/python3.12/fractions.py:613 forward,lib/python3.12/fractions.py:742 _mul,14,14,2.3231000000000002e-05,3.7424e-05
+python3.12/re/_compiler.py:37 _compile,python3.12/re/_compiler.py:403 _simple,34,34,1.3449000000000001e-05,3.7414000000000005e-05
+lib/python3.12/subprocess.py:1 <module>,lib/python3.12/subprocess.py:695 _use_posix_spawn,1,1,3.1017000000000005e-05,3.7346000000000005e-05
+<frozen importlib._bootstrap_external>:126 _path_join,~ <method 'join' of 'str' objects>,240,240,3.6883e-05,3.6883e-05
+lib/python3.12/enum.py:1550 __or__,lib/python3.12/enum.py:720 __call__,2,2,4.756000000000001e-06,3.6614000000000006e-05
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:17 __enter__,~ <method 'append' of 'list' objects>,272,272,3.6592000000000005e-05,3.6592000000000005e-05
+~ <built-in method builtins.sum>,planner/quota/upstream.py:74 <genexpr>,529,529,3.622e-05,3.622e-05
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:19 __exit__,~ <built-in method builtins.len>,272,272,3.6128000000000004e-05,3.6128000000000004e-05
+~ <built-in method builtins.all>,experiments/direct-weight-forward/adapter.py:42 <genexpr>,309,309,3.5269000000000004e-05,3.558e-05
+planner/quota/planner.py:179 solve_upstream,~ <method 'sort' of 'list' objects>,1,1,2.5126000000000003e-05,3.5513000000000004e-05
+<frozen posixpath>:71 join,~ <method 'endswith' of 'str' objects>,178,178,3.5225e-05,3.5225e-05
+lib/python3.12/subprocess.py:807 __init__,lib/python3.12/subprocess.py:361 _text_encoding,7,7,2.6002000000000003e-05,3.4985000000000005e-05
+experiments/qwen3-model-size/prepare.py:11 sha,~ <built-in method _hashlib.openssl_sha256>,2,2,3.4932000000000004e-05,3.4932000000000004e-05
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:17 __enter__,~ <built-in method time.perf_counter>,272,272,3.4747000000000005e-05,3.4747000000000005e-05
+python3.12/re/_parser.py:168 __getitem__,~ <built-in method builtins.isinstance>,426,426,3.4705e-05,3.4705e-05
+lib/python3.12/contextlib.py:141 __exit__,~ <built-in method builtins.next>,8,8,3.299e-05,3.4601e-05
+<frozen importlib._bootstrap_external>:1689 path_hook_for_FileFinder,<frozen importlib._bootstrap_external>:1571 __init__,5,5,1.3887000000000001e-05,3.4511e-05
+planner/quota/checker.py:9 check,planner/quota/checker.py:62 <lambda>,8,8,3.4272e-05,3.4272e-05
+~ <built-in method builtins.any>,qwen-chunk-cpu-profiling/python-stages/profile_stage.py:43 <genexpr>,75,75,2.3967000000000003e-05,3.4069e-05
+python3.12/re/_parser.py:512 _parse,python3.12/re/_parser.py:274 getuntil,15,15,2.1889e-05,3.3912e-05
+<frozen zipimport>:64 __init__,<frozen importlib._bootstrap_external>:140 _path_stat,5,5,2.504e-06,3.3881e-05
+<frozen importlib._bootstrap_external>:1066 get_code,<frozen importlib._bootstrap_external>:703 _validate_timestamp_pyc,15,15,1.4502000000000001e-05,3.3499e-05
+lib/python3.12/enum.py:720 __call__,lib/python3.12/enum.py:1128 __new__,6,6,1.0185e-05,3.3271e-05
+python3.12/re/_parser.py:512 _parse,python3.12/re/_parser.py:256 match,173,173,2.4707000000000002e-05,3.3118000000000004e-05
+lib/python3.12/selectors.py:234 register,lib/python3.12/selectors.py:215 _fileobj_lookup,16,16,8.513000000000001e-06,3.2988e-05
+lib/python3.12/subprocess.py:506 run,lib/python3.12/subprocess.py:1092 __exit__,8,8,2.1171e-05,3.2817e-05
+lib/python3.12/subprocess.py:2062 _communicate,lib/python3.12/selectors.py:202 __exit__,7,7,9.503e-06,3.2689000000000005e-05
+python3.12/re/_compiler.py:37 _compile,~ <method 'append' of 'list' objects>,401,401,3.2537000000000004e-05,3.2537000000000004e-05
+planner/quota/upstream.py:56 <genexpr>,~ <built-in method builtins.max>,179,179,3.2385e-05,3.2385e-05
+lib/python3.12/shutil.py:224 _stat,~ <built-in method posix.stat>,12,12,2.6421e-05,3.2158e-05
+planner/quota/upstream.py:80 decomposition,~ <method 'update' of 'dict' objects>,128,128,3.1597e-05,3.1597e-05
+lib/python3.12/argparse.py:2021 consume_optional,lib/python3.12/argparse.py:2001 take_action,3,3,7.974e-06,3.1347e-05
+python3.12/re/_parser.py:512 _parse,python3.12/re/_parser.py:86 opengroup,19,19,1.6066e-05,3.1188e-05
+lib/python3.12/pathlib.py:642 with_suffix,lib/python3.12/pathlib.py:583 name,2,2,1.751e-06,3.1146e-05
+<frozen importlib._bootstrap>:124 setdefault,<frozen importlib._bootstrap>:74 __new__,24,24,2.2961000000000003e-05,3.0915000000000005e-05
+<frozen importlib._bootstrap>:1349 _find_and_load,<frozen importlib._bootstrap>:445 cb,23,23,1.9722000000000002e-05,3.0827e-05
+lib/python3.12/argparse.py:1772 __init__,lib/python3.12/argparse.py:1502 add_argument_group,2,2,3.373e-06,3.0465e-05
+python3.12/re/_compiler.py:516 _compile_info,python3.12/re/_parser.py:178 getwidth,2,2,8.471e-06,3.0416e-05
+~ <built-in method _io.open>,<frozen codecs>:309 __init__,16,16,2.7208e-05,2.9914000000000002e-05
+experiments/direct-weight-forward/adapter.py:21 emit,lib/python3.12/csv.py:138 __init__,4,4,1.266e-05,2.9404000000000002e-05
+python3.12/json/decoder.py:333 decode,~ <method 'match' of 're.Pattern' objects>,22,22,2.9093e-05,2.9093e-05
+<frozen importlib._bootstrap_external>:1211 _cache_bytecode,<frozen importlib._bootstrap_external>:627 _calc_mode,3,3,3.4330000000000004e-06,2.8832e-05
+<frozen importlib._bootstrap>:733 _init_module_attrs,~ <built-in method builtins.getattr>,148,148,2.8559000000000002e-05,2.8559000000000002e-05
+experiments/qwen3-model-size/prepare.py:22 <genexpr>,~ <built-in method builtins.len>,512,512,2.8121e-05,2.8121e-05
+planner/quota/planner.py:54 <genexpr>,planner/quota/planner.py:9 integer,256,256,2.8105000000000003e-05,2.8105000000000003e-05
+lib/python3.12/shutil.py:1404 get_terminal_size,~ <method 'fileno' of '_io.TextIOWrapper' objects>,4,4,2.7813000000000003e-05,2.7813000000000003e-05
+~ <built-in method builtins.exec>,lib/python3.12/_weakrefset.py:1 <module>,1,1,2.273e-06,2.7531e-05
+<frozen os>:709 __getitem__,<frozen os>:791 encode,21,21,2.0064e-05,2.7518000000000003e-05
+<frozen importlib._bootstrap>:1240 _find_spec,<frozen importlib._bootstrap>:1222 __enter__,79,79,1.645e-05,2.7513000000000002e-05
+planner/quota/planner.py:179 solve_upstream,~ <method 'copy' of 'list' objects>,256,256,2.7451000000000002e-05,2.7451000000000002e-05
+<frozen importlib._bootstrap_external>:1597 find_spec,<frozen importlib._bootstrap>:491 _verbose_message,196,196,2.7416000000000003e-05,2.7416000000000003e-05
+python3.12/re/_compiler.py:37 _compile,python3.12/re/_compiler.py:216 _compile_charset,27,27,1.9347e-05,2.7279e-05
+lib/python3.12/shutil.py:230 copyfile,~ <method '__exit__' of '_io._IOBase' objects>,12,12,2.7239e-05,2.7239e-05
+<frozen importlib._bootstrap_external>:164 _path_isdir,<frozen importlib._bootstrap_external>:150 _path_is_mode_type,9,9,4.958000000000001e-06,2.7112e-05
+lib/python3.12/fractions.py:933 _richcmp,~ <built-in method builtins.isinstance>,32,32,1.0135e-05,2.7062000000000003e-05
+python3.12/ctypes/__init__.py:1 <module>,python3.12/ctypes/__init__.py:265 _reset_cache,1,1,5.0070000000000005e-06,2.697e-05
+<frozen importlib._bootstrap>:1240 _find_spec,<frozen importlib._bootstrap>:1226 __exit__,79,79,1.79e-05,2.6928e-05
+<frozen importlib._bootstrap>:426 _get_module_lock,<frozen importlib._bootstrap>:232 __init__,23,23,1.8956000000000003e-05,2.682e-05
+lib/python3.12/argparse.py:1502 add_argument_group,lib/python3.12/argparse.py:1682 __init__,2,2,4.948e-06,2.6781000000000003e-05
+~ <built-in method builtins.exec>,python3.12/importlib/_abc.py:1 <module>,1,1,4.807e-06,2.6700000000000002e-05
+python3.12/ctypes/__init__.py:1 <module>,python3.12/ctypes/__init__.py:343 __init__,1,1,4.5060000000000006e-06,2.6580000000000003e-05
+~ <built-in method _imp.create_builtin>,<frozen abc>:105 __new__,1,1,1.2730000000000001e-06,2.65e-05
+planner/quota/upstream.py:15 prepare,lib/python3.12/pathlib.py:437 __str__,2,2,2.8850000000000003e-06,2.635e-05
+lib/python3.12/pathlib.py:1228 resolve,lib/python3.12/pathlib.py:380 with_segments,5,5,5.811000000000001e-06,2.604e-05
+lib/python3.12/contextlib.py:299 helper,lib/python3.12/contextlib.py:104 __init__,8,8,2.1071000000000002e-05,2.5909000000000002e-05
+lib/python3.12/pathlib.py:358 __init__,~ <method 'extend' of 'list' objects>,102,102,2.5628000000000003e-05,2.5628000000000003e-05
+lib/python3.12/subprocess.py:2021 _wait,lib/python3.12/subprocess.py:1961 _handle_exitstatus,8,8,1.63e-05,2.5547e-05
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:34 compiled,~ <built-in method _hashlib.openssl_sha256>,3,3,2.5428e-05,2.5428e-05
+<frozen importlib._bootstrap_external>:982 is_package,<frozen importlib._bootstrap_external>:132 _path_split,5,5,1.0916e-05,2.5417e-05
+<frozen importlib._bootstrap_external>:627 _calc_mode,<frozen importlib._bootstrap_external>:140 _path_stat,3,3,1.243e-06,2.5399000000000002e-05
+lib/python3.12/pathlib.py:1015 read_bytes,~ <method '__exit__' of '_io._IOBase' objects>,11,11,2.5311000000000002e-05,2.5311000000000002e-05
+lib/python3.12/_weakrefset.py:1 <module>,~ <built-in method builtins.__build_class__>,2,2,1.6725e-05,2.5258e-05
+lib/python3.12/pathlib.py:407 _load_parts,~ <built-in method builtins.len>,190,190,2.4732000000000003e-05,2.4732000000000003e-05
+lib/python3.12/selectors.py:21 _fileobj_to_fd,~ <method 'fileno' of '_io.TextIOWrapper' objects>,32,32,2.4693000000000002e-05,2.4693000000000002e-05
+<frozen importlib._bootstrap_external>:806 spec_from_file_location,<frozen importlib._bootstrap_external>:185 _path_abspath,20,20,9.114000000000001e-06,2.4519e-05
+~ <built-in method _abc._abc_subclasscheck>,<frozen abc>:121 __subclasscheck__,13,6,2.797e-06,2.4358000000000003e-05
+experiments/qwen3-model-size/prepare.py:1 <module>,experiments/qwen3-model-size/prepare.py:12 jain,1,1,2.1740000000000003e-06,2.4297e-05
+python3.12/re/_parser.py:178 getwidth,~ <built-in method builtins.min>,140,140,2.4283e-05,2.4283e-05
+experiments/multi-npu-relay/adapter.py:8 emit,<frozen _collections_abc>:804 get,3,3,3.975e-06,2.4276000000000003e-05
+<frozen importlib._bootstrap>:982 find_spec,<frozen importlib._bootstrap>:662 spec_from_loader,6,6,1.1265000000000001e-05,2.4216e-05
+lib/python3.12/fractions.py:963 __le__,lib/python3.12/fractions.py:933 _richcmp,16,16,1.0663000000000001e-05,2.4076e-05
+lib/python3.12/fractions.py:186 __new__,~ <method 'group' of 're.Match' objects>,90,90,2.3998000000000003e-05,2.3998000000000003e-05
+lib/python3.12/subprocess.py:1791 _execute_child,~ <built-in method posix.pipe>,8,8,2.3987000000000003e-05,2.3987000000000003e-05
+experiments/multi-npu-relay/adapter.py:8 emit,lib/python3.12/csv.py:84 __init__,3,3,8.284e-06,2.3957e-05
+lib/python3.12/argparse.py:1451 add_argument,lib/python3.12/argparse.py:1883 _add_action,4,4,2.3550000000000003e-06,2.3937e-05
+lib/python3.12/selectors.py:402 select,~ <built-in method math.ceil>,136,136,2.3868000000000003e-05,2.3868000000000003e-05
+lib/python3.12/selectors.py:202 __exit__,lib/python3.12/selectors.py:268 close,7,7,1.9228e-05,2.3186e-05
+lib/python3.12/enum.py:1128 __new__,lib/python3.12/enum.py:1413 _missing_,1,1,8.995000000000001e-06,2.2955000000000003e-05
+python3.12/ctypes/__init__.py:1 <module>,python3.12/ctypes/__init__.py:73 CFUNCTYPE,2,2,5.487e-06,2.2934e-05
+~ <built-in method builtins.__build_class__>,lib/python3.12/subprocess.py:749 Popen,1,1,1.0886e-05,2.2634e-05
+python3.12/re/_parser.py:512 _parse,python3.12/re/_parser.py:176 append,71,71,1.4636e-05,2.2077000000000002e-05
+planner/quota/upstream.py:80 decomposition,lib/python3.12/pathlib.py:719 __truediv__,1,1,2.353e-06,2.2033e-05
+<frozen importlib._bootstrap>:304 acquire,<frozen importlib._bootstrap>:82 remove,24,24,1.5025000000000001e-05,2.1722e-05
+<frozen importlib._bootstrap_external>:670 _classify_pyc,<frozen importlib._bootstrap_external>:84 _unpack_uint32,15,15,1.528e-05,2.169e-05
+python3.12/re/_parser.py:512 _parse,python3.12/re/_parser.py:293 tell,72,72,1.5657e-05,2.1625e-05
+lib/python3.12/selectors.py:347 __init__,lib/python3.12/selectors.py:209 __init__,7,7,1.8589e-05,2.1603e-05
+lib/python3.12/argparse.py:1883 _add_action,lib/python3.12/argparse.py:1704 _add_action,4,4,4.296e-06,2.1582e-05
+python3.12/ctypes/__init__.py:265 _reset_cache,~ <built-in method _ctypes.POINTER>,2,2,2.1411000000000002e-05,2.1411000000000002e-05
+lib/python3.12/pathlib.py:358 __init__,~ <built-in method posix.fspath>,120,120,2.1392e-05,2.1392e-05
+lib/python3.12/subprocess.py:1880 <genexpr>,<frozen os>:841 fsencode,26,26,1.285e-05,2.0961e-05
+lib/python3.12/argparse.py:1682 __init__,lib/python3.12/argparse.py:1369 __init__,2,2,7.451e-06,2.0931e-05
+~ <built-in method builtins.__build_class__>,lib/python3.12/fractions.py:162 Fraction,1,1,1.4501e-05,2.0801000000000003e-05
+<frozen posixpath>:41 _get_sep,~ <built-in method builtins.isinstance>,168,168,2.0534e-05,2.0534e-05
+python3.12/ctypes/__init__.py:1 <module>,python3.12/ctypes/__init__.py:145 _check_size,14,14,1.2689e-05,2.05e-05
+<frozen importlib._bootstrap>:982 find_spec,~ <built-in method _imp.is_builtin>,23,23,2.0220000000000003e-05,2.0220000000000003e-05
+experiments/multi-npu-relay/adapter.py:8 emit,lib/python3.12/pathlib.py:1157 __init__,9,9,8.465000000000001e-06,2.0211e-05
+lib/python3.12/subprocess.py:1688 _get_handles,lib/python3.12/contextlib.py:132 __enter__,8,8,1.2288000000000002e-05,2.0102e-05
+lib/python3.12/argparse.py:2001 take_action,lib/python3.12/argparse.py:2487 _get_values,3,3,5.5880000000000005e-06,2.001e-05
+python3.12/json/encoder.py:334 _iterencode_dict,python3.12/json/encoder.py:224 floatstr,5,5,1.9999000000000003e-05,1.9999000000000003e-05
+python3.12/importlib/_abc.py:1 <module>,~ <built-in method builtins.__build_class__>,1,1,2.5640000000000004e-06,1.999e-05
+lib/python3.12/threading.py:1441 __init__,lib/python3.12/threading.py:884 __init__,1,1,6.008000000000001e-06,1.995e-05
+lib/python3.12/pathlib.py:358 __init__,~ <method 'append' of 'list' objects>,120,120,1.9920000000000002e-05,1.9920000000000002e-05
+planner/quota/upstream.py:80 decomposition,~ <built-in method builtins.len>,257,257,1.9867e-05,1.9867e-05
+experiments/qwen3-model-size/prepare.py:12 jain,~ <built-in method builtins.sum>,2,2,1.1257e-05,1.9679000000000003e-05
+planner/quota/upstream.py:80 decomposition,~ <built-in method builtins.sum>,1,1,1.1401000000000001e-05,1.9659000000000003e-05
+lib/python3.12/subprocess.py:2062 _communicate,~ <built-in method posix.write>,9,9,1.9499e-05,1.9499e-05
+<frozen importlib._bootstrap_external>:1066 get_code,<frozen importlib._bootstrap_external>:647 _check_name_wrapper,18,18,1.6513000000000003e-05,1.9378e-05
+planner/quota/planner.py:22 validate_upstream_numeric,planner/quota/planner.py:83 ceil,8,8,1.614e-05,1.9231000000000003e-05
+~ <built-in method builtins.len>,python3.12/re/_parser.py:164 __len__,78,78,1.336e-05,1.9157e-05
+<frozen importlib._bootstrap>:1128 find_spec,<frozen importlib._bootstrap>:480 _call_with_frames_removed,17,17,6.941e-06,1.906e-05
+<frozen importlib._bootstrap_external>:703 _validate_timestamp_pyc,<frozen importlib._bootstrap_external>:84 _unpack_uint32,30,30,1.1911e-05,1.8997e-05
+~ <built-in method builtins.sum>,planner/quota/planner.py:225 <genexpr>,180,180,1.8982000000000002e-05,1.8982000000000002e-05
+python3.12/ctypes/__init__.py:1 <module>,python3.12/ctypes/__init__.py:512 PYFUNCTYPE,3,3,1.5240000000000001e-06,1.8949e-05
+lib/python3.12/argparse.py:1772 __init__,lib/python3.12/argparse.py:1369 __init__,1,1,6.88e-06,1.8869000000000002e-05
+<frozen importlib._bootstrap>:124 setdefault,<frozen importlib._bootstrap>:79 __init__,24,24,1.8748e-05,1.8748e-05
+python3.12/json/encoder.py:183 encode,~ <built-in method builtins.isinstance>,26,26,1.8710000000000002e-05,1.8710000000000002e-05
+planner/quota/upstream.py:46 repair_margins,~ <built-in method builtins.any>,128,128,1.8698e-05,1.8698e-05
+lib/python3.12/pathlib.py:628 with_name,lib/python3.12/pathlib.py:420 _from_parsed_parts,3,3,4.064e-06,1.8537000000000002e-05
+<frozen importlib._bootstrap_external>:185 _path_abspath,<frozen importlib._bootstrap_external>:180 _path_isabs,25,25,1.0407e-05,1.8520000000000002e-05
+lib/python3.12/csv.py:98 fieldnames,~ <built-in method builtins.next>,3,3,1.8477000000000003e-05,1.8477000000000003e-05
+planner/quota/planner.py:49 validate,lib/python3.12/fractions.py:963 __le__,8,8,3.666e-06,1.8437e-05
+python3.12/re/_parser.py:512 _parse,python3.12/re/_parser.py:372 _escape,22,22,1.1698e-05,1.8308e-05
+python3.12/re/_parser.py:512 _parse,~ <built-in method builtins.len>,46,46,9.741e-06,1.8167e-05
+<frozen posixpath>:71 join,~ <built-in method posix.fspath>,141,141,1.8027000000000002e-05,1.8027000000000002e-05
+python3.12/re/__init__.py:280 _compile,lib/python3.12/enum.py:1561 __and__,4,4,7.06e-06,1.7907e-05
+python3.12/re/_parser.py:512 _parse,python3.12/re/_parser.py:164 __len__,68,68,1.2303e-05,1.7843000000000002e-05
+lib/python3.12/gettext.py:479 find,<frozen _collections_abc>:804 get,6,6,3.3860000000000003e-06,1.7746000000000003e-05
+<frozen abc>:110 register,~ <built-in method _abc._abc_register>,4,4,3.086e-06,1.7636000000000002e-05
+<frozen importlib._bootstrap_external>:1216 set_data,<frozen importlib._bootstrap_external>:164 _path_isdir,4,4,2.3030000000000002e-06,1.7506e-05
+python3.12/ctypes/__init__.py:512 PYFUNCTYPE,~ <built-in method builtins.__build_class__>,3,3,1.6193000000000002e-05,1.7425e-05
+python3.12/collections/__init__.py:355 namedtuple,~ <method '__contains__' of 'frozenset' objects>,9,9,1.7415000000000002e-05,1.7415000000000002e-05
+site-packages/_distutils_hack/__init__.py:101 find_spec,~ <method 'format' of 'str' objects>,19,19,1.7398000000000002e-05,1.7398000000000002e-05
+lib/python3.12/contextlib.py:530 callback,lib/python3.12/contextlib.py:548 _push_exit_callback,16,16,1.2715000000000001e-05,1.7273000000000002e-05
+planner/quota/checker.py:9 check,lib/python3.12/fractions.py:613 forward,2,2,6.1e-06,1.7246e-05
+python3.12/re/_compiler.py:403 _simple,~ <built-in method builtins.len>,34,34,8.515e-06,1.7163e-05
+<frozen importlib._bootstrap>:733 _init_module_attrs,<frozen importlib._bootstrap>:645 parent,27,27,1.2515000000000001e-05,1.7156e-05
+lib/python3.12/subprocess.py:1282 _close_pipe_fds,lib/python3.12/contextlib.py:481 __init__,8,8,1.7135e-05,1.7135e-05
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:34 compiled,lib/python3.12/pathlib.py:1157 __init__,3,3,8.081000000000001e-06,1.7076e-05
+<frozen importlib._bootstrap>:806 module_from_spec,<frozen importlib._bootstrap>:48 _new_module,20,20,1.7047e-05,1.7047e-05
+<frozen importlib._bootstrap_external>:755 _compile_bytecode,~ <built-in method _imp._fix_co_filename>,15,15,1.7033e-05,1.7033e-05
+planner/quota/checker.py:72 check_upstream,python3.12/collections/__init__.py:595 __init__,2,2,1.6345e-05,1.6956e-05
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:25 wrap,~ <method 'strip' of 'str' objects>,128,128,1.6942e-05,1.6942e-05
+planner/quota/upstream.py:32 replication,lib/python3.12/pathlib.py:719 __truediv__,1,1,1.243e-06,1.6906e-05
+lib/python3.12/argparse.py:1704 _add_action,lib/python3.12/argparse.py:1512 _add_action,4,4,9.213000000000001e-06,1.6796e-05
+python3.12/ctypes/__init__.py:73 CFUNCTYPE,~ <built-in method builtins.__build_class__>,2,2,1.5696e-05,1.6756e-05
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:25 wrap,~ <method 'append' of 'list' objects>,136,136,1.6702e-05,1.6702e-05
+planner/quota/upstream.py:32 replication,~ <method 'join' of 'str' objects>,1,1,1.6445000000000003e-05,1.6445000000000003e-05
+lib/python3.12/fractions.py:627 reverse,lib/python3.12/fractions.py:710 _add,8,8,1.0936e-05,1.6445000000000003e-05
+lib/python3.12/subprocess.py:1791 _execute_child,~ <built-in method posix.read>,8,8,1.6125000000000002e-05,1.6125000000000002e-05
+<frozen importlib._bootstrap_external>:1571 __init__,~ <method 'extend' of 'list' objects>,15,15,1.0418000000000001e-05,1.5847000000000003e-05
+<frozen importlib._bootstrap>:304 acquire,<frozen importlib._bootstrap>:173 __exit__,24,24,9.643e-06,1.5844e-05
+experiments/multi-npu-relay/adapter.py:8 emit,qwen-chunk-cpu-profiling/python-stages/profile_stage.py:16 __init__,141,141,1.5749e-05,1.5749e-05
+lib/python3.12/selectors.py:234 register,<string>:1 <lambda>,16,16,1.0088e-05,1.5724e-05
+lib/python3.12/csv.py:84 __init__,~ <built-in method _csv.reader>,3,3,1.5673e-05,1.5673e-05
+<frozen os>:654 get_exec_path,<frozen _collections_abc>:804 get,2,2,2.2140000000000003e-06,1.5664e-05
+<frozen importlib._bootstrap_external>:1689 path_hook_for_FileFinder,<frozen importlib._bootstrap_external>:164 _path_isdir,5,5,3.734e-06,1.5643000000000003e-05
+lib/python3.12/subprocess.py:1247 _check_timeout,~ <built-in method time.monotonic>,136,136,1.5491e-05,1.5491e-05
+<frozen os>:654 get_exec_path,lib/python3.12/warnings.py:168 simplefilter,2,2,5.899000000000001e-06,1.5463e-05
+lib/python3.12/subprocess.py:2062 _communicate,lib/python3.12/subprocess.py:2164 _save_input,7,7,1.0034e-05,1.5192000000000001e-05
+planner/quota/planner.py:179 solve_upstream,lib/python3.12/fractions.py:613 forward,2,2,3.926e-06,1.5172000000000001e-05
+lib/python3.12/subprocess.py:1791 _execute_child,<frozen os>:841 fsencode,8,8,1.0215000000000001e-05,1.5002000000000001e-05
+experiments/qwen3-model-size/prepare.py:1 <module>,lib/python3.12/pathlib.py:437 __str__,3,3,2.545e-06,1.4953e-05
+lib/python3.12/argparse.py:1369 __init__,lib/python3.12/argparse.py:1422 register,36,36,1.0659e-05,1.4783e-05
+<frozen importlib._bootstrap_external>:1216 set_data,<frozen importlib._bootstrap_external>:132 _path_split,4,4,5.36e-06,1.4653e-05
+lib/python3.12/subprocess.py:1239 _remaining_time,~ <built-in method time.monotonic>,140,140,1.4558e-05,1.4558e-05
+planner/quota/planner.py:179 solve_upstream,lib/python3.12/fractions.py:186 __new__,3,3,1.1957000000000001e-05,1.4551e-05
+~ <built-in method _abc._abc_register>,<frozen abc>:121 __subclasscheck__,4,4,1.43e-06,1.4550000000000001e-05
+<frozen importlib._bootstrap_external>:768 _code_to_timestamp_pyc,<frozen importlib._bootstrap_external>:79 _pack_uint32,9,9,1.1395e-05,1.4541e-05
+<frozen posixpath>:420 realpath,<frozen posixpath>:405 abspath,5,5,4.227e-06,1.4402e-05
+python3.12/ctypes/_endian.py:1 <module>,<frozen importlib._bootstrap>:463 _lock_unlock_module,1,1,1.103e-06,1.4372e-05
+site-packages/_distutils_hack/__init__.py:101 find_spec,~ <built-in method builtins.locals>,19,19,1.4334e-05,1.4334e-05
+lib/python3.12/argparse.py:1451 add_argument,lib/python3.12/argparse.py:1595 _get_optional_kwargs,4,4,1.0033e-05,1.4291000000000001e-05
+<frozen importlib._bootstrap_external>:806 spec_from_file_location,<frozen importlib._bootstrap_external>:1728 _get_supported_file_loaders,5,5,9.934e-06,1.407e-05
+experiments/qwen3-model-size/prepare.py:1 <module>,~ <method '__exit__' of '_io._IOBase' objects>,1,1,1.3860000000000001e-05,1.3860000000000001e-05
+lib/python3.12/pathlib.py:1039 write_text,~ <built-in method _io.text_encoding>,24,24,1.3712e-05,1.3712e-05
+planner/quota/checker.py:44 <genexpr>,~ <built-in method builtins.len>,256,256,1.3706e-05,1.3706e-05
+<frozen importlib._bootstrap_external>:134 <genexpr>,~ <method 'rfind' of 'str' objects>,47,47,1.3689e-05,1.3689e-05
+lib/python3.12/argparse.py:2487 _get_values,lib/python3.12/argparse.py:2538 _get_value,3,3,4.446e-06,1.3481e-05
+lib/python3.12/gettext.py:224 _expand_lang,lib/python3.12/locale.py:381 normalize,6,6,8.570000000000001e-06,1.3470000000000001e-05
+planner/quota/checker.py:9 check,python3.12/collections/__init__.py:595 __init__,4,4,1.2359000000000001e-05,1.3409000000000002e-05
+lib/python3.12/argparse.py:2021 consume_optional,lib/python3.12/argparse.py:2281 _match_argument,3,3,6.5000000000000004e-06,1.3389e-05
+experiments/qwen3-model-size/prepare.py:1 <module>,<frozen os>:717 __setitem__,1,1,3.3650000000000004e-06,1.325e-05
+python3.12/re/_compiler.py:243 _optimize_charset,python3.12/re/_compiler.py:391 _mk_bitmap,2,2,8.771000000000001e-06,1.3160000000000001e-05
+lib/python3.12/shutil.py:1404 get_terminal_size,<frozen os>:709 __getitem__,8,8,6.822e-06,1.3130000000000001e-05
+lib/python3.12/selectors.py:21 _fileobj_to_fd,~ <built-in method builtins.isinstance>,32,32,1.2874e-05,1.2874e-05
+python3.12/re/_compiler.py:37 _compile,~ <built-in method builtins.len>,174,174,1.2712000000000001e-05,1.2712000000000001e-05
+planner/quota/planner.py:22 validate_upstream_numeric,lib/python3.12/fractions.py:967 __ge__,8,8,2.223e-06,1.2538000000000001e-05
+lib/python3.12/subprocess.py:807 __init__,<frozen codecs>:309 __init__,11,11,1.0675e-05,1.2497e-05
+python3.12/re/_parser.py:512 _parse,python3.12/re/_parser.py:449 _uniq,11,11,8.731e-06,1.2407e-05
+python3.12/re/_parser.py:164 __len__,~ <built-in method builtins.len>,159,159,1.2349000000000002e-05,1.2349000000000002e-05
+lib/python3.12/threading.py:1441 __init__,lib/python3.12/threading.py:616 set,1,1,3.4270000000000004e-06,1.2339e-05
+planner/quota/planner.py:22 validate_upstream_numeric,lib/python3.12/fractions.py:801 __pow__,4,4,7.360000000000001e-06,1.2338000000000001e-05
+planner/quota/checker.py:72 check_upstream,~ <built-in method builtins.max>,102,102,1.2278e-05,1.2278e-05
+python3.12/ctypes/__init__.py:343 __init__,~ <built-in method builtins.__build_class__>,1,1,1.1567000000000001e-05,1.2178000000000001e-05
+lib/python3.12/gettext.py:479 find,<frozen genericpath>:16 exists,3,3,1.973e-06,1.2158000000000001e-05
+<frozen importlib._bootstrap>:480 _call_with_frames_removed,~ <built-in method _imp.find_frozen>,17,17,1.2119e-05,1.2119e-05
+lib/python3.12/enum.py:1413 _missing_,lib/python3.12/enum.py:1403 _iter_member_by_def_,3,3,2.5340000000000002e-06,1.2038e-05
+python3.12/re/_parser.py:274 getuntil,python3.12/re/_parser.py:240 __next,122,122,1.2023e-05,1.2023e-05
+lib/python3.12/subprocess.py:506 run,lib/python3.12/subprocess.py:1233 poll,8,8,1.0363e-05,1.1987e-05
+experiments/direct-weight-forward/adapter.py:14 baseline,~ <method 'append' of 'list' objects>,128,128,1.198e-05,1.198e-05
+lib/python3.12/fractions.py:1 <module>,lib/python3.12/functools.py:521 decorating_function,1,1,4.597e-06,1.1938000000000002e-05
+planner/quota/planner.py:1 <module>,~ <built-in method builtins.__build_class__>,1,1,1.1478000000000001e-05,1.1868e-05
+experiments/direct-weight-forward/adapter.py:1 <module>,lib/python3.12/pathlib.py:437 __str__,1,1,1.6820000000000002e-06,1.1868e-05
+lib/python3.12/argparse.py:1451 add_argument,lib/python3.12/argparse.py:602 _format_args,4,4,7.145e-06,1.182e-05
+lib/python3.12/shutil.py:230 copyfile,~ <built-in method _stat.S_ISFIFO>,6,6,1.1737000000000001e-05,1.1737000000000001e-05
+planner/quota/checker.py:9 check,~ <built-in method builtins.max>,10,10,1.1687e-05,1.1687e-05
+planner/quota/checker.py:9 check,~ <method 'append' of 'list' objects>,128,128,1.1599e-05,1.1599e-05
+planner/quota/planner.py:22 validate_upstream_numeric,lib/python3.12/fractions.py:963 __le__,8,8,2.271e-06,1.1576e-05
+planner/quota/checker.py:53 <genexpr>,python3.12/collections/__init__.py:609 __missing__,244,244,1.1504e-05,1.1504e-05
+lib/python3.12/subprocess.py:749 Popen,lib/python3.12/contextlib.py:272 contextmanager,1,1,3.525e-06,1.1497e-05
+lib/python3.12/pathlib.py:420 _from_parsed_parts,lib/python3.12/pathlib.py:429 _format_parsed_parts,12,12,6.792e-06,1.1327e-05
+~ <built-in method builtins.all>,planner/quota/checker.py:36 <genexpr>,130,130,1.1251000000000001e-05,1.1251000000000001e-05
+lib/python3.12/contextlib.py:567 __exit__,~ <built-in method sys.exc_info>,8,8,1.1207000000000001e-05,1.1207000000000001e-05
+lib/python3.12/pathlib.py:437 __str__,lib/python3.12/pathlib.py:560 root,92,92,1.1171e-05,1.1171e-05
+<frozen importlib._bootstrap>:1222 __enter__,~ <built-in method _imp.acquire_lock>,79,79,1.1063e-05,1.1063e-05
+lib/python3.12/selectors.py:347 __init__,~ <built-in method select.poll>,7,7,1.0898000000000001e-05,1.0898000000000001e-05
+lib/python3.12/gettext.py:479 find,<frozen posixpath>:71 join,3,3,6.813000000000001e-06,1.0877000000000001e-05
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:34 compiled,lib/python3.12/pathlib.py:702 parts,3,3,9.222e-06,1.0815e-05
+<frozen posixpath>:138 splitroot,~ <built-in method builtins.isinstance>,95,95,1.0784e-05,1.0784e-05
+lib/python3.12/subprocess.py:1791 _execute_child,~ <built-in method builtins.sorted>,8,8,1.0705e-05,1.0705e-05
+lib/python3.12/fractions.py:613 forward,lib/python3.12/fractions.py:758 _div,2,2,8.471e-06,1.0676e-05
+~ <built-in method _collections._count_elements>,experiments/multi-npu-relay/capacity.py:4 <genexpr>,52,52,1.0586e-05,1.0586e-05
+~ <method 'sort' of 'list' objects>,planner/quota/planner.py:196 <lambda>,179,179,1.0387e-05,1.0387e-05
+experiments/direct-weight-forward/adapter.py:21 emit,qwen-chunk-cpu-profiling/python-stages/profile_stage.py:16 __init__,100,100,1.0354000000000001e-05,1.0354000000000001e-05
+lib/python3.12/fractions.py:742 _mul,lib/python3.12/fractions.py:317 _from_coprime_ints,18,18,8.276e-06,1.0317000000000001e-05
+<frozen genericpath>:16 exists,~ <built-in method posix.stat>,3,3,1.0185e-05,1.0185e-05
+lib/python3.12/pathlib.py:642 with_suffix,lib/python3.12/pathlib.py:420 _from_parsed_parts,2,2,1.973e-06,1.0165e-05
+experiments/direct-weight-forward/adapter.py:1 <module>,lib/python3.12/pathlib.py:277 __getitem__,1,1,2.9740000000000002e-06,1.0115e-05
+python3.12/re/_compiler.py:243 _optimize_charset,~ <method 'find' of 'bytearray' objects>,61,61,1.0103000000000001e-05,1.0103000000000001e-05
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:43 <genexpr>,~ <method 'endswith' of 'str' objects>,57,57,1.0102000000000001e-05,1.0102000000000001e-05
+lib/python3.12/pathlib.py:437 __str__,lib/python3.12/pathlib.py:569 _tail,92,92,1.0088e-05,1.0088e-05
+lib/python3.12/contextlib.py:567 __exit__,lib/python3.12/contextlib.py:477 _exit_wrapper,16,16,5.087000000000001e-06,1.0044e-05
+python3.12/re/_parser.py:86 opengroup,python3.12/re/_parser.py:83 groups,38,38,7.219000000000001e-06,9.994000000000001e-06
+<frozen importlib._bootstrap>:463 _lock_unlock_module,<frozen importlib._bootstrap>:304 acquire,1,1,3.306e-06,9.965e-06
+experiments/direct-weight-forward/adapter.py:21 emit,planner/quota/planner.py:10 normalize,2,2,6.911e-06,9.895000000000001e-06
+<frozen os>:709 __getitem__,<frozen os>:795 decode,8,8,5.411e-06,9.887e-06
+planner/quota/checker.py:9 check,planner/quota/checker.py:59 <lambda>,2,2,8.713000000000001e-06,9.835e-06
+<frozen os>:654 get_exec_path,<frozen os>:709 __getitem__,2,2,3.1260000000000002e-06,9.805e-06
+python3.12/re/_parser.py:512 _parse,python3.12/re/_parser.py:172 __setitem__,35,35,8.612e-06,9.674000000000001e-06
+lib/python3.12/threading.py:1441 __init__,lib/python3.12/threading.py:1045 _set_tstate_lock,1,1,5.228000000000001e-06,9.664000000000001e-06
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:34 compiled,lib/python3.12/pathlib.py:1164 __new__,3,3,7.582e-06,9.624000000000001e-06
+lib/python3.12/threading.py:884 __init__,lib/python3.12/threading.py:588 __init__,1,1,1.804e-06,9.585e-06
+python3.12/re/_parser.py:256 match,python3.12/re/_parser.py:240 __next,76,76,9.573000000000001e-06,9.573000000000001e-06
+lib/python3.12/selectors.py:1 <module>,lib/python3.12/selectors.py:588 _can_use,2,2,6.53e-06,9.544e-06
+<frozen importlib._bootstrap_external>:84 _unpack_uint32,~ <built-in method from_bytes>,45,45,9.526e-06,9.526e-06
+python3.12/json/__init__.py:183 dumps,python3.12/json/encoder.py:105 __init__,9,9,9.505000000000001e-06,9.505000000000001e-06
+lib/python3.12/enum.py:1403 _iter_member_by_def_,~ <built-in method builtins.sorted>,1,1,2.6650000000000003e-06,9.504e-06
+<frozen posixpath>:138 splitroot,~ <built-in method posix.fspath>,95,95,9.502e-06,9.502e-06
+python3.12/ctypes/__init__.py:343 __init__,~ <built-in method _ctypes.dlopen>,1,1,9.495000000000001e-06,9.495000000000001e-06
+<frozen posixpath>:429 _joinrealpath,<frozen posixpath>:60 isabs,5,5,4.316000000000001e-06,9.445e-06
+<frozen os>:654 get_exec_path,lib/python3.12/warnings.py:484 __enter__,2,2,8.703000000000001e-06,9.404e-06
+lib/python3.12/warnings.py:168 simplefilter,lib/python3.12/warnings.py:184 _add_filter,2,2,5.9600000000000005e-06,9.354e-06
+<frozen importlib._bootstrap_external>:195 _write_atomic,~ <method '__exit__' of '_io._IOBase' objects>,3,3,9.163e-06,9.163e-06
+<frozen importlib._bootstrap_external>:486 cache_from_source,~ <method 'join' of 'str' objects>,38,38,9.115e-06,9.115e-06
+<frozen importlib._bootstrap>:662 spec_from_loader,<frozen importlib._bootstrap>:501 _requires_builtin_wrapper,6,6,8.383000000000001e-06,9.095e-06
+lib/python3.12/fractions.py:186 __new__,~ <built-in method math.gcd>,31,31,9.093000000000001e-06,9.093000000000001e-06
+<frozen importlib._bootstrap>:1226 __exit__,~ <built-in method _imp.release_lock>,79,79,9.028e-06,9.028e-06
+lib/python3.12/subprocess.py:361 _text_encoding,~ <built-in method _locale.getencoding>,7,7,8.983e-06,8.983e-06
+experiments/multi-npu-relay/adapter.py:8 emit,lib/python3.12/pathlib.py:1164 __new__,9,9,5.967000000000001e-06,8.913000000000001e-06
+site-packages/_distutils_hack/__init__.py:101 find_spec,~ <built-in method builtins.getattr>,19,19,8.892e-06,8.892e-06
+~ <built-in method _io.open>,<frozen codecs>:186 __init__,32,32,8.889e-06,8.889e-06
+lib/python3.12/shutil.py:1404 get_terminal_size,~ <built-in method posix.get_terminal_size>,4,4,8.804e-06,8.804e-06
+python3.12/re/_parser.py:452 _parse_sub,python3.12/re/_parser.py:293 tell,29,29,6.418e-06,8.791000000000001e-06
+lib/python3.12/fractions.py:627 reverse,~ <built-in method builtins.isinstance>,12,12,3.755e-06,8.703000000000001e-06
+lib/python3.12/fractions.py:627 reverse,lib/python3.12/fractions.py:186 __new__,12,12,7.201e-06,8.702e-06
+lib/python3.12/fractions.py:186 __new__,~ <built-in method __new__ of type object at 0x144d380>,43,43,8.604000000000001e-06,8.604000000000001e-06
+<frozen importlib._bootstrap>:1349 _find_and_load,~ <method 'get' of 'dict' objects>,46,46,8.452e-06,8.452e-06
+lib/python3.12/argparse.py:1451 add_argument,lib/python3.12/argparse.py:955 __init__,3,3,3.6240000000000004e-06,8.452e-06
+experiments/direct-weight-forward/adapter.py:21 emit,lib/python3.12/pathlib.py:1157 __init__,2,2,4.7980000000000005e-06,8.423e-06
+~ <built-in method builtins.sum>,experiments/qwen3-model-size/prepare.py:12 <genexpr>,129,129,8.422e-06,8.422e-06
+<frozen importlib._bootstrap_external>:982 is_package,<frozen importlib._bootstrap_external>:647 _check_name_wrapper,5,5,6.588e-06,8.372e-06
+python3.12/re/_parser.py:293 tell,~ <built-in method builtins.len>,101,101,8.341e-06,8.341e-06
+~ <built-in method builtins.__build_class__>,lib/python3.12/threading.py:873 Thread,1,1,7.2510000000000005e-06,8.283e-06
+~ <method 'join' of 'str' objects>,experiments/direct-weight-forward/adapter.py:64 <genexpr>,30,30,8.282000000000001e-06,8.282000000000001e-06
+lib/python3.12/pathlib.py:1005 open,~ <built-in method _io.text_encoding>,48,48,8.271000000000001e-06,8.271000000000001e-06
+~ <built-in method builtins.sum>,planner/quota/upstream.py:107 <genexpr>,129,129,8.258000000000001e-06,8.258000000000001e-06
+<frozen importlib._bootstrap_external>:180 _path_isabs,~ <method 'startswith' of 'str' objects>,25,25,8.113e-06,8.113e-06
+~ <built-in method _imp.create_builtin>,<frozen abc>:110 register,1,1,3.7200000000000005e-07,8.103e-06
+lib/python3.12/subprocess.py:807 __init__,~ <built-in method _thread.allocate_lock>,8,8,8.071000000000001e-06,8.071000000000001e-06
+python3.12/collections/__init__.py:355 namedtuple,~ <method 'join' of 'str' objects>,4,4,6.069000000000001e-06,8.041e-06
+~ <built-in method builtins.all>,planner/quota/checker.py:68 <genexpr>,104,104,8.023000000000001e-06,8.023000000000001e-06
+python3.12/re/_parser.py:176 append,~ <method 'append' of 'list' objects>,77,77,7.982e-06,7.982e-06
+<frozen importlib._bootstrap>:74 __new__,~ <built-in method __new__ of type object at 0x144d380>,24,24,7.954e-06,7.954e-06
+~ <built-in method builtins.__build_class__>,lib/python3.12/_weakrefset.py:36 WeakSet,1,1,7.922e-06,7.922e-06
+<frozen os>:717 __setitem__,~ <built-in method posix.putenv>,1,1,7.892e-06,7.892e-06
+planner/quota/upstream.py:32 replication,~ <method 'sort' of 'list' objects>,1,1,6.2690000000000005e-06,7.882e-06
+<frozen importlib._bootstrap>:232 __init__,~ <built-in method _thread.allocate_lock>,23,23,7.864000000000001e-06,7.864000000000001e-06
+lib/python3.12/contextlib.py:132 __enter__,~ <built-in method builtins.next>,8,8,6.0600000000000004e-06,7.814e-06
+<frozen importlib._bootstrap>:372 release,~ <built-in method builtins.len>,71,71,7.752e-06,7.752e-06
+<frozen importlib._bootstrap_external>:486 cache_from_source,~ <method 'rpartition' of 'str' objects>,38,38,7.6e-06,7.6e-06
+python3.12/re/_parser.py:512 _parse,python3.12/re/_parser.py:304 checkgroupname,15,15,4.8150000000000005e-06,7.579000000000001e-06
+python3.12/re/_compiler.py:216 _compile_charset,~ <method 'append' of 'list' objects>,93,93,7.552000000000001e-06,7.552000000000001e-06
+planner/quota/planner.py:179 solve_upstream,lib/python3.12/numbers.py:308 __float__,2,2,7.091e-06,7.551e-06
+lib/python3.12/selectors.py:365 unregister,~ <method 'unregister' of 'select.poll' objects>,16,16,7.534e-06,7.534e-06
+<frozen os>:841 fsencode,~ <method 'encode' of 'str' objects>,34,34,7.440000000000001e-06,7.440000000000001e-06
+lib/python3.12/threading.py:588 __init__,lib/python3.12/threading.py:277 __init__,1,1,6.640000000000001e-06,7.4310000000000005e-06
+lib/python3.12/contextlib.py:530 callback,lib/python3.12/contextlib.py:475 _create_cb_wrapper,16,16,7.371e-06,7.371e-06
+lib/python3.12/functools.py:521 decorating_function,lib/python3.12/functools.py:35 update_wrapper,1,1,3.593e-06,7.3410000000000005e-06
+<frozen posixpath>:429 _joinrealpath,~ <method 'partition' of 'str' objects>,33,33,7.338000000000001e-06,7.338000000000001e-06
+lib/python3.12/enum.py:1561 __and__,lib/python3.12/enum.py:1543 _get_value,12,12,4.841e-06,7.292000000000001e-06
+planner/quota/upstream.py:15 prepare,~ <method 'hexdigest' of '_hashlib.HASH' objects>,4,4,7.180000000000001e-06,7.180000000000001e-06
+lib/python3.12/threading.py:616 set,lib/python3.12/threading.py:424 notify_all,1,1,3.865e-06,7.100000000000001e-06
+<frozen importlib._bootstrap>:645 parent,~ <method 'rpartition' of 'str' objects>,38,38,7.045e-06,7.045e-06
+lib/python3.12/contextlib.py:272 contextmanager,lib/python3.12/functools.py:35 update_wrapper,1,1,4.095000000000001e-06,6.95e-06
+lib/python3.12/argparse.py:1369 __init__,python3.12/re/__init__.py:226 compile,3,3,3.405e-06,6.931e-06
+~ <built-in method _abc._abc_subclasscheck>,<frozen os>:1116 __subclasshook__,2,2,2.6030000000000003e-06,6.900000000000001e-06
+<frozen posixpath>:179 dirname,~ <method 'rfind' of 'bytes' objects>,8,8,6.871000000000001e-06,6.871000000000001e-06
+<frozen importlib._bootstrap_external>:1066 get_code,<frozen importlib._bootstrap>:491 _verbose_message,18,18,6.841e-06,6.841e-06
+lib/python3.12/fractions.py:742 _mul,~ <built-in method math.gcd>,36,36,6.81e-06,6.81e-06
+python3.12/re/_compiler.py:403 _simple,python3.12/re/_parser.py:168 __getitem__,29,29,4.588e-06,6.802e-06
+lib/python3.12/shutil.py:112 _fastcopy_sendfile,~ <built-in method posix.fstat>,6,6,6.7890000000000006e-06,6.7890000000000006e-06
+<frozen importlib._bootstrap_external>:806 spec_from_file_location,<frozen importlib._bootstrap>:599 __init__,20,20,6.7600000000000005e-06,6.7600000000000005e-06
+planner/quota/upstream.py:1 <module>,lib/python3.12/pathlib.py:731 parent,1,1,1.6420000000000001e-06,6.750000000000001e-06
+lib/python3.12/fractions.py:627 reverse,lib/python3.12/fractions.py:742 _mul,4,4,3.806e-06,6.740000000000001e-06
+lib/python3.12/subprocess.py:807 __init__,lib/python3.12/subprocess.py:268 _cleanup,8,8,6.7090000000000005e-06,6.7090000000000005e-06
+<frozen importlib._bootstrap_external>:615 _get_cached,~ <method 'endswith' of 'str' objects>,20,20,6.6990000000000006e-06,6.6990000000000006e-06
+<frozen importlib._bootstrap>:82 remove,~ <built-in method _weakref._remove_dead_weakref>,24,24,6.6970000000000004e-06,6.6970000000000004e-06
+experiments/multi-npu-relay/capacity.py:2 weight_task_count,<frozen importlib._bootstrap>:1390 _handle_fromlist,3,3,4.9780000000000005e-06,6.6700000000000005e-06
+lib/python3.12/threading.py:1042 _set_native_id,~ <built-in method _thread.get_native_id>,1,1,6.62e-06,6.62e-06
+<frozen importlib._bootstrap_external>:1597 find_spec,~ <method 'rpartition' of 'str' objects>,43,43,6.6190000000000005e-06,6.6190000000000005e-06
+<frozen importlib._bootstrap>:426 _get_module_lock,~ <built-in method _imp.acquire_lock>,24,24,6.588e-06,6.588e-06
+lib/python3.12/fractions.py:933 _richcmp,~ <built-in method _operator.ge>,16,16,6.54e-06,6.54e-06
+~ <built-in method builtins.exec>,experiments/multi-npu-relay/adapter.py:1 <module>,1,1,6.470000000000001e-06,6.470000000000001e-06
+<frozen importlib._bootstrap>:911 _load_unlocked,~ <built-in method builtins.hasattr>,22,22,6.448000000000001e-06,6.448000000000001e-06
+python3.12/re/_parser.py:452 _parse_sub,~ <built-in method builtins.len>,38,38,4.3580000000000005e-06,6.441000000000001e-06
+planner/quota/planner.py:10 normalize,~ <method 'setdefault' of 'dict' objects>,32,32,6.411e-06,6.411e-06
+~ <built-in method builtins.sorted>,lib/python3.12/enum.py:1393 _iter_member_by_value_,3,3,3.467e-06,6.3490000000000005e-06
+lib/python3.12/argparse.py:1916 _parse_known_args2,~ <built-in method builtins.hasattr>,5,5,6.34e-06,6.34e-06
+~ <built-in method builtins.exec>,python3.12/collections/abc.py:1 <module>,1,1,6.339000000000001e-06,6.339000000000001e-06
+lib/python3.12/fractions.py:162 Fraction,lib/python3.12/fractions.py:533 _operator_fallbacks,7,7,6.300000000000001e-06,6.300000000000001e-06
+<frozen importlib._bootstrap>:173 __exit__,~ <method 'remove' of 'list' objects>,24,24,6.2010000000000004e-06,6.2010000000000004e-06
+experiments/multi-npu-relay/capacity.py:2 weight_task_count,~ <built-in method builtins.sum>,5,5,3.6060000000000003e-06,6.199e-06
+lib/python3.12/selectors.py:247 unregister,~ <method 'pop' of 'dict' objects>,16,16,6.181000000000001e-06,6.181000000000001e-06
+experiments/direct-weight-forward/adapter.py:1 <module>,lib/python3.12/pathlib.py:731 parent,1,1,1.133e-06,6.18e-06
+lib/python3.12/subprocess.py:1092 __exit__,~ <method 'close' of '_io.TextIOWrapper' objects>,16,16,6.158e-06,6.158e-06
+<frozen importlib._bootstrap>:911 _load_unlocked,~ <method 'pop' of 'dict' objects>,22,22,6.1520000000000006e-06,6.1520000000000006e-06
+python3.12/json/decoder.py:333 decode,~ <method 'end' of 're.Match' objects>,22,22,6.138e-06,6.138e-06
+python3.12/ctypes/__init__.py:145 _check_size,~ <built-in method _struct.calcsize>,14,14,6.088e-06,6.088e-06
+<frozen os>:791 encode,~ <method 'encode' of 'str' objects>,21,21,5.9210000000000006e-06,5.9210000000000006e-06
+<frozen importlib._bootstrap_external>:982 is_package,~ <method 'rsplit' of 'str' objects>,5,5,5.878e-06,5.878e-06
+<frozen posixpath>:179 dirname,<frozen posixpath>:41 _get_sep,16,16,4.2070000000000005e-06,5.850000000000001e-06
+<frozen importlib.util>:1 <module>,<frozen importlib._bootstrap>:645 parent,11,11,3.6340000000000003e-06,5.828000000000001e-06
+python3.12/re/_parser.py:452 _parse_sub,python3.12/re/_parser.py:256 match,35,35,4.658e-06,5.82e-06
+<frozen importlib._bootstrap_external>:806 spec_from_file_location,<frozen importlib._bootstrap_external>:1157 __init__,5,5,5.809000000000001e-06,5.809000000000001e-06
+<frozen importlib._bootstrap>:806 module_from_spec,~ <built-in method builtins.hasattr>,27,27,5.716e-06,5.716e-06
+<frozen posixpath>:429 _joinrealpath,~ <built-in method _stat.S_ISLNK>,32,32,5.7120000000000005e-06,5.7120000000000005e-06
+planner/quota/planner.py:173 solve,planner/quota/planner.py:10 normalize,1,1,3.905e-06,5.6880000000000004e-06
+experiments/direct-weight-forward/adapter.py:1 <module>,lib/python3.12/pathlib.py:1157 __init__,1,1,2.765e-06,5.6390000000000006e-06
+~ <built-in method builtins.__build_class__>,python3.12/ctypes/__init__.py:442 LibraryLoader,1,1,5.638e-06,5.638e-06
+<string>:1 <lambda>,~ <built-in method __new__ of type object at 0x144d380>,16,16,5.636000000000001e-06,5.636000000000001e-06
+python3.12/re/_parser.py:372 _escape,~ <method 'get' of 'dict' objects>,26,26,5.590000000000001e-06,5.590000000000001e-06
+lib/python3.12/selectors.py:351 register,~ <method 'register' of 'select.poll' objects>,16,16,5.577e-06,5.577e-06
+lib/python3.12/pathlib.py:852 exists,lib/python3.12/pathlib.py:52 _ignore_error,4,4,3.783e-06,5.568000000000001e-06
+lib/python3.12/threading.py:1 <module>,~ <built-in method posix.register_at_fork>,1,1,5.539000000000001e-06,5.539000000000001e-06
+python3.12/re/_compiler.py:243 _optimize_charset,~ <built-in method builtins.len>,71,71,5.5080000000000005e-06,5.5080000000000005e-06
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:34 compiled,~ <method 'hexdigest' of '_hashlib.HASH' objects>,3,3,5.5080000000000005e-06,5.5080000000000005e-06
+lib/python3.12/subprocess.py:1092 __exit__,lib/python3.12/subprocess.py:1259 wait,8,8,4.1950000000000005e-06,5.488000000000001e-06
+lib/python3.12/argparse.py:1451 add_argument,lib/python3.12/argparse.py:1629 _pop_action_class,4,4,2.606e-06,5.4690000000000005e-06
+experiments/direct-weight-forward/adapter.py:1 <module>,lib/python3.12/pathlib.py:719 __truediv__,1,1,6.420000000000001e-07,5.459000000000001e-06
+~ <method 'extend' of 'list' objects>,<frozen importlib._bootstrap_external>:1577 <genexpr>,40,40,5.429e-06,5.429e-06
+<frozen importlib._bootstrap>:1304 _find_and_load_unlocked,~ <method 'rpartition' of 'str' objects>,27,27,5.427000000000001e-06,5.427000000000001e-06
+<frozen importlib._bootstrap_external>:1495 _get_spec,~ <built-in method builtins.isinstance>,53,53,5.416e-06,5.416e-06
+lib/python3.12/argparse.py:2538 _get_value,lib/python3.12/pathlib.py:1157 __init__,2,2,2.003e-06,5.4080000000000006e-06
+<frozen importlib._bootstrap>:162 __enter__,~ <method 'append' of 'list' objects>,24,24,5.377e-06,5.377e-06
+<frozen posixpath>:405 abspath,<frozen posixpath>:60 isabs,5,5,2.606e-06,5.358e-06
+<frozen importlib._bootstrap_external>:1592 _get_spec,<frozen importlib._bootstrap_external>:1157 __init__,15,15,5.341e-06,5.341e-06
+<frozen importlib._bootstrap_external>:768 _code_to_timestamp_pyc,~ <method 'extend' of 'bytearray' objects>,12,12,5.309e-06,5.309e-06
+lib/python3.12/subprocess.py:1961 _handle_exitstatus,~ <built-in method posix.WIFSTOPPED>,8,8,5.229e-06,5.229e-06
+lib/python3.12/subprocess.py:2164 _save_input,~ <method 'encode' of 'str' objects>,5,5,5.158e-06,5.158e-06
+<frozen importlib._bootstrap>:372 release,~ <method '__exit__' of '_thread.RLock' objects>,24,24,5.1310000000000005e-06,5.1310000000000005e-06
+<frozen importlib._bootstrap>:372 release,~ <method 'pop' of 'list' objects>,24,24,5.1190000000000005e-06,5.1190000000000005e-06
+lib/python3.12/argparse.py:1512 _add_action,~ <method 'match' of 're.Pattern' objects>,5,5,5.1190000000000005e-06,5.1190000000000005e-06
+lib/python3.12/argparse.py:2281 _match_argument,python3.12/re/__init__.py:164 match,3,3,1.945e-06,5.118e-06
+python3.12/re/__init__.py:280 _compile,lib/python3.12/enum.py:202 __get__,6,6,3.4040000000000004e-06,5.108e-06
+python3.12/re/_compiler.py:243 _optimize_charset,~ <method 'append' of 'list' objects>,48,48,5.104000000000001e-06,5.104000000000001e-06
+experiments/direct-weight-forward/adapter.py:1 <module>,lib/python3.12/pathlib.py:741 parents,1,1,2.9250000000000004e-06,5.028e-06
+experiments/multi-npu-relay/capacity.py:2 weight_task_count,~ <built-in method builtins.min>,26,26,5.026000000000001e-06,5.026000000000001e-06
+~ <built-in method builtins.__build_class__>,lib/python3.12/numbers.py:172 Real,1,1,3.8030000000000003e-06,5.017e-06
+lib/python3.12/argparse.py:1954 _parse_known_args,lib/python3.12/argparse.py:2121 consume_positionals,1,1,3.676e-06,4.9780000000000005e-06
+lib/python3.12/contextlib.py:477 _exit_wrapper,~ <built-in method posix.close>,16,16,4.957e-06,4.957e-06
+<frozen importlib._bootstrap>:445 cb,~ <method 'get' of 'dict' objects>,23,23,4.914000000000001e-06,4.914000000000001e-06
+~ <built-in method builtins.__build_class__>,lib/python3.12/numbers.py:319 Integral,1,1,3.784e-06,4.907000000000001e-06
+~ <built-in method builtins.__build_class__>,lib/python3.12/selectors.py:80 BaseSelector,1,1,4.298e-06,4.8780000000000006e-06
+lib/python3.12/pathlib.py:277 __getitem__,lib/python3.12/pathlib.py:420 _from_parsed_parts,1,1,8.12e-07,4.868000000000001e-06
+<frozen importlib._bootstrap>:304 acquire,~ <method '__exit__' of '_thread.RLock' objects>,24,24,4.858e-06,4.858e-06
+lib/python3.12/subprocess.py:695 _use_posix_spawn,~ <built-in method posix.confstr>,1,1,4.857e-06,4.857e-06
+lib/python3.12/pathlib.py:1022 read_text,~ <built-in method _io.text_encoding>,16,16,4.8490000000000005e-06,4.8490000000000005e-06
+lib/python3.12/contextlib.py:104 __init__,~ <built-in method builtins.getattr>,8,8,4.838e-06,4.838e-06
+lib/python3.12/argparse.py:955 __init__,lib/python3.12/argparse.py:849 __init__,3,3,4.828e-06,4.828e-06
+<frozen importlib._bootstrap_external>:486 cache_from_source,~ <built-in method posix.fspath>,38,38,4.795000000000001e-06,4.795000000000001e-06
+<frozen importlib._bootstrap_external>:1571 __init__,<frozen importlib._bootstrap_external>:185 _path_abspath,5,5,1.6620000000000001e-06,4.777e-06
+python3.12/json/__init__.py:299 loads,~ <method 'startswith' of 'str' objects>,11,11,4.727000000000001e-06,4.727000000000001e-06
+experiments/qwen3-model-size/prepare.py:1 <module>,planner/quota/planner.py:10 normalize,1,1,3.0430000000000003e-06,4.687e-06
+planner/quota/planner.py:22 validate_upstream_numeric,~ <built-in method builtins.max>,12,12,4.68e-06,4.68e-06
+python3.12/re/_parser.py:512 _parse,python3.12/re/_parser.py:113 __init__,35,35,4.667e-06,4.667e-06
+<frozen importlib._bootstrap_external>:647 _check_name_wrapper,<frozen importlib._bootstrap_external>:1182 get_filename,23,23,4.649e-06,4.649e-06
+lib/python3.12/pathlib.py:642 with_suffix,lib/python3.12/pathlib.py:591 suffix,2,2,2.7540000000000002e-06,4.607e-06
+<frozen importlib._bootstrap>:911 _load_unlocked,<frozen importlib._bootstrap>:491 _verbose_message,22,22,4.603000000000001e-06,4.603000000000001e-06
+~ <built-in method builtins.__build_class__>,<frozen importlib.util>:231 LazyLoader,1,1,4.597e-06,4.597e-06
+python3.12/re/_parser.py:512 _parse,~ <built-in method builtins.ord>,40,40,4.581000000000001e-06,4.581000000000001e-06
+experiments/qwen3-model-size/prepare.py:1 <module>,qwen-chunk-cpu-profiling/python-stages/profile_stage.py:16 __init__,31,31,4.578e-06,4.578e-06
+<frozen posixpath>:71 join,~ <method 'startswith' of 'bytes' objects>,26,26,4.576e-06,4.576e-06
+lib/python3.12/fractions.py:710 _add,lib/python3.12/fractions.py:317 _from_coprime_ints,8,8,3.6070000000000004e-06,4.568e-06
+lib/python3.12/contextlib.py:548 _push_exit_callback,~ <method 'append' of 'collections.deque' objects>,16,16,4.558e-06,4.558e-06
+<frozen codecs>:309 __init__,<frozen codecs>:260 __init__,27,27,4.5280000000000005e-06,4.5280000000000005e-06
+<frozen os>:795 decode,~ <method 'decode' of 'bytes' objects>,8,8,4.476e-06,4.476e-06
+lib/python3.12/pathlib.py:1039 write_text,~ <built-in method builtins.isinstance>,24,24,4.4480000000000004e-06,4.4480000000000004e-06
+lib/python3.12/subprocess.py:417 check_output,lib/python3.12/subprocess.py:1120 __del__,3,3,3.977e-06,4.427e-06
+planner/quota/planner.py:179 solve_upstream,~ <built-in method builtins.len>,64,64,4.405e-06,4.405e-06
+<frozen posixpath>:405 abspath,~ <built-in method posix._path_normpath>,5,5,4.3870000000000005e-06,4.3870000000000005e-06
+python3.12/re/_parser.py:452 _parse_sub,python3.12/re/_parser.py:168 __getitem__,18,18,2.944e-06,4.377000000000001e-06
+<frozen importlib._bootstrap>:1349 _find_and_load,<frozen importlib._bootstrap>:412 __init__,23,23,4.356e-06,4.356e-06
+experiments/multi-npu-relay/adapter.py:8 emit,~ <method 'get' of 'dict' objects>,7,7,4.304000000000001e-06,4.304000000000001e-06
+<frozen os>:1116 __subclasshook__,<frozen _collections_abc>:104 _check_methods,2,2,4.2970000000000005e-06,4.2970000000000005e-06
+planner/quota/upstream.py:1 <module>,lib/python3.12/pathlib.py:1157 __init__,1,1,1.7220000000000002e-06,4.296e-06
+lib/python3.12/subprocess.py:2021 _wait,~ <method 'acquire' of '_thread.lock' objects>,2,2,4.287000000000001e-06,4.287000000000001e-06
+python3.12/re/_compiler.py:745 compile,~ <built-in method _sre.compile>,2,2,4.277e-06,4.277e-06
+lib/python3.12/argparse.py:1422 register,~ <method 'setdefault' of 'dict' objects>,37,37,4.255e-06,4.255e-06
+python3.12/re/__init__.py:280 _compile,~ <built-in method builtins.isinstance>,18,18,4.216e-06,4.216e-06
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:34 compiled,~ <method 'encode' of 'str' objects>,3,3,4.186e-06,4.186e-06
+python3.12/re/_compiler.py:391 _mk_bitmap,~ <method 'translate' of 'bytearray' objects>,2,2,4.177e-06,4.177e-06
+lib/python3.12/shutil.py:206 _samefile,~ <built-in method builtins.hasattr>,6,6,4.147e-06,4.147e-06
+<frozen importlib._bootstrap_external>:1728 _get_supported_file_loaders,~ <built-in method _imp.extension_suffixes>,5,5,4.136e-06,4.136e-06
+planner/quota/checker.py:9 check,~ <built-in method math.ceil>,2,2,4.116e-06,4.116e-06
+python3.12/re/_parser.py:969 parse,python3.12/re/_parser.py:231 __init__,2,2,3.114e-06,4.027000000000001e-06
+lib/python3.12/subprocess.py:1961 _handle_exitstatus,~ <built-in method posix.waitstatus_to_exitcode>,8,8,4.018e-06,4.018e-06
+experiments/qwen3-model-size/prepare.py:11 sha,~ <method 'hexdigest' of '_hashlib.HASH' objects>,2,2,4.016e-06,4.016e-06
+python3.12/re/_parser.py:168 __getitem__,python3.12/re/_parser.py:113 __init__,34,34,4.009e-06,4.009e-06
+lib/python3.12/subprocess.py:506 run,lib/python3.12/subprocess.py:481 __init__,8,8,3.996e-06,3.996e-06
+<frozen importlib._bootstrap_external>:84 _unpack_uint32,~ <built-in method builtins.len>,45,45,3.97e-06,3.97e-06
+python3.12/json/encoder.py:414 _iterencode,~ <built-in method builtins.isinstance>,45,45,3.9640000000000005e-06,3.9640000000000005e-06
+lib/python3.12/selectors.py:268 close,~ <method 'clear' of 'dict' objects>,7,7,3.958e-06,3.958e-06
+<frozen importlib._bootstrap>:426 _get_module_lock,~ <built-in method _imp.release_lock>,24,24,3.9080000000000005e-06,3.9080000000000005e-06
+lib/python3.12/fractions.py:186 __new__,~ <method 'replace' of 'str' objects>,18,18,3.867e-06,3.867e-06
+lib/python3.12/subprocess.py:2062 _communicate,~ <method 'flush' of '_io.TextIOWrapper' objects>,5,5,3.8050000000000004e-06,3.8050000000000004e-06
+<frozen posixpath>:71 join,~ <method 'endswith' of 'bytes' objects>,26,26,3.7880000000000004e-06,3.7880000000000004e-06
+lib/python3.12/fractions.py:317 _from_coprime_ints,~ <built-in method __new__ of type object at 0x144d380>,32,32,3.774e-06,3.774e-06
+experiments/qwen3-model-size/prepare.py:1 <module>,lib/python3.12/pathlib.py:1157 __init__,1,1,1.813e-06,3.766e-06
+lib/python3.12/argparse.py:1369 __init__,lib/python3.12/argparse.py:1633 _get_handler,3,3,2.483e-06,3.755e-06
+<frozen posixpath>:60 isabs,<frozen posixpath>:41 _get_sep,10,10,2.7830000000000003e-06,3.745e-06
+lib/python3.12/shutil.py:112 _fastcopy_sendfile,~ <built-in method builtins.max>,6,6,3.727e-06,3.727e-06
+lib/python3.12/enum.py:1550 __or__,lib/python3.12/enum.py:1543 _get_value,6,6,3.084e-06,3.6850000000000003e-06
+python3.12/re/_parser.py:449 _uniq,~ <built-in method fromkeys>,11,11,3.676e-06,3.676e-06
+~ <built-in method builtins.__build_class__>,lib/python3.12/threading.py:670 Barrier,1,1,3.666e-06,3.666e-06
+python3.12/re/_compiler.py:37 _compile,python3.12/re/_compiler.py:31 _combine_flags,19,19,3.648e-06,3.648e-06
+<frozen importlib._bootstrap>:1390 _handle_fromlist,~ <built-in method builtins.hasattr>,10,10,3.644e-06,3.644e-06
+<frozen importlib._bootstrap>:372 release,~ <built-in method _thread.get_ident>,24,24,3.6300000000000004e-06,3.6300000000000004e-06
+<frozen importlib._bootstrap>:304 acquire,~ <built-in method _thread.get_ident>,24,24,3.625e-06,3.625e-06
+lib/python3.12/enum.py:1561 __and__,lib/python3.12/enum.py:720 __call__,4,4,2.142e-06,3.5550000000000003e-06
+lib/python3.12/subprocess.py:1688 _get_handles,~ <method 'extend' of 'list' objects>,16,16,3.546e-06,3.546e-06
+~ <built-in method builtins.__build_class__>,lib/python3.12/subprocess.py:470 CompletedProcess,1,1,3.5450000000000004e-06,3.5450000000000004e-06
+<frozen importlib._bootstrap>:304 acquire,~ <method 'append' of 'list' objects>,24,24,3.514e-06,3.514e-06
+python3.12/re/_parser.py:452 _parse_sub,~ <method 'append' of 'list' objects>,37,37,3.4930000000000003e-06,3.4930000000000003e-06
+<frozen importlib._bootstrap>:733 _init_module_attrs,<frozen importlib._bootstrap>:653 has_location,27,27,3.486e-06,3.486e-06
+python3.12/json/decoder.py:333 decode,~ <built-in method builtins.len>,11,11,3.467e-06,3.467e-06
+<frozen importlib._bootstrap>:445 cb,~ <built-in method _imp.acquire_lock>,23,23,3.457e-06,3.457e-06
+lib/python3.12/shutil.py:112 _fastcopy_sendfile,~ <method 'fileno' of '_io.BufferedReader' objects>,6,6,3.456e-06,3.456e-06
+<frozen importlib._bootstrap>:304 acquire,<frozen importlib._bootstrap>:158 __init__,24,24,3.4540000000000003e-06,3.4540000000000003e-06
+<frozen posixpath>:179 dirname,~ <method 'rfind' of 'str' objects>,8,8,3.445e-06,3.445e-06
+lib/python3.12/threading.py:884 __init__,lib/python3.12/_weakrefset.py:85 add,1,1,2.955e-06,3.405e-06
+<frozen importlib._bootstrap_external>:1187 get_data,~ <built-in method builtins.isinstance>,21,21,3.3750000000000003e-06,3.3750000000000003e-06
+~ <built-in method builtins.next>,lib/python3.12/subprocess.py:1311 _on_error_fd_closer,16,16,3.3650000000000004e-06,3.3650000000000004e-06
+<frozen os>:654 get_exec_path,lib/python3.12/warnings.py:458 __init__,2,2,3.3640000000000003e-06,3.3640000000000003e-06
+<frozen posixpath>:179 dirname,~ <method 'rstrip' of 'bytes' objects>,6,6,3.356e-06,3.356e-06
+~ <built-in method builtins.__build_class__>,python3.12/importlib/_abc.py:6 Loader,1,1,3.3350000000000003e-06,3.3350000000000003e-06
+lib/python3.12/functools.py:35 update_wrapper,~ <built-in method builtins.getattr>,16,16,3.3250000000000004e-06,3.3250000000000004e-06
+planner/quota/planner.py:179 solve_upstream,~ <built-in method builtins.max>,3,3,3.2840000000000002e-06,3.2840000000000002e-06
+lib/python3.12/fractions.py:186 __new__,~ <built-in method builtins.len>,18,18,3.2560000000000003e-06,3.2560000000000003e-06
+python3.12/collections/__init__.py:355 namedtuple,~ <built-in method sys.intern>,9,9,3.248e-06,3.248e-06
+<frozen importlib._bootstrap_external>:1648 _fill_cache,~ <method 'startswith' of 'str' objects>,12,12,3.2350000000000004e-06,3.2350000000000004e-06
+lib/python3.12/contextlib.py:567 __exit__,~ <method 'pop' of 'collections.deque' objects>,16,16,3.215e-06,3.215e-06
+<frozen posixpath>:60 isabs,~ <method 'startswith' of 'str' objects>,10,10,3.204e-06,3.204e-06
+lib/python3.12/subprocess.py:2021 _wait,~ <method '__exit__' of '_thread.lock' objects>,6,6,3.1660000000000003e-06,3.1660000000000003e-06
+<frozen importlib._bootstrap_external>:79 _pack_uint32,~ <method 'to_bytes' of 'int' objects>,9,9,3.146e-06,3.146e-06
+experiments/direct-weight-forward/adapter.py:21 emit,lib/python3.12/pathlib.py:1164 __new__,2,2,2.1230000000000003e-06,3.1050000000000003e-06
+lib/python3.12/shutil.py:206 _samefile,~ <built-in method builtins.isinstance>,6,6,3.097e-06,3.097e-06
+lib/python3.12/numbers.py:57 Complex,<frozen abc>:7 abstractmethod,16,16,3.075e-06,3.075e-06
+lib/python3.12/enum.py:1543 _get_value,~ <built-in method builtins.isinstance>,26,26,3.052e-06,3.052e-06
+python3.12/re/_parser.py:83 groups,~ <built-in method builtins.len>,42,42,3.045e-06,3.045e-06
+python3.12/re/_parser.py:452 _parse_sub,python3.12/re/_parser.py:164 __len__,12,12,2.093e-06,3.035e-06
+planner/quota/upstream.py:15 prepare,lib/python3.12/subprocess.py:1120 __del__,2,2,2.7940000000000003e-06,3.034e-06
+experiments/qwen3-model-size/prepare.py:1 <module>,~ <built-in method _csv.writer>,1,1,3.0250000000000003e-06,3.0250000000000003e-06
+<frozen importlib._bootstrap_external>:670 _classify_pyc,~ <built-in method builtins.len>,15,15,3.017e-06,3.017e-06
+<frozen os>:841 fsencode,~ <built-in method posix.fspath>,34,34,3.0150000000000004e-06,3.0150000000000004e-06
+lib/python3.12/selectors.py:209 __init__,lib/python3.12/selectors.py:63 __init__,7,7,3.0140000000000003e-06,3.0140000000000003e-06
+lib/python3.12/subprocess.py:1165 communicate,~ <method 'count' of 'list' objects>,6,6,3.005e-06,3.005e-06
+lib/python3.12/subprocess.py:1282 _close_pipe_fds,~ <built-in method builtins.getattr>,8,8,2.995e-06,2.995e-06
+<frozen importlib._bootstrap_external>:806 spec_from_file_location,~ <built-in method builtins.hasattr>,5,5,2.9640000000000003e-06,2.9640000000000003e-06
+<frozen os>:654 get_exec_path,lib/python3.12/warnings.py:505 __exit__,2,2,2.714e-06,2.9140000000000004e-06
+lib/python3.12/argparse.py:602 _format_args,lib/python3.12/argparse.py:595 format,4,4,2.2310000000000003e-06,2.903e-06
+planner/quota/planner.py:49 validate,~ <built-in method builtins.sum>,4,4,2.8740000000000004e-06,2.8740000000000004e-06
+planner/quota/checker.py:1 <module>,<frozen importlib._bootstrap>:1390 _handle_fromlist,2,2,1.962e-06,2.8440000000000002e-06
+lib/python3.12/gettext.py:224 _expand_lang,~ <method 'find' of 'str' objects>,18,18,2.824e-06,2.824e-06
+~ <built-in method builtins.__build_class__>,<frozen importlib.util>:119 _incompatible_extension_module_restrictions,1,1,2.7940000000000003e-06,2.7940000000000003e-06
+<frozen importlib._bootstrap_external>:755 _compile_bytecode,<frozen importlib._bootstrap>:491 _verbose_message,15,15,2.786e-06,2.786e-06
+lib/python3.12/fractions.py:933 _richcmp,~ <built-in method _operator.le>,16,16,2.7670000000000004e-06,2.7670000000000004e-06
+python3.12/re/_parser.py:304 checkgroupname,~ <method 'isidentifier' of 'str' objects>,15,15,2.764e-06,2.764e-06
+<frozen importlib._bootstrap>:445 cb,~ <built-in method _imp.release_lock>,23,23,2.734e-06,2.734e-06
+lib/python3.12/fractions.py:801 __pow__,~ <built-in method builtins.isinstance>,4,4,1.1010000000000001e-06,2.714e-06
+python3.12/re/_parser.py:86 opengroup,~ <method 'get' of 'dict' objects>,15,15,2.713e-06,2.713e-06
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:34 compiled,~ <built-in method builtins.isinstance>,19,19,2.703e-06,2.703e-06
+python3.12/ctypes/__init__.py:1 <module>,~ <built-in method _ctypes.sizeof>,24,24,2.6750000000000002e-06,2.6750000000000002e-06
+planner/quota/checker.py:9 check,~ <method 'setdefault' of 'dict' objects>,12,12,2.662e-06,2.662e-06
+lib/python3.12/subprocess.py:1791 _execute_child,~ <method 'add' of 'set' objects>,8,8,2.6250000000000003e-06,2.6250000000000003e-06
+lib/python3.12/selectors.py:588 _can_use,~ <method 'close' of 'select.epoll' objects>,1,1,2.624e-06,2.624e-06
+lib/python3.12/functools.py:35 update_wrapper,~ <built-in method builtins.setattr>,12,12,2.5960000000000002e-06,2.5960000000000002e-06
+~ <built-in method builtins.sum>,experiments/multi-npu-relay/capacity.py:15 <genexpr>,15,15,2.593e-06,2.593e-06
+<frozen importlib._bootstrap>:1128 find_spec,<frozen importlib._bootstrap>:1103 _resolve_filename,1,1,1.8420000000000001e-06,2.584e-06
+lib/python3.12/enum.py:1393 _iter_member_by_value_,lib/python3.12/enum.py:117 _iter_bits_lsb,3,3,1.821e-06,2.522e-06
+lib/python3.12/csv.py:138 __init__,~ <method 'lower' of 'str' objects>,7,7,2.4730000000000003e-06,2.4730000000000003e-06
+python3.12/re/_parser.py:178 getwidth,~ <built-in method builtins.max>,10,10,2.4440000000000002e-06,2.4440000000000002e-06
+<frozen os>:841 fsencode,~ <built-in method builtins.isinstance>,34,34,2.443e-06,2.443e-06
+lib/python3.12/threading.py:424 notify_all,lib/python3.12/threading.py:394 notify,1,1,1.142e-06,2.424e-06
+lib/python3.12/subprocess.py:506 run,~ <method 'get' of 'dict' objects>,13,13,2.4230000000000003e-06,2.4230000000000003e-06
+python3.12/re/_parser.py:86 opengroup,~ <method 'append' of 'list' objects>,19,19,2.415e-06,2.415e-06
+~ <built-in method builtins.__build_class__>,python3.12/ctypes/__init__.py:322 CDLL,1,1,2.403e-06,2.403e-06
+<frozen importlib._bootstrap>:662 spec_from_loader,~ <built-in method builtins.hasattr>,6,6,2.3930000000000002e-06,2.3930000000000002e-06
+lib/python3.12/subprocess.py:1791 _execute_child,~ <built-in method sys.audit>,8,8,2.3830000000000003e-06,2.3830000000000003e-06
+experiments/qwen3-model-size/prepare.py:12 jain,~ <built-in method builtins.any>,1,1,2.3540000000000002e-06,2.3540000000000002e-06
+lib/python3.12/warnings.py:184 _add_filter,~ <method 'remove' of 'list' objects>,2,2,2.3430000000000003e-06,2.3430000000000003e-06
+<frozen importlib._bootstrap>:806 module_from_spec,<frozen importlib._bootstrap_external>:990 create_module,20,20,2.335e-06,2.335e-06
+<frozen os>:791 encode,~ <built-in method builtins.isinstance>,23,23,2.325e-06,2.325e-06
+~ <built-in method builtins.__build_class__>,lib/python3.12/selectors.py:341 _PollLikeSelector,1,1,2.314e-06,2.314e-06
+lib/python3.12/argparse.py:1451 add_argument,lib/python3.12/argparse.py:1135 __init__,1,1,1.573e-06,2.314e-06
+~ <built-in method builtins.__build_class__>,lib/python3.12/subprocess.py:126 CalledProcessError,1,1,1.8030000000000001e-06,2.3040000000000003e-06
+experiments/multi-npu-relay/capacity.py:2 weight_task_count,~ <built-in method builtins.max>,10,10,2.302e-06,2.302e-06
+lib/python3.12/csv.py:138 __init__,~ <built-in method builtins.iter>,7,7,2.294e-06,2.294e-06
+lib/python3.12/fractions.py:801 __pow__,lib/python3.12/fractions.py:317 _from_coprime_ints,4,4,1.793e-06,2.2640000000000003e-06
+<frozen os>:654 get_exec_path,~ <method 'split' of 'str' objects>,2,2,2.254e-06,2.254e-06
+<frozen importlib._bootstrap>:1304 _find_and_load_unlocked,~ <built-in method builtins.setattr>,4,4,2.2140000000000003e-06,2.2140000000000003e-06
+python3.12/re/_parser.py:512 _parse,~ <method 'append' of 'list' objects>,25,25,2.194e-06,2.194e-06
+lib/python3.12/pathlib.py:277 __getitem__,~ <built-in method builtins.len>,2,2,1.2220000000000001e-06,2.183e-06
+lib/python3.12/argparse.py:1629 _pop_action_class,lib/python3.12/argparse.py:1426 _registry_get,4,4,1.4710000000000002e-06,2.1620000000000002e-06
+<frozen importlib._bootstrap>:1128 find_spec,<frozen importlib._bootstrap>:662 spec_from_loader,1,1,1.8230000000000002e-06,2.154e-06
+experiments/direct-weight-forward/adapter.py:21 emit,~ <method 'get' of 'dict' objects>,6,6,2.144e-06,2.144e-06
+<frozen importlib._bootstrap>:463 _lock_unlock_module,<frozen importlib._bootstrap>:372 release,1,1,1.39e-06,2.143e-06
+lib/python3.12/pathlib.py:741 parents,lib/python3.12/pathlib.py:268 __init__,1,1,1.7720000000000001e-06,2.103e-06
+lib/python3.12/threading.py:1045 _set_tstate_lock,lib/python3.12/threading.py:857 _maintain_shutdown_locks,1,1,1.5020000000000002e-06,2.0830000000000002e-06
+lib/python3.12/argparse.py:1451 add_argument,lib/python3.12/argparse.py:1426 _registry_get,4,4,1.312e-06,2.043e-06
+planner/quota/planner.py:179 solve_upstream,~ <built-in method time.perf_counter_ns>,2,2,2.003e-06,2.003e-06
+<frozen importlib._bootstrap>:806 module_from_spec,<frozen importlib._bootstrap>:1158 create_module,1,1,1.0420000000000001e-06,1.9930000000000002e-06
+<frozen os>:717 __setitem__,<frozen os>:791 encode,2,2,1.201e-06,1.9930000000000002e-06
+experiments/direct-weight-forward/adapter.py:1 <module>,lib/python3.12/pathlib.py:1164 __new__,1,1,1.2820000000000002e-06,1.9830000000000003e-06
+~ <method 'join' of 'str' objects>,python3.12/collections/__init__.py:429 <genexpr>,9,9,1.972e-06,1.972e-06
+experiments/multi-npu-relay/adapter.py:8 emit,~ <method 'split' of 'str' objects>,3,3,1.963e-06,1.963e-06
+lib/python3.12/argparse.py:1954 _parse_known_args,lib/python3.12/argparse.py:2320 _parse_optional,6,6,1.955e-06,1.955e-06
+lib/python3.12/pathlib.py:1228 resolve,lib/python3.12/pathlib.py:1234 check_eloop,1,1,1.342e-06,1.953e-06
+lib/python3.12/fractions.py:613 forward,~ <built-in method builtins.isinstance>,16,16,1.952e-06,1.952e-06
+site-packages/_distutils_hack/__init__.py:101 find_spec,site-packages/_distutils_hack/__init__.py:108 <lambda>,19,19,1.951e-06,1.951e-06
+lib/python3.12/shutil.py:224 _stat,~ <built-in method builtins.isinstance>,12,12,1.933e-06,1.933e-06
+planner/quota/planner.py:22 validate_upstream_numeric,planner/quota/planner.py:9 integer,8,8,1.924e-06,1.924e-06
+lib/python3.12/argparse.py:1772 __init__,<frozen posixpath>:169 basename,1,1,1.19e-06,1.922e-06
+lib/python3.12/argparse.py:1426 _registry_get,~ <method 'get' of 'dict' objects>,11,11,1.913e-06,1.913e-06
+planner/quota/upstream.py:32 replication,lib/python3.12/subprocess.py:1120 __del__,1,1,1.732e-06,1.913e-06
+python3.12/re/__init__.py:164 match,python3.12/re/__init__.py:280 _compile,3,3,1.381e-06,1.883e-06
+<frozen posixpath>:179 dirname,~ <built-in method posix.fspath>,16,16,1.8820000000000001e-06,1.8820000000000001e-06
+python3.12/re/_compiler.py:516 _compile_info,python3.12/re/_compiler.py:441 _get_literal_prefix,1,1,1.692e-06,1.8620000000000001e-06
+experiments/direct-weight-forward/adapter.py:1 <module>,<frozen importlib._bootstrap>:1390 _handle_fromlist,1,1,1.2510000000000002e-06,1.853e-06
+lib/python3.12/argparse.py:2001 take_action,lib/python3.12/argparse.py:984 __call__,3,3,1.052e-06,1.853e-06
+~ <built-in method builtins.__build_class__>,lib/python3.12/numbers.py:292 Rational,1,1,1.6030000000000002e-06,1.833e-06
+python3.12/re/_parser.py:452 _parse_sub,python3.12/re/_parser.py:176 append,6,6,1.283e-06,1.824e-06
+lib/python3.12/subprocess.py:807 __init__,~ <built-in method builtins.isinstance>,16,16,1.8030000000000001e-06,1.8030000000000001e-06
+<frozen importlib._bootstrap_external>:1216 set_data,<frozen importlib._bootstrap_external>:126 _path_join,1,1,1.102e-06,1.8030000000000001e-06
+python3.12/re/__init__.py:280 _compile,python3.12/re/_compiler.py:575 isstring,2,2,1.602e-06,1.8030000000000001e-06
+<frozen importlib._bootstrap>:662 spec_from_loader,<frozen importlib._bootstrap>:599 __init__,7,7,1.794e-06,1.794e-06
+python3.12/collections/__init__.py:355 namedtuple,~ <method 'isidentifier' of 'str' objects>,9,9,1.793e-06,1.793e-06
+lib/python3.12/pathlib.py:52 _ignore_error,~ <built-in method builtins.getattr>,4,4,1.785e-06,1.785e-06
+~ <built-in method builtins.__build_class__>,lib/python3.12/threading.py:445 Semaphore,1,1,1.7830000000000001e-06,1.7830000000000001e-06
+python3.12/json/encoder.py:260 _make_iterencode,~ <built-in method builtins.isinstance>,9,9,1.7810000000000002e-06,1.7810000000000002e-06
+<frozen posixpath>:179 dirname,~ <built-in method builtins.len>,12,12,1.7530000000000002e-06,1.7530000000000002e-06
+lib/python3.12/argparse.py:1512 _add_action,lib/python3.12/argparse.py:1642 _check_conflict,4,4,1.742e-06,1.742e-06
+python3.12/ctypes/__init__.py:145 _check_size,~ <built-in method _ctypes.sizeof>,14,14,1.723e-06,1.723e-06
+lib/python3.12/locale.py:381 normalize,~ <method 'get' of 'dict' objects>,6,6,1.712e-06,1.712e-06
+lib/python3.12/argparse.py:164 __init__,~ <built-in method builtins.max>,4,4,1.712e-06,1.712e-06
+lib/python3.12/enum.py:202 __get__,lib/python3.12/enum.py:1291 value,6,6,1.7040000000000001e-06,1.7040000000000001e-06
+<frozen posixpath>:179 dirname,~ <method 'rstrip' of 'str' objects>,6,6,1.701e-06,1.701e-06
+<frozen importlib._bootstrap_external>:755 _compile_bytecode,~ <built-in method builtins.isinstance>,15,15,1.672e-06,1.672e-06
+<frozen importlib._bootstrap>:1171 exec_module,<frozen importlib._bootstrap>:480 _call_with_frames_removed,1,1,9.72e-07,1.663e-06
+lib/python3.12/fractions.py:758 _div,lib/python3.12/fractions.py:317 _from_coprime_ints,2,2,1.362e-06,1.663e-06
+~ <built-in method _abc._abc_subclasscheck>,<frozen _collections_abc>:435 __subclasshook__,7,7,1.6620000000000001e-06,1.6620000000000001e-06
+lib/python3.12/argparse.py:2538 _get_value,lib/python3.12/pathlib.py:1164 __new__,2,2,1.071e-06,1.6620000000000001e-06
+lib/python3.12/subprocess.py:1233 poll,lib/python3.12/subprocess.py:1973 _internal_poll,8,8,1.624e-06,1.624e-06
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:34 compiled,~ <method 'join' of 'str' objects>,3,3,1.622e-06,1.622e-06
+~ <method 'sort' of 'list' objects>,planner/quota/upstream.py:41 <lambda>,1,1,1.613e-06,1.613e-06
+experiments/qwen3-model-size/prepare.py:1 <module>,lib/python3.12/subprocess.py:1120 __del__,1,1,1.2530000000000001e-06,1.593e-06
+planner/quota/upstream.py:80 decomposition,lib/python3.12/subprocess.py:1120 __del__,1,1,1.4620000000000001e-06,1.5720000000000002e-06
+lib/python3.12/argparse.py:2538 _get_value,lib/python3.12/argparse.py:1426 _registry_get,3,3,1.0620000000000002e-06,1.553e-06
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:42 get_code,qwen-chunk-cpu-profiling/python-stages/profile_stage.py:43 <genexpr>,2,2,1.5520000000000001e-06,1.5520000000000001e-06
+experiments/qwen3-model-size/prepare.py:1 <module>,~ <built-in method builtins.max>,1,1,1.543e-06,1.543e-06
+python3.12/re/_compiler.py:37 _compile,~ <built-in method _sre.unicode_iscased>,8,8,1.5320000000000001e-06,1.5320000000000001e-06
+lib/python3.12/shutil.py:230 copyfile,~ <built-in method sys.audit>,6,6,1.5130000000000002e-06,1.5130000000000002e-06
+lib/python3.12/threading.py:1 <module>,lib/python3.12/_weakrefset.py:37 __init__,1,1,1.512e-06,1.512e-06
+python3.12/json/__init__.py:299 loads,~ <built-in method builtins.isinstance>,11,11,1.5020000000000002e-06,1.5020000000000002e-06
+~ <built-in method builtins.__build_class__>,lib/python3.12/subprocess.py:163 TimeoutExpired,1,1,1.1910000000000001e-06,1.5020000000000002e-06
+lib/python3.12/fractions.py:1 <module>,lib/python3.12/functools.py:482 lru_cache,1,1,1.3720000000000002e-06,1.492e-06
+lib/python3.12/argparse.py:602 _format_args,lib/python3.12/argparse.py:587 _metavar_formatter,4,4,1.472e-06,1.472e-06
+lib/python3.12/argparse.py:1916 _parse_known_args2,~ <built-in method builtins.setattr>,3,3,1.4620000000000001e-06,1.4620000000000001e-06
+planner/quota/upstream.py:1 <module>,lib/python3.12/pathlib.py:1164 __new__,1,1,9.910000000000001e-07,1.4620000000000001e-06
+~ <built-in method builtins.__build_class__>,lib/python3.12/threading.py:137 _RLock,1,1,1.432e-06,1.432e-06
+lib/python3.12/subprocess.py:1165 communicate,lib/python3.12/subprocess.py:1239 _remaining_time,7,7,1.192e-06,1.4220000000000001e-06
+~ <built-in method builtins.__build_class__>,lib/python3.12/threading.py:265 Condition,1,1,1.412e-06,1.412e-06
+lib/python3.12/locale.py:381 normalize,~ <method 'replace' of 'str' objects>,6,6,1.3940000000000001e-06,1.3940000000000001e-06
+python3.12/re/_parser.py:969 parse,python3.12/re/_parser.py:953 fix_flags,2,2,1.202e-06,1.3720000000000002e-06
+lib/python3.12/subprocess.py:2062 _communicate,~ <built-in method builtins.len>,9,9,1.3610000000000002e-06,1.3610000000000002e-06
+site-packages/_distutils_hack/__init__.py:101 find_spec,~ <method 'startswith' of 'str' objects>,4,4,1.3520000000000001e-06,1.3520000000000001e-06
+python3.12/collections/__init__.py:355 namedtuple,~ <method 'startswith' of 'str' objects>,7,7,1.342e-06,1.342e-06
+experiments/qwen3-model-size/prepare.py:1 <module>,<frozen importlib._bootstrap>:1390 _handle_fromlist,1,1,8.12e-07,1.342e-06
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:34 compiled,~ <method 'get' of 'dict' objects>,4,4,1.3320000000000001e-06,1.3320000000000001e-06
+lib/python3.12/subprocess.py:1120 __del__,lib/python3.12/subprocess.py:1973 _internal_poll,8,8,1.3210000000000001e-06,1.3210000000000001e-06
+<frozen importlib._bootstrap>:1390 _handle_fromlist,~ <built-in method builtins.isinstance>,10,10,1.312e-06,1.312e-06
+lib/python3.12/selectors.py:1 <module>,<frozen importlib._bootstrap>:1390 _handle_fromlist,1,1,7.420000000000001e-07,1.302e-06
+lib/python3.12/argparse.py:1451 add_argument,~ <built-in method builtins.hasattr>,4,4,1.3010000000000001e-06,1.3010000000000001e-06
+planner/quota/planner.py:83 ceil,lib/python3.12/fractions.py:397 numerator,8,8,1.3e-06,1.3e-06
+python3.12/re/__init__.py:164 match,~ <method 'match' of 're.Pattern' objects>,3,3,1.2900000000000001e-06,1.2900000000000001e-06
+<frozen importlib._bootstrap_external>:982 is_package,~ <method 'rpartition' of 'str' objects>,5,5,1.2820000000000002e-06,1.2820000000000002e-06
+lib/python3.12/threading.py:394 notify,lib/python3.12/threading.py:314 _is_owned,1,1,4.91e-07,1.2820000000000002e-06
+lib/python3.12/argparse.py:1633 _get_handler,~ <built-in method builtins.getattr>,3,3,1.272e-06,1.272e-06
+<frozen importlib._bootstrap_external>:1066 get_code,~ <built-in method builtins.len>,3,3,1.272e-06,1.272e-06
+planner/quota/planner.py:22 validate_upstream_numeric,planner/quota/planner.py:7 need,16,16,1.244e-06,1.244e-06
+lib/python3.12/shutil.py:112 _fastcopy_sendfile,~ <method 'fileno' of '_io.BufferedWriter' objects>,6,6,1.241e-06,1.241e-06
+experiments/multi-npu-relay/capacity.py:2 weight_task_count,~ <method 'values' of 'dict' objects>,3,3,1.24e-06,1.24e-06
+python3.12/importlib/_abc.py:1 <module>,<frozen importlib._bootstrap>:1390 _handle_fromlist,1,1,8.620000000000001e-07,1.232e-06
+~ <built-in method builtins.__build_class__>,python3.12/ctypes/__init__.py:513 CFunctionType,3,3,1.232e-06,1.232e-06
+lib/python3.12/locale.py:381 normalize,~ <method 'lower' of 'str' objects>,6,6,1.2220000000000001e-06,1.2220000000000001e-06
+~ <built-in method builtins.__build_class__>,lib/python3.12/selectors.py:290 SelectSelector,1,1,1.221e-06,1.221e-06
+lib/python3.12/numbers.py:172 Real,<frozen abc>:7 abstractmethod,11,11,1.2140000000000002e-06,1.2140000000000002e-06
+qwen-chunk-cpu-profiling/python-stages/profile_stage.py:34 compiled,lib/python3.12/pathlib.py:437 __str__,9,9,1.21e-06,1.21e-06
+lib/python3.12/argparse.py:1595 _get_optional_kwargs,~ <method 'append' of 'list' objects>,9,9,1.2030000000000002e-06,1.2030000000000002e-06
+experiments/qwen3-model-size/prepare.py:1 <module>,~ <built-in method time.perf_counter>,4,4,1.201e-06,1.201e-06
+lib/python3.12/argparse.py:1451 add_argument,~ <built-in method builtins.callable>,8,8,1.193e-06,1.193e-06
+lib/python3.12/gettext.py:224 _expand_lang,~ <method 'append' of 'list' objects>,9,9,1.19e-06,1.19e-06
+<frozen importlib._bootstrap_external>:1216 set_data,<frozen importlib._bootstrap>:491 _verbose_message,3,3,1.173e-06,1.173e-06
+lib/python3.12/argparse.py:2121 consume_positionals,lib/python3.12/argparse.py:2303 _match_arguments_partial,1,1,9.92e-07,1.1720000000000002e-06
+lib/python3.12/selectors.py:1 <module>,~ <built-in method builtins.hasattr>,4,4,1.17e-06,1.17e-06
+planner/quota/planner.py:83 ceil,lib/python3.12/fractions.py:401 denominator,8,8,1.17e-06,1.17e-06
+<frozen importlib._bootstrap>:463 _lock_unlock_module,<frozen importlib._bootstrap>:426 _get_module_lock,1,1,7.210000000000001e-07,1.161e-06
+~ <built-in method builtins.__build_class__>,lib/python3.12/selectors.py:442 EpollSelector,1,1,1.161e-06,1.161e-06
+lib/python3.12/subprocess.py:1282 _close_pipe_fds,lib/python3.12/contextlib.py:564 __enter__,8,8,1.1520000000000002e-06,1.1520000000000002e-06
+lib/python3.12/subprocess.py:506 run,lib/python3.12/subprocess.py:1089 __enter__,8,8,1.1320000000000001e-06,1.1320000000000001e-06
+lib/python3.12/numbers.py:319 Integral,<frozen abc>:7 abstractmethod,13,13,1.123e-06,1.123e-06
+python3.12/ctypes/_endian.py:1 <module>,<frozen importlib._bootstrap>:1390 _handle_fromlist,1,1,7.91e-07,1.111e-06
+planner/quota/checker.py:72 check_upstream,~ <built-in method builtins.len>,6,6,1.071e-06,1.071e-06
+lib/python3.12/argparse.py:164 __init__,~ <built-in method builtins.min>,4,4,1.071e-06,1.071e-06
+python3.12/ctypes/__init__.py:1 <module>,~ <built-in method _struct.calcsize>,4,4,1.0700000000000001e-06,1.0700000000000001e-06
+lib/python3.12/gettext.py:479 find,~ <method 'append' of 'list' objects>,9,9,1.063e-06,1.063e-06
+~ <built-in method builtins.__build_class__>,python3.12/ctypes/__init__.py:102 CFunctionType,2,2,1.06e-06,1.06e-06
+experiments/qwen3-model-size/prepare.py:1 <module>,lib/python3.12/pathlib.py:1164 __new__,1,1,6.22e-07,1.0420000000000001e-06
+~ <built-in method builtins.__build_class__>,lib/python3.12/selectors.py:206 _BaseSelectorImpl,1,1,1.041e-06,1.041e-06
+lib/python3.12/threading.py:873 Thread,~ <method 'setter' of 'property' objects>,2,2,1.032e-06,1.032e-06
+lib/python3.12/subprocess.py:1259 wait,~ <built-in method time.monotonic>,4,4,1.032e-06,1.032e-06
+lib/python3.12/argparse.py:2001 take_action,~ <method 'add' of 'set' objects>,6,6,1.03e-06,1.03e-06
+lib/python3.12/contextlib.py:272 contextmanager,lib/python3.12/functools.py:65 wraps,1,1,1.0220000000000001e-06,1.0220000000000001e-06
+lib/python3.12/threading.py:616 set,lib/python3.12/threading.py:302 __exit__,1,1,7.900000000000001e-07,1.0110000000000001e-06
+~ <built-in method builtins.__build_class__>,lib/python3.12/threading.py:577 Event,1,1,1.0110000000000001e-06,1.0110000000000001e-06
+lib/python3.12/pathlib.py:591 suffix,lib/python3.12/pathlib.py:583 name,2,2,7.91e-07,1.001e-06
+lib/python3.12/subprocess.py:2062 _communicate,lib/python3.12/selectors.py:199 __enter__,7,7,9.82e-07,9.82e-07
+python3.12/re/_compiler.py:745 compile,python3.12/re/_parser.py:83 groups,4,4,7.12e-07,9.82e-07
+python3.12/collections/__init__.py:355 namedtuple,~ <method 'add' of 'set' objects>,7,7,9.62e-07,9.62e-07
+~ <built-in method builtins.len>,lib/python3.12/pathlib.py:274 __len__,2,2,7.91e-07,9.61e-07
+planner/quota/checker.py:9 check,~ <method 'values' of 'dict' objects>,2,2,9.520000000000001e-07,9.520000000000001e-07
+lib/python3.12/threading.py:884 __init__,lib/python3.12/threading.py:1356 _make_invoke_excepthook,1,1,9.520000000000001e-07,9.520000000000001e-07
+lib/python3.12/gettext.py:224 _expand_lang,~ <method 'reverse' of 'list' objects>,6,6,9.510000000000001e-07,9.510000000000001e-07
+lib/python3.12/subprocess.py:695 _use_posix_spawn,~ <method 'split' of 'str' objects>,2,2,9.510000000000001e-07,9.510000000000001e-07
+lib/python3.12/argparse.py:1954 _parse_known_args,~ <built-in method builtins.min>,3,3,9.510000000000001e-07,9.510000000000001e-07
+<frozen importlib._bootstrap>:1158 create_module,<frozen importlib._bootstrap>:48 _new_module,1,1,9.510000000000001e-07,9.510000000000001e-07
+lib/python3.12/pathlib.py:731 parent,lib/python3.12/pathlib.py:569 _tail,6,6,9.510000000000001e-07,9.510000000000001e-07
+lib/python3.12/fractions.py:710 _add,~ <built-in method math.gcd>,8,8,9.410000000000001e-07,9.410000000000001e-07
+~ <built-in method builtins.__build_class__>,lib/python3.12/selectors.py:60 _SelectorMapping,1,1,9.410000000000001e-07,9.410000000000001e-07
+<frozen posixpath>:60 isabs,~ <built-in method posix.fspath>,10,10,9.32e-07,9.32e-07
+~ <built-in method builtins.__build_class__>,python3.12/ctypes/__init__.py:257 c_wchar_p,1,1,9.22e-07,9.22e-07
+lib/python3.12/argparse.py:1682 __init__,~ <method 'setdefault' of 'dict' objects>,6,6,9.02e-07,9.02e-07
+lib/python3.12/subprocess.py:807 __init__,<frozen codecs>:186 __init__,5,5,9.01e-07,9.01e-07
+~ <built-in method builtins.__build_class__>,<frozen importlib.util>:168 _LazyModule,1,1,8.920000000000001e-07,8.920000000000001e-07
+python3.12/re/_parser.py:452 _parse_sub,python3.12/re/_parser.py:113 __init__,6,6,8.720000000000001e-07,8.720000000000001e-07
+lib/python3.12/argparse.py:1595 _get_optional_kwargs,~ <method 'lstrip' of 'str' objects>,4,4,8.71e-07,8.71e-07
+lib/python3.12/threading.py:1045 _set_tstate_lock,~ <method 'acquire' of '_thread.lock' objects>,1,1,8.71e-07,8.71e-07
+lib/python3.12/argparse.py:1595 _get_optional_kwargs,~ <method 'replace' of 'str' objects>,4,4,8.610000000000001e-07,8.610000000000001e-07
+lib/python3.12/pathlib.py:591 suffix,~ <method 'rfind' of 'str' objects>,2,2,8.520000000000001e-07,8.520000000000001e-07
+<frozen importlib._bootstrap>:1304 _find_and_load_unlocked,~ <method 'pop' of 'list' objects>,4,4,8.410000000000001e-07,8.410000000000001e-07
+python3.12/re/_parser.py:172 __setitem__,python3.12/re/_parser.py:168 __getitem__,2,2,6.720000000000001e-07,8.32e-07
+lib/python3.12/argparse.py:2281 _match_argument,~ <method 'group' of 're.Match' objects>,3,3,8.300000000000001e-07,8.300000000000001e-07
+python3.12/re/_compiler.py:745 compile,python3.12/re/_compiler.py:575 isstring,2,2,6.100000000000001e-07,8.300000000000001e-07
+python3.12/re/_compiler.py:243 _optimize_charset,~ <built-in method _sre.unicode_tolower>,4,4,8.230000000000001e-07,8.230000000000001e-07
+lib/python3.12/threading.py:424 notify_all,~ <built-in method builtins.len>,1,1,8.11e-07,8.11e-07
+planner/quota/checker.py:59 <lambda>,lib/python3.12/fractions.py:397 numerator,2,2,8.02e-07,8.02e-07
+lib/python3.12/warnings.py:184 _add_filter,~ <method 'insert' of 'list' objects>,2,2,8.01e-07,8.01e-07
+lib/python3.12/argparse.py:984 __call__,~ <built-in method builtins.setattr>,3,3,8.01e-07,8.01e-07
+lib/python3.12/threading.py:616 set,lib/python3.12/threading.py:299 __enter__,1,1,6.110000000000001e-07,8.01e-07
+python3.12/re/__init__.py:280 _compile,~ <method 'pop' of 'dict' objects>,2,2,7.91e-07,7.91e-07
+lib/python3.12/argparse.py:1595 _get_optional_kwargs,~ <method 'pop' of 'dict' objects>,4,4,7.91e-07,7.91e-07
+lib/python3.12/threading.py:277 __init__,~ <built-in method builtins.hasattr>,3,3,7.91e-07,7.91e-07
+lib/python3.12/threading.py:314 _is_owned,~ <method 'acquire' of '_thread.lock' objects>,1,1,7.91e-07,7.91e-07
+python3.12/re/_parser.py:231 __init__,python3.12/re/_parser.py:240 __next,2,2,7.720000000000001e-07,7.720000000000001e-07
+lib/python3.12/argparse.py:1135 __init__,lib/python3.12/argparse.py:849 __init__,1,1,7.410000000000001e-07,7.410000000000001e-07
+<frozen importlib._bootstrap>:1304 _find_and_load_unlocked,~ <method 'append' of 'list' objects>,4,4,7.3e-07,7.3e-07
+lib/python3.12/pathlib.py:702 parts,lib/python3.12/pathlib.py:551 drive,6,6,7.23e-07,7.23e-07
+lib/python3.12/argparse.py:1512 _add_action,~ <method 'append' of 'list' objects>,4,4,7.22e-07,7.22e-07
+lib/python3.12/threading.py:1441 __init__,lib/python3.12/threading.py:1038 _set_ident,1,1,5.51e-07,7.210000000000001e-07
+<frozen importlib._bootstrap>:501 _requires_builtin_wrapper,<frozen importlib._bootstrap>:1014 is_package,6,6,7.12e-07,7.12e-07
+~ <built-in method builtins.__build_class__>,lib/python3.12/selectors.py:433 PollSelector,1,1,7.110000000000001e-07,7.110000000000001e-07
+lib/python3.12/argparse.py:1629 _pop_action_class,~ <method 'pop' of 'dict' objects>,4,4,7.01e-07,7.01e-07
+lib/python3.12/warnings.py:484 __enter__,~ <built-in method _warnings._filters_mutated>,2,2,7.01e-07,7.01e-07
+lib/python3.12/enum.py:117 _iter_bits_lsb,~ <built-in method builtins.isinstance>,1,1,7.01e-07,7.01e-07
+<frozen importlib._bootstrap_external>:195 _write_atomic,~ <built-in method builtins.id>,3,3,6.92e-07,6.92e-07
+python3.12/ctypes/__init__.py:73 CFUNCTYPE,~ <method 'pop' of 'dict' objects>,4,4,6.91e-07,6.91e-07
+<frozen importlib._bootstrap>:480 _call_with_frames_removed,~ <built-in method _imp.get_frozen_object>,1,1,6.91e-07,6.91e-07
+lib/python3.12/argparse.py:164 __init__,lib/python3.12/argparse.py:206 __init__,4,4,6.900000000000001e-07,6.900000000000001e-07
+lib/python3.12/functools.py:35 update_wrapper,~ <method 'update' of 'dict' objects>,2,2,6.82e-07,6.82e-07
+~ <built-in method builtins.__build_class__>,python3.12/ctypes/__init__.py:157 py_object,1,1,6.81e-07,6.81e-07
+python3.12/ctypes/__init__.py:1 <module>,python3.12/ctypes/__init__.py:443 __init__,2,2,6.81e-07,6.81e-07
+~ <built-in method builtins.__build_class__>,lib/python3.12/threading.py:1409 Timer,1,1,6.81e-07,6.81e-07
+lib/python3.12/argparse.py:595 format,~ <built-in method builtins.isinstance>,4,4,6.720000000000001e-07,6.720000000000001e-07
+planner/quota/checker.py:9 check,~ <method 'get' of 'dict' objects>,2,2,6.71e-07,6.71e-07
+python3.12/importlib/_abc.py:1 <module>,<frozen importlib._bootstrap>:645 parent,1,1,4.61e-07,6.71e-07
+lib/python3.12/pathlib.py:731 parent,lib/python3.12/pathlib.py:551 drive,6,6,6.51e-07,6.51e-07
+lib/python3.12/enum.py:1413 _missing_,~ <built-in method __new__ of type object at 0x144d380>,1,1,6.5e-07,6.5e-07
+lib/python3.12/pathlib.py:642 with_suffix,~ <method 'startswith' of 'str' objects>,2,2,6.410000000000001e-07,6.410000000000001e-07
+python3.12/re/_compiler.py:243 _optimize_charset,~ <built-in method _sre.unicode_iscased>,4,4,6.410000000000001e-07,6.410000000000001e-07
+lib/python3.12/subprocess.py:2021 _wait,~ <method 'release' of '_thread.lock' objects>,2,2,6.410000000000001e-07,6.410000000000001e-07
+<frozen importlib._bootstrap_external>:195 _write_atomic,~ <built-in method builtins.len>,3,3,6.4e-07,6.4e-07
+lib/python3.12/subprocess.py:1165 communicate,~ <built-in method time.monotonic>,2,2,6.32e-07,6.32e-07
+planner/quota/planner.py:83 ceil,~ <built-in method builtins.isinstance>,8,8,6.210000000000001e-07,6.210000000000001e-07
+python3.12/json/encoder.py:278 _iterencode_list,~ <built-in method _json.encode_basestring_ascii>,4,4,6.210000000000001e-07,6.210000000000001e-07
+python3.12/re/_compiler.py:516 _compile_info,python3.12/re/_compiler.py:472 _get_charset_prefix,1,1,5.000000000000001e-07,6.210000000000001e-07
+lib/python3.12/pathlib.py:1234 check_eloop,~ <built-in method builtins.getattr>,1,1,6.110000000000001e-07,6.110000000000001e-07
+lib/python3.12/threading.py:1045 _set_tstate_lock,~ <built-in method _thread._set_sentinel>,1,1,6.110000000000001e-07,6.110000000000001e-07
+~ <built-in method builtins.__build_class__>,python3.12/ctypes/__init__.py:373 _FuncPtr,1,1,6.110000000000001e-07,6.110000000000001e-07
+~ <built-in method builtins.__build_class__>,lib/python3.12/_weakrefset.py:11 _IterationGuard,1,1,6.110000000000001e-07,6.110000000000001e-07
+~ <built-in method builtins.__build_class__>,lib/python3.12/threading.py:1460 _DummyThread,1,1,6.110000000000001e-07,6.110000000000001e-07
+lib/python3.12/argparse.py:1954 _parse_known_args,~ <method 'append' of 'list' objects>,6,6,6.01e-07,6.01e-07
+~ <built-in method builtins.__build_class__>,python3.12/ctypes/_endian.py:23 _swapped_meta,1,1,6.01e-07,6.01e-07
+lib/python3.12/threading.py:857 _maintain_shutdown_locks,~ <method 'difference_update' of 'set' objects>,1,1,5.81e-07,5.81e-07
+python3.12/collections/__init__.py:355 namedtuple,~ <method 'split' of 'str' objects>,1,1,5.81e-07,5.81e-07
+~ <built-in method builtins.__build_class__>,python3.12/ctypes/__init__.py:402 PyDLL,1,1,5.81e-07,5.81e-07
+~ <built-in method builtins.__build_class__>,lib/python3.12/threading.py:532 BoundedSemaphore,1,1,5.81e-07,5.81e-07
+python3.12/re/_compiler.py:745 compile,~ <method 'items' of 'dict' objects>,2,2,5.800000000000001e-07,5.800000000000001e-07
+lib/python3.12/selectors.py:80 BaseSelector,<frozen abc>:7 abstractmethod,4,4,5.800000000000001e-07,5.800000000000001e-07
+lib/python3.12/locale.py:381 normalize,~ <method 'split' of 'str' objects>,3,3,5.72e-07,5.72e-07
+python3.12/re/_parser.py:372 _escape,~ <built-in method builtins.ord>,4,4,5.7e-07,5.7e-07
+lib/python3.12/pathlib.py:731 parent,lib/python3.12/pathlib.py:560 root,6,6,5.7e-07,5.7e-07
+lib/python3.12/argparse.py:1451 add_argument,~ <built-in method builtins.len>,4,4,5.61e-07,5.61e-07
+lib/python3.12/argparse.py:1954 _parse_known_args,~ <built-in method builtins.max>,1,1,5.61e-07,5.61e-07
+lib/python3.12/argparse.py:1954 _parse_known_args,lib/python3.12/argparse.py:1895 _get_positional_actions,1,1,5.61e-07,5.61e-07
+lib/python3.12/argparse.py:2487 _get_values,lib/python3.12/argparse.py:2563 _check_value,3,3,5.61e-07,5.61e-07
+lib/python3.12/pathlib.py:702 parts,lib/python3.12/pathlib.py:560 root,6,6,5.6e-07,5.6e-07
+python3.12/ctypes/__init__.py:265 _reset_cache,~ <method 'clear' of 'dict' objects>,2,2,5.520000000000001e-07,5.520000000000001e-07
+<frozen posixpath>:429 _joinrealpath,~ <built-in method builtins.isinstance>,5,5,5.520000000000001e-07,5.520000000000001e-07
+lib/python3.12/fractions.py:758 _div,~ <built-in method math.gcd>,4,4,5.420000000000001e-07,5.420000000000001e-07
+lib/python3.12/argparse.py:2281 _match_argument,lib/python3.12/argparse.py:2410 _get_nargs_pattern,3,3,5.41e-07,5.41e-07
+lib/python3.12/argparse.py:1595 _get_optional_kwargs,~ <built-in method builtins.len>,5,5,5.32e-07,5.32e-07
+<frozen importlib._bootstrap>:1103 _resolve_filename,~ <method 'replace' of 'str' objects>,1,1,5.310000000000001e-07,5.310000000000001e-07
+lib/python3.12/gettext.py:479 find,~ <method 'split' of 'str' objects>,3,3,5.310000000000001e-07,5.310000000000001e-07
+python3.12/collections/__init__.py:355 namedtuple,~ <built-in method builtins.isinstance>,2,2,5.310000000000001e-07,5.310000000000001e-07
+experiments/direct-weight-forward/adapter.py:21 emit,~ <method 'items' of 'dict' objects>,2,2,5.22e-07,5.22e-07
+python3.12/collections/__init__.py:355 namedtuple,~ <method 'replace' of 'str' objects>,1,1,5.210000000000001e-07,5.210000000000001e-07
+python3.12/re/_compiler.py:37 _compile,~ <method 'get' of 'dict' objects>,2,2,5.2e-07,5.2e-07
+experiments/direct-weight-forward/adapter.py:1 <module>,~ <method 'insert' of 'list' objects>,1,1,5.110000000000001e-07,5.110000000000001e-07
+lib/python3.12/gettext.py:578 dgettext,~ <method 'get' of 'dict' objects>,3,3,5.110000000000001e-07,5.110000000000001e-07
+~ <built-in method builtins.__build_class__>,lib/python3.12/numbers.py:37 Number,1,1,5.110000000000001e-07,5.110000000000001e-07
+lib/python3.12/subprocess.py:126 CalledProcessError,~ <method 'setter' of 'property' objects>,1,1,5.01e-07,5.01e-07
+python3.12/re/_parser.py:969 parse,python3.12/re/_parser.py:77 __init__,2,2,5.01e-07,5.01e-07
+python3.12/re/_compiler.py:516 _compile_info,~ <method 'append' of 'list' objects>,5,5,4.91e-07,4.91e-07
+lib/python3.12/argparse.py:1704 _add_action,~ <method 'append' of 'list' objects>,4,4,4.900000000000001e-07,4.900000000000001e-07
+~ <built-in method builtins.sorted>,lib/python3.12/enum.py:1410 <lambda>,2,2,4.900000000000001e-07,4.900000000000001e-07
+lib/python3.12/threading.py:1 <module>,lib/python3.12/threading.py:124 RLock,1,1,4.81e-07,4.81e-07
+lib/python3.12/argparse.py:1772 __init__,lib/python3.12/argparse.py:1422 register,1,1,3.5000000000000004e-07,4.81e-07
+lib/python3.12/argparse.py:2001 take_action,~ <method 'get' of 'dict' objects>,3,3,4.800000000000001e-07,4.800000000000001e-07
+python3.12/collections/__init__.py:355 namedtuple,~ <built-in method sys._getframemodulename>,2,2,4.61e-07,4.61e-07
+lib/python3.12/argparse.py:2021 consume_optional,~ <method 'append' of 'list' objects>,3,3,4.6000000000000004e-07,4.6000000000000004e-07
+lib/python3.12/_weakrefset.py:85 add,~ <method 'add' of 'set' objects>,1,1,4.5000000000000003e-07,4.5000000000000003e-07
+python3.12/re/_parser.py:372 _escape,~ <built-in method builtins.len>,4,4,4.5000000000000003e-07,4.5000000000000003e-07
+lib/python3.12/threading.py:1045 _set_tstate_lock,~ <method '__exit__' of '_thread.lock' objects>,1,1,4.4100000000000004e-07,4.4100000000000004e-07
+<frozen zipimport>:64 __init__,~ <built-in method builtins.isinstance>,5,5,4.3100000000000003e-07,4.3100000000000003e-07
+lib/python3.12/threading.py:1 <module>,~ <built-in method builtins.hasattr>,1,1,4.3e-07,4.3e-07
+<frozen posixpath>:405 abspath,~ <built-in method posix.fspath>,5,5,4.3e-07,4.3e-07
+python3.12/re/_compiler.py:575 isstring,~ <built-in method builtins.isinstance>,4,4,4.21e-07,4.21e-07
+~ <built-in method builtins.exec>,experiments/multi-npu-relay/capacity.py:1 <module>,1,1,4.2e-07,4.2e-07
+lib/python3.12/pathlib.py:628 with_name,lib/python3.12/pathlib.py:560 root,3,3,4.2e-07,4.2e-07
+lib/python3.12/argparse.py:2538 _get_value,~ <built-in method builtins.callable>,3,3,4.1200000000000004e-07,4.1200000000000004e-07
+~ <built-in method builtins.__build_class__>,python3.12/ctypes/__init__.py:262 c_wchar,1,1,4.11e-07,4.11e-07
+python3.12/ctypes/__init__.py:343 __init__,~ <method 'startswith' of 'str' objects>,1,1,4.01e-07,4.01e-07
+lib/python3.12/argparse.py:2281 _match_argument,~ <built-in method builtins.len>,3,3,4.0000000000000003e-07,4.0000000000000003e-07
+lib/python3.12/enum.py:1413 _missing_,~ <method 'append' of 'list' objects>,2,2,3.9100000000000005e-07,3.9100000000000005e-07
+lib/python3.12/selectors.py:588 _can_use,~ <built-in method builtins.getattr>,2,2,3.9e-07,3.9e-07
+~ <built-in method builtins.__build_class__>,planner/quota/planner.py:6 InputError,1,1,3.9e-07,3.9e-07
+lib/python3.12/pathlib.py:628 with_name,lib/python3.12/pathlib.py:551 drive,3,3,3.9e-07,3.9e-07
+lib/python3.12/subprocess.py:695 _use_posix_spawn,~ <built-in method builtins.hasattr>,1,1,3.8100000000000004e-07,3.8100000000000004e-07
+~ <built-in method builtins.__build_class__>,python3.12/ctypes/_endian.py:48 BigEndianStructure,1,1,3.8100000000000004e-07,3.8100000000000004e-07
+python3.12/re/_compiler.py:216 _compile_charset,~ <method 'extend' of 'list' objects>,2,2,3.8e-07,3.8e-07
+python3.12/re/__init__.py:280 _compile,~ <built-in method builtins.len>,4,4,3.8e-07,3.8e-07
+lib/python3.12/argparse.py:2487 _get_values,~ <built-in method builtins.len>,3,3,3.8e-07,3.8e-07
+lib/python3.12/enum.py:1393 _iter_member_by_value_,~ <method 'get' of 'dict' objects>,2,2,3.6000000000000005e-07,3.6000000000000005e-07
+experiments/qwen3-model-size/prepare.py:1 <module>,~ <method 'items' of 'dict' objects>,1,1,3.6000000000000005e-07,3.6000000000000005e-07
+~ <built-in method builtins.__build_class__>,python3.12/ctypes/__init__.py:241 c_char_p,1,1,3.51e-07,3.51e-07
+lib/python3.12/threading.py:588 __init__,~ <built-in method _thread.allocate_lock>,1,1,3.5000000000000004e-07,3.5000000000000004e-07
+lib/python3.12/argparse.py:1916 _parse_known_args2,lib/python3.12/argparse.py:1354 __init__,1,1,3.5000000000000004e-07,3.5000000000000004e-07
+lib/python3.12/subprocess.py:2021 _wait,~ <built-in method time.monotonic>,2,2,3.42e-07,3.42e-07
+~ <built-in method builtins.__build_class__>,python3.12/ctypes/__init__.py:166 c_short,1,1,3.41e-07,3.41e-07
+lib/python3.12/enum.py:1413 _missing_,~ <method 'setdefault' of 'dict' objects>,1,1,3.4000000000000003e-07,3.4000000000000003e-07
+lib/python3.12/argparse.py:2021 consume_optional,~ <built-in method builtins.len>,3,3,3.4000000000000003e-07,3.4000000000000003e-07
+lib/python3.12/argparse.py:1954 _parse_known_args,~ <method 'join' of 'str' objects>,1,1,3.3e-07,3.3e-07
+python3.12/collections/__init__.py:355 namedtuple,~ <built-in method builtins.len>,2,2,3.3e-07,3.3e-07
+lib/python3.12/pathlib.py:628 with_name,lib/python3.12/pathlib.py:569 _tail,3,3,3.3e-07,3.3e-07
+lib/python3.12/enum.py:1413 _missing_,~ <method 'join' of 'str' objects>,1,1,3.2100000000000003e-07,3.2100000000000003e-07
+<frozen posixpath>:169 basename,<frozen posixpath>:41 _get_sep,1,1,2.3100000000000002e-07,3.2100000000000003e-07
+planner/quota/checker.py:59 <lambda>,lib/python3.12/fractions.py:401 denominator,2,2,3.2e-07,3.2e-07
+lib/python3.12/subprocess.py:163 TimeoutExpired,~ <method 'setter' of 'property' objects>,1,1,3.11e-07,3.11e-07
+lib/python3.12/argparse.py:1502 add_argument_group,~ <method 'append' of 'list' objects>,2,2,3.11e-07,3.11e-07
+experiments/multi-npu-relay/adapter.py:8 emit,lib/python3.12/csv.py:95 __iter__,3,3,3.11e-07,3.11e-07
+experiments/direct-weight-forward/adapter.py:42 <genexpr>,python3.12/collections/__init__.py:609 __missing__,4,4,3.11e-07,3.11e-07
+lib/python3.12/pathlib.py:702 parts,lib/python3.12/pathlib.py:569 _tail,3,3,3.1e-07,3.1e-07
+<frozen posixpath>:169 basename,~ <method 'rfind' of 'str' objects>,1,1,3.01e-07,3.01e-07
+~ <built-in method builtins.eval>,<string>:1 <module>,1,1,3.01e-07,3.01e-07
+~ <built-in method builtins.__build_class__>,python3.12/ctypes/__init__.py:195 c_float,1,1,3.01e-07,3.01e-07
+lib/python3.12/argparse.py:602 _format_args,~ <method 'join' of 'str' objects>,1,1,3.0000000000000004e-07,3.0000000000000004e-07
+~ <built-in method builtins.__build_class__>,lib/python3.12/threading.py:1439 _MainThread,1,1,3.0000000000000004e-07,3.0000000000000004e-07
+experiments/direct-weight-forward/adapter.py:14 baseline,python3.12/collections/__init__.py:609 __missing__,2,2,3.0000000000000004e-07,3.0000000000000004e-07
+lib/python3.12/pathlib.py:642 with_suffix,lib/python3.12/pathlib.py:551 drive,2,2,2.91e-07,2.91e-07
+experiments/qwen3-model-size/prepare.py:1 <module>,python3.12/collections/__init__.py:609 __missing__,2,2,2.8e-07,2.8e-07
+lib/python3.12/subprocess.py:1 <module>,~ <built-in method builtins.getattr>,1,1,2.61e-07,2.61e-07
+lib/python3.12/threading.py:1045 _set_tstate_lock,lib/python3.12/threading.py:1236 daemon,1,1,2.6e-07,2.6e-07
+lib/python3.12/subprocess.py:749 Popen,~ <method 'setter' of 'property' objects>,1,1,2.51e-07,2.51e-07
+<frozen importlib._bootstrap_external>:1495 _get_spec,<frozen importlib._bootstrap>:599 __init__,1,1,2.51e-07,2.51e-07
+~ <built-in method builtins.__build_class__>,lib/python3.12/subprocess.py:123 SubprocessError,1,1,2.51e-07,2.51e-07
+lib/python3.12/warnings.py:184 _add_filter,~ <built-in method _warnings._filters_mutated>,2,2,2.5000000000000004e-07,2.5000000000000004e-07
+planner/quota/checker.py:55 <genexpr>,python3.12/collections/__init__.py:609 __missing__,4,4,2.41e-07,2.41e-07
+python3.12/re/_compiler.py:516 _compile_info,~ <method 'extend' of 'list' objects>,1,1,2.4000000000000003e-07,2.4000000000000003e-07
+lib/python3.12/subprocess.py:1 <module>,~ <built-in method builtins.hasattr>,1,1,2.4000000000000003e-07,2.4000000000000003e-07
+~ <built-in method builtins.__build_class__>,lib/python3.12/threading.py:833 BrokenBarrierError,1,1,2.4000000000000003e-07,2.4000000000000003e-07
+lib/python3.12/numbers.py:308 __float__,lib/python3.12/fractions.py:397 numerator,2,2,2.4000000000000003e-07,2.4000000000000003e-07
+lib/python3.12/argparse.py:1954 _parse_known_args,~ <method 'extend' of 'list' objects>,1,1,2.3000000000000002e-07,2.3000000000000002e-07
+lib/python3.12/numbers.py:292 Rational,<frozen abc>:7 abstractmethod,2,2,2.3000000000000002e-07,2.3000000000000002e-07
+python3.12/re/_parser.py:172 __setitem__,python3.12/re/_parser.py:164 __len__,1,1,1.6e-07,2.3000000000000002e-07
+lib/python3.12/threading.py:302 __exit__,~ <method '__exit__' of '_thread.lock' objects>,1,1,2.21e-07,2.21e-07
+lib/python3.12/threading.py:1441 __init__,~ <method '__exit__' of '_thread.RLock' objects>,1,1,2.21e-07,2.21e-07
+~ <built-in method builtins.__build_class__>,python3.12/ctypes/_endian.py:55 BigEndianUnion,1,1,2.21e-07,2.21e-07
+<frozen importlib._bootstrap_external>:1216 set_data,~ <method 'append' of 'list' objects>,1,1,2.2e-07,2.2e-07
+lib/python3.12/threading.py:1 <module>,~ <method 'append' of 'list' objects>,1,1,2.2e-07,2.2e-07
+python3.12/re/_parser.py:452 _parse_sub,~ <method 'extend' of 'list' objects>,1,1,2.2e-07,2.2e-07
+<frozen os>:654 get_exec_path,~ <built-in method builtins.isinstance>,2,2,2.2e-07,2.2e-07
+~ <built-in method builtins.__build_class__>,planner/quota/checker.py:6 InvariantError,1,1,2.2e-07,2.2e-07
+lib/python3.12/numbers.py:308 __float__,lib/python3.12/fractions.py:401 denominator,2,2,2.2e-07,2.2e-07
+python3.12/re/_compiler.py:391 _mk_bitmap,~ <built-in method builtins.len>,2,2,2.1200000000000002e-07,2.1200000000000002e-07
+<frozen importlib._bootstrap>:1103 _resolve_filename,~ <built-in method builtins.getattr>,1,1,2.1100000000000002e-07,2.1100000000000002e-07
+~ <built-in method builtins.__build_class__>,python3.12/ctypes/__init__.py:170 c_ushort,1,1,2.1100000000000002e-07,2.1100000000000002e-07
+lib/python3.12/warnings.py:168 simplefilter,~ <built-in method builtins.isinstance>,2,2,2.1e-07,2.1e-07
+lib/python3.12/argparse.py:1954 _parse_known_args,~ <built-in method builtins.iter>,1,1,2.1e-07,2.1e-07
+lib/python3.12/threading.py:1 <module>,~ <built-in method _thread.allocate_lock>,1,1,2.1e-07,2.1e-07
+python3.12/re/_compiler.py:578 _code,~ <method 'append' of 'list' objects>,2,2,2.01e-07,2.01e-07
+~ <built-in method builtins.__build_class__>,python3.12/ctypes/__init__.py:187 c_int,1,1,2.01e-07,2.01e-07
+~ <built-in method builtins.__build_class__>,python3.12/ctypes/__init__.py:178 c_ulong,1,1,2.01e-07,2.01e-07
+lib/python3.12/warnings.py:505 __exit__,~ <built-in method _warnings._filters_mutated>,2,2,2.0000000000000002e-07,2.0000000000000002e-07
+~ <built-in method builtins.__build_class__>,python3.12/ctypes/__init__.py:247 c_void_p,1,1,2.0000000000000002e-07,2.0000000000000002e-07
+lib/python3.12/pathlib.py:642 with_suffix,lib/python3.12/pathlib.py:569 _tail,2,2,2.0000000000000002e-07,2.0000000000000002e-07
+lib/python3.12/argparse.py:1954 _parse_known_args,~ <built-in method builtins.hasattr>,1,1,1.9e-07,1.9e-07
+lib/python3.12/threading.py:299 __enter__,~ <method '__enter__' of '_thread.lock' objects>,1,1,1.9e-07,1.9e-07
+lib/python3.12/pathlib.py:642 with_suffix,lib/python3.12/pathlib.py:560 root,2,2,1.9e-07,1.9e-07
+python3.12/re/_compiler.py:516 _compile_info,~ <built-in method builtins.len>,2,2,1.8000000000000002e-07,1.8000000000000002e-07
+lib/python3.12/argparse.py:2303 _match_arguments_partial,~ <built-in method builtins.len>,1,1,1.8000000000000002e-07,1.8000000000000002e-07
+lib/python3.12/threading.py:1045 _set_tstate_lock,~ <method 'add' of 'set' objects>,1,1,1.7000000000000001e-07,1.7000000000000001e-07
+python3.12/re/_parser.py:953 fix_flags,~ <built-in method builtins.isinstance>,2,2,1.7000000000000001e-07,1.7000000000000001e-07
+lib/python3.12/pathlib.py:274 __len__,~ <built-in method builtins.len>,2,2,1.7000000000000001e-07,1.7000000000000001e-07
+python3.12/re/_compiler.py:37 _compile,~ <built-in method _sre.unicode_tolower>,1,1,1.7000000000000001e-07,1.7000000000000001e-07
+lib/python3.12/threading.py:1038 _set_ident,~ <built-in method _thread.get_ident>,1,1,1.7000000000000001e-07,1.7000000000000001e-07
+~ <built-in method builtins.__build_class__>,python3.12/ctypes/__init__.py:174 c_long,1,1,1.7000000000000001e-07,1.7000000000000001e-07
+~ <built-in method builtins.__build_class__>,python3.12/ctypes/__init__.py:224 c_ubyte,1,1,1.7000000000000001e-07,1.7000000000000001e-07
+python3.12/re/_compiler.py:441 _get_literal_prefix,python3.12/re/_compiler.py:433 _get_iscased,1,1,1.7000000000000001e-07,1.7000000000000001e-07
+~ <built-in method builtins.__build_class__>,python3.12/ctypes/__init__.py:252 c_bool,1,1,1.61e-07,1.61e-07
+experiments/direct-weight-forward/adapter.py:21 emit,experiments/qwen3-model-size/prepare.py:36 <lambda>,1,1,1.6e-07,1.6e-07
+~ <built-in method builtins.__build_class__>,python3.12/ctypes/_endian.py:34 _swapped_struct_meta,1,1,1.6e-07,1.6e-07
+lib/python3.12/enum.py:1413 _missing_,~ <built-in method builtins.hasattr>,1,1,1.5000000000000002e-07,1.5000000000000002e-07
+~ <built-in method builtins.__build_class__>,python3.12/ctypes/_endian.py:35 _swapped_union_meta,1,1,1.5000000000000002e-07,1.5000000000000002e-07
+python3.12/re/_parser.py:231 __init__,~ <built-in method builtins.isinstance>,2,2,1.41e-07,1.41e-07
+~ <built-in method builtins.__build_class__>,python3.12/ctypes/__init__.py:203 c_longdouble,1,1,1.41e-07,1.41e-07
+lib/python3.12/subprocess.py:695 _use_posix_spawn,~ <built-in method builtins.len>,1,1,1.4e-07,1.4e-07
+~ <built-in method builtins.__build_class__>,python3.12/ctypes/__init__.py:199 c_double,1,1,1.4e-07,1.4e-07
+~ <built-in method builtins.__build_class__>,python3.12/ctypes/__init__.py:191 c_uint,1,1,1.4e-07,1.4e-07
+lib/python3.12/enum.py:1128 __new__,~ <built-in method builtins.isinstance>,1,1,1.31e-07,1.31e-07
+lib/python3.12/pathlib.py:268 __init__,lib/python3.12/pathlib.py:551 drive,1,1,1.31e-07,1.31e-07
+lib/python3.12/argparse.py:1954 _parse_known_args,~ <built-in method builtins.isinstance>,1,1,1.3e-07,1.3e-07
+lib/python3.12/argparse.py:2121 consume_positionals,~ <built-in method builtins.len>,1,1,1.3e-07,1.3e-07
+~ <built-in method builtins.__build_class__>,python3.12/ctypes/__init__.py:231 c_byte,1,1,1.3e-07,1.3e-07
+~ <built-in method builtins.__build_class__>,python3.12/ctypes/__init__.py:236 c_char,1,1,1.21e-07,1.21e-07
+python3.12/re/_compiler.py:472 _get_charset_prefix,python3.12/re/_compiler.py:433 _get_iscased,1,1,1.21e-07,1.21e-07
+lib/python3.12/functools.py:482 lru_cache,~ <built-in method builtins.isinstance>,1,1,1.2000000000000002e-07,1.2000000000000002e-07
+<frozen posixpath>:169 basename,~ <built-in method posix.fspath>,1,1,1.1e-07,1.1e-07
+lib/python3.12/pathlib.py:268 __init__,lib/python3.12/pathlib.py:560 root,1,1,1.0000000000000001e-07,1.0000000000000001e-07
+lib/python3.12/pathlib.py:268 __init__,lib/python3.12/pathlib.py:569 _tail,1,1,1.0000000000000001e-07,1.0000000000000001e-07
+lib/python3.12/pathlib.py:277 __getitem__,~ <built-in method builtins.isinstance>,1,1,9.000000000000001e-08,9.000000000000001e-08
+experiments/qwen3-model-size/prepare.py:12 jain,~ <built-in method builtins.len>,1,1,9.000000000000001e-08,9.000000000000001e-08
+lib/python3.12/enum.py:1413 _missing_,~ <built-in method builtins.isinstance>,1,1,7e-08,7e-08

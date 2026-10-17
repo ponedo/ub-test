@@ -1,0 +1,20 @@
+{
+  "case": "no-balancing",
+  "variant": "timed",
+  "input_directory": "/workspace/scratch/c6ba02920254/qwen-chunk-profile-raw/inputs/no-balancing",
+  "input_sha256": "9c515139726e648f353a743c243ab150f5e9b16820f6526ca7fa9fdace32f722",
+  "binary": "/workspace/scratch/c6ba02920254/qwen-chunk-profile-raw/instrumented/pair-layer",
+  "binary_sha256": "306a00fb9ca27dc8f4f43f36ece40d996ec7cf960968dbd76b388de49d9e806f",
+  "command": [
+    "/workspace/scratch/c6ba02920254/qwen-chunk-profile-raw/instrumented/pair-layer",
+    "--input=/workspace/scratch/c6ba02920254/qwen-chunk-profile-raw/inputs/no-balancing/input.txt",
+    "--out=/workspace/scratch/c6ba02920254/qwen-chunk-profile-raw/runtime/no-balancing-timed/run",
+    "--capacityMetrics=/workspace/scratch/c6ba02920254/qwen-chunk-profile-raw/runtime/no-balancing-timed/run/simulator-metrics.json",
+    "--jettyMode=pair",
+    "--logLevel=summary",
+    "--payloadBudgetBytes=8589934592",
+    "--weightTaskLimit=1000000"
+  ],
+  "settings": "accepted summary/pair full validation; no input regeneration",
+  "sampling_hz": null
+}

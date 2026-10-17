@@ -1,0 +1,3326 @@
+{
+  "raw_root": "/workspace/scratch/c6ba02920254/qwen-chunk-profile-raw",
+  "policy": "Local-only large profiles, decoded stacks, ELF and execution evidence; hashes are not embedded data.",
+  "files": [
+    {
+      "path": "runtime/chunk-streaming-control/host/console.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runtime/chunk-streaming-control/host/resource-samples.csv",
+      "bytes": 49336,
+      "sha256": "0447a8e7134b724bb7bc77ed68a5c92421b872b557e7f1311d34673dbe4604b8"
+    },
+    {
+      "path": "runtime/chunk-streaming-control/host/resource.json",
+      "bytes": 32432,
+      "sha256": "8fc5076a50d6418df950970a54fc680d7dd2c845786b4abc8951d68e3a905ac8"
+    },
+    {
+      "path": "runtime/chunk-streaming-control/provenance.json",
+      "bytes": 1123,
+      "sha256": "9e8284f446f62d6773ff54fb9168d0708ab8e6436462ec8a7ad75c85bd305d80"
+    },
+    {
+      "path": "runtime/chunk-streaming-control/status.json",
+      "bytes": 69,
+      "sha256": "94b8d0cc2bc37644d29876a35348a7e32aa1b76422925ab9a90b6fbcb740c036"
+    },
+    {
+      "path": "runtime/chunk-streaming-control-interrupted/host/console.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runtime/chunk-streaming-control-interrupted/interruption.json",
+      "bytes": 158,
+      "sha256": "b2dd8da1905d922e33737de28ad5ffd49d7538f8365b45ad94100acbecb44507"
+    },
+    {
+      "path": "runtime/chunk-streaming-control-interrupted/provenance.json",
+      "bytes": 1123,
+      "sha256": "9e8284f446f62d6773ff54fb9168d0708ab8e6436462ec8a7ad75c85bd305d80"
+    },
+    {
+      "path": "runtime/chunk-streaming-sampled/analysis/inclusive-all.csv",
+      "bytes": 328391,
+      "sha256": "c7a5bb15db5df148ef2df9698c66f268489458e5c590597338e487c11917f348"
+    },
+    {
+      "path": "runtime/chunk-streaming-sampled/analysis/inclusive-top20.csv",
+      "bytes": 4065,
+      "sha256": "f3daebc8c06c75d31b0dbdb78a2a8b7b4f6b7a040d8d9b73ec0648e988ef71bd"
+    },
+    {
+      "path": "runtime/chunk-streaming-sampled/analysis/inclusive-top20.svg",
+      "bytes": 10269,
+      "sha256": "04da773c9400d6a6b0140c9c83bf8ab593be6980ac1e9dc54593f8f6b8feff15"
+    },
+    {
+      "path": "runtime/chunk-streaming-sampled/analysis/perf-script.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runtime/chunk-streaming-sampled/analysis/perf-script.txt",
+      "bytes": 32066875,
+      "sha256": "dd82e30382845df5b2aeb81e55321ba5f1119026272dc00e3b40698e6e81eab3"
+    },
+    {
+      "path": "runtime/chunk-streaming-sampled/analysis/self-all.csv",
+      "bytes": 75980,
+      "sha256": "f561f34e70d8c41eb8c4b278e6d47ff63bf97bf2cf149468454b203d856d8a85"
+    },
+    {
+      "path": "runtime/chunk-streaming-sampled/analysis/self-top20.csv",
+      "bytes": 4087,
+      "sha256": "f631d71599cec94234a67ec5c2e8cb8883727ef8d8b59274b4f4155f5c5069f0"
+    },
+    {
+      "path": "runtime/chunk-streaming-sampled/analysis/self-top20.svg",
+      "bytes": 9583,
+      "sha256": "c5d9e0b5a5656a84c5ce164f9e2eadb4cfdd532051040c3f0225e3ddbadc2b9a"
+    },
+    {
+      "path": "runtime/chunk-streaming-sampled/analysis/stacks-count.folded",
+      "bytes": 5517097,
+      "sha256": "424b30a69be31e07b6993cc3c11696b05d59730b478d6ccf695ce38143d437e0"
+    },
+    {
+      "path": "runtime/chunk-streaming-sampled/analysis/summary.json",
+      "bytes": 13365,
+      "sha256": "4e391339c514ac10161f009c2077e2bd79d0c2d75747cd84144dafb1bd4eff76"
+    },
+    {
+      "path": "runtime/chunk-streaming-sampled/analysis/unknown-ips.csv",
+      "bytes": 2661,
+      "sha256": "5fcb2197f350376dff9546ca7f1c6217a7432bb45b9d65ca2e0b811c2ada11c3"
+    },
+    {
+      "path": "runtime/chunk-streaming-sampled/host/console.txt",
+      "bytes": 296,
+      "sha256": "5254c23a42ae468733816e2cd7f58f276d97e6931c821564ac6b67a1544a4d0e"
+    },
+    {
+      "path": "runtime/chunk-streaming-sampled/host/resource-samples.csv",
+      "bytes": 49344,
+      "sha256": "a48a004b0e058dbb28aa91adccb28276451271b3eb636db525441edbd042d61e"
+    },
+    {
+      "path": "runtime/chunk-streaming-sampled/host/resource.json",
+      "bytes": 32620,
+      "sha256": "d731f5aea5b8c4c119858d89fa0f4ee2d590aba61511b740941f97029f5a8717"
+    },
+    {
+      "path": "runtime/chunk-streaming-sampled/perf.data",
+      "bytes": 48345004,
+      "sha256": "32305eb55d4edebe1b7e9847199812863e86f2a341d0a133890fe125da16e23c"
+    },
+    {
+      "path": "runtime/chunk-streaming-sampled/provenance.json",
+      "bytes": 1318,
+      "sha256": "25d67d77b7d1cdd5bd4e20ce06ffae384ac231103faabe344fd8002609a8a149"
+    },
+    {
+      "path": "runtime/chunk-streaming-sampled/status.json",
+      "bytes": 69,
+      "sha256": "94b8d0cc2bc37644d29876a35348a7e32aa1b76422925ab9a90b6fbcb740c036"
+    },
+    {
+      "path": "runtime/chunk-streaming-timed/host/console.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runtime/chunk-streaming-timed/host/resource-samples.csv",
+      "bytes": 49457,
+      "sha256": "c5d876880809a0cfadc6772c77d9581fc94e0653b6623e682d49ca33a63c9ca9"
+    },
+    {
+      "path": "runtime/chunk-streaming-timed/host/resource.json",
+      "bytes": 32416,
+      "sha256": "a5ab9e440cf66d2c0467df619a117a1c1161b0b51bd9b80f7a8dc620e65a57f6"
+    },
+    {
+      "path": "runtime/chunk-streaming-timed/provenance.json",
+      "bytes": 1113,
+      "sha256": "515c0c97e66a11d1da7d208fba21da16ab4c03e38f3f92e3f0862a9ccc7d6d22"
+    },
+    {
+      "path": "runtime/chunk-streaming-timed/status.json",
+      "bytes": 69,
+      "sha256": "94b8d0cc2bc37644d29876a35348a7e32aa1b76422925ab9a90b6fbcb740c036"
+    },
+    {
+      "path": "runtime/chunk-streaming-timed/timing-history.jsonl",
+      "bytes": 1214809,
+      "sha256": "a30671c8bcda659ce505b23538ad6bea6c57ba55462c72b9c11279a6521eddee"
+    },
+    {
+      "path": "runtime/chunk-streaming-timed/timing.json",
+      "bytes": 4157,
+      "sha256": "82ab8dcde420618f89267e899f8fb284f87f2950dce19f1301b32fc250870bf2"
+    },
+    {
+      "path": "runtime/direct-control/host/console.txt",
+      "bytes": 87,
+      "sha256": "2de7a83fc21f049468b65a6e07cffc4c6232d3eeacac30b6710278a66d904b61"
+    },
+    {
+      "path": "runtime/direct-control/host/resource-samples.csv",
+      "bytes": 18516,
+      "sha256": "095bd5811cb095ccac981fedd00e0942ddf9393e8ca60a6b38a599f5824de23b"
+    },
+    {
+      "path": "runtime/direct-control/host/resource.json",
+      "bytes": 32376,
+      "sha256": "fcedca9a6f82af49b71e746a1bf9bb4f167b6356ddc9df2de57c20dde66ceceb"
+    },
+    {
+      "path": "runtime/direct-control/provenance.json",
+      "bytes": 1058,
+      "sha256": "2187a456c3b503e5c4f9ccccb53844aa668a91d2569c68696c60d0d4b0ad9891"
+    },
+    {
+      "path": "runtime/direct-control/run/online-summary.json",
+      "bytes": 7583,
+      "sha256": "9cf4639a04c05d723d888c9fc41f56e44c605d6e4c2dd26890ff4052f44ae5ee"
+    },
+    {
+      "path": "runtime/direct-control/run/simulator-metrics.json",
+      "bytes": 162,
+      "sha256": "7d469b18cd92d6401533cf1a4882ab62aef6a347e350f268c867ac84a6dfe7b5"
+    },
+    {
+      "path": "runtime/direct-control/run/validation.json",
+      "bytes": 366,
+      "sha256": "55fd2798d725b3c6e95424c0566b27767feaf2cb7af300736082819cf5c9ced3"
+    },
+    {
+      "path": "runtime/direct-control/status.json",
+      "bytes": 60,
+      "sha256": "128dd7e19e5691421a1755719c630f56b5968351f82c3bd9cd2021437305bf3e"
+    },
+    {
+      "path": "runtime/direct-sampled/analysis/inclusive-all.csv",
+      "bytes": 298922,
+      "sha256": "aca2f909f79fbc9228cc70f7b58b96ba519664d46e01a75262873c4b058083e0"
+    },
+    {
+      "path": "runtime/direct-sampled/analysis/inclusive-top20.csv",
+      "bytes": 3877,
+      "sha256": "04e3d00507db6ca9d994be1de4ed82574189a6465c76bd3d159fe7f2a1b1ceda"
+    },
+    {
+      "path": "runtime/direct-sampled/analysis/inclusive-top20.svg",
+      "bytes": 9902,
+      "sha256": "9dedb544fa5d6c572bc495ec79d5e003f50f3724f17f51adf2c947675a0c061a"
+    },
+    {
+      "path": "runtime/direct-sampled/analysis/perf-script.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runtime/direct-sampled/analysis/perf-script.txt",
+      "bytes": 13495835,
+      "sha256": "bfbb29ca8205f205160d050032f9514597d183eab0630f0965918a818fe5ee57"
+    },
+    {
+      "path": "runtime/direct-sampled/analysis/self-all.csv",
+      "bytes": 64848,
+      "sha256": "295e001e418aea49cbdf250e7fa0fbcff1e7972f70ff2d702dbb1ac49502c597"
+    },
+    {
+      "path": "runtime/direct-sampled/analysis/self-top20.csv",
+      "bytes": 3335,
+      "sha256": "1a1996ac1631e3c1f74ab1804d6321f9e58b000e0ad16d3a6205e0f184e9836f"
+    },
+    {
+      "path": "runtime/direct-sampled/analysis/self-top20.svg",
+      "bytes": 8455,
+      "sha256": "718e747d60a644e3a81e008c652ee2ea2f707fc393137b32af9b58705e8248fc"
+    },
+    {
+      "path": "runtime/direct-sampled/analysis/stacks-count.folded",
+      "bytes": 3755686,
+      "sha256": "ea204c3033316cba2abc8237c586381f84a3cf399ac9db61421d08237c152718"
+    },
+    {
+      "path": "runtime/direct-sampled/analysis/summary.json",
+      "bytes": 12328,
+      "sha256": "cff17e52f11523727af04df483a1c8359fc42d38484436a4fb69b4322e431bdc"
+    },
+    {
+      "path": "runtime/direct-sampled/analysis/unknown-ips.csv",
+      "bytes": 2913,
+      "sha256": "6f8c1b70096e5534f80c80fc8ec52d09739ba4e962f723637402c3b5d2b66afb"
+    },
+    {
+      "path": "runtime/direct-sampled/host/console.txt",
+      "bytes": 382,
+      "sha256": "d1bcf77d16b1879200323b79bff74f033b72a3bf22ec16f0b80dd89f078d4c17"
+    },
+    {
+      "path": "runtime/direct-sampled/host/resource-samples.csv",
+      "bytes": 18688,
+      "sha256": "0281b4d5d548a023b79883ca81b09523836fbce8041fd406517e040cd8ab34a9"
+    },
+    {
+      "path": "runtime/direct-sampled/host/resource.json",
+      "bytes": 32563,
+      "sha256": "977d77db234cee8601163f831e01aeaa55851c5564ee29a3bcfb10de704c4fc5"
+    },
+    {
+      "path": "runtime/direct-sampled/perf.data",
+      "bytes": 18360076,
+      "sha256": "8679154f8da48483d1c7aee18a640b3640a8dd80e5ee122c0a934bcb96c0faa5"
+    },
+    {
+      "path": "runtime/direct-sampled/provenance.json",
+      "bytes": 1244,
+      "sha256": "821a7c76a3c2da29cc3521143919e9b34b1cf2004dad42afc7eb9166ff96fc83"
+    },
+    {
+      "path": "runtime/direct-sampled/run/online-summary.json",
+      "bytes": 7583,
+      "sha256": "6a467ba8465d3897f0edea7a9c12f229ad28b0cc8a0cdc35691624426de6d583"
+    },
+    {
+      "path": "runtime/direct-sampled/run/simulator-metrics.json",
+      "bytes": 162,
+      "sha256": "7d469b18cd92d6401533cf1a4882ab62aef6a347e350f268c867ac84a6dfe7b5"
+    },
+    {
+      "path": "runtime/direct-sampled/run/validation.json",
+      "bytes": 366,
+      "sha256": "a86dd4209bb44edf2fd2acea17d7fcd2ce38edfe3191042936cd07f937c5aaff"
+    },
+    {
+      "path": "runtime/direct-sampled/status.json",
+      "bytes": 60,
+      "sha256": "128dd7e19e5691421a1755719c630f56b5968351f82c3bd9cd2021437305bf3e"
+    },
+    {
+      "path": "runtime/direct-timed/host/console.txt",
+      "bytes": 87,
+      "sha256": "2de7a83fc21f049468b65a6e07cffc4c6232d3eeacac30b6710278a66d904b61"
+    },
+    {
+      "path": "runtime/direct-timed/host/resource-samples.csv",
+      "bytes": 17307,
+      "sha256": "b83eade4f66ff6e4bfc54f9f7ae36a468807fa1d314163cd0dd274ca1cb73eac"
+    },
+    {
+      "path": "runtime/direct-timed/host/resource.json",
+      "bytes": 32370,
+      "sha256": "af1d20c178f41a9fbad760fb725e564821a25eb55d2a0e7164298335d2ea69cd"
+    },
+    {
+      "path": "runtime/direct-timed/provenance.json",
+      "bytes": 1048,
+      "sha256": "2aaa60baad7e5730fbe9f47d49b18e764346f67210fe98f06b9f1e17a8e23575"
+    },
+    {
+      "path": "runtime/direct-timed/run/online-summary.json",
+      "bytes": 7583,
+      "sha256": "7c8fb2356cc0b9a297d1f693f3e8ea741a1d7a3a8cf471641b48c869d7dcb20c"
+    },
+    {
+      "path": "runtime/direct-timed/run/simulator-metrics.json",
+      "bytes": 162,
+      "sha256": "7d469b18cd92d6401533cf1a4882ab62aef6a347e350f268c867ac84a6dfe7b5"
+    },
+    {
+      "path": "runtime/direct-timed/run/validation.json",
+      "bytes": 366,
+      "sha256": "1a5b5bfc02f9374d120106b62dd4ba4c1e9f16b9f7ed9cb40c67594be76cb265"
+    },
+    {
+      "path": "runtime/direct-timed/status.json",
+      "bytes": 60,
+      "sha256": "128dd7e19e5691421a1755719c630f56b5968351f82c3bd9cd2021437305bf3e"
+    },
+    {
+      "path": "runtime/direct-timed/timing-history.jsonl",
+      "bytes": 341271,
+      "sha256": "6711896aab1933f6ae0336402452373ddcffff50083eabc26265afb686a1306e"
+    },
+    {
+      "path": "runtime/direct-timed/timing.json",
+      "bytes": 4105,
+      "sha256": "368be7bdb5c117e05dfe3c8aff433b9775e38c3b9c6e2216df438eb8810861b0"
+    },
+    {
+      "path": "runtime/no-balancing-control/host/console.txt",
+      "bytes": 86,
+      "sha256": "9c2d73509669ed8e955fa0685d93371b52afca2e7cc34b867cf013d627fc617d"
+    },
+    {
+      "path": "runtime/no-balancing-control/host/resource-samples.csv",
+      "bytes": 417,
+      "sha256": "f03a642aac2518ab21650384b82892d43fa00ffa7d095d34923f718b4763e283"
+    },
+    {
+      "path": "runtime/no-balancing-control/host/resource.json",
+      "bytes": 32390,
+      "sha256": "5f80ab23a5b59fa6ce05f761fb2be86f18439f938ccf11266aa046b053e5b60d"
+    },
+    {
+      "path": "runtime/no-balancing-control/provenance.json",
+      "bytes": 1088,
+      "sha256": "bdaf686fc2145bdf2c8208ca9ca46b3dbc4dadc579b61b96d3906e8a1b32ec97"
+    },
+    {
+      "path": "runtime/no-balancing-control/run/online-summary.json",
+      "bytes": 6566,
+      "sha256": "7a68273d7a214973d2e5fff598ced92c1aef2c5930b6247f629dc494770b34f9"
+    },
+    {
+      "path": "runtime/no-balancing-control/run/simulator-metrics.json",
+      "bytes": 159,
+      "sha256": "62fec7524c7ffa63b2b20ecffc94ea61ba54f91f538ede2ddbb4aae4ba32d5b8"
+    },
+    {
+      "path": "runtime/no-balancing-control/run/validation.json",
+      "bytes": 363,
+      "sha256": "5a2bf3d1b947058af0dd706f0ee9483a65cf56b198549318011b827bf1c15c82"
+    },
+    {
+      "path": "runtime/no-balancing-control/status.json",
+      "bytes": 60,
+      "sha256": "128dd7e19e5691421a1755719c630f56b5968351f82c3bd9cd2021437305bf3e"
+    },
+    {
+      "path": "runtime/no-balancing-timed/host/console.txt",
+      "bytes": 86,
+      "sha256": "9c2d73509669ed8e955fa0685d93371b52afca2e7cc34b867cf013d627fc617d"
+    },
+    {
+      "path": "runtime/no-balancing-timed/host/resource-samples.csv",
+      "bytes": 417,
+      "sha256": "b9d2819b4bf30c43ea19893ebc6c3551ecb758a260c7ff97af2999b04deacfcd"
+    },
+    {
+      "path": "runtime/no-balancing-timed/host/resource.json",
+      "bytes": 32394,
+      "sha256": "e1c8f1b24819b6df41f71852ba1fa33239a15f780fd2c06b27684a8a43583e33"
+    },
+    {
+      "path": "runtime/no-balancing-timed/provenance.json",
+      "bytes": 1078,
+      "sha256": "414f23ebe0d62761c01227ca514813984af8a39db36f28e628517835da3ec84a"
+    },
+    {
+      "path": "runtime/no-balancing-timed/run/online-summary.json",
+      "bytes": 6566,
+      "sha256": "a9369e35a7b79f0dad2132ee953ad82fa9de2f8dcd52dc3f6c8e41de54f67ae3"
+    },
+    {
+      "path": "runtime/no-balancing-timed/run/simulator-metrics.json",
+      "bytes": 159,
+      "sha256": "62fec7524c7ffa63b2b20ecffc94ea61ba54f91f538ede2ddbb4aae4ba32d5b8"
+    },
+    {
+      "path": "runtime/no-balancing-timed/run/validation.json",
+      "bytes": 363,
+      "sha256": "49899355e3547968a36c9b3bcb5f6c5feff5b20edbde2671a737620164d6c1f0"
+    },
+    {
+      "path": "runtime/no-balancing-timed/status.json",
+      "bytes": 60,
+      "sha256": "128dd7e19e5691421a1755719c630f56b5968351f82c3bd9cd2021437305bf3e"
+    },
+    {
+      "path": "runtime/no-balancing-timed/timing-history.jsonl",
+      "bytes": 111740,
+      "sha256": "f5161a421ed291f70df6bab8b4ba19f0759aa8ee6e72a514f3e7ac1c864e0f66"
+    },
+    {
+      "path": "runtime/no-balancing-timed/timing.json",
+      "bytes": 3997,
+      "sha256": "97a873fe75ff51aee7a752c05532f88478c13ec133d88fe7c32aaf3bd89e3e68"
+    },
+    {
+      "path": "calibration/analysis/inclusive-all.csv",
+      "bytes": 442,
+      "sha256": "07827c5233d929b1986acf9cf2896aec911746e8dcb4a84581932ef12f6bc0b2"
+    },
+    {
+      "path": "calibration/analysis/inclusive-top20.csv",
+      "bytes": 442,
+      "sha256": "07827c5233d929b1986acf9cf2896aec911746e8dcb4a84581932ef12f6bc0b2"
+    },
+    {
+      "path": "calibration/analysis/inclusive-top20.svg",
+      "bytes": 1894,
+      "sha256": "f266360e082732d7892a06322dbf3506c8ba1e038eacf1ff5cf309aef300393f"
+    },
+    {
+      "path": "calibration/analysis/perf-script.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "calibration/analysis/perf-script.txt",
+      "bytes": 33800,
+      "sha256": "9b3723d50e82413e6216ecec09a22047462844217e61030710998d2cb167efba"
+    },
+    {
+      "path": "calibration/analysis/self-all.csv",
+      "bytes": 124,
+      "sha256": "053c1ca5a14a19d089a64b092e370f8d6bdd64672e7596968b8d243dfe51e5a1"
+    },
+    {
+      "path": "calibration/analysis/self-top20.csv",
+      "bytes": 124,
+      "sha256": "053c1ca5a14a19d089a64b092e370f8d6bdd64672e7596968b8d243dfe51e5a1"
+    },
+    {
+      "path": "calibration/analysis/self-top20.svg",
+      "bytes": 725,
+      "sha256": "c35156fdf14dd891d09777501d1b9b48f39edaf32fa7b02a4f71b74fe285714b"
+    },
+    {
+      "path": "calibration/analysis/stacks-count.folded",
+      "bytes": 371,
+      "sha256": "b81c9191b541e660e1af686ec34737d514181064e6176301adb67d9db5c80c4b"
+    },
+    {
+      "path": "calibration/analysis/summary.json",
+      "bytes": 2649,
+      "sha256": "1dac69c54987063bb126b115ea5a62a38df6de301ae3dec3f0ca8a6650d74ef4"
+    },
+    {
+      "path": "calibration/analysis/unknown-ips.csv",
+      "bytes": 94,
+      "sha256": "3306e6ffff205224380c2862ae8065f070e97b43554c10bc4b4b471daf938b19"
+    },
+    {
+      "path": "calibration/console.txt",
+      "bytes": 287,
+      "sha256": "6c71086fe384fcfa048697582e842ebbba998f4defed64704209b14f1d77e93b"
+    },
+    {
+      "path": "calibration/perf.data",
+      "bytes": 550988,
+      "sha256": "1a759921c16ea5d4daee9aefea6359e90b76b9006b99d1c5daf41759a9ca7327"
+    },
+    {
+      "path": "instrumented/application-instrumentation.patch",
+      "bytes": 32556,
+      "sha256": "bc60b64208e6925b9b2ca660747fb4a11c476d83c88471f83996f0a3975e48e2"
+    },
+    {
+      "path": "instrumented/generation-manifest.json",
+      "bytes": 1868,
+      "sha256": "94f73c1f0588bb5f75dd7a3351e11053bee766e222bb581a26a3aaf40a84ddf5"
+    },
+    {
+      "path": "instrumented/instrumentation-source-proof.json",
+      "bytes": 576,
+      "sha256": "67f291e665005060be7da310aba125924af0c9fa6d1c349383a699fecadc4d69"
+    },
+    {
+      "path": "instrumented/online-validation.inc",
+      "bytes": 16793,
+      "sha256": "874203ee7249e1adeea10e7e2cd0cdda425d93ac69c1e54840e49dc5e654c8ae"
+    },
+    {
+      "path": "instrumented/pair-layer",
+      "bytes": 6335584,
+      "sha256": "306a00fb9ca27dc8f4f43f36ece40d996ec7cf960968dbd76b388de49d9e806f"
+    },
+    {
+      "path": "instrumented/pair-layer.cc",
+      "bytes": 36718,
+      "sha256": "c4c3e82afb805045a924754e96031dfdf5d20b15d48233e56c9d0db7fb5dae83"
+    },
+    {
+      "path": "instrumented/profile-runtime.h",
+      "bytes": 12812,
+      "sha256": "9720e20d21028b0994aa825230ab7228e57c5a4747bc8383a0db70c45dbe6eef"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/host/console.txt",
+      "bytes": 81,
+      "sha256": "f4535adb8beb3a5ce4b6aedece04462a0aba0ddddfe5717e8557ad99afcc12a7"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/host/resource-samples.csv",
+      "bytes": 104,
+      "sha256": "b7eca46d087bdf75a0b3a59d9c8674621eb5dc02fd68819da54bcf439dde0f51"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/host/resource.json",
+      "bytes": 32346,
+      "sha256": "7af83d8920ac74f6b0d00a55e6101fba1adf97ee68364e6fe7d082104500afad"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/events.csv",
+      "bytes": 96465,
+      "sha256": "8a62b9a7db8caa98c13c038d2fd8624c39e065cbdeaa255cadc7e565a8c8fe20"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/executed-transfers.csv",
+      "bytes": 5413,
+      "sha256": "a4122a368fcdd1e1f21b3c79baba367f09d9e7faed29b31fe6f41932c1f889d1"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/AllPacketTrace_ACK_node_0.csv",
+      "bytes": 25572,
+      "sha256": "64a7512d5f4f1304b500099c11743026c1786bf2c035f3458e26304f0603aa71"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/AllPacketTrace_ACK_node_1.csv",
+      "bytes": 39426,
+      "sha256": "a514856c487bf72ed188cdcf43b528459bdc0d0e79705d42561e3f3b5ef4d9f3"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/AllPacketTrace_ACK_node_2.csv",
+      "bytes": 39582,
+      "sha256": "aec872c145d1e82275a12c59673c213ba6a863e45a8c020373798f837d319ad4"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/AllPacketTrace_ACK_node_3.csv",
+      "bytes": 14250,
+      "sha256": "69fd4d35f968f1d6c5dc8230a33cc8b44575b4bda057ef2d62ea44463cbc1060"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/AllPacketTrace_ACK_node_4.csv",
+      "bytes": 14250,
+      "sha256": "76706bbd30fc9aa08f1e84fa5be0b9fe0eafd759244ebfe6a414b6fb46ec92d1"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/AllPacketTrace_ACK_node_5.csv",
+      "bytes": 14259,
+      "sha256": "256ef89acb0e4aab72e84fc77e9720e4f914961afe02a5108d721abd92185993"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/AllPacketTrace_ACK_node_6.csv",
+      "bytes": 15345,
+      "sha256": "3f66d6cf4d1edb58041621de3f3e685c1b3f92f9eae61240c36d9a1c8b93003d"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/AllPacketTrace_ACK_node_7.csv",
+      "bytes": 4458,
+      "sha256": "4558642f51d7e359e9b84e25bf80aba555ee7e427245cd8da6f1ba1a3f23d109"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/AllPacketTrace_PKT_node_0.csv",
+      "bytes": 22233,
+      "sha256": "3ccbac26f03a2191a47872b6402df7ad994615c9c4fb184fc4a46d9d75a1649a"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/AllPacketTrace_PKT_node_1.csv",
+      "bytes": 34491,
+      "sha256": "2f3686778743de7ccd59d246e6bb5e0768aa31bf8c5a1c6d54497aefe53490f6"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/AllPacketTrace_PKT_node_2.csv",
+      "bytes": 34641,
+      "sha256": "fc4c2347d6d2e2074681844d3febe12c879e6a8f13101f8750b957f0b9bd0808"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/AllPacketTrace_PKT_node_3.csv",
+      "bytes": 12276,
+      "sha256": "8fd11fdfff15ec8cfef068de1615d2fa0a4561ac3fab37afeea697fb14731169"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/AllPacketTrace_PKT_node_4.csv",
+      "bytes": 12279,
+      "sha256": "bbb0649888a447c97426d85f29f8a4a59a9c380896d3dbb7923a415c81c5edbc"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/AllPacketTrace_PKT_node_5.csv",
+      "bytes": 12285,
+      "sha256": "dfd23b9673bd51bf8029aaaa17ebf5596db03e94f4227c51f3c4e9333e13815b"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/AllPacketTrace_PKT_node_6.csv",
+      "bytes": 13233,
+      "sha256": "50462d89e5d9546934d955b839b63966aaa5d3da35248bf0258cb788859eb9be"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/AllPacketTrace_PKT_node_7.csv",
+      "bytes": 3930,
+      "sha256": "f5ef0e68263682d9badd532d87c082e11569ae85a774de68123296c0e7b1bd64"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/PacketTrace_node_0.csv",
+      "bytes": 68536,
+      "sha256": "3d6c1b9bf82b5bf7e6da231a257afb2fb85f432adc248ec7be611c5786b970c9"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/PacketTrace_node_1.csv",
+      "bytes": 103798,
+      "sha256": "ac67dfbd33ae94c3e4bccdbcec63fc12ad3aa193ebae0ec337f9893a26fda32c"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/PacketTrace_node_2.csv",
+      "bytes": 104410,
+      "sha256": "e2c9cd31b05f3a00afd8f0ae475a39de10358be7295f58e69f6565a6dc4de26e"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/PacketTrace_node_3.csv",
+      "bytes": 37102,
+      "sha256": "33afd7ec37bba645fe54b7031b32936d41d551966aaeecd2e708d2eb942bdd35"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/PacketTrace_node_4.csv",
+      "bytes": 37102,
+      "sha256": "756cec14dff4f0993b488cd094822fe0fd1730ffa82a3f5ef7f6bee4040157c3"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/PacketTrace_node_5.csv",
+      "bytes": 37111,
+      "sha256": "3d6e3f065ff843cd6483abebaaea1fdab22badc781a4a7bc6be1ac1714529c39"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/PacketTrace_node_6.csv",
+      "bytes": 39889,
+      "sha256": "680de59b43b9f0a2a9b3acedaad0b27d2241ce8b357218712856988171604a64"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/PacketTrace_node_7.csv",
+      "bytes": 11158,
+      "sha256": "3ad64b9f93e8546acc6ca3f6169bebc5a3dac1e1b7359f3b4570e5033d774687"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/PacketTrace_node_8.csv",
+      "bytes": 74445,
+      "sha256": "1d4a636eace67932f61e9171048953bf5cbdb4da9f7c7b8e21b131e3e3716be2"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/PortTrace_node_0_port_0.csv",
+      "bytes": 8625,
+      "sha256": "4e02b050762326c1cc99148b4d708ad363d0ee61bafe74650fe78aeba0dccf3a"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/PortTrace_node_1_port_0.csv",
+      "bytes": 13048,
+      "sha256": "731b2cbff96c024269a7ef4e52bf66661fa98c6b08d228fa0e872fc3940907df"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/PortTrace_node_2_port_0.csv",
+      "bytes": 13044,
+      "sha256": "fc58922e652686e64aa4bdc27e0f7c489e6cf2e56071ccf34611ff06929af876"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/PortTrace_node_3_port_0.csv",
+      "bytes": 4662,
+      "sha256": "6d63e8fc8c5424fefbddc51f99c50cdc1f5d9e405a43db3c8e3ad844aba6b53c"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/PortTrace_node_4_port_0.csv",
+      "bytes": 4662,
+      "sha256": "ba9ebcd5defbf3bd6a96aff10aca7137f0fe95f1137c58387068da1baa2c7058"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/PortTrace_node_5_port_0.csv",
+      "bytes": 4665,
+      "sha256": "a98c4217fa5ca3764a0bdaec709309db4d7e37938f387d5a39a4e6e33aeab787"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/PortTrace_node_6_port_0.csv",
+      "bytes": 5021,
+      "sha256": "3e9c7133bd173e01be6562210c16a9fa5489e07e701f413465c3817be8f00991"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/PortTrace_node_7_port_0.csv",
+      "bytes": 1464,
+      "sha256": "d0b0e04a3072cc693ef06aa1060f55a8fdb728dec8ada15d6a606338f4c47955"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/PortTrace_node_8_port_0.csv",
+      "bytes": 8626,
+      "sha256": "434082ed8e27db026dfd1e14f5d2711e5aaa5bd3c9a1e8e2509e742a2a76a33c"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/PortTrace_node_8_port_1.csv",
+      "bytes": 13046,
+      "sha256": "e70eb475606db1d956cc5d322a977d676b8642db036ece4169c64dc135d55222"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/PortTrace_node_8_port_2.csv",
+      "bytes": 13046,
+      "sha256": "528cf4226ed848ee6eb93e3711419f4eac92b68fff9c89baf9467770f9e02b34"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/PortTrace_node_8_port_3.csv",
+      "bytes": 4662,
+      "sha256": "a77ddcd74658dbe025dcf9bf74a5cebe4f6d17755f12fc192cee29235f9a6f8d"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/PortTrace_node_8_port_4.csv",
+      "bytes": 4662,
+      "sha256": "1c244f46ec525d3272176d4b9fe328a14d49e99c1a51b2859136e73e22de566e"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/PortTrace_node_8_port_5.csv",
+      "bytes": 4664,
+      "sha256": "2b9dd84b6249b0b66983acffc7c55afb1274c55c21034ae4c0fba827cba74792"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/PortTrace_node_8_port_6.csv",
+      "bytes": 5020,
+      "sha256": "103205f8b155c5bc4e5427127e6d9627aba83bb0839086add481dfa8cd350c85"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/PortTrace_node_8_port_7.csv",
+      "bytes": 1464,
+      "sha256": "c3a0e455845a749c99a4680af643effd8ab28185fbbccc884c864ee7e8cdec5f"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/TaskTrace_node_0.csv",
+      "bytes": 21426,
+      "sha256": "aa941f690b110f20b88fcddacf3a893dad2b30247305fcbefa955e3541d9f3e7"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/TaskTrace_node_1.csv",
+      "bytes": 32181,
+      "sha256": "5337c52feec4e7e1bc9271df15e01608f7bccef12add636ca697418f0c3d14b9"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/TaskTrace_node_2.csv",
+      "bytes": 32181,
+      "sha256": "49afdf20f4db023abfb46e0a7b3a502f7ef7d10249dc9d9b1a7f26e6f08dfbf7"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/TaskTrace_node_3.csv",
+      "bytes": 11397,
+      "sha256": "80c6873ecce59eea03ed140712898b1505401b3507d3006c9228082e8e8772a9"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/TaskTrace_node_4.csv",
+      "bytes": 11397,
+      "sha256": "31d7978d9cb917e8a040e6c2ac6b2d20faeba3ca51f17ddaf46dbebfc34d748d"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/TaskTrace_node_5.csv",
+      "bytes": 11403,
+      "sha256": "fa0cd4014596ca33ac31ea2c1cc780e9d9612e152ae1d464401c78fe58884c67"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/TaskTrace_node_6.csv",
+      "bytes": 12237,
+      "sha256": "32d8099807731a20ff7433aebd89d9f264330b7dd40e50e537ecb28a8cb5dce1"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/native/runlog/TaskTrace_node_7.csv",
+      "bytes": 3417,
+      "sha256": "06191e5dbd23ad38a954b3028d34828d0aa0733ff5fdee4165f3468098a86bec"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/online-summary.json",
+      "bytes": 2425,
+      "sha256": "dff085a83bbb1edf1c89b35c5718dc436bef373fd2d860496645fe17da46de12"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/payload-index.csv",
+      "bytes": 2742,
+      "sha256": "92b7bfcb1a4350472ee2fa2fa9927043af058e64b03ff951e1828fe34aaacc4a"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/received-payloads.bin",
+      "bytes": 311296,
+      "sha256": "b091f52abb47bb6ef28a2870a689b0b1f713ea6e378d14d4acb2c7ff106bd647"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/simulator-metrics.json",
+      "bytes": 146,
+      "sha256": "fa841a41a68d72af11b8cc7bbd71f56979ac7e16a05cd79974b4c33e820307d3"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/ta-identity.csv",
+      "bytes": 8398,
+      "sha256": "04d0cce6080cbcfdc29b280ce061a58942f368209d724bb2e685a08a6b4a40ab"
+    },
+    {
+      "path": "parity/chunk-small/debug/control/run/validation.json",
+      "bytes": 359,
+      "sha256": "d908ab327c5033f60a9cf5ce3c3101907960568d9b080b66b9f99b8f59f8fb36"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/host/console.txt",
+      "bytes": 81,
+      "sha256": "f4535adb8beb3a5ce4b6aedece04462a0aba0ddddfe5717e8557ad99afcc12a7"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/host/resource-samples.csv",
+      "bytes": 105,
+      "sha256": "0ff761653848e64e508c702b7402b33dcaa88a5a9f2b7833caee4cf2e4eb8ba9"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/host/resource.json",
+      "bytes": 32341,
+      "sha256": "975b9626d9c044f11c8c1d2e14de2375cbe1adf4c12466dba9b6b39c746c8f23"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/events.csv",
+      "bytes": 96465,
+      "sha256": "8a62b9a7db8caa98c13c038d2fd8624c39e065cbdeaa255cadc7e565a8c8fe20"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/executed-transfers.csv",
+      "bytes": 5413,
+      "sha256": "a4122a368fcdd1e1f21b3c79baba367f09d9e7faed29b31fe6f41932c1f889d1"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/AllPacketTrace_ACK_node_0.csv",
+      "bytes": 25572,
+      "sha256": "64a7512d5f4f1304b500099c11743026c1786bf2c035f3458e26304f0603aa71"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/AllPacketTrace_ACK_node_1.csv",
+      "bytes": 39426,
+      "sha256": "a514856c487bf72ed188cdcf43b528459bdc0d0e79705d42561e3f3b5ef4d9f3"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/AllPacketTrace_ACK_node_2.csv",
+      "bytes": 39582,
+      "sha256": "aec872c145d1e82275a12c59673c213ba6a863e45a8c020373798f837d319ad4"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/AllPacketTrace_ACK_node_3.csv",
+      "bytes": 14250,
+      "sha256": "69fd4d35f968f1d6c5dc8230a33cc8b44575b4bda057ef2d62ea44463cbc1060"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/AllPacketTrace_ACK_node_4.csv",
+      "bytes": 14250,
+      "sha256": "76706bbd30fc9aa08f1e84fa5be0b9fe0eafd759244ebfe6a414b6fb46ec92d1"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/AllPacketTrace_ACK_node_5.csv",
+      "bytes": 14259,
+      "sha256": "256ef89acb0e4aab72e84fc77e9720e4f914961afe02a5108d721abd92185993"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/AllPacketTrace_ACK_node_6.csv",
+      "bytes": 15345,
+      "sha256": "3f66d6cf4d1edb58041621de3f3e685c1b3f92f9eae61240c36d9a1c8b93003d"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/AllPacketTrace_ACK_node_7.csv",
+      "bytes": 4458,
+      "sha256": "4558642f51d7e359e9b84e25bf80aba555ee7e427245cd8da6f1ba1a3f23d109"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/AllPacketTrace_PKT_node_0.csv",
+      "bytes": 22233,
+      "sha256": "3ccbac26f03a2191a47872b6402df7ad994615c9c4fb184fc4a46d9d75a1649a"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/AllPacketTrace_PKT_node_1.csv",
+      "bytes": 34491,
+      "sha256": "2f3686778743de7ccd59d246e6bb5e0768aa31bf8c5a1c6d54497aefe53490f6"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/AllPacketTrace_PKT_node_2.csv",
+      "bytes": 34641,
+      "sha256": "fc4c2347d6d2e2074681844d3febe12c879e6a8f13101f8750b957f0b9bd0808"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/AllPacketTrace_PKT_node_3.csv",
+      "bytes": 12276,
+      "sha256": "8fd11fdfff15ec8cfef068de1615d2fa0a4561ac3fab37afeea697fb14731169"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/AllPacketTrace_PKT_node_4.csv",
+      "bytes": 12279,
+      "sha256": "bbb0649888a447c97426d85f29f8a4a59a9c380896d3dbb7923a415c81c5edbc"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/AllPacketTrace_PKT_node_5.csv",
+      "bytes": 12285,
+      "sha256": "dfd23b9673bd51bf8029aaaa17ebf5596db03e94f4227c51f3c4e9333e13815b"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/AllPacketTrace_PKT_node_6.csv",
+      "bytes": 13233,
+      "sha256": "50462d89e5d9546934d955b839b63966aaa5d3da35248bf0258cb788859eb9be"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/AllPacketTrace_PKT_node_7.csv",
+      "bytes": 3930,
+      "sha256": "f5ef0e68263682d9badd532d87c082e11569ae85a774de68123296c0e7b1bd64"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/PacketTrace_node_0.csv",
+      "bytes": 68536,
+      "sha256": "3d6c1b9bf82b5bf7e6da231a257afb2fb85f432adc248ec7be611c5786b970c9"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/PacketTrace_node_1.csv",
+      "bytes": 103798,
+      "sha256": "ac67dfbd33ae94c3e4bccdbcec63fc12ad3aa193ebae0ec337f9893a26fda32c"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/PacketTrace_node_2.csv",
+      "bytes": 104410,
+      "sha256": "e2c9cd31b05f3a00afd8f0ae475a39de10358be7295f58e69f6565a6dc4de26e"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/PacketTrace_node_3.csv",
+      "bytes": 37102,
+      "sha256": "33afd7ec37bba645fe54b7031b32936d41d551966aaeecd2e708d2eb942bdd35"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/PacketTrace_node_4.csv",
+      "bytes": 37102,
+      "sha256": "756cec14dff4f0993b488cd094822fe0fd1730ffa82a3f5ef7f6bee4040157c3"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/PacketTrace_node_5.csv",
+      "bytes": 37111,
+      "sha256": "3d6e3f065ff843cd6483abebaaea1fdab22badc781a4a7bc6be1ac1714529c39"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/PacketTrace_node_6.csv",
+      "bytes": 39889,
+      "sha256": "680de59b43b9f0a2a9b3acedaad0b27d2241ce8b357218712856988171604a64"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/PacketTrace_node_7.csv",
+      "bytes": 11158,
+      "sha256": "3ad64b9f93e8546acc6ca3f6169bebc5a3dac1e1b7359f3b4570e5033d774687"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/PacketTrace_node_8.csv",
+      "bytes": 74445,
+      "sha256": "1d4a636eace67932f61e9171048953bf5cbdb4da9f7c7b8e21b131e3e3716be2"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/PortTrace_node_0_port_0.csv",
+      "bytes": 8625,
+      "sha256": "4e02b050762326c1cc99148b4d708ad363d0ee61bafe74650fe78aeba0dccf3a"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/PortTrace_node_1_port_0.csv",
+      "bytes": 13048,
+      "sha256": "731b2cbff96c024269a7ef4e52bf66661fa98c6b08d228fa0e872fc3940907df"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/PortTrace_node_2_port_0.csv",
+      "bytes": 13044,
+      "sha256": "fc58922e652686e64aa4bdc27e0f7c489e6cf2e56071ccf34611ff06929af876"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/PortTrace_node_3_port_0.csv",
+      "bytes": 4662,
+      "sha256": "6d63e8fc8c5424fefbddc51f99c50cdc1f5d9e405a43db3c8e3ad844aba6b53c"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/PortTrace_node_4_port_0.csv",
+      "bytes": 4662,
+      "sha256": "ba9ebcd5defbf3bd6a96aff10aca7137f0fe95f1137c58387068da1baa2c7058"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/PortTrace_node_5_port_0.csv",
+      "bytes": 4665,
+      "sha256": "a98c4217fa5ca3764a0bdaec709309db4d7e37938f387d5a39a4e6e33aeab787"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/PortTrace_node_6_port_0.csv",
+      "bytes": 5021,
+      "sha256": "3e9c7133bd173e01be6562210c16a9fa5489e07e701f413465c3817be8f00991"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/PortTrace_node_7_port_0.csv",
+      "bytes": 1464,
+      "sha256": "d0b0e04a3072cc693ef06aa1060f55a8fdb728dec8ada15d6a606338f4c47955"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/PortTrace_node_8_port_0.csv",
+      "bytes": 8626,
+      "sha256": "434082ed8e27db026dfd1e14f5d2711e5aaa5bd3c9a1e8e2509e742a2a76a33c"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/PortTrace_node_8_port_1.csv",
+      "bytes": 13046,
+      "sha256": "e70eb475606db1d956cc5d322a977d676b8642db036ece4169c64dc135d55222"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/PortTrace_node_8_port_2.csv",
+      "bytes": 13046,
+      "sha256": "528cf4226ed848ee6eb93e3711419f4eac92b68fff9c89baf9467770f9e02b34"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/PortTrace_node_8_port_3.csv",
+      "bytes": 4662,
+      "sha256": "a77ddcd74658dbe025dcf9bf74a5cebe4f6d17755f12fc192cee29235f9a6f8d"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/PortTrace_node_8_port_4.csv",
+      "bytes": 4662,
+      "sha256": "1c244f46ec525d3272176d4b9fe328a14d49e99c1a51b2859136e73e22de566e"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/PortTrace_node_8_port_5.csv",
+      "bytes": 4664,
+      "sha256": "2b9dd84b6249b0b66983acffc7c55afb1274c55c21034ae4c0fba827cba74792"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/PortTrace_node_8_port_6.csv",
+      "bytes": 5020,
+      "sha256": "103205f8b155c5bc4e5427127e6d9627aba83bb0839086add481dfa8cd350c85"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/PortTrace_node_8_port_7.csv",
+      "bytes": 1464,
+      "sha256": "c3a0e455845a749c99a4680af643effd8ab28185fbbccc884c864ee7e8cdec5f"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/TaskTrace_node_0.csv",
+      "bytes": 21426,
+      "sha256": "aa941f690b110f20b88fcddacf3a893dad2b30247305fcbefa955e3541d9f3e7"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/TaskTrace_node_1.csv",
+      "bytes": 32181,
+      "sha256": "5337c52feec4e7e1bc9271df15e01608f7bccef12add636ca697418f0c3d14b9"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/TaskTrace_node_2.csv",
+      "bytes": 32181,
+      "sha256": "49afdf20f4db023abfb46e0a7b3a502f7ef7d10249dc9d9b1a7f26e6f08dfbf7"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/TaskTrace_node_3.csv",
+      "bytes": 11397,
+      "sha256": "80c6873ecce59eea03ed140712898b1505401b3507d3006c9228082e8e8772a9"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/TaskTrace_node_4.csv",
+      "bytes": 11397,
+      "sha256": "31d7978d9cb917e8a040e6c2ac6b2d20faeba3ca51f17ddaf46dbebfc34d748d"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/TaskTrace_node_5.csv",
+      "bytes": 11403,
+      "sha256": "fa0cd4014596ca33ac31ea2c1cc780e9d9612e152ae1d464401c78fe58884c67"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/TaskTrace_node_6.csv",
+      "bytes": 12237,
+      "sha256": "32d8099807731a20ff7433aebd89d9f264330b7dd40e50e537ecb28a8cb5dce1"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/native/runlog/TaskTrace_node_7.csv",
+      "bytes": 3417,
+      "sha256": "06191e5dbd23ad38a954b3028d34828d0aa0733ff5fdee4165f3468098a86bec"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/online-summary.json",
+      "bytes": 2425,
+      "sha256": "f89f83ff36f9e3bb6b40680a2bdfc24d0f4ab97a8c96639a6d40ab1d6452a1fc"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/payload-index.csv",
+      "bytes": 2742,
+      "sha256": "92b7bfcb1a4350472ee2fa2fa9927043af058e64b03ff951e1828fe34aaacc4a"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/received-payloads.bin",
+      "bytes": 311296,
+      "sha256": "b091f52abb47bb6ef28a2870a689b0b1f713ea6e378d14d4acb2c7ff106bd647"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/simulator-metrics.json",
+      "bytes": 146,
+      "sha256": "fa841a41a68d72af11b8cc7bbd71f56979ac7e16a05cd79974b4c33e820307d3"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/ta-identity.csv",
+      "bytes": 8398,
+      "sha256": "04d0cce6080cbcfdc29b280ce061a58942f368209d724bb2e685a08a6b4a40ab"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/run/validation.json",
+      "bytes": 359,
+      "sha256": "f2996cf923077f344a9f460bb93606c488bf20dca2aa9472d1c9e8eca4717619"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/timing.json",
+      "bytes": 3989,
+      "sha256": "fc7e03efd8318c56f7a52e842793fdd70d7a25ebe30be559e29cabb6c9291613"
+    },
+    {
+      "path": "parity/chunk-small/debug/timed/timing.json.jsonl",
+      "bytes": 115644,
+      "sha256": "35187a580463d6b9bef1010826ea5566773b4dc5ee5e9e3f7f59e642b3753df4"
+    },
+    {
+      "path": "parity/chunk-small/summary/control/host/console.txt",
+      "bytes": 81,
+      "sha256": "f4535adb8beb3a5ce4b6aedece04462a0aba0ddddfe5717e8557ad99afcc12a7"
+    },
+    {
+      "path": "parity/chunk-small/summary/control/host/resource-samples.csv",
+      "bytes": 105,
+      "sha256": "8633acbfd3e34c6977b066b8bc6209bf6c4fda9ce7b98411093c3ed6cf5cc5a3"
+    },
+    {
+      "path": "parity/chunk-small/summary/control/host/resource.json",
+      "bytes": 32343,
+      "sha256": "9c32dc023b225b48a8f54f4b25d904c94c4d2e6e55019b09fc0758d881cb1068"
+    },
+    {
+      "path": "parity/chunk-small/summary/control/run/online-summary.json",
+      "bytes": 2427,
+      "sha256": "33cf3c5a0202465a4ad03e0bb0267a78d290b1fc77fa0d8c81c794170d3d9cea"
+    },
+    {
+      "path": "parity/chunk-small/summary/control/run/simulator-metrics.json",
+      "bytes": 146,
+      "sha256": "fa841a41a68d72af11b8cc7bbd71f56979ac7e16a05cd79974b4c33e820307d3"
+    },
+    {
+      "path": "parity/chunk-small/summary/control/run/validation.json",
+      "bytes": 359,
+      "sha256": "191f6d0177884a250a835c907a358e5c1f5e3ceaf48aa30739873e2e1c48dadc"
+    },
+    {
+      "path": "parity/chunk-small/summary/timed/host/console.txt",
+      "bytes": 81,
+      "sha256": "f4535adb8beb3a5ce4b6aedece04462a0aba0ddddfe5717e8557ad99afcc12a7"
+    },
+    {
+      "path": "parity/chunk-small/summary/timed/host/resource-samples.csv",
+      "bytes": 105,
+      "sha256": "4ce5cf3e449870e24bc7e0bb045f0fcdbe8593d41893fa6a4a4764bd15ca6966"
+    },
+    {
+      "path": "parity/chunk-small/summary/timed/host/resource.json",
+      "bytes": 32336,
+      "sha256": "981f3d1524591e398929a23352278114abe93c11c168bc313793f056428e8117"
+    },
+    {
+      "path": "parity/chunk-small/summary/timed/run/online-summary.json",
+      "bytes": 2427,
+      "sha256": "fe9750a52cb9a4e2c0b4bb1b07bad671c86128cc0f0b2da9ae3d9e0ae42a9e2a"
+    },
+    {
+      "path": "parity/chunk-small/summary/timed/run/simulator-metrics.json",
+      "bytes": 146,
+      "sha256": "fa841a41a68d72af11b8cc7bbd71f56979ac7e16a05cd79974b4c33e820307d3"
+    },
+    {
+      "path": "parity/chunk-small/summary/timed/run/validation.json",
+      "bytes": 359,
+      "sha256": "cc5540a582dd308bd9ce3f74733135c3515e4d37148f99c415ec7faab328fee2"
+    },
+    {
+      "path": "parity/chunk-small/summary/timed/timing.json",
+      "bytes": 3971,
+      "sha256": "0a2ba57c0754fcf2559aeda6bf36705767a3e5d07ed5e1548f200581687a8ead"
+    },
+    {
+      "path": "parity/chunk-small/summary/timed/timing.json.jsonl",
+      "bytes": 107552,
+      "sha256": "48891e2ce7e4f9bf2b7a93465191fc6cb04a148bf1d491ace058ef38cc27a747"
+    },
+    {
+      "path": "parity/direct-small/debug/control/host/console.txt",
+      "bytes": 81,
+      "sha256": "2b935ac49a9f1d4c5c7ae2056e3e6a6e7c4e17e9c335a16627be77f9aa121150"
+    },
+    {
+      "path": "parity/direct-small/debug/control/host/resource-samples.csv",
+      "bytes": 105,
+      "sha256": "83179597218f0241c06861e18800d8611615a8c488d47a7bbb018104604b722f"
+    },
+    {
+      "path": "parity/direct-small/debug/control/host/resource.json",
+      "bytes": 32339,
+      "sha256": "90b6d1e10e07b0331f675089afbc95d3991e08638be42b34586b057638ccbde1"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/events.csv",
+      "bytes": 43390,
+      "sha256": "6791dcd4fc43e01804bce27fd3f3777004ce925e658c4c56cf073bdcec1a91a7"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/executed-transfers.csv",
+      "bytes": 1593,
+      "sha256": "d8fa16ea7ea4a08207db99ed17264e7eadd444ca0d5a3c5cdbfd4c7860e1d483"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/native/runlog/AllPacketTrace_ACK_node_0.csv",
+      "bytes": 37998,
+      "sha256": "6d5dbbdf07af9cfd57d1b8a0ad2a04fddd166853a58fb5e1a7cc9782303881ff"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/native/runlog/AllPacketTrace_ACK_node_1.csv",
+      "bytes": 13368,
+      "sha256": "957e53f3d836d1dc9743cef3b54b2aadd2d27404523a26bb6d3c0565aab585cf"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/native/runlog/AllPacketTrace_ACK_node_2.csv",
+      "bytes": 13398,
+      "sha256": "0e4b04fe776f03499e9b5b971fa136680eac988e75ef4bc2398b0ab1cd32c50d"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/native/runlog/AllPacketTrace_ACK_node_3.csv",
+      "bytes": 15675,
+      "sha256": "ddbf876d0830d38d5fcdd6fcaa3428c8e5ff1c2718015dd2409f308099cbb4d5"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/native/runlog/AllPacketTrace_PKT_node_0.csv",
+      "bytes": 32706,
+      "sha256": "fb335ff734317216a6e7f65463f724fe929a443eaefdbfe965576cd40c46f258"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/native/runlog/AllPacketTrace_PKT_node_1.csv",
+      "bytes": 11394,
+      "sha256": "cac7293b89fc7075bfa5ef681f4599aed451eaf1a5deca176865ccf4efb30ae1"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/native/runlog/AllPacketTrace_PKT_node_2.csv",
+      "bytes": 11424,
+      "sha256": "339e03d72527831d2f9befdf5fe8651a87261fff03dc33e19f078a9ea0c8e502"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/native/runlog/AllPacketTrace_PKT_node_3.csv",
+      "bytes": 13425,
+      "sha256": "14ce7ff6bcc35a26b34bafed598697043f920afc1451ac352d18750f486ce352"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/native/runlog/PacketTrace_node_0.csv",
+      "bytes": 100393,
+      "sha256": "274b86265e979e0db36c5820a28013c66f09d196c2b5bbc1ff3d854cb7f020f9"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/native/runlog/PacketTrace_node_1.csv",
+      "bytes": 35179,
+      "sha256": "0a364e5046f9b3b7dc609e52fc1d7d14f8a9897350069beb94b3d8adb55e6b4b"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/native/runlog/PacketTrace_node_2.csv",
+      "bytes": 35245,
+      "sha256": "0cf6b145dddc904d652ae14b7470a3f8d65d888fe865caf05f12582ae4f339ed"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/native/runlog/PacketTrace_node_3.csv",
+      "bytes": 41299,
+      "sha256": "282c1e24af074520cb8eb955e67d81f64adef9a42d44d92a4ab738bae522baf8"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/native/runlog/PacketTrace_node_4.csv",
+      "bytes": 36519,
+      "sha256": "65d53b8deec29329228facd07e125517d2b442fa869e25f93286f8503df18b14"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/native/runlog/PortTrace_node_0_port_0.csv",
+      "bytes": 12918,
+      "sha256": "8132a8b72497998f975cc589a0ab0c8abad8f4b544c0514fa29cf6813de86d04"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/native/runlog/PortTrace_node_1_port_0.csv",
+      "bytes": 4568,
+      "sha256": "9a1e17b564e98857e758c2ee8e0a04dea63bb0e35ae21d4cff9dd6b6cf10e617"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/native/runlog/PortTrace_node_2_port_0.csv",
+      "bytes": 4574,
+      "sha256": "7a32f1b9e7bb000efadba31eabe4818d2b1ee32f68ff2662bce83cf69881b8ae"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/native/runlog/PortTrace_node_3_port_0.csv",
+      "bytes": 5286,
+      "sha256": "dfb20633aae8fb9f41031a6e44164f018c9d70d5a4abd97c38d04042094b18a9"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/native/runlog/PortTrace_node_4_port_0.csv",
+      "bytes": 12920,
+      "sha256": "6ab32bdd6200ef25255a1e06a6ce19fe7884735ab9d1ef4afe1786dd11f05666"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/native/runlog/PortTrace_node_4_port_1.csv",
+      "bytes": 4569,
+      "sha256": "c7526b6803b89260bef984afced1f56211be9c77fca6c98397131974188afdd6"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/native/runlog/PortTrace_node_4_port_2.csv",
+      "bytes": 4571,
+      "sha256": "052f906fb1214e3b2aea16dab927a598ff79e74b026869d9df701c0aa66225bb"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/native/runlog/PortTrace_node_4_port_3.csv",
+      "bytes": 5285,
+      "sha256": "e50b541b01269f45cde5ac36e1018a65f9c25b2e6030b08b9c5dd73422b412df"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/native/runlog/TaskTrace_node_0.csv",
+      "bytes": 31089,
+      "sha256": "b43d37951114627971a169bc48ce400d771d0b7758dcad287a0b5bf9e78096c7"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/native/runlog/TaskTrace_node_1.csv",
+      "bytes": 10959,
+      "sha256": "875971352feb461a706b90b125d4cb61ed5b26b54a2fb93d138e285168b35b88"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/native/runlog/TaskTrace_node_2.csv",
+      "bytes": 10971,
+      "sha256": "636961a4023a0c7b1976e4a08bd438e5b28983ae5b2194b702424d84689b6677"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/native/runlog/TaskTrace_node_3.csv",
+      "bytes": 12651,
+      "sha256": "b08c574b0c87b9191155868a41cb55512e6789adb0c888a90800989199fff2eb"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/online-summary.json",
+      "bytes": 2065,
+      "sha256": "2a4015f9b57e98f11e42c6d613f5c7449f3ef29c98d0c7e19ef6c116bf481631"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/payload-index.csv",
+      "bytes": 811,
+      "sha256": "3759a811e21d1d0e31b1a25ea83639af9015ecc724f7d9c3e56c0e6672463287"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/received-payloads.bin",
+      "bytes": 155648,
+      "sha256": "aaf170f5f6c0e739d32ef46e45a105dd67e3854099e3f3e28a94a3a83cc654cf"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/simulator-metrics.json",
+      "bytes": 144,
+      "sha256": "2d4505054674eadca022117fd2603d0b021cf0a731ea2a8781c9381443a4808e"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/ta-identity.csv",
+      "bytes": 4150,
+      "sha256": "ad22899bf5109a1c4b8d284fcf877962584341f4ee1422927078d5382c57125d"
+    },
+    {
+      "path": "parity/direct-small/debug/control/run/validation.json",
+      "bytes": 358,
+      "sha256": "6e04375ddd0147ccafd6734c5792fb4ff32b31a1d1674c063ed834b5c3a61469"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/host/console.txt",
+      "bytes": 81,
+      "sha256": "2b935ac49a9f1d4c5c7ae2056e3e6a6e7c4e17e9c335a16627be77f9aa121150"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/host/resource-samples.csv",
+      "bytes": 105,
+      "sha256": "d5493954a6bb1237de855917d551e9860a6af68854d6176031250145a57112da"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/host/resource.json",
+      "bytes": 32344,
+      "sha256": "bcafacb76f59260c395145385e547bcbbca73f9c13f617046dbb3d6d611f8c3f"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/events.csv",
+      "bytes": 43390,
+      "sha256": "6791dcd4fc43e01804bce27fd3f3777004ce925e658c4c56cf073bdcec1a91a7"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/executed-transfers.csv",
+      "bytes": 1593,
+      "sha256": "d8fa16ea7ea4a08207db99ed17264e7eadd444ca0d5a3c5cdbfd4c7860e1d483"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/native/runlog/AllPacketTrace_ACK_node_0.csv",
+      "bytes": 37998,
+      "sha256": "6d5dbbdf07af9cfd57d1b8a0ad2a04fddd166853a58fb5e1a7cc9782303881ff"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/native/runlog/AllPacketTrace_ACK_node_1.csv",
+      "bytes": 13368,
+      "sha256": "957e53f3d836d1dc9743cef3b54b2aadd2d27404523a26bb6d3c0565aab585cf"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/native/runlog/AllPacketTrace_ACK_node_2.csv",
+      "bytes": 13398,
+      "sha256": "0e4b04fe776f03499e9b5b971fa136680eac988e75ef4bc2398b0ab1cd32c50d"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/native/runlog/AllPacketTrace_ACK_node_3.csv",
+      "bytes": 15675,
+      "sha256": "ddbf876d0830d38d5fcdd6fcaa3428c8e5ff1c2718015dd2409f308099cbb4d5"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/native/runlog/AllPacketTrace_PKT_node_0.csv",
+      "bytes": 32706,
+      "sha256": "fb335ff734317216a6e7f65463f724fe929a443eaefdbfe965576cd40c46f258"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/native/runlog/AllPacketTrace_PKT_node_1.csv",
+      "bytes": 11394,
+      "sha256": "cac7293b89fc7075bfa5ef681f4599aed451eaf1a5deca176865ccf4efb30ae1"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/native/runlog/AllPacketTrace_PKT_node_2.csv",
+      "bytes": 11424,
+      "sha256": "339e03d72527831d2f9befdf5fe8651a87261fff03dc33e19f078a9ea0c8e502"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/native/runlog/AllPacketTrace_PKT_node_3.csv",
+      "bytes": 13425,
+      "sha256": "14ce7ff6bcc35a26b34bafed598697043f920afc1451ac352d18750f486ce352"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/native/runlog/PacketTrace_node_0.csv",
+      "bytes": 100393,
+      "sha256": "274b86265e979e0db36c5820a28013c66f09d196c2b5bbc1ff3d854cb7f020f9"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/native/runlog/PacketTrace_node_1.csv",
+      "bytes": 35179,
+      "sha256": "0a364e5046f9b3b7dc609e52fc1d7d14f8a9897350069beb94b3d8adb55e6b4b"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/native/runlog/PacketTrace_node_2.csv",
+      "bytes": 35245,
+      "sha256": "0cf6b145dddc904d652ae14b7470a3f8d65d888fe865caf05f12582ae4f339ed"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/native/runlog/PacketTrace_node_3.csv",
+      "bytes": 41299,
+      "sha256": "282c1e24af074520cb8eb955e67d81f64adef9a42d44d92a4ab738bae522baf8"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/native/runlog/PacketTrace_node_4.csv",
+      "bytes": 36519,
+      "sha256": "65d53b8deec29329228facd07e125517d2b442fa869e25f93286f8503df18b14"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/native/runlog/PortTrace_node_0_port_0.csv",
+      "bytes": 12918,
+      "sha256": "8132a8b72497998f975cc589a0ab0c8abad8f4b544c0514fa29cf6813de86d04"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/native/runlog/PortTrace_node_1_port_0.csv",
+      "bytes": 4568,
+      "sha256": "9a1e17b564e98857e758c2ee8e0a04dea63bb0e35ae21d4cff9dd6b6cf10e617"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/native/runlog/PortTrace_node_2_port_0.csv",
+      "bytes": 4574,
+      "sha256": "7a32f1b9e7bb000efadba31eabe4818d2b1ee32f68ff2662bce83cf69881b8ae"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/native/runlog/PortTrace_node_3_port_0.csv",
+      "bytes": 5286,
+      "sha256": "dfb20633aae8fb9f41031a6e44164f018c9d70d5a4abd97c38d04042094b18a9"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/native/runlog/PortTrace_node_4_port_0.csv",
+      "bytes": 12920,
+      "sha256": "6ab32bdd6200ef25255a1e06a6ce19fe7884735ab9d1ef4afe1786dd11f05666"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/native/runlog/PortTrace_node_4_port_1.csv",
+      "bytes": 4569,
+      "sha256": "c7526b6803b89260bef984afced1f56211be9c77fca6c98397131974188afdd6"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/native/runlog/PortTrace_node_4_port_2.csv",
+      "bytes": 4571,
+      "sha256": "052f906fb1214e3b2aea16dab927a598ff79e74b026869d9df701c0aa66225bb"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/native/runlog/PortTrace_node_4_port_3.csv",
+      "bytes": 5285,
+      "sha256": "e50b541b01269f45cde5ac36e1018a65f9c25b2e6030b08b9c5dd73422b412df"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/native/runlog/TaskTrace_node_0.csv",
+      "bytes": 31089,
+      "sha256": "b43d37951114627971a169bc48ce400d771d0b7758dcad287a0b5bf9e78096c7"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/native/runlog/TaskTrace_node_1.csv",
+      "bytes": 10959,
+      "sha256": "875971352feb461a706b90b125d4cb61ed5b26b54a2fb93d138e285168b35b88"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/native/runlog/TaskTrace_node_2.csv",
+      "bytes": 10971,
+      "sha256": "636961a4023a0c7b1976e4a08bd438e5b28983ae5b2194b702424d84689b6677"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/native/runlog/TaskTrace_node_3.csv",
+      "bytes": 12651,
+      "sha256": "b08c574b0c87b9191155868a41cb55512e6789adb0c888a90800989199fff2eb"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/online-summary.json",
+      "bytes": 2065,
+      "sha256": "bb089e62bd35a2810bd9bedce60bdea4e92dd6f77ed46e8ffefb790d756c601c"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/payload-index.csv",
+      "bytes": 811,
+      "sha256": "3759a811e21d1d0e31b1a25ea83639af9015ecc724f7d9c3e56c0e6672463287"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/received-payloads.bin",
+      "bytes": 155648,
+      "sha256": "aaf170f5f6c0e739d32ef46e45a105dd67e3854099e3f3e28a94a3a83cc654cf"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/simulator-metrics.json",
+      "bytes": 144,
+      "sha256": "2d4505054674eadca022117fd2603d0b021cf0a731ea2a8781c9381443a4808e"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/ta-identity.csv",
+      "bytes": 4150,
+      "sha256": "ad22899bf5109a1c4b8d284fcf877962584341f4ee1422927078d5382c57125d"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/run/validation.json",
+      "bytes": 358,
+      "sha256": "4d54dce16ff62b832366106a8c4ed9698d9ee501ff802b6350dc1ab6ddced472"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/timing.json",
+      "bytes": 3934,
+      "sha256": "fbde2f2b2211c799de17bcd445162b408fe0b32360d37105626463c98169e910"
+    },
+    {
+      "path": "parity/direct-small/debug/timed/timing.json.jsonl",
+      "bytes": 114816,
+      "sha256": "abc9996900b3f4f3c347c4704177d08543181008d1de9c3e9aa54940214d2ecf"
+    },
+    {
+      "path": "parity/direct-small/summary/control/host/console.txt",
+      "bytes": 81,
+      "sha256": "2b935ac49a9f1d4c5c7ae2056e3e6a6e7c4e17e9c335a16627be77f9aa121150"
+    },
+    {
+      "path": "parity/direct-small/summary/control/host/resource-samples.csv",
+      "bytes": 105,
+      "sha256": "9f5b49e97980e20176db49488e088c992211239be0b711d75e59420e0f93649d"
+    },
+    {
+      "path": "parity/direct-small/summary/control/host/resource.json",
+      "bytes": 32339,
+      "sha256": "a3ee59881661c5b51fabf75f3bd3f761dcec47511d5539fdef40a2d78605b5f1"
+    },
+    {
+      "path": "parity/direct-small/summary/control/run/online-summary.json",
+      "bytes": 2067,
+      "sha256": "7e805d2f2f9f8a15a3d6a85005d40d06cf36d8270b1ce13461810bcabb29840f"
+    },
+    {
+      "path": "parity/direct-small/summary/control/run/simulator-metrics.json",
+      "bytes": 144,
+      "sha256": "2d4505054674eadca022117fd2603d0b021cf0a731ea2a8781c9381443a4808e"
+    },
+    {
+      "path": "parity/direct-small/summary/control/run/validation.json",
+      "bytes": 358,
+      "sha256": "1c776f52c495aa593796c6f2d822dc1e83f697de83317b9ecbce462814d3d32b"
+    },
+    {
+      "path": "parity/direct-small/summary/timed/host/console.txt",
+      "bytes": 81,
+      "sha256": "2b935ac49a9f1d4c5c7ae2056e3e6a6e7c4e17e9c335a16627be77f9aa121150"
+    },
+    {
+      "path": "parity/direct-small/summary/timed/host/resource-samples.csv",
+      "bytes": 105,
+      "sha256": "6d40e38d45c62f1da1ca747724ead1e82febbab6d59830d786cb583ebc0d5742"
+    },
+    {
+      "path": "parity/direct-small/summary/timed/host/resource.json",
+      "bytes": 32351,
+      "sha256": "914723196227094bdc0338d9efccf478bc5d54e8ce3a50662043b9855e53bf2d"
+    },
+    {
+      "path": "parity/direct-small/summary/timed/run/online-summary.json",
+      "bytes": 2067,
+      "sha256": "a8a6a4f0208fd19b21f17d54cb4ca0d70db5900aa9984ab283123c6b428cda7a"
+    },
+    {
+      "path": "parity/direct-small/summary/timed/run/simulator-metrics.json",
+      "bytes": 144,
+      "sha256": "2d4505054674eadca022117fd2603d0b021cf0a731ea2a8781c9381443a4808e"
+    },
+    {
+      "path": "parity/direct-small/summary/timed/run/validation.json",
+      "bytes": 358,
+      "sha256": "de257e7bb050387b55d6b52e0e4df110000779e092ed38a061892abce9a39a84"
+    },
+    {
+      "path": "parity/direct-small/summary/timed/timing.json",
+      "bytes": 3917,
+      "sha256": "985b67d71253d3d9b537efee005c1b9b96ae575a58cca3d9653f7b8eb26a3bb5"
+    },
+    {
+      "path": "parity/direct-small/summary/timed/timing.json.jsonl",
+      "bytes": 106751,
+      "sha256": "eda3ab08fe9e330e516121aea516a88a6e106ee0693c7757c65fac52b21b2f67"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/host/console.txt",
+      "bytes": 81,
+      "sha256": "4ad83bfd68abaa4e03851f0ba19956237ee449887db48dc8673892b13c14e1a2"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/host/resource-samples.csv",
+      "bytes": 104,
+      "sha256": "8d403fc0e7992998f86309bb0888130b4374c57a49319dfdb090d0f30884839d"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/host/resource.json",
+      "bytes": 32369,
+      "sha256": "3ee5c442443f7fd4fd6d2d15cecb0ff17ca9f21727848eaa5cd52c8d56f3d96b"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/events.csv",
+      "bytes": 47275,
+      "sha256": "e853c7b96ee7ba10a9b2ae3e888a336e0f3d4af4e9f5b2c67fa9788be73def33"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/executed-transfers.csv",
+      "bytes": 2523,
+      "sha256": "991d58d01fd6ba87fc15467090d8dbe4f9f99a34dd3efa7851c5da2a90eed76a"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/native/runlog/AllPacketTrace_ACK_node_0.csv",
+      "bytes": 13113,
+      "sha256": "e1bce5f52dd1d259b71b9d591035a2a8eb74272b909d1f3d26f8da8d80751363"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/native/runlog/AllPacketTrace_ACK_node_1.csv",
+      "bytes": 37968,
+      "sha256": "91c95c8d20458d61b78b31a7b4f4de0b9478b91ea0c3448bf5c876e7853ab4d1"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/native/runlog/AllPacketTrace_ACK_node_2.csv",
+      "bytes": 13635,
+      "sha256": "7c85324911cbfae998c6e7fd2f737a1a87525edcc686e53be1349d2f73a602cc"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/native/runlog/AllPacketTrace_ACK_node_3.csv",
+      "bytes": 15759,
+      "sha256": "b975f4bb0a49765617102d0d0f87f899ab1d549edd1a2e0fe6643c4ca946516d"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/native/runlog/AllPacketTrace_PKT_node_0.csv",
+      "bytes": 11304,
+      "sha256": "5cda9b3481e4cd5afc033a0dc36cd2c24c4d5ed0f4126f2dc15bdb1089024a6c"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/native/runlog/AllPacketTrace_PKT_node_1.csv",
+      "bytes": 33120,
+      "sha256": "95782dddb568047c9e771a00951b6ee5555ca7014d2769246d838d67bbb59952"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/native/runlog/AllPacketTrace_PKT_node_2.csv",
+      "bytes": 11664,
+      "sha256": "a7d84f3d7ebc4f10bc4d9ddc31f378a5e8e6f218840146ef938e4a6d35157ebe"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/native/runlog/AllPacketTrace_PKT_node_3.csv",
+      "bytes": 13509,
+      "sha256": "fa4300a910b7bc783bada4d47e861e936aebb331a13624373543d11a1872ac14"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/native/runlog/PacketTrace_node_0.csv",
+      "bytes": 34927,
+      "sha256": "e06e368f0e7c5faf1a603e46a39f277617b805653a1768fdc037711d735fc6a5"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/native/runlog/PacketTrace_node_1.csv",
+      "bytes": 100918,
+      "sha256": "72b74ee25688d5c277e3fedbd21c0ec92bab0de903b329e7559f22f044500d25"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/native/runlog/PacketTrace_node_2.csv",
+      "bytes": 35866,
+      "sha256": "2b6292813605d3ef1e5895912e3fb5cdc635a561f94d9e142d3a8e58da61095d"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/native/runlog/PacketTrace_node_3.csv",
+      "bytes": 41344,
+      "sha256": "963a2ad512d70d5340a402fdad2126fd4908acabcba99b41c11dc3c8798c994f"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/native/runlog/PacketTrace_node_4.csv",
+      "bytes": 36675,
+      "sha256": "c91edc58b9ca65e6d377998a4ec3c60ac4c2ebbc30fae6ddc23fecea418ea5df"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/native/runlog/PortTrace_node_0_port_0.csv",
+      "bytes": 4498,
+      "sha256": "b65fae5dd04ba907994177bb2d09dcd0c8ac0fd4392d0ec7f26a75867a452e5c"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/native/runlog/PortTrace_node_1_port_0.csv",
+      "bytes": 12887,
+      "sha256": "1e442d79cbcf1e35fb43ffadbf62bc423db8dec55045e027848b371db233c147"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/native/runlog/PortTrace_node_2_port_0.csv",
+      "bytes": 4589,
+      "sha256": "fbe5e84a0781aedcddc001ff3c1022e2965f191098852f079dff327fca7a2abf"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/native/runlog/PortTrace_node_3_port_0.csv",
+      "bytes": 5301,
+      "sha256": "e9dddc9f1d66b338a56dd3b2cb1f91a9ba58a3d3225da7767e8eb1ed2ff35d5e"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/native/runlog/PortTrace_node_4_port_0.csv",
+      "bytes": 4499,
+      "sha256": "de7f191f34244d98974e3ad79a4135b00d05af443ff9c153933d5ed16ec06aaf"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/native/runlog/PortTrace_node_4_port_1.csv",
+      "bytes": 12888,
+      "sha256": "bc3b17ced4fdc874e84d22d258ef46fd02dd17cc3248abc03b616c4093231fbc"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/native/runlog/PortTrace_node_4_port_2.csv",
+      "bytes": 4588,
+      "sha256": "4d5697f58a3218b8c001a0f6ba6913c1fa76d904d32596e0ae5b5071a43f7ed1"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/native/runlog/PortTrace_node_4_port_3.csv",
+      "bytes": 5301,
+      "sha256": "bd800a62cf933ec6202d4b66ecd9f6c0764a2a1b482bd25f5478650ec73f5fe2"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/native/runlog/TaskTrace_node_0.csv",
+      "bytes": 10830,
+      "sha256": "9d2bb4431162c1b441e494bccd3a2ed82fde76713da0dfcb4ffa3bf8532578bc"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/native/runlog/TaskTrace_node_1.csv",
+      "bytes": 31083,
+      "sha256": "37097f1d9b0a2494ebc7d775d371b7eafd78055d36a8173c99d43592a329e30b"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/native/runlog/TaskTrace_node_2.csv",
+      "bytes": 10995,
+      "sha256": "d4e2bc660ecbe4037aca12850762da72025ab9b2968207dfa88b3fbe2b0c684f"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/native/runlog/TaskTrace_node_3.csv",
+      "bytes": 12675,
+      "sha256": "99e844b3bfe5c9b4389dbb7c4482b394662b72a5c92d9d58b037b18b200de213"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/online-summary.json",
+      "bytes": 2146,
+      "sha256": "a60ebed8466ef8f8b2e9cff8c0a4ad6b4635063f9ede52ae77c7c74dc0b8c890"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/payload-index.csv",
+      "bytes": 1282,
+      "sha256": "643ecbe57cef1509de64580f641be68218f69e2cb19f42ab84fa657a56b45a70"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/received-payloads.bin",
+      "bytes": 155648,
+      "sha256": "f1bbba680a19f46bc1b98d16c3481ad40b066bfefbb6f10596d21dafb861dc35"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/simulator-metrics.json",
+      "bytes": 145,
+      "sha256": "7753c7e5d96de78f414510621cba67cddd5a71ddf9aa6b1c8fbf2fede4913fff"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/ta-identity.csv",
+      "bytes": 3934,
+      "sha256": "34392b67ae60bd5ebab4f3f9c9b667ca60968568565e963bed255c390ab0ddbf"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/control/run/validation.json",
+      "bytes": 359,
+      "sha256": "55b1c5d735672d0876289be77d73fa0b02d1d313c94b3980317401c8e78c27e2"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/host/console.txt",
+      "bytes": 81,
+      "sha256": "4ad83bfd68abaa4e03851f0ba19956237ee449887db48dc8673892b13c14e1a2"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/host/resource-samples.csv",
+      "bytes": 105,
+      "sha256": "76eaf7d57fbe56ca2f909684bd946c77e830f48d6350c9b6e4dfff8671e99bf7"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/host/resource.json",
+      "bytes": 32361,
+      "sha256": "423443a20f3a587211aff6e85e04c24fa1297042ee872d3cc3ccf45af7cad396"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/events.csv",
+      "bytes": 47275,
+      "sha256": "e853c7b96ee7ba10a9b2ae3e888a336e0f3d4af4e9f5b2c67fa9788be73def33"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/executed-transfers.csv",
+      "bytes": 2523,
+      "sha256": "991d58d01fd6ba87fc15467090d8dbe4f9f99a34dd3efa7851c5da2a90eed76a"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/native/runlog/AllPacketTrace_ACK_node_0.csv",
+      "bytes": 13113,
+      "sha256": "e1bce5f52dd1d259b71b9d591035a2a8eb74272b909d1f3d26f8da8d80751363"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/native/runlog/AllPacketTrace_ACK_node_1.csv",
+      "bytes": 37968,
+      "sha256": "91c95c8d20458d61b78b31a7b4f4de0b9478b91ea0c3448bf5c876e7853ab4d1"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/native/runlog/AllPacketTrace_ACK_node_2.csv",
+      "bytes": 13635,
+      "sha256": "7c85324911cbfae998c6e7fd2f737a1a87525edcc686e53be1349d2f73a602cc"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/native/runlog/AllPacketTrace_ACK_node_3.csv",
+      "bytes": 15759,
+      "sha256": "b975f4bb0a49765617102d0d0f87f899ab1d549edd1a2e0fe6643c4ca946516d"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/native/runlog/AllPacketTrace_PKT_node_0.csv",
+      "bytes": 11304,
+      "sha256": "5cda9b3481e4cd5afc033a0dc36cd2c24c4d5ed0f4126f2dc15bdb1089024a6c"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/native/runlog/AllPacketTrace_PKT_node_1.csv",
+      "bytes": 33120,
+      "sha256": "95782dddb568047c9e771a00951b6ee5555ca7014d2769246d838d67bbb59952"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/native/runlog/AllPacketTrace_PKT_node_2.csv",
+      "bytes": 11664,
+      "sha256": "a7d84f3d7ebc4f10bc4d9ddc31f378a5e8e6f218840146ef938e4a6d35157ebe"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/native/runlog/AllPacketTrace_PKT_node_3.csv",
+      "bytes": 13509,
+      "sha256": "fa4300a910b7bc783bada4d47e861e936aebb331a13624373543d11a1872ac14"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/native/runlog/PacketTrace_node_0.csv",
+      "bytes": 34927,
+      "sha256": "e06e368f0e7c5faf1a603e46a39f277617b805653a1768fdc037711d735fc6a5"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/native/runlog/PacketTrace_node_1.csv",
+      "bytes": 100918,
+      "sha256": "72b74ee25688d5c277e3fedbd21c0ec92bab0de903b329e7559f22f044500d25"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/native/runlog/PacketTrace_node_2.csv",
+      "bytes": 35866,
+      "sha256": "2b6292813605d3ef1e5895912e3fb5cdc635a561f94d9e142d3a8e58da61095d"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/native/runlog/PacketTrace_node_3.csv",
+      "bytes": 41344,
+      "sha256": "963a2ad512d70d5340a402fdad2126fd4908acabcba99b41c11dc3c8798c994f"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/native/runlog/PacketTrace_node_4.csv",
+      "bytes": 36675,
+      "sha256": "c91edc58b9ca65e6d377998a4ec3c60ac4c2ebbc30fae6ddc23fecea418ea5df"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/native/runlog/PortTrace_node_0_port_0.csv",
+      "bytes": 4498,
+      "sha256": "b65fae5dd04ba907994177bb2d09dcd0c8ac0fd4392d0ec7f26a75867a452e5c"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/native/runlog/PortTrace_node_1_port_0.csv",
+      "bytes": 12887,
+      "sha256": "1e442d79cbcf1e35fb43ffadbf62bc423db8dec55045e027848b371db233c147"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/native/runlog/PortTrace_node_2_port_0.csv",
+      "bytes": 4589,
+      "sha256": "fbe5e84a0781aedcddc001ff3c1022e2965f191098852f079dff327fca7a2abf"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/native/runlog/PortTrace_node_3_port_0.csv",
+      "bytes": 5301,
+      "sha256": "e9dddc9f1d66b338a56dd3b2cb1f91a9ba58a3d3225da7767e8eb1ed2ff35d5e"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/native/runlog/PortTrace_node_4_port_0.csv",
+      "bytes": 4499,
+      "sha256": "de7f191f34244d98974e3ad79a4135b00d05af443ff9c153933d5ed16ec06aaf"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/native/runlog/PortTrace_node_4_port_1.csv",
+      "bytes": 12888,
+      "sha256": "bc3b17ced4fdc874e84d22d258ef46fd02dd17cc3248abc03b616c4093231fbc"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/native/runlog/PortTrace_node_4_port_2.csv",
+      "bytes": 4588,
+      "sha256": "4d5697f58a3218b8c001a0f6ba6913c1fa76d904d32596e0ae5b5071a43f7ed1"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/native/runlog/PortTrace_node_4_port_3.csv",
+      "bytes": 5301,
+      "sha256": "bd800a62cf933ec6202d4b66ecd9f6c0764a2a1b482bd25f5478650ec73f5fe2"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/native/runlog/TaskTrace_node_0.csv",
+      "bytes": 10830,
+      "sha256": "9d2bb4431162c1b441e494bccd3a2ed82fde76713da0dfcb4ffa3bf8532578bc"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/native/runlog/TaskTrace_node_1.csv",
+      "bytes": 31083,
+      "sha256": "37097f1d9b0a2494ebc7d775d371b7eafd78055d36a8173c99d43592a329e30b"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/native/runlog/TaskTrace_node_2.csv",
+      "bytes": 10995,
+      "sha256": "d4e2bc660ecbe4037aca12850762da72025ab9b2968207dfa88b3fbe2b0c684f"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/native/runlog/TaskTrace_node_3.csv",
+      "bytes": 12675,
+      "sha256": "99e844b3bfe5c9b4389dbb7c4482b394662b72a5c92d9d58b037b18b200de213"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/online-summary.json",
+      "bytes": 2146,
+      "sha256": "943c70905e3f55bef3c32ef2de2342816b960e366c1fd0aed9e04b8377e6128d"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/payload-index.csv",
+      "bytes": 1282,
+      "sha256": "643ecbe57cef1509de64580f641be68218f69e2cb19f42ab84fa657a56b45a70"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/received-payloads.bin",
+      "bytes": 155648,
+      "sha256": "f1bbba680a19f46bc1b98d16c3481ad40b066bfefbb6f10596d21dafb861dc35"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/simulator-metrics.json",
+      "bytes": 145,
+      "sha256": "7753c7e5d96de78f414510621cba67cddd5a71ddf9aa6b1c8fbf2fede4913fff"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/ta-identity.csv",
+      "bytes": 3934,
+      "sha256": "34392b67ae60bd5ebab4f3f9c9b667ca60968568565e963bed255c390ab0ddbf"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/run/validation.json",
+      "bytes": 359,
+      "sha256": "56863ba5deccf7cabe3692b9f48bd3df6a983e95c6204bfa334d318afe709537"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/timing.json",
+      "bytes": 3970,
+      "sha256": "6276552e6ddd510b0021aa779f95f53c1d0518d47dad21fe6cde20ca3de9ab10"
+    },
+    {
+      "path": "parity/multichunk-multita/debug/timed/timing.json.jsonl",
+      "bytes": 115354,
+      "sha256": "de90754a6d2695c15e253383cd27fd9de5acd6a2aeaf86e645fc08c898652ab0"
+    },
+    {
+      "path": "parity/multichunk-multita/summary/control/host/console.txt",
+      "bytes": 81,
+      "sha256": "4ad83bfd68abaa4e03851f0ba19956237ee449887db48dc8673892b13c14e1a2"
+    },
+    {
+      "path": "parity/multichunk-multita/summary/control/host/resource-samples.csv",
+      "bytes": 105,
+      "sha256": "48b3517af99fcf148db095694ca9296ee173ca3fb9ac0929891b14bf784f439d"
+    },
+    {
+      "path": "parity/multichunk-multita/summary/control/host/resource.json",
+      "bytes": 32364,
+      "sha256": "9affb5ef7139872d9b66960f66a94fbc59ffe63801d84ab9f5dfe01c9f90839e"
+    },
+    {
+      "path": "parity/multichunk-multita/summary/control/run/online-summary.json",
+      "bytes": 2148,
+      "sha256": "ba95a75f4b134ba597d253b356afd1672555f93254be82794dd2bd4976c64d95"
+    },
+    {
+      "path": "parity/multichunk-multita/summary/control/run/simulator-metrics.json",
+      "bytes": 145,
+      "sha256": "7753c7e5d96de78f414510621cba67cddd5a71ddf9aa6b1c8fbf2fede4913fff"
+    },
+    {
+      "path": "parity/multichunk-multita/summary/control/run/validation.json",
+      "bytes": 359,
+      "sha256": "a0a1bef080caf684fb0804b748239725663427b133d97eea8e2a5ebc3d216c42"
+    },
+    {
+      "path": "parity/multichunk-multita/summary/timed/host/console.txt",
+      "bytes": 81,
+      "sha256": "4ad83bfd68abaa4e03851f0ba19956237ee449887db48dc8673892b13c14e1a2"
+    },
+    {
+      "path": "parity/multichunk-multita/summary/timed/host/resource-samples.csv",
+      "bytes": 105,
+      "sha256": "ab1ec6b8f08419faf47ea97e7870c197ca5bdb7e9663661b93bc0131015d88e8"
+    },
+    {
+      "path": "parity/multichunk-multita/summary/timed/host/resource.json",
+      "bytes": 32357,
+      "sha256": "ca8606f8d2887f650686a0bf8a6016b0416a440388fae0d8751f5570e311cc70"
+    },
+    {
+      "path": "parity/multichunk-multita/summary/timed/run/online-summary.json",
+      "bytes": 2148,
+      "sha256": "615570f32ea1a95cc83a47508b8c3143b7ec761fe995f9835af47113a8d5e899"
+    },
+    {
+      "path": "parity/multichunk-multita/summary/timed/run/simulator-metrics.json",
+      "bytes": 145,
+      "sha256": "7753c7e5d96de78f414510621cba67cddd5a71ddf9aa6b1c8fbf2fede4913fff"
+    },
+    {
+      "path": "parity/multichunk-multita/summary/timed/run/validation.json",
+      "bytes": 359,
+      "sha256": "61fd8e2ed478421d9375564e22e16626119a89ad62bfef64094bc38f04ddb731"
+    },
+    {
+      "path": "parity/multichunk-multita/summary/timed/timing.json",
+      "bytes": 3952,
+      "sha256": "fb79a602413fa30cdf45e9931694bc8d64a78acc685de47babc3c731524ee24e"
+    },
+    {
+      "path": "parity/multichunk-multita/summary/timed/timing.json.jsonl",
+      "bytes": 107261,
+      "sha256": "283fedd2cc2092420ca25305740a85d6b3329fcdaa0faf3bc951758aabbcba6f"
+    },
+    {
+      "path": "parity/nb-small/debug/control/host/console.txt",
+      "bytes": 81,
+      "sha256": "8f1348df2aa98c3da5dbcb97645c4658847b593e80d7e49daf4ffae94d45c42e"
+    },
+    {
+      "path": "parity/nb-small/debug/control/host/resource-samples.csv",
+      "bytes": 105,
+      "sha256": "fe07c8ba586e5e4b895ff237a78bb3790acdd02cfa1486fa1af120e3c57fe21d"
+    },
+    {
+      "path": "parity/nb-small/debug/control/host/resource.json",
+      "bytes": 32341,
+      "sha256": "392cc38afadf00979953f3941b3889c184a5dcdb43b261c82c697455eb92de5e"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/events.csv",
+      "bytes": 9180,
+      "sha256": "da592ee6f6a4e2a73a16119eba2c5258f47137113cacdb908af5e323aec3e0fe"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/executed-transfers.csv",
+      "bytes": 785,
+      "sha256": "5b27fbcdebc0b2a2a3fd58955691b1599cfd25928a493f41e7a73888ea5f2e46"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/native/runlog/AllPacketTrace_ACK_node_0.csv",
+      "bytes": 3894,
+      "sha256": "820afde5cf1b950457217ee49fb995861d6eb07b639f6b6b6fbc8e7c53541935"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/native/runlog/AllPacketTrace_ACK_node_1.csv",
+      "bytes": 2004,
+      "sha256": "7d444a39943210b4fcca8ce57fa7c4939a887c1a221c0f316c8637edeeba1fb7"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/native/runlog/AllPacketTrace_ACK_node_2.csv",
+      "bytes": 2931,
+      "sha256": "1343a749df63eec28248cc35e9908dd7b48627a239fa7fea6bd9b30d32280edd"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/native/runlog/AllPacketTrace_ACK_node_3.csv",
+      "bytes": 2952,
+      "sha256": "073e1805b06c792b9c49ad3839591a9664db315ad1fdbbe21b9afbe30f77a656"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/native/runlog/AllPacketTrace_PKT_node_0.csv",
+      "bytes": 3315,
+      "sha256": "35c93fd39060b7bd17b38dbabd39cf0cddedaa69d3c3c55cc638898e0268416f"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/native/runlog/AllPacketTrace_PKT_node_1.csv",
+      "bytes": 1689,
+      "sha256": "006e4b7c4f54baeec3af4ab1cc8a22a165a7e68cbc58c85b4bec6f563383fd8a"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/native/runlog/AllPacketTrace_PKT_node_2.csv",
+      "bytes": 2499,
+      "sha256": "3cae870d527e0e33d5e62f58cf683b551bdc093d77838f2f1401f881a6902a3d"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/native/runlog/AllPacketTrace_PKT_node_3.csv",
+      "bytes": 2520,
+      "sha256": "474e913d8a7caa614047ea6204a17dc40361996c256b1f76821157c709e4b239"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/native/runlog/PacketTrace_node_0.csv",
+      "bytes": 10474,
+      "sha256": "fb500caa4e1154ff7a26ad107c25bea3ba7ac91c2dc1d1e36577db6bc959209c"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/native/runlog/PacketTrace_node_1.csv",
+      "bytes": 5323,
+      "sha256": "0c71ff10d5f0dd673909fd74be24bdc11891ef19923454b29d198b9cf4891cbf"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/native/runlog/PacketTrace_node_2.csv",
+      "bytes": 7939,
+      "sha256": "926589ca69769df1916373353556133cd8a2685d02e8cbacef74ca4af069bed2"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/native/runlog/PacketTrace_node_3.csv",
+      "bytes": 8020,
+      "sha256": "43653d231e3480dadc1c1068f40ad49d97c21f54c9bad8aee4a70a57cad4240e"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/native/runlog/PacketTrace_node_4.csv",
+      "bytes": 5551,
+      "sha256": "aa6891cc48a8e90da5129bf03f764cc606ba695e77d872be7e60d840856713fa"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/native/runlog/PortTrace_node_0_port_0.csv",
+      "bytes": 1354,
+      "sha256": "1f4a5e5655fd95a91d7c2f96a139ef121f679589333b206d27771537af1220d6"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/native/runlog/PortTrace_node_1_port_0.csv",
+      "bytes": 691,
+      "sha256": "1713e5a9c9283ce53be8627012db190df2aeddf52431a74f7e4381f34937813d"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/native/runlog/PortTrace_node_2_port_0.csv",
+      "bytes": 1013,
+      "sha256": "0a57fe0cdf2e642fb5aeb638573d298d2803b6db34a1d5873cc5301b03adf53e"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/native/runlog/PortTrace_node_3_port_0.csv",
+      "bytes": 1016,
+      "sha256": "a1776632dd03dac87799c6a5bbfc0f040c13d10d07a12ff3e0e27bb09490ec46"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/native/runlog/PortTrace_node_4_port_0.csv",
+      "bytes": 1354,
+      "sha256": "3251dbf247228bd2da7d6b331c192b5a283aeee0571395fb3461af8d4192d90b"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/native/runlog/PortTrace_node_4_port_1.csv",
+      "bytes": 692,
+      "sha256": "e4bba6c4e7d13aa8da71ce1d46a5bfefe4a077f59627f44001ef3a4199915de5"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/native/runlog/PortTrace_node_4_port_2.csv",
+      "bytes": 1014,
+      "sha256": "aabf92b169cb81879079c66a818c8645ed2eff5c39d93634a1634dd115e0fa61"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/native/runlog/PortTrace_node_4_port_3.csv",
+      "bytes": 1014,
+      "sha256": "5e7c37592778394ec0995958a6ed30f047d9a6451ee85dc1a5f61bbf9b60b2fc"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/native/runlog/TaskTrace_node_0.csv",
+      "bytes": 3189,
+      "sha256": "35cec8bdd7494e16746a05d9fb548dc3864b1fddfce27f171988387ef9a915c7"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/native/runlog/TaskTrace_node_1.csv",
+      "bytes": 1599,
+      "sha256": "50d290d57b45d9c06c71614ec766fd2713dff3a089c1b61b2e0c57853592af66"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/native/runlog/TaskTrace_node_2.csv",
+      "bytes": 2385,
+      "sha256": "f9790392e4676f97137db7587855f623527c476bf7bdda2291ca119a5800cb4d"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/native/runlog/TaskTrace_node_3.csv",
+      "bytes": 2391,
+      "sha256": "1ab61398de530472e2b58c2b18a3b95aa50511f09daf12a2ed18abf3396b57c5"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/online-summary.json",
+      "bytes": 1805,
+      "sha256": "c9a523dd85522a8f613d8e800dffb2cf3d35a8f43f2ed2d9814afda6a0c0b37d"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/payload-index.csv",
+      "bytes": 382,
+      "sha256": "73b61a850e3178943ac6df73be25d521c76761fadaeef81f4a35d88dcc5cfa03"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/received-payloads.bin",
+      "bytes": 4096,
+      "sha256": "52974a580f92b4badfb044c6ac97aac0c6be46a5eb8a4790e7236ca384b7c0d4"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/simulator-metrics.json",
+      "bytes": 143,
+      "sha256": "2d9bfdae4f3720f30daa1c39e14a65ec47cff625dc625c9abf2f462034f79e4a"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/ta-identity.csv",
+      "bytes": 508,
+      "sha256": "3cefad7ccd7867046a416266960f72be03449b6397c26b08a2a60fd019199a2e"
+    },
+    {
+      "path": "parity/nb-small/debug/control/run/validation.json",
+      "bytes": 355,
+      "sha256": "86fb759bc3d33ec5d1517cceecb23c4c3ce91f20872ec23b0fdfb1d0cb3fb0ca"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/host/console.txt",
+      "bytes": 81,
+      "sha256": "8f1348df2aa98c3da5dbcb97645c4658847b593e80d7e49daf4ffae94d45c42e"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/host/resource-samples.csv",
+      "bytes": 105,
+      "sha256": "3c88879300db7a436cfbbe78c926484eb715b115e1e7b5ed01860df67faf1cdf"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/host/resource.json",
+      "bytes": 32322,
+      "sha256": "8f3413276700ec66c9ff4c4a1a3dee2f82c0bab2f972f3f82462c5997115d70b"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/events.csv",
+      "bytes": 9180,
+      "sha256": "da592ee6f6a4e2a73a16119eba2c5258f47137113cacdb908af5e323aec3e0fe"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/executed-transfers.csv",
+      "bytes": 785,
+      "sha256": "5b27fbcdebc0b2a2a3fd58955691b1599cfd25928a493f41e7a73888ea5f2e46"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/native/runlog/AllPacketTrace_ACK_node_0.csv",
+      "bytes": 3894,
+      "sha256": "820afde5cf1b950457217ee49fb995861d6eb07b639f6b6b6fbc8e7c53541935"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/native/runlog/AllPacketTrace_ACK_node_1.csv",
+      "bytes": 2004,
+      "sha256": "7d444a39943210b4fcca8ce57fa7c4939a887c1a221c0f316c8637edeeba1fb7"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/native/runlog/AllPacketTrace_ACK_node_2.csv",
+      "bytes": 2931,
+      "sha256": "1343a749df63eec28248cc35e9908dd7b48627a239fa7fea6bd9b30d32280edd"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/native/runlog/AllPacketTrace_ACK_node_3.csv",
+      "bytes": 2952,
+      "sha256": "073e1805b06c792b9c49ad3839591a9664db315ad1fdbbe21b9afbe30f77a656"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/native/runlog/AllPacketTrace_PKT_node_0.csv",
+      "bytes": 3315,
+      "sha256": "35c93fd39060b7bd17b38dbabd39cf0cddedaa69d3c3c55cc638898e0268416f"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/native/runlog/AllPacketTrace_PKT_node_1.csv",
+      "bytes": 1689,
+      "sha256": "006e4b7c4f54baeec3af4ab1cc8a22a165a7e68cbc58c85b4bec6f563383fd8a"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/native/runlog/AllPacketTrace_PKT_node_2.csv",
+      "bytes": 2499,
+      "sha256": "3cae870d527e0e33d5e62f58cf683b551bdc093d77838f2f1401f881a6902a3d"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/native/runlog/AllPacketTrace_PKT_node_3.csv",
+      "bytes": 2520,
+      "sha256": "474e913d8a7caa614047ea6204a17dc40361996c256b1f76821157c709e4b239"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/native/runlog/PacketTrace_node_0.csv",
+      "bytes": 10474,
+      "sha256": "fb500caa4e1154ff7a26ad107c25bea3ba7ac91c2dc1d1e36577db6bc959209c"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/native/runlog/PacketTrace_node_1.csv",
+      "bytes": 5323,
+      "sha256": "0c71ff10d5f0dd673909fd74be24bdc11891ef19923454b29d198b9cf4891cbf"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/native/runlog/PacketTrace_node_2.csv",
+      "bytes": 7939,
+      "sha256": "926589ca69769df1916373353556133cd8a2685d02e8cbacef74ca4af069bed2"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/native/runlog/PacketTrace_node_3.csv",
+      "bytes": 8020,
+      "sha256": "43653d231e3480dadc1c1068f40ad49d97c21f54c9bad8aee4a70a57cad4240e"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/native/runlog/PacketTrace_node_4.csv",
+      "bytes": 5551,
+      "sha256": "aa6891cc48a8e90da5129bf03f764cc606ba695e77d872be7e60d840856713fa"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/native/runlog/PortTrace_node_0_port_0.csv",
+      "bytes": 1354,
+      "sha256": "1f4a5e5655fd95a91d7c2f96a139ef121f679589333b206d27771537af1220d6"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/native/runlog/PortTrace_node_1_port_0.csv",
+      "bytes": 691,
+      "sha256": "1713e5a9c9283ce53be8627012db190df2aeddf52431a74f7e4381f34937813d"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/native/runlog/PortTrace_node_2_port_0.csv",
+      "bytes": 1013,
+      "sha256": "0a57fe0cdf2e642fb5aeb638573d298d2803b6db34a1d5873cc5301b03adf53e"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/native/runlog/PortTrace_node_3_port_0.csv",
+      "bytes": 1016,
+      "sha256": "a1776632dd03dac87799c6a5bbfc0f040c13d10d07a12ff3e0e27bb09490ec46"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/native/runlog/PortTrace_node_4_port_0.csv",
+      "bytes": 1354,
+      "sha256": "3251dbf247228bd2da7d6b331c192b5a283aeee0571395fb3461af8d4192d90b"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/native/runlog/PortTrace_node_4_port_1.csv",
+      "bytes": 692,
+      "sha256": "e4bba6c4e7d13aa8da71ce1d46a5bfefe4a077f59627f44001ef3a4199915de5"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/native/runlog/PortTrace_node_4_port_2.csv",
+      "bytes": 1014,
+      "sha256": "aabf92b169cb81879079c66a818c8645ed2eff5c39d93634a1634dd115e0fa61"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/native/runlog/PortTrace_node_4_port_3.csv",
+      "bytes": 1014,
+      "sha256": "5e7c37592778394ec0995958a6ed30f047d9a6451ee85dc1a5f61bbf9b60b2fc"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/native/runlog/TaskTrace_node_0.csv",
+      "bytes": 3189,
+      "sha256": "35cec8bdd7494e16746a05d9fb548dc3864b1fddfce27f171988387ef9a915c7"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/native/runlog/TaskTrace_node_1.csv",
+      "bytes": 1599,
+      "sha256": "50d290d57b45d9c06c71614ec766fd2713dff3a089c1b61b2e0c57853592af66"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/native/runlog/TaskTrace_node_2.csv",
+      "bytes": 2385,
+      "sha256": "f9790392e4676f97137db7587855f623527c476bf7bdda2291ca119a5800cb4d"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/native/runlog/TaskTrace_node_3.csv",
+      "bytes": 2391,
+      "sha256": "1ab61398de530472e2b58c2b18a3b95aa50511f09daf12a2ed18abf3396b57c5"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/online-summary.json",
+      "bytes": 1805,
+      "sha256": "5844b2fcd5a84a4a9e8078a50aa541bf07dab45f785697a8c3e3dd7f0d52c619"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/payload-index.csv",
+      "bytes": 382,
+      "sha256": "73b61a850e3178943ac6df73be25d521c76761fadaeef81f4a35d88dcc5cfa03"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/received-payloads.bin",
+      "bytes": 4096,
+      "sha256": "52974a580f92b4badfb044c6ac97aac0c6be46a5eb8a4790e7236ca384b7c0d4"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/simulator-metrics.json",
+      "bytes": 143,
+      "sha256": "2d9bfdae4f3720f30daa1c39e14a65ec47cff625dc625c9abf2f462034f79e4a"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/ta-identity.csv",
+      "bytes": 508,
+      "sha256": "3cefad7ccd7867046a416266960f72be03449b6397c26b08a2a60fd019199a2e"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/run/validation.json",
+      "bytes": 355,
+      "sha256": "2f4bb7abc31857e45dca8c87374852be5ee6b7994a82d3d279d8610bab2c6e81"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/timing.json",
+      "bytes": 3872,
+      "sha256": "bf740235590d71f5e848da7c65e48e3af421a4f928e5327a443007797d27ed1c"
+    },
+    {
+      "path": "parity/nb-small/debug/timed/timing.json.jsonl",
+      "bytes": 113811,
+      "sha256": "97441066be43c3dc7dbf40a320fe80fab5c0097a21c2bf1ff5337c22d2fd6171"
+    },
+    {
+      "path": "parity/nb-small/summary/control/host/console.txt",
+      "bytes": 81,
+      "sha256": "8f1348df2aa98c3da5dbcb97645c4658847b593e80d7e49daf4ffae94d45c42e"
+    },
+    {
+      "path": "parity/nb-small/summary/control/host/resource-samples.csv",
+      "bytes": 105,
+      "sha256": "b6b8dad53cd8a02749b2fc2f33270c6456a3479c93554fd603b761c0b2eeef39"
+    },
+    {
+      "path": "parity/nb-small/summary/control/host/resource.json",
+      "bytes": 32329,
+      "sha256": "c66bbcf5023a720171106ff176aa656dd3bb28b852b35aaec31c0be2c27f9c27"
+    },
+    {
+      "path": "parity/nb-small/summary/control/run/online-summary.json",
+      "bytes": 1807,
+      "sha256": "fc4baf5b80eb7e97d3fec06b1f3b95e67b6db91e9631a3b24dce1e25d3d7f6d1"
+    },
+    {
+      "path": "parity/nb-small/summary/control/run/simulator-metrics.json",
+      "bytes": 143,
+      "sha256": "2d9bfdae4f3720f30daa1c39e14a65ec47cff625dc625c9abf2f462034f79e4a"
+    },
+    {
+      "path": "parity/nb-small/summary/control/run/validation.json",
+      "bytes": 355,
+      "sha256": "c22cfead187dcee6d4fb285c1bf7650327ff8efa6bba25c597cebeb86536dd4e"
+    },
+    {
+      "path": "parity/nb-small/summary/timed/host/console.txt",
+      "bytes": 81,
+      "sha256": "8f1348df2aa98c3da5dbcb97645c4658847b593e80d7e49daf4ffae94d45c42e"
+    },
+    {
+      "path": "parity/nb-small/summary/timed/host/resource-samples.csv",
+      "bytes": 105,
+      "sha256": "afeda7d25e63225b7fad072123e1a6db217751e4c397051b817a613f2003e8c8"
+    },
+    {
+      "path": "parity/nb-small/summary/timed/host/resource.json",
+      "bytes": 32340,
+      "sha256": "b9fb63e3f5f2614d69ec1e4d8780e339ee2e24ccbd09f466651e1840c1007430"
+    },
+    {
+      "path": "parity/nb-small/summary/timed/run/online-summary.json",
+      "bytes": 1807,
+      "sha256": "a47deb3d9dc15a00cdb0410d4ff154acc827ed7ebe759b1a8e047f840d56474a"
+    },
+    {
+      "path": "parity/nb-small/summary/timed/run/simulator-metrics.json",
+      "bytes": 143,
+      "sha256": "2d9bfdae4f3720f30daa1c39e14a65ec47cff625dc625c9abf2f462034f79e4a"
+    },
+    {
+      "path": "parity/nb-small/summary/timed/run/validation.json",
+      "bytes": 355,
+      "sha256": "44abf912c33df7d28643c90d66389b80f5b8ea36bb6de60e08d9bdd1cd7be04e"
+    },
+    {
+      "path": "parity/nb-small/summary/timed/timing.json",
+      "bytes": 3853,
+      "sha256": "8bc414a07cb4762c7893cb5591e2828a0243c1c09a3d46e0187a5414b8c48051"
+    },
+    {
+      "path": "parity/nb-small/summary/timed/timing.json.jsonl",
+      "bytes": 105877,
+      "sha256": "2f8c04bd580745bc50ee1263931f3110f587a95018a3b352bf60c137032f0482"
+    },
+    {
+      "path": "python/input-summary.json",
+      "bytes": 40955,
+      "sha256": "7d15998ce987733f6492d10a9dcbe030dc00c3de13948019357f9693d46781a5"
+    },
+    {
+      "path": "python/ledger.json",
+      "bytes": 65615,
+      "sha256": "1c0c8e71410bc307d4f32e4d63ecff704624b2c1781c90f713d035501810d21f"
+    },
+    {
+      "path": "python/preflight/coverage.json",
+      "bytes": 1201,
+      "sha256": "104ed0fa76f96a453ab7a438128693196f87f092de53a63beb509c003c9d7257"
+    },
+    {
+      "path": "python/preflight/profile.pstats",
+      "bytes": 86506,
+      "sha256": "ff2742e5cd1861138970ec6f42bd9478439c0050783d6bd3ef163fb18601f22a"
+    },
+    {
+      "path": "python/preflight/stages.csv",
+      "bytes": 17197,
+      "sha256": "d04a69218bf1adaf484d27d39639b69e64ad78457ead1c6159f9e4ae05ef987d"
+    },
+    {
+      "path": "python/preflight-host/console.txt",
+      "bytes": 716,
+      "sha256": "58f286d343b2fd0dcfe0ae261a2e004e37a45079c17f12071195a03cdbf44624"
+    },
+    {
+      "path": "python/preflight-host/resource-samples.csv",
+      "bytes": 31719,
+      "sha256": "1b4603e65f0c0609492e2d695e8d9beb57c94ff892cf16ad47c0fb345968bf0c"
+    },
+    {
+      "path": "python/preflight-host/resource.json",
+      "bytes": 32768,
+      "sha256": "7a3b752d4df130894420a4dbd88a7c7dd6e44738659b8697eaf202d96ba90f6a"
+    },
+    {
+      "path": "python/preflight-result.json",
+      "bytes": 716,
+      "sha256": "58f286d343b2fd0dcfe0ae261a2e004e37a45079c17f12071195a03cdbf44624"
+    },
+    {
+      "path": "python/preparation/coverage.json",
+      "bytes": 1224,
+      "sha256": "736296275c507e47a5d9949c680b111c3b953a18b5b90ff3ddb795722175e0c4"
+    },
+    {
+      "path": "python/preparation/profile.pstats",
+      "bytes": 102796,
+      "sha256": "9cdd07f0f00cdedea1f71a33b18fe1445391323363f22b816d788e216ac38658"
+    },
+    {
+      "path": "python/preparation/stages.csv",
+      "bytes": 58088,
+      "sha256": "3316ca28f3c468f561a8d020e3a40ecfbab347bfd788c12fccc87ba4d1abb4e9"
+    },
+    {
+      "path": "python/preparation-host/console.txt",
+      "bytes": 23,
+      "sha256": "ac7f60a5009fe2fd4bf56a1655ff980d922b93ede9bacc989d75e4e66daf09de"
+    },
+    {
+      "path": "python/preparation-host/resource-samples.csv",
+      "bytes": 32037,
+      "sha256": "2ec3079546e79fc06f4b4f6955dce45a925e9d6279a81e7c3767077e4def1ca0"
+    },
+    {
+      "path": "python/preparation-host/resource.json",
+      "bytes": 32456,
+      "sha256": "c920bf17fb65d6d56e47f2ce3779577d73433a8a7f1fada011387405daba488d"
+    },
+    {
+      "path": "python/prepared/chunk-streaming/assignments.csv",
+      "bytes": 46807,
+      "sha256": "ed493e89c6a6f1178b94e732a31d776a8737a891a2be92c51cb64e6c6994a98c"
+    },
+    {
+      "path": "python/prepared/chunk-streaming/config.json",
+      "bytes": 17088310,
+      "sha256": "d92bbd79c677fb07b919c3555a8334278129bd36be027c512c1eea411338a7cf"
+    },
+    {
+      "path": "python/prepared/chunk-streaming/graph-input.txt",
+      "bytes": 3569,
+      "sha256": "a1df8e321851c1fe0db7720c3e5a6af7a33af32d5834c4b86906b5a200ff19f1"
+    },
+    {
+      "path": "python/prepared/chunk-streaming/input.txt",
+      "bytes": 17937,
+      "sha256": "f420e4874c55ec90f9c8bc22420e57ec04648ab7fd053bbc8e122f66bee54d9b"
+    },
+    {
+      "path": "python/prepared/chunk-streaming/plan.json",
+      "bytes": 1284177,
+      "sha256": "ca2507983aab1f4b91a2fbd42bbd42b9c935812da87e66e4e506b037c21e5d4a"
+    },
+    {
+      "path": "python/prepared/chunk-streaming/transfers.csv",
+      "bytes": 2939252,
+      "sha256": "0361b47ac43fae9bc05ecd20ba0cc9f7cd2e08d3a01bf6d4d354000933e7322f"
+    },
+    {
+      "path": "python/prepared/chunk-streaming/weight-edges.csv",
+      "bytes": 1382347,
+      "sha256": "1882e7bace33437605c7eb1fc4a76e51126411c3c73211a699bf787d35bf235e"
+    },
+    {
+      "path": "python/prepared/direct/assignments.csv",
+      "bytes": 46807,
+      "sha256": "ed493e89c6a6f1178b94e732a31d776a8737a891a2be92c51cb64e6c6994a98c"
+    },
+    {
+      "path": "python/prepared/direct/config.json",
+      "bytes": 1295361,
+      "sha256": "a8146c53fe48ccc869ba905892a662e74a791fb9e072329a81bff504821c7144"
+    },
+    {
+      "path": "python/prepared/direct/graph-input.txt",
+      "bytes": 3569,
+      "sha256": "b22001d1cbc2c2c66643294a2d152dea3b3b26b4594ad5912c5523a1eb0cfdc2"
+    },
+    {
+      "path": "python/prepared/direct/input.txt",
+      "bytes": 17937,
+      "sha256": "6e18c4bda7579169639639714ad08aeb191ef80158e2b8af850e2c0377782e13"
+    },
+    {
+      "path": "python/prepared/direct/plan.json",
+      "bytes": 1284177,
+      "sha256": "ca2507983aab1f4b91a2fbd42bbd42b9c935812da87e66e4e506b037c21e5d4a"
+    },
+    {
+      "path": "python/prepared/direct/transfers.csv",
+      "bytes": 126471,
+      "sha256": "7d8eced24ebe3107c82d57b654f8d086ab21ffd5054177fa20e4afd51c8a4deb"
+    },
+    {
+      "path": "python/prepared/direct/weight-edges.csv",
+      "bytes": 977,
+      "sha256": "66fc601662ded7de532d5d11d83b96c07536d85a3891723a6cc8a555e72abf1b"
+    },
+    {
+      "path": "python/prepared/expert-load.json",
+      "bytes": 1136,
+      "sha256": "443ddc0297b4fa6e0eb0c865fd2b815df032ad392746b887d090fc4975065dd6"
+    },
+    {
+      "path": "python/prepared/no-balancing/assignments.csv",
+      "bytes": 44190,
+      "sha256": "bb31e0246fb0e61d85d92e4d5873dddf5646735e103add245b28c8de240da6c8"
+    },
+    {
+      "path": "python/prepared/no-balancing/config.json",
+      "bytes": 1275976,
+      "sha256": "5a5e187f2e1f092e9f4e009443b4d84508e7001e209857df9f88353a6dc26be4"
+    },
+    {
+      "path": "python/prepared/no-balancing/graph-input.txt",
+      "bytes": 2639,
+      "sha256": "c2d41e1e7f35a75dd5461f8635f5ffa1ed580a87fde9fccff619ad44e24ab26a"
+    },
+    {
+      "path": "python/prepared/no-balancing/input.txt",
+      "bytes": 15188,
+      "sha256": "9c515139726e648f353a743c243ab150f5e9b16820f6526ca7fa9fdace32f722"
+    },
+    {
+      "path": "python/prepared/no-balancing/plan.json",
+      "bytes": 103813,
+      "sha256": "68e2fce80ebc4f4ce05f4e593e72c798d4e7a0566c2cce7bff409c06050538d4"
+    },
+    {
+      "path": "python/prepared/no-balancing/transfers.csv",
+      "bytes": 119545,
+      "sha256": "531378903729daf85543b01efaedaad0f71e99f914c2448ed388b2a97b9f4024"
+    },
+    {
+      "path": "python/prepared/no-balancing/weight-edges.csv",
+      "bytes": 44,
+      "sha256": "4f46cdfcb37e1143b093f782ccd420ed83be3a51ba945ec0fe1b821ad433b8b9"
+    },
+    {
+      "path": "python/prepared/no-balancing-direct-input/assignments.csv",
+      "bytes": 44190,
+      "sha256": "bb31e0246fb0e61d85d92e4d5873dddf5646735e103add245b28c8de240da6c8"
+    },
+    {
+      "path": "python/prepared/no-balancing-direct-input/config.json",
+      "bytes": 976221,
+      "sha256": "8f7764940992d8422f39fc9c9325f5d4281318dcf8c5b9dfb07cd4a45bb39036"
+    },
+    {
+      "path": "python/prepared/no-balancing-direct-input/input.txt",
+      "bytes": 14692,
+      "sha256": "8e38c32726e0857e48e53ee0df49547df89f4ab692965349615eb57647a4ab1c"
+    },
+    {
+      "path": "python/prepared/no-balancing-direct-input/plan.json",
+      "bytes": 103813,
+      "sha256": "68e2fce80ebc4f4ce05f4e593e72c798d4e7a0566c2cce7bff409c06050538d4"
+    },
+    {
+      "path": "python/prepared/no-balancing-direct-input/transfers.csv",
+      "bytes": 103126,
+      "sha256": "e9b787ae1f7ca2bf66953f616f6defe49cb7a200f3077b39ba7c697082d36f7f"
+    },
+    {
+      "path": "python/prepared/no-balancing-plan.json",
+      "bytes": 50805,
+      "sha256": "13bd93507c06a6648d1e31b3d58f68e25c1c09fa4d281c58a24142b42982604d"
+    },
+    {
+      "path": "python/prepared/planner-input.json",
+      "bytes": 15474,
+      "sha256": "81b35d62a53d21baca6c11e617e9fdbf68a938141aed28e1d3f4d4c103750443"
+    },
+    {
+      "path": "python/prepared/preparation-metrics.json",
+      "bytes": 212,
+      "sha256": "32410f4c4e326d2729067655b22e344ad1415358d08217d6440906e03dc8820f"
+    },
+    {
+      "path": "python/prepared/routing.csv",
+      "bytes": 24525,
+      "sha256": "f0991ce98219ff3c4f008b40c703f05fb9a63ecb714dba2d3e923f1e07c2d59d"
+    },
+    {
+      "path": "python/prepared/ultraep-direct-input/assignments.csv",
+      "bytes": 46807,
+      "sha256": "ed493e89c6a6f1178b94e732a31d776a8737a891a2be92c51cb64e6c6994a98c"
+    },
+    {
+      "path": "python/prepared/ultraep-direct-input/config.json",
+      "bytes": 991860,
+      "sha256": "fa771ec0b52a2fd3a131599c5122c02bb5a813f00ef474208313a2d97474e7e0"
+    },
+    {
+      "path": "python/prepared/ultraep-direct-input/input.txt",
+      "bytes": 17245,
+      "sha256": "c5f9fa48e71bb541d2cf9cbb7972d49c380a8d0ebe929500d073228cdd49f94c"
+    },
+    {
+      "path": "python/prepared/ultraep-direct-input/plan.json",
+      "bytes": 1284177,
+      "sha256": "ca2507983aab1f4b91a2fbd42bbd42b9c935812da87e66e4e506b037c21e5d4a"
+    },
+    {
+      "path": "python/prepared/ultraep-direct-input/transfers.csv",
+      "bytes": 109825,
+      "sha256": "ff26c95897b13a2d8af220efdba71f8573f86374207081ba261304ad91e3484a"
+    },
+    {
+      "path": "python/prepared/ultraep-plan.json",
+      "bytes": 408335,
+      "sha256": "7d1681579aa6d9b5265bcb61f3e2344e83f99ac8b888903542b6ef3733e992d7"
+    },
+    {
+      "path": "python/signal-smoke/coverage.json",
+      "bytes": 840,
+      "sha256": "c3dd705b206b264ed531499ff356ce7b38c98a8257ce64a2561d61fc19f80650"
+    },
+    {
+      "path": "python/signal-smoke/profile.pstats",
+      "bytes": 5905,
+      "sha256": "259af017e8c292cdad1476a8cb2328d8b056f4cc96482485ad1ce6bc1bfe772c"
+    },
+    {
+      "path": "python/signal-smoke/stages.csv",
+      "bytes": 94,
+      "sha256": "d96f35faf06f23cda9cd37c421ae1f94ea0262850ce58e4f641e7bb3f20d86bf"
+    },
+    {
+      "path": "python/signal-smoke.py",
+      "bytes": 40,
+      "sha256": "e48c5cdd0e62b28d9c97ffaacd66ad640c5aa5cc008c887a1b81f5f9d500d900"
+    },
+    {
+      "path": "python/smoke/coverage.json",
+      "bytes": 893,
+      "sha256": "9e4f8946ac83a7032e8e82ed708429e2447448d5a8bf976ff73631f701ad77d0"
+    },
+    {
+      "path": "python/smoke/profile.pstats",
+      "bytes": 71788,
+      "sha256": "6ca53fd4e408a4f93fba9abb8989a58e78bc3dc888cb283b70a410e2929d7497"
+    },
+    {
+      "path": "python/smoke/result.json",
+      "bytes": 714,
+      "sha256": "a714e007e36013d6faf73520c62aedb29dbc587a2ad3c071a677231e049a68ee"
+    },
+    {
+      "path": "python/smoke/stages.csv",
+      "bytes": 14397,
+      "sha256": "9275903d41b6c54665a1f08fc6ea9a3aac69fcff53f94cdf9a9af73e65525913"
+    },
+    {
+      "path": "postflight/direct-control/host/console.txt",
+      "bytes": 715,
+      "sha256": "a15dfaad29e83921bcbecc106d3e9d4043a94c641045a21a22a9f27361e6b735"
+    },
+    {
+      "path": "postflight/direct-control/host/resource-samples.csv",
+      "bytes": 105,
+      "sha256": "e1698fa9c97a65c3eac2c35b5878e6ec9d22771bb7118b6d2ea36732ec2c814b"
+    },
+    {
+      "path": "postflight/direct-control/host/resource.json",
+      "bytes": 32436,
+      "sha256": "d8201a80c4b3eabceadbc3a4d4b10b1cd61af3925474084971b318277c8d872c"
+    },
+    {
+      "path": "postflight/direct-control/result.json",
+      "bytes": 715,
+      "sha256": "a15dfaad29e83921bcbecc106d3e9d4043a94c641045a21a22a9f27361e6b735"
+    },
+    {
+      "path": "postflight/direct-sampled/host/console.txt",
+      "bytes": 715,
+      "sha256": "a15dfaad29e83921bcbecc106d3e9d4043a94c641045a21a22a9f27361e6b735"
+    },
+    {
+      "path": "postflight/direct-sampled/host/resource-samples.csv",
+      "bytes": 105,
+      "sha256": "2ba64a7df68d362ba883fe21471ffcfd9ac0a77141b3c6746ff08c3081edd0c8"
+    },
+    {
+      "path": "postflight/direct-sampled/host/resource.json",
+      "bytes": 32435,
+      "sha256": "912adb3bf7e27b0ba0c3628bfd29e418acc223a220f8f9c21c83e40a64ea7e92"
+    },
+    {
+      "path": "postflight/direct-sampled/result.json",
+      "bytes": 715,
+      "sha256": "a15dfaad29e83921bcbecc106d3e9d4043a94c641045a21a22a9f27361e6b735"
+    },
+    {
+      "path": "postflight/direct-timed/host/console.txt",
+      "bytes": 715,
+      "sha256": "a15dfaad29e83921bcbecc106d3e9d4043a94c641045a21a22a9f27361e6b735"
+    },
+    {
+      "path": "postflight/direct-timed/host/resource-samples.csv",
+      "bytes": 105,
+      "sha256": "05a2dc18487ee9e9611fb5b5ffcebfec5607663d0321c1cfab3f7b9a310eba95"
+    },
+    {
+      "path": "postflight/direct-timed/host/resource.json",
+      "bytes": 32432,
+      "sha256": "89ff365dd46691cbb650bcb9158c41863531358743d1660130dc773bd15b0a17"
+    },
+    {
+      "path": "postflight/direct-timed/result.json",
+      "bytes": 715,
+      "sha256": "a15dfaad29e83921bcbecc106d3e9d4043a94c641045a21a22a9f27361e6b735"
+    },
+    {
+      "path": "postflight/no-balancing-control/host/console.txt",
+      "bytes": 714,
+      "sha256": "a714e007e36013d6faf73520c62aedb29dbc587a2ad3c071a677231e049a68ee"
+    },
+    {
+      "path": "postflight/no-balancing-control/host/resource-samples.csv",
+      "bytes": 105,
+      "sha256": "265daabdd28e8831aa28df2c868b57fa20b9435cc59a9eaaf943e0b537e2c945"
+    },
+    {
+      "path": "postflight/no-balancing-control/host/resource.json",
+      "bytes": 32455,
+      "sha256": "44516990bd9f140f33c3e3081ce5c9eb86a09711ea3c96e561a47dcd2b4b25e5"
+    },
+    {
+      "path": "postflight/no-balancing-control/result.json",
+      "bytes": 714,
+      "sha256": "a714e007e36013d6faf73520c62aedb29dbc587a2ad3c071a677231e049a68ee"
+    },
+    {
+      "path": "postflight/no-balancing-timed/host/console.txt",
+      "bytes": 714,
+      "sha256": "a714e007e36013d6faf73520c62aedb29dbc587a2ad3c071a677231e049a68ee"
+    },
+    {
+      "path": "postflight/no-balancing-timed/host/resource-samples.csv",
+      "bytes": 105,
+      "sha256": "9ef5723822753b5b9640dd98b0f14aaeac1eaf105e4328a372149bd08b75e9b2"
+    },
+    {
+      "path": "postflight/no-balancing-timed/host/resource.json",
+      "bytes": 32462,
+      "sha256": "7cec4c6dce59db11bf8cd781ea0b8f1b6fa1528c5f43eb0be9e62cb7e59e9bcc"
+    },
+    {
+      "path": "postflight/no-balancing-timed/result.json",
+      "bytes": 714,
+      "sha256": "a714e007e36013d6faf73520c62aedb29dbc587a2ad3c071a677231e049a68ee"
+    },
+    {
+      "path": "postflight/results.json",
+      "bytes": 5427,
+      "sha256": "49b33e3a40dbff8f11c26e66c949a7f92ab66c370f912671d54f9f2c9c82b768"
+    },
+    {
+      "path": "faults/duplicate-completion/validation.json",
+      "bytes": 72,
+      "sha256": "4b1cfe694bfd1eddfaf874007017efd7bd73d0a7fb04cc53e390ea12904e6f59"
+    },
+    {
+      "path": "faults/duplicate-weight/validation.json",
+      "bytes": 49,
+      "sha256": "ed944dc04a9892a4da0ec0806905122242b71bd31090244912e9b2fce632294e"
+    },
+    {
+      "path": "faults/early-compute/validation.json",
+      "bytes": 58,
+      "sha256": "2a6c4610fdf07e7ac2965e5479a34a48a13d4a4ed2f3f911b5e3718af788e53d"
+    },
+    {
+      "path": "faults/early-final-ready/validation.json",
+      "bytes": 68,
+      "sha256": "0408beef7a0887d747d434ac16a0817fdad379f23a98624bfc92d6fd4e40d789"
+    },
+    {
+      "path": "faults/early-group/validation.json",
+      "bytes": 78,
+      "sha256": "9583386daf8c61196fa6ecc194cfde2a4d7e6af8f9424c43715ef9746ba505a2"
+    },
+    {
+      "path": "faults/early-relay/validation.json",
+      "bytes": 78,
+      "sha256": "9583386daf8c61196fa6ecc194cfde2a4d7e6af8f9424c43715ef9746ba505a2"
+    },
+    {
+      "path": "faults/early-wqe/validation.json",
+      "bytes": 70,
+      "sha256": "5a01e78eb80b42336b512fca57eb8041a8450f1610ec6f1d2aaeaddfc672247e"
+    },
+    {
+      "path": "faults/missing-wqe/validation.json",
+      "bytes": 45,
+      "sha256": "8104e684a3d8c9be92b9e654876b661b9cbf820e38f34db312fb415adb4d8ea5"
+    },
+    {
+      "path": "faults/payload-byte/validation.json",
+      "bytes": 50,
+      "sha256": "7abf6f7129dccf39d0057fb8e26a36b68891edacae8be8bbe2bffb7dd6a673ee"
+    },
+    {
+      "path": "faults/premature-ready/validation.json",
+      "bytes": 68,
+      "sha256": "c103d00e9b208dea00be423bc3893d4561bd45874395d46e4dc07e1d388a55af"
+    },
+    {
+      "path": "faults/relay-buffer-byte/validation.json",
+      "bytes": 50,
+      "sha256": "7abf6f7129dccf39d0057fb8e26a36b68891edacae8be8bbe2bffb7dd6a673ee"
+    },
+    {
+      "path": "faults/relay-byte/validation.json",
+      "bytes": 50,
+      "sha256": "7abf6f7129dccf39d0057fb8e26a36b68891edacae8be8bbe2bffb7dd6a673ee"
+    },
+    {
+      "path": "faults/results.json",
+      "bytes": 2637,
+      "sha256": "331ddbe0d386ba9cf3741f056681f522d8fd8341bf0e27f11164eb9cc56593f3"
+    },
+    {
+      "path": "faults/weight-byte/validation.json",
+      "bytes": 50,
+      "sha256": "7abf6f7129dccf39d0057fb8e26a36b68891edacae8be8bbe2bffb7dd6a673ee"
+    },
+    {
+      "path": "faults-enabled/duplicate-completion/timing.json",
+      "bytes": 3837,
+      "sha256": "7243a6a4339e4ae40090589319ddad77698d105d9c902879085023f76edb173b"
+    },
+    {
+      "path": "faults-enabled/duplicate-completion/timing.json.jsonl",
+      "bytes": 75055,
+      "sha256": "f5642b54500280464f35210f3c1e541d17b2494bb7614667b489cc3e38852a3d"
+    },
+    {
+      "path": "faults-enabled/duplicate-completion/validation.json",
+      "bytes": 72,
+      "sha256": "4b1cfe694bfd1eddfaf874007017efd7bd73d0a7fb04cc53e390ea12904e6f59"
+    },
+    {
+      "path": "faults-enabled/duplicate-weight/timing.json",
+      "bytes": 3770,
+      "sha256": "de6f24f95439689c2df7f140e1d4449d9a2e7c788c43689e7413586797e703b6"
+    },
+    {
+      "path": "faults-enabled/duplicate-weight/timing.json.jsonl",
+      "bytes": 74821,
+      "sha256": "ab7142955a8cca50650f2b45ca3f389f9ddd41510db5edaf2d25562d35bd876f"
+    },
+    {
+      "path": "faults-enabled/duplicate-weight/validation.json",
+      "bytes": 49,
+      "sha256": "ed944dc04a9892a4da0ec0806905122242b71bd31090244912e9b2fce632294e"
+    },
+    {
+      "path": "faults-enabled/early-compute/timing.json",
+      "bytes": 3778,
+      "sha256": "68bc0587af38819a40269f404d5a8f32012cea238ddc99dc2d6cb6a9cd103a0d"
+    },
+    {
+      "path": "faults-enabled/early-compute/timing.json.jsonl",
+      "bytes": 74810,
+      "sha256": "d32e53566e12b495d910930546ed9b26fb935b67eb427326aaa6745a67d95847"
+    },
+    {
+      "path": "faults-enabled/early-compute/validation.json",
+      "bytes": 58,
+      "sha256": "2a6c4610fdf07e7ac2965e5479a34a48a13d4a4ed2f3f911b5e3718af788e53d"
+    },
+    {
+      "path": "faults-enabled/early-final-ready/timing.json",
+      "bytes": 3829,
+      "sha256": "99ea5f4a04e028f4ad3331c2ed6592509946a7f7f06aa27a40e2a29c619b6e35"
+    },
+    {
+      "path": "faults-enabled/early-final-ready/timing.json.jsonl",
+      "bytes": 75021,
+      "sha256": "fc1f92c3daed97f5e95887a032219970c237276445481bb6397667a0a0cbba45"
+    },
+    {
+      "path": "faults-enabled/early-final-ready/validation.json",
+      "bytes": 68,
+      "sha256": "0408beef7a0887d747d434ac16a0817fdad379f23a98624bfc92d6fd4e40d789"
+    },
+    {
+      "path": "faults-enabled/early-group/timing.json",
+      "bytes": 3839,
+      "sha256": "d6689f9abfd97947257037f489d28e3554b3b2d85a9911256c05f06cce491447"
+    },
+    {
+      "path": "faults-enabled/early-group/timing.json.jsonl",
+      "bytes": 75161,
+      "sha256": "4dcfbad76c18cc2b585ff1551dc9bf22aadfde111fc219de6bd761eba181b1fe"
+    },
+    {
+      "path": "faults-enabled/early-group/validation.json",
+      "bytes": 78,
+      "sha256": "9583386daf8c61196fa6ecc194cfde2a4d7e6af8f9424c43715ef9746ba505a2"
+    },
+    {
+      "path": "faults-enabled/early-relay/timing.json",
+      "bytes": 3780,
+      "sha256": "c6b3526d502baf2daf260b75a49551ff4b4295b88b9f4a18d58e7c019eb37984"
+    },
+    {
+      "path": "faults-enabled/early-relay/timing.json.jsonl",
+      "bytes": 74860,
+      "sha256": "9d23d25f0b2b8d2f98f0175ed3f6cda8fab6f4e8a17805dd30c2fb431d872ee2"
+    },
+    {
+      "path": "faults-enabled/early-relay/validation.json",
+      "bytes": 78,
+      "sha256": "9583386daf8c61196fa6ecc194cfde2a4d7e6af8f9424c43715ef9746ba505a2"
+    },
+    {
+      "path": "faults-enabled/early-wqe/timing.json",
+      "bytes": 3769,
+      "sha256": "29be4ddc82a2d64251549daf4081f0c822b9c1e16d2e03f31d197a95abc0cd28"
+    },
+    {
+      "path": "faults-enabled/early-wqe/timing.json.jsonl",
+      "bytes": 74786,
+      "sha256": "7e27c5300176ea6e3fc2babef2297a3ce1fe619b70be326f8489e3480bf6741a"
+    },
+    {
+      "path": "faults-enabled/early-wqe/validation.json",
+      "bytes": 70,
+      "sha256": "5a01e78eb80b42336b512fca57eb8041a8450f1610ec6f1d2aaeaddfc672247e"
+    },
+    {
+      "path": "faults-enabled/missing-wqe/timing.json",
+      "bytes": 3890,
+      "sha256": "bb64803cc192f2da16a5554a27de26191a288fc4f5d1dbb5f7ddeb19530d0fb0"
+    },
+    {
+      "path": "faults-enabled/missing-wqe/timing.json.jsonl",
+      "bytes": 75264,
+      "sha256": "cb4699d3a6c38565e940c846426ac601ef11f88720881b54a3b9746666abe76a"
+    },
+    {
+      "path": "faults-enabled/missing-wqe/validation.json",
+      "bytes": 45,
+      "sha256": "8104e684a3d8c9be92b9e654876b661b9cbf820e38f34db312fb415adb4d8ea5"
+    },
+    {
+      "path": "faults-enabled/payload-byte/timing.json",
+      "bytes": 3820,
+      "sha256": "4ef42e4440990c12d71e03cf6d2e0bb1e52771bf70af1980d738861f347865fb"
+    },
+    {
+      "path": "faults-enabled/payload-byte/timing.json.jsonl",
+      "bytes": 75030,
+      "sha256": "447da077583a271bfe22b78891546c6726f1c06065546f51a56a4fc7bba5f7c8"
+    },
+    {
+      "path": "faults-enabled/payload-byte/validation.json",
+      "bytes": 50,
+      "sha256": "7abf6f7129dccf39d0057fb8e26a36b68891edacae8be8bbe2bffb7dd6a673ee"
+    },
+    {
+      "path": "faults-enabled/premature-ready/timing.json",
+      "bytes": 3779,
+      "sha256": "f4ee85c9e52127e6880625dd0d7d9404d2b867e97233485a01740e0818049c6b"
+    },
+    {
+      "path": "faults-enabled/premature-ready/timing.json.jsonl",
+      "bytes": 74847,
+      "sha256": "889eaa869e8e25dff71570c7136fc04227d9adc9742eea08f4ca06fadd45ea2c"
+    },
+    {
+      "path": "faults-enabled/premature-ready/validation.json",
+      "bytes": 68,
+      "sha256": "c103d00e9b208dea00be423bc3893d4561bd45874395d46e4dc07e1d388a55af"
+    },
+    {
+      "path": "faults-enabled/relay-buffer-byte/timing.json",
+      "bytes": 3837,
+      "sha256": "1007622951b8be271bb12db7e7b7fa5c7bba4b1518465dad8530af342612a39a"
+    },
+    {
+      "path": "faults-enabled/relay-buffer-byte/timing.json.jsonl",
+      "bytes": 75051,
+      "sha256": "bfd19221fdac04f983ddb980ce13d8a9b7319444a850ae75d27960d34fa1b716"
+    },
+    {
+      "path": "faults-enabled/relay-buffer-byte/validation.json",
+      "bytes": 50,
+      "sha256": "7abf6f7129dccf39d0057fb8e26a36b68891edacae8be8bbe2bffb7dd6a673ee"
+    },
+    {
+      "path": "faults-enabled/relay-byte/timing.json",
+      "bytes": 3845,
+      "sha256": "4d54ff22ed8374d9b9c6cf0420c556d17d1fffb108aeebfb6481176520722022"
+    },
+    {
+      "path": "faults-enabled/relay-byte/timing.json.jsonl",
+      "bytes": 75114,
+      "sha256": "81dee415bec5309ccfd5e0a5fb1d976ba23c847604c3b1cc8ad0731a155a549f"
+    },
+    {
+      "path": "faults-enabled/relay-byte/validation.json",
+      "bytes": 50,
+      "sha256": "7abf6f7129dccf39d0057fb8e26a36b68891edacae8be8bbe2bffb7dd6a673ee"
+    },
+    {
+      "path": "faults-enabled/results.json",
+      "bytes": 3066,
+      "sha256": "9191468b718ae341b29137d586536861d210f01bd2c726a39645e13198a2d41a"
+    },
+    {
+      "path": "faults-enabled/weight-byte/timing.json",
+      "bytes": 3821,
+      "sha256": "525682d5de0de75bde9f0d8e09e23fab939f610b0a2c2c04bfc57e2bacf554c9"
+    },
+    {
+      "path": "faults-enabled/weight-byte/timing.json.jsonl",
+      "bytes": 74999,
+      "sha256": "889403e68314feaf4e7b4b8a03a1ba13bc3b8bdb0b16edb3ab3d867f4b8a726e"
+    },
+    {
+      "path": "faults-enabled/weight-byte/validation.json",
+      "bytes": 50,
+      "sha256": "7abf6f7129dccf39d0057fb8e26a36b68891edacae8be8bbe2bffb7dd6a673ee"
+    },
+    {
+      "path": "faults-host/console.txt",
+      "bytes": 8,
+      "sha256": "f8fe3c78f6dd79c8e2f815ad4071945e754b1904fce70349bf7737f8e734a670"
+    },
+    {
+      "path": "faults-host/resource-samples.csv",
+      "bytes": 143,
+      "sha256": "888f75d97d713f0debe3798de87e483c432d18cef8b1bec1cd41c08709361b61"
+    },
+    {
+      "path": "faults-host/resource.json",
+      "bytes": 32333,
+      "sha256": "74448acef431cacc17e9401e6230a1bdf2fcc07665b2a0dcc6c6033369642955"
+    },
+    {
+      "path": "faults-enabled-host/console.txt",
+      "bytes": 8,
+      "sha256": "f8fe3c78f6dd79c8e2f815ad4071945e754b1904fce70349bf7737f8e734a670"
+    },
+    {
+      "path": "faults-enabled-host/resource-samples.csv",
+      "bytes": 143,
+      "sha256": "9b8f1e7cdd970a8c1333af924d5499e81e77a25422f3526c963ce06330e68443"
+    },
+    {
+      "path": "faults-enabled-host/resource.json",
+      "bytes": 32338,
+      "sha256": "3dce9d40008c339e7d2125e37b907e8e624bb3ed2c92729802f8e73a869bafe8"
+    },
+    {
+      "path": "build-host/console.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "build-host/resource-samples.csv",
+      "bytes": 2663,
+      "sha256": "9f359a6a78edc4dede1ec7e09a458c7570e01169e7086dd1493aecddcae9f44a"
+    },
+    {
+      "path": "build-host/resource.json",
+      "bytes": 31981,
+      "sha256": "5599f481dae4d081d8c7ae19fd85ea50d40e6dda0db9395f0b7ec9c27597c0cb"
+    },
+    {
+      "path": "aux/build-instrumented.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "aux/calibration-hotloop",
+      "bytes": 18416,
+      "sha256": "f7909fc4d04790696cea53616f719fee33debeaab0c61eb2a7da4f29d7da7b54"
+    },
+    {
+      "path": "aux/custom-smoke.data",
+      "bytes": 4868,
+      "sha256": "6ef449f3e99edf09a7d5af052b9c0b58dcb1b461ba9ce3e16acd97282dd9db21"
+    },
+    {
+      "path": "aux/custom-smoke.txt",
+      "bytes": 275,
+      "sha256": "20df240bb809ac954c7a325224e6d692c2cfc44f485ab8bebd89dfad5d541ef0"
+    },
+    {
+      "path": "aux/instrument-generation.json",
+      "bytes": 1868,
+      "sha256": "94f73c1f0588bb5f75dd7a3351e11053bee766e222bb581a26a3aaf40a84ddf5"
+    },
+    {
+      "path": "aux/perf-permission.txt",
+      "bytes": 52,
+      "sha256": "894d8a66c03b002b127732dd7c9a9fb54571bae954995c51d740bfb42b9fc33e"
+    },
+    {
+      "path": "aux/perf-probe",
+      "bytes": 16136,
+      "sha256": "eec5596d894f6a88d2a9750e1dbb3ae32863f275496c82428ad8ac25f3fd7cac"
+    },
+    {
+      "path": "aux/perf-record-permission.txt",
+      "bytes": 291,
+      "sha256": "cff39145190693c1b88aa84fa9ebc5e86ba0939b19256bf3defefa5c2dfa3d8c"
+    },
+    {
+      "path": "aux/perf-setup.log",
+      "bytes": 3508,
+      "sha256": "5dcb1b7acfc088d29ccbd3ea2ca1dfb653277d5ff59c9f85fbbbf0a87b75d0fd"
+    },
+    {
+      "path": "aux/permission.data",
+      "bytes": 1976,
+      "sha256": "e2f5e05dc25f2a11daee0a3fb67f438ffa437b8605be7c3c5e81bf21d8d9db51"
+    },
+    {
+      "path": "aux/profiler-binaries.sha256",
+      "bytes": 422,
+      "sha256": "89053507eed8004c71356000c8c046118bffc5f9acfc9a28beb1b98b9ebff3f4"
+    },
+    {
+      "path": "aux/record",
+      "bytes": 45024,
+      "sha256": "80174b3b504c5068b8d4a9529b80b2af008f6ef51c0da4178fcb5c59df920ae8"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+symbol,samples,percent
+main (/workspace/scratch/c6ba02920254/qwen-model-size-raw/build-capacity-v2/pair-layer),2154,99.81464318813717
+"Layer::Run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (/workspace/scratch/c6ba02920254/qwen-model-size-raw/build-capacity-v2/pair-layer)",2149,99.58294717330863
+[unknown] (/usr/lib/x86_64-linux-gnu/libc.so.6),2123,98.37812789620018
+__libc_start_main (/usr/lib/x86_64-linux-gnu/libc.so.6),2070,95.9221501390176
+_start (/workspace/scratch/c6ba02920254/qwen-model-size-raw/build-capacity-v2/pair-layer),1846,85.5421686746988
+ns3::DefaultSimulatorImpl::Run() (/workspace/scratch/c6ba02920254/wqe-completion-native/build/lib/libns3.44-core.so),1631,75.57924003707136
+ns3::DefaultSimulatorImpl::ProcessOneEvent() (/workspace/scratch/c6ba02920254/wqe-completion-native/build/lib/libns3.44-core.so),1622,75.16218721037998
+"Layer::WeightByte(unsigned int, unsigned long) (inlined)",897,41.566265060240966
+"Layer::ExpectedByte(unsigned int, unsigned long) (inlined)",728,33.734939759036145
+"std::_Function_handler<void (), std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)> >::_M_invoke(std::_Any_data const&) (/workspace/scratch/c6ba02920254/wqe-completion-native/build/lib/libns3.44-unified-bus.so)",725,33.59592215013902
+"std::__invoke_result<void (ns3::UbPort::*&)(ns3::Ptr<ns3::Packet>), ns3::Ptr<ns3::UbPort>&, ns3::Ptr<ns3::Packet>&>::type std::__invoke<void (ns3::UbPort::*&)(ns3::Ptr<ns3::Packet>), ns3::Ptr<ns3::UbPort>&, ns3::Ptr<ns3::Packet>&>(void (ns3::UbPort::*&)(ns3::Ptr<ns3::Packet>), ns3::Ptr<ns3::UbPort>&, ns3::Ptr<ns3::Packet>&) (inlined)",725,33.59592215013902
+"std::enable_if<is_invocable_r_v<void, std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)>&>, void>::type std::__invoke_r<void, std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)>&>(std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)>&) (inlined)",725,33.59592215013902
+"void std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)>::__call<void, , 0ul, 1ul>(std::tuple<>&&, std::_Index_tuple<0ul, 1ul>) (inlined)",725,33.59592215013902
+"void std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)>::operator()<, void>() (inlined)",725,33.59592215013902
+"void std::__invoke_impl<void, std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)>&>(std::__invoke_other, std::_Bind<void (ns3::UbPort::*(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>))(ns3::Ptr<ns3::Packet>)>&) (inlined)",725,33.59592215013902
+"void std::__invoke_impl<void, void (ns3::UbPort::*&)(ns3::Ptr<ns3::Packet>), ns3::Ptr<ns3::UbPort>&, ns3::Ptr<ns3::Packet>&>(std::__invoke_memfun_deref, void (ns3::UbPort::*&)(ns3::Ptr<ns3::Packet>), ns3::Ptr<ns3::UbPort>&, ns3::Ptr<ns3::Packet>&) (inlined)",725,33.59592215013902
+ns3::UbPort::Receive(ns3::Ptr<ns3::Packet>) (/workspace/scratch/c6ba02920254/wqe-completion-native/build/lib/libns3.44-unified-bus.so),722,33.45690454124189
+ns3::UbPort::DispatchReceive(ns3::Ptr<ns3::Packet>) (/workspace/scratch/c6ba02920254/wqe-completion-native/build/lib/libns3.44-unified-bus.so),719,33.31788693234476
+ns3::UbPort::HandleWithUbSwitch(ns3::Ptr<ns3::Packet>) (/workspace/scratch/c6ba02920254/wqe-completion-native/build/lib/libns3.44-unified-bus.so),717,33.22520852641335
+"ns3::UbSwitch::SwitchHandlePacket(ns3::Ptr<ns3::UbPort>, ns3::Ptr<ns3::Packet>) (/workspace/scratch/c6ba02920254/wqe-completion-native/build/lib/libns3.44-unified-bus.so)",716,33.178869323447636

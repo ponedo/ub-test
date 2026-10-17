@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="710" viewBox="0 0 1600 710">
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="monospace" font-size="12" fill="#172554">
+<text x="20" y="27" font-size="18">direct-sampled: inclusive Top20</text>
+<text x="20" y="51">Unit: sample records; denominator: 2158; inclusive membership counted once per symbol per sample.</text>
+<text x="20" y="94"><title>main (/workspace/scratch/c6ba02920254/qwen-model-size-raw/build-capacity-v2/pair-layer)</title>main (/workspace/scratch/c6ba02920254/qwen-model-size-raw/build-capacity-v2/pair-layer)</text>
+<rect x="1060" y="80" width="390.00" height="20" fill="#2563eb"/>
+<text x="1460" y="94">2154 (99.81%)</text>
+<text x="20" y="124"><title>Layer::Run(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;) (/workspace/scratch/c6ba02920254/qwen-model-size-raw/build-capacity-v2/pair-layer)</title>Layer::Run(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;, std::__cxx11::basic_string&lt;char, st...</text>
+<rect x="1060" y="110" width="389.09" height="20" fill="#2563eb"/>
+<text x="1460" y="124">2149 (99.58%)</text>
+<text x="20" y="154"><title>[unknown] (/usr/lib/x86_64-linux-gnu/libc.so.6)</title>[unknown] (/usr/lib/x86_64-linux-gnu/libc.so.6)</text>
+<rect x="1060" y="140" width="384.39" height="20" fill="#2563eb"/>
+<text x="1460" y="154">2123 (98.38%)</text>
+<text x="20" y="184"><title>__libc_start_main (/usr/lib/x86_64-linux-gnu/libc.so.6)</title>__libc_start_main (/usr/lib/x86_64-linux-gnu/libc.so.6)</text>
+<rect x="1060" y="170" width="374.79" height="20" fill="#2563eb"/>
+<text x="1460" y="184">2070 (95.92%)</text>
+<text x="20" y="214"><title>_start (/workspace/scratch/c6ba02920254/qwen-model-size-raw/build-capacity-v2/pair-layer)</title>_start (/workspace/scratch/c6ba02920254/qwen-model-size-raw/build-capacity-v2/pair-layer)</text>
+<rect x="1060" y="200" width="334.23" height="20" fill="#2563eb"/>
+<text x="1460" y="214">1846 (85.54%)</text>
+<text x="20" y="244"><title>ns3::DefaultSimulatorImpl::Run() (/workspace/scratch/c6ba02920254/wqe-completion-native/build/lib/libns3.44-core.so)</title>ns3::DefaultSimulatorImpl::Run() (/workspace/scratch/c6ba02920254/wqe-completion-native/build/lib/libns3.44-core.so)</text>
+<rect x="1060" y="230" width="295.31" height="20" fill="#2563eb"/>
+<text x="1460" y="244">1631 (75.58%)</text>
+<text x="20" y="274"><title>ns3::DefaultSimulatorImpl::ProcessOneEvent() (/workspace/scratch/c6ba02920254/wqe-completion-native/build/lib/libns3.44-core.so)</title>ns3::DefaultSimulatorImpl::ProcessOneEvent() (/workspace/scratch/c6ba02920254/wqe-completion-native/build/lib/libns3.44-core.so)</text>
+<rect x="1060" y="260" width="293.68" height="20" fill="#2563eb"/>
+<text x="1460" y="274">1622 (75.16%)</text>
+<text x="20" y="304"><title>Layer::WeightByte(unsigned int, unsigned long) (inlined)</title>Layer::WeightByte(unsigned int, unsigned long) (inlined)</text>
+<rect x="1060" y="290" width="162.41" height="20" fill="#2563eb"/>
+<text x="1460" y="304">897 (41.57%)</text>
+<text x="20" y="334"><title>Layer::ExpectedByte(unsigned int, unsigned long) (inlined)</title>Layer::ExpectedByte(unsigned int, unsigned long) (inlined)</text>
+<rect x="1060" y="320" width="131.81" height="20" fill="#2563eb"/>
+<text x="1460" y="334">728 (33.73%)</text>
+<text x="20" y="364"><title>std::_Function_handler&lt;void (), std::_Bind&lt;void (ns3::UbPort::*(ns3::Ptr&lt;ns3::UbPort&gt;, ns3::Ptr&lt;ns3::Packet&gt;))(ns3::Ptr&lt;ns3::Packet&gt;)&gt; &gt;::_M_invoke(std::_Any_data const&amp;) (/workspace/scratch/c6ba02920254/wqe-completion-native/build/lib/libns3.44-unified-bus.so)</title>std::_Function_handler&lt;void (), std::_Bind&lt;void (ns3::UbPort::*(ns3::Ptr&lt;ns3::UbPort&gt;, ns3::Ptr&lt;ns3::Packet&gt;))(ns3::Ptr&lt;ns3::Packet&gt;)&gt;...</text>
+<rect x="1060" y="350" width="131.27" height="20" fill="#2563eb"/>
+<text x="1460" y="364">725 (33.60%)</text>
+<text x="20" y="394"><title>std::__invoke_result&lt;void (ns3::UbPort::*&amp;)(ns3::Ptr&lt;ns3::Packet&gt;), ns3::Ptr&lt;ns3::UbPort&gt;&amp;, ns3::Ptr&lt;ns3::Packet&gt;&amp;&gt;::type std::__invoke&lt;void (ns3::UbPort::*&amp;)(ns3::Ptr&lt;ns3::Packet&gt;), ns3::Ptr&lt;ns3::UbPort&gt;&amp;, ns3::Ptr&lt;ns3::Packet&gt;&amp;&gt;(void (ns3::UbPort::*&amp;)(ns3::Ptr&lt;ns3::Packet&gt;), ns3::Ptr&lt;ns3::UbPort&gt;&amp;, ns3::Ptr&lt;ns3::Packet&gt;&amp;) (inlined)</title>std::__invoke_result&lt;void (ns3::UbPort::*&amp;)(ns3::Ptr&lt;ns3::Packet&gt;), ns3::Ptr&lt;ns3::UbPort&gt;&amp;, ns3::Ptr&lt;ns3::Packet&gt;&amp;&gt;::type std::__invok...</text>
+<rect x="1060" y="380" width="131.27" height="20" fill="#2563eb"/>
+<text x="1460" y="394">725 (33.60%)</text>
+<text x="20" y="424"><title>std::enable_if&lt;is_invocable_r_v&lt;void, std::_Bind&lt;void (ns3::UbPort::*(ns3::Ptr&lt;ns3::UbPort&gt;, ns3::Ptr&lt;ns3::Packet&gt;))(ns3::Ptr&lt;ns3::Packet&gt;)&gt;&amp;&gt;, void&gt;::type std::__invoke_r&lt;void, std::_Bind&lt;void (ns3::UbPort::*(ns3::Ptr&lt;ns3::UbPort&gt;, ns3::Ptr&lt;ns3::Packet&gt;))(ns3::Ptr&lt;ns3::Packet&gt;)&gt;&amp;&gt;(std::_Bind&lt;void (ns3::UbPort::*(ns3::Ptr&lt;ns3::UbPort&gt;, ns3::Ptr&lt;ns3::Packet&gt;))(ns3::Ptr&lt;ns3::Packet&gt;)&gt;&amp;) (inlined)</title>std::enable_if&lt;is_invocable_r_v&lt;void, std::_Bind&lt;void (ns3::UbPort::*(ns3::Ptr&lt;ns3::UbPort&gt;, ns3::Ptr&lt;ns3::Packet&gt;))(ns3::Ptr&lt;ns3::Pac...</text>
+<rect x="1060" y="410" width="131.27" height="20" fill="#2563eb"/>
+<text x="1460" y="424">725 (33.60%)</text>
+<text x="20" y="454"><title>void std::_Bind&lt;void (ns3::UbPort::*(ns3::Ptr&lt;ns3::UbPort&gt;, ns3::Ptr&lt;ns3::Packet&gt;))(ns3::Ptr&lt;ns3::Packet&gt;)&gt;::__call&lt;void, , 0ul, 1ul&gt;(std::tuple&lt;&gt;&amp;&amp;, std::_Index_tuple&lt;0ul, 1ul&gt;) (inlined)</title>void std::_Bind&lt;void (ns3::UbPort::*(ns3::Ptr&lt;ns3::UbPort&gt;, ns3::Ptr&lt;ns3::Packet&gt;))(ns3::Ptr&lt;ns3::Packet&gt;)&gt;::__call&lt;void, , 0ul, 1ul&gt;(...</text>
+<rect x="1060" y="440" width="131.27" height="20" fill="#2563eb"/>
+<text x="1460" y="454">725 (33.60%)</text>
+<text x="20" y="484"><title>void std::_Bind&lt;void (ns3::UbPort::*(ns3::Ptr&lt;ns3::UbPort&gt;, ns3::Ptr&lt;ns3::Packet&gt;))(ns3::Ptr&lt;ns3::Packet&gt;)&gt;::operator()&lt;, void&gt;() (inlined)</title>void std::_Bind&lt;void (ns3::UbPort::*(ns3::Ptr&lt;ns3::UbPort&gt;, ns3::Ptr&lt;ns3::Packet&gt;))(ns3::Ptr&lt;ns3::Packet&gt;)&gt;::operator()&lt;, void&gt;() (inl...</text>
+<rect x="1060" y="470" width="131.27" height="20" fill="#2563eb"/>
+<text x="1460" y="484">725 (33.60%)</text>
+<text x="20" y="514"><title>void std::__invoke_impl&lt;void, std::_Bind&lt;void (ns3::UbPort::*(ns3::Ptr&lt;ns3::UbPort&gt;, ns3::Ptr&lt;ns3::Packet&gt;))(ns3::Ptr&lt;ns3::Packet&gt;)&gt;&amp;&gt;(std::__invoke_other, std::_Bind&lt;void (ns3::UbPort::*(ns3::Ptr&lt;ns3::UbPort&gt;, ns3::Ptr&lt;ns3::Packet&gt;))(ns3::Ptr&lt;ns3::Packet&gt;)&gt;&amp;) (inlined)</title>void std::__invoke_impl&lt;void, std::_Bind&lt;void (ns3::UbPort::*(ns3::Ptr&lt;ns3::UbPort&gt;, ns3::Ptr&lt;ns3::Packet&gt;))(ns3::Ptr&lt;ns3::Packet&gt;)&gt;&amp;&gt;...</text>
+<rect x="1060" y="500" width="131.27" height="20" fill="#2563eb"/>
+<text x="1460" y="514">725 (33.60%)</text>
+<text x="20" y="544"><title>void std::__invoke_impl&lt;void, void (ns3::UbPort::*&amp;)(ns3::Ptr&lt;ns3::Packet&gt;), ns3::Ptr&lt;ns3::UbPort&gt;&amp;, ns3::Ptr&lt;ns3::Packet&gt;&amp;&gt;(std::__invoke_memfun_deref, void (ns3::UbPort::*&amp;)(ns3::Ptr&lt;ns3::Packet&gt;), ns3::Ptr&lt;ns3::UbPort&gt;&amp;, ns3::Ptr&lt;ns3::Packet&gt;&amp;) (inlined)</title>void std::__invoke_impl&lt;void, void (ns3::UbPort::*&amp;)(ns3::Ptr&lt;ns3::Packet&gt;), ns3::Ptr&lt;ns3::UbPort&gt;&amp;, ns3::Ptr&lt;ns3::Packet&gt;&amp;&gt;(std::__in...</text>
+<rect x="1060" y="530" width="131.27" height="20" fill="#2563eb"/>
+<text x="1460" y="544">725 (33.60%)</text>
+<text x="20" y="574"><title>ns3::UbPort::Receive(ns3::Ptr&lt;ns3::Packet&gt;) (/workspace/scratch/c6ba02920254/wqe-completion-native/build/lib/libns3.44-unified-bus.so)</title>ns3::UbPort::Receive(ns3::Ptr&lt;ns3::Packet&gt;) (/workspace/scratch/c6ba02920254/wqe-completion-native/build/lib/libns3.44-unified-bus.so)</text>
+<rect x="1060" y="560" width="130.72" height="20" fill="#2563eb"/>
+<text x="1460" y="574">722 (33.46%)</text>
+<text x="20" y="604"><title>ns3::UbPort::DispatchReceive(ns3::Ptr&lt;ns3::Packet&gt;) (/workspace/scratch/c6ba02920254/wqe-completion-native/build/lib/libns3.44-unified-bus.so)</title>ns3::UbPort::DispatchReceive(ns3::Ptr&lt;ns3::Packet&gt;) (/workspace/scratch/c6ba02920254/wqe-completion-native/build/lib/libns3.44-unified...</text>
+<rect x="1060" y="590" width="130.18" height="20" fill="#2563eb"/>
+<text x="1460" y="604">719 (33.32%)</text>
+<text x="20" y="634"><title>ns3::UbPort::HandleWithUbSwitch(ns3::Ptr&lt;ns3::Packet&gt;) (/workspace/scratch/c6ba02920254/wqe-completion-native/build/lib/libns3.44-unified-bus.so)</title>ns3::UbPort::HandleWithUbSwitch(ns3::Ptr&lt;ns3::Packet&gt;) (/workspace/scratch/c6ba02920254/wqe-completion-native/build/lib/libns3.44-unif...</text>
+<rect x="1060" y="620" width="129.82" height="20" fill="#2563eb"/>
+<text x="1460" y="634">717 (33.23%)</text>
+<text x="20" y="664"><title>ns3::UbSwitch::SwitchHandlePacket(ns3::Ptr&lt;ns3::UbPort&gt;, ns3::Ptr&lt;ns3::Packet&gt;) (/workspace/scratch/c6ba02920254/wqe-completion-native/build/lib/libns3.44-unified-bus.so)</title>ns3::UbSwitch::SwitchHandlePacket(ns3::Ptr&lt;ns3::UbPort&gt;, ns3::Ptr&lt;ns3::Packet&gt;) (/workspace/scratch/c6ba02920254/wqe-completion-native...</text>
+<rect x="1060" y="650" width="129.64" height="20" fill="#2563eb"/>
+<text x="1460" y="664">716 (33.18%)</text>
+</g></svg>

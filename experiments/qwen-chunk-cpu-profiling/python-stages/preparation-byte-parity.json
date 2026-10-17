@@ -1,0 +1,160 @@
+{
+  "status": "PASS_SEMANTIC_WITH_TIMING_TELEMETRY_DIFFERENCES",
+  "files": [
+    {
+      "file": "chunk-streaming/assignments.csv",
+      "match": true
+    },
+    {
+      "file": "chunk-streaming/config.json",
+      "match": true
+    },
+    {
+      "file": "chunk-streaming/graph-input.txt",
+      "match": true
+    },
+    {
+      "file": "chunk-streaming/input.txt",
+      "match": true
+    },
+    {
+      "file": "chunk-streaming/plan.json",
+      "match": false
+    },
+    {
+      "file": "chunk-streaming/transfers.csv",
+      "match": true
+    },
+    {
+      "file": "chunk-streaming/weight-edges.csv",
+      "match": true
+    },
+    {
+      "file": "direct/assignments.csv",
+      "match": true
+    },
+    {
+      "file": "direct/config.json",
+      "match": true
+    },
+    {
+      "file": "direct/graph-input.txt",
+      "match": true
+    },
+    {
+      "file": "direct/input.txt",
+      "match": true
+    },
+    {
+      "file": "direct/plan.json",
+      "match": false
+    },
+    {
+      "file": "direct/transfers.csv",
+      "match": true
+    },
+    {
+      "file": "direct/weight-edges.csv",
+      "match": true
+    },
+    {
+      "file": "expert-load.json",
+      "match": true
+    },
+    {
+      "file": "no-balancing/assignments.csv",
+      "match": true
+    },
+    {
+      "file": "no-balancing/config.json",
+      "match": true
+    },
+    {
+      "file": "no-balancing/graph-input.txt",
+      "match": true
+    },
+    {
+      "file": "no-balancing/input.txt",
+      "match": true
+    },
+    {
+      "file": "no-balancing/plan.json",
+      "match": true
+    },
+    {
+      "file": "no-balancing/transfers.csv",
+      "match": true
+    },
+    {
+      "file": "no-balancing/weight-edges.csv",
+      "match": true
+    },
+    {
+      "file": "no-balancing-direct-input/assignments.csv",
+      "match": true
+    },
+    {
+      "file": "no-balancing-direct-input/config.json",
+      "match": true
+    },
+    {
+      "file": "no-balancing-direct-input/input.txt",
+      "match": true
+    },
+    {
+      "file": "no-balancing-direct-input/plan.json",
+      "match": true
+    },
+    {
+      "file": "no-balancing-direct-input/transfers.csv",
+      "match": true
+    },
+    {
+      "file": "no-balancing-plan.json",
+      "match": true
+    },
+    {
+      "file": "planner-input.json",
+      "match": true
+    },
+    {
+      "file": "preparation-metrics.json",
+      "match": false
+    },
+    {
+      "file": "routing.csv",
+      "match": true
+    },
+    {
+      "file": "ultraep-direct-input/assignments.csv",
+      "match": true
+    },
+    {
+      "file": "ultraep-direct-input/config.json",
+      "match": true
+    },
+    {
+      "file": "ultraep-direct-input/input.txt",
+      "match": true
+    },
+    {
+      "file": "ultraep-direct-input/plan.json",
+      "match": false
+    },
+    {
+      "file": "ultraep-direct-input/transfers.csv",
+      "match": true
+    },
+    {
+      "file": "ultraep-plan.json",
+      "match": false
+    }
+  ],
+  "plan_semantic_equal_excluding": [
+    "cpu_wall_ns"
+  ],
+  "fresh_plan_cpu_wall_ns": 2285479553,
+  "historical_plan_cpu_wall_ns": 239744266,
+  "preparation_metrics_note": "Fresh planner wall timing differs, as expected; not an input/routing/graph change.",
+  "execution_input_and_config_byte_equal": true
+}

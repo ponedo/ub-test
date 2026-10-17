@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="804"><rect width="100%" height="100%" fill="#fafafa"/><g font-family="monospace" font-size="12" fill="#16283c"><text x="20" y="25" font-size="18">preparation: measured call edges (inclusive; overlapping)</text><text x="20" y="48">Arrow labels = callee cumulative seconds attributed to caller. Never add ancestor and descendant values.</text>
+<text x="20" y="80">experiments/qwen3-model-size/prepare.py:1 &lt;module&gt;</text>
+<text x="45" y="98" fill="#176a92">→ experiments/multi-npu-relay/adapter.py:8 emit | 200.207 s | 3 calls</text>
+<text x="20" y="124">python3.12/json/__init__.py:183 dumps</text>
+<text x="45" y="142" fill="#176a92">→ python3.12/json/encoder.py:183 encode | 3.830 s | 13 calls</text>
+<text x="20" y="168">python3.12/json/encoder.py:183 encode</text>
+<text x="45" y="186" fill="#176a92">→ python3.12/json/encoder.py:414 _iterencode | 3.424 s | 4163429 calls</text>
+<text x="20" y="212">experiments/multi-npu-relay/adapter.py:8 emit</text>
+<text x="45" y="230" fill="#176a92">→ python3.12/json/__init__.py:183 dumps | 3.316 s | 3 calls</text>
+<text x="20" y="256">python3.12/json/encoder.py:414 _iterencode</text>
+<text x="45" y="274" fill="#176a92">→ python3.12/json/encoder.py:334 _iterencode_dict | 2.874 s | 4163429 calls</text>
+<text x="20" y="300">lib/python3.12/subprocess.py:506 run</text>
+<text x="45" y="318" fill="#176a92">→ lib/python3.12/subprocess.py:1165 communicate | 2.313 s | 8 calls</text>
+<text x="20" y="344">experiments/qwen3-model-size/prepare.py:1 &lt;module&gt;</text>
+<text x="45" y="362" fill="#176a92">→ planner/quota/planner.py:173 solve | 2.289 s | 1 calls</text>
+<text x="20" y="388">planner/quota/planner.py:173 solve</text>
+<text x="45" y="406" fill="#176a92">→ planner/quota/planner.py:179 solve_upstream | 2.287 s | 1 calls</text>
+<text x="20" y="432">lib/python3.12/subprocess.py:1165 communicate</text>
+<text x="45" y="450" fill="#176a92">→ lib/python3.12/subprocess.py:2062 _communicate | 2.278 s | 7 calls</text>
+<text x="20" y="476">python3.12/json/encoder.py:334 _iterencode_dict</text>
+<text x="45" y="494" fill="#176a92">→ python3.12/json/encoder.py:278 _iterencode_list | 2.248 s | 4161665 calls</text>
+<text x="20" y="520">planner/quota/upstream.py:15 prepare</text>
+<text x="45" y="538" fill="#176a92">→ lib/python3.12/subprocess.py:506 run | 2.022 s | 2 calls</text>
+<text x="20" y="564">python3.12/json/encoder.py:278 _iterencode_list</text>
+<text x="45" y="582" fill="#176a92">→ python3.12/json/encoder.py:334 _iterencode_dict | 1.520 s | 4139723 calls</text>
+<text x="20" y="608">experiments/qwen3-model-size/prepare.py:1 &lt;module&gt;</text>
+<text x="45" y="626" fill="#176a92">→ experiments/direct-weight-forward/adapter.py:21 emit | 0.692 s | 2 calls</text>
+<text x="20" y="652">experiments/direct-weight-forward/adapter.py:21 emit</text>
+<text x="45" y="670" fill="#176a92">→ python3.12/json/__init__.py:183 dumps | 0.537 s | 4 calls</text>
+<text x="20" y="696">planner/quota/upstream.py:32 replication</text>
+<text x="45" y="714" fill="#176a92">→ lib/python3.12/subprocess.py:506 run | 0.225 s | 1 calls</text>
+<text x="20" y="740">python3.12/json/encoder.py:334 _iterencode_dict</text>
+<text x="45" y="758" fill="#176a92">→ python3.12/json/encoder.py:334 _iterencode_dict | 0.123 s | 120455 calls</text>
+</g></svg>

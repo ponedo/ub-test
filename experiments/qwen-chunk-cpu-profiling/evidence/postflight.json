@@ -1,0 +1,151 @@
+{
+  "status": "PASS",
+  "runs": [
+    {
+      "run": "direct-control",
+      "status": "PASS",
+      "wall_seconds": 0.2518979370361194,
+      "user_cpu_seconds": 0.146234,
+      "system_cpu_seconds": 0.007996,
+      "peak_rss_kib": 22240,
+      "result": {
+        "status": "PASS",
+        "tokens": 256,
+        "assignments": 2048,
+        "physical_experts": 179,
+        "replicas": 51,
+        "transfers": 4147,
+        "input_sha256": "6e18c4bda7579169639639714ad08aeb191ef80158e2b8af850e2c0377782e13",
+        "executed_graph_sha256": "7d8eced24ebe3107c82d57b654f8d086ab21ffd5054177fa20e4afd51c8a4deb",
+        "executed_graph_fnv1a64": "372442f0ed4e0658",
+        "checks": [
+          "individual routing/physical identity",
+          "all physical quotas",
+          "main placement and weight provenance",
+          "replica slot budgets",
+          "accepted planner independent checker (UltraEP)",
+          "complete integer execution input contract",
+          "native weight graph and dependency reconstruction",
+          "executed graph when supplied"
+        ]
+      }
+    },
+    {
+      "run": "direct-sampled",
+      "status": "PASS",
+      "wall_seconds": 0.2526082689873874,
+      "user_cpu_seconds": 0.164125,
+      "system_cpu_seconds": 0.00808,
+      "peak_rss_kib": 22240,
+      "result": {
+        "status": "PASS",
+        "tokens": 256,
+        "assignments": 2048,
+        "physical_experts": 179,
+        "replicas": 51,
+        "transfers": 4147,
+        "input_sha256": "6e18c4bda7579169639639714ad08aeb191ef80158e2b8af850e2c0377782e13",
+        "executed_graph_sha256": "7d8eced24ebe3107c82d57b654f8d086ab21ffd5054177fa20e4afd51c8a4deb",
+        "executed_graph_fnv1a64": "372442f0ed4e0658",
+        "checks": [
+          "individual routing/physical identity",
+          "all physical quotas",
+          "main placement and weight provenance",
+          "replica slot budgets",
+          "accepted planner independent checker (UltraEP)",
+          "complete integer execution input contract",
+          "native weight graph and dependency reconstruction",
+          "executed graph when supplied"
+        ]
+      }
+    },
+    {
+      "run": "direct-timed",
+      "status": "PASS",
+      "wall_seconds": 0.2523466809652746,
+      "user_cpu_seconds": 0.198478,
+      "system_cpu_seconds": 0.009221,
+      "peak_rss_kib": 22240,
+      "result": {
+        "status": "PASS",
+        "tokens": 256,
+        "assignments": 2048,
+        "physical_experts": 179,
+        "replicas": 51,
+        "transfers": 4147,
+        "input_sha256": "6e18c4bda7579169639639714ad08aeb191ef80158e2b8af850e2c0377782e13",
+        "executed_graph_sha256": "7d8eced24ebe3107c82d57b654f8d086ab21ffd5054177fa20e4afd51c8a4deb",
+        "executed_graph_fnv1a64": "372442f0ed4e0658",
+        "checks": [
+          "individual routing/physical identity",
+          "all physical quotas",
+          "main placement and weight provenance",
+          "replica slot budgets",
+          "accepted planner independent checker (UltraEP)",
+          "complete integer execution input contract",
+          "native weight graph and dependency reconstruction",
+          "executed graph when supplied"
+        ]
+      }
+    },
+    {
+      "run": "no-balancing-control",
+      "status": "PASS",
+      "wall_seconds": 0.25220821297261864,
+      "user_cpu_seconds": 0.081423,
+      "system_cpu_seconds": 0.004115,
+      "peak_rss_kib": 17608,
+      "result": {
+        "status": "PASS",
+        "tokens": 256,
+        "assignments": 2048,
+        "physical_experts": 128,
+        "replicas": 0,
+        "transfers": 4096,
+        "input_sha256": "9c515139726e648f353a743c243ab150f5e9b16820f6526ca7fa9fdace32f722",
+        "executed_graph_sha256": "531378903729daf85543b01efaedaad0f71e99f914c2448ed388b2a97b9f4024",
+        "executed_graph_fnv1a64": "7fee2cc530b4f52e",
+        "checks": [
+          "individual routing/physical identity",
+          "all physical quotas",
+          "main placement and weight provenance",
+          "replica slot budgets",
+          "accepted planner independent checker (UltraEP)",
+          "complete integer execution input contract",
+          "native weight graph and dependency reconstruction",
+          "executed graph when supplied"
+        ]
+      }
+    },
+    {
+      "run": "no-balancing-timed",
+      "status": "PASS",
+      "wall_seconds": 0.2522943399962969,
+      "user_cpu_seconds": 0.085115,
+      "system_cpu_seconds": 0.006300999999999999,
+      "peak_rss_kib": 17612,
+      "result": {
+        "status": "PASS",
+        "tokens": 256,
+        "assignments": 2048,
+        "physical_experts": 128,
+        "replicas": 0,
+        "transfers": 4096,
+        "input_sha256": "9c515139726e648f353a743c243ab150f5e9b16820f6526ca7fa9fdace32f722",
+        "executed_graph_sha256": "531378903729daf85543b01efaedaad0f71e99f914c2448ed388b2a97b9f4024",
+        "executed_graph_fnv1a64": "7fee2cc530b4f52e",
+        "checks": [
+          "individual routing/physical identity",
+          "all physical quotas",
+          "main placement and weight provenance",
+          "replica slot budgets",
+          "accepted planner independent checker (UltraEP)",
+          "complete integer execution input contract",
+          "native weight graph and dependency reconstruction",
+          "executed graph when supplied"
+        ]
+      }
+    }
+  ],
+  "chunk": "Not completed; no postflight result"
+}

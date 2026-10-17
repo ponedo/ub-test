@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="360" viewBox="0 0 1100 360">
+<rect width="1100" height="360" fill="white"/>
+<g font-family="sans-serif" fill="#172033">
+<text x="25" y="28" font-size="20">Disjoint process-CPU scopes (diagnostic build)</text>
+<text x="25" y="52" font-size="12">Chunk is a partial 300-second window; Direct and No Balancing complete. Run residual includes uninstrumented work.</text>
+<text x="25" y="105" font-size="13">chunk-streaming-timed</text>
+<rect x="220.00" y="85" width="225.41" height="28" fill="#2563eb"/>
+<rect x="445.41" y="85" width="382.83" height="28" fill="#f59e0b"/>
+<rect x="828.24" y="85" width="50.56" height="28" fill="#10b981"/>
+<rect x="878.79" y="85" width="101.03" height="28" fill="#ec4899"/>
+<rect x="979.82" y="85" width="0.00" height="28" fill="#8b5cf6"/>
+<rect x="979.82" y="85" width="0.00" height="28" fill="#64748b"/>
+<text x="985.82" y="105" font-size="12">299.929s</text>
+<text x="25" y="160" font-size="13">direct-timed</text>
+<rect x="220.00" y="140" width="0.82" height="28" fill="#2563eb"/>
+<rect x="220.82" y="140" width="94.68" height="28" fill="#f59e0b"/>
+<rect x="315.50" y="140" width="3.50" height="28" fill="#10b981"/>
+<rect x="319.00" y="140" width="97.84" height="28" fill="#ec4899"/>
+<rect x="416.84" y="140" width="70.01" height="28" fill="#8b5cf6"/>
+<rect x="486.84" y="140" width="0.69" height="28" fill="#64748b"/>
+<text x="493.54" y="160" font-size="12">105.608s</text>
+<text x="25" y="215" font-size="13">no-balancing-timed</text>
+<rect x="220.00" y="195" width="0.17" height="28" fill="#2563eb"/>
+<rect x="220.17" y="195" width="3.92" height="28" fill="#f59e0b"/>
+<rect x="224.09" y="195" width="0.14" height="28" fill="#10b981"/>
+<rect x="224.23" y="195" width="0.75" height="28" fill="#ec4899"/>
+<rect x="224.98" y="195" width="0.50" height="28" fill="#8b5cf6"/>
+<rect x="225.48" y="195" width="0.07" height="28" fill="#64748b"/>
+<text x="231.55" y="215" font-size="12">2.189s</text>
+<rect x="25" y="275" width="14" height="14" fill="#2563eb"/>
+<text x="45" y="287" font-size="12">Read/init/topology</text>
+<rect x="380" y="275" width="14" height="14" fill="#f59e0b"/>
+<text x="400" y="287" font-size="12">Run residual self</text>
+<rect x="735" y="275" width="14" height="14" fill="#10b981"/>
+<text x="755" y="287" font-size="12">Audit self + scans</text>
+<rect x="25" y="302" width="14" height="14" fill="#ec4899"/>
+<text x="45" y="314" font-size="12">Send/Validate/Ready self</text>
+<rect x="380" y="302" width="14" height="14" fill="#8b5cf6"/>
+<text x="400" y="314" font-size="12">FinalAudit</text>
+<rect x="735" y="302" width="14" height="14" fill="#64748b"/>
+<text x="755" y="314" font-size="12">Other measured self</text>
+<text x="25" y="345" font-size="11">Snapshot serialization CPU excluded; observer/code-layout perturbation remains. These are not sampled percentages.</text>
+</g></svg>

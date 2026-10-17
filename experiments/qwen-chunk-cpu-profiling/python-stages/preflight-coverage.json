@@ -1,0 +1,25 @@
+{
+  "status": "COMPLETE",
+  "exitcode": 0,
+  "interrupted": null,
+  "wall_seconds": 196.68298477400094,
+  "cpu_seconds": 196.632624512,
+  "profile_clock": "wall",
+  "source_sha256": {
+    "/workspace/scratch/c6ba02920254/qwen-chunk-profile/experiments/tiered-logging/preflight.py": "ee06fee128f26f09c281305c39ec7591f20197995902b2e5c5d44dccec27e999"
+  },
+  "command": [
+    "/workspace/scratch/c6ba02920254/qwen-chunk-profile/experiments/tiered-logging/preflight.py",
+    "/workspace/scratch/c6ba02920254/qwen-model-size-raw/scan/tokens-256/chunk-streaming/run",
+    "--graph-tool",
+    "/workspace/scratch/c6ba02920254/ep64-scaling-raw/build/graph-tool",
+    "--out",
+    "/workspace/scratch/c6ba02920254/qwen-chunk-profile-raw/python/preflight-result.json",
+    "--input-summary",
+    "/workspace/scratch/c6ba02920254/qwen-chunk-profile-raw/python/input-summary.json",
+    "--provenance",
+    "/workspace/scratch/c6ba02920254/qwen-chunk-profile/experiments/qwen3-model-size/fixed-config.json"
+  ],
+  "coverage": "Python main process; subprocess waits included, child internals excluded",
+  "stage_note": "Inclusive statement spans; nested scopes overlap; RSS is cumulative process high-water mark"
+}

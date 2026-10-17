@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "scope": "diagnostic-only application copy; original application and native sources unchanged",
+  "source_directory": "/workspace/scratch/c6ba02920254/qwen-chunk-profile/experiments/pair-jetty",
+  "output_directory": "/workspace/scratch/c6ba02920254/qwen-chunk-profile-raw/instrumented",
+  "baseline_sha256": {
+    "pair-layer.cc": "b111e87f56c219169d1f60e04de8c9d35459365fe42a516f0814c7b9610fdc0e",
+    "online-validation.inc": "e47ea638608e57012662a4f253fc4049c7a403cb69ddd527cc05c084fc0d4016"
+  },
+  "generated_sha256": {
+    "pair-layer.cc": "c4c3e82afb805045a924754e96031dfdf5d20b15d48233e56c9d0db7fb5dae83",
+    "online-validation.inc": "874203ee7249e1adeea10e7e2cd0cdda425d93ac69c1e54840e49dc5e654c8ae",
+    "profile-runtime.h": "9720e20d21028b0994aa825230ab7228e57c5a4747bc8383a0db70c45dbe6eef"
+  },
+  "generator_sha256": "3470a7c323a914094b393a80703ea5c22ea83213a6099dbd2bbc94223f9763b0",
+  "patch_sha256": "bc60b64208e6925b9b2ca660747fb4a11c476d83c88471f83996f0a3975e48e2",
+  "static_proof": {
+    "status": "PASS",
+    "baseline_sha256": {
+      "pair-layer.cc": "b111e87f56c219169d1f60e04de8c9d35459365fe42a516f0814c7b9610fdc0e",
+      "online-validation.inc": "e47ea638608e57012662a4f253fc4049c7a403cb69ddd527cc05c084fc0d4016"
+    },
+    "observer_erasure_roundtrip_byte_exact": true,
+    "simulator_control_calls_byte_exact_and_same_order": true,
+    "simulator_control_calls_checked": 11,
+    "signal_handler_body": "stopSignal=signal;",
+    "simulated_checkpoint_events_added": 0,
+    "note": "Static proof of transformation scope. Runtime parity remains a separate required gate."
+  },
+  "compile_flags": [
+    "-std=c++20",
+    "-O3",
+    "-g"
+  ],
+  "simulation_mutations": "none; no schedule/stop calls added, removed or reordered",
+  "verification": "generation only; native compile and runtime parity must be run separately"
+}

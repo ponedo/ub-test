@@ -1,0 +1,9 @@
+run,case,variant,status,guard,wall_seconds,user_cpu_seconds,system_cpu_seconds,peak_rss_kib,sampled_peak_tree_rss_bytes,simulator_complete,simulator_events,simulator_events_per_process_cpu_second,layer_latency_ps,remote_WQEs,TA_count,port_packet_tx_total
+chunk-streaming-control,chunk-streaming,control,FAIL,wall_guard,300.3411106549902,299.544693,0.5547259999999999,1532592,1569480704,False,,,,,,
+chunk-streaming-sampled,chunk-streaming,sampled,FAIL,wall_guard,300.44212890800554,299.590661,0.890882,1531844,1569628160,False,,,,,,
+chunk-streaming-timed,chunk-streaming,timed,FAIL,wall_guard,300.3387117389939,298.225051,1.846077,1536244,1573318656,False,,,,,,
+direct-control,direct,control,PASS,,113.05852662899997,112.432008,0.476553,1656320,1695891456,True,23536027,208452.1031137754,12690087432,3941,485576,3884608
+direct-sampled,direct,sampled,PASS,,114.09396995400311,113.432517,0.63413,1656320,1696636928,True,23536027,206335.74860844293,12690087432,3941,485576,3884608
+direct-timed,direct,timed,PASS,,105.78984783799388,104.339186,1.318647,1656296,1695948800,True,23536027,222757.04821619805,12690087432,3941,485576,3884608
+no-balancing-control,no-balancing,control,PASS,,2.2579124760231934,2.151031,0.059667,144196,147832832,True,819877,370867.93401902926,7957270688,4046,16184,129473
+no-balancing-timed,no-balancing,timed,PASS,,2.257863655977417,2.132796,0.08032299999999999,144188,147787776,True,819877,370462.2300020921,7957270688,4046,16184,129473

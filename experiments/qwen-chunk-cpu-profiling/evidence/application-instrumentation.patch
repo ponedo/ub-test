@@ -1,0 +1,274 @@
+--- baseline/pair-layer.cc
++++ instrumented/pair-layer.cc
+@@ -2,9 +2,9 @@
+ #include "ns3/core-module.h"
+ #include "ns3/network-module.h"
+ #include "ns3/unified-bus-module.h"
+-#include "../no-balancing-layer/nb-tracker.h"
+-#include "pair-jetty-manager.h"
+-#include "../direct-weight-forward/weight-distribution.h"
++#include "/workspace/scratch/c6ba02920254/qwen-chunk-profile/experiments/no-balancing-layer/nb-tracker.h"
++#include "/workspace/scratch/c6ba02920254/qwen-chunk-profile/experiments/pair-jetty/pair-jetty-manager.h"
++#include "/workspace/scratch/c6ba02920254/qwen-chunk-profile/experiments/direct-weight-forward/weight-distribution.h"
+ #include <filesystem>
+ #include <fstream>
+ #include <set>
+@@ -16,6 +16,7 @@
+ #include <array>
+ #include <iomanip>
+ #include <sstream>
++#include "profile-runtime.h"
+ using namespace ns3;
+ void Require(bool ok,const std::string& why){if(!ok)throw std::runtime_error(why);}
+ struct Assignment {uint32_t token,rank,expert,source,target,physical;};
+@@ -31,6 +32,8 @@
+ };
+ class Layer {
+ public:
++    qprof::LayerLifetime qprofLifetime_;
++    ~Layer(){qprof::ClearObserver();qprofLifetime_.Begin();}
+     uint32_t n,e,k,t,dim,ff,dtype,segment,peak,util,setup,seed,linkGbps,linkDelayNs;
+     uint32_t matrices,weightBytes,planningNs,rerouteNs,weightCompleteNs,balanced,strategy;
+     uint32_t bytes,receivedTokens=0,senderCount=0,remoteCount=0,pendingWeights=0;
+@@ -91,9 +94,9 @@
+     uint8_t WeightByte(uint32_t pid,uint64_t i){auto& p=P(pid);return uint8_t((uint64_t(seed)+p.expert*71ULL+p.mainRank*131ULL+p.mainId*43ULL+i*17+(i>>8)*29)%256);}
+     uint8_t ExpectedByte(uint32_t task,uint64_t i){auto& x=transfers.at(task);if(x.stage==2)return WeightByte(x.physical,x.offset+i);auto b=InputByte(x.id,i);return x.stage?ResultByte(x.id,b):b;}
+     void AddTransfer(uint32_t stage,uint32_t id,uint32_t src,uint32_t dst,uint32_t pid,uint32_t size){
+-        Transfer x{stage,id,src,dst,pid,size};x.tracker=std::make_unique<ChunkTracker>(size);x.data.resize(size);transfers.push_back(std::move(x));
+-    }
+-    void Read(const std::string& path){
++        Transfer x{stage,id,src,dst,pid,size};x.tracker=std::make_unique<ChunkTracker>(size);x.data.resize(size);transfers.push_back(std::move(x));qprof::Count(qprof::Counter::TransfersCreated,1);qprof::Count(qprof::Counter::TransferPayloadAllocated,size);
++    }
++    void Read(const std::string& path){qprof::Scope qprofScope(qprof::Phase::Read);
+         std::ifstream f(path);Require(bool(f),"missing input");
+         uint64_t v[14];for(auto& x:v)Require(bool(f>>x)&&x<=UINT32_MAX,"invalid integer config");
+         n=v[0];e=v[1];k=v[2];t=v[3];dim=v[4];ff=v[5];dtype=v[6];segment=v[7];peak=v[8];util=v[9];setup=v[10];seed=v[11];linkGbps=v[12];linkDelayNs=v[13];
+@@ -140,14 +143,17 @@
+             predictedEdges=CheckedAdd(predictedEdges,CheckedMul(count,pieces));}
+         Require(predictedEdges<=weightTaskLimit,"weight task count bound");
+         std::vector<WeightEdge> edges;
++        {qprof::Scope qprofScope(qprof::Phase::ReadEdges);
+         if(strategy==0)edges=DirectWeightDistribution().Edges(physical,weightBytes);
+         else if(strategy==1)edges=TwoStageRelay(weightOptions).Edges(ordered,weightBytes);
+         else edges=ChunkStreamingRelay(weightOptions).Edges(ordered,weightBytes);
++        }
+         Require(edges.size()==predictedEdges&&edges.size()<=weightTaskLimit,"weight task count bound");
+         Require(CheckedAdd(CheckedMul(assignments.size(),2),edges.size())<=INT32_MAX,"task ID/index range");
+         uint64_t segmentTotal=CheckedMul(CheckedMul(assignments.size(),2),(uint64_t(bytes)+segment-1)/segment);
+         for(auto& edge:edges)segmentTotal=CheckedAdd(segmentTotal,(uint64_t(edge.bytes)+segment-1)/segment);
+         Require(segmentTotal<=UINT32_MAX,"logical SSN/count range");
++        {qprof::Scope qprofScope(qprof::Phase::ReadTransfers);
+         for(uint32_t stage=0;stage<2;++stage)for(uint32_t aid=0;aid<assignments.size();++aid){auto a=assignments[aid];AddTransfer(stage,aid,stage?a.target:a.source,stage?a.source:a.target,a.physical,bytes);}
+         for(auto edge:edges){
+             auto& src=P(edge.sourcePhysical);auto& dst=P(edge.targetPhysical);
+@@ -155,27 +161,36 @@
+             AddTransfer(2,dst.id,src.rank,dst.rank,dst.id,edge.bytes);
+             transfers.back().offset=edge.offset;transfers.back().sourcePhysical=src.id;
+         }
++        }
++        {qprof::Scope qprofScope(qprof::Phase::ReadDependencies);
+         dependents.resize(transfers.size());
+         for(uint32_t task=2*assignments.size();task<transfers.size();++task){
+             auto& x=transfers[task];if(!P(x.sourcePhysical).replica)continue;
++            qprof::Count(qprof::Counter::DependencyReplicaTasks,1);
+             auto scope=edges[task-2*assignments.size()].sourceDependency;
+             ChunkTracker coverage(scope==WeightReadyScope::FullExpert?weightBytes:x.bytes);
+             for(uint32_t parent=2*assignments.size();parent<transfers.size();++parent){
++                qprof::Candidate(qprof::Counter::DependencyCandidates);
+                 auto& y=transfers[parent];
+                 if(scope==WeightReadyScope::GroupChunk){
+                     // One upstream Stage-I fan-out task publishes all relay flags together.
+                     // Aggregate its per-edge target completions without using sender ACKs.
+                     if(P(y.sourcePhysical).replica||P(y.physical).expert!=P(x.physical).expert||y.offset!=x.offset||y.bytes!=x.bytes)continue;
+                 }else if(y.physical!=x.sourcePhysical)continue;
++                qprof::Count(qprof::Counter::DependencyEdges,1);
+                 x.dependencies.push_back(parent);dependents[parent].push_back(task);
+                 if(y.physical==x.sourcePhysical)coverage.Notify(parent,scope==WeightReadyScope::GroupChunk?0:y.offset,y.bytes);
+             }
+             Require(coverage.Complete(),"relay source coverage graph");
+         }
++        }
++        {qprof::Scope qprofScope(qprof::Phase::ReadWeights);
+         weightData.resize(np);weightCoverage.resize(np);
+         for(uint32_t i=0;i<np;++i)if(physical[i].replica){
+-            weightData[i].resize(weightBytes);weightCoverage[i]=std::make_unique<ChunkTracker>(weightBytes);++pendingWeights;
+-        }
++            weightData[i].resize(weightBytes);qprof::Count(qprof::Counter::ReplicaPayloadAllocated,weightBytes);weightCoverage[i]=std::make_unique<ChunkTracker>(weightBytes);++pendingWeights;
++        }
++        }
++        qprof::SetModel(assignments.size(),transfers.size(),n,physical.size());
+         if(!balanced)Require(!pendingWeights&&!planningNs&&!rerouteNs,"baseline cannot replicate/plan");
+     }
+   Ptr<UbController> Ctrl(uint32_t node) {return nodes[node]->GetObject<UbController>();}
+@@ -221,7 +236,7 @@
+             }));
+         }
+     }
+-    void Topology(const std::string& out){
++    void Topology(const std::string& out){qprof::Scope qprofScope(qprof::Phase::Topology);
+         GlobalValue::Bind("UB_CC_ENABLED",BooleanValue(false));UbUtils::Get();
+         for(auto key:{"UB_TRACE_ENABLE","UB_PACKET_TRACE_ENABLE","UB_PORT_TRACE_ENABLE","UB_RECORD_PKT_TRACE"})GlobalValue::Bind(key,BooleanValue(logLevel=="debug"));
+         if(logLevel=="debug"){std::filesystem::create_directories(out+"/native/runlog");UbUtils::SetTracePathForTest(out+"/native");}traceOn=true;
+@@ -272,10 +287,10 @@
+         }
+         if(logLevel=="debug"){UbUtils::Get()->TopoTraceConnect();for(auto [a,b]:pairs){UbUtils::Get()->SingleTpTraceConnect(a,Tpn(a,b));UbUtils::Get()->SingleTpTraceConnect(b,Tpn(b,a));}}
+     }
+-    void Validate(uint32_t task,uint64_t off,const std::vector<uint8_t>& data){auto wall=std::chrono::steady_clock::now();auto& x=transfers.at(task);for(size_t i=0;i<data.size();++i){Require(data[i]==ExpectedByte(task,off+i),"payload byte mismatch");x.data[off+i]=data[i];if(x.stage==2)weightData[pIndex.at(x.physical)][x.offset+off+i]=data[i];}verificationNs+=std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now()-wall).count();}
+-    void Send(uint32_t task){auto& x=transfers.at(task);Require(!x.sent,"duplicate forwarding");
++    void Validate(uint32_t task,uint64_t off,const std::vector<uint8_t>& data){qprof::Scope qprofScope(qprof::Phase::Validate);auto wall=std::chrono::steady_clock::now();auto& x=transfers.at(task);for(size_t i=0;i<data.size();++i){Require(data[i]==ExpectedByte(task,off+i),"payload byte mismatch");x.data[off+i]=data[i];if(x.stage==2)weightData[pIndex.at(x.physical)][x.offset+off+i]=data[i];}qprof::Count(qprof::Counter::ValidatePayloadBytes,data.size());verificationNs+=std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now()-wall).count();}
++    void Send(uint32_t task){qprof::Scope qprofScope(qprof::Phase::Send);auto& x=transfers.at(task);Require(!x.sent,"duplicate forwarding");
+         Require(planningDone,"send before planning");if(x.stage==0)Require(dispatchStarted,"dispatch gate");if(x.stage==1)Require(finished[x.source],"combine before compute");
+-        if(x.stage==2)for(auto parent:x.dependencies)Require(transfers[parent].ready,"relay before target chunk ready (including group)");
++        if(x.stage==2)for(auto parent:x.dependencies){qprof::Count(qprof::Counter::SendDependencyChecks,1);Require(transfers[parent].ready,"relay before target chunk ready (including group)");}
+         if(x.stage==2&&strategy==2&&P(x.sourcePhysical).replica){
+             auto key=std::make_tuple(P(x.physical).expert,x.offset,x.bytes);
+             if(readyGroups.insert(key).second)Event("group_chunk_ready",2,P(x.physical).expert,P(x.physical).mainRank,x.offset,x.bytes);
+@@ -286,6 +301,7 @@
+             if(x.stage==2&&P(x.sourcePhysical).replica)data[i]=weightData[pIndex.at(x.sourcePhysical)][x.offset+i];
+             else data[i]=x.stage==1?ResultByte(x.id,transfers[x.id].data[i]):ExpectedByte(task,i);
+         }
++        qprof::Count(qprof::Counter::SendPayloadBytes,x.bytes);
+         if(x.stage==2&&P(x.sourcePhysical).replica){
+             TE("relay_buffer_read",task,x.source,x.offset,x.bytes);
+             if(fault=="relay-byte")data.back()^=1;
+@@ -294,7 +310,7 @@
+         if(fault=="early-wqe"&&x.source!=x.target)SenderComplete(task,x.jettyId);
+         if(x.stage==2&&fault=="premature-ready")Ready(task);
+         if(x.source==x.target){Simulator::ScheduleNow([this,task,data]{auto& x=transfers[task];Validate(task,0,data);TE("local_verified",task,x.target,0,x.bytes);Ready(task);});return;}
+-        auto fn=Ctrl(x.source)->GetUbFunction();auto wqe=fn->CreateWqe(x.source,x.target,x.bytes,task,UbTransactionOpcode::WRITE);wqe->SetExplicitPayload(Create<Packet>(data.data(),data.size()));Require(fn->SubmitWqe(wqe,x.jettyId).status==UbWqeSubmissionStatus::ACCEPTED,"WQE rejected");
++        auto fn=Ctrl(x.source)->GetUbFunction();auto wqe=fn->CreateWqe(x.source,x.target,x.bytes,task,UbTransactionOpcode::WRITE);wqe->SetExplicitPayload(Create<Packet>(data.data(),data.size()));Require(fn->SubmitWqe(wqe,x.jettyId).status==UbWqeSubmissionStatus::ACCEPTED,"WQE rejected");qprof::Count(qprof::Counter::RemoteWqesSubmitted,1);
+     }
+     uint64_t Duration(uint32_t count){__uint128_t num=__uint128_t(count)*2*matrices*dim*ff*1000000;uint64_t den=uint64_t(peak)*util;auto duration=num/den+(num%den!=0)+uint64_t(setup)*1000;Require(duration<UINT64_C(1000000000000000),"compute bound");return uint64_t(duration);}
+     void Compute(uint32_t node){
+@@ -305,7 +321,7 @@
+         for(auto p:physical)if(p.rank==node&&p.quota){Simulator::Schedule(PicoSeconds(elapsed),[this,p]{Event("expert_start",-1,p.id,p.rank,0,p.quota);});elapsed+=Duration(p.quota);Simulator::Schedule(PicoSeconds(elapsed),[this,p]{Event("expert_end",-1,p.id,p.rank,0,p.quota);});}
+         Simulator::Schedule(PicoSeconds(elapsed),[this,node]{finished[node]=true;Event("compute_end",-1,-1,node,0,expected[node]);for(uint32_t aid=0;aid<assignments.size();++aid)if(assignments[aid].target==node)Send(assignments.size()+aid);});
+     }
+-    void Ready(uint32_t task){auto& x=transfers.at(task);Require(!x.ready,"duplicate ready");Require(x.sent&&(x.source==x.target||x.tracker->Complete()),"ready before target completion coverage");x.ready=true;
++    void Ready(uint32_t task){qprof::Scope qprofScope(qprof::Phase::Ready);auto& x=transfers.at(task);Require(!x.ready,"duplicate ready");Require(x.sent&&(x.source==x.target||x.tracker->Complete()),"ready before target completion coverage");x.ready=true;
+         TE(x.stage==2?"edge_ready":"data_ready",task,x.target,0,x.bytes);
+         if(x.stage==2){
+             auto idx=pIndex.at(x.physical);
+@@ -313,12 +329,12 @@
+             if(weightCoverage[idx]->Notify(task,x.offset,x.bytes))FinalWeight(x.physical);
+             if(fault=="early-group"&&strategy==2&&!P(x.sourcePhysical).replica){
+                 for(auto child:dependents[task])if(transfers[child].sourcePhysical==x.physical&&
+-                    !std::all_of(transfers[child].dependencies.begin(),transfers[child].dependencies.end(),[this](auto p){return transfers[p].ready;})){
++                    !std::all_of(transfers[child].dependencies.begin(),transfers[child].dependencies.end(),[this](auto p){qprof::Count(qprof::Counter::ReadyDependencyPredicates,1);return transfers[p].ready;})){
+                     TE("early_group_attempt",child,transfers[child].source);Send(child);
+                 }
+             }
+             for(auto child:dependents[task])if(!transfers[child].sent &&
+-                std::all_of(transfers[child].dependencies.begin(),transfers[child].dependencies.end(),[this](auto p){return transfers[p].ready;}))Send(child);
++                std::all_of(transfers[child].dependencies.begin(),transfers[child].dependencies.end(),[this](auto p){qprof::Count(qprof::Counter::ReadyDependencyPredicates,1);return transfers[p].ready;}))Send(child);
+         }
+         else if(x.stage==0){auto a=assignments[x.id];Require(++physicalArrived[pIndex.at(a.physical)]<=P(a.physical).quota,"quota exceeded");if(++arrived[x.target]==expected[x.target])Compute(x.target);}
+         else{auto a=assignments[x.id];Require(++contributions[a.token]<=k,"duplicate contribution");if(contributions[a.token]==k){Event("token_complete",-1,a.token,a.source);if(++receivedTokens==t)Event("layer_end");}}
+@@ -339,7 +355,7 @@
+     }
+     std::string GraphHash(){std::ostringstream graph;Graph(graph);auto text=graph.str();return Hex(Hash(14695981039346656037ULL,text.data(),text.size()));}
+     void WriteArtifacts(const std::string& out){std::ofstream graph(out+"/executed-transfers.csv");Graph(graph);}
+-    void WritePayloads(const std::string& out){
++    void WritePayloads(const std::string& out){qprof::Scope qprofScope(qprof::Phase::WritePayloads);
+         std::ofstream data(out+"/received-payloads.bin",std::ios::binary),index(out+"/payload-index.csv");
+         index<<"task,offset,bytes\n";uint64_t off=0;
+         for(uint32_t task=0;task<transfers.size();++task){auto& x=transfers[task];
+@@ -360,10 +376,11 @@
+         });
+     }
+     void Run(const std::string& input,const std::string& out){
++        qprof::SetObserver(this,[](void* pointer){const auto& x=*static_cast<Layer*>(pointer);qprof::Progress(x.assignments.size(),x.transfers.size(),x.remoteCount,x.taCount,x.senderCount,x.receivedTokens,x.pendingWeights,x.txPackets,x.rxPackets,x.txBytes,x.rxBytes);});
+         Read(input);InitAudit();std::filesystem::create_directories(out);
+         if(logLevel=="debug"){admissions.open(out+"/ta-identity.csv");admissions<<"time_ps,task,jetty,logical_ssn,offset,bytes\n";WriteArtifacts(out);}
+         if(logLevel!="summary"){log.open(out+"/events.csv");Require(bool(log),"log");log<<"time_ps,event,stage,id,node,offset,bytes,task\n";}
+-        Topology(out);Simulator::Schedule(PicoSeconds(startPs),&Layer::Start,this);Simulator::Stop(Seconds(10));Simulator::Run();
++        Topology(out);Simulator::Schedule(PicoSeconds(startPs),&Layer::Start,this);Simulator::Stop(Seconds(10));{qprof::Scope qprofScope(qprof::Phase::SimulatorRun);qprof::SimulatorStarted();Simulator::Run();qprof::FreezeSimulator();}
+         if(!capacityMetrics.empty()){
+             std::ofstream metrics(capacityMetrics);Require(bool(metrics),"capacity metrics file");
+             metrics<<"{\"simulator_events\":"<<Simulator::GetEventCount()<<",\"assignments\":"<<assignments.size()
+@@ -374,7 +391,7 @@
+         Require(dispatchStarted&&receivedTokens==t&&pendingWeights==0&&senderCount==remoteCount,"unfinished layer");for(auto& x:transfers)Require(x.sent&&x.ready,"missing transfer");for(auto r:weightReady)Require(r,"missing weight");
+         pairJetties->CheckIdle();FinalAudit();
+         std::cout<<"PASS forward: N="<<n<<" assignments="<<assignments.size()<<" replicas="<<physical.size()-e<<" remote_WQEs="<<remoteCount<<" target-verified bytes\n";
+-        WriteSummary(out);if(logLevel=="debug")WritePayloads(out);admissions.close();log.close();UbUtils::Get()->Destroy();traceOn=false;Simulator::Destroy();
++        WriteSummary(out);if(logLevel=="debug")WritePayloads(out);admissions.close();log.close();{qprof::Scope qprofScope(qprof::Phase::UbDestroy);UbUtils::Get()->Destroy();}traceOn=false;{qprof::Scope qprofScope(qprof::Phase::SimulatorDestroy);Simulator::Destroy();}
+     }
+ };
+-int main(int argc,char** argv){Time::SetResolution(Time::PS);Layer layer;std::string input,out;CommandLine cmd;cmd.AddValue("input","validated execution input",input);cmd.AddValue("out","output directory",out);cmd.AddValue("capacityMetrics","optional post-run capacity counters",layer.capacityMetrics);cmd.AddValue("fault","test-only fault injection",layer.fault);cmd.AddValue("logLevel","summary (default), events, debug",layer.logLevel);cmd.AddValue("jettyMode","pair or per-wqe",layer.jettyMode);cmd.AddValue("payloadBudgetBytes","logical payload budget, default 256 MiB, maximum 8 GiB",layer.payloadBudgetBytes);cmd.AddValue("weightTaskLimit","weight WQE budget, default 20000, maximum 1000000",layer.weightTaskLimit);cmd.Parse(argc,argv);try{Require(layer.logLevel=="summary"||layer.logLevel=="events"||layer.logLevel=="debug","unknown log level");Require(layer.jettyMode=="pair"||layer.jettyMode=="per-wqe","unknown Jetty mode");Require(layer.fault=="payload-byte"||layer.fault=="early-wqe"||layer.fault=="missing-wqe"||layer.fault=="duplicate-completion"||layer.fault.empty()||layer.fault=="weight-byte"||layer.fault=="premature-ready"||layer.fault=="duplicate-weight"||layer.fault=="early-compute"||layer.fault=="early-group"||layer.fault=="relay-byte"||layer.fault=="relay-buffer-byte"||layer.fault=="duplicate-notify"||layer.fault=="early-relay"||layer.fault=="early-final-ready","unknown fault");Require(!input.empty()&&!out.empty(),"input/out");layer.Run(input,out);}catch(const std::exception& ex){if(!out.empty()){std::filesystem::create_directories(out);std::ofstream failed(out+"/validation.json");failed<<"{\"status\":\"FAIL\",\"error\":\""<<ex.what()<<"\"}\n";}if(layer.log){layer.Event("error");layer.log.flush();}if(layer.traceOn)UbUtils::Get()->Destroy();std::cerr<<"ERROR: "<<ex.what()<<'\n';return 2;}return 0;}
++int main(int argc,char** argv){qprof::Session qprofSession;Time::SetResolution(Time::PS);Layer layer;std::string input,out;CommandLine cmd;cmd.AddValue("input","validated execution input",input);cmd.AddValue("out","output directory",out);cmd.AddValue("capacityMetrics","optional post-run capacity counters",layer.capacityMetrics);cmd.AddValue("fault","test-only fault injection",layer.fault);cmd.AddValue("logLevel","summary (default), events, debug",layer.logLevel);cmd.AddValue("jettyMode","pair or per-wqe",layer.jettyMode);cmd.AddValue("payloadBudgetBytes","logical payload budget, default 256 MiB, maximum 8 GiB",layer.payloadBudgetBytes);cmd.AddValue("weightTaskLimit","weight WQE budget, default 20000, maximum 1000000",layer.weightTaskLimit);cmd.Parse(argc,argv);try{Require(layer.logLevel=="summary"||layer.logLevel=="events"||layer.logLevel=="debug","unknown log level");Require(layer.jettyMode=="pair"||layer.jettyMode=="per-wqe","unknown Jetty mode");Require(layer.fault=="payload-byte"||layer.fault=="early-wqe"||layer.fault=="missing-wqe"||layer.fault=="duplicate-completion"||layer.fault.empty()||layer.fault=="weight-byte"||layer.fault=="premature-ready"||layer.fault=="duplicate-weight"||layer.fault=="early-compute"||layer.fault=="early-group"||layer.fault=="relay-byte"||layer.fault=="relay-buffer-byte"||layer.fault=="duplicate-notify"||layer.fault=="early-relay"||layer.fault=="early-final-ready","unknown fault");Require(!input.empty()&&!out.empty(),"input/out");layer.Run(input,out);qprof::Complete();}catch(const std::exception& ex){qprof::Failed();if(!out.empty()){std::filesystem::create_directories(out);std::ofstream failed(out+"/validation.json");failed<<"{\"status\":\"FAIL\",\"error\":\""<<ex.what()<<"\"}\n";}if(layer.log){layer.Event("error");layer.log.flush();}if(layer.traceOn)UbUtils::Get()->Destroy();std::cerr<<"ERROR: "<<ex.what()<<'\n';return 2;}return 0;}
+--- baseline/online-validation.inc
++++ instrumented/online-validation.inc
+@@ -12,13 +12,14 @@
+     static uint64_t Hash(uint64_t hash,const char* data,size_t size){for(size_t i=0;i<size;++i){hash^=static_cast<uint8_t>(data[i]);hash*=1099511628211ULL;}return hash;}
+     static std::string Hex(uint64_t value){std::ostringstream s;s<<std::hex<<std::setfill('0')<<std::setw(16)<<value;return s.str();}
+     uint64_t At(const std::string& key)const{auto it=spans.find(key);Require(it!=spans.end(),"missing audit event "+key);return it->second[0];}
+-    void InitAudit(){taskAudit.resize(transfers.size());for(size_t i=0;i<transfers.size();++i)if(transfers[i].source!=transfers[i].target)taskAudit[i].segments.resize((transfers[i].bytes+segment-1)/segment);tokenAudit.assign(t,false);computeBegin.assign(n,0);computeEnd.assign(n,0);expertCursor.assign(n,0);}
++    void InitAudit(){qprof::Scope qprofScope(qprof::Phase::InitAudit);taskAudit.resize(transfers.size());for(size_t i=0;i<transfers.size();++i)if(transfers[i].source!=transfers[i].target)taskAudit[i].segments.resize((transfers[i].bytes+segment-1)/segment);tokenAudit.assign(t,false);computeBegin.assign(n,0);computeEnd.assign(n,0);expertCursor.assign(n,0);}
+     bool KeyEvent(const std::string& name,int stage,int task)const{
+         static const std::set<std::string> keys={"layer_start","layer_end","planning_start","planning_end","reroute_start","reroute_end","weights_start","weights_end","dispatch_gate","compute_start","compute_end","compute_idle","expert_start","expert_end","weight_ready","group_chunk_ready"};
+         return keys.count(name)||(name=="edge_ready")||(name=="send"&&stage==2&&task>=0&&!transfers[task].dependencies.empty());
+     }
+-    void Audit(const std::string& name,int stage,int id,int node,uint64_t off,uint64_t len,int task){
++    void Audit(const std::string& name,int stage,int id,int node,uint64_t off,uint64_t len,int task){qprof::Scope qprofScope(qprof::Phase::Audit);
+         auto wall=std::chrono::steady_clock::now();const uint64_t now=Simulator::Now().GetPicoSeconds();
++        qprof::Count(qprof::Counter::AuditEvents,1);
+         Require(now>=lastAuditTime,"audit clock reversed");lastAuditTime=now;
+         auto [sp,newSpan]=spans.try_emplace(name,std::array<uint64_t,3>{now,now,0});sp->second[1]=now;++sp->second[2];
+         if(name=="error")return;
+@@ -27,7 +28,7 @@
+             Require(stage==int(x.stage)&&id==int(x.id),"audit task metadata");
+             if(name=="send"){
+                 Require(!a.sent&&node==int(x.source)&&off==0&&len==x.bytes,"audit duplicate/invalid send");
+-                uint64_t gate=At("planning_end");if(x.stage==0)gate=At("dispatch_gate");else if(x.stage==1){Require(computeEnd[x.source]!=0,"audit combine before compute");gate=computeEnd[x.source];}else for(auto parent:x.dependencies){Require(taskAudit[parent].ready,"audit relay dependency");gate=std::max(gate,taskAudit[parent].finish);}
++                uint64_t gate=At("planning_end");if(x.stage==0)gate=At("dispatch_gate");else if(x.stage==1){Require(computeEnd[x.source]!=0,"audit combine before compute");gate=computeEnd[x.source];}else for(auto parent:x.dependencies){qprof::Count(qprof::Counter::AuditSendDependencyChecks,1);Require(taskAudit[parent].ready,"audit relay dependency");gate=std::max(gate,taskAudit[parent].finish);}
+                 Require(now==gate,"audit non-immediate send/gate");a.sent=true;a.send=now;
+                 if(!stageIntervals[x.stage][0])stageIntervals[x.stage][0]=now;
+             }else if(name=="ta_admitted"||name=="target_received"||name=="payload_verified"||name=="target_complete"){
+@@ -63,14 +64,14 @@
+                 if(name=="planning_end")Require(now-At("planning_start")==uint64_t(planningNs)*1000,"audit planning duration");
+                 if(name=="reroute_start"||name=="weights_start")Require(now==At("planning_end"),"audit overlap start");
+                 if(name=="reroute_end")Require(now-At("reroute_start")==uint64_t(rerouteNs)*1000,"audit reroute duration");
+-                if(name=="weights_end"){uint64_t end=At("planning_end");for(auto& p:physical)if(p.replica){auto key=std::make_tuple(std::string("weight_ready"),int(p.id),int(p.rank),uint64_t(0),uint64_t(weightBytes));Require(uniqueEvents.count(key),"audit missing replica ready");end=std::max(end,uniqueEvents.at(key));}Require(now==end,"audit global weights completion");}
++                if(name=="weights_end"){qprof::Scope qprofScan(qprof::Phase::AuditWeightsEndScan);uint64_t end=At("planning_end");for(auto& p:physical)if((qprof::Candidate(qprof::Counter::AuditWeightsEndCandidates),p.replica)){auto key=std::make_tuple(std::string("weight_ready"),int(p.id),int(p.rank),uint64_t(0),uint64_t(weightBytes));Require(uniqueEvents.count(key),"audit missing replica ready");end=std::max(end,uniqueEvents.at(key));}Require(now==end,"audit global weights completion");}
+                 if(name=="dispatch_gate")Require(now==std::max(At("reroute_end"),At("weights_end")),"audit dispatch gate");
+                 if(name=="main_weight_ready"){auto& p=P(id);Require(!p.replica&&p.rank==uint32_t(node)&&off==0&&len==weightBytes&&now==At("layer_start"),"audit main resident weight");}
+-                if(name=="weight_ready"){auto& p=P(id);Require(p.replica&&p.rank==uint32_t(node)&&off==0&&len==weightBytes,"audit replica ready identity");
+-                    uint64_t end=0;for(size_t i=2*assignments.size();i<transfers.size();++i)if(transfers[i].physical==uint32_t(id)){Require(taskAudit[i].ready,"audit premature weight ready");end=std::max(end,taskAudit[i].finish);}Require(now==end,"audit final weight aggregation");
++                if(name=="weight_ready"){qprof::Scope qprofScan(qprof::Phase::AuditWeightScan);qprof::Count(qprof::Counter::AuditWeightEvents,1);auto& p=P(id);Require(p.replica&&p.rank==uint32_t(node)&&off==0&&len==weightBytes,"audit replica ready identity");
++                    uint64_t end=0;for(size_t i=2*assignments.size();i<transfers.size();++i)if((qprof::Candidate(qprof::Counter::AuditWeightCandidates),transfers[i].physical==uint32_t(id))){qprof::Count(qprof::Counter::AuditWeightMatches,1);Require(taskAudit[i].ready,"audit premature weight ready");end=std::max(end,taskAudit[i].finish);}Require(now==end,"audit final weight aggregation");
+                 }
+-                if(name=="group_chunk_ready"){
+-                    uint64_t end=0;for(size_t i=2*assignments.size();i<transfers.size();++i){auto& x=transfers[i];if(!P(x.sourcePhysical).replica&&P(x.physical).expert==uint32_t(id)&&x.offset==off&&x.bytes==len){Require(taskAudit[i].ready,"audit premature group");end=std::max(end,taskAudit[i].finish);}}Require(now==end,"audit group timing");
++                if(name=="group_chunk_ready"){qprof::Scope qprofScan(qprof::Phase::AuditGroupScan);qprof::Count(qprof::Counter::AuditGroupEvents,1);
++                    uint64_t end=0;for(size_t i=2*assignments.size();i<transfers.size();++i){qprof::Candidate(qprof::Counter::AuditGroupCandidates);auto& x=transfers[i];if(!P(x.sourcePhysical).replica&&P(x.physical).expert==uint32_t(id)&&x.offset==off&&x.bytes==len){qprof::Count(qprof::Counter::AuditGroupMatches,1);Require(taskAudit[i].ready,"audit premature group");end=std::max(end,taskAudit[i].finish);}}Require(now==end,"audit group timing");
+                 }
+                 if(name=="compute_idle")Require(node>=0&&uint32_t(node)<n&&!expected[node]&&now==At("dispatch_gate"),"audit invalid idle compute");
+                 if(name=="compute_start"){Require(node>=0&&uint32_t(node)<n&&expected[node]>0&&!computeBegin[node],"audit compute identity");Require(now>=At("dispatch_gate"),"audit compute gate");for(size_t i=0;i<assignments.size();++i)if(assignments[i].target==uint32_t(node))Require(taskAudit[i].ready,"audit compute data dependency");computeBegin[node]=now;expertCursor[node]=now;}
+@@ -82,14 +83,15 @@
+         }
+         verificationNs+=std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now()-wall).count();
+     }
+-    void FinalAudit(){
++    void FinalAudit(){qprof::Scope qprofScope(qprof::Phase::FinalAudit);
+         auto wall=std::chrono::steady_clock::now();
+         for(size_t task=0;task<transfers.size();++task){auto& x=transfers[task];auto& a=taskAudit[task];Require(a.sent&&a.ready&&a.sender==(x.source!=x.target)&&a.relayRead==(!x.dependencies.empty()),"audit terminal task state");
+             for(size_t i=0;i<x.data.size();++i)Require(x.data[i]==ExpectedByte(task,i),"audit final payload corruption");
++            qprof::Count(qprof::Counter::FinalTaskPayloadBytes,x.data.size());
+             if(x.stage==1)combineHash=Hash(combineHash,reinterpret_cast<const char*>(x.data.data()),x.data.size());
+-            if(x.stage==2&&!x.dependencies.empty())for(size_t i=0;i<x.data.size();++i)Require(x.data[i]==weightData[pIndex.at(x.sourcePhysical)][x.offset+i],"audit relay final buffer provenance");
++            if(x.stage==2&&!x.dependencies.empty()){for(size_t i=0;i<x.data.size();++i)Require(x.data[i]==weightData[pIndex.at(x.sourcePhysical)][x.offset+i],"audit relay final buffer provenance");qprof::Count(qprof::Counter::FinalRelayPayloadBytes,x.data.size());}qprof::Checkpoint();
+         }
+-        for(size_t i=0;i<physical.size();++i)if(physical[i].replica)for(uint32_t off=0;off<weightBytes;++off)Require(weightData[i][off]==WeightByte(physical[i].id,off),"audit final weight corruption");
++        for(size_t i=0;i<physical.size();++i)if(physical[i].replica){for(uint32_t off=0;off<weightBytes;++off)Require(weightData[i][off]==WeightByte(physical[i].id,off),"audit final weight corruption");qprof::Count(qprof::Counter::FinalReplicaPayloadBytes,weightBytes);qprof::Checkpoint();}
+         Require(verifiedSegments==taCount,"audit TA conservation");Require(verifiedBytes[0]==uint64_t(assignments.size())*bytes&&verifiedBytes[1]==verifiedBytes[0],"audit assignment bytes");
+         for(auto name:{"layer_start","layer_end","planning_start","planning_end","reroute_start","reroute_end","weights_start","weights_end","dispatch_gate"})Require(spans.count(name)&&spans.at(name)[2]==1,"audit global cardinality");
+         Require(At("planning_start")==At("layer_start"),"audit planning start");
+@@ -102,7 +104,7 @@
+         verificationNs+=std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now()-wall).count();
+     }
+     template<class Range> static void JsonArray(std::ostream& out,const Range& range){out<<'[';bool comma=false;for(auto v:range){if(comma)out<<',';comma=true;out<<v;}out<<']';}
+-    void WriteSummary(const std::string& out){
++    void WriteSummary(const std::string& out){qprof::Scope qprofScope(qprof::Phase::WriteSummary);
+         std::ofstream s(out+"/online-summary.json");Require(bool(s),"summary output");
+         s<<"{\"schema\":1,\"log_level\":\""<<logLevel<<"\",\"layer_latency_ps\":"<<At("layer_end")-At("layer_start")<<",\"remote_WQEs\":"<<remoteCount<<",\"TA_count\":"<<taCount<<",\"target_segments\":"<<verifiedSegments<<",\"sender_completions\":"<<senderCount<<",\"completed_tokens\":"<<receivedTokens<<",\"assignments\":"<<assignments.size()<<",\"replicas\":"<<physical.size()-e<<",\"jettys\":"<<jettyCount<<",\"simulator_events\":"<<Simulator::GetEventCount()<<",\"verification_wall_ns\":"<<verificationNs<<",\"combine_fnv1a64\":\""<<Hex(combineHash)<<"\",\"executed_graph_fnv1a64\":\""<<GraphHash()<<"\"";
+         s<<",\"max_npu_load\":"<<*std::max_element(expected.begin(),expected.end())<<",\"per_npu_load\":";JsonArray(s,expected);
