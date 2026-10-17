@@ -50,6 +50,9 @@ public:
     std::unique_ptr<PairJettyManager> pairJetties;
     std::map<std::pair<uint32_t,uint32_t>,uint32_t> nextSsn;
     std::ofstream admissions;
+    uint64_t payloadBudgetBytes=UINT64_C(256)*1024*1024,weightTaskLimit=20000;
+    static uint64_t CheckedMul(uint64_t a,uint64_t b){Require(!b||a<=UINT64_MAX/b,"capacity multiplication overflow");return a*b;}
+    static uint64_t CheckedAdd(uint64_t a,uint64_t b){Require(a<=UINT64_MAX-b,"capacity addition overflow");return a+b;}
     uint64_t taCount=0;uint32_t jettyCount=0;
     void SenderComplete(uint32_t task,uint32_t jetty){
         auto& x=transfers.at(task);Require(x.jettyId==jetty&&!x.senderDone,"sender identity/duplicate");
@@ -101,7 +104,9 @@ public:
         Require(linkGbps>=1&&linkGbps<=10000&&linkDelayNs<=1000000,"invalid link");
         Require((matrices==2||matrices==3)&&weightBytes>0&&weightBytes<=64*1024*1024&&planningNs<=100000000&&rerouteNs<=100000000&&weightCompleteNs<=100000000&&balanced<=1&&strategy<=2,"unsupported execution parameters/strategy");
         Require(np>=e&&np<=1024,"physical count");
-        bytes=dim*dtype;Require(uint64_t(t)*k<=100000&&uint64_t(t)*k*bytes*2+uint64_t(np-e)*weightBytes<=256*1024*1024,"payload bound");
+        Require(payloadBudgetBytes>0&&payloadBudgetBytes<=UINT64_C(8)*1024*1024*1024,"payload budget range");Require(weightTaskLimit>0&&weightTaskLimit<=1000000,"weight task limit range");
+        bytes=dim*dtype;const auto assignmentCount=CheckedMul(t,k);const auto logicalPayload=CheckedAdd(CheckedMul(CheckedMul(assignmentCount,bytes),2),CheckedMul(np-e,weightBytes));
+        Require(assignmentCount<=100000&&logicalPayload<=payloadBudgetBytes,"payload bound");
         placement.resize(e);for(auto& r:placement)Require(bool(f>>r)&&r<n,"main placement");
         std::set<std::pair<uint32_t,uint32_t>> unique;std::vector<uint32_t> mains(e,0);
         for(uint32_t i=0;i<np;++i){PhysicalExpert p;Require(bool(f>>p.id>>p.expert>>p.rank>>p.replica>>p.quota>>p.mainId>>p.mainRank),"physical input");
@@ -126,12 +131,24 @@ public:
         std::vector<PhysicalExpert> ordered;std::set<uint32_t> seenOrder;
         for(uint32_t i=0;i<np;++i){uint32_t id;Require(bool(f>>id)&&seenOrder.insert(id).second,"ordinal duplicate");ordered.push_back(P(id));}
         std::string extra;Require(!(f>>extra),"extra input");
-        for(uint32_t stage=0;stage<2;++stage)for(uint32_t aid=0;aid<assignments.size();++aid){auto a=assignments[aid];AddTransfer(stage,aid,stage?a.target:a.source,stage?a.source:a.target,a.physical,bytes);}
+        // Predict count before generating ranges/edges, never reserve the configured maximum.
+        std::map<uint32_t,uint64_t> replicaCounts;for(auto& p:physical)if(p.replica)++replicaCounts[p.expert];
+        uint64_t predictedEdges=0;
+        for(auto [expert,count]:replicaCounts){uint64_t nr=0;if(count>1){while((nr+1)*(nr+1)<=count)++nr;nr=std::min({nr,uint64_t(weightOptions.maxRelays),count-1});}
+            bool relay=nr&&(weightOptions.forceRelay||(count>=weightOptions.minReplicas&&count-std::max(nr,(count-nr+nr-1)/nr)>=weightOptions.minFanoutGain));
+            uint64_t pieces=1;if(strategy==2&&relay){auto cut=weightOptions.shardCut;Require(cut<weightBytes,"shard range");auto ceilChunk=[&](uint64_t value){return (value+weightOptions.chunkBytes-1)/weightOptions.chunkBytes;};pieces=cut?CheckedAdd(ceilChunk(cut),ceilChunk(weightBytes-cut)):ceilChunk(weightBytes);}
+            predictedEdges=CheckedAdd(predictedEdges,CheckedMul(count,pieces));}
+        Require(predictedEdges<=weightTaskLimit,"weight task count bound");
         std::vector<WeightEdge> edges;
         if(strategy==0)edges=DirectWeightDistribution().Edges(physical,weightBytes);
         else if(strategy==1)edges=TwoStageRelay(weightOptions).Edges(ordered,weightBytes);
         else edges=ChunkStreamingRelay(weightOptions).Edges(ordered,weightBytes);
-        Require(edges.size()<=20000,"weight task count bound");
+        Require(edges.size()==predictedEdges&&edges.size()<=weightTaskLimit,"weight task count bound");
+        Require(CheckedAdd(CheckedMul(assignments.size(),2),edges.size())<=INT32_MAX,"task ID/index range");
+        uint64_t segmentTotal=CheckedMul(CheckedMul(assignments.size(),2),(uint64_t(bytes)+segment-1)/segment);
+        for(auto& edge:edges)segmentTotal=CheckedAdd(segmentTotal,(uint64_t(edge.bytes)+segment-1)/segment);
+        Require(segmentTotal<=UINT32_MAX,"logical SSN/count range");
+        for(uint32_t stage=0;stage<2;++stage)for(uint32_t aid=0;aid<assignments.size();++aid){auto a=assignments[aid];AddTransfer(stage,aid,stage?a.target:a.source,stage?a.source:a.target,a.physical,bytes);}
         for(auto edge:edges){
             auto& src=P(edge.sourcePhysical);auto& dst=P(edge.targetPhysical);
             Require(src.expert==dst.expert&&dst.replica&&edge.bytes&&edge.offset<weightBytes&&edge.bytes<=weightBytes-edge.offset,"weight edge range/identity");
@@ -360,4 +377,4 @@ public:
         WriteSummary(out);if(logLevel=="debug")WritePayloads(out);admissions.close();log.close();UbUtils::Get()->Destroy();traceOn=false;Simulator::Destroy();
     }
 };
-int main(int argc,char** argv){Time::SetResolution(Time::PS);Layer layer;std::string input,out;CommandLine cmd;cmd.AddValue("input","validated execution input",input);cmd.AddValue("out","output directory",out);cmd.AddValue("capacityMetrics","optional post-run capacity counters",layer.capacityMetrics);cmd.AddValue("fault","test-only fault injection",layer.fault);cmd.AddValue("logLevel","summary (default), events, debug",layer.logLevel);cmd.AddValue("jettyMode","pair or per-wqe",layer.jettyMode);cmd.Parse(argc,argv);try{Require(layer.logLevel=="summary"||layer.logLevel=="events"||layer.logLevel=="debug","unknown log level");Require(layer.jettyMode=="pair"||layer.jettyMode=="per-wqe","unknown Jetty mode");Require(layer.fault=="payload-byte"||layer.fault=="early-wqe"||layer.fault=="missing-wqe"||layer.fault=="duplicate-completion"||layer.fault.empty()||layer.fault=="weight-byte"||layer.fault=="premature-ready"||layer.fault=="duplicate-weight"||layer.fault=="early-compute"||layer.fault=="early-group"||layer.fault=="relay-byte"||layer.fault=="relay-buffer-byte"||layer.fault=="duplicate-notify"||layer.fault=="early-relay"||layer.fault=="early-final-ready","unknown fault");Require(!input.empty()&&!out.empty(),"input/out");layer.Run(input,out);}catch(const std::exception& ex){if(!out.empty()){std::filesystem::create_directories(out);std::ofstream failed(out+"/validation.json");failed<<"{\"status\":\"FAIL\",\"error\":\""<<ex.what()<<"\"}\n";}if(layer.log){layer.Event("error");layer.log.flush();}if(layer.traceOn)UbUtils::Get()->Destroy();std::cerr<<"ERROR: "<<ex.what()<<'\n';return 2;}return 0;}
+int main(int argc,char** argv){Time::SetResolution(Time::PS);Layer layer;std::string input,out;CommandLine cmd;cmd.AddValue("input","validated execution input",input);cmd.AddValue("out","output directory",out);cmd.AddValue("capacityMetrics","optional post-run capacity counters",layer.capacityMetrics);cmd.AddValue("fault","test-only fault injection",layer.fault);cmd.AddValue("logLevel","summary (default), events, debug",layer.logLevel);cmd.AddValue("jettyMode","pair or per-wqe",layer.jettyMode);cmd.AddValue("payloadBudgetBytes","logical payload budget, default 256 MiB, maximum 8 GiB",layer.payloadBudgetBytes);cmd.AddValue("weightTaskLimit","weight WQE budget, default 20000, maximum 1000000",layer.weightTaskLimit);cmd.Parse(argc,argv);try{Require(layer.logLevel=="summary"||layer.logLevel=="events"||layer.logLevel=="debug","unknown log level");Require(layer.jettyMode=="pair"||layer.jettyMode=="per-wqe","unknown Jetty mode");Require(layer.fault=="payload-byte"||layer.fault=="early-wqe"||layer.fault=="missing-wqe"||layer.fault=="duplicate-completion"||layer.fault.empty()||layer.fault=="weight-byte"||layer.fault=="premature-ready"||layer.fault=="duplicate-weight"||layer.fault=="early-compute"||layer.fault=="early-group"||layer.fault=="relay-byte"||layer.fault=="relay-buffer-byte"||layer.fault=="duplicate-notify"||layer.fault=="early-relay"||layer.fault=="early-final-ready","unknown fault");Require(!input.empty()&&!out.empty(),"input/out");layer.Run(input,out);}catch(const std::exception& ex){if(!out.empty()){std::filesystem::create_directories(out);std::ofstream failed(out+"/validation.json");failed<<"{\"status\":\"FAIL\",\"error\":\""<<ex.what()<<"\"}\n";}if(layer.log){layer.Event("error");layer.log.flush();}if(layer.traceOn)UbUtils::Get()->Destroy();std::cerr<<"ERROR: "<<ex.what()<<'\n';return 2;}return 0;}

@@ -1,0 +1,815 @@
+{
+  "comparisons": {
+    "chunk-small": {
+      "debug_event_rows": 2336,
+      "independent_event_evidence": {
+        "row_count": 2336,
+        "stage_spans": {
+          "combine": [
+            16881736,
+            17804720,
+            922984
+          ],
+          "compute": [
+            16388520,
+            17669880,
+            1281360
+          ],
+          "dispatch": [
+            16388520,
+            16586840,
+            198320
+          ]
+        },
+        "timeline": {
+          "compute_end": [
+            16881736,
+            17669880,
+            7
+          ],
+          "compute_idle": [
+            16388520,
+            16388520,
+            1
+          ],
+          "compute_start": [
+            16388520,
+            16586840,
+            7
+          ],
+          "data_ready": [
+            16388520,
+            17804720,
+            128
+          ],
+          "dispatch_gate": [
+            16388520,
+            16388520,
+            1
+          ],
+          "edge_ready": [
+            7124520,
+            16388520,
+            72
+          ],
+          "expert_end": [
+            16881736,
+            17669880,
+            7
+          ],
+          "expert_start": [
+            16388520,
+            16586840,
+            7
+          ],
+          "group_chunk_ready": [
+            7212680,
+            9242080,
+            12
+          ],
+          "layer_end": [
+            17804720,
+            17804720,
+            1
+          ],
+          "layer_start": [
+            1000,
+            1000,
+            1
+          ],
+          "local_verified": [
+            16388520,
+            17669880,
+            104
+          ],
+          "main_weight_ready": [
+            1000,
+            1000,
+            8
+          ],
+          "payload_verified": [
+            427320,
+            17804720,
+            312
+          ],
+          "planning_end": [
+            201000,
+            201000,
+            1
+          ],
+          "planning_start": [
+            1000,
+            1000,
+            1
+          ],
+          "relay_buffer_read": [
+            7212680,
+            9242080,
+            48
+          ],
+          "reroute_end": [
+            301000,
+            301000,
+            1
+          ],
+          "reroute_start": [
+            201000,
+            201000,
+            1
+          ],
+          "send": [
+            201000,
+            17669880,
+            200
+          ],
+          "sender_complete": [
+            7189440,
+            17869640,
+            96
+          ],
+          "ta_admitted": [
+            201000,
+            17669880,
+            312
+          ],
+          "ta_response_admitted": [
+            427320,
+            17804720,
+            312
+          ],
+          "target_complete": [
+            427320,
+            17804720,
+            312
+          ],
+          "target_received": [
+            427320,
+            17804720,
+            312
+          ],
+          "token_complete": [
+            16881736,
+            17804720,
+            64
+          ],
+          "weight_ready": [
+            9044200,
+            16388520,
+            6
+          ],
+          "weights_end": [
+            16388520,
+            16388520,
+            1
+          ],
+          "weights_start": [
+            201000,
+            201000,
+            1
+          ]
+        }
+      },
+      "key_event_rows": 306,
+      "old_debug_artifact_byte_parity": {
+        "events.csv": true,
+        "executed-transfers.csv": true,
+        "native/runlog/AllPacketTrace_ACK_node_0.csv": true,
+        "native/runlog/AllPacketTrace_ACK_node_1.csv": true,
+        "native/runlog/AllPacketTrace_ACK_node_2.csv": true,
+        "native/runlog/AllPacketTrace_ACK_node_3.csv": true,
+        "native/runlog/AllPacketTrace_ACK_node_4.csv": true,
+        "native/runlog/AllPacketTrace_ACK_node_5.csv": true,
+        "native/runlog/AllPacketTrace_ACK_node_6.csv": true,
+        "native/runlog/AllPacketTrace_ACK_node_7.csv": true,
+        "native/runlog/AllPacketTrace_PKT_node_0.csv": true,
+        "native/runlog/AllPacketTrace_PKT_node_1.csv": true,
+        "native/runlog/AllPacketTrace_PKT_node_2.csv": true,
+        "native/runlog/AllPacketTrace_PKT_node_3.csv": true,
+        "native/runlog/AllPacketTrace_PKT_node_4.csv": true,
+        "native/runlog/AllPacketTrace_PKT_node_5.csv": true,
+        "native/runlog/AllPacketTrace_PKT_node_6.csv": true,
+        "native/runlog/AllPacketTrace_PKT_node_7.csv": true,
+        "native/runlog/PacketTrace_node_0.csv": true,
+        "native/runlog/PacketTrace_node_1.csv": true,
+        "native/runlog/PacketTrace_node_2.csv": true,
+        "native/runlog/PacketTrace_node_3.csv": true,
+        "native/runlog/PacketTrace_node_4.csv": true,
+        "native/runlog/PacketTrace_node_5.csv": true,
+        "native/runlog/PacketTrace_node_6.csv": true,
+        "native/runlog/PacketTrace_node_7.csv": true,
+        "native/runlog/PacketTrace_node_8.csv": true,
+        "native/runlog/PortTrace_node_0_port_0.csv": true,
+        "native/runlog/PortTrace_node_1_port_0.csv": true,
+        "native/runlog/PortTrace_node_2_port_0.csv": true,
+        "native/runlog/PortTrace_node_3_port_0.csv": true,
+        "native/runlog/PortTrace_node_4_port_0.csv": true,
+        "native/runlog/PortTrace_node_5_port_0.csv": true,
+        "native/runlog/PortTrace_node_6_port_0.csv": true,
+        "native/runlog/PortTrace_node_7_port_0.csv": true,
+        "native/runlog/PortTrace_node_8_port_0.csv": true,
+        "native/runlog/PortTrace_node_8_port_1.csv": true,
+        "native/runlog/PortTrace_node_8_port_2.csv": true,
+        "native/runlog/PortTrace_node_8_port_3.csv": true,
+        "native/runlog/PortTrace_node_8_port_4.csv": true,
+        "native/runlog/PortTrace_node_8_port_5.csv": true,
+        "native/runlog/PortTrace_node_8_port_6.csv": true,
+        "native/runlog/PortTrace_node_8_port_7.csv": true,
+        "native/runlog/TaskTrace_node_0.csv": true,
+        "native/runlog/TaskTrace_node_1.csv": true,
+        "native/runlog/TaskTrace_node_2.csv": true,
+        "native/runlog/TaskTrace_node_3.csv": true,
+        "native/runlog/TaskTrace_node_4.csv": true,
+        "native/runlog/TaskTrace_node_5.csv": true,
+        "native/runlog/TaskTrace_node_6.csv": true,
+        "native/runlog/TaskTrace_node_7.csv": true,
+        "payload-index.csv": true,
+        "received-payloads.bin": true,
+        "ta-identity.csv": true
+      },
+      "old_debug_strict_parity": "PASS",
+      "status": "PASS"
+    },
+    "direct-small": {
+      "debug_event_rows": 1045,
+      "independent_event_evidence": {
+        "row_count": 1045,
+        "stage_spans": {
+          "combine": [
+            14019008,
+            15096720,
+            1077712
+          ],
+          "compute": [
+            13722400,
+            14980800,
+            1258400
+          ],
+          "dispatch": [
+            13722400,
+            13897760,
+            175360
+          ]
+        },
+        "timeline": {
+          "compute_end": [
+            14019008,
+            14980800,
+            4
+          ],
+          "compute_start": [
+            13722400,
+            13897760,
+            4
+          ],
+          "data_ready": [
+            13722400,
+            15096720,
+            64
+          ],
+          "dispatch_gate": [
+            13722400,
+            13722400,
+            1
+          ],
+          "edge_ready": [
+            13546080,
+            13722400,
+            3
+          ],
+          "expert_end": [
+            14019008,
+            14980800,
+            4
+          ],
+          "expert_start": [
+            13722400,
+            13897760,
+            4
+          ],
+          "layer_end": [
+            15096720,
+            15096720,
+            1
+          ],
+          "layer_start": [
+            1000,
+            1000,
+            1
+          ],
+          "local_verified": [
+            13722400,
+            14980800,
+            52
+          ],
+          "main_weight_ready": [
+            1000,
+            1000,
+            4
+          ],
+          "payload_verified": [
+            427320,
+            15096720,
+            156
+          ],
+          "planning_end": [
+            201000,
+            201000,
+            1
+          ],
+          "planning_start": [
+            1000,
+            1000,
+            1
+          ],
+          "reroute_end": [
+            301000,
+            301000,
+            1
+          ],
+          "reroute_start": [
+            201000,
+            201000,
+            1
+          ],
+          "send": [
+            201000,
+            14980800,
+            67
+          ],
+          "sender_complete": [
+            13611000,
+            15165120,
+            15
+          ],
+          "ta_admitted": [
+            201000,
+            14980800,
+            156
+          ],
+          "ta_response_admitted": [
+            427320,
+            15096720,
+            156
+          ],
+          "target_complete": [
+            427320,
+            15096720,
+            156
+          ],
+          "target_received": [
+            427320,
+            15096720,
+            156
+          ],
+          "token_complete": [
+            14019008,
+            15096720,
+            32
+          ],
+          "weight_ready": [
+            13546080,
+            13722400,
+            3
+          ],
+          "weights_end": [
+            13722400,
+            13722400,
+            1
+          ],
+          "weights_start": [
+            201000,
+            201000,
+            1
+          ]
+        }
+      },
+      "key_event_rows": 41,
+      "old_debug_artifact_byte_parity": {
+        "events.csv": true,
+        "executed-transfers.csv": true,
+        "native/runlog/AllPacketTrace_ACK_node_0.csv": true,
+        "native/runlog/AllPacketTrace_ACK_node_1.csv": true,
+        "native/runlog/AllPacketTrace_ACK_node_2.csv": true,
+        "native/runlog/AllPacketTrace_ACK_node_3.csv": true,
+        "native/runlog/AllPacketTrace_PKT_node_0.csv": true,
+        "native/runlog/AllPacketTrace_PKT_node_1.csv": true,
+        "native/runlog/AllPacketTrace_PKT_node_2.csv": true,
+        "native/runlog/AllPacketTrace_PKT_node_3.csv": true,
+        "native/runlog/PacketTrace_node_0.csv": true,
+        "native/runlog/PacketTrace_node_1.csv": true,
+        "native/runlog/PacketTrace_node_2.csv": true,
+        "native/runlog/PacketTrace_node_3.csv": true,
+        "native/runlog/PacketTrace_node_4.csv": true,
+        "native/runlog/PortTrace_node_0_port_0.csv": true,
+        "native/runlog/PortTrace_node_1_port_0.csv": true,
+        "native/runlog/PortTrace_node_2_port_0.csv": true,
+        "native/runlog/PortTrace_node_3_port_0.csv": true,
+        "native/runlog/PortTrace_node_4_port_0.csv": true,
+        "native/runlog/PortTrace_node_4_port_1.csv": true,
+        "native/runlog/PortTrace_node_4_port_2.csv": true,
+        "native/runlog/PortTrace_node_4_port_3.csv": true,
+        "native/runlog/TaskTrace_node_0.csv": true,
+        "native/runlog/TaskTrace_node_1.csv": true,
+        "native/runlog/TaskTrace_node_2.csv": true,
+        "native/runlog/TaskTrace_node_3.csv": true,
+        "payload-index.csv": true,
+        "received-payloads.bin": true,
+        "ta-identity.csv": true
+      },
+      "old_debug_strict_parity": "PASS",
+      "status": "PASS"
+    },
+    "multichunk-multita": {
+      "debug_event_rows": 1180,
+      "independent_event_evidence": {
+        "row_count": 1180,
+        "stage_spans": {
+          "combine": [
+            13238408,
+            14322600,
+            1084192
+          ],
+          "compute": [
+            12941800,
+            14190200,
+            1248400
+          ],
+          "dispatch": [
+            12941800,
+            13107160,
+            165360
+          ]
+        },
+        "timeline": {
+          "compute_end": [
+            13238408,
+            14190200,
+            4
+          ],
+          "compute_start": [
+            12941800,
+            13107160,
+            4
+          ],
+          "data_ready": [
+            12941800,
+            14322600,
+            64
+          ],
+          "dispatch_gate": [
+            12941800,
+            12941800,
+            1
+          ],
+          "edge_ready": [
+            3765640,
+            12941800,
+            36
+          ],
+          "expert_end": [
+            13238408,
+            14190200,
+            4
+          ],
+          "expert_start": [
+            12941800,
+            13107160,
+            4
+          ],
+          "group_chunk_ready": [
+            3765640,
+            4830360,
+            12
+          ],
+          "layer_end": [
+            14322600,
+            14322600,
+            1
+          ],
+          "layer_start": [
+            1000,
+            1000,
+            1
+          ],
+          "local_verified": [
+            12941800,
+            14190200,
+            52
+          ],
+          "main_weight_ready": [
+            1000,
+            1000,
+            4
+          ],
+          "payload_verified": [
+            427320,
+            14322600,
+            156
+          ],
+          "planning_end": [
+            201000,
+            201000,
+            1
+          ],
+          "planning_start": [
+            1000,
+            1000,
+            1
+          ],
+          "relay_buffer_read": [
+            3765640,
+            4830360,
+            24
+          ],
+          "reroute_end": [
+            301000,
+            301000,
+            1
+          ],
+          "reroute_start": [
+            201000,
+            201000,
+            1
+          ],
+          "send": [
+            201000,
+            14190200,
+            100
+          ],
+          "sender_complete": [
+            4006880,
+            14391000,
+            48
+          ],
+          "ta_admitted": [
+            201000,
+            14190200,
+            156
+          ],
+          "ta_response_admitted": [
+            427320,
+            14322600,
+            156
+          ],
+          "target_complete": [
+            427320,
+            14322600,
+            156
+          ],
+          "target_received": [
+            427320,
+            14322600,
+            156
+          ],
+          "token_complete": [
+            13238408,
+            14322600,
+            32
+          ],
+          "weight_ready": [
+            4830360,
+            12941800,
+            3
+          ],
+          "weights_end": [
+            12941800,
+            12941800,
+            1
+          ],
+          "weights_start": [
+            201000,
+            201000,
+            1
+          ]
+        }
+      },
+      "key_event_rows": 167,
+      "multichunk_multita_proof": {
+        "application_pipeline_overlaps": 22,
+        "group_chunks": 12,
+        "max_TAs_per_WQE": 4,
+        "native_pipeline_overlaps": 10
+      },
+      "old_debug_artifact_byte_parity": {
+        "events.csv": true,
+        "executed-transfers.csv": true,
+        "native/runlog/AllPacketTrace_ACK_node_0.csv": true,
+        "native/runlog/AllPacketTrace_ACK_node_1.csv": true,
+        "native/runlog/AllPacketTrace_ACK_node_2.csv": true,
+        "native/runlog/AllPacketTrace_ACK_node_3.csv": true,
+        "native/runlog/AllPacketTrace_PKT_node_0.csv": true,
+        "native/runlog/AllPacketTrace_PKT_node_1.csv": true,
+        "native/runlog/AllPacketTrace_PKT_node_2.csv": true,
+        "native/runlog/AllPacketTrace_PKT_node_3.csv": true,
+        "native/runlog/PacketTrace_node_0.csv": true,
+        "native/runlog/PacketTrace_node_1.csv": true,
+        "native/runlog/PacketTrace_node_2.csv": true,
+        "native/runlog/PacketTrace_node_3.csv": true,
+        "native/runlog/PacketTrace_node_4.csv": true,
+        "native/runlog/PortTrace_node_0_port_0.csv": true,
+        "native/runlog/PortTrace_node_1_port_0.csv": true,
+        "native/runlog/PortTrace_node_2_port_0.csv": true,
+        "native/runlog/PortTrace_node_3_port_0.csv": true,
+        "native/runlog/PortTrace_node_4_port_0.csv": true,
+        "native/runlog/PortTrace_node_4_port_1.csv": true,
+        "native/runlog/PortTrace_node_4_port_2.csv": true,
+        "native/runlog/PortTrace_node_4_port_3.csv": true,
+        "native/runlog/TaskTrace_node_0.csv": true,
+        "native/runlog/TaskTrace_node_1.csv": true,
+        "native/runlog/TaskTrace_node_2.csv": true,
+        "native/runlog/TaskTrace_node_3.csv": true,
+        "payload-index.csv": true,
+        "received-payloads.bin": true,
+        "ta-identity.csv": true
+      },
+      "old_debug_strict_parity": "PASS",
+      "status": "PASS"
+    },
+    "nb-small": {
+      "debug_event_rows": 258,
+      "independent_event_evidence": {
+        "row_count": 258,
+        "stage_spans": {
+          "combine": [
+            610136,
+            1218152,
+            608016
+          ],
+          "compute": [
+            116920,
+            1052792,
+            935872
+          ],
+          "dispatch": [
+            1000,
+            166360,
+            165360
+          ]
+        },
+        "timeline": {
+          "compute_end": [
+            610136,
+            1052792,
+            3
+          ],
+          "compute_idle": [
+            1000,
+            1000,
+            1
+          ],
+          "compute_start": [
+            116920,
+            166360,
+            3
+          ],
+          "data_ready": [
+            1000,
+            1218152,
+            32
+          ],
+          "dispatch_gate": [
+            1000,
+            1000,
+            1
+          ],
+          "expert_end": [
+            610136,
+            1052792,
+            3
+          ],
+          "expert_start": [
+            116920,
+            166360,
+            3
+          ],
+          "layer_end": [
+            1218152,
+            1218152,
+            1
+          ],
+          "layer_start": [
+            1000,
+            1000,
+            1
+          ],
+          "local_verified": [
+            1000,
+            1052792,
+            8
+          ],
+          "main_weight_ready": [
+            1000,
+            1000,
+            4
+          ],
+          "payload_verified": [
+            83960,
+            1218152,
+            24
+          ],
+          "planning_end": [
+            1000,
+            1000,
+            1
+          ],
+          "planning_start": [
+            1000,
+            1000,
+            1
+          ],
+          "reroute_end": [
+            1000,
+            1000,
+            1
+          ],
+          "reroute_start": [
+            1000,
+            1000,
+            1
+          ],
+          "send": [
+            1000,
+            1052792,
+            32
+          ],
+          "sender_complete": [
+            148880,
+            1286552,
+            24
+          ],
+          "ta_admitted": [
+            1000,
+            1052792,
+            24
+          ],
+          "ta_response_admitted": [
+            83960,
+            1218152,
+            24
+          ],
+          "target_complete": [
+            83960,
+            1218152,
+            24
+          ],
+          "target_received": [
+            83960,
+            1218152,
+            24
+          ],
+          "token_complete": [
+            610136,
+            1218152,
+            16
+          ],
+          "weights_end": [
+            1000,
+            1000,
+            1
+          ],
+          "weights_start": [
+            1000,
+            1000,
+            1
+          ]
+        }
+      },
+      "key_event_rows": 26,
+      "old_debug_artifact_byte_parity": {
+        "events.csv": true,
+        "executed-transfers.csv": true,
+        "native/runlog/AllPacketTrace_ACK_node_0.csv": true,
+        "native/runlog/AllPacketTrace_ACK_node_1.csv": true,
+        "native/runlog/AllPacketTrace_ACK_node_2.csv": true,
+        "native/runlog/AllPacketTrace_ACK_node_3.csv": true,
+        "native/runlog/AllPacketTrace_PKT_node_0.csv": true,
+        "native/runlog/AllPacketTrace_PKT_node_1.csv": true,
+        "native/runlog/AllPacketTrace_PKT_node_2.csv": true,
+        "native/runlog/AllPacketTrace_PKT_node_3.csv": true,
+        "native/runlog/PacketTrace_node_0.csv": true,
+        "native/runlog/PacketTrace_node_1.csv": true,
+        "native/runlog/PacketTrace_node_2.csv": true,
+        "native/runlog/PacketTrace_node_3.csv": true,
+        "native/runlog/PacketTrace_node_4.csv": true,
+        "native/runlog/PortTrace_node_0_port_0.csv": true,
+        "native/runlog/PortTrace_node_1_port_0.csv": true,
+        "native/runlog/PortTrace_node_2_port_0.csv": true,
+        "native/runlog/PortTrace_node_3_port_0.csv": true,
+        "native/runlog/PortTrace_node_4_port_0.csv": true,
+        "native/runlog/PortTrace_node_4_port_1.csv": true,
+        "native/runlog/PortTrace_node_4_port_2.csv": true,
+        "native/runlog/PortTrace_node_4_port_3.csv": true,
+        "native/runlog/TaskTrace_node_0.csv": true,
+        "native/runlog/TaskTrace_node_1.csv": true,
+        "native/runlog/TaskTrace_node_2.csv": true,
+        "native/runlog/TaskTrace_node_3.csv": true,
+        "payload-index.csv": true,
+        "received-payloads.bin": true,
+        "ta-identity.csv": true
+      },
+      "old_debug_strict_parity": "PASS",
+      "status": "PASS"
+    }
+  },
+  "status": "PASS"
+}

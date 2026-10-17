@@ -41,6 +41,14 @@ def fnv1a64(data):
 def check(directory, graph_tool, execution_summary=None):
     root=Path(directory);c=json.loads((root/'config.json').read_text());plan=json.loads((root/'plan.json').read_text())
     pc=c['planner_input'];p=c['runtime'];n=pc['npus'];e=pc['experts'];k=pc['top_k'];mapping=pc['mapping'];physical=plan['physical'];byid={x['id']:x for x in physical}
+    budget=p.get('payload_budget_bytes',256*1024**2);limit=p.get('weight_task_limit',20000)
+    require(type(budget) is int and 0<budget<=8*1024**3,'payload budget range')
+    require(type(limit) is int and 0<limit<=1000000,'weight task limit range')
+    logical=2*len(mapping)*k*p['model_dim']*p['dtype_bytes']+sum(x['kind']=='replica' for x in physical)*p['weight_bytes']
+    require(logical<2**64 and logical<=budget,'payload safety bound')
+    require(sum(x['stage']==2 for x in c['transfers'])<=limit,'weight task count bound')
+    require(len(c['transfers'])<=2**31-1,'task ID/index range')
+    require(sum((x['bytes']+p['segment_bytes']-1)//p['segment_bytes'] for x in c['transfers'])<=2**32-1,'logical SSN/count range')
     require(c['mode'] in ('no-balancing','ultraep'),'mode')
     require(len(byid)==len(physical),'duplicate physical ID')
     require(len({(x['rank'],x['expert']) for x in physical})==len(physical),'duplicate rank/expert')
@@ -87,6 +95,8 @@ def check(directory, graph_tool, execution_summary=None):
     expected+=opts+[len(order)]+order
     actual=[int(x) for x in (root/'input.txt').read_text().split()]
     require(actual==expected,'input.txt differs from config/plan execution contract')
+    spec=importlib.util.spec_from_file_location('weight_capacity',HERE.parent/'multi-npu-relay/capacity.py');cap=importlib.util.module_from_spec(spec);spec.loader.exec_module(cap)
+    require(cap.weight_task_count(physical,c['weight_strategy'],p['weight_bytes'],c['relay_parameters'],opts[5])<=limit,'weight task count bound')
     graph_input=' '.join(map(str,[kind,p['weight_bytes'],n]+opts[:6]+[len(order)]))+'\n'
     graph_input+=''.join(' '.join(map(str,physrow(byid[pid])))+'\n' for pid in order)
     output=subprocess.run([str(graph_tool)],input=graph_input,text=True,capture_output=True,check=True).stdout

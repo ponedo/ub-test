@@ -43,7 +43,14 @@ def emit(c,parameters,mode,out):
     deps={d['to_physical']:d for d in plan['weight_dependencies']}
     for p in physical:
         if p['kind']=='replica':require(p['id'] in deps and deps[p['id']]['from_physical']==p['weight_source_physical'],'adapter dependency')
-    token_bytes=params['model_dim']*params['dtype_bytes'];require(len(assignments)<=100000 and len(assignments)*token_bytes*2+len(deps)*weight_bytes<=256*1024*1024,'payload safety bound')
+    token_bytes=params['model_dim']*params['dtype_bytes']
+    payload_budget=params.get('payload_budget_bytes',256*1024**2);weight_limit=params.get('weight_task_limit',20000)
+    require(type(payload_budget) is int and 0<payload_budget<=8*1024**3,'payload budget range')
+    require(type(weight_limit) is int and 0<weight_limit<=1000000,'weight task limit range')
+    require(len(deps)<=weight_limit,'weight task count bound')
+    logical_bytes=len(assignments)*token_bytes*2+len(deps)*weight_bytes
+    require(logical_bytes<2**64,'payload arithmetic overflow')
+    require(len(assignments)<=100000 and logical_bytes<=payload_budget,'payload safety bound')
     transfers=[]
     for stage in [0,1]:
         for a in assignments:transfers.append(dict(task=len(transfers),stage=stage,id=a['assignment'],source=a['source'] if stage==0 else a['target'],target=a['target'] if stage==0 else a['source'],physical=a['physical'],bytes=token_bytes))

@@ -1,0 +1,20 @@
+[
+  {
+    "tokens": 256,
+    "strategy": "no-balancing",
+    "routing": "PASS",
+    "aggregate_load_replica_count": "PASS"
+  },
+  {
+    "tokens": 256,
+    "strategy": "direct",
+    "routing": "PASS",
+    "aggregate_load_replica_count": "PASS"
+  },
+  {
+    "tokens": 256,
+    "strategy": "chunk-streaming",
+    "routing": "PASS",
+    "aggregate_load_replica_count": "not executed"
+  }
+]

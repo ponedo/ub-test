@@ -1,0 +1,73 @@
+{
+  "status": "PASS",
+  "tests": [
+    {
+      "name": "payload-zero",
+      "status": "PASS",
+      "returncode": 2,
+      "diagnostic": "payload budget range"
+    },
+    {
+      "name": "payload-over",
+      "status": "PASS",
+      "returncode": 2,
+      "diagnostic": "payload budget range"
+    },
+    {
+      "name": "tasks-zero",
+      "status": "PASS",
+      "returncode": 2,
+      "diagnostic": "weight task limit range"
+    },
+    {
+      "name": "tasks-over",
+      "status": "PASS",
+      "returncode": 2,
+      "diagnostic": "weight task limit range"
+    },
+    {
+      "name": "payload-low",
+      "status": "PASS",
+      "returncode": 2,
+      "diagnostic": "payload bound"
+    },
+    {
+      "name": "payload-negative",
+      "status": "PASS",
+      "returncode": 2,
+      "diagnostic": "payload budget range"
+    },
+    {
+      "name": "tasks-negative",
+      "status": "PASS",
+      "returncode": 2,
+      "diagnostic": "weight task limit range"
+    },
+    {
+      "name": "payload-uint64-overflow",
+      "status": "PASS",
+      "returncode": 1,
+      "diagnostic": "Invalid command-line argument"
+    },
+    {
+      "name": "maximum-ceilings-small-demand-parity",
+      "status": "PASS"
+    },
+    {
+      "name": "huge-edge-count-without-allocation",
+      "status": "PASS",
+      "predicted": 671088640
+    },
+    {
+      "name": "native-huge-edge-rejection-before-allocation",
+      "status": "PASS",
+      "wall_seconds": 0.01564200402935967,
+      "returncode": 2,
+      "diagnostic": "ERROR: weight task count bound"
+    },
+    {
+      "name": "adapter-huge-edge-rejection-before-graph-invocation",
+      "status": "PASS"
+    }
+  ]
+}

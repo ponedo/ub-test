@@ -16,6 +16,10 @@ def emit(source,parameters,strategy,out):
     physical={x['id']:x for x in plan['physical']};order=plan.get('ordinal_physical_order',list(physical)) if kind else list(physical)
     runtime=c['runtime'];cut=(runtime['matrices']-1)*runtime['model_dim']*runtime['ff_dim']*runtime['dtype_bytes']
     if runtime['weight_size_kind']!='matrix_exact':cut=0
+    import importlib.util
+    spec=importlib.util.spec_from_file_location('weight_capacity',Path(__file__).with_name('capacity.py'));cap=importlib.util.module_from_spec(spec);spec.loader.exec_module(cap)
+    limit=runtime.get('weight_task_limit',20000)
+    if type(limit) is not int or not 0<limit<=1000000 or cap.weight_task_count(plan['physical'],strategy,runtime['weight_bytes'],p,cut)>limit:raise ValueError('weight task count bound')
     options=[p['chunk_bytes'],p['relay_min_replicas'],p['relay_max_relays'],p['relay_min_fanout_gain'],int(p['force_relay']),cut,p['reorder_ns'],p['slow_relay_rank'],p['slow_relay_ns']]
     header=[kind,runtime['weight_bytes'],c['planner_input']['npus']]+options[:6]+[len(order)]
     lines=[' '.join(map(str,header))]
@@ -25,6 +29,8 @@ def emit(source,parameters,strategy,out):
     binary=os.environ.get('RELAY_GRAPH_TOOL','/tmp/ub-relay-build/graph-tool')
     graph=subprocess.check_output([binary],input=graph_input,text=True);(out/'weight-edges.csv').write_text(graph)
     edges=[{k:int(v) for k,v in row.items()} for row in csv.DictReader(io.StringIO(graph))]
+    limit=c['runtime'].get('weight_task_limit',20000)
+    if type(limit) is not int or not 0<limit<=1000000 or len(edges)>limit:raise ValueError('weight task count bound')
     transfers=[dict(x,source_physical=0,offset=0,dependencies=[]) for x in c['transfers'] if x['stage']!=2]
     for edge in edges:
         src,dst=physical[edge['source_physical']],physical[edge['physical']]

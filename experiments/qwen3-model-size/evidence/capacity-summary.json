@@ -1,0 +1,27 @@
+{
+  "status": "CAPACITY_GATE_BLOCKED_PENDING_APPROVAL",
+  "tokens": 256,
+  "assignments": 2048,
+  "no_balancing": {
+    "status": "PASS",
+    "layer_latency_ps": 7957270688,
+    "remote_WQEs": 4046,
+    "TA_count": 16184,
+    "simulator_events": 819877,
+    "host_wall_seconds": 2.5082230750122108,
+    "host_cpu_seconds": 2.358901,
+    "peak_rss_kib": 144004
+  },
+  "ultraep": {
+    "status": "BLOCKED",
+    "reason": "payload safety bound",
+    "assignments": 2048,
+    "replicas": 51,
+    "required_payload_bytes": 498073600,
+    "limit_payload_bytes": 268435456
+  },
+  "routing_sha256": "f0991ce98219ff3c4f008b40c703f05fb9a63ecb714dba2d3e923f1e07c2d59d",
+  "existing_native_commit": "2fde39d02920e639f5b200d0c5262a517326deb8",
+  "native_modified": false,
+  "executor_modified": false
+}

@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "changed_fields": [
+    "cpu_wall_ns"
+  ],
+  "excluded_fields": [
+    "cpu_wall_ns"
+  ],
+  "compared_fields": [
+    "compatibility",
+    "expert_load",
+    "lambda_axes",
+    "lambda_source_expert",
+    "metrics",
+    "mode",
+    "optimality",
+    "ordinal_physical_order",
+    "physical",
+    "probes",
+    "q_axes",
+    "q_physical_ids",
+    "schema_version",
+    "source_quotas",
+    "token_mapping",
+    "upstream",
+    "weight_dependencies"
+  ],
+  "old_sha256": "523d06ebeb6e980143799472d04e210c922c55155a6e856f8b1360364f586d51",
+  "new_sha256": "ed346bfdd2a429a15916a9d6ae7fe434396bf1ccdd7341d1eb93ce1befd4433c",
+  "note": "cpu_wall_ns is measured host time, not modeled Planning Latency"
+}
