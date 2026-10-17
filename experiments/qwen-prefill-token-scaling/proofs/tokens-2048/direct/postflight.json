@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "tokens": 2048,
+  "assignments": 16384,
+  "physical_experts": 187,
+  "replicas": 59,
+  "transfers": 32827,
+  "input_sha256": "f5d111e695997f983d0cf92e68f07b34ca0ca653264b2a0ee0e7dfbbbac4004b",
+  "executed_graph_sha256": "76ba8b6563be224827598a4091846d363cc57a2dd08c26916fd5622c69de73b4",
+  "executed_graph_fnv1a64": "9151d22a99963509",
+  "checks": [
+    "individual routing/physical identity",
+    "all physical quotas",
+    "main placement and weight provenance",
+    "replica slot budgets",
+    "accepted planner independent checker (UltraEP)",
+    "complete integer execution input contract",
+    "native weight graph and dependency reconstruction",
+    "executed graph when supplied"
+  ]
+}

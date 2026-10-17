@@ -1,0 +1,31 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/scratch/c6ba02920254/qwen-token-scaling/experiments/qwen-prefill-token-scaling/prepare.py",
+    "--tokens",
+    "1024",
+    "--out",
+    "/workspace/scratch/c6ba02920254/qwen-token-scaling-raw/attempt-1/tokens-1024/prepared",
+    "--graph-tool",
+    "ep64-scaling-raw/build/graph-tool"
+  ],
+  "cwd": "/workspace/scratch/c6ba02920254",
+  "start": "2026-10-17T14:15:28.882799+00:00",
+  "wall_seconds": 2.7623144799727015,
+  "returncode": 0,
+  "status": "PASS",
+  "guard": null,
+  "peak_rss_kib": 272448,
+  "sampled_peak_tree_rss_bytes": 207400960,
+  "max_observed_threads_per_process": 129,
+  "user_cpu_seconds": 2.172339,
+  "system_cpu_seconds": 0.666536,
+  "limits": {
+    "wall_seconds": 3600,
+    "tree_rss_bytes": 6442450944,
+    "min_host_available_bytes": 1610612736,
+    "address_space_bytes": 7516192768,
+    "min_disk_free_bytes": 8589934592,
+    "min_tmp_disk_free_bytes": 2147483648
+  }
+}

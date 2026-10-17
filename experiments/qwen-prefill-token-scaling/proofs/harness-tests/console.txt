@@ -1,0 +1,135 @@
+.STOP disk_free_guard preflight
+FSTOP disk_free_guard preflight
+FSTOP disk_free_guard preflight
+FSTOP disk_free_guard preflight
+FSTOP disk_free_guard preflight
+FSTOP disk_free_guard preflight
+FSTOP disk_free_guard preflight
+FSTOP disk_free_guard preflight
+FSTOP disk_free_guard preflight
+FSTOP disk_free_guard preflight
+FSTOP disk_free_guard preflight
+FSTOP disk_free_guard preflight
+F
+======================================================================
+FAIL: test_complete_level_before_next (__main__.HarnessTests.test_complete_level_before_next)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c6ba02920254/qwen-token-scaling/experiments/qwen-prefill-token-scaling/test-harness.py", line 44, in test_complete_level_before_next
+    calls,status,records=self.execute();self.assertEqual(status['status'],'PASS');self.assertEqual(status['completed_token_points'],[512,1024]);self.assertEqual(len(calls),20)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'STOPPED' != 'PASS'
+- STOPPED
++ PASS
+
+
+======================================================================
+FAIL: test_each_failure_stops (__main__.HarnessTests.test_each_failure_stops) (stage=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c6ba02920254/qwen-token-scaling/experiments/qwen-prefill-token-scaling/test-harness.py", line 41, in test_each_failure_stops
+    calls,status,records=self.execute(failed);self.assertEqual(len(calls),failed);self.assertEqual(status['status'],'STOPPED');self.assertEqual(status['completed_token_points'],[])
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_each_failure_stops (__main__.HarnessTests.test_each_failure_stops) (stage=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c6ba02920254/qwen-token-scaling/experiments/qwen-prefill-token-scaling/test-harness.py", line 41, in test_each_failure_stops
+    calls,status,records=self.execute(failed);self.assertEqual(len(calls),failed);self.assertEqual(status['status'],'STOPPED');self.assertEqual(status['completed_token_points'],[])
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2
+
+======================================================================
+FAIL: test_each_failure_stops (__main__.HarnessTests.test_each_failure_stops) (stage=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c6ba02920254/qwen-token-scaling/experiments/qwen-prefill-token-scaling/test-harness.py", line 41, in test_each_failure_stops
+    calls,status,records=self.execute(failed);self.assertEqual(len(calls),failed);self.assertEqual(status['status'],'STOPPED');self.assertEqual(status['completed_token_points'],[])
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 3
+
+======================================================================
+FAIL: test_each_failure_stops (__main__.HarnessTests.test_each_failure_stops) (stage=4)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c6ba02920254/qwen-token-scaling/experiments/qwen-prefill-token-scaling/test-harness.py", line 41, in test_each_failure_stops
+    calls,status,records=self.execute(failed);self.assertEqual(len(calls),failed);self.assertEqual(status['status'],'STOPPED');self.assertEqual(status['completed_token_points'],[])
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 4
+
+======================================================================
+FAIL: test_each_failure_stops (__main__.HarnessTests.test_each_failure_stops) (stage=5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c6ba02920254/qwen-token-scaling/experiments/qwen-prefill-token-scaling/test-harness.py", line 41, in test_each_failure_stops
+    calls,status,records=self.execute(failed);self.assertEqual(len(calls),failed);self.assertEqual(status['status'],'STOPPED');self.assertEqual(status['completed_token_points'],[])
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 5
+
+======================================================================
+FAIL: test_each_failure_stops (__main__.HarnessTests.test_each_failure_stops) (stage=6)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c6ba02920254/qwen-token-scaling/experiments/qwen-prefill-token-scaling/test-harness.py", line 41, in test_each_failure_stops
+    calls,status,records=self.execute(failed);self.assertEqual(len(calls),failed);self.assertEqual(status['status'],'STOPPED');self.assertEqual(status['completed_token_points'],[])
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 6
+
+======================================================================
+FAIL: test_each_failure_stops (__main__.HarnessTests.test_each_failure_stops) (stage=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c6ba02920254/qwen-token-scaling/experiments/qwen-prefill-token-scaling/test-harness.py", line 41, in test_each_failure_stops
+    calls,status,records=self.execute(failed);self.assertEqual(len(calls),failed);self.assertEqual(status['status'],'STOPPED');self.assertEqual(status['completed_token_points'],[])
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 7
+
+======================================================================
+FAIL: test_each_failure_stops (__main__.HarnessTests.test_each_failure_stops) (stage=8)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c6ba02920254/qwen-token-scaling/experiments/qwen-prefill-token-scaling/test-harness.py", line 41, in test_each_failure_stops
+    calls,status,records=self.execute(failed);self.assertEqual(len(calls),failed);self.assertEqual(status['status'],'STOPPED');self.assertEqual(status['completed_token_points'],[])
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 8
+
+======================================================================
+FAIL: test_each_failure_stops (__main__.HarnessTests.test_each_failure_stops) (stage=9)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c6ba02920254/qwen-token-scaling/experiments/qwen-prefill-token-scaling/test-harness.py", line 41, in test_each_failure_stops
+    calls,status,records=self.execute(failed);self.assertEqual(len(calls),failed);self.assertEqual(status['status'],'STOPPED');self.assertEqual(status['completed_token_points'],[])
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 9
+
+======================================================================
+FAIL: test_each_failure_stops (__main__.HarnessTests.test_each_failure_stops) (stage=10)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c6ba02920254/qwen-token-scaling/experiments/qwen-prefill-token-scaling/test-harness.py", line 41, in test_each_failure_stops
+    calls,status,records=self.execute(failed);self.assertEqual(len(calls),failed);self.assertEqual(status['status'],'STOPPED');self.assertEqual(status['completed_token_points'],[])
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 10
+
+======================================================================
+FAIL: test_second_preparation_failure_retains_first (__main__.HarnessTests.test_second_preparation_failure_retains_first)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c6ba02920254/qwen-token-scaling/experiments/qwen-prefill-token-scaling/test-harness.py", line 47, in test_second_preparation_failure_retains_first
+    calls,status,records=self.execute(11);self.assertEqual(status['completed_token_points'],[512]);self.assertEqual(len(calls),11);self.assertEqual(len(records),3)
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [] != [512]
+
+Second list contains 1 additional elements.
+First extra element 0:
+512
+
+- []
++ [512]
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.133s
+
+FAILED (failures=12)

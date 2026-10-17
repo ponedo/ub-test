@@ -1,0 +1,26 @@
+"""Read-only capacity arithmetic; conservative empirical RSS estimates, not allocations."""
+import importlib.util,json,shutil,struct
+from collections import Counter
+from pathlib import Path
+G=1024**3
+
+def save(p,d):Path(p).write_text(json.dumps(d,indent=2)+'\n');return d
+
+def predicted(c,plan,p,relay,out):
+ spec=importlib.util.spec_from_file_location('graph_capacity',Path(__file__).parent.parent/'multi-npu-relay/capacity.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ n=len(c['mapping']);assignments=n*8;replicas=sum(x['kind']=='replica' for x in plan['physical']);weight=3*p['model_dim']*p['ff_dim']*p['dtype_bytes'];logical=2*assignments*4096+replicas*weight
+ counts={s:m.weight_task_count(plan['physical'],s,weight,relay,2*p['model_dim']*p['ff_dim']*p['dtype_bytes']) for s in ['direct','chunk-streaming']}
+ d=dict(tokens=n,assignments=assignments,replicas=replicas,expert_weight_bytes=weight,logical_payload_bytes=logical,planned_weight_wqes=counts,planned_weight_tas=replicas*weight//1024,planned_total_tas=2*assignments*4+replicas*weight//1024,planned_total_tasks={s:2*assignments+v for s,v in counts.items()},pointer_bits=struct.calcsize('P')*8,estimated_peak_rss_bytes=int(1545056*1024*max(1,n/256)),rss_estimate_method='Conservative linear token scaling of accepted Qwen256 Chunk process peak RSS; estimate only, runtime guard authoritative',disk_free_bytes=shutil.disk_usage(out.parent).free)
+ save(out,d)
+ assert assignments<=100000 and logical<=8*G and max(counts.values())<=1000000
+ assert max(d['planned_total_tasks'].values())<=2**31-1 and d['planned_total_tas']<=2**32-1
+ # Estimates are disclosed rather than promoted to exact capacity facts. Actual resource guards remain mandatory.
+ return d
+
+def actual(root,out):
+ c=json.loads((root/'config.json').read_text());p=json.loads((root/'plan.json').read_text());r=c['runtime'];ts=c['transfers'];w=[x for x in ts if x['stage']==2];remote=[x for x in ts if x['source']!=x['target']];pairs=Counter()
+ for x in remote:pairs[(x['source'],x['target'])]+=(x['bytes']+1023)//1024
+ a=len(c['assignments']);replicas=sum(x['kind']=='replica' for x in p['physical']);logical=2*a*4096+replicas*9437184
+ d=dict(label='planned input counts; not completed execution',replicas=replicas,weight_bytes=replicas*9437184,logical_payload_bytes=logical,weight_wqes=len(w),weight_tas=sum((x['bytes']+1023)//1024 for x in w),total_tasks=len(ts),total_tas=sum((x['bytes']+1023)//1024 for x in ts),remote_wqes=len(remote),remote_tas=sum(pairs.values()),max_pair_logical_ssn_count=max(pairs.values(),default=0),task_id_min=min(x['task'] for x in ts),task_id_max=max(x['task'] for x in ts),task_id_bound=2**31-1,logical_ssn_count_bound=2**32-1,input_disk_bytes=sum(x.stat().st_size for x in root.iterdir() if x.is_file()),free_disk_bytes=shutil.disk_usage(root).free)
+ save(out,d);assert logical<=8*G and len(w)<=1000000 and len(ts)<=2**31-1 and d['total_tas']<=2**32-1
+ return d

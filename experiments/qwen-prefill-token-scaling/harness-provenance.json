@@ -1,0 +1,27 @@
+{
+  "files_sha256": {
+    "fixed-config.json": "37ce39e1dc42a80ddc5b94bf7a41dddc669fb3a8e984a342de86c6fd99328fc9",
+    "capacity-at-launch.py.txt": "89e4b54f0fd93d8092f817e834005161d0ffa250ac6ead68e531cf904e4ed137",
+    "capacity.py": "63b0151e646f944c6894352bcbd7ddf4f5a44dbd672724509514900db38c0608",
+    "prepare.py": "3b125283c9ef416ea91f9c517f7aec283698eb5a7814ffbafa782494655f0b56",
+    "run.py": "dd89353387276eeadbeeee31e64e52e9a0a457fc9f764b84dde21450c0434f9f"
+  },
+  "capacity_change_after_512_preparation": {
+    "changes": [
+      "RSS estimate wording corrected: uncertainty unknown, not guaranteed conservative",
+      "Added explicit 64-bit pointer and uint64 logical payload assertions"
+    ],
+    "execution_effect": "No model/route/plan/graph change. Initial 512 prediction recorded pointer_bits64 and logical bytes within uint64. Root runner imported initial capacity helper; actual() is unchanged. Later preparation subprocesses load updated capacity.py.",
+    "initial_source": "capacity-at-launch.py.txt",
+    "first_new_preparation": "tokens-1024"
+  },
+  "final_harness_files_sha256": {
+    "capacity.py": "63b0151e646f944c6894352bcbd7ddf4f5a44dbd672724509514900db38c0608",
+    "collect.py": "63a2a53915746f00e3f1e123ce59b0c6d0d18c20229cb8f41524ce64729019df",
+    "forecast-disk.py": "70905f7bccf62e7efcb7ccf24c0b4e0d59a3a04c4f2826a582fb7a4d0c5a3e46",
+    "prepare.py": "3b125283c9ef416ea91f9c517f7aec283698eb5a7814ffbafa782494655f0b56",
+    "run.py": "dd89353387276eeadbeeee31e64e52e9a0a457fc9f764b84dde21450c0434f9f",
+    "test-harness.py": "31ebc904e5117f5e575d5d72a33112dc733a84dadd344f912948b548555f4ae1"
+  },
+  "experiment_result": "All four new token levels completed;40unique guarded execution stages PASS;12new full validated arms; no failures/disconnections."
+}

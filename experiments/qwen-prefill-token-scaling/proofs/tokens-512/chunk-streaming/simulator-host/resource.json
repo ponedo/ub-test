@@ -1,0 +1,31 @@
+{
+  "command": [
+    "/workspace/scratch/c6ba02920254/relay-dependency-index-raw/build/pair-layer",
+    "--input=/workspace/scratch/c6ba02920254/qwen-token-scaling-raw/attempt-1/tokens-512/chunk-streaming/run/input.txt",
+    "--out=/workspace/scratch/c6ba02920254/qwen-token-scaling-raw/attempt-1/tokens-512/chunk-streaming/run",
+    "--capacityMetrics=/workspace/scratch/c6ba02920254/qwen-token-scaling-raw/attempt-1/tokens-512/chunk-streaming/run/simulator-metrics.json",
+    "--jettyMode=pair",
+    "--logLevel=summary",
+    "--payloadBudgetBytes=8589934592",
+    "--weightTaskLimit=1000000"
+  ],
+  "cwd": "/workspace/scratch/c6ba02920254",
+  "start": "2026-10-17T14:09:53.045001+00:00",
+  "wall_seconds": 332.7339972059708,
+  "returncode": 0,
+  "status": "PASS",
+  "guard": null,
+  "peak_rss_kib": 1638336,
+  "sampled_peak_tree_rss_bytes": 1677795328,
+  "max_observed_threads_per_process": 1,
+  "user_cpu_seconds": 332.045143,
+  "system_cpu_seconds": 0.567247,
+  "limits": {
+    "wall_seconds": 3600,
+    "tree_rss_bytes": 6442450944,
+    "min_host_available_bytes": 1610612736,
+    "address_space_bytes": 7516192768,
+    "min_disk_free_bytes": 8589934592,
+    "min_tmp_disk_free_bytes": 2147483648
+  }
+}

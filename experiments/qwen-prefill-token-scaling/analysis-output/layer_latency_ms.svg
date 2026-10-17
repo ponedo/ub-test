@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="470" viewBox="0 0 760 470">
+<rect width="760" height="470" fill="white"/>
+<g font-family="sans-serif" font-size="13" fill="#172033">
+<text x="85" y="30" font-size="20">Layer latency (ms) vs tokens</text>
+<text x="85" y="52">N=256 reused historical; gaps are incomplete / not run</text>
+<path d="M85 370.0 H625" stroke="#e5e7eb"/>
+<text x="75" y="374.0" text-anchor="end">0</text>
+<path d="M85 313.0 H625" stroke="#e5e7eb"/>
+<text x="75" y="317.0" text-anchor="end">28.4</text>
+<path d="M85 256.0 H625" stroke="#e5e7eb"/>
+<text x="75" y="260.0" text-anchor="end">56.9</text>
+<path d="M85 199.0 H625" stroke="#e5e7eb"/>
+<text x="75" y="203.0" text-anchor="end">85.3</text>
+<path d="M85 142.00000000000003 H625" stroke="#e5e7eb"/>
+<text x="75" y="146.00000000000003" text-anchor="end">114</text>
+<path d="M85 85.0 H625" stroke="#e5e7eb"/>
+<text x="75" y="89.0" text-anchor="end">142</text>
+<text x="85.0" y="392" text-anchor="middle">256</text>
+<text x="220.0" y="392" text-anchor="middle">512</text>
+<text x="355.0" y="392" text-anchor="middle">1024</text>
+<text x="490.0" y="392" text-anchor="middle">2048</text>
+<text x="625.0" y="392" text-anchor="middle">4096</text>
+<circle cx="85.0" cy="354.048544083649" r="4" fill="#2563eb"/>
+<path d="M85.0 354.048544083649 L220.0 338.1732870973384" stroke="#2563eb" fill="none" stroke-width="2"/>
+<circle cx="220.0" cy="338.1732870973384" r="4" fill="#2563eb"/>
+<path d="M220.0 338.1732870973384 L355.0 306.8568349178402" stroke="#2563eb" fill="none" stroke-width="2"/>
+<circle cx="355.0" cy="306.8568349178402" r="4" fill="#2563eb"/>
+<path d="M355.0 306.8568349178402 L490.0 243.26948099073655" stroke="#2563eb" fill="none" stroke-width="2"/>
+<circle cx="490.0" cy="243.26948099073655" r="4" fill="#2563eb"/>
+<path d="M490.0 243.26948099073655 L625.0 115.5357142857143" stroke="#2563eb" fill="none" stroke-width="2"/>
+<circle cx="625.0" cy="115.5357142857143" r="4" fill="#2563eb"/>
+<text x="85" y="436" fill="#2563eb">no-balancing</text>
+<circle cx="85.0" cy="344.5609546057725" r="4" fill="#dc2626"/>
+<path d="M85.0 344.5609546057725 L220.0 341.5755118017258" stroke="#dc2626" fill="none" stroke-width="2"/>
+<circle cx="220.0" cy="341.5755118017258" r="4" fill="#dc2626"/>
+<path d="M220.0 341.5755118017258 L355.0 338.97315522416505" stroke="#dc2626" fill="none" stroke-width="2"/>
+<circle cx="355.0" cy="338.97315522416505" r="4" fill="#dc2626"/>
+<path d="M355.0 338.97315522416505 L490.0 333.84701216639195" stroke="#dc2626" fill="none" stroke-width="2"/>
+<circle cx="490.0" cy="333.84701216639195" r="4" fill="#dc2626"/>
+<path d="M490.0 333.84701216639195 L625.0 323.51489295068154" stroke="#dc2626" fill="none" stroke-width="2"/>
+<circle cx="625.0" cy="323.51489295068154" r="4" fill="#dc2626"/>
+<text x="285" y="436" fill="#dc2626">direct</text>
+<circle cx="85.0" cy="358.28460536396886" r="4" fill="#059669"/>
+<path d="M85.0 358.28460536396886 L220.0 357.43711929665636" stroke="#059669" fill="none" stroke-width="2"/>
+<circle cx="220.0" cy="357.43711929665636" r="4" fill="#059669"/>
+<path d="M220.0 357.43711929665636 L355.0 354.8339173226962" stroke="#059669" fill="none" stroke-width="2"/>
+<circle cx="355.0" cy="354.8339173226962" r="4" fill="#059669"/>
+<path d="M355.0 354.8339173226962 L490.0 349.7201607695244" stroke="#059669" fill="none" stroke-width="2"/>
+<circle cx="490.0" cy="349.7201607695244" r="4" fill="#059669"/>
+<path d="M490.0 349.7201607695244 L625.0 339.38626568413184" stroke="#059669" fill="none" stroke-width="2"/>
+<circle cx="625.0" cy="339.38626568413184" r="4" fill="#059669"/>
+<text x="485" y="436" fill="#059669">chunk-streaming</text>
+<text x="355" y="414">Tokens (log₂ spacing)</text>
+</g></svg>

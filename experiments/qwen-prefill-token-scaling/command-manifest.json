@@ -1,0 +1,31 @@
+{
+  "execution_command": [
+    "python3",
+    "experiments/qwen-prefill-token-scaling/run.py",
+    "--raw",
+    "../qwen-token-scaling-raw/attempt-1",
+    "--binary",
+    "../relay-dependency-index-raw/build/pair-layer",
+    "--lib",
+    "../wqe-completion-native/build/lib",
+    "--graph-tool",
+    "../ep64-scaling-raw/build/graph-tool"
+  ],
+  "cwd": "qwen-token-scaling",
+  "status": "PASS",
+  "new_tokens": [
+    512,
+    1024,
+    2048,
+    4096
+  ],
+  "strategies": [
+    "no-balancing",
+    "direct",
+    "chunk-streaming"
+  ],
+  "accepted_256": "reused only",
+  "stage_limits_source": "fixed-config.json",
+  "actual_stage_commands": "proofs/tokens-*/{preparation-host,strategy/*-host}/resource.json",
+  "publication_scope": "Only new experiment directory; no raw inputs, Packet, TA or payload data"
+}

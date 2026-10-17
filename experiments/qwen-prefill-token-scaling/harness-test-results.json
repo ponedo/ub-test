@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "test_methods": 4,
+  "stage_failure_subtests": 10,
+  "scope": [
+    "Every checked stage receives independent3600s",
+    "Injected failure at preparation and every arm preflight/simulator/postflight stops the scale",
+    "Next level requires allthree passing arms",
+    "Second level preparation failure retains completed first level",
+    "Capacity arithmetic and assignment/payload/64bit rejection"
+  ],
+  "initial_attempt": {
+    "status": "FAIL",
+    "classification": "Test fixture setup, not product regression",
+    "reason": "Mock raw fixture under /tmp correctly hit workspace8GiB free-space check",
+    "resolution": "Moved fixture to workspace; no guard/product changes",
+    "evidence": "proofs/harness-tests"
+  },
+  "corrected_attempt": {
+    "status": "PASS",
+    "evidence": "proofs/harness-tests-fixture-corrected"
+  }
+}

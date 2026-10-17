@@ -1,0 +1,23 @@
+{
+  "status": "REUSED_ACCEPTED_PASS",
+  "not_rerun": true,
+  "accepted_local_commit": "9059c77d6f4081e7602b1df181752380d16fc29b",
+  "accepted_tree": "27a64ee042984c687c7800d13510851718a538d0",
+  "original_report": "experiments/relay-dependency-index/regression-results.json",
+  "original_report_sha256": "997f43a5cf5a4489326b09428ef892a43b9b0e1a64bd5aedde87971a2425baff",
+  "scope": "Original Planner tests, PairJetty basic/lifecycle/negative, relay tracker/topology subset, tiered helpers/preflight/all-mode faults. Full historical integration matrix is not rerun.",
+  "command_count": 64,
+  "limitations": [
+    "Full historical 48-case relay/direct/no-balancing integration matrix was not rerun; original relay 120-case topology subset and fresh candidate small native/fault executions were run.",
+    "PairJetty basic/lifecycle executable regressions use existing accepted binaries for unchanged subsystem code; fresh candidate pair-layer is used for gate, strict verification, and all live faults."
+  ],
+  "unchanged_source_sha256": {
+    "experiments/pair-jetty/pair-layer.cc": "cc7f27573d9f0934b14d879b943b04dd33d4e76be1dd173ab16076a998e6cbbf",
+    "experiments/pair-jetty/online-validation.inc": "8eb6df0df5e4a1604e4cbbbec3fde442e5e8ed751efc258840bf7382ad70d40b",
+    "experiments/multi-npu-relay/adapter.py": "7dce316928e3e7c039fe23223b0eea1525ac49bc4151b03ae972385f80e671f8",
+    "experiments/tiered-logging/preflight.py": "06ef4fc36e247c22dd11bf83dadcdfbf7b5905621f49240b5d4c66760709015f"
+  },
+  "binary_sha256": "ce8b96755c2535cf6d28cf89bdf89bac79e4820c13b8171881b6a3b37c7afddd",
+  "native_tree": "c27d1faef570e6da9900a71aa0a37180a58dfba8",
+  "unchanged_code_check": "git diff accepted baseline -- planner src include experiments/pair-jetty experiments/multi-npu-relay experiments/direct-weight-forward experiments/no-balancing-layer experiments/tiered-logging experiments/wqe-completion-fix is empty"
+}

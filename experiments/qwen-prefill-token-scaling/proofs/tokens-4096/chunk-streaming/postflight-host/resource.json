@@ -1,0 +1,36 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/scratch/c6ba02920254/qwen-token-scaling/experiments/tiered-logging/preflight.py",
+    "/workspace/scratch/c6ba02920254/qwen-token-scaling-raw/attempt-1/tokens-4096/chunk-streaming/run",
+    "--graph-tool",
+    "ep64-scaling-raw/build/graph-tool",
+    "--out",
+    "/workspace/scratch/c6ba02920254/qwen-token-scaling-raw/attempt-1/tokens-4096/chunk-streaming/postflight.json",
+    "--input-summary",
+    "/workspace/scratch/c6ba02920254/qwen-token-scaling-raw/attempt-1/tokens-4096/chunk-streaming/run/input-summary.json",
+    "--provenance",
+    "/workspace/scratch/c6ba02920254/qwen-token-scaling/experiments/qwen-prefill-token-scaling/fixed-config.json",
+    "--execution-summary",
+    "/workspace/scratch/c6ba02920254/qwen-token-scaling-raw/attempt-1/tokens-4096/chunk-streaming/run/online-summary.json"
+  ],
+  "cwd": "/workspace/scratch/c6ba02920254",
+  "start": "2026-10-17T14:45:39.344530+00:00",
+  "wall_seconds": 3.012812777014915,
+  "returncode": 0,
+  "status": "PASS",
+  "guard": null,
+  "peak_rss_kib": 216200,
+  "sampled_peak_tree_rss_bytes": 213143552,
+  "max_observed_threads_per_process": 1,
+  "user_cpu_seconds": 2.623191,
+  "system_cpu_seconds": 0.201818,
+  "limits": {
+    "wall_seconds": 3600,
+    "tree_rss_bytes": 6442450944,
+    "min_host_available_bytes": 1610612736,
+    "address_space_bytes": 7516192768,
+    "min_disk_free_bytes": 8589934592,
+    "min_tmp_disk_free_bytes": 2147483648
+  }
+}

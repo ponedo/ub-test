@@ -1,0 +1,37 @@
+{
+  "observed_host_utc": "2026-10-17T14:23:08.784040+00:00",
+  "reference_tokens": 512,
+  "reference_prepared_logical_input_bytes": 42371083,
+  "reference_archive_bytes": 1418704,
+  "reference_retained_point_bytes": 3699898,
+  "method": "Linear token ratio applied to completed summary-mode reference footprint: 1.25*prepared input bytes + 3*compressed archive bytes + 2*retained point bytes. Allowances model temporary archival copies and summary/ledger output; uncertainty unknown, not a proven upper bound.",
+  "guard": "Actual free workspace disk must remain >=8589934592 bytes; forecast does not relax or replace hard guard.",
+  "limitations": "512 and 1024 had exact input size/free-disk checks and live guards, but no separately recorded output-growth forecast before execution.",
+  "forecasts": [
+    {
+      "tokens": 2048,
+      "not_started_at_observation": true,
+      "estimated_peak_incremental_disk_bytes": 258479047,
+      "estimated_retained_point_bytes": 14799592,
+      "free_disk_bytes_at_observation": 9177341952,
+      "headroom_above_hard_guard_bytes": 587407360,
+      "estimate_fits_observed_headroom": true,
+      "intervening_retention_reserve_bytes": 7399796,
+      "reserved_headroom_bytes": 580007564,
+      "estimate_fits_reserved_headroom": true
+    },
+    {
+      "tokens": 4096,
+      "not_started_at_observation": true,
+      "estimated_peak_incremental_disk_bytes": 516958094,
+      "estimated_retained_point_bytes": 29599184,
+      "free_disk_bytes_at_observation": 9177341952,
+      "headroom_above_hard_guard_bytes": 587407360,
+      "estimate_fits_observed_headroom": true,
+      "intervening_retention_reserve_bytes": 22199388,
+      "reserved_headroom_bytes": 565207972,
+      "estimate_fits_reserved_headroom": true
+    }
+  ],
+  "update_reason": "Reserve estimated retained bytes for intervening levels, without relying on their live materialization being released."
+}

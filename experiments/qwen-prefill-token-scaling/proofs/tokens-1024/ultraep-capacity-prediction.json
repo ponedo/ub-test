@@ -1,0 +1,21 @@
+{
+  "tokens": 1024,
+  "assignments": 8192,
+  "replicas": 56,
+  "expert_weight_bytes": 9437184,
+  "logical_payload_bytes": 595591168,
+  "planned_weight_wqes": {
+    "direct": 56,
+    "chunk-streaming": 76055
+  },
+  "planned_weight_tas": 516096,
+  "planned_total_tas": 581632,
+  "planned_total_tasks": {
+    "direct": 16440,
+    "chunk-streaming": 92439
+  },
+  "pointer_bits": 64,
+  "estimated_peak_rss_bytes": 6328549376,
+  "rss_estimate_method": "Linear token extrapolation of accepted Qwen256 Chunk peak RSS; uncertainty unknown; actual guard authoritative",
+  "disk_free_bytes": 9202839552
+}
