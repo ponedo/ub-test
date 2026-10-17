@@ -1,0 +1,464 @@
+{
+  "composition": "offline concatenation of distinct requests within each identical serialized layer; NOT observed joint-forward routing",
+  "phase_status": "record 0 interpreted using supplied dataset documentation; no embedded phase proof",
+  "phase_documentation": "Dataset card at https://huggingface.co/datasets/core12345/MoE_expert_selection_trace/blob/main/README.md as documented in accepted single-request baseline; record 0 interpretation, no embedded phase labels; no independent original-token identity proof",
+  "token_identity": "zero-based serialized row ordinal; original tokenizer ID unverifiable",
+  "layer_identity": "exact serialized keys 0..93; model correspondence unverifiable",
+  "request_identity": "manifest-declared filename identity; embedded identity unverifiable",
+  "requests": [
+    {
+      "request_id": "Chinese-SimpleQA/\u4e2d\u534e\u6587\u5316/206",
+      "dataset_path": "Qwen/Qwen3-235B-A22B-FP8/Chinese-SimpleQA/\u4e2d\u534e\u6587\u5316/206.json",
+      "revision": "27febb7b2d24169560a9f6f83d38eb53f94916cf",
+      "expected_blob_sha": "2cda327aa5570890e14971e1df0694218438c61f",
+      "actual_content_git_blob": "2cda327aa5570890e14971e1df0694218438c61f",
+      "identity_verification": "raw Git blob",
+      "source_sha256": "c054b6b9b490229b89bf71a8b4d0a99ecce37d10f677f5905dfdff9b1c20532d",
+      "source_bytes": 1485105,
+      "first_record_tokens": 22,
+      "prefix_availability": {
+        "256": false,
+        "512": false,
+        "1024": false,
+        "2048": false,
+        "4096": false
+      },
+      "remaining_single_token_records": 54,
+      "batch_start": 0,
+      "batch_stop": 22,
+      "source_ordinal_start": 0,
+      "selected_tokens": 22,
+      "truncated": false
+    },
+    {
+      "request_id": "livecodebench/execution/104",
+      "dataset_path": "Qwen/Qwen3-235B-A22B-FP8/livecodebench/execution/104.json",
+      "revision": "27febb7b2d24169560a9f6f83d38eb53f94916cf",
+      "expected_blob_sha": "050e32dd0eac05da28b4bdcd2bad5f5f734118da",
+      "actual_content_git_blob": "050e32dd0eac05da28b4bdcd2bad5f5f734118da",
+      "identity_verification": "raw Git blob",
+      "source_sha256": "0243a81463c394368945000f55d017fa09de86e4ff98040597d7e2f1125f6c60",
+      "source_bytes": 6565452,
+      "first_record_tokens": 224,
+      "prefix_availability": {
+        "256": false,
+        "512": false,
+        "1024": false,
+        "2048": false,
+        "4096": false
+      },
+      "remaining_single_token_records": 128,
+      "batch_start": 22,
+      "batch_stop": 246,
+      "source_ordinal_start": 0,
+      "selected_tokens": 224,
+      "truncated": false
+    },
+    {
+      "request_id": "HuggingFaceH4/aime_2024/28",
+      "dataset_path": "Qwen/Qwen3-235B-A22B-FP8/HuggingFaceH4/aime_2024/28.json",
+      "revision": "27febb7b2d24169560a9f6f83d38eb53f94916cf",
+      "expected_blob_sha": "81615c838cf9e33f7ceb1a9da8ce2cb4b6bb92a6",
+      "actual_content_git_blob": "81615c838cf9e33f7ceb1a9da8ce2cb4b6bb92a6",
+      "identity_verification": "raw Git blob",
+      "source_sha256": "ad87ec2d4838e0a74adb04e1b4cb468d26f35e499b19ab586271b85d561a356d",
+      "source_bytes": 9573437,
+      "first_record_tokens": 393,
+      "prefix_availability": {
+        "256": true,
+        "512": false,
+        "1024": false,
+        "2048": false,
+        "4096": false
+      },
+      "remaining_single_token_records": 128,
+      "batch_start": 246,
+      "batch_stop": 639,
+      "source_ordinal_start": 0,
+      "selected_tokens": 393,
+      "truncated": false
+    },
+    {
+      "request_id": "mmlu/college_medicine/1202",
+      "dataset_path": "Qwen/Qwen3-235B-A22B-FP8/mmlu/college_medicine/1202.json",
+      "revision": "27febb7b2d24169560a9f6f83d38eb53f94916cf",
+      "expected_blob_sha": "712d6c2d73b3a83770167147bb044827cccfc966",
+      "actual_content_git_blob": "c9f79c548609f6a6352013257d6da724819b99e8",
+      "identity_verification": "canonical LFS pointer reconstructed from actual content SHA256 and bytes",
+      "source_sha256": "1311aac6b78dafe218b3fce04977fb6601c6c39e052e5bccd6f7ff652f982033",
+      "source_bytes": 19015389,
+      "first_record_tokens": 924,
+      "prefix_availability": {
+        "256": true,
+        "512": true,
+        "1024": false,
+        "2048": false,
+        "4096": false
+      },
+      "remaining_single_token_records": 128,
+      "batch_start": 639,
+      "batch_stop": 1563,
+      "source_ordinal_start": 0,
+      "selected_tokens": 924,
+      "truncated": false
+    },
+    {
+      "request_id": "mmlu_ZH_CN/college_medicine/1202",
+      "dataset_path": "Qwen/Qwen3-235B-A22B-FP8/mmlu_ZH_CN/college_medicine/1202.json",
+      "revision": "27febb7b2d24169560a9f6f83d38eb53f94916cf",
+      "expected_blob_sha": "99402907ec4a0addd6aaf326041d040243274b48",
+      "actual_content_git_blob": "7eeefd25292742c2ebcfe053092e7dc577c0f475",
+      "identity_verification": "canonical LFS pointer reconstructed from actual content SHA256 and bytes",
+      "source_sha256": "e801fd094d29b69fa5487fbf72961ee7476c4a3d2b3f5a208c8a4604a94ca4c0",
+      "source_bytes": 17391143,
+      "first_record_tokens": 832,
+      "prefix_availability": {
+        "256": true,
+        "512": true,
+        "1024": false,
+        "2048": false,
+        "4096": false
+      },
+      "remaining_single_token_records": 128,
+      "batch_start": 1563,
+      "batch_stop": 2395,
+      "source_ordinal_start": 0,
+      "selected_tokens": 832,
+      "truncated": false
+    },
+    {
+      "request_id": "mmlu/high_school_world_history/5874",
+      "dataset_path": "Qwen/Qwen3-235B-A22B-FP8/mmlu/high_school_world_history/5874.json",
+      "revision": "27febb7b2d24169560a9f6f83d38eb53f94916cf",
+      "expected_blob_sha": "4214cfff46d2babf8ccef9d5fe357cdd8df7d162",
+      "actual_content_git_blob": "eb4aa5d7c16cb47508807db014890d9474289566",
+      "identity_verification": "canonical LFS pointer reconstructed from actual content SHA256 and bytes",
+      "source_sha256": "6bb7e5ce13373a29eb8567f1e6806a3994c6adca19a27197467b39d0697a960a",
+      "source_bytes": 14854268,
+      "first_record_tokens": 691,
+      "prefix_availability": {
+        "256": true,
+        "512": true,
+        "1024": false,
+        "2048": false,
+        "4096": false
+      },
+      "remaining_single_token_records": 128,
+      "batch_start": 2395,
+      "batch_stop": 3086,
+      "source_ordinal_start": 0,
+      "selected_tokens": 691,
+      "truncated": false
+    },
+    {
+      "request_id": "mmlu_ZH_CN/high_school_world_history/5877",
+      "dataset_path": "Qwen/Qwen3-235B-A22B-FP8/mmlu_ZH_CN/high_school_world_history/5877.json",
+      "revision": "27febb7b2d24169560a9f6f83d38eb53f94916cf",
+      "expected_blob_sha": "fd423d1838f7b16cf9fa177df620ad088df6dbdd",
+      "actual_content_git_blob": "9fc8a720dcf36ff83169eb7eeecaabd9a84222c9",
+      "identity_verification": "canonical LFS pointer reconstructed from actual content SHA256 and bytes",
+      "source_sha256": "7e75c6f51bb4c0057bd8eaaae7fb7b7e230f49e83e284a2b4a7962035a8b252c",
+      "source_bytes": 13198711,
+      "first_record_tokens": 597,
+      "prefix_availability": {
+        "256": true,
+        "512": true,
+        "1024": false,
+        "2048": false,
+        "4096": false
+      },
+      "remaining_single_token_records": 128,
+      "batch_start": 3086,
+      "batch_stop": 3683,
+      "source_ordinal_start": 0,
+      "selected_tokens": 597,
+      "truncated": false
+    },
+    {
+      "request_id": "mmlu/professional_law/10876",
+      "dataset_path": "Qwen/Qwen3-235B-A22B-FP8/mmlu/professional_law/10876.json",
+      "revision": "27febb7b2d24169560a9f6f83d38eb53f94916cf",
+      "expected_blob_sha": "89e895e54ccba52573ef08618b7c7f2f177d5cb1",
+      "actual_content_git_blob": "9abac4fd3ba391c5db614bd1f463405f37b45fa2",
+      "identity_verification": "canonical LFS pointer reconstructed from actual content SHA256 and bytes",
+      "source_sha256": "b08e4d3cad483969cc19799add1608ff6a080fcc7facd28f9b07d6789d7c194a",
+      "source_bytes": 13105935,
+      "first_record_tokens": 592,
+      "prefix_availability": {
+        "256": true,
+        "512": true,
+        "1024": false,
+        "2048": false,
+        "4096": false
+      },
+      "remaining_single_token_records": 128,
+      "batch_start": 3683,
+      "batch_stop": 4096,
+      "source_ordinal_start": 0,
+      "selected_tokens": 413,
+      "truncated": true
+    }
+  ],
+  "exported_serialized_layers": [
+    0
+  ],
+  "aggregate_serialized_layers": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93
+  ],
+  "prefixes": {
+    "256": {
+      "available": true,
+      "selected_tokens": 256,
+      "boundaries": [
+        {
+          "request_id": "Chinese-SimpleQA/\u4e2d\u534e\u6587\u5316/206",
+          "source_ordinal_start": 0,
+          "selected_tokens": 22
+        },
+        {
+          "request_id": "livecodebench/execution/104",
+          "source_ordinal_start": 0,
+          "selected_tokens": 224
+        },
+        {
+          "request_id": "HuggingFaceH4/aime_2024/28",
+          "source_ordinal_start": 0,
+          "selected_tokens": 10
+        }
+      ]
+    },
+    "512": {
+      "available": true,
+      "selected_tokens": 512,
+      "boundaries": [
+        {
+          "request_id": "Chinese-SimpleQA/\u4e2d\u534e\u6587\u5316/206",
+          "source_ordinal_start": 0,
+          "selected_tokens": 22
+        },
+        {
+          "request_id": "livecodebench/execution/104",
+          "source_ordinal_start": 0,
+          "selected_tokens": 224
+        },
+        {
+          "request_id": "HuggingFaceH4/aime_2024/28",
+          "source_ordinal_start": 0,
+          "selected_tokens": 266
+        }
+      ]
+    },
+    "1024": {
+      "available": true,
+      "selected_tokens": 1024,
+      "boundaries": [
+        {
+          "request_id": "Chinese-SimpleQA/\u4e2d\u534e\u6587\u5316/206",
+          "source_ordinal_start": 0,
+          "selected_tokens": 22
+        },
+        {
+          "request_id": "livecodebench/execution/104",
+          "source_ordinal_start": 0,
+          "selected_tokens": 224
+        },
+        {
+          "request_id": "HuggingFaceH4/aime_2024/28",
+          "source_ordinal_start": 0,
+          "selected_tokens": 393
+        },
+        {
+          "request_id": "mmlu/college_medicine/1202",
+          "source_ordinal_start": 0,
+          "selected_tokens": 385
+        }
+      ]
+    },
+    "2048": {
+      "available": true,
+      "selected_tokens": 2048,
+      "boundaries": [
+        {
+          "request_id": "Chinese-SimpleQA/\u4e2d\u534e\u6587\u5316/206",
+          "source_ordinal_start": 0,
+          "selected_tokens": 22
+        },
+        {
+          "request_id": "livecodebench/execution/104",
+          "source_ordinal_start": 0,
+          "selected_tokens": 224
+        },
+        {
+          "request_id": "HuggingFaceH4/aime_2024/28",
+          "source_ordinal_start": 0,
+          "selected_tokens": 393
+        },
+        {
+          "request_id": "mmlu/college_medicine/1202",
+          "source_ordinal_start": 0,
+          "selected_tokens": 924
+        },
+        {
+          "request_id": "mmlu_ZH_CN/college_medicine/1202",
+          "source_ordinal_start": 0,
+          "selected_tokens": 485
+        }
+      ]
+    },
+    "4096": {
+      "available": true,
+      "selected_tokens": 4096,
+      "boundaries": [
+        {
+          "request_id": "Chinese-SimpleQA/\u4e2d\u534e\u6587\u5316/206",
+          "source_ordinal_start": 0,
+          "selected_tokens": 22
+        },
+        {
+          "request_id": "livecodebench/execution/104",
+          "source_ordinal_start": 0,
+          "selected_tokens": 224
+        },
+        {
+          "request_id": "HuggingFaceH4/aime_2024/28",
+          "source_ordinal_start": 0,
+          "selected_tokens": 393
+        },
+        {
+          "request_id": "mmlu/college_medicine/1202",
+          "source_ordinal_start": 0,
+          "selected_tokens": 924
+        },
+        {
+          "request_id": "mmlu_ZH_CN/college_medicine/1202",
+          "source_ordinal_start": 0,
+          "selected_tokens": 832
+        },
+        {
+          "request_id": "mmlu/high_school_world_history/5874",
+          "source_ordinal_start": 0,
+          "selected_tokens": 691
+        },
+        {
+          "request_id": "mmlu_ZH_CN/high_school_world_history/5877",
+          "source_ordinal_start": 0,
+          "selected_tokens": 597
+        },
+        {
+          "request_id": "mmlu/professional_law/10876",
+          "source_ordinal_start": 0,
+          "selected_tokens": 413
+        }
+      ]
+    }
+  },
+  "batch_tokens": 4096,
+  "bounds": {
+    "planned_private_bytes_upper_bound": 80653621,
+    "planned_aggregate_csv_bytes": 26980992,
+    "private_cap_bytes": 8589934592,
+    "disk_reserve_bytes": 8589934592,
+    "max_input_bytes": 268435456
+  },
+  "zipf": {
+    "alpha": 1.1,
+    "seed": 20261016,
+    "generator_sha256": "0222dbc3abbc3d1a5f91e27db0c3ffea2232a2965b1811ebd34877dc6bd8bcac",
+    "matched_N": true
+  },
+  "validation": "dual raw parsers; source blob; per-request and same-layer batch exact readback; independent metric formulas; aggregate CSV readback",
+  "published_data": "aggregate counts/statistics only; raw and per-token exports private"
+}
