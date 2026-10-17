@@ -1,4 +1,6 @@
-# Qwen3-235B real prefill trace: access-stage report
+# Qwen3-235B real prefill trace: historical access-stage report
+
+Update: the user subsequently supplied the authorized single request file. See [the completed structural PoC](../../experiments/qwen-real-prefill-trace/README.md). This document preserves the earlier access-stage observations; it does not describe the current extraction status.
 
 ## Result
 
