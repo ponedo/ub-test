@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "tests": [
+    {
+      "case": "valid",
+      "expected_rejection": false,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "case": "parent_path",
+      "expected_rejection": true,
+      "returncode": 1,
+      "status": "PASS"
+    },
+    {
+      "case": "absolute_path",
+      "expected_rejection": true,
+      "returncode": 1,
+      "status": "PASS"
+    },
+    {
+      "case": "bad_chunk_limit",
+      "expected_rejection": true,
+      "returncode": 1,
+      "status": "PASS"
+    },
+    {
+      "case": "wrong_file_hash",
+      "expected_rejection": true,
+      "returncode": 1,
+      "status": "PASS"
+    },
+    {
+      "case": "nonempty_output",
+      "status": "PASS"
+    },
+    {
+      "case": "symlink_output",
+      "status": "PASS"
+    }
+  ]
+}

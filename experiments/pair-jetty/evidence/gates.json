@@ -1,0 +1,592 @@
+{
+  "gate-b": {
+    "runs": 24,
+    "verified": 24,
+    "logical_failures": [],
+    "case_latency": [
+      {
+        "case": "chunk_eq_ta-no-balancing",
+        "mode": "per-wqe",
+        "latency_ps": 4244688,
+        "jettys": 48
+      },
+      {
+        "case": "chunk_eq_ta-no-balancing",
+        "mode": "pair",
+        "latency_ps": 4244688,
+        "jettys": 6
+      },
+      {
+        "case": "chunk_lt_ta-no-balancing",
+        "mode": "per-wqe",
+        "latency_ps": 4244688,
+        "jettys": 48
+      },
+      {
+        "case": "chunk_lt_ta-no-balancing",
+        "mode": "pair",
+        "latency_ps": 4244688,
+        "jettys": 6
+      },
+      {
+        "case": "fixed64-no-balancing",
+        "mode": "per-wqe",
+        "latency_ps": 18238360,
+        "jettys": 504
+      },
+      {
+        "case": "fixed64-no-balancing",
+        "mode": "pair",
+        "latency_ps": 18238360,
+        "jettys": 372
+      },
+      {
+        "case": "multi4_force-no-balancing",
+        "mode": "per-wqe",
+        "latency_ps": 4244688,
+        "jettys": 48
+      },
+      {
+        "case": "multi4_force-no-balancing",
+        "mode": "pair",
+        "latency_ps": 4244688,
+        "jettys": 6
+      },
+      {
+        "case": "multi8-no-balancing",
+        "mode": "per-wqe",
+        "latency_ps": 8600056,
+        "jettys": 112
+      },
+      {
+        "case": "multi8-no-balancing",
+        "mode": "pair",
+        "latency_ps": 8600056,
+        "jettys": 14
+      },
+      {
+        "case": "multi_expert8-no-balancing",
+        "mode": "per-wqe",
+        "latency_ps": 10917320,
+        "jettys": 280
+      },
+      {
+        "case": "multi_expert8-no-balancing",
+        "mode": "pair",
+        "latency_ps": 10917320,
+        "jettys": 26
+      },
+      {
+        "case": "out_of_order4-no-balancing",
+        "mode": "per-wqe",
+        "latency_ps": 4244688,
+        "jettys": 48
+      },
+      {
+        "case": "out_of_order4-no-balancing",
+        "mode": "pair",
+        "latency_ps": 4244688,
+        "jettys": 6
+      },
+      {
+        "case": "public_chunk8-no-balancing",
+        "mode": "per-wqe",
+        "latency_ps": 8600056,
+        "jettys": 112
+      },
+      {
+        "case": "public_chunk8-no-balancing",
+        "mode": "pair",
+        "latency_ps": 8600056,
+        "jettys": 14
+      },
+      {
+        "case": "single4-no-balancing",
+        "mode": "per-wqe",
+        "latency_ps": 1217152,
+        "jettys": 24
+      },
+      {
+        "case": "single4-no-balancing",
+        "mode": "pair",
+        "latency_ps": 1217152,
+        "jettys": 12
+      },
+      {
+        "case": "slots_zero4-no-balancing",
+        "mode": "per-wqe",
+        "latency_ps": 4244688,
+        "jettys": 48
+      },
+      {
+        "case": "slots_zero4-no-balancing",
+        "mode": "pair",
+        "latency_ps": 4244688,
+        "jettys": 6
+      },
+      {
+        "case": "slow_relay8-no-balancing",
+        "mode": "per-wqe",
+        "latency_ps": 8600056,
+        "jettys": 112
+      },
+      {
+        "case": "slow_relay8-no-balancing",
+        "mode": "pair",
+        "latency_ps": 8600056,
+        "jettys": 14
+      },
+      {
+        "case": "tail4-no-balancing",
+        "mode": "per-wqe",
+        "latency_ps": 4326800,
+        "jettys": 48
+      },
+      {
+        "case": "tail4-no-balancing",
+        "mode": "pair",
+        "latency_ps": 4326800,
+        "jettys": 6
+      }
+    ]
+  },
+  "gate-c": {
+    "runs": 72,
+    "verified": 72,
+    "logical_failures": [],
+    "case_latency": [
+      {
+        "case": "chunk_eq_ta-chunk-streaming",
+        "mode": "per-wqe",
+        "latency_ps": 11332040,
+        "jettys": 156
+      },
+      {
+        "case": "chunk_eq_ta-chunk-streaming",
+        "mode": "pair",
+        "latency_ps": 11332040,
+        "jettys": 8
+      },
+      {
+        "case": "chunk_eq_ta-direct",
+        "mode": "per-wqe",
+        "latency_ps": 15095720,
+        "jettys": 15
+      },
+      {
+        "case": "chunk_eq_ta-direct",
+        "mode": "pair",
+        "latency_ps": 15095720,
+        "jettys": 8
+      },
+      {
+        "case": "chunk_eq_ta-two-stage",
+        "mode": "per-wqe",
+        "latency_ps": 15241120,
+        "jettys": 15
+      },
+      {
+        "case": "chunk_eq_ta-two-stage",
+        "mode": "pair",
+        "latency_ps": 15241120,
+        "jettys": 8
+      },
+      {
+        "case": "chunk_lt_ta-chunk-streaming",
+        "mode": "per-wqe",
+        "latency_ps": 12766360,
+        "jettys": 300
+      },
+      {
+        "case": "chunk_lt_ta-chunk-streaming",
+        "mode": "pair",
+        "latency_ps": 12766360,
+        "jettys": 8
+      },
+      {
+        "case": "chunk_lt_ta-direct",
+        "mode": "per-wqe",
+        "latency_ps": 15095720,
+        "jettys": 15
+      },
+      {
+        "case": "chunk_lt_ta-direct",
+        "mode": "pair",
+        "latency_ps": 15095720,
+        "jettys": 8
+      },
+      {
+        "case": "chunk_lt_ta-two-stage",
+        "mode": "per-wqe",
+        "latency_ps": 15241120,
+        "jettys": 15
+      },
+      {
+        "case": "chunk_lt_ta-two-stage",
+        "mode": "pair",
+        "latency_ps": 15241120,
+        "jettys": 8
+      },
+      {
+        "case": "fixed64-chunk-streaming",
+        "mode": "per-wqe",
+        "latency_ps": 45750904,
+        "jettys": 752
+      },
+      {
+        "case": "fixed64-chunk-streaming",
+        "mode": "pair",
+        "latency_ps": 45750904,
+        "jettys": 370
+      },
+      {
+        "case": "fixed64-direct",
+        "mode": "per-wqe",
+        "latency_ps": 139969584,
+        "jettys": 411
+      },
+      {
+        "case": "fixed64-direct",
+        "mode": "pair",
+        "latency_ps": 139969584,
+        "jettys": 371
+      },
+      {
+        "case": "fixed64-two-stage",
+        "mode": "per-wqe",
+        "latency_ps": 50671824,
+        "jettys": 411
+      },
+      {
+        "case": "fixed64-two-stage",
+        "mode": "pair",
+        "latency_ps": 50671824,
+        "jettys": 370
+      },
+      {
+        "case": "multi4_force-chunk-streaming",
+        "mode": "per-wqe",
+        "latency_ps": 14321600,
+        "jettys": 48
+      },
+      {
+        "case": "multi4_force-chunk-streaming",
+        "mode": "pair",
+        "latency_ps": 14321600,
+        "jettys": 8
+      },
+      {
+        "case": "multi4_force-direct",
+        "mode": "per-wqe",
+        "latency_ps": 15095720,
+        "jettys": 15
+      },
+      {
+        "case": "multi4_force-direct",
+        "mode": "pair",
+        "latency_ps": 15095720,
+        "jettys": 8
+      },
+      {
+        "case": "multi4_force-two-stage",
+        "mode": "per-wqe",
+        "latency_ps": 15241120,
+        "jettys": 15
+      },
+      {
+        "case": "multi4_force-two-stage",
+        "mode": "pair",
+        "latency_ps": 15241120,
+        "jettys": 8
+      },
+      {
+        "case": "multi8-chunk-streaming",
+        "mode": "per-wqe",
+        "latency_ps": 17803720,
+        "jettys": 96
+      },
+      {
+        "case": "multi8-chunk-streaming",
+        "mode": "pair",
+        "latency_ps": 17803720,
+        "jettys": 25
+      },
+      {
+        "case": "multi8-direct",
+        "mode": "per-wqe",
+        "latency_ps": 28536080,
+        "jettys": 30
+      },
+      {
+        "case": "multi8-direct",
+        "mode": "pair",
+        "latency_ps": 28536080,
+        "jettys": 26
+      },
+      {
+        "case": "multi8-two-stage",
+        "mode": "per-wqe",
+        "latency_ps": 19735920,
+        "jettys": 30
+      },
+      {
+        "case": "multi8-two-stage",
+        "mode": "pair",
+        "latency_ps": 19735920,
+        "jettys": 25
+      },
+      {
+        "case": "multi_expert8-chunk-streaming",
+        "mode": "per-wqe",
+        "latency_ps": 15050008,
+        "jettys": 286
+      },
+      {
+        "case": "multi_expert8-chunk-streaming",
+        "mode": "pair",
+        "latency_ps": 15050008,
+        "jettys": 52
+      },
+      {
+        "case": "multi_expert8-direct",
+        "mode": "per-wqe",
+        "latency_ps": 16915608,
+        "jettys": 242
+      },
+      {
+        "case": "multi_expert8-direct",
+        "mode": "pair",
+        "latency_ps": 16915608,
+        "jettys": 50
+      },
+      {
+        "case": "multi_expert8-two-stage",
+        "mode": "per-wqe",
+        "latency_ps": 17082408,
+        "jettys": 242
+      },
+      {
+        "case": "multi_expert8-two-stage",
+        "mode": "pair",
+        "latency_ps": 17082408,
+        "jettys": 52
+      },
+      {
+        "case": "out_of_order4-chunk-streaming",
+        "mode": "per-wqe",
+        "latency_ps": 25998880,
+        "jettys": 48
+      },
+      {
+        "case": "out_of_order4-chunk-streaming",
+        "mode": "pair",
+        "latency_ps": 25998880,
+        "jettys": 8
+      },
+      {
+        "case": "out_of_order4-direct",
+        "mode": "per-wqe",
+        "latency_ps": 34419000,
+        "jettys": 15
+      },
+      {
+        "case": "out_of_order4-direct",
+        "mode": "pair",
+        "latency_ps": 34419000,
+        "jettys": 8
+      },
+      {
+        "case": "out_of_order4-two-stage",
+        "mode": "per-wqe",
+        "latency_ps": 35011720,
+        "jettys": 15
+      },
+      {
+        "case": "out_of_order4-two-stage",
+        "mode": "pair",
+        "latency_ps": 35011720,
+        "jettys": 8
+      },
+      {
+        "case": "public_chunk8-chunk-streaming",
+        "mode": "per-wqe",
+        "latency_ps": 16909760,
+        "jettys": 36
+      },
+      {
+        "case": "public_chunk8-chunk-streaming",
+        "mode": "pair",
+        "latency_ps": 16909760,
+        "jettys": 25
+      },
+      {
+        "case": "public_chunk8-direct",
+        "mode": "per-wqe",
+        "latency_ps": 28536080,
+        "jettys": 30
+      },
+      {
+        "case": "public_chunk8-direct",
+        "mode": "pair",
+        "latency_ps": 28536080,
+        "jettys": 26
+      },
+      {
+        "case": "public_chunk8-two-stage",
+        "mode": "per-wqe",
+        "latency_ps": 19735920,
+        "jettys": 30
+      },
+      {
+        "case": "public_chunk8-two-stage",
+        "mode": "pair",
+        "latency_ps": 19735920,
+        "jettys": 25
+      },
+      {
+        "case": "single4-chunk-streaming",
+        "mode": "per-wqe",
+        "latency_ps": 5757264,
+        "jettys": 21
+      },
+      {
+        "case": "single4-chunk-streaming",
+        "mode": "pair",
+        "latency_ps": 5757264,
+        "jettys": 11
+      },
+      {
+        "case": "single4-direct",
+        "mode": "per-wqe",
+        "latency_ps": 5757264,
+        "jettys": 21
+      },
+      {
+        "case": "single4-direct",
+        "mode": "pair",
+        "latency_ps": 5757264,
+        "jettys": 11
+      },
+      {
+        "case": "single4-two-stage",
+        "mode": "per-wqe",
+        "latency_ps": 5757264,
+        "jettys": 21
+      },
+      {
+        "case": "single4-two-stage",
+        "mode": "pair",
+        "latency_ps": 5757264,
+        "jettys": 11
+      },
+      {
+        "case": "slots_zero4-chunk-streaming",
+        "mode": "per-wqe",
+        "latency_ps": 4544688,
+        "jettys": 48
+      },
+      {
+        "case": "slots_zero4-chunk-streaming",
+        "mode": "pair",
+        "latency_ps": 4544688,
+        "jettys": 6
+      },
+      {
+        "case": "slots_zero4-direct",
+        "mode": "per-wqe",
+        "latency_ps": 4544688,
+        "jettys": 48
+      },
+      {
+        "case": "slots_zero4-direct",
+        "mode": "pair",
+        "latency_ps": 4544688,
+        "jettys": 6
+      },
+      {
+        "case": "slots_zero4-two-stage",
+        "mode": "per-wqe",
+        "latency_ps": 4544688,
+        "jettys": 48
+      },
+      {
+        "case": "slots_zero4-two-stage",
+        "mode": "pair",
+        "latency_ps": 4544688,
+        "jettys": 6
+      },
+      {
+        "case": "slow_relay8-chunk-streaming",
+        "mode": "per-wqe",
+        "latency_ps": 35889760,
+        "jettys": 96
+      },
+      {
+        "case": "slow_relay8-chunk-streaming",
+        "mode": "pair",
+        "latency_ps": 35889760,
+        "jettys": 25
+      },
+      {
+        "case": "slow_relay8-direct",
+        "mode": "per-wqe",
+        "latency_ps": 37136920,
+        "jettys": 30
+      },
+      {
+        "case": "slow_relay8-direct",
+        "mode": "pair",
+        "latency_ps": 37136920,
+        "jettys": 26
+      },
+      {
+        "case": "slow_relay8-two-stage",
+        "mode": "per-wqe",
+        "latency_ps": 37275480,
+        "jettys": 30
+      },
+      {
+        "case": "slow_relay8-two-stage",
+        "mode": "pair",
+        "latency_ps": 37275480,
+        "jettys": 25
+      },
+      {
+        "case": "tail4-chunk-streaming",
+        "mode": "per-wqe",
+        "latency_ps": 19222280,
+        "jettys": 90
+      },
+      {
+        "case": "tail4-chunk-streaming",
+        "mode": "pair",
+        "latency_ps": 19222280,
+        "jettys": 8
+      },
+      {
+        "case": "tail4-direct",
+        "mode": "per-wqe",
+        "latency_ps": 18822160,
+        "jettys": 15
+      },
+      {
+        "case": "tail4-direct",
+        "mode": "pair",
+        "latency_ps": 18822160,
+        "jettys": 8
+      },
+      {
+        "case": "tail4-two-stage",
+        "mode": "per-wqe",
+        "latency_ps": 18915600,
+        "jettys": 15
+      },
+      {
+        "case": "tail4-two-stage",
+        "mode": "pair",
+        "latency_ps": 18915600,
+        "jettys": 8
+      }
+    ]
+  }
+}
