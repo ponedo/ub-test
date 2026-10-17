@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "independent_function_byte_comparison": {
+    "SenderComplete": true,
+    "Event": true,
+    "TE": true,
+    "AddTransfer": true,
+    "Topology": true,
+    "Validate": true,
+    "Send": true,
+    "Ready": true,
+    "FinalWeight": true,
+    "Gate": true,
+    "Start": true,
+    "Duration": true
+  },
+  "modified_tracked": [
+    "experiments/multi-npu-relay/adapter.py",
+    "experiments/pair-jetty/online-validation.inc",
+    "experiments/pair-jetty/pair-layer.cc",
+    "experiments/tiered-logging/preflight.py"
+  ],
+  "all_new_files_under_new_experiment": true,
+  "note": "PairJetty probes emitted four default native CSVs in repository runlog; moved only those newly generated untracked files to raw/regressions/probe-default-runlog and changed future runner cwd to raw output."
+}

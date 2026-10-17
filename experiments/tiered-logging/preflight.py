@@ -38,7 +38,52 @@ def fnv1a64(data):
         value=((value ^ byte)*1099511628211)&0xffffffffffffffff
     return f'{value:016x}'
 
-def check(directory, graph_tool, execution_summary=None):
+def reconstruct_dependencies(edges, byid, start, mode='indexed'):
+    """Independent reconstruction from graph-tool edges and validated plan.
+
+    Never consumes adapter dependencies. Two append-only indexes encode the
+    scan predicates exactly; edge enumeration defines original task/list order.
+    """
+    require(mode in ('indexed', 'scan'), 'dependency mode')
+    if mode == 'scan':
+        result = []
+        for edge in edges:
+            if byid[edge['source_physical']]['kind'] == 'main':
+                result.append([])
+                continue
+            if edge['scope'] == 2:
+                deps = [start+i for i, candidate in enumerate(edges)
+                        if byid[candidate['source_physical']]['kind'] == 'main'
+                        and byid[candidate['physical']]['expert'] == byid[edge['physical']]['expert']
+                        and (candidate['offset'], candidate['bytes']) == (edge['offset'], edge['bytes'])]
+            else:
+                deps = [start+i for i, candidate in enumerate(edges)
+                        if candidate['physical'] == edge['source_physical']]
+            require(deps, 'missing relay dependency')
+            result.append(deps)
+        return result
+    arrivals = {}
+    chunks = {}
+    for ordinal, edge in enumerate(edges):
+        task = start + ordinal
+        arrivals.setdefault(edge['physical'], []).append(task)
+        if byid[edge['source_physical']]['kind'] == 'main':
+            expert = byid[edge['physical']]['expert']
+            chunks.setdefault(expert, {}).setdefault((edge['offset'], edge['bytes']), []).append(task)
+    result = []
+    for edge in edges:
+        if byid[edge['source_physical']]['kind'] == 'main':
+            result.append([])
+            continue
+        if edge['scope'] == 2:
+            expected = chunks.get(byid[edge['physical']]['expert'], {}).get((edge['offset'], edge['bytes']), ())
+        else:
+            expected = arrivals.get(edge['source_physical'], ())
+        require(expected, 'missing relay dependency')
+        result.append(list(expected))
+    return result
+
+def check(directory, graph_tool, execution_summary=None, dependency_mode='indexed'):
     root=Path(directory);c=json.loads((root/'config.json').read_text());plan=json.loads((root/'plan.json').read_text())
     pc=c['planner_input'];p=c['runtime'];n=pc['npus'];e=pc['experts'];k=pc['top_k'];mapping=pc['mapping'];physical=plan['physical'];byid={x['id']:x for x in physical}
     budget=p.get('payload_budget_bytes',256*1024**2);limit=p.get('weight_task_limit',20000)
@@ -109,13 +154,18 @@ def check(directory, graph_tool, execution_summary=None):
     for edge in edges:
         src,dst=byid[edge['source_physical']],byid[edge['physical']]
         transfers.append(dict(task=len(transfers),stage=2,id=dst['id'],source=src['rank'],target=dst['rank'],physical=dst['id'],bytes=edge['bytes'],source_physical=src['id'],offset=edge['offset'],dependencies=[]))
-    for task in range(start,len(transfers)):
-        x=transfers[task]
-        if byid[x['source_physical']]['kind']=='main':continue
-        if edges[task-start]['scope']==2:
-            x['dependencies']=[y['task'] for y in transfers[start:] if byid[y['source_physical']]['kind']=='main' and byid[y['physical']]['expert']==byid[x['physical']]['expert'] and (y['offset'],y['bytes'])==(x['offset'],x['bytes'])]
-        else:x['dependencies']=[y['task'] for y in transfers[start:] if y['physical']==x['source_physical']]
-        require(x['dependencies'],'missing relay dependency')
+    require(dependency_mode in ('indexed', 'scan'), 'dependency mode')
+    if dependency_mode == 'scan':
+        for task in range(start,len(transfers)):
+            x=transfers[task]
+            if byid[x['source_physical']]['kind']=='main':continue
+            if edges[task-start]['scope']==2:
+                x['dependencies']=[y['task'] for y in transfers[start:] if byid[y['source_physical']]['kind']=='main' and byid[y['physical']]['expert']==byid[x['physical']]['expert'] and (y['offset'],y['bytes'])==(x['offset'],x['bytes'])]
+            else:x['dependencies']=[y['task'] for y in transfers[start:] if y['physical']==x['source_physical']]
+            require(x['dependencies'],'missing relay dependency')
+    else:
+        for x, dependencies in zip(transfers[start:], reconstruct_dependencies(edges, byid, start, dependency_mode)):
+            x['dependencies'] = dependencies
     require(transfers==c['transfers'],'config transfer graph differs from accepted graph tool')
     canonical=canonical_graph(transfers).encode()
     if (root/'executed-transfers.csv').exists():
@@ -137,8 +187,9 @@ def input_summary(directory, validation, provenance=None):
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('directory',type=Path);parser.add_argument('--graph-tool',type=Path,required=True);parser.add_argument('--execution-summary',type=Path);parser.add_argument('--out',type=Path);parser.add_argument('--input-summary',type=Path);parser.add_argument('--provenance',type=Path)
+    parser.add_argument('--dependency-mode', choices=('indexed', 'scan'), default='indexed')
     args=parser.parse_args()
-    try:result=check(args.directory,args.graph_tool,args.execution_summary)
+    try:result=check(args.directory,args.graph_tool,args.execution_summary,args.dependency_mode)
     except Exception as exc:
         result=dict(status='FAIL',error=str(exc))
         if args.out:args.out.write_text(json.dumps(result,indent=2)+'\n')

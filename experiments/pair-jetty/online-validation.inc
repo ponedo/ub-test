@@ -12,7 +12,15 @@
     static uint64_t Hash(uint64_t hash,const char* data,size_t size){for(size_t i=0;i<size;++i){hash^=static_cast<uint8_t>(data[i]);hash*=1099511628211ULL;}return hash;}
     static std::string Hex(uint64_t value){std::ostringstream s;s<<std::hex<<std::setfill('0')<<std::setw(16)<<value;return s.str();}
     uint64_t At(const std::string& key)const{auto it=spans.find(key);Require(it!=spans.end(),"missing audit event "+key);return it->second[0];}
-    void InitAudit(){taskAudit.resize(transfers.size());for(size_t i=0;i<transfers.size();++i)if(transfers[i].source!=transfers[i].target)taskAudit[i].segments.resize((transfers[i].bytes+segment-1)/segment);tokenAudit.assign(t,false);computeBegin.assign(n,0);computeEnd.assign(n,0);expertCursor.assign(n,0);}
+    // Built before any events; audit reads never change these membership vectors.
+    std::map<uint32_t,std::vector<size_t>> auditReplicaMembers;
+    std::map<std::tuple<uint32_t,uint64_t,uint64_t>,std::vector<size_t>> auditGroupMembers;
+    void InitAudit(){
+        if(onlineMembershipMode=="index")for(size_t i=2*assignments.size();i<transfers.size();++i){
+            const auto& x=transfers[i];auditReplicaMembers[x.physical].push_back(i);
+            if(!P(x.sourcePhysical).replica)auditGroupMembers[{P(x.physical).expert,x.offset,x.bytes}].push_back(i);
+        }
+        taskAudit.resize(transfers.size());for(size_t i=0;i<transfers.size();++i)if(transfers[i].source!=transfers[i].target)taskAudit[i].segments.resize((transfers[i].bytes+segment-1)/segment);tokenAudit.assign(t,false);computeBegin.assign(n,0);computeEnd.assign(n,0);expertCursor.assign(n,0);}
     bool KeyEvent(const std::string& name,int stage,int task)const{
         static const std::set<std::string> keys={"layer_start","layer_end","planning_start","planning_end","reroute_start","reroute_end","weights_start","weights_end","dispatch_gate","compute_start","compute_end","compute_idle","expert_start","expert_end","weight_ready","group_chunk_ready"};
         return keys.count(name)||(name=="edge_ready")||(name=="send"&&stage==2&&task>=0&&!transfers[task].dependencies.empty());
@@ -67,10 +75,24 @@
                 if(name=="dispatch_gate")Require(now==std::max(At("reroute_end"),At("weights_end")),"audit dispatch gate");
                 if(name=="main_weight_ready"){auto& p=P(id);Require(!p.replica&&p.rank==uint32_t(node)&&off==0&&len==weightBytes&&now==At("layer_start"),"audit main resident weight");}
                 if(name=="weight_ready"){auto& p=P(id);Require(p.replica&&p.rank==uint32_t(node)&&off==0&&len==weightBytes,"audit replica ready identity");
-                    uint64_t end=0;for(size_t i=2*assignments.size();i<transfers.size();++i)if(transfers[i].physical==uint32_t(id)){Require(taskAudit[i].ready,"audit premature weight ready");end=std::max(end,taskAudit[i].finish);}Require(now==end,"audit final weight aggregation");
+                    uint64_t end=0;
+                    auto check=[&](size_t i){Require(taskAudit[i].ready,"audit premature weight ready");end=std::max(end,taskAudit[i].finish);};
+                    if(onlineMembershipMode=="scan"){
+                        for(size_t i=2*assignments.size();i<transfers.size();++i)if(transfers[i].physical==uint32_t(id))check(i);
+                    }else{
+                        auto it=auditReplicaMembers.find(uint32_t(id));if(it!=auditReplicaMembers.end())for(auto i:it->second)check(i);
+                    }
+                    Require(now==end,"audit final weight aggregation");
                 }
                 if(name=="group_chunk_ready"){
-                    uint64_t end=0;for(size_t i=2*assignments.size();i<transfers.size();++i){auto& x=transfers[i];if(!P(x.sourcePhysical).replica&&P(x.physical).expert==uint32_t(id)&&x.offset==off&&x.bytes==len){Require(taskAudit[i].ready,"audit premature group");end=std::max(end,taskAudit[i].finish);}}Require(now==end,"audit group timing");
+                    uint64_t end=0;
+                    auto check=[&](size_t i){Require(taskAudit[i].ready,"audit premature group");end=std::max(end,taskAudit[i].finish);};
+                    if(onlineMembershipMode=="scan"){
+                        for(size_t i=2*assignments.size();i<transfers.size();++i){auto& x=transfers[i];if(!P(x.sourcePhysical).replica&&P(x.physical).expert==uint32_t(id)&&x.offset==off&&x.bytes==len)check(i);}
+                    }else{
+                        auto it=auditGroupMembers.find({uint32_t(id),off,len});if(it!=auditGroupMembers.end())for(auto i:it->second)check(i);
+                    }
+                    Require(now==end,"audit group timing");
                 }
                 if(name=="compute_idle")Require(node>=0&&uint32_t(node)<n&&!expected[node]&&now==At("dispatch_gate"),"audit invalid idle compute");
                 if(name=="compute_start"){Require(node>=0&&uint32_t(node)<n&&expected[node]>0&&!computeBegin[node],"audit compute identity");Require(now>=At("dispatch_gate"),"audit compute gate");for(size_t i=0;i<assignments.size();++i)if(assignments[i].target==uint32_t(node))Require(taskAudit[i].ready,"audit compute data dependency");computeBegin[node]=now;expertCursor[node]=now;}

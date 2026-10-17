@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "unchanged_function_bytes": {
+    "SenderComplete": true,
+    "Event": true,
+    "TE": true,
+    "AddTransfer": true,
+    "Topology": true,
+    "Validate": true,
+    "Send": true,
+    "Ready": true,
+    "FinalWeight": true,
+    "Gate": true,
+    "Start": true
+  },
+  "simulator_calls_same_bytes_and_order": true,
+  "simulator_call_count": 11,
+  "native_tree": "c27d1faef570e6da9900a71aa0a37180a58dfba8",
+  "allowed_production_files": [
+    "experiments/multi-npu-relay/adapter.py",
+    "experiments/tiered-logging/preflight.py",
+    "experiments/pair-jetty/pair-layer.cc",
+    "experiments/pair-jetty/online-validation.inc"
+  ]
+}

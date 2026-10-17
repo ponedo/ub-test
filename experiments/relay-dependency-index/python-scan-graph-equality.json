@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "files": {
+    "input.txt": {
+      "exact_bytes_equal": true,
+      "sha256": "f420e4874c55ec90f9c8bc22420e57ec04648ab7fd053bbc8e122f66bee54d9b"
+    },
+    "config.json": {
+      "exact_bytes_equal": true,
+      "sha256": "d92bbd79c677fb07b919c3555a8334278129bd36be027c512c1eea411338a7cf"
+    },
+    "transfers.csv": {
+      "exact_bytes_equal": true,
+      "sha256": "0361b47ac43fae9bc05ecd20ba0cc9f7cd2e08d3a01bf6d4d354000933e7322f"
+    },
+    "weight-edges.csv": {
+      "exact_bytes_equal": true,
+      "sha256": "1882e7bace33437605c7eb1fc4a76e51126411c3c73211a699bf787d35bf235e"
+    }
+  },
+  "planner_exact_except_cpu_wall_ns": true,
+  "planner_diagnostic_cpu_wall_ns": {
+    "accepted": 239744266,
+    "new": 462268445
+  },
+  "all_transfers_and_ordered_dependency_lists_equal": true,
+  "transfers": 66328,
+  "weight_wqes": 62232,
+  "dependency_count": 78336,
+  "weight_bytes": 481296384,
+  "weight_tas": 470016,
+  "canonical_graph_sha256": "0361b47ac43fae9bc05ecd20ba0cc9f7cd2e08d3a01bf6d4d354000933e7322f",
+  "canonical_graph_fnv1a64": "6ada88bf8945a70f"
+}

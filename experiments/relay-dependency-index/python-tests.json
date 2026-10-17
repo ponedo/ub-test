@@ -1,0 +1,70 @@
+{
+  "status": "PASS",
+  "random": {
+    "cases": 160,
+    "missing_dependency_cases": 66,
+    "order_and_list_isolation": "PASS"
+  },
+  "fixture": [
+    {
+      "mode": "scan",
+      "graph_sha256": "a4122a368fcdd1e1f21b3c79baba367f09d9e7faed29b31fe6f41932c1f889d1"
+    },
+    {
+      "mode": "indexed",
+      "graph_sha256": "a4122a368fcdd1e1f21b3c79baba367f09d9e7faed29b31fe6f41932c1f889d1"
+    },
+    {
+      "fault": "missing-dependency",
+      "status": "REJECTED_BOTH"
+    },
+    {
+      "fault": "duplicate-dependency",
+      "status": "REJECTED_BOTH"
+    },
+    {
+      "fault": "dependency-order",
+      "status": "REJECTED_BOTH"
+    },
+    {
+      "fault": "wrong-group",
+      "status": "REJECTED_BOTH"
+    },
+    {
+      "fault": "wrong-offset",
+      "status": "REJECTED_BOTH"
+    },
+    {
+      "fault": "wrong-length",
+      "status": "REJECTED_BOTH"
+    },
+    {
+      "fault": "source",
+      "status": "REJECTED_BOTH"
+    },
+    {
+      "fault": "target",
+      "status": "REJECTED_BOTH"
+    },
+    {
+      "fault": "missing-transfer",
+      "status": "REJECTED_BOTH"
+    },
+    {
+      "fault": "transfer-order",
+      "status": "REJECTED_BOTH"
+    },
+    {
+      "fault": "physical-expert",
+      "status": "REJECTED_BOTH"
+    },
+    {
+      "fault": "replica-kind",
+      "status": "REJECTED_BOTH"
+    },
+    {
+      "fault": "group-parameters",
+      "status": "REJECTED_BOTH"
+    }
+  ]
+}

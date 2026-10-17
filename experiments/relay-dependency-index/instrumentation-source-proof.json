@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "baseline_sha256": {
+    "pair-layer.cc": "cc7f27573d9f0934b14d879b943b04dd33d4e76be1dd173ab16076a998e6cbbf",
+    "online-validation.inc": "8eb6df0df5e4a1604e4cbbbec3fde442e5e8ed751efc258840bf7382ad70d40b"
+  },
+  "observer_erasure_roundtrip_byte_exact": true,
+  "simulator_control_calls_byte_exact_and_same_order": true,
+  "simulator_control_calls_checked": 11,
+  "all_simulator_expressions_byte_exact_and_same_order": true,
+  "all_simulator_expressions_checked": 18,
+  "signal_handler_body": "stopSignal=signal;",
+  "mode_combinations": [
+    "scan/scan",
+    "index/scan",
+    "scan/index",
+    "index/index"
+  ],
+  "index_construction_included_in_cpu_timing": true,
+  "simulated_checkpoint_events_added": 0,
+  "note": "Static proof of transformation scope. Runtime parity remains a separate required gate."
+}

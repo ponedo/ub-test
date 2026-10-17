@@ -1,0 +1,301 @@
+{
+  "provenance": {
+    "input": "/workspace/scratch/c6ba02920254/qwen-model-size-raw/scan/tokens-256/chunk-streaming/run/input.txt",
+    "input_sha256": "f420e4874c55ec90f9c8bc22420e57ec04648ab7fd053bbc8e122f66bee54d9b",
+    "binary": "/workspace/scratch/c6ba02920254/relay-dependency-index-raw/instrumented/pair-layer",
+    "binary_sha256": "51463ed8dd73efa28a6b5285a1e30c60c221513a3ca3640114f1cc46fea25b51",
+    "dependency_mode": "index",
+    "online_mode": "scan",
+    "timed": true,
+    "sampled": false,
+    "command": [
+      "/workspace/scratch/c6ba02920254/relay-dependency-index-raw/instrumented/pair-layer",
+      "--input=/workspace/scratch/c6ba02920254/qwen-model-size-raw/scan/tokens-256/chunk-streaming/run/input.txt",
+      "--out=/workspace/scratch/c6ba02920254/relay-dependency-index-raw/runtime/index-scan-timed/run",
+      "--capacityMetrics=/workspace/scratch/c6ba02920254/relay-dependency-index-raw/runtime/index-scan-timed/run/simulator-metrics.json",
+      "--jettyMode=pair",
+      "--logLevel=summary",
+      "--payloadBudgetBytes=8589934592",
+      "--weightTaskLimit=1000000",
+      "--dependencyMode=index",
+      "--onlineMembershipMode=scan"
+    ]
+  },
+  "resource": {
+    "start": "2026-10-17T13:14:26.318267+00:00",
+    "command": [
+      "/workspace/scratch/c6ba02920254/relay-dependency-index-raw/instrumented/pair-layer",
+      "--input=/workspace/scratch/c6ba02920254/qwen-model-size-raw/scan/tokens-256/chunk-streaming/run/input.txt",
+      "--out=/workspace/scratch/c6ba02920254/relay-dependency-index-raw/runtime/index-scan-timed/run",
+      "--capacityMetrics=/workspace/scratch/c6ba02920254/relay-dependency-index-raw/runtime/index-scan-timed/run/simulator-metrics.json",
+      "--jettyMode=pair",
+      "--logLevel=summary",
+      "--payloadBudgetBytes=8589934592",
+      "--weightTaskLimit=1000000",
+      "--dependencyMode=index",
+      "--onlineMembershipMode=scan"
+    ],
+    "wall_seconds": 300.64008971798467,
+    "returncode": 143,
+    "status": "FAIL",
+    "guard": "wall_guard",
+    "peak_rss_kib": 1536300,
+    "sampled_peak_tree_rss_bytes": 1573310464,
+    "max_observed_threads_per_process": 1,
+    "user_cpu_seconds": 298.307324,
+    "system_cpu_seconds": 2.052212,
+    "limits": {
+      "wall_seconds": 300,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  "timing": {
+    "schema": 1,
+    "reason": "signal",
+    "terminal": true,
+    "complete": false,
+    "failed": false,
+    "dependency_mode": "index",
+    "online_membership_mode": "scan",
+    "signal": 15,
+    "wall_ns": 300338851803,
+    "process_cpu_ns": 300290621131,
+    "snapshot_overhead_cpu_ns_before_this_snapshot": 88611027,
+    "snapshot_overhead_wall_ns_before_this_snapshot": 89281260,
+    "snapshot_index": 294,
+    "active_phase": "FinalAudit",
+    "active_stack": [
+      "FinalAudit",
+      "program"
+    ],
+    "progress": {
+      "remote_wqes_planned": 66122,
+      "remote_wqes_submitted": 66122,
+      "TA_count": 485576,
+      "sender_completions": 66122,
+      "completed_tokens": 256,
+      "pending_replica_weights": 0,
+      "packet_tx_total": 3884608,
+      "packet_rx_total": 3884608,
+      "byte_tx_total": 1250843776,
+      "byte_rx_total": 1250843776
+    },
+    "simulator_events": 23439135,
+    "simulated_time_ps": 10000000000000,
+    "simulator_counter_live": false,
+    "model": {
+      "assignments": 2048,
+      "tasks": 66328,
+      "nodes": 64,
+      "physical_experts": 179
+    },
+    "phases": {
+      "program": {
+        "calls": 1,
+        "completed_calls": 0,
+        "active_calls": 1,
+        "inclusive_cpu_ns": 300201995092,
+        "self_cpu_ns": 3287962
+      },
+      "Read": {
+        "calls": 1,
+        "completed_calls": 1,
+        "active_calls": 0,
+        "inclusive_cpu_ns": 330042639,
+        "self_cpu_ns": 2812223
+      },
+      "Read.edges": {
+        "calls": 1,
+        "completed_calls": 1,
+        "active_calls": 0,
+        "inclusive_cpu_ns": 880938,
+        "self_cpu_ns": 880938
+      },
+      "Read.transfers": {
+        "calls": 1,
+        "completed_calls": 1,
+        "active_calls": 0,
+        "inclusive_cpu_ns": 172140295,
+        "self_cpu_ns": 172140295
+      },
+      "Read.dependencies": {
+        "calls": 1,
+        "completed_calls": 1,
+        "active_calls": 0,
+        "inclusive_cpu_ns": 24142023,
+        "self_cpu_ns": 19593182
+      },
+      "Read.replica_buffers": {
+        "calls": 1,
+        "completed_calls": 1,
+        "active_calls": 0,
+        "inclusive_cpu_ns": 130067160,
+        "self_cpu_ns": 130067160
+      },
+      "Read.dependencies.index_build": {
+        "calls": 1,
+        "completed_calls": 1,
+        "active_calls": 0,
+        "inclusive_cpu_ns": 4548841,
+        "self_cpu_ns": 4548841
+      },
+      "InitAudit.online_index_build": {
+        "calls": 1,
+        "completed_calls": 1,
+        "active_calls": 0,
+        "inclusive_cpu_ns": 701,
+        "self_cpu_ns": 701
+      },
+      "InitAudit": {
+        "calls": 1,
+        "completed_calls": 1,
+        "active_calls": 0,
+        "inclusive_cpu_ns": 7594420,
+        "self_cpu_ns": 7593719
+      },
+      "Topology": {
+        "calls": 1,
+        "completed_calls": 1,
+        "active_calls": 0,
+        "inclusive_cpu_ns": 77942275,
+        "self_cpu_ns": 77942275
+      },
+      "Simulator::Run": {
+        "calls": 1,
+        "completed_calls": 1,
+        "active_calls": 0,
+        "inclusive_cpu_ns": 275462164782,
+        "self_cpu_ns": 206499381194
+      },
+      "Audit": {
+        "calls": 2678478,
+        "completed_calls": 2678478,
+        "active_calls": 0,
+        "inclusive_cpu_ns": 23899150055,
+        "self_cpu_ns": 2539623279
+      },
+      "Audit.group_scan": {
+        "calls": 11520,
+        "completed_calls": 11520,
+        "active_calls": 0,
+        "inclusive_cpu_ns": 21329433505,
+        "self_cpu_ns": 21329433505
+      },
+      "Audit.weight_scan": {
+        "calls": 51,
+        "completed_calls": 51,
+        "active_calls": 0,
+        "inclusive_cpu_ns": 30070908,
+        "self_cpu_ns": 30070908
+      },
+      "Audit.weights_end_scan": {
+        "calls": 1,
+        "completed_calls": 1,
+        "active_calls": 0,
+        "inclusive_cpu_ns": 22363,
+        "self_cpu_ns": 22363
+      },
+      "FinalAudit": {
+        "calls": 1,
+        "completed_calls": 0,
+        "active_calls": 1,
+        "inclusive_cpu_ns": 24320963014,
+        "self_cpu_ns": 24320963014
+      },
+      "Send": {
+        "calls": 66328,
+        "completed_calls": 66328,
+        "active_calls": 0,
+        "inclusive_cpu_ns": 47143067423,
+        "self_cpu_ns": 25632806553
+      },
+      "Validate": {
+        "calls": 485782,
+        "completed_calls": 485782,
+        "active_calls": 0,
+        "inclusive_cpu_ns": 19108855708,
+        "self_cpu_ns": 19108855708
+      },
+      "Ready": {
+        "calls": 66328,
+        "completed_calls": 66328,
+        "active_calls": 0,
+        "inclusive_cpu_ns": 32418051505,
+        "self_cpu_ns": 321971272
+      },
+      "WriteSummary": {
+        "calls": 0,
+        "completed_calls": 0,
+        "active_calls": 0,
+        "inclusive_cpu_ns": 0,
+        "self_cpu_ns": 0
+      },
+      "WritePayloads": {
+        "calls": 0,
+        "completed_calls": 0,
+        "active_calls": 0,
+        "inclusive_cpu_ns": 0,
+        "self_cpu_ns": 0
+      },
+      "UbUtils::Destroy": {
+        "calls": 0,
+        "completed_calls": 0,
+        "active_calls": 0,
+        "inclusive_cpu_ns": 0,
+        "self_cpu_ns": 0
+      },
+      "Simulator::Destroy": {
+        "calls": 0,
+        "completed_calls": 0,
+        "active_calls": 0,
+        "inclusive_cpu_ns": 0,
+        "self_cpu_ns": 0
+      },
+      "Layer::~Layer": {
+        "calls": 0,
+        "completed_calls": 0,
+        "active_calls": 0,
+        "inclusive_cpu_ns": 0,
+        "self_cpu_ns": 0
+      }
+    },
+    "counters": {
+      "read_dependency_index_build_candidates": 62232,
+      "read_dependency_replica_index_entries": 62232,
+      "read_dependency_group_index_entries": 23064,
+      "read_dependency_index_lookups": 39168,
+      "online_index_build_candidates": 0,
+      "online_replica_index_entries": 0,
+      "online_group_index_entries": 0,
+      "audit_group_index_lookups": 0,
+      "audit_weight_index_lookups": 0,
+      "read_dependency_candidates": 78336,
+      "read_dependency_edges": 78336,
+      "read_dependency_replica_tasks": 39168,
+      "audit_group_scan_candidates": 716912640,
+      "audit_group_scan_matches": 23040,
+      "audit_weight_scan_candidates": 3173832,
+      "audit_weight_scan_matches": 62232,
+      "audit_weights_end_physical_candidates": 179,
+      "audit_group_events": 11520,
+      "audit_weight_events": 51,
+      "ready_dependency_predicates": 138496,
+      "send_dependency_checks": 78336,
+      "audit_send_dependency_checks": 78336,
+      "transfer_payload_bytes_allocated": 498073600,
+      "replica_payload_bytes_allocated": 481296384,
+      "transfers_created": 66328,
+      "send_payload_bytes_generated": 498073600,
+      "validate_payload_bytes_completed": 498073600,
+      "final_task_payload_bytes_checked": 498073600,
+      "final_relay_payload_bytes_checked": 160432128,
+      "final_replica_payload_bytes_checked": 301989888,
+      "audit_events": 2678478,
+      "remote_wqes_submitted": 66122
+    }
+  }
+}

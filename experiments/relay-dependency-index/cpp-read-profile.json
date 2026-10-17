@@ -1,0 +1,547 @@
+{
+  "status": "PASS",
+  "binary_sha256": "959f9884ef1c96478f3388a8337aaa201f9e9863418b8296ef60103c8d5ee90f",
+  "driver_sha256": "4aa3c921fb22c2912e14233f55ebab8a8c2053e930bbda71ee3b2f4e0a688c2a",
+  "scope": "Read includes index build; graph export excluded; no topology/simulation",
+  "runs": [
+    {
+      "mode": "scan",
+      "status": "PASS",
+      "input_sha256": "f420e4874c55ec90f9c8bc22420e57ec04648ab7fd053bbc8e122f66bee54d9b",
+      "graph_sha256": "0361b47ac43fae9bc05ecd20ba0cc9f7cd2e08d3a01bf6d4d354000933e7322f",
+      "byte_exact": true,
+      "transfers": 66328,
+      "timing": {
+        "schema": 1,
+        "reason": "completed",
+        "terminal": true,
+        "complete": true,
+        "failed": false,
+        "dependency_mode": "scan",
+        "online_membership_mode": "index",
+        "signal": 0,
+        "wall_ns": 89628781171,
+        "process_cpu_ns": 89617719605,
+        "snapshot_overhead_cpu_ns_before_this_snapshot": 26197594,
+        "snapshot_overhead_wall_ns_before_this_snapshot": 26403544,
+        "snapshot_index": 101,
+        "active_phase": "none",
+        "active_stack": [],
+        "progress": {
+          "remote_wqes_planned": 0,
+          "remote_wqes_submitted": 0,
+          "TA_count": 0,
+          "sender_completions": 0,
+          "completed_tokens": 0,
+          "pending_replica_weights": 0,
+          "packet_tx_total": 0,
+          "packet_rx_total": 0,
+          "byte_tx_total": 0,
+          "byte_rx_total": 0
+        },
+        "simulator_events": 0,
+        "simulated_time_ps": 0,
+        "simulator_counter_live": false,
+        "model": {
+          "assignments": 2048,
+          "tasks": 66328,
+          "nodes": 64,
+          "physical_experts": 179
+        },
+        "phases": {
+          "program": {
+            "calls": 1,
+            "completed_calls": 1,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 89591511715,
+            "self_cpu_ns": 18566145
+          },
+          "Read": {
+            "calls": 1,
+            "completed_calls": 1,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 89551843289,
+            "self_cpu_ns": 2245221
+          },
+          "Read.edges": {
+            "calls": 1,
+            "completed_calls": 1,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 1101144,
+            "self_cpu_ns": 1101144
+          },
+          "Read.transfers": {
+            "calls": 1,
+            "completed_calls": 1,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 163690453,
+            "self_cpu_ns": 163690453
+          },
+          "Read.dependencies": {
+            "calls": 1,
+            "completed_calls": 1,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 89256855231,
+            "self_cpu_ns": 89256854770
+          },
+          "Read.replica_buffers": {
+            "calls": 1,
+            "completed_calls": 1,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 127951240,
+            "self_cpu_ns": 127951240
+          },
+          "Read.dependencies.index_build": {
+            "calls": 1,
+            "completed_calls": 1,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 461,
+            "self_cpu_ns": 461
+          },
+          "InitAudit.online_index_build": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "InitAudit": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "Topology": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "Simulator::Run": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "Audit": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "Audit.group_scan": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "Audit.weight_scan": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "Audit.weights_end_scan": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "FinalAudit": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "Send": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "Validate": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "Ready": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "WriteSummary": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "WritePayloads": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "UbUtils::Destroy": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "Simulator::Destroy": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "Layer::~Layer": {
+            "calls": 1,
+            "completed_calls": 1,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 21102281,
+            "self_cpu_ns": 21102281
+          }
+        },
+        "counters": {
+          "read_dependency_index_build_candidates": 0,
+          "read_dependency_replica_index_entries": 0,
+          "read_dependency_group_index_entries": 0,
+          "read_dependency_index_lookups": 0,
+          "online_index_build_candidates": 0,
+          "online_replica_index_entries": 0,
+          "online_group_index_entries": 0,
+          "audit_group_index_lookups": 0,
+          "audit_weight_index_lookups": 0,
+          "read_dependency_candidates": 2437502976,
+          "read_dependency_edges": 78336,
+          "read_dependency_replica_tasks": 39168,
+          "audit_group_scan_candidates": 0,
+          "audit_group_scan_matches": 0,
+          "audit_weight_scan_candidates": 0,
+          "audit_weight_scan_matches": 0,
+          "audit_weights_end_physical_candidates": 0,
+          "audit_group_events": 0,
+          "audit_weight_events": 0,
+          "ready_dependency_predicates": 0,
+          "send_dependency_checks": 0,
+          "audit_send_dependency_checks": 0,
+          "transfer_payload_bytes_allocated": 498073600,
+          "replica_payload_bytes_allocated": 481296384,
+          "transfers_created": 66328,
+          "send_payload_bytes_generated": 0,
+          "validate_payload_bytes_completed": 0,
+          "final_task_payload_bytes_checked": 0,
+          "final_relay_payload_bytes_checked": 0,
+          "final_replica_payload_bytes_checked": 0,
+          "audit_events": 0,
+          "remote_wqes_submitted": 0
+        }
+      },
+      "resource": {
+        "wall_seconds": 89.74743259500246,
+        "user_cpu_seconds": 89.358103,
+        "system_cpu_seconds": 0.293604,
+        "peak_rss_kib": 1000108,
+        "sampled_peak_tree_rss_bytes": 610566144,
+        "guard": null
+      }
+    },
+    {
+      "mode": "index",
+      "status": "PASS",
+      "input_sha256": "f420e4874c55ec90f9c8bc22420e57ec04648ab7fd053bbc8e122f66bee54d9b",
+      "graph_sha256": "0361b47ac43fae9bc05ecd20ba0cc9f7cd2e08d3a01bf6d4d354000933e7322f",
+      "byte_exact": true,
+      "transfers": 66328,
+      "timing": {
+        "schema": 1,
+        "reason": "completed",
+        "terminal": true,
+        "complete": true,
+        "failed": false,
+        "dependency_mode": "index",
+        "online_membership_mode": "index",
+        "signal": 0,
+        "wall_ns": 348694307,
+        "process_cpu_ns": 348297142,
+        "snapshot_overhead_cpu_ns_before_this_snapshot": 2109404,
+        "snapshot_overhead_wall_ns_before_this_snapshot": 2439843,
+        "snapshot_index": 14,
+        "active_phase": "none",
+        "active_stack": [],
+        "progress": {
+          "remote_wqes_planned": 0,
+          "remote_wqes_submitted": 0,
+          "TA_count": 0,
+          "sender_completions": 0,
+          "completed_tokens": 0,
+          "pending_replica_weights": 0,
+          "packet_tx_total": 0,
+          "packet_rx_total": 0,
+          "byte_tx_total": 0,
+          "byte_rx_total": 0
+        },
+        "simulator_events": 0,
+        "simulated_time_ps": 0,
+        "simulator_counter_live": false,
+        "model": {
+          "assignments": 2048,
+          "tasks": 66328,
+          "nodes": 64,
+          "physical_experts": 179
+        },
+        "phases": {
+          "program": {
+            "calls": 1,
+            "completed_calls": 1,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 346178964,
+            "self_cpu_ns": 19031356
+          },
+          "Read": {
+            "calls": 1,
+            "completed_calls": 1,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 307381791,
+            "self_cpu_ns": 2552970
+          },
+          "Read.edges": {
+            "calls": 1,
+            "completed_calls": 1,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 1092941,
+            "self_cpu_ns": 1092941
+          },
+          "Read.transfers": {
+            "calls": 1,
+            "completed_calls": 1,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 161134925,
+            "self_cpu_ns": 161134925
+          },
+          "Read.dependencies": {
+            "calls": 1,
+            "completed_calls": 1,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 21724678,
+            "self_cpu_ns": 17189797
+          },
+          "Read.replica_buffers": {
+            "calls": 1,
+            "completed_calls": 1,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 120876277,
+            "self_cpu_ns": 120876277
+          },
+          "Read.dependencies.index_build": {
+            "calls": 1,
+            "completed_calls": 1,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 4534881,
+            "self_cpu_ns": 4534881
+          },
+          "InitAudit.online_index_build": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "InitAudit": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "Topology": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "Simulator::Run": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "Audit": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "Audit.group_scan": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "Audit.weight_scan": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "Audit.weights_end_scan": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "FinalAudit": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "Send": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "Validate": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "Ready": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "WriteSummary": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "WritePayloads": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "UbUtils::Destroy": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "Simulator::Destroy": {
+            "calls": 0,
+            "completed_calls": 0,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 0,
+            "self_cpu_ns": 0
+          },
+          "Layer::~Layer": {
+            "calls": 1,
+            "completed_calls": 1,
+            "active_calls": 0,
+            "inclusive_cpu_ns": 19765817,
+            "self_cpu_ns": 19765817
+          }
+        },
+        "counters": {
+          "read_dependency_index_build_candidates": 62232,
+          "read_dependency_replica_index_entries": 62232,
+          "read_dependency_group_index_entries": 23064,
+          "read_dependency_index_lookups": 39168,
+          "online_index_build_candidates": 0,
+          "online_replica_index_entries": 0,
+          "online_group_index_entries": 0,
+          "audit_group_index_lookups": 0,
+          "audit_weight_index_lookups": 0,
+          "read_dependency_candidates": 78336,
+          "read_dependency_edges": 78336,
+          "read_dependency_replica_tasks": 39168,
+          "audit_group_scan_candidates": 0,
+          "audit_group_scan_matches": 0,
+          "audit_weight_scan_candidates": 0,
+          "audit_weight_scan_matches": 0,
+          "audit_weights_end_physical_candidates": 0,
+          "audit_group_events": 0,
+          "audit_weight_events": 0,
+          "ready_dependency_predicates": 0,
+          "send_dependency_checks": 0,
+          "audit_send_dependency_checks": 0,
+          "transfer_payload_bytes_allocated": 498073600,
+          "replica_payload_bytes_allocated": 481296384,
+          "transfers_created": 66328,
+          "send_payload_bytes_generated": 0,
+          "validate_payload_bytes_completed": 0,
+          "final_task_payload_bytes_checked": 0,
+          "final_relay_payload_bytes_checked": 0,
+          "final_replica_payload_bytes_checked": 0,
+          "audit_events": 0,
+          "remote_wqes_submitted": 0
+        }
+      },
+      "resource": {
+        "wall_seconds": 0.5036465969751589,
+        "user_cpu_seconds": 0.12393399999999999,
+        "system_cpu_seconds": 0.257942,
+        "peak_rss_kib": 1001624,
+        "sampled_peak_tree_rss_bytes": 753414144,
+        "guard": null
+      }
+    }
+  ],
+  "generated_source_sha256": {
+    "pair-layer.cc": "4e07f7e42f8f71cad61c8af0868674f0f1a7794fcb3eb0b8c78f69f240a3edab",
+    "online-validation.inc": "4913159efd0442f9da597661ef0debfbab0c01e9065dd6c94667bf5f4253b181",
+    "profile-runtime.h": "39cdaf955bb7336efeaa2e8967db746d375704a917da4933cb525bec1e770436"
+  },
+  "generation_manifest_sha256": "7a25d8f7457b59694899693f2e5fc04171aedde4eeee00e23ff8d03bb3cd964b",
+  "compile_command": [
+    "c++",
+    "-std=c++20",
+    "-O3",
+    "-g",
+    "-DRELAY_INSTRUMENTED_SOURCE=\"/workspace/scratch/c6ba02920254/relay-dependency-index-raw/instrumented/pair-layer.cc\"",
+    "/workspace/scratch/c6ba02920254/relay-dependency-index/experiments/relay-dependency-index/read-graph-timed.cc",
+    "-I/workspace/scratch/c6ba02920254/wqe-completion-native/build/include",
+    "-L/workspace/scratch/c6ba02920254/wqe-completion-native/build/lib",
+    "-Wl,--disable-new-dtags",
+    "-Wl,-rpath,/workspace/scratch/c6ba02920254/wqe-completion-native/build/lib",
+    "-lns3.44-unified-bus",
+    "-lns3.44-network",
+    "-lns3.44-core",
+    "-o",
+    "/workspace/scratch/c6ba02920254/relay-dependency-index-raw/read-timed/read-graph-timed"
+  ]
+}

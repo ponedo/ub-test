@@ -5,7 +5,38 @@ from pathlib import Path
 KINDS={'direct':0,'two-stage':1,'chunk-streaming':2}
 DEFAULT_RELAY=dict(chunk_bytes=4096,relay_min_replicas=4,relay_max_relays=8,relay_min_fanout_gain=2,force_relay=False,reorder_ns=0,slow_relay_rank=4294967295,slow_relay_ns=0)
 
-def emit(source,parameters,strategy,out):
+def compile_dependencies(transfers, edges, physical, start, mode='indexed'):
+    """Exact old predicates, with append-only vectors in transfer order.
+
+    Scope 2 means all main-origin edges of the same expert/chunk, not just
+    the selected relay. Do not add a group/source key absent from that predicate.
+    Each task receives its own list, as with the scan implementation.
+    """
+    if mode not in ('indexed', 'scan'):raise ValueError('dependency mode')
+    if mode == 'indexed':
+        main_chunks = {}
+        incoming = {}
+        for y in transfers[start:]:
+            incoming.setdefault(y['physical'], []).append(y['task'])
+            if physical[y['source_physical']]['kind'] == 'main':
+                key = (physical[y['physical']]['expert'], y['offset'], y['bytes'])
+                main_chunks.setdefault(key, []).append(y['task'])
+    for task in range(start,len(transfers)):
+        x=transfers[task];edge=edges[task-start]
+        if physical[x['source_physical']]['kind']=='main':continue
+        if mode == 'indexed':
+            if edge['scope'] == 2:
+                key = (physical[x['physical']]['expert'], x['offset'], x['bytes'])
+                x['dependencies'] = list(main_chunks.get(key, ()))
+            else:
+                x['dependencies'] = list(incoming.get(x['source_physical'], ()))
+        elif edge['scope']==2:
+            x['dependencies']=[y['task'] for y in transfers[start:] if physical[y['source_physical']]['kind']=='main' and physical[y['physical']]['expert']==physical[x['physical']]['expert'] and (y['offset'],y['bytes'])==(x['offset'],x['bytes'])]
+        else:
+            x['dependencies']=[y['task'] for y in transfers[start:] if y['physical']==x['source_physical']]
+        if not x['dependencies']:raise ValueError('missing relay dependencies')
+
+def emit(source,parameters,strategy,out,dependency_mode=None):
     source,out=Path(source),Path(out);out.mkdir(parents=True,exist_ok=True)
     for name in ['plan.json','assignments.csv']:shutil.copyfile(source/name,out/name)
     c=json.loads((source/'config.json').read_text());plan=json.loads((source/'plan.json').read_text())
@@ -36,14 +67,7 @@ def emit(source,parameters,strategy,out):
         src,dst=physical[edge['source_physical']],physical[edge['physical']]
         transfers.append(dict(task=len(transfers),stage=2,id=dst['id'],source=src['rank'],target=dst['rank'],physical=dst['id'],bytes=edge['bytes'],source_physical=src['id'],offset=edge['offset'],dependencies=[]))
     start=2*len(c['assignments'])
-    for task in range(start,len(transfers)):
-        x=transfers[task];edge=edges[task-start]
-        if physical[x['source_physical']]['kind']=='main':continue
-        if edge['scope']==2:
-            x['dependencies']=[y['task'] for y in transfers[start:] if physical[y['source_physical']]['kind']=='main' and physical[y['physical']]['expert']==physical[x['physical']]['expert'] and (y['offset'],y['bytes'])==(x['offset'],x['bytes'])]
-        else:
-            x['dependencies']=[y['task'] for y in transfers[start:] if y['physical']==x['source_physical']]
-        if not x['dependencies']:raise ValueError('missing relay dependencies')
+    compile_dependencies(transfers, edges, physical, start, dependency_mode or os.environ.get('RELAY_DEPENDENCY_MODE', 'indexed'))
     c.update(transfers=transfers,weight_strategy=strategy,relay_parameters=p,readiness='upstream-group-chunk' if kind==2 else 'whole-expert')
     c['runtime'].update(p,weight_strategy=strategy);c['parameters'].update(p,weight_strategy=strategy)
     (out/'config.json').write_text(json.dumps(c,indent=2)+'\n')

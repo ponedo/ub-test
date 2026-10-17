@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="510" viewBox="0 0 1120 510">
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="sans-serif" fill="#18212b">
+<text x="25" y="35" font-size="23">Qwen256 runtime snapshots: disjoint process CPU</text>
+<text x="25" y="60" font-size="14">Self scopes partition program CPU. Nested inclusive values below are callouts, not extra stacked time.</text>
+<text x="25" y="100" font-size="15">index-scan-timed [INCOMPLETE: FinalAudit cutoff]</text>
+<rect x="25.000" y="112" width="0.902" height="28" fill="#0f766e"><title>Read (all self subphases): 0.330043 CPU s</title></rect>
+<rect x="25.902" y="112" width="0.021" height="28" fill="#0891b2"><title>InitAudit (incl. build self): 0.007594 CPU s</title></rect>
+<rect x="25.922" y="112" width="564.052" height="28" fill="#1d4ed8"><title>Simulator self: 206.499381 CPU s</title></rect>
+<rect x="589.974" y="112" width="6.937" height="28" fill="#8b5cf6"><title>Audit self / weights-end: 2.539646 CPU s</title></rect>
+<rect x="596.911" y="112" width="58.261" height="28" fill="#c026d3"><title>Audit group self: 21.329434 CPU s</title></rect>
+<rect x="655.172" y="112" width="0.082" height="28" fill="#e11d48"><title>Audit weight self: 0.030071 CPU s</title></rect>
+<rect x="655.254" y="112" width="123.091" height="28" fill="#d97706"><title>Send / Validate / Ready: 45.063634 CPU s</title></rect>
+<rect x="778.346" y="112" width="66.433" height="28" fill="#65a30d"><title>FinalAudit self: 24.320963 CPU s</title></rect>
+<rect x="844.778" y="112" width="0.222" height="28" fill="#64748b"><title>Other setup / teardown: 0.081230 CPU s</title></rect>
+<text x="857.00" y="133" font-size="14">300.202 s</text>
+<text x="25" y="186" font-size="15">index-index-timed [complete]</text>
+<rect x="25.000" y="198" width="0.831" height="28" fill="#0f766e"><title>Read (all self subphases): 0.304258 CPU s</title></rect>
+<rect x="25.831" y="198" width="0.033" height="28" fill="#0891b2"><title>InitAudit (incl. build self): 0.012144 CPU s</title></rect>
+<rect x="25.864" y="198" width="525.252" height="28" fill="#1d4ed8"><title>Simulator self: 192.294640 CPU s</title></rect>
+<rect x="551.116" y="198" width="6.600" height="28" fill="#8b5cf6"><title>Audit self / weights-end: 2.416304 CPU s</title></rect>
+<rect x="557.716" y="198" width="0.140" height="28" fill="#c026d3"><title>Audit group self: 0.051153 CPU s</title></rect>
+<rect x="557.856" y="198" width="0.003" height="28" fill="#e11d48"><title>Audit weight self: 0.001123 CPU s</title></rect>
+<rect x="557.859" y="198" width="118.816" height="28" fill="#d97706"><title>Send / Validate / Ready: 43.498507 CPU s</title></rect>
+<rect x="676.675" y="198" width="80.450" height="28" fill="#65a30d"><title>FinalAudit self: 29.452683 CPU s</title></rect>
+<rect x="757.125" y="198" width="1.205" height="28" fill="#64748b"><title>Other setup / teardown: 0.441270 CPU s</title></rect>
+<text x="770.33" y="219" font-size="14">268.472 s</text>
+<rect x="25" y="290" width="13" height="13" fill="#0f766e"/>
+<text x="45" y="302" font-size="12">Read (all self subphases)</text>
+<rect x="385" y="290" width="13" height="13" fill="#0891b2"/>
+<text x="405" y="302" font-size="12">InitAudit (incl. build self)</text>
+<rect x="745" y="290" width="13" height="13" fill="#1d4ed8"/>
+<text x="765" y="302" font-size="12">Simulator self</text>
+<rect x="25" y="317" width="13" height="13" fill="#8b5cf6"/>
+<text x="45" y="329" font-size="12">Audit self / weights-end</text>
+<rect x="385" y="317" width="13" height="13" fill="#c026d3"/>
+<text x="405" y="329" font-size="12">Audit group self</text>
+<rect x="745" y="317" width="13" height="13" fill="#e11d48"/>
+<text x="765" y="329" font-size="12">Audit weight self</text>
+<rect x="25" y="344" width="13" height="13" fill="#d97706"/>
+<text x="45" y="356" font-size="12">Send / Validate / Ready</text>
+<rect x="385" y="344" width="13" height="13" fill="#65a30d"/>
+<text x="405" y="356" font-size="12">FinalAudit self</text>
+<rect x="745" y="344" width="13" height="13" fill="#64748b"/>
+<text x="765" y="356" font-size="12">Other setup / teardown</text>
+<text x="25" y="400" font-size="12">index-scan-timed: nested Read index build 0.004549 s; online index build 0.000001 s (already included above).</text>
+<text x="25" y="424" font-size="12">index-index-timed: nested Read index build 0.004530 s; online index build 0.004522 s (already included above).</text>
+<text x="25" y="466" font-size="12">Scan snapshot ends during FinalAudit; totals are different scopes, NOT a full-run speedup comparison.</text>
+<text x="25" y="488" font-size="12">Simulator self includes uninstrumented application and native work. See runtime-self-cpu.csv for exact phase values.</text>
+</g></svg>

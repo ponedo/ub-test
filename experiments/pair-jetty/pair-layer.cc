@@ -45,6 +45,7 @@ public:
     std::ofstream log;
     std::string fault,capacityMetrics;
     WeightDistributionOptions weightOptions;
+    std::string dependencyMode="index",onlineMembershipMode="index";
     std::string jettyMode="pair",logLevel="summary";bool combineLogged=false;
 #include "online-validation.inc"
     std::unique_ptr<PairJettyManager> pairJetties;
@@ -155,20 +156,36 @@ public:
             AddTransfer(2,dst.id,src.rank,dst.rank,dst.id,edge.bytes);
             transfers.back().offset=edge.offset;transfers.back().sourcePhysical=src.id;
         }
+        // Append in task order: indexed candidates have exactly the old scan order.
+        std::map<std::tuple<uint32_t,uint32_t,uint32_t>,std::vector<uint32_t>> groupParents;
+        std::map<uint32_t,std::vector<uint32_t>> replicaParents;
+        if(dependencyMode=="index")for(uint32_t parent=2*assignments.size();parent<transfers.size();++parent){
+            const auto& y=transfers[parent];replicaParents[y.physical].push_back(parent);
+            if(!P(y.sourcePhysical).replica)groupParents[{P(y.physical).expert,y.offset,y.bytes}].push_back(parent);
+        }
         dependents.resize(transfers.size());
         for(uint32_t task=2*assignments.size();task<transfers.size();++task){
             auto& x=transfers[task];if(!P(x.sourcePhysical).replica)continue;
             auto scope=edges[task-2*assignments.size()].sourceDependency;
             ChunkTracker coverage(scope==WeightReadyScope::FullExpert?weightBytes:x.bytes);
-            for(uint32_t parent=2*assignments.size();parent<transfers.size();++parent){
+            auto addParent=[&](uint32_t parent){
                 auto& y=transfers[parent];
                 if(scope==WeightReadyScope::GroupChunk){
                     // One upstream Stage-I fan-out task publishes all relay flags together.
                     // Aggregate its per-edge target completions without using sender ACKs.
-                    if(P(y.sourcePhysical).replica||P(y.physical).expert!=P(x.physical).expert||y.offset!=x.offset||y.bytes!=x.bytes)continue;
-                }else if(y.physical!=x.sourcePhysical)continue;
+                    if(P(y.sourcePhysical).replica||P(y.physical).expert!=P(x.physical).expert||y.offset!=x.offset||y.bytes!=x.bytes)return;
+                }else if(y.physical!=x.sourcePhysical)return;
                 x.dependencies.push_back(parent);dependents[parent].push_back(task);
                 if(y.physical==x.sourcePhysical)coverage.Notify(parent,scope==WeightReadyScope::GroupChunk?0:y.offset,y.bytes);
+            };
+            if(dependencyMode=="scan"){
+                for(uint32_t parent=2*assignments.size();parent<transfers.size();++parent)addParent(parent);
+            }else if(scope==WeightReadyScope::GroupChunk){
+                auto it=groupParents.find({P(x.physical).expert,x.offset,x.bytes});
+                if(it!=groupParents.end())for(auto parent:it->second)addParent(parent);
+            }else{
+                auto it=replicaParents.find(x.sourcePhysical);
+                if(it!=replicaParents.end())for(auto parent:it->second)addParent(parent);
             }
             Require(coverage.Complete(),"relay source coverage graph");
         }
@@ -377,4 +394,4 @@ public:
         WriteSummary(out);if(logLevel=="debug")WritePayloads(out);admissions.close();log.close();UbUtils::Get()->Destroy();traceOn=false;Simulator::Destroy();
     }
 };
-int main(int argc,char** argv){Time::SetResolution(Time::PS);Layer layer;std::string input,out;CommandLine cmd;cmd.AddValue("input","validated execution input",input);cmd.AddValue("out","output directory",out);cmd.AddValue("capacityMetrics","optional post-run capacity counters",layer.capacityMetrics);cmd.AddValue("fault","test-only fault injection",layer.fault);cmd.AddValue("logLevel","summary (default), events, debug",layer.logLevel);cmd.AddValue("jettyMode","pair or per-wqe",layer.jettyMode);cmd.AddValue("payloadBudgetBytes","logical payload budget, default 256 MiB, maximum 8 GiB",layer.payloadBudgetBytes);cmd.AddValue("weightTaskLimit","weight WQE budget, default 20000, maximum 1000000",layer.weightTaskLimit);cmd.Parse(argc,argv);try{Require(layer.logLevel=="summary"||layer.logLevel=="events"||layer.logLevel=="debug","unknown log level");Require(layer.jettyMode=="pair"||layer.jettyMode=="per-wqe","unknown Jetty mode");Require(layer.fault=="payload-byte"||layer.fault=="early-wqe"||layer.fault=="missing-wqe"||layer.fault=="duplicate-completion"||layer.fault.empty()||layer.fault=="weight-byte"||layer.fault=="premature-ready"||layer.fault=="duplicate-weight"||layer.fault=="early-compute"||layer.fault=="early-group"||layer.fault=="relay-byte"||layer.fault=="relay-buffer-byte"||layer.fault=="duplicate-notify"||layer.fault=="early-relay"||layer.fault=="early-final-ready","unknown fault");Require(!input.empty()&&!out.empty(),"input/out");layer.Run(input,out);}catch(const std::exception& ex){if(!out.empty()){std::filesystem::create_directories(out);std::ofstream failed(out+"/validation.json");failed<<"{\"status\":\"FAIL\",\"error\":\""<<ex.what()<<"\"}\n";}if(layer.log){layer.Event("error");layer.log.flush();}if(layer.traceOn)UbUtils::Get()->Destroy();std::cerr<<"ERROR: "<<ex.what()<<'\n';return 2;}return 0;}
+int main(int argc,char** argv){Time::SetResolution(Time::PS);Layer layer;std::string input,out;CommandLine cmd;cmd.AddValue("input","validated execution input",input);cmd.AddValue("out","output directory",out);cmd.AddValue("capacityMetrics","optional post-run capacity counters",layer.capacityMetrics);cmd.AddValue("fault","test-only fault injection",layer.fault);cmd.AddValue("logLevel","summary (default), events, debug",layer.logLevel);cmd.AddValue("jettyMode","pair or per-wqe",layer.jettyMode);cmd.AddValue("payloadBudgetBytes","logical payload budget, default 256 MiB, maximum 8 GiB",layer.payloadBudgetBytes);cmd.AddValue("weightTaskLimit","weight WQE budget, default 20000, maximum 1000000",layer.weightTaskLimit);cmd.AddValue("dependencyMode","index (default) or scan dependency construction",layer.dependencyMode);cmd.AddValue("onlineMembershipMode","index (default) or scan immutable audit membership",layer.onlineMembershipMode);cmd.Parse(argc,argv);try{Require(layer.dependencyMode=="index"||layer.dependencyMode=="scan","unknown dependency mode");Require(layer.onlineMembershipMode=="index"||layer.onlineMembershipMode=="scan","unknown online membership mode");Require(layer.logLevel=="summary"||layer.logLevel=="events"||layer.logLevel=="debug","unknown log level");Require(layer.jettyMode=="pair"||layer.jettyMode=="per-wqe","unknown Jetty mode");Require(layer.fault=="payload-byte"||layer.fault=="early-wqe"||layer.fault=="missing-wqe"||layer.fault=="duplicate-completion"||layer.fault.empty()||layer.fault=="weight-byte"||layer.fault=="premature-ready"||layer.fault=="duplicate-weight"||layer.fault=="early-compute"||layer.fault=="early-group"||layer.fault=="relay-byte"||layer.fault=="relay-buffer-byte"||layer.fault=="duplicate-notify"||layer.fault=="early-relay"||layer.fault=="early-final-ready","unknown fault");Require(!input.empty()&&!out.empty(),"input/out");layer.Run(input,out);}catch(const std::exception& ex){if(!out.empty()){std::filesystem::create_directories(out);std::ofstream failed(out+"/validation.json");failed<<"{\"status\":\"FAIL\",\"error\":\""<<ex.what()<<"\"}\n";}if(layer.log){layer.Event("error");layer.log.flush();}if(layer.traceOn)UbUtils::Get()->Destroy();std::cerr<<"ERROR: "<<ex.what()<<'\n';return 2;}return 0;}

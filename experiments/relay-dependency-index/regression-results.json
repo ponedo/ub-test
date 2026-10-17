@@ -1,0 +1,915 @@
+{
+  "status": "PASS",
+  "scope": "Original Planner tests, PairJetty basic/lifecycle/negative, relay tracker/topology subset, tiered helpers/preflight/all-mode faults. Full historical integration matrix is not rerun.",
+  "command_count": 64,
+  "commands": [
+    {
+      "name": "planner-test_numeric_bounds.py",
+      "status": "PASS",
+      "expected": null,
+      "returncode": 0,
+      "guard": null,
+      "wall_seconds": 0.2526474370388314,
+      "peak_rss_kib": 19440,
+      "sampled_peak_tree_rss_bytes": 303104
+    },
+    {
+      "name": "planner-test_numeric_bounds.py-optimized",
+      "status": "PASS",
+      "expected": null,
+      "returncode": 0,
+      "guard": null,
+      "wall_seconds": 0.5038528129807673,
+      "peak_rss_kib": 23340,
+      "sampled_peak_tree_rss_bytes": 20582400
+    },
+    {
+      "name": "planner-run_tests.py",
+      "status": "PASS",
+      "expected": null,
+      "returncode": 0,
+      "guard": null,
+      "wall_seconds": 0.5037760830018669,
+      "peak_rss_kib": 26692,
+      "sampled_peak_tree_rss_bytes": 20828160
+    },
+    {
+      "name": "planner-run_tests.py-optimized",
+      "status": "PASS",
+      "expected": null,
+      "returncode": 0,
+      "guard": null,
+      "wall_seconds": 0.5031611489830539,
+      "peak_rss_kib": 30568,
+      "sampled_peak_tree_rss_bytes": 22749184
+    },
+    {
+      "name": "planner-test_replication_reference.py",
+      "status": "PASS",
+      "expected": null,
+      "returncode": 0,
+      "guard": null,
+      "wall_seconds": 1.507125639996957,
+      "peak_rss_kib": 28628,
+      "sampled_peak_tree_rss_bytes": 24862720
+    },
+    {
+      "name": "planner-test_replication_reference.py-optimized",
+      "status": "PASS",
+      "expected": null,
+      "returncode": 0,
+      "guard": null,
+      "wall_seconds": 1.5074999349890277,
+      "peak_rss_kib": 32380,
+      "sampled_peak_tree_rss_bytes": 28491776
+    },
+    {
+      "name": "planner-test_compatible.py",
+      "status": "PASS",
+      "expected": null,
+      "returncode": 0,
+      "guard": null,
+      "wall_seconds": 12.037971946992911,
+      "peak_rss_kib": 69536,
+      "sampled_peak_tree_rss_bytes": 59506688
+    },
+    {
+      "name": "planner-test_compatible.py-optimized",
+      "status": "PASS",
+      "expected": null,
+      "returncode": 0,
+      "guard": null,
+      "wall_seconds": 11.787011245032772,
+      "peak_rss_kib": 70260,
+      "sampled_peak_tree_rss_bytes": 65306624
+    },
+    {
+      "name": "tracker-build",
+      "status": "PASS",
+      "expected": null,
+      "returncode": 0,
+      "guard": null,
+      "wall_seconds": 1.2554464570130222,
+      "peak_rss_kib": 139164,
+      "sampled_peak_tree_rss_bytes": 140754944
+    },
+    {
+      "name": "relay-tracker",
+      "status": "PASS",
+      "expected": null,
+      "returncode": 0,
+      "guard": null,
+      "wall_seconds": 0.2520233530085534,
+      "peak_rss_kib": 9176,
+      "sampled_peak_tree_rss_bytes": 303104
+    },
+    {
+      "name": "relay-topology",
+      "status": "PASS",
+      "expected": null,
+      "returncode": 0,
+      "guard": null,
+      "wall_seconds": 2.508197278017178,
+      "peak_rss_kib": 14720,
+      "sampled_peak_tree_rss_bytes": 16928768
+    },
+    {
+      "name": "pair-basic",
+      "status": "PASS",
+      "expected": null,
+      "returncode": 0,
+      "guard": null,
+      "wall_seconds": 0.502975283015985,
+      "peak_rss_kib": 20740,
+      "sampled_peak_tree_rss_bytes": 10452992
+    },
+    {
+      "name": "pair-directional-2",
+      "status": "PASS",
+      "expected": null,
+      "returncode": 0,
+      "guard": null,
+      "wall_seconds": 0.25245579599868506,
+      "peak_rss_kib": 17048,
+      "sampled_peak_tree_rss_bytes": 446464
+    },
+    {
+      "name": "pair-directional-3",
+      "status": "PASS",
+      "expected": null,
+      "returncode": 0,
+      "guard": null,
+      "wall_seconds": 0.252260249981191,
+      "peak_rss_kib": 17220,
+      "sampled_peak_tree_rss_bytes": 802816
+    },
+    {
+      "name": "pair-directional-4",
+      "status": "PASS",
+      "expected": null,
+      "returncode": 0,
+      "guard": null,
+      "wall_seconds": 0.2522078930051066,
+      "peak_rss_kib": 17976,
+      "sampled_peak_tree_rss_bytes": 532480
+    },
+    {
+      "name": "pair-cancel",
+      "status": "PASS",
+      "expected": null,
+      "returncode": 0,
+      "guard": null,
+      "wall_seconds": 0.2525896360166371,
+      "peak_rss_kib": 16796,
+      "sampled_peak_tree_rss_bytes": 614400
+    },
+    {
+      "name": "pair-fail",
+      "status": "PASS",
+      "expected": null,
+      "returncode": 0,
+      "guard": null,
+      "wall_seconds": 0.2523831579601392,
+      "peak_rss_kib": 16800,
+      "sampled_peak_tree_rss_bytes": 417792
+    },
+    {
+      "name": "pair-wrap",
+      "status": "PASS",
+      "expected": null,
+      "returncode": 0,
+      "guard": null,
+      "wall_seconds": 3.51182431995403,
+      "peak_rss_kib": 36728,
+      "sampled_peak_tree_rss_bytes": 37425152
+    },
+    {
+      "name": "tiered-helpers",
+      "status": "PASS",
+      "expected": null,
+      "returncode": 0,
+      "guard": null,
+      "wall_seconds": 0.25311105500441045,
+      "peak_rss_kib": 14720,
+      "sampled_peak_tree_rss_bytes": 315392
+    },
+    {
+      "name": "preflight-original",
+      "status": "PASS",
+      "expected": null,
+      "returncode": 0,
+      "guard": null,
+      "wall_seconds": 0.2521870500058867,
+      "peak_rss_kib": 12800,
+      "sampled_peak_tree_rss_bytes": 229376
+    },
+    {
+      "name": "gate-multi4_force",
+      "status": "PASS",
+      "expected": null,
+      "returncode": 0,
+      "guard": null,
+      "wall_seconds": 0.25235652399715036,
+      "peak_rss_kib": 18756,
+      "sampled_peak_tree_rss_bytes": 577536
+    },
+    {
+      "name": "verify-multi4_force",
+      "status": "PASS",
+      "expected": null,
+      "returncode": 0,
+      "guard": null,
+      "wall_seconds": 0.25254521798342466,
+      "peak_rss_kib": 12288,
+      "sampled_peak_tree_rss_bytes": 319488
+    },
+    {
+      "name": "gate-slow_relay8",
+      "status": "PASS",
+      "expected": null,
+      "returncode": 0,
+      "guard": null,
+      "wall_seconds": 0.25225593498907983,
+      "peak_rss_kib": 20728,
+      "sampled_peak_tree_rss_bytes": 716800
+    },
+    {
+      "name": "verify-slow_relay8",
+      "status": "PASS",
+      "expected": null,
+      "returncode": 0,
+      "guard": null,
+      "wall_seconds": 0.2525988229899667,
+      "peak_rss_kib": 12364,
+      "sampled_peak_tree_rss_bytes": 278528
+    },
+    {
+      "name": "pair-original-negatives",
+      "status": "PASS",
+      "expected": null,
+      "returncode": 0,
+      "guard": null,
+      "wall_seconds": 3.512544957047794,
+      "peak_rss_kib": 20192,
+      "sampled_peak_tree_rss_bytes": 16629760
+    },
+    {
+      "name": "tiered-payload-byte-summary",
+      "status": "PASS",
+      "expected": [
+        "payload byte mismatch"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.2523583540460095,
+      "peak_rss_kib": 18128,
+      "sampled_peak_tree_rss_bytes": 462848
+    },
+    {
+      "name": "tiered-payload-byte-events",
+      "status": "PASS",
+      "expected": [
+        "payload byte mismatch"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.2528409520164132,
+      "peak_rss_kib": 18124,
+      "sampled_peak_tree_rss_bytes": 839680
+    },
+    {
+      "name": "tiered-payload-byte-debug",
+      "status": "PASS",
+      "expected": [
+        "payload byte mismatch"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.25444880104623735,
+      "peak_rss_kib": 18544,
+      "sampled_peak_tree_rss_bytes": 819200
+    },
+    {
+      "name": "tiered-duplicate-completion-summary",
+      "status": "PASS",
+      "expected": [
+        "duplicate"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.2529709730297327,
+      "peak_rss_kib": 18096,
+      "sampled_peak_tree_rss_bytes": 376832
+    },
+    {
+      "name": "tiered-duplicate-completion-events",
+      "status": "PASS",
+      "expected": [
+        "duplicate"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.25245332694612443,
+      "peak_rss_kib": 18284,
+      "sampled_peak_tree_rss_bytes": 1507328
+    },
+    {
+      "name": "tiered-duplicate-completion-debug",
+      "status": "PASS",
+      "expected": [
+        "duplicate"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.25252494000596926,
+      "peak_rss_kib": 18720,
+      "sampled_peak_tree_rss_bytes": 626688
+    },
+    {
+      "name": "tiered-early-wqe-summary",
+      "status": "PASS",
+      "expected": [
+        "before",
+        "early"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.25299039197852835,
+      "peak_rss_kib": 17628,
+      "sampled_peak_tree_rss_bytes": 675840
+    },
+    {
+      "name": "tiered-early-wqe-events",
+      "status": "PASS",
+      "expected": [
+        "before",
+        "early"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.2521017440012656,
+      "peak_rss_kib": 17708,
+      "sampled_peak_tree_rss_bytes": 692224
+    },
+    {
+      "name": "tiered-early-wqe-debug",
+      "status": "PASS",
+      "expected": [
+        "before",
+        "early"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.2526082879630849,
+      "peak_rss_kib": 17828,
+      "sampled_peak_tree_rss_bytes": 606208
+    },
+    {
+      "name": "tiered-missing-wqe-summary",
+      "status": "PASS",
+      "expected": [
+        "unfinished layer",
+        "missing",
+        "sender"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.25239026598865166,
+      "peak_rss_kib": 17968,
+      "sampled_peak_tree_rss_bytes": 618496
+    },
+    {
+      "name": "tiered-missing-wqe-events",
+      "status": "PASS",
+      "expected": [
+        "unfinished layer",
+        "missing",
+        "sender"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.2523300109896809,
+      "peak_rss_kib": 17816,
+      "sampled_peak_tree_rss_bytes": 245760
+    },
+    {
+      "name": "tiered-missing-wqe-debug",
+      "status": "PASS",
+      "expected": [
+        "unfinished layer",
+        "missing",
+        "sender"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.2524955610278994,
+      "peak_rss_kib": 18700,
+      "sampled_peak_tree_rss_bytes": 806912
+    },
+    {
+      "name": "tiered-weight-byte-summary",
+      "status": "PASS",
+      "expected": [
+        "payload byte mismatch"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.25228058197535574,
+      "peak_rss_kib": 18224,
+      "sampled_peak_tree_rss_bytes": 651264
+    },
+    {
+      "name": "tiered-weight-byte-events",
+      "status": "PASS",
+      "expected": [
+        "payload byte mismatch"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.2523186629987322,
+      "peak_rss_kib": 18340,
+      "sampled_peak_tree_rss_bytes": 651264
+    },
+    {
+      "name": "tiered-weight-byte-debug",
+      "status": "PASS",
+      "expected": [
+        "payload byte mismatch"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.2529335010331124,
+      "peak_rss_kib": 18712,
+      "sampled_peak_tree_rss_bytes": 839680
+    },
+    {
+      "name": "tiered-premature-ready-summary",
+      "status": "PASS",
+      "expected": [
+        "ready before target completion coverage"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.2529543879791163,
+      "peak_rss_kib": 17700,
+      "sampled_peak_tree_rss_bytes": 413696
+    },
+    {
+      "name": "tiered-premature-ready-events",
+      "status": "PASS",
+      "expected": [
+        "ready before target completion coverage"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.2521038129925728,
+      "peak_rss_kib": 17648,
+      "sampled_peak_tree_rss_bytes": 425984
+    },
+    {
+      "name": "tiered-premature-ready-debug",
+      "status": "PASS",
+      "expected": [
+        "ready before target completion coverage"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.25307961204089224,
+      "peak_rss_kib": 17828,
+      "sampled_peak_tree_rss_bytes": 880640
+    },
+    {
+      "name": "tiered-duplicate-weight-summary",
+      "status": "PASS",
+      "expected": [
+        "duplicate forwarding"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.25454228196758777,
+      "peak_rss_kib": 17848,
+      "sampled_peak_tree_rss_bytes": 839680
+    },
+    {
+      "name": "tiered-duplicate-weight-events",
+      "status": "PASS",
+      "expected": [
+        "duplicate forwarding"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.252943551982753,
+      "peak_rss_kib": 17752,
+      "sampled_peak_tree_rss_bytes": 90112
+    },
+    {
+      "name": "tiered-duplicate-weight-debug",
+      "status": "PASS",
+      "expected": [
+        "duplicate forwarding"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.2527528200298548,
+      "peak_rss_kib": 17776,
+      "sampled_peak_tree_rss_bytes": 749568
+    },
+    {
+      "name": "tiered-early-compute-summary",
+      "status": "PASS",
+      "expected": [
+        "compute token/gate dependency"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.25262474798364565,
+      "peak_rss_kib": 17696,
+      "sampled_peak_tree_rss_bytes": 90112
+    },
+    {
+      "name": "tiered-early-compute-events",
+      "status": "PASS",
+      "expected": [
+        "compute token/gate dependency"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.25240428099641576,
+      "peak_rss_kib": 17740,
+      "sampled_peak_tree_rss_bytes": 745472
+    },
+    {
+      "name": "tiered-early-compute-debug",
+      "status": "PASS",
+      "expected": [
+        "compute token/gate dependency"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.2523593400255777,
+      "peak_rss_kib": 17992,
+      "sampled_peak_tree_rss_bytes": 618496
+    },
+    {
+      "name": "tiered-early-group-summary",
+      "status": "PASS",
+      "expected": [
+        "relay before target chunk ready"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.25241955096134916,
+      "peak_rss_kib": 19520,
+      "sampled_peak_tree_rss_bytes": 704512
+    },
+    {
+      "name": "tiered-early-group-events",
+      "status": "PASS",
+      "expected": [
+        "relay before target chunk ready"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.25264337594853714,
+      "peak_rss_kib": 19588,
+      "sampled_peak_tree_rss_bytes": 618496
+    },
+    {
+      "name": "tiered-early-group-debug",
+      "status": "PASS",
+      "expected": [
+        "relay before target chunk ready"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.25459196901647374,
+      "peak_rss_kib": 20196,
+      "sampled_peak_tree_rss_bytes": 2555904
+    },
+    {
+      "name": "tiered-relay-byte-summary",
+      "status": "PASS",
+      "expected": [
+        "payload byte mismatch"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.2544886990217492,
+      "peak_rss_kib": 18376,
+      "sampled_peak_tree_rss_bytes": 815104
+    },
+    {
+      "name": "tiered-relay-byte-events",
+      "status": "PASS",
+      "expected": [
+        "payload byte mismatch"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.25231326901121065,
+      "peak_rss_kib": 18396,
+      "sampled_peak_tree_rss_bytes": 249856
+    },
+    {
+      "name": "tiered-relay-byte-debug",
+      "status": "PASS",
+      "expected": [
+        "payload byte mismatch"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.2526835650205612,
+      "peak_rss_kib": 18976,
+      "sampled_peak_tree_rss_bytes": 860160
+    },
+    {
+      "name": "tiered-relay-buffer-byte-summary",
+      "status": "PASS",
+      "expected": [
+        "payload byte mismatch"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.25245483696926385,
+      "peak_rss_kib": 18220,
+      "sampled_peak_tree_rss_bytes": 770048
+    },
+    {
+      "name": "tiered-relay-buffer-byte-events",
+      "status": "PASS",
+      "expected": [
+        "payload byte mismatch"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.2523529210011475,
+      "peak_rss_kib": 18268,
+      "sampled_peak_tree_rss_bytes": 585728
+    },
+    {
+      "name": "tiered-relay-buffer-byte-debug",
+      "status": "PASS",
+      "expected": [
+        "payload byte mismatch"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.2523268529912457,
+      "peak_rss_kib": 18416,
+      "sampled_peak_tree_rss_bytes": 487424
+    },
+    {
+      "name": "tiered-early-relay-summary",
+      "status": "PASS",
+      "expected": [
+        "relay before target chunk ready"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.25237606902373955,
+      "peak_rss_kib": 17624,
+      "sampled_peak_tree_rss_bytes": 569344
+    },
+    {
+      "name": "tiered-early-relay-events",
+      "status": "PASS",
+      "expected": [
+        "relay before target chunk ready"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.2527573459665291,
+      "peak_rss_kib": 17852,
+      "sampled_peak_tree_rss_bytes": 811008
+    },
+    {
+      "name": "tiered-early-relay-debug",
+      "status": "PASS",
+      "expected": [
+        "relay before target chunk ready"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.25253224500920624,
+      "peak_rss_kib": 17892,
+      "sampled_peak_tree_rss_bytes": 761856
+    },
+    {
+      "name": "tiered-early-final-ready-summary",
+      "status": "PASS",
+      "expected": [
+        "final ready before full weight coverage"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.25229513098020107,
+      "peak_rss_kib": 18064,
+      "sampled_peak_tree_rss_bytes": 393216
+    },
+    {
+      "name": "tiered-early-final-ready-events",
+      "status": "PASS",
+      "expected": [
+        "final ready before full weight coverage"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.25211111898534,
+      "peak_rss_kib": 18220,
+      "sampled_peak_tree_rss_bytes": 237568
+    },
+    {
+      "name": "tiered-early-final-ready-debug",
+      "status": "PASS",
+      "expected": [
+        "final ready before full weight coverage"
+      ],
+      "returncode": 2,
+      "guard": null,
+      "wall_seconds": 0.25275840499671176,
+      "peak_rss_kib": 18580,
+      "sampled_peak_tree_rss_bytes": 548864
+    }
+  ],
+  "preflight_original": {
+    "status": "PASS",
+    "cases": [
+      {
+        "case": "valid",
+        "status": "PASS"
+      },
+      {
+        "case": "input-seed",
+        "status": "PASS",
+        "detected": "input.txt differs from config/plan execution contract"
+      },
+      {
+        "case": "assignment-identity",
+        "status": "PASS",
+        "detected": "config assignments differ from token/plan identity"
+      },
+      {
+        "case": "physical-quota",
+        "status": "PASS",
+        "detected": "physical quota mismatch"
+      },
+      {
+        "case": "transfer-size",
+        "status": "PASS",
+        "detected": "config transfer graph differs from accepted graph tool"
+      },
+      {
+        "case": "transfer-dependency",
+        "status": "PASS",
+        "detected": "config transfer graph differs from accepted graph tool"
+      },
+      {
+        "case": "token-logical-expert",
+        "status": "PASS",
+        "detected": "routing identity"
+      },
+      {
+        "case": "duplicate-expert",
+        "status": "PASS",
+        "detected": "duplicate physical ID"
+      },
+      {
+        "case": "main-placement",
+        "status": "PASS",
+        "detected": "main moved or missing"
+      }
+    ]
+  },
+  "preflight_mutations": [
+    {
+      "mode": "scan",
+      "mutation": "missing-dependency",
+      "status": "PASS",
+      "error": "config transfer graph differs from accepted graph tool"
+    },
+    {
+      "mode": "scan",
+      "mutation": "wrong-group",
+      "status": "PASS",
+      "error": "config transfer graph differs from accepted graph tool"
+    },
+    {
+      "mode": "scan",
+      "mutation": "duplicate-dependency",
+      "status": "PASS",
+      "error": "config transfer graph differs from accepted graph tool"
+    },
+    {
+      "mode": "scan",
+      "mutation": "reversed-dependencies",
+      "status": "PASS",
+      "error": "config transfer graph differs from accepted graph tool"
+    },
+    {
+      "mode": "indexed",
+      "mutation": "missing-dependency",
+      "status": "PASS",
+      "error": "config transfer graph differs from accepted graph tool"
+    },
+    {
+      "mode": "indexed",
+      "mutation": "wrong-group",
+      "status": "PASS",
+      "error": "config transfer graph differs from accepted graph tool"
+    },
+    {
+      "mode": "indexed",
+      "mutation": "duplicate-dependency",
+      "status": "PASS",
+      "error": "config transfer graph differs from accepted graph tool"
+    },
+    {
+      "mode": "indexed",
+      "mutation": "reversed-dependencies",
+      "status": "PASS",
+      "error": "config transfer graph differs from accepted graph tool"
+    }
+  ],
+  "pair_negative": {
+    "status": "PASS",
+    "live_faults": [
+      {
+        "fault": "weight-byte",
+        "expected_error": "payload byte mismatch",
+        "status": "PASS"
+      },
+      {
+        "fault": "premature-ready",
+        "expected_error": "ready before target completion coverage",
+        "status": "PASS"
+      },
+      {
+        "fault": "duplicate-weight",
+        "expected_error": "duplicate forwarding",
+        "status": "PASS"
+      },
+      {
+        "fault": "early-compute",
+        "expected_error": "compute token/gate dependency",
+        "status": "PASS"
+      },
+      {
+        "fault": "early-group",
+        "expected_error": "relay before target chunk ready",
+        "status": "PASS"
+      },
+      {
+        "fault": "relay-byte",
+        "expected_error": "payload byte mismatch",
+        "status": "PASS"
+      },
+      {
+        "fault": "relay-buffer-byte",
+        "expected_error": "payload byte mismatch",
+        "status": "PASS"
+      },
+      {
+        "fault": "early-relay",
+        "expected_error": "relay before target chunk ready",
+        "status": "PASS"
+      },
+      {
+        "fault": "early-final-ready",
+        "expected_error": "final ready before full weight coverage",
+        "status": "PASS"
+      }
+    ],
+    "duplicate_notify": "PASS",
+    "verifier_tampering": [
+      {
+        "tamper": "payload-byte",
+        "expected_error": "raw weight payload",
+        "status": "PASS"
+      },
+      {
+        "tamper": "premature-final-ready",
+        "expected_error": "final ready requires all chunks",
+        "status": "PASS"
+      }
+    ]
+  },
+  "source_sha256": {
+    "experiments/pair-jetty/pair-layer.cc": "cc7f27573d9f0934b14d879b943b04dd33d4e76be1dd173ab16076a998e6cbbf",
+    "experiments/pair-jetty/online-validation.inc": "8eb6df0df5e4a1604e4cbbbec3fde442e5e8ed751efc258840bf7382ad70d40b",
+    "experiments/multi-npu-relay/adapter.py": "7dce316928e3e7c039fe23223b0eea1525ac49bc4151b03ae972385f80e671f8",
+    "experiments/tiered-logging/preflight.py": "06ef4fc36e247c22dd11bf83dadcdfbf7b5905621f49240b5d4c66760709015f"
+  },
+  "binary_sha256": "ce8b96755c2535cf6d28cf89bdf89bac79e4820c13b8171881b6a3b37c7afddd",
+  "harness_setup_retry": {
+    "classification": "test-fixture setup, not product regression",
+    "cause": [
+      "fixture lacks multiple group parents"
+    ],
+    "resolution": "Used slow-relay8 fixture with multiple group parents for dependency-order mutation; resumed only unexecuted commands."
+  },
+  "limitations": [
+    "Full historical 48-case relay/direct/no-balancing integration matrix was not rerun; original relay 120-case topology subset and fresh candidate small native/fault executions were run.",
+    "PairJetty basic/lifecycle executable regressions use existing accepted binaries for unchanged subsystem code; fresh candidate pair-layer is used for gate, strict verification, and all live faults."
+  ],
+  "raw_evidence": "relay-dependency-index-raw/regressions (local only)"
+}

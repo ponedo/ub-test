@@ -1,0 +1,3153 @@
+{
+  "status": "PASS",
+  "timed": true,
+  "excluded_json_fields": [
+    "verification_wall_ns"
+  ],
+  "tests": [
+    {
+      "case": "nb-small",
+      "variant": "scan-scan",
+      "status": "PASS",
+      "input_sha256": "f280ad96091c4f2517ba37dd66f56788abfe7bd5ba8cc9aaeac9de40d173bc7a",
+      "checks": {
+        "online-summary.json": [],
+        "validation.json": [],
+        "simulator-metrics.json": []
+      },
+      "byte_exact_hashes": {
+        "executed-transfers.csv": [
+          "5b27fbcdebc0b2a2a3fd58955691b1599cfd25928a493f41e7a73888ea5f2e46",
+          "5b27fbcdebc0b2a2a3fd58955691b1599cfd25928a493f41e7a73888ea5f2e46"
+        ],
+        "received-payloads.bin": [
+          "52974a580f92b4badfb044c6ac97aac0c6be46a5eb8a4790e7236ca384b7c0d4",
+          "52974a580f92b4badfb044c6ac97aac0c6be46a5eb8a4790e7236ca384b7c0d4"
+        ],
+        "payload-index.csv": [
+          "73b61a850e3178943ac6df73be25d521c76761fadaeef81f4a35d88dcc5cfa03",
+          "73b61a850e3178943ac6df73be25d521c76761fadaeef81f4a35d88dcc5cfa03"
+        ],
+        "events.csv": [
+          "da592ee6f6a4e2a73a16119eba2c5258f47137113cacdb908af5e323aec3e0fe",
+          "da592ee6f6a4e2a73a16119eba2c5258f47137113cacdb908af5e323aec3e0fe"
+        ],
+        "ta-identity.csv": [
+          "3cefad7ccd7867046a416266960f72be03449b6397c26b08a2a60fd019199a2e",
+          "3cefad7ccd7867046a416266960f72be03449b6397c26b08a2a60fd019199a2e"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_2.csv": [
+          "1343a749df63eec28248cc35e9908dd7b48627a239fa7fea6bd9b30d32280edd",
+          "1343a749df63eec28248cc35e9908dd7b48627a239fa7fea6bd9b30d32280edd"
+        ],
+        "native/runlog/PacketTrace_node_0.csv": [
+          "fb500caa4e1154ff7a26ad107c25bea3ba7ac91c2dc1d1e36577db6bc959209c",
+          "fb500caa4e1154ff7a26ad107c25bea3ba7ac91c2dc1d1e36577db6bc959209c"
+        ],
+        "native/runlog/PortTrace_node_0_port_0.csv": [
+          "1f4a5e5655fd95a91d7c2f96a139ef121f679589333b206d27771537af1220d6",
+          "1f4a5e5655fd95a91d7c2f96a139ef121f679589333b206d27771537af1220d6"
+        ],
+        "native/runlog/PortTrace_node_4_port_0.csv": [
+          "3251dbf247228bd2da7d6b331c192b5a283aeee0571395fb3461af8d4192d90b",
+          "3251dbf247228bd2da7d6b331c192b5a283aeee0571395fb3461af8d4192d90b"
+        ],
+        "native/runlog/TaskTrace_node_1.csv": [
+          "50d290d57b45d9c06c71614ec766fd2713dff3a089c1b61b2e0c57853592af66",
+          "50d290d57b45d9c06c71614ec766fd2713dff3a089c1b61b2e0c57853592af66"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_1.csv": [
+          "7d444a39943210b4fcca8ce57fa7c4939a887c1a221c0f316c8637edeeba1fb7",
+          "7d444a39943210b4fcca8ce57fa7c4939a887c1a221c0f316c8637edeeba1fb7"
+        ],
+        "native/runlog/PacketTrace_node_2.csv": [
+          "926589ca69769df1916373353556133cd8a2685d02e8cbacef74ca4af069bed2",
+          "926589ca69769df1916373353556133cd8a2685d02e8cbacef74ca4af069bed2"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_0.csv": [
+          "35c93fd39060b7bd17b38dbabd39cf0cddedaa69d3c3c55cc638898e0268416f",
+          "35c93fd39060b7bd17b38dbabd39cf0cddedaa69d3c3c55cc638898e0268416f"
+        ],
+        "native/runlog/PacketTrace_node_3.csv": [
+          "43653d231e3480dadc1c1068f40ad49d97c21f54c9bad8aee4a70a57cad4240e",
+          "43653d231e3480dadc1c1068f40ad49d97c21f54c9bad8aee4a70a57cad4240e"
+        ],
+        "native/runlog/PortTrace_node_4_port_1.csv": [
+          "e4bba6c4e7d13aa8da71ce1d46a5bfefe4a077f59627f44001ef3a4199915de5",
+          "e4bba6c4e7d13aa8da71ce1d46a5bfefe4a077f59627f44001ef3a4199915de5"
+        ],
+        "native/runlog/PacketTrace_node_1.csv": [
+          "0c71ff10d5f0dd673909fd74be24bdc11891ef19923454b29d198b9cf4891cbf",
+          "0c71ff10d5f0dd673909fd74be24bdc11891ef19923454b29d198b9cf4891cbf"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_1.csv": [
+          "006e4b7c4f54baeec3af4ab1cc8a22a165a7e68cbc58c85b4bec6f563383fd8a",
+          "006e4b7c4f54baeec3af4ab1cc8a22a165a7e68cbc58c85b4bec6f563383fd8a"
+        ],
+        "native/runlog/PortTrace_node_4_port_2.csv": [
+          "aabf92b169cb81879079c66a818c8645ed2eff5c39d93634a1634dd115e0fa61",
+          "aabf92b169cb81879079c66a818c8645ed2eff5c39d93634a1634dd115e0fa61"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_2.csv": [
+          "3cae870d527e0e33d5e62f58cf683b551bdc093d77838f2f1401f881a6902a3d",
+          "3cae870d527e0e33d5e62f58cf683b551bdc093d77838f2f1401f881a6902a3d"
+        ],
+        "native/runlog/TaskTrace_node_0.csv": [
+          "35cec8bdd7494e16746a05d9fb548dc3864b1fddfce27f171988387ef9a915c7",
+          "35cec8bdd7494e16746a05d9fb548dc3864b1fddfce27f171988387ef9a915c7"
+        ],
+        "native/runlog/PortTrace_node_4_port_3.csv": [
+          "5e7c37592778394ec0995958a6ed30f047d9a6451ee85dc1a5f61bbf9b60b2fc",
+          "5e7c37592778394ec0995958a6ed30f047d9a6451ee85dc1a5f61bbf9b60b2fc"
+        ],
+        "native/runlog/TaskTrace_node_2.csv": [
+          "f9790392e4676f97137db7587855f623527c476bf7bdda2291ca119a5800cb4d",
+          "f9790392e4676f97137db7587855f623527c476bf7bdda2291ca119a5800cb4d"
+        ],
+        "native/runlog/PacketTrace_node_4.csv": [
+          "aa6891cc48a8e90da5129bf03f764cc606ba695e77d872be7e60d840856713fa",
+          "aa6891cc48a8e90da5129bf03f764cc606ba695e77d872be7e60d840856713fa"
+        ],
+        "native/runlog/PortTrace_node_2_port_0.csv": [
+          "0a57fe0cdf2e642fb5aeb638573d298d2803b6db34a1d5873cc5301b03adf53e",
+          "0a57fe0cdf2e642fb5aeb638573d298d2803b6db34a1d5873cc5301b03adf53e"
+        ],
+        "native/runlog/PortTrace_node_3_port_0.csv": [
+          "a1776632dd03dac87799c6a5bbfc0f040c13d10d07a12ff3e0e27bb09490ec46",
+          "a1776632dd03dac87799c6a5bbfc0f040c13d10d07a12ff3e0e27bb09490ec46"
+        ],
+        "native/runlog/PortTrace_node_1_port_0.csv": [
+          "1713e5a9c9283ce53be8627012db190df2aeddf52431a74f7e4381f34937813d",
+          "1713e5a9c9283ce53be8627012db190df2aeddf52431a74f7e4381f34937813d"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_3.csv": [
+          "073e1805b06c792b9c49ad3839591a9664db315ad1fdbbe21b9afbe30f77a656",
+          "073e1805b06c792b9c49ad3839591a9664db315ad1fdbbe21b9afbe30f77a656"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_3.csv": [
+          "474e913d8a7caa614047ea6204a17dc40361996c256b1f76821157c709e4b239",
+          "474e913d8a7caa614047ea6204a17dc40361996c256b1f76821157c709e4b239"
+        ],
+        "native/runlog/TaskTrace_node_3.csv": [
+          "1ab61398de530472e2b58c2b18a3b95aa50511f09daf12a2ed18abf3396b57c5",
+          "1ab61398de530472e2b58c2b18a3b95aa50511f09daf12a2ed18abf3396b57c5"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_0.csv": [
+          "820afde5cf1b950457217ee49fb995861d6eb07b639f6b6b6fbc8e7c53541935",
+          "820afde5cf1b950457217ee49fb995861d6eb07b639f6b6b6fbc8e7c53541935"
+        ]
+      },
+      "layer_latency_ps": 1217152,
+      "simulator_events": 6051,
+      "TA_count": 24,
+      "completed_tokens": 16,
+      "executed_graph_fnv1a64": "15acd8cbf7694120"
+    },
+    {
+      "case": "nb-small",
+      "variant": "index-scan",
+      "status": "PASS",
+      "input_sha256": "f280ad96091c4f2517ba37dd66f56788abfe7bd5ba8cc9aaeac9de40d173bc7a",
+      "checks": {
+        "online-summary.json": [],
+        "validation.json": [],
+        "simulator-metrics.json": []
+      },
+      "byte_exact_hashes": {
+        "executed-transfers.csv": [
+          "5b27fbcdebc0b2a2a3fd58955691b1599cfd25928a493f41e7a73888ea5f2e46",
+          "5b27fbcdebc0b2a2a3fd58955691b1599cfd25928a493f41e7a73888ea5f2e46"
+        ],
+        "received-payloads.bin": [
+          "52974a580f92b4badfb044c6ac97aac0c6be46a5eb8a4790e7236ca384b7c0d4",
+          "52974a580f92b4badfb044c6ac97aac0c6be46a5eb8a4790e7236ca384b7c0d4"
+        ],
+        "payload-index.csv": [
+          "73b61a850e3178943ac6df73be25d521c76761fadaeef81f4a35d88dcc5cfa03",
+          "73b61a850e3178943ac6df73be25d521c76761fadaeef81f4a35d88dcc5cfa03"
+        ],
+        "events.csv": [
+          "da592ee6f6a4e2a73a16119eba2c5258f47137113cacdb908af5e323aec3e0fe",
+          "da592ee6f6a4e2a73a16119eba2c5258f47137113cacdb908af5e323aec3e0fe"
+        ],
+        "ta-identity.csv": [
+          "3cefad7ccd7867046a416266960f72be03449b6397c26b08a2a60fd019199a2e",
+          "3cefad7ccd7867046a416266960f72be03449b6397c26b08a2a60fd019199a2e"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_2.csv": [
+          "1343a749df63eec28248cc35e9908dd7b48627a239fa7fea6bd9b30d32280edd",
+          "1343a749df63eec28248cc35e9908dd7b48627a239fa7fea6bd9b30d32280edd"
+        ],
+        "native/runlog/PacketTrace_node_0.csv": [
+          "fb500caa4e1154ff7a26ad107c25bea3ba7ac91c2dc1d1e36577db6bc959209c",
+          "fb500caa4e1154ff7a26ad107c25bea3ba7ac91c2dc1d1e36577db6bc959209c"
+        ],
+        "native/runlog/PortTrace_node_0_port_0.csv": [
+          "1f4a5e5655fd95a91d7c2f96a139ef121f679589333b206d27771537af1220d6",
+          "1f4a5e5655fd95a91d7c2f96a139ef121f679589333b206d27771537af1220d6"
+        ],
+        "native/runlog/PortTrace_node_4_port_0.csv": [
+          "3251dbf247228bd2da7d6b331c192b5a283aeee0571395fb3461af8d4192d90b",
+          "3251dbf247228bd2da7d6b331c192b5a283aeee0571395fb3461af8d4192d90b"
+        ],
+        "native/runlog/TaskTrace_node_1.csv": [
+          "50d290d57b45d9c06c71614ec766fd2713dff3a089c1b61b2e0c57853592af66",
+          "50d290d57b45d9c06c71614ec766fd2713dff3a089c1b61b2e0c57853592af66"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_1.csv": [
+          "7d444a39943210b4fcca8ce57fa7c4939a887c1a221c0f316c8637edeeba1fb7",
+          "7d444a39943210b4fcca8ce57fa7c4939a887c1a221c0f316c8637edeeba1fb7"
+        ],
+        "native/runlog/PacketTrace_node_2.csv": [
+          "926589ca69769df1916373353556133cd8a2685d02e8cbacef74ca4af069bed2",
+          "926589ca69769df1916373353556133cd8a2685d02e8cbacef74ca4af069bed2"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_0.csv": [
+          "35c93fd39060b7bd17b38dbabd39cf0cddedaa69d3c3c55cc638898e0268416f",
+          "35c93fd39060b7bd17b38dbabd39cf0cddedaa69d3c3c55cc638898e0268416f"
+        ],
+        "native/runlog/PacketTrace_node_3.csv": [
+          "43653d231e3480dadc1c1068f40ad49d97c21f54c9bad8aee4a70a57cad4240e",
+          "43653d231e3480dadc1c1068f40ad49d97c21f54c9bad8aee4a70a57cad4240e"
+        ],
+        "native/runlog/PortTrace_node_4_port_1.csv": [
+          "e4bba6c4e7d13aa8da71ce1d46a5bfefe4a077f59627f44001ef3a4199915de5",
+          "e4bba6c4e7d13aa8da71ce1d46a5bfefe4a077f59627f44001ef3a4199915de5"
+        ],
+        "native/runlog/PacketTrace_node_1.csv": [
+          "0c71ff10d5f0dd673909fd74be24bdc11891ef19923454b29d198b9cf4891cbf",
+          "0c71ff10d5f0dd673909fd74be24bdc11891ef19923454b29d198b9cf4891cbf"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_1.csv": [
+          "006e4b7c4f54baeec3af4ab1cc8a22a165a7e68cbc58c85b4bec6f563383fd8a",
+          "006e4b7c4f54baeec3af4ab1cc8a22a165a7e68cbc58c85b4bec6f563383fd8a"
+        ],
+        "native/runlog/PortTrace_node_4_port_2.csv": [
+          "aabf92b169cb81879079c66a818c8645ed2eff5c39d93634a1634dd115e0fa61",
+          "aabf92b169cb81879079c66a818c8645ed2eff5c39d93634a1634dd115e0fa61"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_2.csv": [
+          "3cae870d527e0e33d5e62f58cf683b551bdc093d77838f2f1401f881a6902a3d",
+          "3cae870d527e0e33d5e62f58cf683b551bdc093d77838f2f1401f881a6902a3d"
+        ],
+        "native/runlog/TaskTrace_node_0.csv": [
+          "35cec8bdd7494e16746a05d9fb548dc3864b1fddfce27f171988387ef9a915c7",
+          "35cec8bdd7494e16746a05d9fb548dc3864b1fddfce27f171988387ef9a915c7"
+        ],
+        "native/runlog/PortTrace_node_4_port_3.csv": [
+          "5e7c37592778394ec0995958a6ed30f047d9a6451ee85dc1a5f61bbf9b60b2fc",
+          "5e7c37592778394ec0995958a6ed30f047d9a6451ee85dc1a5f61bbf9b60b2fc"
+        ],
+        "native/runlog/TaskTrace_node_2.csv": [
+          "f9790392e4676f97137db7587855f623527c476bf7bdda2291ca119a5800cb4d",
+          "f9790392e4676f97137db7587855f623527c476bf7bdda2291ca119a5800cb4d"
+        ],
+        "native/runlog/PacketTrace_node_4.csv": [
+          "aa6891cc48a8e90da5129bf03f764cc606ba695e77d872be7e60d840856713fa",
+          "aa6891cc48a8e90da5129bf03f764cc606ba695e77d872be7e60d840856713fa"
+        ],
+        "native/runlog/PortTrace_node_2_port_0.csv": [
+          "0a57fe0cdf2e642fb5aeb638573d298d2803b6db34a1d5873cc5301b03adf53e",
+          "0a57fe0cdf2e642fb5aeb638573d298d2803b6db34a1d5873cc5301b03adf53e"
+        ],
+        "native/runlog/PortTrace_node_3_port_0.csv": [
+          "a1776632dd03dac87799c6a5bbfc0f040c13d10d07a12ff3e0e27bb09490ec46",
+          "a1776632dd03dac87799c6a5bbfc0f040c13d10d07a12ff3e0e27bb09490ec46"
+        ],
+        "native/runlog/PortTrace_node_1_port_0.csv": [
+          "1713e5a9c9283ce53be8627012db190df2aeddf52431a74f7e4381f34937813d",
+          "1713e5a9c9283ce53be8627012db190df2aeddf52431a74f7e4381f34937813d"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_3.csv": [
+          "073e1805b06c792b9c49ad3839591a9664db315ad1fdbbe21b9afbe30f77a656",
+          "073e1805b06c792b9c49ad3839591a9664db315ad1fdbbe21b9afbe30f77a656"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_3.csv": [
+          "474e913d8a7caa614047ea6204a17dc40361996c256b1f76821157c709e4b239",
+          "474e913d8a7caa614047ea6204a17dc40361996c256b1f76821157c709e4b239"
+        ],
+        "native/runlog/TaskTrace_node_3.csv": [
+          "1ab61398de530472e2b58c2b18a3b95aa50511f09daf12a2ed18abf3396b57c5",
+          "1ab61398de530472e2b58c2b18a3b95aa50511f09daf12a2ed18abf3396b57c5"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_0.csv": [
+          "820afde5cf1b950457217ee49fb995861d6eb07b639f6b6b6fbc8e7c53541935",
+          "820afde5cf1b950457217ee49fb995861d6eb07b639f6b6b6fbc8e7c53541935"
+        ]
+      },
+      "layer_latency_ps": 1217152,
+      "simulator_events": 6051,
+      "TA_count": 24,
+      "completed_tokens": 16,
+      "executed_graph_fnv1a64": "15acd8cbf7694120"
+    },
+    {
+      "case": "nb-small",
+      "variant": "scan-index",
+      "status": "PASS",
+      "input_sha256": "f280ad96091c4f2517ba37dd66f56788abfe7bd5ba8cc9aaeac9de40d173bc7a",
+      "checks": {
+        "online-summary.json": [],
+        "validation.json": [],
+        "simulator-metrics.json": []
+      },
+      "byte_exact_hashes": {
+        "executed-transfers.csv": [
+          "5b27fbcdebc0b2a2a3fd58955691b1599cfd25928a493f41e7a73888ea5f2e46",
+          "5b27fbcdebc0b2a2a3fd58955691b1599cfd25928a493f41e7a73888ea5f2e46"
+        ],
+        "received-payloads.bin": [
+          "52974a580f92b4badfb044c6ac97aac0c6be46a5eb8a4790e7236ca384b7c0d4",
+          "52974a580f92b4badfb044c6ac97aac0c6be46a5eb8a4790e7236ca384b7c0d4"
+        ],
+        "payload-index.csv": [
+          "73b61a850e3178943ac6df73be25d521c76761fadaeef81f4a35d88dcc5cfa03",
+          "73b61a850e3178943ac6df73be25d521c76761fadaeef81f4a35d88dcc5cfa03"
+        ],
+        "events.csv": [
+          "da592ee6f6a4e2a73a16119eba2c5258f47137113cacdb908af5e323aec3e0fe",
+          "da592ee6f6a4e2a73a16119eba2c5258f47137113cacdb908af5e323aec3e0fe"
+        ],
+        "ta-identity.csv": [
+          "3cefad7ccd7867046a416266960f72be03449b6397c26b08a2a60fd019199a2e",
+          "3cefad7ccd7867046a416266960f72be03449b6397c26b08a2a60fd019199a2e"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_2.csv": [
+          "1343a749df63eec28248cc35e9908dd7b48627a239fa7fea6bd9b30d32280edd",
+          "1343a749df63eec28248cc35e9908dd7b48627a239fa7fea6bd9b30d32280edd"
+        ],
+        "native/runlog/PacketTrace_node_0.csv": [
+          "fb500caa4e1154ff7a26ad107c25bea3ba7ac91c2dc1d1e36577db6bc959209c",
+          "fb500caa4e1154ff7a26ad107c25bea3ba7ac91c2dc1d1e36577db6bc959209c"
+        ],
+        "native/runlog/PortTrace_node_0_port_0.csv": [
+          "1f4a5e5655fd95a91d7c2f96a139ef121f679589333b206d27771537af1220d6",
+          "1f4a5e5655fd95a91d7c2f96a139ef121f679589333b206d27771537af1220d6"
+        ],
+        "native/runlog/PortTrace_node_4_port_0.csv": [
+          "3251dbf247228bd2da7d6b331c192b5a283aeee0571395fb3461af8d4192d90b",
+          "3251dbf247228bd2da7d6b331c192b5a283aeee0571395fb3461af8d4192d90b"
+        ],
+        "native/runlog/TaskTrace_node_1.csv": [
+          "50d290d57b45d9c06c71614ec766fd2713dff3a089c1b61b2e0c57853592af66",
+          "50d290d57b45d9c06c71614ec766fd2713dff3a089c1b61b2e0c57853592af66"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_1.csv": [
+          "7d444a39943210b4fcca8ce57fa7c4939a887c1a221c0f316c8637edeeba1fb7",
+          "7d444a39943210b4fcca8ce57fa7c4939a887c1a221c0f316c8637edeeba1fb7"
+        ],
+        "native/runlog/PacketTrace_node_2.csv": [
+          "926589ca69769df1916373353556133cd8a2685d02e8cbacef74ca4af069bed2",
+          "926589ca69769df1916373353556133cd8a2685d02e8cbacef74ca4af069bed2"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_0.csv": [
+          "35c93fd39060b7bd17b38dbabd39cf0cddedaa69d3c3c55cc638898e0268416f",
+          "35c93fd39060b7bd17b38dbabd39cf0cddedaa69d3c3c55cc638898e0268416f"
+        ],
+        "native/runlog/PacketTrace_node_3.csv": [
+          "43653d231e3480dadc1c1068f40ad49d97c21f54c9bad8aee4a70a57cad4240e",
+          "43653d231e3480dadc1c1068f40ad49d97c21f54c9bad8aee4a70a57cad4240e"
+        ],
+        "native/runlog/PortTrace_node_4_port_1.csv": [
+          "e4bba6c4e7d13aa8da71ce1d46a5bfefe4a077f59627f44001ef3a4199915de5",
+          "e4bba6c4e7d13aa8da71ce1d46a5bfefe4a077f59627f44001ef3a4199915de5"
+        ],
+        "native/runlog/PacketTrace_node_1.csv": [
+          "0c71ff10d5f0dd673909fd74be24bdc11891ef19923454b29d198b9cf4891cbf",
+          "0c71ff10d5f0dd673909fd74be24bdc11891ef19923454b29d198b9cf4891cbf"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_1.csv": [
+          "006e4b7c4f54baeec3af4ab1cc8a22a165a7e68cbc58c85b4bec6f563383fd8a",
+          "006e4b7c4f54baeec3af4ab1cc8a22a165a7e68cbc58c85b4bec6f563383fd8a"
+        ],
+        "native/runlog/PortTrace_node_4_port_2.csv": [
+          "aabf92b169cb81879079c66a818c8645ed2eff5c39d93634a1634dd115e0fa61",
+          "aabf92b169cb81879079c66a818c8645ed2eff5c39d93634a1634dd115e0fa61"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_2.csv": [
+          "3cae870d527e0e33d5e62f58cf683b551bdc093d77838f2f1401f881a6902a3d",
+          "3cae870d527e0e33d5e62f58cf683b551bdc093d77838f2f1401f881a6902a3d"
+        ],
+        "native/runlog/TaskTrace_node_0.csv": [
+          "35cec8bdd7494e16746a05d9fb548dc3864b1fddfce27f171988387ef9a915c7",
+          "35cec8bdd7494e16746a05d9fb548dc3864b1fddfce27f171988387ef9a915c7"
+        ],
+        "native/runlog/PortTrace_node_4_port_3.csv": [
+          "5e7c37592778394ec0995958a6ed30f047d9a6451ee85dc1a5f61bbf9b60b2fc",
+          "5e7c37592778394ec0995958a6ed30f047d9a6451ee85dc1a5f61bbf9b60b2fc"
+        ],
+        "native/runlog/TaskTrace_node_2.csv": [
+          "f9790392e4676f97137db7587855f623527c476bf7bdda2291ca119a5800cb4d",
+          "f9790392e4676f97137db7587855f623527c476bf7bdda2291ca119a5800cb4d"
+        ],
+        "native/runlog/PacketTrace_node_4.csv": [
+          "aa6891cc48a8e90da5129bf03f764cc606ba695e77d872be7e60d840856713fa",
+          "aa6891cc48a8e90da5129bf03f764cc606ba695e77d872be7e60d840856713fa"
+        ],
+        "native/runlog/PortTrace_node_2_port_0.csv": [
+          "0a57fe0cdf2e642fb5aeb638573d298d2803b6db34a1d5873cc5301b03adf53e",
+          "0a57fe0cdf2e642fb5aeb638573d298d2803b6db34a1d5873cc5301b03adf53e"
+        ],
+        "native/runlog/PortTrace_node_3_port_0.csv": [
+          "a1776632dd03dac87799c6a5bbfc0f040c13d10d07a12ff3e0e27bb09490ec46",
+          "a1776632dd03dac87799c6a5bbfc0f040c13d10d07a12ff3e0e27bb09490ec46"
+        ],
+        "native/runlog/PortTrace_node_1_port_0.csv": [
+          "1713e5a9c9283ce53be8627012db190df2aeddf52431a74f7e4381f34937813d",
+          "1713e5a9c9283ce53be8627012db190df2aeddf52431a74f7e4381f34937813d"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_3.csv": [
+          "073e1805b06c792b9c49ad3839591a9664db315ad1fdbbe21b9afbe30f77a656",
+          "073e1805b06c792b9c49ad3839591a9664db315ad1fdbbe21b9afbe30f77a656"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_3.csv": [
+          "474e913d8a7caa614047ea6204a17dc40361996c256b1f76821157c709e4b239",
+          "474e913d8a7caa614047ea6204a17dc40361996c256b1f76821157c709e4b239"
+        ],
+        "native/runlog/TaskTrace_node_3.csv": [
+          "1ab61398de530472e2b58c2b18a3b95aa50511f09daf12a2ed18abf3396b57c5",
+          "1ab61398de530472e2b58c2b18a3b95aa50511f09daf12a2ed18abf3396b57c5"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_0.csv": [
+          "820afde5cf1b950457217ee49fb995861d6eb07b639f6b6b6fbc8e7c53541935",
+          "820afde5cf1b950457217ee49fb995861d6eb07b639f6b6b6fbc8e7c53541935"
+        ]
+      },
+      "layer_latency_ps": 1217152,
+      "simulator_events": 6051,
+      "TA_count": 24,
+      "completed_tokens": 16,
+      "executed_graph_fnv1a64": "15acd8cbf7694120"
+    },
+    {
+      "case": "nb-small",
+      "variant": "index-index",
+      "status": "PASS",
+      "input_sha256": "f280ad96091c4f2517ba37dd66f56788abfe7bd5ba8cc9aaeac9de40d173bc7a",
+      "checks": {
+        "online-summary.json": [],
+        "validation.json": [],
+        "simulator-metrics.json": []
+      },
+      "byte_exact_hashes": {
+        "executed-transfers.csv": [
+          "5b27fbcdebc0b2a2a3fd58955691b1599cfd25928a493f41e7a73888ea5f2e46",
+          "5b27fbcdebc0b2a2a3fd58955691b1599cfd25928a493f41e7a73888ea5f2e46"
+        ],
+        "received-payloads.bin": [
+          "52974a580f92b4badfb044c6ac97aac0c6be46a5eb8a4790e7236ca384b7c0d4",
+          "52974a580f92b4badfb044c6ac97aac0c6be46a5eb8a4790e7236ca384b7c0d4"
+        ],
+        "payload-index.csv": [
+          "73b61a850e3178943ac6df73be25d521c76761fadaeef81f4a35d88dcc5cfa03",
+          "73b61a850e3178943ac6df73be25d521c76761fadaeef81f4a35d88dcc5cfa03"
+        ],
+        "events.csv": [
+          "da592ee6f6a4e2a73a16119eba2c5258f47137113cacdb908af5e323aec3e0fe",
+          "da592ee6f6a4e2a73a16119eba2c5258f47137113cacdb908af5e323aec3e0fe"
+        ],
+        "ta-identity.csv": [
+          "3cefad7ccd7867046a416266960f72be03449b6397c26b08a2a60fd019199a2e",
+          "3cefad7ccd7867046a416266960f72be03449b6397c26b08a2a60fd019199a2e"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_2.csv": [
+          "1343a749df63eec28248cc35e9908dd7b48627a239fa7fea6bd9b30d32280edd",
+          "1343a749df63eec28248cc35e9908dd7b48627a239fa7fea6bd9b30d32280edd"
+        ],
+        "native/runlog/PacketTrace_node_0.csv": [
+          "fb500caa4e1154ff7a26ad107c25bea3ba7ac91c2dc1d1e36577db6bc959209c",
+          "fb500caa4e1154ff7a26ad107c25bea3ba7ac91c2dc1d1e36577db6bc959209c"
+        ],
+        "native/runlog/PortTrace_node_0_port_0.csv": [
+          "1f4a5e5655fd95a91d7c2f96a139ef121f679589333b206d27771537af1220d6",
+          "1f4a5e5655fd95a91d7c2f96a139ef121f679589333b206d27771537af1220d6"
+        ],
+        "native/runlog/PortTrace_node_4_port_0.csv": [
+          "3251dbf247228bd2da7d6b331c192b5a283aeee0571395fb3461af8d4192d90b",
+          "3251dbf247228bd2da7d6b331c192b5a283aeee0571395fb3461af8d4192d90b"
+        ],
+        "native/runlog/TaskTrace_node_1.csv": [
+          "50d290d57b45d9c06c71614ec766fd2713dff3a089c1b61b2e0c57853592af66",
+          "50d290d57b45d9c06c71614ec766fd2713dff3a089c1b61b2e0c57853592af66"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_1.csv": [
+          "7d444a39943210b4fcca8ce57fa7c4939a887c1a221c0f316c8637edeeba1fb7",
+          "7d444a39943210b4fcca8ce57fa7c4939a887c1a221c0f316c8637edeeba1fb7"
+        ],
+        "native/runlog/PacketTrace_node_2.csv": [
+          "926589ca69769df1916373353556133cd8a2685d02e8cbacef74ca4af069bed2",
+          "926589ca69769df1916373353556133cd8a2685d02e8cbacef74ca4af069bed2"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_0.csv": [
+          "35c93fd39060b7bd17b38dbabd39cf0cddedaa69d3c3c55cc638898e0268416f",
+          "35c93fd39060b7bd17b38dbabd39cf0cddedaa69d3c3c55cc638898e0268416f"
+        ],
+        "native/runlog/PacketTrace_node_3.csv": [
+          "43653d231e3480dadc1c1068f40ad49d97c21f54c9bad8aee4a70a57cad4240e",
+          "43653d231e3480dadc1c1068f40ad49d97c21f54c9bad8aee4a70a57cad4240e"
+        ],
+        "native/runlog/PortTrace_node_4_port_1.csv": [
+          "e4bba6c4e7d13aa8da71ce1d46a5bfefe4a077f59627f44001ef3a4199915de5",
+          "e4bba6c4e7d13aa8da71ce1d46a5bfefe4a077f59627f44001ef3a4199915de5"
+        ],
+        "native/runlog/PacketTrace_node_1.csv": [
+          "0c71ff10d5f0dd673909fd74be24bdc11891ef19923454b29d198b9cf4891cbf",
+          "0c71ff10d5f0dd673909fd74be24bdc11891ef19923454b29d198b9cf4891cbf"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_1.csv": [
+          "006e4b7c4f54baeec3af4ab1cc8a22a165a7e68cbc58c85b4bec6f563383fd8a",
+          "006e4b7c4f54baeec3af4ab1cc8a22a165a7e68cbc58c85b4bec6f563383fd8a"
+        ],
+        "native/runlog/PortTrace_node_4_port_2.csv": [
+          "aabf92b169cb81879079c66a818c8645ed2eff5c39d93634a1634dd115e0fa61",
+          "aabf92b169cb81879079c66a818c8645ed2eff5c39d93634a1634dd115e0fa61"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_2.csv": [
+          "3cae870d527e0e33d5e62f58cf683b551bdc093d77838f2f1401f881a6902a3d",
+          "3cae870d527e0e33d5e62f58cf683b551bdc093d77838f2f1401f881a6902a3d"
+        ],
+        "native/runlog/TaskTrace_node_0.csv": [
+          "35cec8bdd7494e16746a05d9fb548dc3864b1fddfce27f171988387ef9a915c7",
+          "35cec8bdd7494e16746a05d9fb548dc3864b1fddfce27f171988387ef9a915c7"
+        ],
+        "native/runlog/PortTrace_node_4_port_3.csv": [
+          "5e7c37592778394ec0995958a6ed30f047d9a6451ee85dc1a5f61bbf9b60b2fc",
+          "5e7c37592778394ec0995958a6ed30f047d9a6451ee85dc1a5f61bbf9b60b2fc"
+        ],
+        "native/runlog/TaskTrace_node_2.csv": [
+          "f9790392e4676f97137db7587855f623527c476bf7bdda2291ca119a5800cb4d",
+          "f9790392e4676f97137db7587855f623527c476bf7bdda2291ca119a5800cb4d"
+        ],
+        "native/runlog/PacketTrace_node_4.csv": [
+          "aa6891cc48a8e90da5129bf03f764cc606ba695e77d872be7e60d840856713fa",
+          "aa6891cc48a8e90da5129bf03f764cc606ba695e77d872be7e60d840856713fa"
+        ],
+        "native/runlog/PortTrace_node_2_port_0.csv": [
+          "0a57fe0cdf2e642fb5aeb638573d298d2803b6db34a1d5873cc5301b03adf53e",
+          "0a57fe0cdf2e642fb5aeb638573d298d2803b6db34a1d5873cc5301b03adf53e"
+        ],
+        "native/runlog/PortTrace_node_3_port_0.csv": [
+          "a1776632dd03dac87799c6a5bbfc0f040c13d10d07a12ff3e0e27bb09490ec46",
+          "a1776632dd03dac87799c6a5bbfc0f040c13d10d07a12ff3e0e27bb09490ec46"
+        ],
+        "native/runlog/PortTrace_node_1_port_0.csv": [
+          "1713e5a9c9283ce53be8627012db190df2aeddf52431a74f7e4381f34937813d",
+          "1713e5a9c9283ce53be8627012db190df2aeddf52431a74f7e4381f34937813d"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_3.csv": [
+          "073e1805b06c792b9c49ad3839591a9664db315ad1fdbbe21b9afbe30f77a656",
+          "073e1805b06c792b9c49ad3839591a9664db315ad1fdbbe21b9afbe30f77a656"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_3.csv": [
+          "474e913d8a7caa614047ea6204a17dc40361996c256b1f76821157c709e4b239",
+          "474e913d8a7caa614047ea6204a17dc40361996c256b1f76821157c709e4b239"
+        ],
+        "native/runlog/TaskTrace_node_3.csv": [
+          "1ab61398de530472e2b58c2b18a3b95aa50511f09daf12a2ed18abf3396b57c5",
+          "1ab61398de530472e2b58c2b18a3b95aa50511f09daf12a2ed18abf3396b57c5"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_0.csv": [
+          "820afde5cf1b950457217ee49fb995861d6eb07b639f6b6b6fbc8e7c53541935",
+          "820afde5cf1b950457217ee49fb995861d6eb07b639f6b6b6fbc8e7c53541935"
+        ]
+      },
+      "layer_latency_ps": 1217152,
+      "simulator_events": 6051,
+      "TA_count": 24,
+      "completed_tokens": 16,
+      "executed_graph_fnv1a64": "15acd8cbf7694120"
+    },
+    {
+      "case": "direct-small",
+      "variant": "scan-scan",
+      "status": "PASS",
+      "input_sha256": "26cd2f6197e54af37ec5cb3f7a65f9436e33c40ba3063e07aaf899be5664f14c",
+      "checks": {
+        "online-summary.json": [],
+        "validation.json": [],
+        "simulator-metrics.json": []
+      },
+      "byte_exact_hashes": {
+        "executed-transfers.csv": [
+          "d8fa16ea7ea4a08207db99ed17264e7eadd444ca0d5a3c5cdbfd4c7860e1d483",
+          "d8fa16ea7ea4a08207db99ed17264e7eadd444ca0d5a3c5cdbfd4c7860e1d483"
+        ],
+        "received-payloads.bin": [
+          "aaf170f5f6c0e739d32ef46e45a105dd67e3854099e3f3e28a94a3a83cc654cf",
+          "aaf170f5f6c0e739d32ef46e45a105dd67e3854099e3f3e28a94a3a83cc654cf"
+        ],
+        "payload-index.csv": [
+          "3759a811e21d1d0e31b1a25ea83639af9015ecc724f7d9c3e56c0e6672463287",
+          "3759a811e21d1d0e31b1a25ea83639af9015ecc724f7d9c3e56c0e6672463287"
+        ],
+        "events.csv": [
+          "6791dcd4fc43e01804bce27fd3f3777004ce925e658c4c56cf073bdcec1a91a7",
+          "6791dcd4fc43e01804bce27fd3f3777004ce925e658c4c56cf073bdcec1a91a7"
+        ],
+        "ta-identity.csv": [
+          "ad22899bf5109a1c4b8d284fcf877962584341f4ee1422927078d5382c57125d",
+          "ad22899bf5109a1c4b8d284fcf877962584341f4ee1422927078d5382c57125d"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_2.csv": [
+          "0e4b04fe776f03499e9b5b971fa136680eac988e75ef4bc2398b0ab1cd32c50d",
+          "0e4b04fe776f03499e9b5b971fa136680eac988e75ef4bc2398b0ab1cd32c50d"
+        ],
+        "native/runlog/PacketTrace_node_0.csv": [
+          "274b86265e979e0db36c5820a28013c66f09d196c2b5bbc1ff3d854cb7f020f9",
+          "274b86265e979e0db36c5820a28013c66f09d196c2b5bbc1ff3d854cb7f020f9"
+        ],
+        "native/runlog/PortTrace_node_0_port_0.csv": [
+          "8132a8b72497998f975cc589a0ab0c8abad8f4b544c0514fa29cf6813de86d04",
+          "8132a8b72497998f975cc589a0ab0c8abad8f4b544c0514fa29cf6813de86d04"
+        ],
+        "native/runlog/PortTrace_node_4_port_0.csv": [
+          "6ab32bdd6200ef25255a1e06a6ce19fe7884735ab9d1ef4afe1786dd11f05666",
+          "6ab32bdd6200ef25255a1e06a6ce19fe7884735ab9d1ef4afe1786dd11f05666"
+        ],
+        "native/runlog/TaskTrace_node_1.csv": [
+          "875971352feb461a706b90b125d4cb61ed5b26b54a2fb93d138e285168b35b88",
+          "875971352feb461a706b90b125d4cb61ed5b26b54a2fb93d138e285168b35b88"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_1.csv": [
+          "957e53f3d836d1dc9743cef3b54b2aadd2d27404523a26bb6d3c0565aab585cf",
+          "957e53f3d836d1dc9743cef3b54b2aadd2d27404523a26bb6d3c0565aab585cf"
+        ],
+        "native/runlog/PacketTrace_node_2.csv": [
+          "0cf6b145dddc904d652ae14b7470a3f8d65d888fe865caf05f12582ae4f339ed",
+          "0cf6b145dddc904d652ae14b7470a3f8d65d888fe865caf05f12582ae4f339ed"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_0.csv": [
+          "fb335ff734317216a6e7f65463f724fe929a443eaefdbfe965576cd40c46f258",
+          "fb335ff734317216a6e7f65463f724fe929a443eaefdbfe965576cd40c46f258"
+        ],
+        "native/runlog/PacketTrace_node_3.csv": [
+          "282c1e24af074520cb8eb955e67d81f64adef9a42d44d92a4ab738bae522baf8",
+          "282c1e24af074520cb8eb955e67d81f64adef9a42d44d92a4ab738bae522baf8"
+        ],
+        "native/runlog/PortTrace_node_4_port_1.csv": [
+          "c7526b6803b89260bef984afced1f56211be9c77fca6c98397131974188afdd6",
+          "c7526b6803b89260bef984afced1f56211be9c77fca6c98397131974188afdd6"
+        ],
+        "native/runlog/PacketTrace_node_1.csv": [
+          "0a364e5046f9b3b7dc609e52fc1d7d14f8a9897350069beb94b3d8adb55e6b4b",
+          "0a364e5046f9b3b7dc609e52fc1d7d14f8a9897350069beb94b3d8adb55e6b4b"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_1.csv": [
+          "cac7293b89fc7075bfa5ef681f4599aed451eaf1a5deca176865ccf4efb30ae1",
+          "cac7293b89fc7075bfa5ef681f4599aed451eaf1a5deca176865ccf4efb30ae1"
+        ],
+        "native/runlog/PortTrace_node_4_port_2.csv": [
+          "052f906fb1214e3b2aea16dab927a598ff79e74b026869d9df701c0aa66225bb",
+          "052f906fb1214e3b2aea16dab927a598ff79e74b026869d9df701c0aa66225bb"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_2.csv": [
+          "339e03d72527831d2f9befdf5fe8651a87261fff03dc33e19f078a9ea0c8e502",
+          "339e03d72527831d2f9befdf5fe8651a87261fff03dc33e19f078a9ea0c8e502"
+        ],
+        "native/runlog/TaskTrace_node_0.csv": [
+          "b43d37951114627971a169bc48ce400d771d0b7758dcad287a0b5bf9e78096c7",
+          "b43d37951114627971a169bc48ce400d771d0b7758dcad287a0b5bf9e78096c7"
+        ],
+        "native/runlog/PortTrace_node_4_port_3.csv": [
+          "e50b541b01269f45cde5ac36e1018a65f9c25b2e6030b08b9c5dd73422b412df",
+          "e50b541b01269f45cde5ac36e1018a65f9c25b2e6030b08b9c5dd73422b412df"
+        ],
+        "native/runlog/TaskTrace_node_2.csv": [
+          "636961a4023a0c7b1976e4a08bd438e5b28983ae5b2194b702424d84689b6677",
+          "636961a4023a0c7b1976e4a08bd438e5b28983ae5b2194b702424d84689b6677"
+        ],
+        "native/runlog/PacketTrace_node_4.csv": [
+          "65d53b8deec29329228facd07e125517d2b442fa869e25f93286f8503df18b14",
+          "65d53b8deec29329228facd07e125517d2b442fa869e25f93286f8503df18b14"
+        ],
+        "native/runlog/PortTrace_node_2_port_0.csv": [
+          "7a32f1b9e7bb000efadba31eabe4818d2b1ee32f68ff2662bce83cf69881b8ae",
+          "7a32f1b9e7bb000efadba31eabe4818d2b1ee32f68ff2662bce83cf69881b8ae"
+        ],
+        "native/runlog/PortTrace_node_3_port_0.csv": [
+          "dfb20633aae8fb9f41031a6e44164f018c9d70d5a4abd97c38d04042094b18a9",
+          "dfb20633aae8fb9f41031a6e44164f018c9d70d5a4abd97c38d04042094b18a9"
+        ],
+        "native/runlog/PortTrace_node_1_port_0.csv": [
+          "9a1e17b564e98857e758c2ee8e0a04dea63bb0e35ae21d4cff9dd6b6cf10e617",
+          "9a1e17b564e98857e758c2ee8e0a04dea63bb0e35ae21d4cff9dd6b6cf10e617"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_3.csv": [
+          "ddbf876d0830d38d5fcdd6fcaa3428c8e5ff1c2718015dd2409f308099cbb4d5",
+          "ddbf876d0830d38d5fcdd6fcaa3428c8e5ff1c2718015dd2409f308099cbb4d5"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_3.csv": [
+          "14ce7ff6bcc35a26b34bafed598697043f920afc1451ac352d18750f486ce352",
+          "14ce7ff6bcc35a26b34bafed598697043f920afc1451ac352d18750f486ce352"
+        ],
+        "native/runlog/TaskTrace_node_3.csv": [
+          "b08c574b0c87b9191155868a41cb55512e6789adb0c888a90800989199fff2eb",
+          "b08c574b0c87b9191155868a41cb55512e6789adb0c888a90800989199fff2eb"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_0.csv": [
+          "6d5dbbdf07af9cfd57d1b8a0ad2a04fddd166853a58fb5e1a7cc9782303881ff",
+          "6d5dbbdf07af9cfd57d1b8a0ad2a04fddd166853a58fb5e1a7cc9782303881ff"
+        ]
+      },
+      "layer_latency_ps": 15095720,
+      "simulator_events": 12550,
+      "TA_count": 156,
+      "completed_tokens": 32,
+      "executed_graph_fnv1a64": "db6aa306499b6874"
+    },
+    {
+      "case": "direct-small",
+      "variant": "index-scan",
+      "status": "PASS",
+      "input_sha256": "26cd2f6197e54af37ec5cb3f7a65f9436e33c40ba3063e07aaf899be5664f14c",
+      "checks": {
+        "online-summary.json": [],
+        "validation.json": [],
+        "simulator-metrics.json": []
+      },
+      "byte_exact_hashes": {
+        "executed-transfers.csv": [
+          "d8fa16ea7ea4a08207db99ed17264e7eadd444ca0d5a3c5cdbfd4c7860e1d483",
+          "d8fa16ea7ea4a08207db99ed17264e7eadd444ca0d5a3c5cdbfd4c7860e1d483"
+        ],
+        "received-payloads.bin": [
+          "aaf170f5f6c0e739d32ef46e45a105dd67e3854099e3f3e28a94a3a83cc654cf",
+          "aaf170f5f6c0e739d32ef46e45a105dd67e3854099e3f3e28a94a3a83cc654cf"
+        ],
+        "payload-index.csv": [
+          "3759a811e21d1d0e31b1a25ea83639af9015ecc724f7d9c3e56c0e6672463287",
+          "3759a811e21d1d0e31b1a25ea83639af9015ecc724f7d9c3e56c0e6672463287"
+        ],
+        "events.csv": [
+          "6791dcd4fc43e01804bce27fd3f3777004ce925e658c4c56cf073bdcec1a91a7",
+          "6791dcd4fc43e01804bce27fd3f3777004ce925e658c4c56cf073bdcec1a91a7"
+        ],
+        "ta-identity.csv": [
+          "ad22899bf5109a1c4b8d284fcf877962584341f4ee1422927078d5382c57125d",
+          "ad22899bf5109a1c4b8d284fcf877962584341f4ee1422927078d5382c57125d"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_2.csv": [
+          "0e4b04fe776f03499e9b5b971fa136680eac988e75ef4bc2398b0ab1cd32c50d",
+          "0e4b04fe776f03499e9b5b971fa136680eac988e75ef4bc2398b0ab1cd32c50d"
+        ],
+        "native/runlog/PacketTrace_node_0.csv": [
+          "274b86265e979e0db36c5820a28013c66f09d196c2b5bbc1ff3d854cb7f020f9",
+          "274b86265e979e0db36c5820a28013c66f09d196c2b5bbc1ff3d854cb7f020f9"
+        ],
+        "native/runlog/PortTrace_node_0_port_0.csv": [
+          "8132a8b72497998f975cc589a0ab0c8abad8f4b544c0514fa29cf6813de86d04",
+          "8132a8b72497998f975cc589a0ab0c8abad8f4b544c0514fa29cf6813de86d04"
+        ],
+        "native/runlog/PortTrace_node_4_port_0.csv": [
+          "6ab32bdd6200ef25255a1e06a6ce19fe7884735ab9d1ef4afe1786dd11f05666",
+          "6ab32bdd6200ef25255a1e06a6ce19fe7884735ab9d1ef4afe1786dd11f05666"
+        ],
+        "native/runlog/TaskTrace_node_1.csv": [
+          "875971352feb461a706b90b125d4cb61ed5b26b54a2fb93d138e285168b35b88",
+          "875971352feb461a706b90b125d4cb61ed5b26b54a2fb93d138e285168b35b88"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_1.csv": [
+          "957e53f3d836d1dc9743cef3b54b2aadd2d27404523a26bb6d3c0565aab585cf",
+          "957e53f3d836d1dc9743cef3b54b2aadd2d27404523a26bb6d3c0565aab585cf"
+        ],
+        "native/runlog/PacketTrace_node_2.csv": [
+          "0cf6b145dddc904d652ae14b7470a3f8d65d888fe865caf05f12582ae4f339ed",
+          "0cf6b145dddc904d652ae14b7470a3f8d65d888fe865caf05f12582ae4f339ed"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_0.csv": [
+          "fb335ff734317216a6e7f65463f724fe929a443eaefdbfe965576cd40c46f258",
+          "fb335ff734317216a6e7f65463f724fe929a443eaefdbfe965576cd40c46f258"
+        ],
+        "native/runlog/PacketTrace_node_3.csv": [
+          "282c1e24af074520cb8eb955e67d81f64adef9a42d44d92a4ab738bae522baf8",
+          "282c1e24af074520cb8eb955e67d81f64adef9a42d44d92a4ab738bae522baf8"
+        ],
+        "native/runlog/PortTrace_node_4_port_1.csv": [
+          "c7526b6803b89260bef984afced1f56211be9c77fca6c98397131974188afdd6",
+          "c7526b6803b89260bef984afced1f56211be9c77fca6c98397131974188afdd6"
+        ],
+        "native/runlog/PacketTrace_node_1.csv": [
+          "0a364e5046f9b3b7dc609e52fc1d7d14f8a9897350069beb94b3d8adb55e6b4b",
+          "0a364e5046f9b3b7dc609e52fc1d7d14f8a9897350069beb94b3d8adb55e6b4b"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_1.csv": [
+          "cac7293b89fc7075bfa5ef681f4599aed451eaf1a5deca176865ccf4efb30ae1",
+          "cac7293b89fc7075bfa5ef681f4599aed451eaf1a5deca176865ccf4efb30ae1"
+        ],
+        "native/runlog/PortTrace_node_4_port_2.csv": [
+          "052f906fb1214e3b2aea16dab927a598ff79e74b026869d9df701c0aa66225bb",
+          "052f906fb1214e3b2aea16dab927a598ff79e74b026869d9df701c0aa66225bb"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_2.csv": [
+          "339e03d72527831d2f9befdf5fe8651a87261fff03dc33e19f078a9ea0c8e502",
+          "339e03d72527831d2f9befdf5fe8651a87261fff03dc33e19f078a9ea0c8e502"
+        ],
+        "native/runlog/TaskTrace_node_0.csv": [
+          "b43d37951114627971a169bc48ce400d771d0b7758dcad287a0b5bf9e78096c7",
+          "b43d37951114627971a169bc48ce400d771d0b7758dcad287a0b5bf9e78096c7"
+        ],
+        "native/runlog/PortTrace_node_4_port_3.csv": [
+          "e50b541b01269f45cde5ac36e1018a65f9c25b2e6030b08b9c5dd73422b412df",
+          "e50b541b01269f45cde5ac36e1018a65f9c25b2e6030b08b9c5dd73422b412df"
+        ],
+        "native/runlog/TaskTrace_node_2.csv": [
+          "636961a4023a0c7b1976e4a08bd438e5b28983ae5b2194b702424d84689b6677",
+          "636961a4023a0c7b1976e4a08bd438e5b28983ae5b2194b702424d84689b6677"
+        ],
+        "native/runlog/PacketTrace_node_4.csv": [
+          "65d53b8deec29329228facd07e125517d2b442fa869e25f93286f8503df18b14",
+          "65d53b8deec29329228facd07e125517d2b442fa869e25f93286f8503df18b14"
+        ],
+        "native/runlog/PortTrace_node_2_port_0.csv": [
+          "7a32f1b9e7bb000efadba31eabe4818d2b1ee32f68ff2662bce83cf69881b8ae",
+          "7a32f1b9e7bb000efadba31eabe4818d2b1ee32f68ff2662bce83cf69881b8ae"
+        ],
+        "native/runlog/PortTrace_node_3_port_0.csv": [
+          "dfb20633aae8fb9f41031a6e44164f018c9d70d5a4abd97c38d04042094b18a9",
+          "dfb20633aae8fb9f41031a6e44164f018c9d70d5a4abd97c38d04042094b18a9"
+        ],
+        "native/runlog/PortTrace_node_1_port_0.csv": [
+          "9a1e17b564e98857e758c2ee8e0a04dea63bb0e35ae21d4cff9dd6b6cf10e617",
+          "9a1e17b564e98857e758c2ee8e0a04dea63bb0e35ae21d4cff9dd6b6cf10e617"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_3.csv": [
+          "ddbf876d0830d38d5fcdd6fcaa3428c8e5ff1c2718015dd2409f308099cbb4d5",
+          "ddbf876d0830d38d5fcdd6fcaa3428c8e5ff1c2718015dd2409f308099cbb4d5"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_3.csv": [
+          "14ce7ff6bcc35a26b34bafed598697043f920afc1451ac352d18750f486ce352",
+          "14ce7ff6bcc35a26b34bafed598697043f920afc1451ac352d18750f486ce352"
+        ],
+        "native/runlog/TaskTrace_node_3.csv": [
+          "b08c574b0c87b9191155868a41cb55512e6789adb0c888a90800989199fff2eb",
+          "b08c574b0c87b9191155868a41cb55512e6789adb0c888a90800989199fff2eb"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_0.csv": [
+          "6d5dbbdf07af9cfd57d1b8a0ad2a04fddd166853a58fb5e1a7cc9782303881ff",
+          "6d5dbbdf07af9cfd57d1b8a0ad2a04fddd166853a58fb5e1a7cc9782303881ff"
+        ]
+      },
+      "layer_latency_ps": 15095720,
+      "simulator_events": 12550,
+      "TA_count": 156,
+      "completed_tokens": 32,
+      "executed_graph_fnv1a64": "db6aa306499b6874"
+    },
+    {
+      "case": "direct-small",
+      "variant": "scan-index",
+      "status": "PASS",
+      "input_sha256": "26cd2f6197e54af37ec5cb3f7a65f9436e33c40ba3063e07aaf899be5664f14c",
+      "checks": {
+        "online-summary.json": [],
+        "validation.json": [],
+        "simulator-metrics.json": []
+      },
+      "byte_exact_hashes": {
+        "executed-transfers.csv": [
+          "d8fa16ea7ea4a08207db99ed17264e7eadd444ca0d5a3c5cdbfd4c7860e1d483",
+          "d8fa16ea7ea4a08207db99ed17264e7eadd444ca0d5a3c5cdbfd4c7860e1d483"
+        ],
+        "received-payloads.bin": [
+          "aaf170f5f6c0e739d32ef46e45a105dd67e3854099e3f3e28a94a3a83cc654cf",
+          "aaf170f5f6c0e739d32ef46e45a105dd67e3854099e3f3e28a94a3a83cc654cf"
+        ],
+        "payload-index.csv": [
+          "3759a811e21d1d0e31b1a25ea83639af9015ecc724f7d9c3e56c0e6672463287",
+          "3759a811e21d1d0e31b1a25ea83639af9015ecc724f7d9c3e56c0e6672463287"
+        ],
+        "events.csv": [
+          "6791dcd4fc43e01804bce27fd3f3777004ce925e658c4c56cf073bdcec1a91a7",
+          "6791dcd4fc43e01804bce27fd3f3777004ce925e658c4c56cf073bdcec1a91a7"
+        ],
+        "ta-identity.csv": [
+          "ad22899bf5109a1c4b8d284fcf877962584341f4ee1422927078d5382c57125d",
+          "ad22899bf5109a1c4b8d284fcf877962584341f4ee1422927078d5382c57125d"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_2.csv": [
+          "0e4b04fe776f03499e9b5b971fa136680eac988e75ef4bc2398b0ab1cd32c50d",
+          "0e4b04fe776f03499e9b5b971fa136680eac988e75ef4bc2398b0ab1cd32c50d"
+        ],
+        "native/runlog/PacketTrace_node_0.csv": [
+          "274b86265e979e0db36c5820a28013c66f09d196c2b5bbc1ff3d854cb7f020f9",
+          "274b86265e979e0db36c5820a28013c66f09d196c2b5bbc1ff3d854cb7f020f9"
+        ],
+        "native/runlog/PortTrace_node_0_port_0.csv": [
+          "8132a8b72497998f975cc589a0ab0c8abad8f4b544c0514fa29cf6813de86d04",
+          "8132a8b72497998f975cc589a0ab0c8abad8f4b544c0514fa29cf6813de86d04"
+        ],
+        "native/runlog/PortTrace_node_4_port_0.csv": [
+          "6ab32bdd6200ef25255a1e06a6ce19fe7884735ab9d1ef4afe1786dd11f05666",
+          "6ab32bdd6200ef25255a1e06a6ce19fe7884735ab9d1ef4afe1786dd11f05666"
+        ],
+        "native/runlog/TaskTrace_node_1.csv": [
+          "875971352feb461a706b90b125d4cb61ed5b26b54a2fb93d138e285168b35b88",
+          "875971352feb461a706b90b125d4cb61ed5b26b54a2fb93d138e285168b35b88"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_1.csv": [
+          "957e53f3d836d1dc9743cef3b54b2aadd2d27404523a26bb6d3c0565aab585cf",
+          "957e53f3d836d1dc9743cef3b54b2aadd2d27404523a26bb6d3c0565aab585cf"
+        ],
+        "native/runlog/PacketTrace_node_2.csv": [
+          "0cf6b145dddc904d652ae14b7470a3f8d65d888fe865caf05f12582ae4f339ed",
+          "0cf6b145dddc904d652ae14b7470a3f8d65d888fe865caf05f12582ae4f339ed"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_0.csv": [
+          "fb335ff734317216a6e7f65463f724fe929a443eaefdbfe965576cd40c46f258",
+          "fb335ff734317216a6e7f65463f724fe929a443eaefdbfe965576cd40c46f258"
+        ],
+        "native/runlog/PacketTrace_node_3.csv": [
+          "282c1e24af074520cb8eb955e67d81f64adef9a42d44d92a4ab738bae522baf8",
+          "282c1e24af074520cb8eb955e67d81f64adef9a42d44d92a4ab738bae522baf8"
+        ],
+        "native/runlog/PortTrace_node_4_port_1.csv": [
+          "c7526b6803b89260bef984afced1f56211be9c77fca6c98397131974188afdd6",
+          "c7526b6803b89260bef984afced1f56211be9c77fca6c98397131974188afdd6"
+        ],
+        "native/runlog/PacketTrace_node_1.csv": [
+          "0a364e5046f9b3b7dc609e52fc1d7d14f8a9897350069beb94b3d8adb55e6b4b",
+          "0a364e5046f9b3b7dc609e52fc1d7d14f8a9897350069beb94b3d8adb55e6b4b"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_1.csv": [
+          "cac7293b89fc7075bfa5ef681f4599aed451eaf1a5deca176865ccf4efb30ae1",
+          "cac7293b89fc7075bfa5ef681f4599aed451eaf1a5deca176865ccf4efb30ae1"
+        ],
+        "native/runlog/PortTrace_node_4_port_2.csv": [
+          "052f906fb1214e3b2aea16dab927a598ff79e74b026869d9df701c0aa66225bb",
+          "052f906fb1214e3b2aea16dab927a598ff79e74b026869d9df701c0aa66225bb"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_2.csv": [
+          "339e03d72527831d2f9befdf5fe8651a87261fff03dc33e19f078a9ea0c8e502",
+          "339e03d72527831d2f9befdf5fe8651a87261fff03dc33e19f078a9ea0c8e502"
+        ],
+        "native/runlog/TaskTrace_node_0.csv": [
+          "b43d37951114627971a169bc48ce400d771d0b7758dcad287a0b5bf9e78096c7",
+          "b43d37951114627971a169bc48ce400d771d0b7758dcad287a0b5bf9e78096c7"
+        ],
+        "native/runlog/PortTrace_node_4_port_3.csv": [
+          "e50b541b01269f45cde5ac36e1018a65f9c25b2e6030b08b9c5dd73422b412df",
+          "e50b541b01269f45cde5ac36e1018a65f9c25b2e6030b08b9c5dd73422b412df"
+        ],
+        "native/runlog/TaskTrace_node_2.csv": [
+          "636961a4023a0c7b1976e4a08bd438e5b28983ae5b2194b702424d84689b6677",
+          "636961a4023a0c7b1976e4a08bd438e5b28983ae5b2194b702424d84689b6677"
+        ],
+        "native/runlog/PacketTrace_node_4.csv": [
+          "65d53b8deec29329228facd07e125517d2b442fa869e25f93286f8503df18b14",
+          "65d53b8deec29329228facd07e125517d2b442fa869e25f93286f8503df18b14"
+        ],
+        "native/runlog/PortTrace_node_2_port_0.csv": [
+          "7a32f1b9e7bb000efadba31eabe4818d2b1ee32f68ff2662bce83cf69881b8ae",
+          "7a32f1b9e7bb000efadba31eabe4818d2b1ee32f68ff2662bce83cf69881b8ae"
+        ],
+        "native/runlog/PortTrace_node_3_port_0.csv": [
+          "dfb20633aae8fb9f41031a6e44164f018c9d70d5a4abd97c38d04042094b18a9",
+          "dfb20633aae8fb9f41031a6e44164f018c9d70d5a4abd97c38d04042094b18a9"
+        ],
+        "native/runlog/PortTrace_node_1_port_0.csv": [
+          "9a1e17b564e98857e758c2ee8e0a04dea63bb0e35ae21d4cff9dd6b6cf10e617",
+          "9a1e17b564e98857e758c2ee8e0a04dea63bb0e35ae21d4cff9dd6b6cf10e617"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_3.csv": [
+          "ddbf876d0830d38d5fcdd6fcaa3428c8e5ff1c2718015dd2409f308099cbb4d5",
+          "ddbf876d0830d38d5fcdd6fcaa3428c8e5ff1c2718015dd2409f308099cbb4d5"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_3.csv": [
+          "14ce7ff6bcc35a26b34bafed598697043f920afc1451ac352d18750f486ce352",
+          "14ce7ff6bcc35a26b34bafed598697043f920afc1451ac352d18750f486ce352"
+        ],
+        "native/runlog/TaskTrace_node_3.csv": [
+          "b08c574b0c87b9191155868a41cb55512e6789adb0c888a90800989199fff2eb",
+          "b08c574b0c87b9191155868a41cb55512e6789adb0c888a90800989199fff2eb"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_0.csv": [
+          "6d5dbbdf07af9cfd57d1b8a0ad2a04fddd166853a58fb5e1a7cc9782303881ff",
+          "6d5dbbdf07af9cfd57d1b8a0ad2a04fddd166853a58fb5e1a7cc9782303881ff"
+        ]
+      },
+      "layer_latency_ps": 15095720,
+      "simulator_events": 12550,
+      "TA_count": 156,
+      "completed_tokens": 32,
+      "executed_graph_fnv1a64": "db6aa306499b6874"
+    },
+    {
+      "case": "direct-small",
+      "variant": "index-index",
+      "status": "PASS",
+      "input_sha256": "26cd2f6197e54af37ec5cb3f7a65f9436e33c40ba3063e07aaf899be5664f14c",
+      "checks": {
+        "online-summary.json": [],
+        "validation.json": [],
+        "simulator-metrics.json": []
+      },
+      "byte_exact_hashes": {
+        "executed-transfers.csv": [
+          "d8fa16ea7ea4a08207db99ed17264e7eadd444ca0d5a3c5cdbfd4c7860e1d483",
+          "d8fa16ea7ea4a08207db99ed17264e7eadd444ca0d5a3c5cdbfd4c7860e1d483"
+        ],
+        "received-payloads.bin": [
+          "aaf170f5f6c0e739d32ef46e45a105dd67e3854099e3f3e28a94a3a83cc654cf",
+          "aaf170f5f6c0e739d32ef46e45a105dd67e3854099e3f3e28a94a3a83cc654cf"
+        ],
+        "payload-index.csv": [
+          "3759a811e21d1d0e31b1a25ea83639af9015ecc724f7d9c3e56c0e6672463287",
+          "3759a811e21d1d0e31b1a25ea83639af9015ecc724f7d9c3e56c0e6672463287"
+        ],
+        "events.csv": [
+          "6791dcd4fc43e01804bce27fd3f3777004ce925e658c4c56cf073bdcec1a91a7",
+          "6791dcd4fc43e01804bce27fd3f3777004ce925e658c4c56cf073bdcec1a91a7"
+        ],
+        "ta-identity.csv": [
+          "ad22899bf5109a1c4b8d284fcf877962584341f4ee1422927078d5382c57125d",
+          "ad22899bf5109a1c4b8d284fcf877962584341f4ee1422927078d5382c57125d"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_2.csv": [
+          "0e4b04fe776f03499e9b5b971fa136680eac988e75ef4bc2398b0ab1cd32c50d",
+          "0e4b04fe776f03499e9b5b971fa136680eac988e75ef4bc2398b0ab1cd32c50d"
+        ],
+        "native/runlog/PacketTrace_node_0.csv": [
+          "274b86265e979e0db36c5820a28013c66f09d196c2b5bbc1ff3d854cb7f020f9",
+          "274b86265e979e0db36c5820a28013c66f09d196c2b5bbc1ff3d854cb7f020f9"
+        ],
+        "native/runlog/PortTrace_node_0_port_0.csv": [
+          "8132a8b72497998f975cc589a0ab0c8abad8f4b544c0514fa29cf6813de86d04",
+          "8132a8b72497998f975cc589a0ab0c8abad8f4b544c0514fa29cf6813de86d04"
+        ],
+        "native/runlog/PortTrace_node_4_port_0.csv": [
+          "6ab32bdd6200ef25255a1e06a6ce19fe7884735ab9d1ef4afe1786dd11f05666",
+          "6ab32bdd6200ef25255a1e06a6ce19fe7884735ab9d1ef4afe1786dd11f05666"
+        ],
+        "native/runlog/TaskTrace_node_1.csv": [
+          "875971352feb461a706b90b125d4cb61ed5b26b54a2fb93d138e285168b35b88",
+          "875971352feb461a706b90b125d4cb61ed5b26b54a2fb93d138e285168b35b88"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_1.csv": [
+          "957e53f3d836d1dc9743cef3b54b2aadd2d27404523a26bb6d3c0565aab585cf",
+          "957e53f3d836d1dc9743cef3b54b2aadd2d27404523a26bb6d3c0565aab585cf"
+        ],
+        "native/runlog/PacketTrace_node_2.csv": [
+          "0cf6b145dddc904d652ae14b7470a3f8d65d888fe865caf05f12582ae4f339ed",
+          "0cf6b145dddc904d652ae14b7470a3f8d65d888fe865caf05f12582ae4f339ed"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_0.csv": [
+          "fb335ff734317216a6e7f65463f724fe929a443eaefdbfe965576cd40c46f258",
+          "fb335ff734317216a6e7f65463f724fe929a443eaefdbfe965576cd40c46f258"
+        ],
+        "native/runlog/PacketTrace_node_3.csv": [
+          "282c1e24af074520cb8eb955e67d81f64adef9a42d44d92a4ab738bae522baf8",
+          "282c1e24af074520cb8eb955e67d81f64adef9a42d44d92a4ab738bae522baf8"
+        ],
+        "native/runlog/PortTrace_node_4_port_1.csv": [
+          "c7526b6803b89260bef984afced1f56211be9c77fca6c98397131974188afdd6",
+          "c7526b6803b89260bef984afced1f56211be9c77fca6c98397131974188afdd6"
+        ],
+        "native/runlog/PacketTrace_node_1.csv": [
+          "0a364e5046f9b3b7dc609e52fc1d7d14f8a9897350069beb94b3d8adb55e6b4b",
+          "0a364e5046f9b3b7dc609e52fc1d7d14f8a9897350069beb94b3d8adb55e6b4b"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_1.csv": [
+          "cac7293b89fc7075bfa5ef681f4599aed451eaf1a5deca176865ccf4efb30ae1",
+          "cac7293b89fc7075bfa5ef681f4599aed451eaf1a5deca176865ccf4efb30ae1"
+        ],
+        "native/runlog/PortTrace_node_4_port_2.csv": [
+          "052f906fb1214e3b2aea16dab927a598ff79e74b026869d9df701c0aa66225bb",
+          "052f906fb1214e3b2aea16dab927a598ff79e74b026869d9df701c0aa66225bb"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_2.csv": [
+          "339e03d72527831d2f9befdf5fe8651a87261fff03dc33e19f078a9ea0c8e502",
+          "339e03d72527831d2f9befdf5fe8651a87261fff03dc33e19f078a9ea0c8e502"
+        ],
+        "native/runlog/TaskTrace_node_0.csv": [
+          "b43d37951114627971a169bc48ce400d771d0b7758dcad287a0b5bf9e78096c7",
+          "b43d37951114627971a169bc48ce400d771d0b7758dcad287a0b5bf9e78096c7"
+        ],
+        "native/runlog/PortTrace_node_4_port_3.csv": [
+          "e50b541b01269f45cde5ac36e1018a65f9c25b2e6030b08b9c5dd73422b412df",
+          "e50b541b01269f45cde5ac36e1018a65f9c25b2e6030b08b9c5dd73422b412df"
+        ],
+        "native/runlog/TaskTrace_node_2.csv": [
+          "636961a4023a0c7b1976e4a08bd438e5b28983ae5b2194b702424d84689b6677",
+          "636961a4023a0c7b1976e4a08bd438e5b28983ae5b2194b702424d84689b6677"
+        ],
+        "native/runlog/PacketTrace_node_4.csv": [
+          "65d53b8deec29329228facd07e125517d2b442fa869e25f93286f8503df18b14",
+          "65d53b8deec29329228facd07e125517d2b442fa869e25f93286f8503df18b14"
+        ],
+        "native/runlog/PortTrace_node_2_port_0.csv": [
+          "7a32f1b9e7bb000efadba31eabe4818d2b1ee32f68ff2662bce83cf69881b8ae",
+          "7a32f1b9e7bb000efadba31eabe4818d2b1ee32f68ff2662bce83cf69881b8ae"
+        ],
+        "native/runlog/PortTrace_node_3_port_0.csv": [
+          "dfb20633aae8fb9f41031a6e44164f018c9d70d5a4abd97c38d04042094b18a9",
+          "dfb20633aae8fb9f41031a6e44164f018c9d70d5a4abd97c38d04042094b18a9"
+        ],
+        "native/runlog/PortTrace_node_1_port_0.csv": [
+          "9a1e17b564e98857e758c2ee8e0a04dea63bb0e35ae21d4cff9dd6b6cf10e617",
+          "9a1e17b564e98857e758c2ee8e0a04dea63bb0e35ae21d4cff9dd6b6cf10e617"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_3.csv": [
+          "ddbf876d0830d38d5fcdd6fcaa3428c8e5ff1c2718015dd2409f308099cbb4d5",
+          "ddbf876d0830d38d5fcdd6fcaa3428c8e5ff1c2718015dd2409f308099cbb4d5"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_3.csv": [
+          "14ce7ff6bcc35a26b34bafed598697043f920afc1451ac352d18750f486ce352",
+          "14ce7ff6bcc35a26b34bafed598697043f920afc1451ac352d18750f486ce352"
+        ],
+        "native/runlog/TaskTrace_node_3.csv": [
+          "b08c574b0c87b9191155868a41cb55512e6789adb0c888a90800989199fff2eb",
+          "b08c574b0c87b9191155868a41cb55512e6789adb0c888a90800989199fff2eb"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_0.csv": [
+          "6d5dbbdf07af9cfd57d1b8a0ad2a04fddd166853a58fb5e1a7cc9782303881ff",
+          "6d5dbbdf07af9cfd57d1b8a0ad2a04fddd166853a58fb5e1a7cc9782303881ff"
+        ]
+      },
+      "layer_latency_ps": 15095720,
+      "simulator_events": 12550,
+      "TA_count": 156,
+      "completed_tokens": 32,
+      "executed_graph_fnv1a64": "db6aa306499b6874"
+    },
+    {
+      "case": "chunk-small",
+      "variant": "scan-scan",
+      "status": "PASS",
+      "input_sha256": "19baddeea10bc764f06c911d4f6de448fe3b73c44a4e0331bfe9a2cf2e507cb6",
+      "checks": {
+        "online-summary.json": [],
+        "validation.json": [],
+        "simulator-metrics.json": []
+      },
+      "byte_exact_hashes": {
+        "executed-transfers.csv": [
+          "a4122a368fcdd1e1f21b3c79baba367f09d9e7faed29b31fe6f41932c1f889d1",
+          "a4122a368fcdd1e1f21b3c79baba367f09d9e7faed29b31fe6f41932c1f889d1"
+        ],
+        "received-payloads.bin": [
+          "b091f52abb47bb6ef28a2870a689b0b1f713ea6e378d14d4acb2c7ff106bd647",
+          "b091f52abb47bb6ef28a2870a689b0b1f713ea6e378d14d4acb2c7ff106bd647"
+        ],
+        "payload-index.csv": [
+          "92b7bfcb1a4350472ee2fa2fa9927043af058e64b03ff951e1828fe34aaacc4a",
+          "92b7bfcb1a4350472ee2fa2fa9927043af058e64b03ff951e1828fe34aaacc4a"
+        ],
+        "events.csv": [
+          "8a62b9a7db8caa98c13c038d2fd8624c39e065cbdeaa255cadc7e565a8c8fe20",
+          "8a62b9a7db8caa98c13c038d2fd8624c39e065cbdeaa255cadc7e565a8c8fe20"
+        ],
+        "ta-identity.csv": [
+          "04d0cce6080cbcfdc29b280ce061a58942f368209d724bb2e685a08a6b4a40ab",
+          "04d0cce6080cbcfdc29b280ce061a58942f368209d724bb2e685a08a6b4a40ab"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_2.csv": [
+          "aec872c145d1e82275a12c59673c213ba6a863e45a8c020373798f837d319ad4",
+          "aec872c145d1e82275a12c59673c213ba6a863e45a8c020373798f837d319ad4"
+        ],
+        "native/runlog/PacketTrace_node_0.csv": [
+          "3d6c1b9bf82b5bf7e6da231a257afb2fb85f432adc248ec7be611c5786b970c9",
+          "3d6c1b9bf82b5bf7e6da231a257afb2fb85f432adc248ec7be611c5786b970c9"
+        ],
+        "native/runlog/PortTrace_node_0_port_0.csv": [
+          "4e02b050762326c1cc99148b4d708ad363d0ee61bafe74650fe78aeba0dccf3a",
+          "4e02b050762326c1cc99148b4d708ad363d0ee61bafe74650fe78aeba0dccf3a"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_4.csv": [
+          "76706bbd30fc9aa08f1e84fa5be0b9fe0eafd759244ebfe6a414b6fb46ec92d1",
+          "76706bbd30fc9aa08f1e84fa5be0b9fe0eafd759244ebfe6a414b6fb46ec92d1"
+        ],
+        "native/runlog/PacketTrace_node_6.csv": [
+          "680de59b43b9f0a2a9b3acedaad0b27d2241ce8b357218712856988171604a64",
+          "680de59b43b9f0a2a9b3acedaad0b27d2241ce8b357218712856988171604a64"
+        ],
+        "native/runlog/PacketTrace_node_7.csv": [
+          "3ad64b9f93e8546acc6ca3f6169bebc5a3dac1e1b7359f3b4570e5033d774687",
+          "3ad64b9f93e8546acc6ca3f6169bebc5a3dac1e1b7359f3b4570e5033d774687"
+        ],
+        "native/runlog/PortTrace_node_6_port_0.csv": [
+          "3e9c7133bd173e01be6562210c16a9fa5489e07e701f413465c3817be8f00991",
+          "3e9c7133bd173e01be6562210c16a9fa5489e07e701f413465c3817be8f00991"
+        ],
+        "native/runlog/TaskTrace_node_4.csv": [
+          "31d7978d9cb917e8a040e6c2ac6b2d20faeba3ca51f17ddaf46dbebfc34d748d",
+          "31d7978d9cb917e8a040e6c2ac6b2d20faeba3ca51f17ddaf46dbebfc34d748d"
+        ],
+        "native/runlog/PortTrace_node_4_port_0.csv": [
+          "ba9ebcd5defbf3bd6a96aff10aca7137f0fe95f1137c58387068da1baa2c7058",
+          "ba9ebcd5defbf3bd6a96aff10aca7137f0fe95f1137c58387068da1baa2c7058"
+        ],
+        "native/runlog/TaskTrace_node_6.csv": [
+          "32d8099807731a20ff7433aebd89d9f264330b7dd40e50e537ecb28a8cb5dce1",
+          "32d8099807731a20ff7433aebd89d9f264330b7dd40e50e537ecb28a8cb5dce1"
+        ],
+        "native/runlog/PortTrace_node_8_port_5.csv": [
+          "2b9dd84b6249b0b66983acffc7c55afb1274c55c21034ae4c0fba827cba74792",
+          "2b9dd84b6249b0b66983acffc7c55afb1274c55c21034ae4c0fba827cba74792"
+        ],
+        "native/runlog/TaskTrace_node_7.csv": [
+          "06191e5dbd23ad38a954b3028d34828d0aa0733ff5fdee4165f3468098a86bec",
+          "06191e5dbd23ad38a954b3028d34828d0aa0733ff5fdee4165f3468098a86bec"
+        ],
+        "native/runlog/TaskTrace_node_1.csv": [
+          "5337c52feec4e7e1bc9271df15e01608f7bccef12add636ca697418f0c3d14b9",
+          "5337c52feec4e7e1bc9271df15e01608f7bccef12add636ca697418f0c3d14b9"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_1.csv": [
+          "a514856c487bf72ed188cdcf43b528459bdc0d0e79705d42561e3f3b5ef4d9f3",
+          "a514856c487bf72ed188cdcf43b528459bdc0d0e79705d42561e3f3b5ef4d9f3"
+        ],
+        "native/runlog/PacketTrace_node_2.csv": [
+          "e2c9cd31b05f3a00afd8f0ae475a39de10358be7295f58e69f6565a6dc4de26e",
+          "e2c9cd31b05f3a00afd8f0ae475a39de10358be7295f58e69f6565a6dc4de26e"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_0.csv": [
+          "3ccbac26f03a2191a47872b6402df7ad994615c9c4fb184fc4a46d9d75a1649a",
+          "3ccbac26f03a2191a47872b6402df7ad994615c9c4fb184fc4a46d9d75a1649a"
+        ],
+        "native/runlog/PortTrace_node_8_port_6.csv": [
+          "103205f8b155c5bc4e5427127e6d9627aba83bb0839086add481dfa8cd350c85",
+          "103205f8b155c5bc4e5427127e6d9627aba83bb0839086add481dfa8cd350c85"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_6.csv": [
+          "3f66d6cf4d1edb58041621de3f3e685c1b3f92f9eae61240c36d9a1c8b93003d",
+          "3f66d6cf4d1edb58041621de3f3e685c1b3f92f9eae61240c36d9a1c8b93003d"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_5.csv": [
+          "dfd23b9673bd51bf8029aaaa17ebf5596db03e94f4227c51f3c4e9333e13815b",
+          "dfd23b9673bd51bf8029aaaa17ebf5596db03e94f4227c51f3c4e9333e13815b"
+        ],
+        "native/runlog/PortTrace_node_8_port_2.csv": [
+          "528cf4226ed848ee6eb93e3711419f4eac92b68fff9c89baf9467770f9e02b34",
+          "528cf4226ed848ee6eb93e3711419f4eac92b68fff9c89baf9467770f9e02b34"
+        ],
+        "native/runlog/PacketTrace_node_3.csv": [
+          "33afd7ec37bba645fe54b7031b32936d41d551966aaeecd2e708d2eb942bdd35",
+          "33afd7ec37bba645fe54b7031b32936d41d551966aaeecd2e708d2eb942bdd35"
+        ],
+        "native/runlog/PortTrace_node_8_port_4.csv": [
+          "1c244f46ec525d3272176d4b9fe328a14d49e99c1a51b2859136e73e22de566e",
+          "1c244f46ec525d3272176d4b9fe328a14d49e99c1a51b2859136e73e22de566e"
+        ],
+        "native/runlog/PortTrace_node_5_port_0.csv": [
+          "a98c4217fa5ca3764a0bdaec709309db4d7e37938f387d5a39a4e6e33aeab787",
+          "a98c4217fa5ca3764a0bdaec709309db4d7e37938f387d5a39a4e6e33aeab787"
+        ],
+        "native/runlog/PortTrace_node_8_port_3.csv": [
+          "a77ddcd74658dbe025dcf9bf74a5cebe4f6d17755f12fc192cee29235f9a6f8d",
+          "a77ddcd74658dbe025dcf9bf74a5cebe4f6d17755f12fc192cee29235f9a6f8d"
+        ],
+        "native/runlog/PacketTrace_node_1.csv": [
+          "ac67dfbd33ae94c3e4bccdbcec63fc12ad3aa193ebae0ec337f9893a26fda32c",
+          "ac67dfbd33ae94c3e4bccdbcec63fc12ad3aa193ebae0ec337f9893a26fda32c"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_1.csv": [
+          "2f3686778743de7ccd59d246e6bb5e0768aa31bf8c5a1c6d54497aefe53490f6",
+          "2f3686778743de7ccd59d246e6bb5e0768aa31bf8c5a1c6d54497aefe53490f6"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_7.csv": [
+          "4558642f51d7e359e9b84e25bf80aba555ee7e427245cd8da6f1ba1a3f23d109",
+          "4558642f51d7e359e9b84e25bf80aba555ee7e427245cd8da6f1ba1a3f23d109"
+        ],
+        "native/runlog/PortTrace_node_8_port_0.csv": [
+          "434082ed8e27db026dfd1e14f5d2711e5aaa5bd3c9a1e8e2509e742a2a76a33c",
+          "434082ed8e27db026dfd1e14f5d2711e5aaa5bd3c9a1e8e2509e742a2a76a33c"
+        ],
+        "native/runlog/PortTrace_node_8_port_7.csv": [
+          "c3a0e455845a749c99a4680af643effd8ab28185fbbccc884c864ee7e8cdec5f",
+          "c3a0e455845a749c99a4680af643effd8ab28185fbbccc884c864ee7e8cdec5f"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_5.csv": [
+          "256ef89acb0e4aab72e84fc77e9720e4f914961afe02a5108d721abd92185993",
+          "256ef89acb0e4aab72e84fc77e9720e4f914961afe02a5108d721abd92185993"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_2.csv": [
+          "fc4c2347d6d2e2074681844d3febe12c879e6a8f13101f8750b957f0b9bd0808",
+          "fc4c2347d6d2e2074681844d3febe12c879e6a8f13101f8750b957f0b9bd0808"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_6.csv": [
+          "50462d89e5d9546934d955b839b63966aaa5d3da35248bf0258cb788859eb9be",
+          "50462d89e5d9546934d955b839b63966aaa5d3da35248bf0258cb788859eb9be"
+        ],
+        "native/runlog/TaskTrace_node_0.csv": [
+          "aa941f690b110f20b88fcddacf3a893dad2b30247305fcbefa955e3541d9f3e7",
+          "aa941f690b110f20b88fcddacf3a893dad2b30247305fcbefa955e3541d9f3e7"
+        ],
+        "native/runlog/TaskTrace_node_2.csv": [
+          "49afdf20f4db023abfb46e0a7b3a502f7ef7d10249dc9d9b1a7f26e6f08dfbf7",
+          "49afdf20f4db023abfb46e0a7b3a502f7ef7d10249dc9d9b1a7f26e6f08dfbf7"
+        ],
+        "native/runlog/PortTrace_node_8_port_1.csv": [
+          "e70eb475606db1d956cc5d322a977d676b8642db036ece4169c64dc135d55222",
+          "e70eb475606db1d956cc5d322a977d676b8642db036ece4169c64dc135d55222"
+        ],
+        "native/runlog/PacketTrace_node_4.csv": [
+          "756cec14dff4f0993b488cd094822fe0fd1730ffa82a3f5ef7f6bee4040157c3",
+          "756cec14dff4f0993b488cd094822fe0fd1730ffa82a3f5ef7f6bee4040157c3"
+        ],
+        "native/runlog/PacketTrace_node_8.csv": [
+          "1d4a636eace67932f61e9171048953bf5cbdb4da9f7c7b8e21b131e3e3716be2",
+          "1d4a636eace67932f61e9171048953bf5cbdb4da9f7c7b8e21b131e3e3716be2"
+        ],
+        "native/runlog/PortTrace_node_2_port_0.csv": [
+          "fc58922e652686e64aa4bdc27e0f7c489e6cf2e56071ccf34611ff06929af876",
+          "fc58922e652686e64aa4bdc27e0f7c489e6cf2e56071ccf34611ff06929af876"
+        ],
+        "native/runlog/PortTrace_node_3_port_0.csv": [
+          "6d63e8fc8c5424fefbddc51f99c50cdc1f5d9e405a43db3c8e3ad844aba6b53c",
+          "6d63e8fc8c5424fefbddc51f99c50cdc1f5d9e405a43db3c8e3ad844aba6b53c"
+        ],
+        "native/runlog/TaskTrace_node_5.csv": [
+          "fa0cd4014596ca33ac31ea2c1cc780e9d9612e152ae1d464401c78fe58884c67",
+          "fa0cd4014596ca33ac31ea2c1cc780e9d9612e152ae1d464401c78fe58884c67"
+        ],
+        "native/runlog/PortTrace_node_1_port_0.csv": [
+          "731b2cbff96c024269a7ef4e52bf66661fa98c6b08d228fa0e872fc3940907df",
+          "731b2cbff96c024269a7ef4e52bf66661fa98c6b08d228fa0e872fc3940907df"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_7.csv": [
+          "f5ef0e68263682d9badd532d87c082e11569ae85a774de68123296c0e7b1bd64",
+          "f5ef0e68263682d9badd532d87c082e11569ae85a774de68123296c0e7b1bd64"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_4.csv": [
+          "bbb0649888a447c97426d85f29f8a4a59a9c380896d3dbb7923a415c81c5edbc",
+          "bbb0649888a447c97426d85f29f8a4a59a9c380896d3dbb7923a415c81c5edbc"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_3.csv": [
+          "69fd4d35f968f1d6c5dc8230a33cc8b44575b4bda057ef2d62ea44463cbc1060",
+          "69fd4d35f968f1d6c5dc8230a33cc8b44575b4bda057ef2d62ea44463cbc1060"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_3.csv": [
+          "8fd11fdfff15ec8cfef068de1615d2fa0a4561ac3fab37afeea697fb14731169",
+          "8fd11fdfff15ec8cfef068de1615d2fa0a4561ac3fab37afeea697fb14731169"
+        ],
+        "native/runlog/TaskTrace_node_3.csv": [
+          "80c6873ecce59eea03ed140712898b1505401b3507d3006c9228082e8e8772a9",
+          "80c6873ecce59eea03ed140712898b1505401b3507d3006c9228082e8e8772a9"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_0.csv": [
+          "64a7512d5f4f1304b500099c11743026c1786bf2c035f3458e26304f0603aa71",
+          "64a7512d5f4f1304b500099c11743026c1786bf2c035f3458e26304f0603aa71"
+        ],
+        "native/runlog/PacketTrace_node_5.csv": [
+          "3d6e3f065ff843cd6483abebaaea1fdab22badc781a4a7bc6be1ac1714529c39",
+          "3d6e3f065ff843cd6483abebaaea1fdab22badc781a4a7bc6be1ac1714529c39"
+        ],
+        "native/runlog/PortTrace_node_7_port_0.csv": [
+          "d0b0e04a3072cc693ef06aa1060f55a8fdb728dec8ada15d6a606338f4c47955",
+          "d0b0e04a3072cc693ef06aa1060f55a8fdb728dec8ada15d6a606338f4c47955"
+        ]
+      },
+      "layer_latency_ps": 17803720,
+      "simulator_events": 24058,
+      "TA_count": 312,
+      "completed_tokens": 64,
+      "executed_graph_fnv1a64": "20c01cbe1d5d129e"
+    },
+    {
+      "case": "chunk-small",
+      "variant": "index-scan",
+      "status": "PASS",
+      "input_sha256": "19baddeea10bc764f06c911d4f6de448fe3b73c44a4e0331bfe9a2cf2e507cb6",
+      "checks": {
+        "online-summary.json": [],
+        "validation.json": [],
+        "simulator-metrics.json": []
+      },
+      "byte_exact_hashes": {
+        "executed-transfers.csv": [
+          "a4122a368fcdd1e1f21b3c79baba367f09d9e7faed29b31fe6f41932c1f889d1",
+          "a4122a368fcdd1e1f21b3c79baba367f09d9e7faed29b31fe6f41932c1f889d1"
+        ],
+        "received-payloads.bin": [
+          "b091f52abb47bb6ef28a2870a689b0b1f713ea6e378d14d4acb2c7ff106bd647",
+          "b091f52abb47bb6ef28a2870a689b0b1f713ea6e378d14d4acb2c7ff106bd647"
+        ],
+        "payload-index.csv": [
+          "92b7bfcb1a4350472ee2fa2fa9927043af058e64b03ff951e1828fe34aaacc4a",
+          "92b7bfcb1a4350472ee2fa2fa9927043af058e64b03ff951e1828fe34aaacc4a"
+        ],
+        "events.csv": [
+          "8a62b9a7db8caa98c13c038d2fd8624c39e065cbdeaa255cadc7e565a8c8fe20",
+          "8a62b9a7db8caa98c13c038d2fd8624c39e065cbdeaa255cadc7e565a8c8fe20"
+        ],
+        "ta-identity.csv": [
+          "04d0cce6080cbcfdc29b280ce061a58942f368209d724bb2e685a08a6b4a40ab",
+          "04d0cce6080cbcfdc29b280ce061a58942f368209d724bb2e685a08a6b4a40ab"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_2.csv": [
+          "aec872c145d1e82275a12c59673c213ba6a863e45a8c020373798f837d319ad4",
+          "aec872c145d1e82275a12c59673c213ba6a863e45a8c020373798f837d319ad4"
+        ],
+        "native/runlog/PacketTrace_node_0.csv": [
+          "3d6c1b9bf82b5bf7e6da231a257afb2fb85f432adc248ec7be611c5786b970c9",
+          "3d6c1b9bf82b5bf7e6da231a257afb2fb85f432adc248ec7be611c5786b970c9"
+        ],
+        "native/runlog/PortTrace_node_0_port_0.csv": [
+          "4e02b050762326c1cc99148b4d708ad363d0ee61bafe74650fe78aeba0dccf3a",
+          "4e02b050762326c1cc99148b4d708ad363d0ee61bafe74650fe78aeba0dccf3a"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_4.csv": [
+          "76706bbd30fc9aa08f1e84fa5be0b9fe0eafd759244ebfe6a414b6fb46ec92d1",
+          "76706bbd30fc9aa08f1e84fa5be0b9fe0eafd759244ebfe6a414b6fb46ec92d1"
+        ],
+        "native/runlog/PacketTrace_node_6.csv": [
+          "680de59b43b9f0a2a9b3acedaad0b27d2241ce8b357218712856988171604a64",
+          "680de59b43b9f0a2a9b3acedaad0b27d2241ce8b357218712856988171604a64"
+        ],
+        "native/runlog/PacketTrace_node_7.csv": [
+          "3ad64b9f93e8546acc6ca3f6169bebc5a3dac1e1b7359f3b4570e5033d774687",
+          "3ad64b9f93e8546acc6ca3f6169bebc5a3dac1e1b7359f3b4570e5033d774687"
+        ],
+        "native/runlog/PortTrace_node_6_port_0.csv": [
+          "3e9c7133bd173e01be6562210c16a9fa5489e07e701f413465c3817be8f00991",
+          "3e9c7133bd173e01be6562210c16a9fa5489e07e701f413465c3817be8f00991"
+        ],
+        "native/runlog/TaskTrace_node_4.csv": [
+          "31d7978d9cb917e8a040e6c2ac6b2d20faeba3ca51f17ddaf46dbebfc34d748d",
+          "31d7978d9cb917e8a040e6c2ac6b2d20faeba3ca51f17ddaf46dbebfc34d748d"
+        ],
+        "native/runlog/PortTrace_node_4_port_0.csv": [
+          "ba9ebcd5defbf3bd6a96aff10aca7137f0fe95f1137c58387068da1baa2c7058",
+          "ba9ebcd5defbf3bd6a96aff10aca7137f0fe95f1137c58387068da1baa2c7058"
+        ],
+        "native/runlog/TaskTrace_node_6.csv": [
+          "32d8099807731a20ff7433aebd89d9f264330b7dd40e50e537ecb28a8cb5dce1",
+          "32d8099807731a20ff7433aebd89d9f264330b7dd40e50e537ecb28a8cb5dce1"
+        ],
+        "native/runlog/PortTrace_node_8_port_5.csv": [
+          "2b9dd84b6249b0b66983acffc7c55afb1274c55c21034ae4c0fba827cba74792",
+          "2b9dd84b6249b0b66983acffc7c55afb1274c55c21034ae4c0fba827cba74792"
+        ],
+        "native/runlog/TaskTrace_node_7.csv": [
+          "06191e5dbd23ad38a954b3028d34828d0aa0733ff5fdee4165f3468098a86bec",
+          "06191e5dbd23ad38a954b3028d34828d0aa0733ff5fdee4165f3468098a86bec"
+        ],
+        "native/runlog/TaskTrace_node_1.csv": [
+          "5337c52feec4e7e1bc9271df15e01608f7bccef12add636ca697418f0c3d14b9",
+          "5337c52feec4e7e1bc9271df15e01608f7bccef12add636ca697418f0c3d14b9"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_1.csv": [
+          "a514856c487bf72ed188cdcf43b528459bdc0d0e79705d42561e3f3b5ef4d9f3",
+          "a514856c487bf72ed188cdcf43b528459bdc0d0e79705d42561e3f3b5ef4d9f3"
+        ],
+        "native/runlog/PacketTrace_node_2.csv": [
+          "e2c9cd31b05f3a00afd8f0ae475a39de10358be7295f58e69f6565a6dc4de26e",
+          "e2c9cd31b05f3a00afd8f0ae475a39de10358be7295f58e69f6565a6dc4de26e"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_0.csv": [
+          "3ccbac26f03a2191a47872b6402df7ad994615c9c4fb184fc4a46d9d75a1649a",
+          "3ccbac26f03a2191a47872b6402df7ad994615c9c4fb184fc4a46d9d75a1649a"
+        ],
+        "native/runlog/PortTrace_node_8_port_6.csv": [
+          "103205f8b155c5bc4e5427127e6d9627aba83bb0839086add481dfa8cd350c85",
+          "103205f8b155c5bc4e5427127e6d9627aba83bb0839086add481dfa8cd350c85"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_6.csv": [
+          "3f66d6cf4d1edb58041621de3f3e685c1b3f92f9eae61240c36d9a1c8b93003d",
+          "3f66d6cf4d1edb58041621de3f3e685c1b3f92f9eae61240c36d9a1c8b93003d"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_5.csv": [
+          "dfd23b9673bd51bf8029aaaa17ebf5596db03e94f4227c51f3c4e9333e13815b",
+          "dfd23b9673bd51bf8029aaaa17ebf5596db03e94f4227c51f3c4e9333e13815b"
+        ],
+        "native/runlog/PortTrace_node_8_port_2.csv": [
+          "528cf4226ed848ee6eb93e3711419f4eac92b68fff9c89baf9467770f9e02b34",
+          "528cf4226ed848ee6eb93e3711419f4eac92b68fff9c89baf9467770f9e02b34"
+        ],
+        "native/runlog/PacketTrace_node_3.csv": [
+          "33afd7ec37bba645fe54b7031b32936d41d551966aaeecd2e708d2eb942bdd35",
+          "33afd7ec37bba645fe54b7031b32936d41d551966aaeecd2e708d2eb942bdd35"
+        ],
+        "native/runlog/PortTrace_node_8_port_4.csv": [
+          "1c244f46ec525d3272176d4b9fe328a14d49e99c1a51b2859136e73e22de566e",
+          "1c244f46ec525d3272176d4b9fe328a14d49e99c1a51b2859136e73e22de566e"
+        ],
+        "native/runlog/PortTrace_node_5_port_0.csv": [
+          "a98c4217fa5ca3764a0bdaec709309db4d7e37938f387d5a39a4e6e33aeab787",
+          "a98c4217fa5ca3764a0bdaec709309db4d7e37938f387d5a39a4e6e33aeab787"
+        ],
+        "native/runlog/PortTrace_node_8_port_3.csv": [
+          "a77ddcd74658dbe025dcf9bf74a5cebe4f6d17755f12fc192cee29235f9a6f8d",
+          "a77ddcd74658dbe025dcf9bf74a5cebe4f6d17755f12fc192cee29235f9a6f8d"
+        ],
+        "native/runlog/PacketTrace_node_1.csv": [
+          "ac67dfbd33ae94c3e4bccdbcec63fc12ad3aa193ebae0ec337f9893a26fda32c",
+          "ac67dfbd33ae94c3e4bccdbcec63fc12ad3aa193ebae0ec337f9893a26fda32c"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_1.csv": [
+          "2f3686778743de7ccd59d246e6bb5e0768aa31bf8c5a1c6d54497aefe53490f6",
+          "2f3686778743de7ccd59d246e6bb5e0768aa31bf8c5a1c6d54497aefe53490f6"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_7.csv": [
+          "4558642f51d7e359e9b84e25bf80aba555ee7e427245cd8da6f1ba1a3f23d109",
+          "4558642f51d7e359e9b84e25bf80aba555ee7e427245cd8da6f1ba1a3f23d109"
+        ],
+        "native/runlog/PortTrace_node_8_port_0.csv": [
+          "434082ed8e27db026dfd1e14f5d2711e5aaa5bd3c9a1e8e2509e742a2a76a33c",
+          "434082ed8e27db026dfd1e14f5d2711e5aaa5bd3c9a1e8e2509e742a2a76a33c"
+        ],
+        "native/runlog/PortTrace_node_8_port_7.csv": [
+          "c3a0e455845a749c99a4680af643effd8ab28185fbbccc884c864ee7e8cdec5f",
+          "c3a0e455845a749c99a4680af643effd8ab28185fbbccc884c864ee7e8cdec5f"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_5.csv": [
+          "256ef89acb0e4aab72e84fc77e9720e4f914961afe02a5108d721abd92185993",
+          "256ef89acb0e4aab72e84fc77e9720e4f914961afe02a5108d721abd92185993"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_2.csv": [
+          "fc4c2347d6d2e2074681844d3febe12c879e6a8f13101f8750b957f0b9bd0808",
+          "fc4c2347d6d2e2074681844d3febe12c879e6a8f13101f8750b957f0b9bd0808"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_6.csv": [
+          "50462d89e5d9546934d955b839b63966aaa5d3da35248bf0258cb788859eb9be",
+          "50462d89e5d9546934d955b839b63966aaa5d3da35248bf0258cb788859eb9be"
+        ],
+        "native/runlog/TaskTrace_node_0.csv": [
+          "aa941f690b110f20b88fcddacf3a893dad2b30247305fcbefa955e3541d9f3e7",
+          "aa941f690b110f20b88fcddacf3a893dad2b30247305fcbefa955e3541d9f3e7"
+        ],
+        "native/runlog/TaskTrace_node_2.csv": [
+          "49afdf20f4db023abfb46e0a7b3a502f7ef7d10249dc9d9b1a7f26e6f08dfbf7",
+          "49afdf20f4db023abfb46e0a7b3a502f7ef7d10249dc9d9b1a7f26e6f08dfbf7"
+        ],
+        "native/runlog/PortTrace_node_8_port_1.csv": [
+          "e70eb475606db1d956cc5d322a977d676b8642db036ece4169c64dc135d55222",
+          "e70eb475606db1d956cc5d322a977d676b8642db036ece4169c64dc135d55222"
+        ],
+        "native/runlog/PacketTrace_node_4.csv": [
+          "756cec14dff4f0993b488cd094822fe0fd1730ffa82a3f5ef7f6bee4040157c3",
+          "756cec14dff4f0993b488cd094822fe0fd1730ffa82a3f5ef7f6bee4040157c3"
+        ],
+        "native/runlog/PacketTrace_node_8.csv": [
+          "1d4a636eace67932f61e9171048953bf5cbdb4da9f7c7b8e21b131e3e3716be2",
+          "1d4a636eace67932f61e9171048953bf5cbdb4da9f7c7b8e21b131e3e3716be2"
+        ],
+        "native/runlog/PortTrace_node_2_port_0.csv": [
+          "fc58922e652686e64aa4bdc27e0f7c489e6cf2e56071ccf34611ff06929af876",
+          "fc58922e652686e64aa4bdc27e0f7c489e6cf2e56071ccf34611ff06929af876"
+        ],
+        "native/runlog/PortTrace_node_3_port_0.csv": [
+          "6d63e8fc8c5424fefbddc51f99c50cdc1f5d9e405a43db3c8e3ad844aba6b53c",
+          "6d63e8fc8c5424fefbddc51f99c50cdc1f5d9e405a43db3c8e3ad844aba6b53c"
+        ],
+        "native/runlog/TaskTrace_node_5.csv": [
+          "fa0cd4014596ca33ac31ea2c1cc780e9d9612e152ae1d464401c78fe58884c67",
+          "fa0cd4014596ca33ac31ea2c1cc780e9d9612e152ae1d464401c78fe58884c67"
+        ],
+        "native/runlog/PortTrace_node_1_port_0.csv": [
+          "731b2cbff96c024269a7ef4e52bf66661fa98c6b08d228fa0e872fc3940907df",
+          "731b2cbff96c024269a7ef4e52bf66661fa98c6b08d228fa0e872fc3940907df"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_7.csv": [
+          "f5ef0e68263682d9badd532d87c082e11569ae85a774de68123296c0e7b1bd64",
+          "f5ef0e68263682d9badd532d87c082e11569ae85a774de68123296c0e7b1bd64"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_4.csv": [
+          "bbb0649888a447c97426d85f29f8a4a59a9c380896d3dbb7923a415c81c5edbc",
+          "bbb0649888a447c97426d85f29f8a4a59a9c380896d3dbb7923a415c81c5edbc"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_3.csv": [
+          "69fd4d35f968f1d6c5dc8230a33cc8b44575b4bda057ef2d62ea44463cbc1060",
+          "69fd4d35f968f1d6c5dc8230a33cc8b44575b4bda057ef2d62ea44463cbc1060"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_3.csv": [
+          "8fd11fdfff15ec8cfef068de1615d2fa0a4561ac3fab37afeea697fb14731169",
+          "8fd11fdfff15ec8cfef068de1615d2fa0a4561ac3fab37afeea697fb14731169"
+        ],
+        "native/runlog/TaskTrace_node_3.csv": [
+          "80c6873ecce59eea03ed140712898b1505401b3507d3006c9228082e8e8772a9",
+          "80c6873ecce59eea03ed140712898b1505401b3507d3006c9228082e8e8772a9"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_0.csv": [
+          "64a7512d5f4f1304b500099c11743026c1786bf2c035f3458e26304f0603aa71",
+          "64a7512d5f4f1304b500099c11743026c1786bf2c035f3458e26304f0603aa71"
+        ],
+        "native/runlog/PacketTrace_node_5.csv": [
+          "3d6e3f065ff843cd6483abebaaea1fdab22badc781a4a7bc6be1ac1714529c39",
+          "3d6e3f065ff843cd6483abebaaea1fdab22badc781a4a7bc6be1ac1714529c39"
+        ],
+        "native/runlog/PortTrace_node_7_port_0.csv": [
+          "d0b0e04a3072cc693ef06aa1060f55a8fdb728dec8ada15d6a606338f4c47955",
+          "d0b0e04a3072cc693ef06aa1060f55a8fdb728dec8ada15d6a606338f4c47955"
+        ]
+      },
+      "layer_latency_ps": 17803720,
+      "simulator_events": 24058,
+      "TA_count": 312,
+      "completed_tokens": 64,
+      "executed_graph_fnv1a64": "20c01cbe1d5d129e"
+    },
+    {
+      "case": "chunk-small",
+      "variant": "scan-index",
+      "status": "PASS",
+      "input_sha256": "19baddeea10bc764f06c911d4f6de448fe3b73c44a4e0331bfe9a2cf2e507cb6",
+      "checks": {
+        "online-summary.json": [],
+        "validation.json": [],
+        "simulator-metrics.json": []
+      },
+      "byte_exact_hashes": {
+        "executed-transfers.csv": [
+          "a4122a368fcdd1e1f21b3c79baba367f09d9e7faed29b31fe6f41932c1f889d1",
+          "a4122a368fcdd1e1f21b3c79baba367f09d9e7faed29b31fe6f41932c1f889d1"
+        ],
+        "received-payloads.bin": [
+          "b091f52abb47bb6ef28a2870a689b0b1f713ea6e378d14d4acb2c7ff106bd647",
+          "b091f52abb47bb6ef28a2870a689b0b1f713ea6e378d14d4acb2c7ff106bd647"
+        ],
+        "payload-index.csv": [
+          "92b7bfcb1a4350472ee2fa2fa9927043af058e64b03ff951e1828fe34aaacc4a",
+          "92b7bfcb1a4350472ee2fa2fa9927043af058e64b03ff951e1828fe34aaacc4a"
+        ],
+        "events.csv": [
+          "8a62b9a7db8caa98c13c038d2fd8624c39e065cbdeaa255cadc7e565a8c8fe20",
+          "8a62b9a7db8caa98c13c038d2fd8624c39e065cbdeaa255cadc7e565a8c8fe20"
+        ],
+        "ta-identity.csv": [
+          "04d0cce6080cbcfdc29b280ce061a58942f368209d724bb2e685a08a6b4a40ab",
+          "04d0cce6080cbcfdc29b280ce061a58942f368209d724bb2e685a08a6b4a40ab"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_2.csv": [
+          "aec872c145d1e82275a12c59673c213ba6a863e45a8c020373798f837d319ad4",
+          "aec872c145d1e82275a12c59673c213ba6a863e45a8c020373798f837d319ad4"
+        ],
+        "native/runlog/PacketTrace_node_0.csv": [
+          "3d6c1b9bf82b5bf7e6da231a257afb2fb85f432adc248ec7be611c5786b970c9",
+          "3d6c1b9bf82b5bf7e6da231a257afb2fb85f432adc248ec7be611c5786b970c9"
+        ],
+        "native/runlog/PortTrace_node_0_port_0.csv": [
+          "4e02b050762326c1cc99148b4d708ad363d0ee61bafe74650fe78aeba0dccf3a",
+          "4e02b050762326c1cc99148b4d708ad363d0ee61bafe74650fe78aeba0dccf3a"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_4.csv": [
+          "76706bbd30fc9aa08f1e84fa5be0b9fe0eafd759244ebfe6a414b6fb46ec92d1",
+          "76706bbd30fc9aa08f1e84fa5be0b9fe0eafd759244ebfe6a414b6fb46ec92d1"
+        ],
+        "native/runlog/PacketTrace_node_6.csv": [
+          "680de59b43b9f0a2a9b3acedaad0b27d2241ce8b357218712856988171604a64",
+          "680de59b43b9f0a2a9b3acedaad0b27d2241ce8b357218712856988171604a64"
+        ],
+        "native/runlog/PacketTrace_node_7.csv": [
+          "3ad64b9f93e8546acc6ca3f6169bebc5a3dac1e1b7359f3b4570e5033d774687",
+          "3ad64b9f93e8546acc6ca3f6169bebc5a3dac1e1b7359f3b4570e5033d774687"
+        ],
+        "native/runlog/PortTrace_node_6_port_0.csv": [
+          "3e9c7133bd173e01be6562210c16a9fa5489e07e701f413465c3817be8f00991",
+          "3e9c7133bd173e01be6562210c16a9fa5489e07e701f413465c3817be8f00991"
+        ],
+        "native/runlog/TaskTrace_node_4.csv": [
+          "31d7978d9cb917e8a040e6c2ac6b2d20faeba3ca51f17ddaf46dbebfc34d748d",
+          "31d7978d9cb917e8a040e6c2ac6b2d20faeba3ca51f17ddaf46dbebfc34d748d"
+        ],
+        "native/runlog/PortTrace_node_4_port_0.csv": [
+          "ba9ebcd5defbf3bd6a96aff10aca7137f0fe95f1137c58387068da1baa2c7058",
+          "ba9ebcd5defbf3bd6a96aff10aca7137f0fe95f1137c58387068da1baa2c7058"
+        ],
+        "native/runlog/TaskTrace_node_6.csv": [
+          "32d8099807731a20ff7433aebd89d9f264330b7dd40e50e537ecb28a8cb5dce1",
+          "32d8099807731a20ff7433aebd89d9f264330b7dd40e50e537ecb28a8cb5dce1"
+        ],
+        "native/runlog/PortTrace_node_8_port_5.csv": [
+          "2b9dd84b6249b0b66983acffc7c55afb1274c55c21034ae4c0fba827cba74792",
+          "2b9dd84b6249b0b66983acffc7c55afb1274c55c21034ae4c0fba827cba74792"
+        ],
+        "native/runlog/TaskTrace_node_7.csv": [
+          "06191e5dbd23ad38a954b3028d34828d0aa0733ff5fdee4165f3468098a86bec",
+          "06191e5dbd23ad38a954b3028d34828d0aa0733ff5fdee4165f3468098a86bec"
+        ],
+        "native/runlog/TaskTrace_node_1.csv": [
+          "5337c52feec4e7e1bc9271df15e01608f7bccef12add636ca697418f0c3d14b9",
+          "5337c52feec4e7e1bc9271df15e01608f7bccef12add636ca697418f0c3d14b9"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_1.csv": [
+          "a514856c487bf72ed188cdcf43b528459bdc0d0e79705d42561e3f3b5ef4d9f3",
+          "a514856c487bf72ed188cdcf43b528459bdc0d0e79705d42561e3f3b5ef4d9f3"
+        ],
+        "native/runlog/PacketTrace_node_2.csv": [
+          "e2c9cd31b05f3a00afd8f0ae475a39de10358be7295f58e69f6565a6dc4de26e",
+          "e2c9cd31b05f3a00afd8f0ae475a39de10358be7295f58e69f6565a6dc4de26e"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_0.csv": [
+          "3ccbac26f03a2191a47872b6402df7ad994615c9c4fb184fc4a46d9d75a1649a",
+          "3ccbac26f03a2191a47872b6402df7ad994615c9c4fb184fc4a46d9d75a1649a"
+        ],
+        "native/runlog/PortTrace_node_8_port_6.csv": [
+          "103205f8b155c5bc4e5427127e6d9627aba83bb0839086add481dfa8cd350c85",
+          "103205f8b155c5bc4e5427127e6d9627aba83bb0839086add481dfa8cd350c85"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_6.csv": [
+          "3f66d6cf4d1edb58041621de3f3e685c1b3f92f9eae61240c36d9a1c8b93003d",
+          "3f66d6cf4d1edb58041621de3f3e685c1b3f92f9eae61240c36d9a1c8b93003d"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_5.csv": [
+          "dfd23b9673bd51bf8029aaaa17ebf5596db03e94f4227c51f3c4e9333e13815b",
+          "dfd23b9673bd51bf8029aaaa17ebf5596db03e94f4227c51f3c4e9333e13815b"
+        ],
+        "native/runlog/PortTrace_node_8_port_2.csv": [
+          "528cf4226ed848ee6eb93e3711419f4eac92b68fff9c89baf9467770f9e02b34",
+          "528cf4226ed848ee6eb93e3711419f4eac92b68fff9c89baf9467770f9e02b34"
+        ],
+        "native/runlog/PacketTrace_node_3.csv": [
+          "33afd7ec37bba645fe54b7031b32936d41d551966aaeecd2e708d2eb942bdd35",
+          "33afd7ec37bba645fe54b7031b32936d41d551966aaeecd2e708d2eb942bdd35"
+        ],
+        "native/runlog/PortTrace_node_8_port_4.csv": [
+          "1c244f46ec525d3272176d4b9fe328a14d49e99c1a51b2859136e73e22de566e",
+          "1c244f46ec525d3272176d4b9fe328a14d49e99c1a51b2859136e73e22de566e"
+        ],
+        "native/runlog/PortTrace_node_5_port_0.csv": [
+          "a98c4217fa5ca3764a0bdaec709309db4d7e37938f387d5a39a4e6e33aeab787",
+          "a98c4217fa5ca3764a0bdaec709309db4d7e37938f387d5a39a4e6e33aeab787"
+        ],
+        "native/runlog/PortTrace_node_8_port_3.csv": [
+          "a77ddcd74658dbe025dcf9bf74a5cebe4f6d17755f12fc192cee29235f9a6f8d",
+          "a77ddcd74658dbe025dcf9bf74a5cebe4f6d17755f12fc192cee29235f9a6f8d"
+        ],
+        "native/runlog/PacketTrace_node_1.csv": [
+          "ac67dfbd33ae94c3e4bccdbcec63fc12ad3aa193ebae0ec337f9893a26fda32c",
+          "ac67dfbd33ae94c3e4bccdbcec63fc12ad3aa193ebae0ec337f9893a26fda32c"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_1.csv": [
+          "2f3686778743de7ccd59d246e6bb5e0768aa31bf8c5a1c6d54497aefe53490f6",
+          "2f3686778743de7ccd59d246e6bb5e0768aa31bf8c5a1c6d54497aefe53490f6"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_7.csv": [
+          "4558642f51d7e359e9b84e25bf80aba555ee7e427245cd8da6f1ba1a3f23d109",
+          "4558642f51d7e359e9b84e25bf80aba555ee7e427245cd8da6f1ba1a3f23d109"
+        ],
+        "native/runlog/PortTrace_node_8_port_0.csv": [
+          "434082ed8e27db026dfd1e14f5d2711e5aaa5bd3c9a1e8e2509e742a2a76a33c",
+          "434082ed8e27db026dfd1e14f5d2711e5aaa5bd3c9a1e8e2509e742a2a76a33c"
+        ],
+        "native/runlog/PortTrace_node_8_port_7.csv": [
+          "c3a0e455845a749c99a4680af643effd8ab28185fbbccc884c864ee7e8cdec5f",
+          "c3a0e455845a749c99a4680af643effd8ab28185fbbccc884c864ee7e8cdec5f"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_5.csv": [
+          "256ef89acb0e4aab72e84fc77e9720e4f914961afe02a5108d721abd92185993",
+          "256ef89acb0e4aab72e84fc77e9720e4f914961afe02a5108d721abd92185993"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_2.csv": [
+          "fc4c2347d6d2e2074681844d3febe12c879e6a8f13101f8750b957f0b9bd0808",
+          "fc4c2347d6d2e2074681844d3febe12c879e6a8f13101f8750b957f0b9bd0808"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_6.csv": [
+          "50462d89e5d9546934d955b839b63966aaa5d3da35248bf0258cb788859eb9be",
+          "50462d89e5d9546934d955b839b63966aaa5d3da35248bf0258cb788859eb9be"
+        ],
+        "native/runlog/TaskTrace_node_0.csv": [
+          "aa941f690b110f20b88fcddacf3a893dad2b30247305fcbefa955e3541d9f3e7",
+          "aa941f690b110f20b88fcddacf3a893dad2b30247305fcbefa955e3541d9f3e7"
+        ],
+        "native/runlog/TaskTrace_node_2.csv": [
+          "49afdf20f4db023abfb46e0a7b3a502f7ef7d10249dc9d9b1a7f26e6f08dfbf7",
+          "49afdf20f4db023abfb46e0a7b3a502f7ef7d10249dc9d9b1a7f26e6f08dfbf7"
+        ],
+        "native/runlog/PortTrace_node_8_port_1.csv": [
+          "e70eb475606db1d956cc5d322a977d676b8642db036ece4169c64dc135d55222",
+          "e70eb475606db1d956cc5d322a977d676b8642db036ece4169c64dc135d55222"
+        ],
+        "native/runlog/PacketTrace_node_4.csv": [
+          "756cec14dff4f0993b488cd094822fe0fd1730ffa82a3f5ef7f6bee4040157c3",
+          "756cec14dff4f0993b488cd094822fe0fd1730ffa82a3f5ef7f6bee4040157c3"
+        ],
+        "native/runlog/PacketTrace_node_8.csv": [
+          "1d4a636eace67932f61e9171048953bf5cbdb4da9f7c7b8e21b131e3e3716be2",
+          "1d4a636eace67932f61e9171048953bf5cbdb4da9f7c7b8e21b131e3e3716be2"
+        ],
+        "native/runlog/PortTrace_node_2_port_0.csv": [
+          "fc58922e652686e64aa4bdc27e0f7c489e6cf2e56071ccf34611ff06929af876",
+          "fc58922e652686e64aa4bdc27e0f7c489e6cf2e56071ccf34611ff06929af876"
+        ],
+        "native/runlog/PortTrace_node_3_port_0.csv": [
+          "6d63e8fc8c5424fefbddc51f99c50cdc1f5d9e405a43db3c8e3ad844aba6b53c",
+          "6d63e8fc8c5424fefbddc51f99c50cdc1f5d9e405a43db3c8e3ad844aba6b53c"
+        ],
+        "native/runlog/TaskTrace_node_5.csv": [
+          "fa0cd4014596ca33ac31ea2c1cc780e9d9612e152ae1d464401c78fe58884c67",
+          "fa0cd4014596ca33ac31ea2c1cc780e9d9612e152ae1d464401c78fe58884c67"
+        ],
+        "native/runlog/PortTrace_node_1_port_0.csv": [
+          "731b2cbff96c024269a7ef4e52bf66661fa98c6b08d228fa0e872fc3940907df",
+          "731b2cbff96c024269a7ef4e52bf66661fa98c6b08d228fa0e872fc3940907df"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_7.csv": [
+          "f5ef0e68263682d9badd532d87c082e11569ae85a774de68123296c0e7b1bd64",
+          "f5ef0e68263682d9badd532d87c082e11569ae85a774de68123296c0e7b1bd64"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_4.csv": [
+          "bbb0649888a447c97426d85f29f8a4a59a9c380896d3dbb7923a415c81c5edbc",
+          "bbb0649888a447c97426d85f29f8a4a59a9c380896d3dbb7923a415c81c5edbc"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_3.csv": [
+          "69fd4d35f968f1d6c5dc8230a33cc8b44575b4bda057ef2d62ea44463cbc1060",
+          "69fd4d35f968f1d6c5dc8230a33cc8b44575b4bda057ef2d62ea44463cbc1060"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_3.csv": [
+          "8fd11fdfff15ec8cfef068de1615d2fa0a4561ac3fab37afeea697fb14731169",
+          "8fd11fdfff15ec8cfef068de1615d2fa0a4561ac3fab37afeea697fb14731169"
+        ],
+        "native/runlog/TaskTrace_node_3.csv": [
+          "80c6873ecce59eea03ed140712898b1505401b3507d3006c9228082e8e8772a9",
+          "80c6873ecce59eea03ed140712898b1505401b3507d3006c9228082e8e8772a9"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_0.csv": [
+          "64a7512d5f4f1304b500099c11743026c1786bf2c035f3458e26304f0603aa71",
+          "64a7512d5f4f1304b500099c11743026c1786bf2c035f3458e26304f0603aa71"
+        ],
+        "native/runlog/PacketTrace_node_5.csv": [
+          "3d6e3f065ff843cd6483abebaaea1fdab22badc781a4a7bc6be1ac1714529c39",
+          "3d6e3f065ff843cd6483abebaaea1fdab22badc781a4a7bc6be1ac1714529c39"
+        ],
+        "native/runlog/PortTrace_node_7_port_0.csv": [
+          "d0b0e04a3072cc693ef06aa1060f55a8fdb728dec8ada15d6a606338f4c47955",
+          "d0b0e04a3072cc693ef06aa1060f55a8fdb728dec8ada15d6a606338f4c47955"
+        ]
+      },
+      "layer_latency_ps": 17803720,
+      "simulator_events": 24058,
+      "TA_count": 312,
+      "completed_tokens": 64,
+      "executed_graph_fnv1a64": "20c01cbe1d5d129e"
+    },
+    {
+      "case": "chunk-small",
+      "variant": "index-index",
+      "status": "PASS",
+      "input_sha256": "19baddeea10bc764f06c911d4f6de448fe3b73c44a4e0331bfe9a2cf2e507cb6",
+      "checks": {
+        "online-summary.json": [],
+        "validation.json": [],
+        "simulator-metrics.json": []
+      },
+      "byte_exact_hashes": {
+        "executed-transfers.csv": [
+          "a4122a368fcdd1e1f21b3c79baba367f09d9e7faed29b31fe6f41932c1f889d1",
+          "a4122a368fcdd1e1f21b3c79baba367f09d9e7faed29b31fe6f41932c1f889d1"
+        ],
+        "received-payloads.bin": [
+          "b091f52abb47bb6ef28a2870a689b0b1f713ea6e378d14d4acb2c7ff106bd647",
+          "b091f52abb47bb6ef28a2870a689b0b1f713ea6e378d14d4acb2c7ff106bd647"
+        ],
+        "payload-index.csv": [
+          "92b7bfcb1a4350472ee2fa2fa9927043af058e64b03ff951e1828fe34aaacc4a",
+          "92b7bfcb1a4350472ee2fa2fa9927043af058e64b03ff951e1828fe34aaacc4a"
+        ],
+        "events.csv": [
+          "8a62b9a7db8caa98c13c038d2fd8624c39e065cbdeaa255cadc7e565a8c8fe20",
+          "8a62b9a7db8caa98c13c038d2fd8624c39e065cbdeaa255cadc7e565a8c8fe20"
+        ],
+        "ta-identity.csv": [
+          "04d0cce6080cbcfdc29b280ce061a58942f368209d724bb2e685a08a6b4a40ab",
+          "04d0cce6080cbcfdc29b280ce061a58942f368209d724bb2e685a08a6b4a40ab"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_2.csv": [
+          "aec872c145d1e82275a12c59673c213ba6a863e45a8c020373798f837d319ad4",
+          "aec872c145d1e82275a12c59673c213ba6a863e45a8c020373798f837d319ad4"
+        ],
+        "native/runlog/PacketTrace_node_0.csv": [
+          "3d6c1b9bf82b5bf7e6da231a257afb2fb85f432adc248ec7be611c5786b970c9",
+          "3d6c1b9bf82b5bf7e6da231a257afb2fb85f432adc248ec7be611c5786b970c9"
+        ],
+        "native/runlog/PortTrace_node_0_port_0.csv": [
+          "4e02b050762326c1cc99148b4d708ad363d0ee61bafe74650fe78aeba0dccf3a",
+          "4e02b050762326c1cc99148b4d708ad363d0ee61bafe74650fe78aeba0dccf3a"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_4.csv": [
+          "76706bbd30fc9aa08f1e84fa5be0b9fe0eafd759244ebfe6a414b6fb46ec92d1",
+          "76706bbd30fc9aa08f1e84fa5be0b9fe0eafd759244ebfe6a414b6fb46ec92d1"
+        ],
+        "native/runlog/PacketTrace_node_6.csv": [
+          "680de59b43b9f0a2a9b3acedaad0b27d2241ce8b357218712856988171604a64",
+          "680de59b43b9f0a2a9b3acedaad0b27d2241ce8b357218712856988171604a64"
+        ],
+        "native/runlog/PacketTrace_node_7.csv": [
+          "3ad64b9f93e8546acc6ca3f6169bebc5a3dac1e1b7359f3b4570e5033d774687",
+          "3ad64b9f93e8546acc6ca3f6169bebc5a3dac1e1b7359f3b4570e5033d774687"
+        ],
+        "native/runlog/PortTrace_node_6_port_0.csv": [
+          "3e9c7133bd173e01be6562210c16a9fa5489e07e701f413465c3817be8f00991",
+          "3e9c7133bd173e01be6562210c16a9fa5489e07e701f413465c3817be8f00991"
+        ],
+        "native/runlog/TaskTrace_node_4.csv": [
+          "31d7978d9cb917e8a040e6c2ac6b2d20faeba3ca51f17ddaf46dbebfc34d748d",
+          "31d7978d9cb917e8a040e6c2ac6b2d20faeba3ca51f17ddaf46dbebfc34d748d"
+        ],
+        "native/runlog/PortTrace_node_4_port_0.csv": [
+          "ba9ebcd5defbf3bd6a96aff10aca7137f0fe95f1137c58387068da1baa2c7058",
+          "ba9ebcd5defbf3bd6a96aff10aca7137f0fe95f1137c58387068da1baa2c7058"
+        ],
+        "native/runlog/TaskTrace_node_6.csv": [
+          "32d8099807731a20ff7433aebd89d9f264330b7dd40e50e537ecb28a8cb5dce1",
+          "32d8099807731a20ff7433aebd89d9f264330b7dd40e50e537ecb28a8cb5dce1"
+        ],
+        "native/runlog/PortTrace_node_8_port_5.csv": [
+          "2b9dd84b6249b0b66983acffc7c55afb1274c55c21034ae4c0fba827cba74792",
+          "2b9dd84b6249b0b66983acffc7c55afb1274c55c21034ae4c0fba827cba74792"
+        ],
+        "native/runlog/TaskTrace_node_7.csv": [
+          "06191e5dbd23ad38a954b3028d34828d0aa0733ff5fdee4165f3468098a86bec",
+          "06191e5dbd23ad38a954b3028d34828d0aa0733ff5fdee4165f3468098a86bec"
+        ],
+        "native/runlog/TaskTrace_node_1.csv": [
+          "5337c52feec4e7e1bc9271df15e01608f7bccef12add636ca697418f0c3d14b9",
+          "5337c52feec4e7e1bc9271df15e01608f7bccef12add636ca697418f0c3d14b9"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_1.csv": [
+          "a514856c487bf72ed188cdcf43b528459bdc0d0e79705d42561e3f3b5ef4d9f3",
+          "a514856c487bf72ed188cdcf43b528459bdc0d0e79705d42561e3f3b5ef4d9f3"
+        ],
+        "native/runlog/PacketTrace_node_2.csv": [
+          "e2c9cd31b05f3a00afd8f0ae475a39de10358be7295f58e69f6565a6dc4de26e",
+          "e2c9cd31b05f3a00afd8f0ae475a39de10358be7295f58e69f6565a6dc4de26e"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_0.csv": [
+          "3ccbac26f03a2191a47872b6402df7ad994615c9c4fb184fc4a46d9d75a1649a",
+          "3ccbac26f03a2191a47872b6402df7ad994615c9c4fb184fc4a46d9d75a1649a"
+        ],
+        "native/runlog/PortTrace_node_8_port_6.csv": [
+          "103205f8b155c5bc4e5427127e6d9627aba83bb0839086add481dfa8cd350c85",
+          "103205f8b155c5bc4e5427127e6d9627aba83bb0839086add481dfa8cd350c85"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_6.csv": [
+          "3f66d6cf4d1edb58041621de3f3e685c1b3f92f9eae61240c36d9a1c8b93003d",
+          "3f66d6cf4d1edb58041621de3f3e685c1b3f92f9eae61240c36d9a1c8b93003d"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_5.csv": [
+          "dfd23b9673bd51bf8029aaaa17ebf5596db03e94f4227c51f3c4e9333e13815b",
+          "dfd23b9673bd51bf8029aaaa17ebf5596db03e94f4227c51f3c4e9333e13815b"
+        ],
+        "native/runlog/PortTrace_node_8_port_2.csv": [
+          "528cf4226ed848ee6eb93e3711419f4eac92b68fff9c89baf9467770f9e02b34",
+          "528cf4226ed848ee6eb93e3711419f4eac92b68fff9c89baf9467770f9e02b34"
+        ],
+        "native/runlog/PacketTrace_node_3.csv": [
+          "33afd7ec37bba645fe54b7031b32936d41d551966aaeecd2e708d2eb942bdd35",
+          "33afd7ec37bba645fe54b7031b32936d41d551966aaeecd2e708d2eb942bdd35"
+        ],
+        "native/runlog/PortTrace_node_8_port_4.csv": [
+          "1c244f46ec525d3272176d4b9fe328a14d49e99c1a51b2859136e73e22de566e",
+          "1c244f46ec525d3272176d4b9fe328a14d49e99c1a51b2859136e73e22de566e"
+        ],
+        "native/runlog/PortTrace_node_5_port_0.csv": [
+          "a98c4217fa5ca3764a0bdaec709309db4d7e37938f387d5a39a4e6e33aeab787",
+          "a98c4217fa5ca3764a0bdaec709309db4d7e37938f387d5a39a4e6e33aeab787"
+        ],
+        "native/runlog/PortTrace_node_8_port_3.csv": [
+          "a77ddcd74658dbe025dcf9bf74a5cebe4f6d17755f12fc192cee29235f9a6f8d",
+          "a77ddcd74658dbe025dcf9bf74a5cebe4f6d17755f12fc192cee29235f9a6f8d"
+        ],
+        "native/runlog/PacketTrace_node_1.csv": [
+          "ac67dfbd33ae94c3e4bccdbcec63fc12ad3aa193ebae0ec337f9893a26fda32c",
+          "ac67dfbd33ae94c3e4bccdbcec63fc12ad3aa193ebae0ec337f9893a26fda32c"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_1.csv": [
+          "2f3686778743de7ccd59d246e6bb5e0768aa31bf8c5a1c6d54497aefe53490f6",
+          "2f3686778743de7ccd59d246e6bb5e0768aa31bf8c5a1c6d54497aefe53490f6"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_7.csv": [
+          "4558642f51d7e359e9b84e25bf80aba555ee7e427245cd8da6f1ba1a3f23d109",
+          "4558642f51d7e359e9b84e25bf80aba555ee7e427245cd8da6f1ba1a3f23d109"
+        ],
+        "native/runlog/PortTrace_node_8_port_0.csv": [
+          "434082ed8e27db026dfd1e14f5d2711e5aaa5bd3c9a1e8e2509e742a2a76a33c",
+          "434082ed8e27db026dfd1e14f5d2711e5aaa5bd3c9a1e8e2509e742a2a76a33c"
+        ],
+        "native/runlog/PortTrace_node_8_port_7.csv": [
+          "c3a0e455845a749c99a4680af643effd8ab28185fbbccc884c864ee7e8cdec5f",
+          "c3a0e455845a749c99a4680af643effd8ab28185fbbccc884c864ee7e8cdec5f"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_5.csv": [
+          "256ef89acb0e4aab72e84fc77e9720e4f914961afe02a5108d721abd92185993",
+          "256ef89acb0e4aab72e84fc77e9720e4f914961afe02a5108d721abd92185993"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_2.csv": [
+          "fc4c2347d6d2e2074681844d3febe12c879e6a8f13101f8750b957f0b9bd0808",
+          "fc4c2347d6d2e2074681844d3febe12c879e6a8f13101f8750b957f0b9bd0808"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_6.csv": [
+          "50462d89e5d9546934d955b839b63966aaa5d3da35248bf0258cb788859eb9be",
+          "50462d89e5d9546934d955b839b63966aaa5d3da35248bf0258cb788859eb9be"
+        ],
+        "native/runlog/TaskTrace_node_0.csv": [
+          "aa941f690b110f20b88fcddacf3a893dad2b30247305fcbefa955e3541d9f3e7",
+          "aa941f690b110f20b88fcddacf3a893dad2b30247305fcbefa955e3541d9f3e7"
+        ],
+        "native/runlog/TaskTrace_node_2.csv": [
+          "49afdf20f4db023abfb46e0a7b3a502f7ef7d10249dc9d9b1a7f26e6f08dfbf7",
+          "49afdf20f4db023abfb46e0a7b3a502f7ef7d10249dc9d9b1a7f26e6f08dfbf7"
+        ],
+        "native/runlog/PortTrace_node_8_port_1.csv": [
+          "e70eb475606db1d956cc5d322a977d676b8642db036ece4169c64dc135d55222",
+          "e70eb475606db1d956cc5d322a977d676b8642db036ece4169c64dc135d55222"
+        ],
+        "native/runlog/PacketTrace_node_4.csv": [
+          "756cec14dff4f0993b488cd094822fe0fd1730ffa82a3f5ef7f6bee4040157c3",
+          "756cec14dff4f0993b488cd094822fe0fd1730ffa82a3f5ef7f6bee4040157c3"
+        ],
+        "native/runlog/PacketTrace_node_8.csv": [
+          "1d4a636eace67932f61e9171048953bf5cbdb4da9f7c7b8e21b131e3e3716be2",
+          "1d4a636eace67932f61e9171048953bf5cbdb4da9f7c7b8e21b131e3e3716be2"
+        ],
+        "native/runlog/PortTrace_node_2_port_0.csv": [
+          "fc58922e652686e64aa4bdc27e0f7c489e6cf2e56071ccf34611ff06929af876",
+          "fc58922e652686e64aa4bdc27e0f7c489e6cf2e56071ccf34611ff06929af876"
+        ],
+        "native/runlog/PortTrace_node_3_port_0.csv": [
+          "6d63e8fc8c5424fefbddc51f99c50cdc1f5d9e405a43db3c8e3ad844aba6b53c",
+          "6d63e8fc8c5424fefbddc51f99c50cdc1f5d9e405a43db3c8e3ad844aba6b53c"
+        ],
+        "native/runlog/TaskTrace_node_5.csv": [
+          "fa0cd4014596ca33ac31ea2c1cc780e9d9612e152ae1d464401c78fe58884c67",
+          "fa0cd4014596ca33ac31ea2c1cc780e9d9612e152ae1d464401c78fe58884c67"
+        ],
+        "native/runlog/PortTrace_node_1_port_0.csv": [
+          "731b2cbff96c024269a7ef4e52bf66661fa98c6b08d228fa0e872fc3940907df",
+          "731b2cbff96c024269a7ef4e52bf66661fa98c6b08d228fa0e872fc3940907df"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_7.csv": [
+          "f5ef0e68263682d9badd532d87c082e11569ae85a774de68123296c0e7b1bd64",
+          "f5ef0e68263682d9badd532d87c082e11569ae85a774de68123296c0e7b1bd64"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_4.csv": [
+          "bbb0649888a447c97426d85f29f8a4a59a9c380896d3dbb7923a415c81c5edbc",
+          "bbb0649888a447c97426d85f29f8a4a59a9c380896d3dbb7923a415c81c5edbc"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_3.csv": [
+          "69fd4d35f968f1d6c5dc8230a33cc8b44575b4bda057ef2d62ea44463cbc1060",
+          "69fd4d35f968f1d6c5dc8230a33cc8b44575b4bda057ef2d62ea44463cbc1060"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_3.csv": [
+          "8fd11fdfff15ec8cfef068de1615d2fa0a4561ac3fab37afeea697fb14731169",
+          "8fd11fdfff15ec8cfef068de1615d2fa0a4561ac3fab37afeea697fb14731169"
+        ],
+        "native/runlog/TaskTrace_node_3.csv": [
+          "80c6873ecce59eea03ed140712898b1505401b3507d3006c9228082e8e8772a9",
+          "80c6873ecce59eea03ed140712898b1505401b3507d3006c9228082e8e8772a9"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_0.csv": [
+          "64a7512d5f4f1304b500099c11743026c1786bf2c035f3458e26304f0603aa71",
+          "64a7512d5f4f1304b500099c11743026c1786bf2c035f3458e26304f0603aa71"
+        ],
+        "native/runlog/PacketTrace_node_5.csv": [
+          "3d6e3f065ff843cd6483abebaaea1fdab22badc781a4a7bc6be1ac1714529c39",
+          "3d6e3f065ff843cd6483abebaaea1fdab22badc781a4a7bc6be1ac1714529c39"
+        ],
+        "native/runlog/PortTrace_node_7_port_0.csv": [
+          "d0b0e04a3072cc693ef06aa1060f55a8fdb728dec8ada15d6a606338f4c47955",
+          "d0b0e04a3072cc693ef06aa1060f55a8fdb728dec8ada15d6a606338f4c47955"
+        ]
+      },
+      "layer_latency_ps": 17803720,
+      "simulator_events": 24058,
+      "TA_count": 312,
+      "completed_tokens": 64,
+      "executed_graph_fnv1a64": "20c01cbe1d5d129e"
+    },
+    {
+      "case": "multichunk-multita",
+      "variant": "scan-scan",
+      "status": "PASS",
+      "input_sha256": "2c5255e8d87740bc2ab4767d8eb3f33d675736b868e470600e4645a1f1e12e61",
+      "checks": {
+        "online-summary.json": [],
+        "validation.json": [],
+        "simulator-metrics.json": []
+      },
+      "byte_exact_hashes": {
+        "executed-transfers.csv": [
+          "991d58d01fd6ba87fc15467090d8dbe4f9f99a34dd3efa7851c5da2a90eed76a",
+          "991d58d01fd6ba87fc15467090d8dbe4f9f99a34dd3efa7851c5da2a90eed76a"
+        ],
+        "received-payloads.bin": [
+          "f1bbba680a19f46bc1b98d16c3481ad40b066bfefbb6f10596d21dafb861dc35",
+          "f1bbba680a19f46bc1b98d16c3481ad40b066bfefbb6f10596d21dafb861dc35"
+        ],
+        "payload-index.csv": [
+          "643ecbe57cef1509de64580f641be68218f69e2cb19f42ab84fa657a56b45a70",
+          "643ecbe57cef1509de64580f641be68218f69e2cb19f42ab84fa657a56b45a70"
+        ],
+        "events.csv": [
+          "e853c7b96ee7ba10a9b2ae3e888a336e0f3d4af4e9f5b2c67fa9788be73def33",
+          "e853c7b96ee7ba10a9b2ae3e888a336e0f3d4af4e9f5b2c67fa9788be73def33"
+        ],
+        "ta-identity.csv": [
+          "34392b67ae60bd5ebab4f3f9c9b667ca60968568565e963bed255c390ab0ddbf",
+          "34392b67ae60bd5ebab4f3f9c9b667ca60968568565e963bed255c390ab0ddbf"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_2.csv": [
+          "7c85324911cbfae998c6e7fd2f737a1a87525edcc686e53be1349d2f73a602cc",
+          "7c85324911cbfae998c6e7fd2f737a1a87525edcc686e53be1349d2f73a602cc"
+        ],
+        "native/runlog/PacketTrace_node_0.csv": [
+          "e06e368f0e7c5faf1a603e46a39f277617b805653a1768fdc037711d735fc6a5",
+          "e06e368f0e7c5faf1a603e46a39f277617b805653a1768fdc037711d735fc6a5"
+        ],
+        "native/runlog/PortTrace_node_0_port_0.csv": [
+          "b65fae5dd04ba907994177bb2d09dcd0c8ac0fd4392d0ec7f26a75867a452e5c",
+          "b65fae5dd04ba907994177bb2d09dcd0c8ac0fd4392d0ec7f26a75867a452e5c"
+        ],
+        "native/runlog/PortTrace_node_4_port_0.csv": [
+          "de7f191f34244d98974e3ad79a4135b00d05af443ff9c153933d5ed16ec06aaf",
+          "de7f191f34244d98974e3ad79a4135b00d05af443ff9c153933d5ed16ec06aaf"
+        ],
+        "native/runlog/TaskTrace_node_1.csv": [
+          "37097f1d9b0a2494ebc7d775d371b7eafd78055d36a8173c99d43592a329e30b",
+          "37097f1d9b0a2494ebc7d775d371b7eafd78055d36a8173c99d43592a329e30b"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_1.csv": [
+          "91c95c8d20458d61b78b31a7b4f4de0b9478b91ea0c3448bf5c876e7853ab4d1",
+          "91c95c8d20458d61b78b31a7b4f4de0b9478b91ea0c3448bf5c876e7853ab4d1"
+        ],
+        "native/runlog/PacketTrace_node_2.csv": [
+          "2b6292813605d3ef1e5895912e3fb5cdc635a561f94d9e142d3a8e58da61095d",
+          "2b6292813605d3ef1e5895912e3fb5cdc635a561f94d9e142d3a8e58da61095d"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_0.csv": [
+          "5cda9b3481e4cd5afc033a0dc36cd2c24c4d5ed0f4126f2dc15bdb1089024a6c",
+          "5cda9b3481e4cd5afc033a0dc36cd2c24c4d5ed0f4126f2dc15bdb1089024a6c"
+        ],
+        "native/runlog/PacketTrace_node_3.csv": [
+          "963a2ad512d70d5340a402fdad2126fd4908acabcba99b41c11dc3c8798c994f",
+          "963a2ad512d70d5340a402fdad2126fd4908acabcba99b41c11dc3c8798c994f"
+        ],
+        "native/runlog/PortTrace_node_4_port_1.csv": [
+          "bc3b17ced4fdc874e84d22d258ef46fd02dd17cc3248abc03b616c4093231fbc",
+          "bc3b17ced4fdc874e84d22d258ef46fd02dd17cc3248abc03b616c4093231fbc"
+        ],
+        "native/runlog/PacketTrace_node_1.csv": [
+          "72b74ee25688d5c277e3fedbd21c0ec92bab0de903b329e7559f22f044500d25",
+          "72b74ee25688d5c277e3fedbd21c0ec92bab0de903b329e7559f22f044500d25"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_1.csv": [
+          "95782dddb568047c9e771a00951b6ee5555ca7014d2769246d838d67bbb59952",
+          "95782dddb568047c9e771a00951b6ee5555ca7014d2769246d838d67bbb59952"
+        ],
+        "native/runlog/PortTrace_node_4_port_2.csv": [
+          "4d5697f58a3218b8c001a0f6ba6913c1fa76d904d32596e0ae5b5071a43f7ed1",
+          "4d5697f58a3218b8c001a0f6ba6913c1fa76d904d32596e0ae5b5071a43f7ed1"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_2.csv": [
+          "a7d84f3d7ebc4f10bc4d9ddc31f378a5e8e6f218840146ef938e4a6d35157ebe",
+          "a7d84f3d7ebc4f10bc4d9ddc31f378a5e8e6f218840146ef938e4a6d35157ebe"
+        ],
+        "native/runlog/TaskTrace_node_0.csv": [
+          "9d2bb4431162c1b441e494bccd3a2ed82fde76713da0dfcb4ffa3bf8532578bc",
+          "9d2bb4431162c1b441e494bccd3a2ed82fde76713da0dfcb4ffa3bf8532578bc"
+        ],
+        "native/runlog/PortTrace_node_4_port_3.csv": [
+          "bd800a62cf933ec6202d4b66ecd9f6c0764a2a1b482bd25f5478650ec73f5fe2",
+          "bd800a62cf933ec6202d4b66ecd9f6c0764a2a1b482bd25f5478650ec73f5fe2"
+        ],
+        "native/runlog/TaskTrace_node_2.csv": [
+          "d4e2bc660ecbe4037aca12850762da72025ab9b2968207dfa88b3fbe2b0c684f",
+          "d4e2bc660ecbe4037aca12850762da72025ab9b2968207dfa88b3fbe2b0c684f"
+        ],
+        "native/runlog/PacketTrace_node_4.csv": [
+          "c91edc58b9ca65e6d377998a4ec3c60ac4c2ebbc30fae6ddc23fecea418ea5df",
+          "c91edc58b9ca65e6d377998a4ec3c60ac4c2ebbc30fae6ddc23fecea418ea5df"
+        ],
+        "native/runlog/PortTrace_node_2_port_0.csv": [
+          "fbe5e84a0781aedcddc001ff3c1022e2965f191098852f079dff327fca7a2abf",
+          "fbe5e84a0781aedcddc001ff3c1022e2965f191098852f079dff327fca7a2abf"
+        ],
+        "native/runlog/PortTrace_node_3_port_0.csv": [
+          "e9dddc9f1d66b338a56dd3b2cb1f91a9ba58a3d3225da7767e8eb1ed2ff35d5e",
+          "e9dddc9f1d66b338a56dd3b2cb1f91a9ba58a3d3225da7767e8eb1ed2ff35d5e"
+        ],
+        "native/runlog/PortTrace_node_1_port_0.csv": [
+          "1e442d79cbcf1e35fb43ffadbf62bc423db8dec55045e027848b371db233c147",
+          "1e442d79cbcf1e35fb43ffadbf62bc423db8dec55045e027848b371db233c147"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_3.csv": [
+          "b975f4bb0a49765617102d0d0f87f899ab1d549edd1a2e0fe6643c4ca946516d",
+          "b975f4bb0a49765617102d0d0f87f899ab1d549edd1a2e0fe6643c4ca946516d"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_3.csv": [
+          "fa4300a910b7bc783bada4d47e861e936aebb331a13624373543d11a1872ac14",
+          "fa4300a910b7bc783bada4d47e861e936aebb331a13624373543d11a1872ac14"
+        ],
+        "native/runlog/TaskTrace_node_3.csv": [
+          "99e844b3bfe5c9b4389dbb7c4482b394662b72a5c92d9d58b037b18b200de213",
+          "99e844b3bfe5c9b4389dbb7c4482b394662b72a5c92d9d58b037b18b200de213"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_0.csv": [
+          "e1bce5f52dd1d259b71b9d591035a2a8eb74272b909d1f3d26f8da8d80751363",
+          "e1bce5f52dd1d259b71b9d591035a2a8eb74272b909d1f3d26f8da8d80751363"
+        ]
+      },
+      "layer_latency_ps": 14321600,
+      "simulator_events": 12500,
+      "TA_count": 156,
+      "completed_tokens": 32,
+      "executed_graph_fnv1a64": "87cac9aed96c89ff"
+    },
+    {
+      "case": "multichunk-multita",
+      "variant": "index-scan",
+      "status": "PASS",
+      "input_sha256": "2c5255e8d87740bc2ab4767d8eb3f33d675736b868e470600e4645a1f1e12e61",
+      "checks": {
+        "online-summary.json": [],
+        "validation.json": [],
+        "simulator-metrics.json": []
+      },
+      "byte_exact_hashes": {
+        "executed-transfers.csv": [
+          "991d58d01fd6ba87fc15467090d8dbe4f9f99a34dd3efa7851c5da2a90eed76a",
+          "991d58d01fd6ba87fc15467090d8dbe4f9f99a34dd3efa7851c5da2a90eed76a"
+        ],
+        "received-payloads.bin": [
+          "f1bbba680a19f46bc1b98d16c3481ad40b066bfefbb6f10596d21dafb861dc35",
+          "f1bbba680a19f46bc1b98d16c3481ad40b066bfefbb6f10596d21dafb861dc35"
+        ],
+        "payload-index.csv": [
+          "643ecbe57cef1509de64580f641be68218f69e2cb19f42ab84fa657a56b45a70",
+          "643ecbe57cef1509de64580f641be68218f69e2cb19f42ab84fa657a56b45a70"
+        ],
+        "events.csv": [
+          "e853c7b96ee7ba10a9b2ae3e888a336e0f3d4af4e9f5b2c67fa9788be73def33",
+          "e853c7b96ee7ba10a9b2ae3e888a336e0f3d4af4e9f5b2c67fa9788be73def33"
+        ],
+        "ta-identity.csv": [
+          "34392b67ae60bd5ebab4f3f9c9b667ca60968568565e963bed255c390ab0ddbf",
+          "34392b67ae60bd5ebab4f3f9c9b667ca60968568565e963bed255c390ab0ddbf"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_2.csv": [
+          "7c85324911cbfae998c6e7fd2f737a1a87525edcc686e53be1349d2f73a602cc",
+          "7c85324911cbfae998c6e7fd2f737a1a87525edcc686e53be1349d2f73a602cc"
+        ],
+        "native/runlog/PacketTrace_node_0.csv": [
+          "e06e368f0e7c5faf1a603e46a39f277617b805653a1768fdc037711d735fc6a5",
+          "e06e368f0e7c5faf1a603e46a39f277617b805653a1768fdc037711d735fc6a5"
+        ],
+        "native/runlog/PortTrace_node_0_port_0.csv": [
+          "b65fae5dd04ba907994177bb2d09dcd0c8ac0fd4392d0ec7f26a75867a452e5c",
+          "b65fae5dd04ba907994177bb2d09dcd0c8ac0fd4392d0ec7f26a75867a452e5c"
+        ],
+        "native/runlog/PortTrace_node_4_port_0.csv": [
+          "de7f191f34244d98974e3ad79a4135b00d05af443ff9c153933d5ed16ec06aaf",
+          "de7f191f34244d98974e3ad79a4135b00d05af443ff9c153933d5ed16ec06aaf"
+        ],
+        "native/runlog/TaskTrace_node_1.csv": [
+          "37097f1d9b0a2494ebc7d775d371b7eafd78055d36a8173c99d43592a329e30b",
+          "37097f1d9b0a2494ebc7d775d371b7eafd78055d36a8173c99d43592a329e30b"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_1.csv": [
+          "91c95c8d20458d61b78b31a7b4f4de0b9478b91ea0c3448bf5c876e7853ab4d1",
+          "91c95c8d20458d61b78b31a7b4f4de0b9478b91ea0c3448bf5c876e7853ab4d1"
+        ],
+        "native/runlog/PacketTrace_node_2.csv": [
+          "2b6292813605d3ef1e5895912e3fb5cdc635a561f94d9e142d3a8e58da61095d",
+          "2b6292813605d3ef1e5895912e3fb5cdc635a561f94d9e142d3a8e58da61095d"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_0.csv": [
+          "5cda9b3481e4cd5afc033a0dc36cd2c24c4d5ed0f4126f2dc15bdb1089024a6c",
+          "5cda9b3481e4cd5afc033a0dc36cd2c24c4d5ed0f4126f2dc15bdb1089024a6c"
+        ],
+        "native/runlog/PacketTrace_node_3.csv": [
+          "963a2ad512d70d5340a402fdad2126fd4908acabcba99b41c11dc3c8798c994f",
+          "963a2ad512d70d5340a402fdad2126fd4908acabcba99b41c11dc3c8798c994f"
+        ],
+        "native/runlog/PortTrace_node_4_port_1.csv": [
+          "bc3b17ced4fdc874e84d22d258ef46fd02dd17cc3248abc03b616c4093231fbc",
+          "bc3b17ced4fdc874e84d22d258ef46fd02dd17cc3248abc03b616c4093231fbc"
+        ],
+        "native/runlog/PacketTrace_node_1.csv": [
+          "72b74ee25688d5c277e3fedbd21c0ec92bab0de903b329e7559f22f044500d25",
+          "72b74ee25688d5c277e3fedbd21c0ec92bab0de903b329e7559f22f044500d25"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_1.csv": [
+          "95782dddb568047c9e771a00951b6ee5555ca7014d2769246d838d67bbb59952",
+          "95782dddb568047c9e771a00951b6ee5555ca7014d2769246d838d67bbb59952"
+        ],
+        "native/runlog/PortTrace_node_4_port_2.csv": [
+          "4d5697f58a3218b8c001a0f6ba6913c1fa76d904d32596e0ae5b5071a43f7ed1",
+          "4d5697f58a3218b8c001a0f6ba6913c1fa76d904d32596e0ae5b5071a43f7ed1"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_2.csv": [
+          "a7d84f3d7ebc4f10bc4d9ddc31f378a5e8e6f218840146ef938e4a6d35157ebe",
+          "a7d84f3d7ebc4f10bc4d9ddc31f378a5e8e6f218840146ef938e4a6d35157ebe"
+        ],
+        "native/runlog/TaskTrace_node_0.csv": [
+          "9d2bb4431162c1b441e494bccd3a2ed82fde76713da0dfcb4ffa3bf8532578bc",
+          "9d2bb4431162c1b441e494bccd3a2ed82fde76713da0dfcb4ffa3bf8532578bc"
+        ],
+        "native/runlog/PortTrace_node_4_port_3.csv": [
+          "bd800a62cf933ec6202d4b66ecd9f6c0764a2a1b482bd25f5478650ec73f5fe2",
+          "bd800a62cf933ec6202d4b66ecd9f6c0764a2a1b482bd25f5478650ec73f5fe2"
+        ],
+        "native/runlog/TaskTrace_node_2.csv": [
+          "d4e2bc660ecbe4037aca12850762da72025ab9b2968207dfa88b3fbe2b0c684f",
+          "d4e2bc660ecbe4037aca12850762da72025ab9b2968207dfa88b3fbe2b0c684f"
+        ],
+        "native/runlog/PacketTrace_node_4.csv": [
+          "c91edc58b9ca65e6d377998a4ec3c60ac4c2ebbc30fae6ddc23fecea418ea5df",
+          "c91edc58b9ca65e6d377998a4ec3c60ac4c2ebbc30fae6ddc23fecea418ea5df"
+        ],
+        "native/runlog/PortTrace_node_2_port_0.csv": [
+          "fbe5e84a0781aedcddc001ff3c1022e2965f191098852f079dff327fca7a2abf",
+          "fbe5e84a0781aedcddc001ff3c1022e2965f191098852f079dff327fca7a2abf"
+        ],
+        "native/runlog/PortTrace_node_3_port_0.csv": [
+          "e9dddc9f1d66b338a56dd3b2cb1f91a9ba58a3d3225da7767e8eb1ed2ff35d5e",
+          "e9dddc9f1d66b338a56dd3b2cb1f91a9ba58a3d3225da7767e8eb1ed2ff35d5e"
+        ],
+        "native/runlog/PortTrace_node_1_port_0.csv": [
+          "1e442d79cbcf1e35fb43ffadbf62bc423db8dec55045e027848b371db233c147",
+          "1e442d79cbcf1e35fb43ffadbf62bc423db8dec55045e027848b371db233c147"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_3.csv": [
+          "b975f4bb0a49765617102d0d0f87f899ab1d549edd1a2e0fe6643c4ca946516d",
+          "b975f4bb0a49765617102d0d0f87f899ab1d549edd1a2e0fe6643c4ca946516d"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_3.csv": [
+          "fa4300a910b7bc783bada4d47e861e936aebb331a13624373543d11a1872ac14",
+          "fa4300a910b7bc783bada4d47e861e936aebb331a13624373543d11a1872ac14"
+        ],
+        "native/runlog/TaskTrace_node_3.csv": [
+          "99e844b3bfe5c9b4389dbb7c4482b394662b72a5c92d9d58b037b18b200de213",
+          "99e844b3bfe5c9b4389dbb7c4482b394662b72a5c92d9d58b037b18b200de213"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_0.csv": [
+          "e1bce5f52dd1d259b71b9d591035a2a8eb74272b909d1f3d26f8da8d80751363",
+          "e1bce5f52dd1d259b71b9d591035a2a8eb74272b909d1f3d26f8da8d80751363"
+        ]
+      },
+      "layer_latency_ps": 14321600,
+      "simulator_events": 12500,
+      "TA_count": 156,
+      "completed_tokens": 32,
+      "executed_graph_fnv1a64": "87cac9aed96c89ff"
+    },
+    {
+      "case": "multichunk-multita",
+      "variant": "scan-index",
+      "status": "PASS",
+      "input_sha256": "2c5255e8d87740bc2ab4767d8eb3f33d675736b868e470600e4645a1f1e12e61",
+      "checks": {
+        "online-summary.json": [],
+        "validation.json": [],
+        "simulator-metrics.json": []
+      },
+      "byte_exact_hashes": {
+        "executed-transfers.csv": [
+          "991d58d01fd6ba87fc15467090d8dbe4f9f99a34dd3efa7851c5da2a90eed76a",
+          "991d58d01fd6ba87fc15467090d8dbe4f9f99a34dd3efa7851c5da2a90eed76a"
+        ],
+        "received-payloads.bin": [
+          "f1bbba680a19f46bc1b98d16c3481ad40b066bfefbb6f10596d21dafb861dc35",
+          "f1bbba680a19f46bc1b98d16c3481ad40b066bfefbb6f10596d21dafb861dc35"
+        ],
+        "payload-index.csv": [
+          "643ecbe57cef1509de64580f641be68218f69e2cb19f42ab84fa657a56b45a70",
+          "643ecbe57cef1509de64580f641be68218f69e2cb19f42ab84fa657a56b45a70"
+        ],
+        "events.csv": [
+          "e853c7b96ee7ba10a9b2ae3e888a336e0f3d4af4e9f5b2c67fa9788be73def33",
+          "e853c7b96ee7ba10a9b2ae3e888a336e0f3d4af4e9f5b2c67fa9788be73def33"
+        ],
+        "ta-identity.csv": [
+          "34392b67ae60bd5ebab4f3f9c9b667ca60968568565e963bed255c390ab0ddbf",
+          "34392b67ae60bd5ebab4f3f9c9b667ca60968568565e963bed255c390ab0ddbf"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_2.csv": [
+          "7c85324911cbfae998c6e7fd2f737a1a87525edcc686e53be1349d2f73a602cc",
+          "7c85324911cbfae998c6e7fd2f737a1a87525edcc686e53be1349d2f73a602cc"
+        ],
+        "native/runlog/PacketTrace_node_0.csv": [
+          "e06e368f0e7c5faf1a603e46a39f277617b805653a1768fdc037711d735fc6a5",
+          "e06e368f0e7c5faf1a603e46a39f277617b805653a1768fdc037711d735fc6a5"
+        ],
+        "native/runlog/PortTrace_node_0_port_0.csv": [
+          "b65fae5dd04ba907994177bb2d09dcd0c8ac0fd4392d0ec7f26a75867a452e5c",
+          "b65fae5dd04ba907994177bb2d09dcd0c8ac0fd4392d0ec7f26a75867a452e5c"
+        ],
+        "native/runlog/PortTrace_node_4_port_0.csv": [
+          "de7f191f34244d98974e3ad79a4135b00d05af443ff9c153933d5ed16ec06aaf",
+          "de7f191f34244d98974e3ad79a4135b00d05af443ff9c153933d5ed16ec06aaf"
+        ],
+        "native/runlog/TaskTrace_node_1.csv": [
+          "37097f1d9b0a2494ebc7d775d371b7eafd78055d36a8173c99d43592a329e30b",
+          "37097f1d9b0a2494ebc7d775d371b7eafd78055d36a8173c99d43592a329e30b"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_1.csv": [
+          "91c95c8d20458d61b78b31a7b4f4de0b9478b91ea0c3448bf5c876e7853ab4d1",
+          "91c95c8d20458d61b78b31a7b4f4de0b9478b91ea0c3448bf5c876e7853ab4d1"
+        ],
+        "native/runlog/PacketTrace_node_2.csv": [
+          "2b6292813605d3ef1e5895912e3fb5cdc635a561f94d9e142d3a8e58da61095d",
+          "2b6292813605d3ef1e5895912e3fb5cdc635a561f94d9e142d3a8e58da61095d"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_0.csv": [
+          "5cda9b3481e4cd5afc033a0dc36cd2c24c4d5ed0f4126f2dc15bdb1089024a6c",
+          "5cda9b3481e4cd5afc033a0dc36cd2c24c4d5ed0f4126f2dc15bdb1089024a6c"
+        ],
+        "native/runlog/PacketTrace_node_3.csv": [
+          "963a2ad512d70d5340a402fdad2126fd4908acabcba99b41c11dc3c8798c994f",
+          "963a2ad512d70d5340a402fdad2126fd4908acabcba99b41c11dc3c8798c994f"
+        ],
+        "native/runlog/PortTrace_node_4_port_1.csv": [
+          "bc3b17ced4fdc874e84d22d258ef46fd02dd17cc3248abc03b616c4093231fbc",
+          "bc3b17ced4fdc874e84d22d258ef46fd02dd17cc3248abc03b616c4093231fbc"
+        ],
+        "native/runlog/PacketTrace_node_1.csv": [
+          "72b74ee25688d5c277e3fedbd21c0ec92bab0de903b329e7559f22f044500d25",
+          "72b74ee25688d5c277e3fedbd21c0ec92bab0de903b329e7559f22f044500d25"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_1.csv": [
+          "95782dddb568047c9e771a00951b6ee5555ca7014d2769246d838d67bbb59952",
+          "95782dddb568047c9e771a00951b6ee5555ca7014d2769246d838d67bbb59952"
+        ],
+        "native/runlog/PortTrace_node_4_port_2.csv": [
+          "4d5697f58a3218b8c001a0f6ba6913c1fa76d904d32596e0ae5b5071a43f7ed1",
+          "4d5697f58a3218b8c001a0f6ba6913c1fa76d904d32596e0ae5b5071a43f7ed1"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_2.csv": [
+          "a7d84f3d7ebc4f10bc4d9ddc31f378a5e8e6f218840146ef938e4a6d35157ebe",
+          "a7d84f3d7ebc4f10bc4d9ddc31f378a5e8e6f218840146ef938e4a6d35157ebe"
+        ],
+        "native/runlog/TaskTrace_node_0.csv": [
+          "9d2bb4431162c1b441e494bccd3a2ed82fde76713da0dfcb4ffa3bf8532578bc",
+          "9d2bb4431162c1b441e494bccd3a2ed82fde76713da0dfcb4ffa3bf8532578bc"
+        ],
+        "native/runlog/PortTrace_node_4_port_3.csv": [
+          "bd800a62cf933ec6202d4b66ecd9f6c0764a2a1b482bd25f5478650ec73f5fe2",
+          "bd800a62cf933ec6202d4b66ecd9f6c0764a2a1b482bd25f5478650ec73f5fe2"
+        ],
+        "native/runlog/TaskTrace_node_2.csv": [
+          "d4e2bc660ecbe4037aca12850762da72025ab9b2968207dfa88b3fbe2b0c684f",
+          "d4e2bc660ecbe4037aca12850762da72025ab9b2968207dfa88b3fbe2b0c684f"
+        ],
+        "native/runlog/PacketTrace_node_4.csv": [
+          "c91edc58b9ca65e6d377998a4ec3c60ac4c2ebbc30fae6ddc23fecea418ea5df",
+          "c91edc58b9ca65e6d377998a4ec3c60ac4c2ebbc30fae6ddc23fecea418ea5df"
+        ],
+        "native/runlog/PortTrace_node_2_port_0.csv": [
+          "fbe5e84a0781aedcddc001ff3c1022e2965f191098852f079dff327fca7a2abf",
+          "fbe5e84a0781aedcddc001ff3c1022e2965f191098852f079dff327fca7a2abf"
+        ],
+        "native/runlog/PortTrace_node_3_port_0.csv": [
+          "e9dddc9f1d66b338a56dd3b2cb1f91a9ba58a3d3225da7767e8eb1ed2ff35d5e",
+          "e9dddc9f1d66b338a56dd3b2cb1f91a9ba58a3d3225da7767e8eb1ed2ff35d5e"
+        ],
+        "native/runlog/PortTrace_node_1_port_0.csv": [
+          "1e442d79cbcf1e35fb43ffadbf62bc423db8dec55045e027848b371db233c147",
+          "1e442d79cbcf1e35fb43ffadbf62bc423db8dec55045e027848b371db233c147"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_3.csv": [
+          "b975f4bb0a49765617102d0d0f87f899ab1d549edd1a2e0fe6643c4ca946516d",
+          "b975f4bb0a49765617102d0d0f87f899ab1d549edd1a2e0fe6643c4ca946516d"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_3.csv": [
+          "fa4300a910b7bc783bada4d47e861e936aebb331a13624373543d11a1872ac14",
+          "fa4300a910b7bc783bada4d47e861e936aebb331a13624373543d11a1872ac14"
+        ],
+        "native/runlog/TaskTrace_node_3.csv": [
+          "99e844b3bfe5c9b4389dbb7c4482b394662b72a5c92d9d58b037b18b200de213",
+          "99e844b3bfe5c9b4389dbb7c4482b394662b72a5c92d9d58b037b18b200de213"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_0.csv": [
+          "e1bce5f52dd1d259b71b9d591035a2a8eb74272b909d1f3d26f8da8d80751363",
+          "e1bce5f52dd1d259b71b9d591035a2a8eb74272b909d1f3d26f8da8d80751363"
+        ]
+      },
+      "layer_latency_ps": 14321600,
+      "simulator_events": 12500,
+      "TA_count": 156,
+      "completed_tokens": 32,
+      "executed_graph_fnv1a64": "87cac9aed96c89ff"
+    },
+    {
+      "case": "multichunk-multita",
+      "variant": "index-index",
+      "status": "PASS",
+      "input_sha256": "2c5255e8d87740bc2ab4767d8eb3f33d675736b868e470600e4645a1f1e12e61",
+      "checks": {
+        "online-summary.json": [],
+        "validation.json": [],
+        "simulator-metrics.json": []
+      },
+      "byte_exact_hashes": {
+        "executed-transfers.csv": [
+          "991d58d01fd6ba87fc15467090d8dbe4f9f99a34dd3efa7851c5da2a90eed76a",
+          "991d58d01fd6ba87fc15467090d8dbe4f9f99a34dd3efa7851c5da2a90eed76a"
+        ],
+        "received-payloads.bin": [
+          "f1bbba680a19f46bc1b98d16c3481ad40b066bfefbb6f10596d21dafb861dc35",
+          "f1bbba680a19f46bc1b98d16c3481ad40b066bfefbb6f10596d21dafb861dc35"
+        ],
+        "payload-index.csv": [
+          "643ecbe57cef1509de64580f641be68218f69e2cb19f42ab84fa657a56b45a70",
+          "643ecbe57cef1509de64580f641be68218f69e2cb19f42ab84fa657a56b45a70"
+        ],
+        "events.csv": [
+          "e853c7b96ee7ba10a9b2ae3e888a336e0f3d4af4e9f5b2c67fa9788be73def33",
+          "e853c7b96ee7ba10a9b2ae3e888a336e0f3d4af4e9f5b2c67fa9788be73def33"
+        ],
+        "ta-identity.csv": [
+          "34392b67ae60bd5ebab4f3f9c9b667ca60968568565e963bed255c390ab0ddbf",
+          "34392b67ae60bd5ebab4f3f9c9b667ca60968568565e963bed255c390ab0ddbf"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_2.csv": [
+          "7c85324911cbfae998c6e7fd2f737a1a87525edcc686e53be1349d2f73a602cc",
+          "7c85324911cbfae998c6e7fd2f737a1a87525edcc686e53be1349d2f73a602cc"
+        ],
+        "native/runlog/PacketTrace_node_0.csv": [
+          "e06e368f0e7c5faf1a603e46a39f277617b805653a1768fdc037711d735fc6a5",
+          "e06e368f0e7c5faf1a603e46a39f277617b805653a1768fdc037711d735fc6a5"
+        ],
+        "native/runlog/PortTrace_node_0_port_0.csv": [
+          "b65fae5dd04ba907994177bb2d09dcd0c8ac0fd4392d0ec7f26a75867a452e5c",
+          "b65fae5dd04ba907994177bb2d09dcd0c8ac0fd4392d0ec7f26a75867a452e5c"
+        ],
+        "native/runlog/PortTrace_node_4_port_0.csv": [
+          "de7f191f34244d98974e3ad79a4135b00d05af443ff9c153933d5ed16ec06aaf",
+          "de7f191f34244d98974e3ad79a4135b00d05af443ff9c153933d5ed16ec06aaf"
+        ],
+        "native/runlog/TaskTrace_node_1.csv": [
+          "37097f1d9b0a2494ebc7d775d371b7eafd78055d36a8173c99d43592a329e30b",
+          "37097f1d9b0a2494ebc7d775d371b7eafd78055d36a8173c99d43592a329e30b"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_1.csv": [
+          "91c95c8d20458d61b78b31a7b4f4de0b9478b91ea0c3448bf5c876e7853ab4d1",
+          "91c95c8d20458d61b78b31a7b4f4de0b9478b91ea0c3448bf5c876e7853ab4d1"
+        ],
+        "native/runlog/PacketTrace_node_2.csv": [
+          "2b6292813605d3ef1e5895912e3fb5cdc635a561f94d9e142d3a8e58da61095d",
+          "2b6292813605d3ef1e5895912e3fb5cdc635a561f94d9e142d3a8e58da61095d"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_0.csv": [
+          "5cda9b3481e4cd5afc033a0dc36cd2c24c4d5ed0f4126f2dc15bdb1089024a6c",
+          "5cda9b3481e4cd5afc033a0dc36cd2c24c4d5ed0f4126f2dc15bdb1089024a6c"
+        ],
+        "native/runlog/PacketTrace_node_3.csv": [
+          "963a2ad512d70d5340a402fdad2126fd4908acabcba99b41c11dc3c8798c994f",
+          "963a2ad512d70d5340a402fdad2126fd4908acabcba99b41c11dc3c8798c994f"
+        ],
+        "native/runlog/PortTrace_node_4_port_1.csv": [
+          "bc3b17ced4fdc874e84d22d258ef46fd02dd17cc3248abc03b616c4093231fbc",
+          "bc3b17ced4fdc874e84d22d258ef46fd02dd17cc3248abc03b616c4093231fbc"
+        ],
+        "native/runlog/PacketTrace_node_1.csv": [
+          "72b74ee25688d5c277e3fedbd21c0ec92bab0de903b329e7559f22f044500d25",
+          "72b74ee25688d5c277e3fedbd21c0ec92bab0de903b329e7559f22f044500d25"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_1.csv": [
+          "95782dddb568047c9e771a00951b6ee5555ca7014d2769246d838d67bbb59952",
+          "95782dddb568047c9e771a00951b6ee5555ca7014d2769246d838d67bbb59952"
+        ],
+        "native/runlog/PortTrace_node_4_port_2.csv": [
+          "4d5697f58a3218b8c001a0f6ba6913c1fa76d904d32596e0ae5b5071a43f7ed1",
+          "4d5697f58a3218b8c001a0f6ba6913c1fa76d904d32596e0ae5b5071a43f7ed1"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_2.csv": [
+          "a7d84f3d7ebc4f10bc4d9ddc31f378a5e8e6f218840146ef938e4a6d35157ebe",
+          "a7d84f3d7ebc4f10bc4d9ddc31f378a5e8e6f218840146ef938e4a6d35157ebe"
+        ],
+        "native/runlog/TaskTrace_node_0.csv": [
+          "9d2bb4431162c1b441e494bccd3a2ed82fde76713da0dfcb4ffa3bf8532578bc",
+          "9d2bb4431162c1b441e494bccd3a2ed82fde76713da0dfcb4ffa3bf8532578bc"
+        ],
+        "native/runlog/PortTrace_node_4_port_3.csv": [
+          "bd800a62cf933ec6202d4b66ecd9f6c0764a2a1b482bd25f5478650ec73f5fe2",
+          "bd800a62cf933ec6202d4b66ecd9f6c0764a2a1b482bd25f5478650ec73f5fe2"
+        ],
+        "native/runlog/TaskTrace_node_2.csv": [
+          "d4e2bc660ecbe4037aca12850762da72025ab9b2968207dfa88b3fbe2b0c684f",
+          "d4e2bc660ecbe4037aca12850762da72025ab9b2968207dfa88b3fbe2b0c684f"
+        ],
+        "native/runlog/PacketTrace_node_4.csv": [
+          "c91edc58b9ca65e6d377998a4ec3c60ac4c2ebbc30fae6ddc23fecea418ea5df",
+          "c91edc58b9ca65e6d377998a4ec3c60ac4c2ebbc30fae6ddc23fecea418ea5df"
+        ],
+        "native/runlog/PortTrace_node_2_port_0.csv": [
+          "fbe5e84a0781aedcddc001ff3c1022e2965f191098852f079dff327fca7a2abf",
+          "fbe5e84a0781aedcddc001ff3c1022e2965f191098852f079dff327fca7a2abf"
+        ],
+        "native/runlog/PortTrace_node_3_port_0.csv": [
+          "e9dddc9f1d66b338a56dd3b2cb1f91a9ba58a3d3225da7767e8eb1ed2ff35d5e",
+          "e9dddc9f1d66b338a56dd3b2cb1f91a9ba58a3d3225da7767e8eb1ed2ff35d5e"
+        ],
+        "native/runlog/PortTrace_node_1_port_0.csv": [
+          "1e442d79cbcf1e35fb43ffadbf62bc423db8dec55045e027848b371db233c147",
+          "1e442d79cbcf1e35fb43ffadbf62bc423db8dec55045e027848b371db233c147"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_3.csv": [
+          "b975f4bb0a49765617102d0d0f87f899ab1d549edd1a2e0fe6643c4ca946516d",
+          "b975f4bb0a49765617102d0d0f87f899ab1d549edd1a2e0fe6643c4ca946516d"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_3.csv": [
+          "fa4300a910b7bc783bada4d47e861e936aebb331a13624373543d11a1872ac14",
+          "fa4300a910b7bc783bada4d47e861e936aebb331a13624373543d11a1872ac14"
+        ],
+        "native/runlog/TaskTrace_node_3.csv": [
+          "99e844b3bfe5c9b4389dbb7c4482b394662b72a5c92d9d58b037b18b200de213",
+          "99e844b3bfe5c9b4389dbb7c4482b394662b72a5c92d9d58b037b18b200de213"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_0.csv": [
+          "e1bce5f52dd1d259b71b9d591035a2a8eb74272b909d1f3d26f8da8d80751363",
+          "e1bce5f52dd1d259b71b9d591035a2a8eb74272b909d1f3d26f8da8d80751363"
+        ]
+      },
+      "layer_latency_ps": 14321600,
+      "simulator_events": 12500,
+      "TA_count": 156,
+      "completed_tokens": 32,
+      "executed_graph_fnv1a64": "87cac9aed96c89ff"
+    },
+    {
+      "case": "two-stage",
+      "variant": "scan-scan",
+      "status": "PASS",
+      "input_sha256": "5c222425db99a6c40acac1bd03c307b6a22a3d5baee2585234af021872ae48bf",
+      "checks": {
+        "online-summary.json": [],
+        "validation.json": [],
+        "simulator-metrics.json": []
+      },
+      "byte_exact_hashes": {
+        "executed-transfers.csv": [
+          "da62aa05bb536f35dce1c50dcd6a58c74775f706cacee6865c5cc99e3a3fdca8",
+          "da62aa05bb536f35dce1c50dcd6a58c74775f706cacee6865c5cc99e3a3fdca8"
+        ],
+        "received-payloads.bin": [
+          "aaf170f5f6c0e739d32ef46e45a105dd67e3854099e3f3e28a94a3a83cc654cf",
+          "aaf170f5f6c0e739d32ef46e45a105dd67e3854099e3f3e28a94a3a83cc654cf"
+        ],
+        "payload-index.csv": [
+          "3759a811e21d1d0e31b1a25ea83639af9015ecc724f7d9c3e56c0e6672463287",
+          "3759a811e21d1d0e31b1a25ea83639af9015ecc724f7d9c3e56c0e6672463287"
+        ],
+        "events.csv": [
+          "73e73133fa11ee8e0467f991cd4b35494ca58e5c7d9fa192b39494c4c28e5507",
+          "73e73133fa11ee8e0467f991cd4b35494ca58e5c7d9fa192b39494c4c28e5507"
+        ],
+        "ta-identity.csv": [
+          "1faf0f0a53997a23dcb0f052777b9e68f65ea8d8341183dacfc439e065a0d8f0",
+          "1faf0f0a53997a23dcb0f052777b9e68f65ea8d8341183dacfc439e065a0d8f0"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_2.csv": [
+          "ab9b2cb8edeecaad0b2139956039f85cf46f2eeea89fb70d4bb97f544b206a69",
+          "ab9b2cb8edeecaad0b2139956039f85cf46f2eeea89fb70d4bb97f544b206a69"
+        ],
+        "native/runlog/PacketTrace_node_0.csv": [
+          "c9edd0e89eec52f78df66c4eba5c76be2e25d04e878bd3685546e8f77702d431",
+          "c9edd0e89eec52f78df66c4eba5c76be2e25d04e878bd3685546e8f77702d431"
+        ],
+        "native/runlog/PortTrace_node_0_port_0.csv": [
+          "83d45d34987e88cf977e716eba61849ec16c130ddf19c84ce042e9c58a1df2c1",
+          "83d45d34987e88cf977e716eba61849ec16c130ddf19c84ce042e9c58a1df2c1"
+        ],
+        "native/runlog/PortTrace_node_4_port_0.csv": [
+          "2e84f74583c4ead64b7bfa1064f2cae81aeb1f67f94f8274f31fa124bfe3628a",
+          "2e84f74583c4ead64b7bfa1064f2cae81aeb1f67f94f8274f31fa124bfe3628a"
+        ],
+        "native/runlog/TaskTrace_node_1.csv": [
+          "99f9512c3f76805071dd0f44b139cb6ac4c2d2015650fcc150f3e61a86f9cae7",
+          "99f9512c3f76805071dd0f44b139cb6ac4c2d2015650fcc150f3e61a86f9cae7"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_1.csv": [
+          "06beeab5f042596a4d33a4216632a2315742f4d320d94b0625239fea4437d9b8",
+          "06beeab5f042596a4d33a4216632a2315742f4d320d94b0625239fea4437d9b8"
+        ],
+        "native/runlog/PacketTrace_node_2.csv": [
+          "dbb5497d16380ab3792345df73c97dd9a18ef1b87c870224539dbc309048796a",
+          "dbb5497d16380ab3792345df73c97dd9a18ef1b87c870224539dbc309048796a"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_0.csv": [
+          "aa9ba6fa4d56961bc8e80aa8c47b496ff44853bcbde30cfdb9bacc458c74a00f",
+          "aa9ba6fa4d56961bc8e80aa8c47b496ff44853bcbde30cfdb9bacc458c74a00f"
+        ],
+        "native/runlog/PacketTrace_node_3.csv": [
+          "26b26dc75607041fdb046fcc60ad51e3c88344d2a403618e24bc83939cca0acf",
+          "26b26dc75607041fdb046fcc60ad51e3c88344d2a403618e24bc83939cca0acf"
+        ],
+        "native/runlog/PortTrace_node_4_port_1.csv": [
+          "71c4ad57a31b04fae6bcbdfc3398919efd569eaee86352297f6417bbd70494ba",
+          "71c4ad57a31b04fae6bcbdfc3398919efd569eaee86352297f6417bbd70494ba"
+        ],
+        "native/runlog/PacketTrace_node_1.csv": [
+          "b8b8a03014d1a150a082117fa68d2b862bc3eeaabda57b96af0f0ffdcffdf7f9",
+          "b8b8a03014d1a150a082117fa68d2b862bc3eeaabda57b96af0f0ffdcffdf7f9"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_1.csv": [
+          "8104c8545ea69614ef59f080fce5ae13c001b9266dd77c37193ab62c98c40977",
+          "8104c8545ea69614ef59f080fce5ae13c001b9266dd77c37193ab62c98c40977"
+        ],
+        "native/runlog/PortTrace_node_4_port_2.csv": [
+          "2e34d77cd34dff2c7e63b51392c2d50f686fde86d0c2f71e8d6f7832826bcab2",
+          "2e34d77cd34dff2c7e63b51392c2d50f686fde86d0c2f71e8d6f7832826bcab2"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_2.csv": [
+          "f3d6db6921d080eb9bf48d6b95218c5218e6e7a8ae2dae7b706c8b83fce0b3c2",
+          "f3d6db6921d080eb9bf48d6b95218c5218e6e7a8ae2dae7b706c8b83fce0b3c2"
+        ],
+        "native/runlog/TaskTrace_node_0.csv": [
+          "0ca01fa68ff281d9f36b1a352acbdce5305b3c070525c855f5085d3cd7e4cce6",
+          "0ca01fa68ff281d9f36b1a352acbdce5305b3c070525c855f5085d3cd7e4cce6"
+        ],
+        "native/runlog/PortTrace_node_4_port_3.csv": [
+          "1786ee7392003019da5c218df884d4bbd3c7b663a89a7d9b90576ed3a7ef269f",
+          "1786ee7392003019da5c218df884d4bbd3c7b663a89a7d9b90576ed3a7ef269f"
+        ],
+        "native/runlog/TaskTrace_node_2.csv": [
+          "0122b43455ef5e1baf8d2def9206feb54a1201de5679dae1e20e37c48fb5906e",
+          "0122b43455ef5e1baf8d2def9206feb54a1201de5679dae1e20e37c48fb5906e"
+        ],
+        "native/runlog/PacketTrace_node_4.csv": [
+          "69e6532fcba64c16d7abea14e410261b2f4e25c66f19e23a8ad1856738469cc9",
+          "69e6532fcba64c16d7abea14e410261b2f4e25c66f19e23a8ad1856738469cc9"
+        ],
+        "native/runlog/PortTrace_node_2_port_0.csv": [
+          "57f5503b7748750730a53d0ab8676cfa280708ca4336fa041861cb5406c51c6e",
+          "57f5503b7748750730a53d0ab8676cfa280708ca4336fa041861cb5406c51c6e"
+        ],
+        "native/runlog/PortTrace_node_3_port_0.csv": [
+          "8c23d1d5f57b19ebdfff9ebdb098fdd47c622d054b323194e8d0751e9597ccac",
+          "8c23d1d5f57b19ebdfff9ebdb098fdd47c622d054b323194e8d0751e9597ccac"
+        ],
+        "native/runlog/PortTrace_node_1_port_0.csv": [
+          "63031d9405137370c1632fc01092585486f4ad3aaaea81818678d47a45b06ef5",
+          "63031d9405137370c1632fc01092585486f4ad3aaaea81818678d47a45b06ef5"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_3.csv": [
+          "38493cf1562a54d573d5a4f15b1960c9ef5d8ecbcd5e85de178191b174c2cca6",
+          "38493cf1562a54d573d5a4f15b1960c9ef5d8ecbcd5e85de178191b174c2cca6"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_3.csv": [
+          "58c1b2b6cb002674cd7da58b1e51e6d6c33dca9d0f24aa0bd899a8e4c5f9cac4",
+          "58c1b2b6cb002674cd7da58b1e51e6d6c33dca9d0f24aa0bd899a8e4c5f9cac4"
+        ],
+        "native/runlog/TaskTrace_node_3.csv": [
+          "d948d20e4812058593f26b3ab903666b51904ddd3a7b7e00a91cbf5435b60adb",
+          "d948d20e4812058593f26b3ab903666b51904ddd3a7b7e00a91cbf5435b60adb"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_0.csv": [
+          "e8eae59aaa8a20816c40c80f1115b186fe1ecc1a3d788351af376b7ec4869f8d",
+          "e8eae59aaa8a20816c40c80f1115b186fe1ecc1a3d788351af376b7ec4869f8d"
+        ]
+      },
+      "layer_latency_ps": 15241120,
+      "simulator_events": 12398,
+      "TA_count": 156,
+      "completed_tokens": 32,
+      "executed_graph_fnv1a64": "8c670e09f2a35754"
+    },
+    {
+      "case": "two-stage",
+      "variant": "index-scan",
+      "status": "PASS",
+      "input_sha256": "5c222425db99a6c40acac1bd03c307b6a22a3d5baee2585234af021872ae48bf",
+      "checks": {
+        "online-summary.json": [],
+        "validation.json": [],
+        "simulator-metrics.json": []
+      },
+      "byte_exact_hashes": {
+        "executed-transfers.csv": [
+          "da62aa05bb536f35dce1c50dcd6a58c74775f706cacee6865c5cc99e3a3fdca8",
+          "da62aa05bb536f35dce1c50dcd6a58c74775f706cacee6865c5cc99e3a3fdca8"
+        ],
+        "received-payloads.bin": [
+          "aaf170f5f6c0e739d32ef46e45a105dd67e3854099e3f3e28a94a3a83cc654cf",
+          "aaf170f5f6c0e739d32ef46e45a105dd67e3854099e3f3e28a94a3a83cc654cf"
+        ],
+        "payload-index.csv": [
+          "3759a811e21d1d0e31b1a25ea83639af9015ecc724f7d9c3e56c0e6672463287",
+          "3759a811e21d1d0e31b1a25ea83639af9015ecc724f7d9c3e56c0e6672463287"
+        ],
+        "events.csv": [
+          "73e73133fa11ee8e0467f991cd4b35494ca58e5c7d9fa192b39494c4c28e5507",
+          "73e73133fa11ee8e0467f991cd4b35494ca58e5c7d9fa192b39494c4c28e5507"
+        ],
+        "ta-identity.csv": [
+          "1faf0f0a53997a23dcb0f052777b9e68f65ea8d8341183dacfc439e065a0d8f0",
+          "1faf0f0a53997a23dcb0f052777b9e68f65ea8d8341183dacfc439e065a0d8f0"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_2.csv": [
+          "ab9b2cb8edeecaad0b2139956039f85cf46f2eeea89fb70d4bb97f544b206a69",
+          "ab9b2cb8edeecaad0b2139956039f85cf46f2eeea89fb70d4bb97f544b206a69"
+        ],
+        "native/runlog/PacketTrace_node_0.csv": [
+          "c9edd0e89eec52f78df66c4eba5c76be2e25d04e878bd3685546e8f77702d431",
+          "c9edd0e89eec52f78df66c4eba5c76be2e25d04e878bd3685546e8f77702d431"
+        ],
+        "native/runlog/PortTrace_node_0_port_0.csv": [
+          "83d45d34987e88cf977e716eba61849ec16c130ddf19c84ce042e9c58a1df2c1",
+          "83d45d34987e88cf977e716eba61849ec16c130ddf19c84ce042e9c58a1df2c1"
+        ],
+        "native/runlog/PortTrace_node_4_port_0.csv": [
+          "2e84f74583c4ead64b7bfa1064f2cae81aeb1f67f94f8274f31fa124bfe3628a",
+          "2e84f74583c4ead64b7bfa1064f2cae81aeb1f67f94f8274f31fa124bfe3628a"
+        ],
+        "native/runlog/TaskTrace_node_1.csv": [
+          "99f9512c3f76805071dd0f44b139cb6ac4c2d2015650fcc150f3e61a86f9cae7",
+          "99f9512c3f76805071dd0f44b139cb6ac4c2d2015650fcc150f3e61a86f9cae7"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_1.csv": [
+          "06beeab5f042596a4d33a4216632a2315742f4d320d94b0625239fea4437d9b8",
+          "06beeab5f042596a4d33a4216632a2315742f4d320d94b0625239fea4437d9b8"
+        ],
+        "native/runlog/PacketTrace_node_2.csv": [
+          "dbb5497d16380ab3792345df73c97dd9a18ef1b87c870224539dbc309048796a",
+          "dbb5497d16380ab3792345df73c97dd9a18ef1b87c870224539dbc309048796a"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_0.csv": [
+          "aa9ba6fa4d56961bc8e80aa8c47b496ff44853bcbde30cfdb9bacc458c74a00f",
+          "aa9ba6fa4d56961bc8e80aa8c47b496ff44853bcbde30cfdb9bacc458c74a00f"
+        ],
+        "native/runlog/PacketTrace_node_3.csv": [
+          "26b26dc75607041fdb046fcc60ad51e3c88344d2a403618e24bc83939cca0acf",
+          "26b26dc75607041fdb046fcc60ad51e3c88344d2a403618e24bc83939cca0acf"
+        ],
+        "native/runlog/PortTrace_node_4_port_1.csv": [
+          "71c4ad57a31b04fae6bcbdfc3398919efd569eaee86352297f6417bbd70494ba",
+          "71c4ad57a31b04fae6bcbdfc3398919efd569eaee86352297f6417bbd70494ba"
+        ],
+        "native/runlog/PacketTrace_node_1.csv": [
+          "b8b8a03014d1a150a082117fa68d2b862bc3eeaabda57b96af0f0ffdcffdf7f9",
+          "b8b8a03014d1a150a082117fa68d2b862bc3eeaabda57b96af0f0ffdcffdf7f9"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_1.csv": [
+          "8104c8545ea69614ef59f080fce5ae13c001b9266dd77c37193ab62c98c40977",
+          "8104c8545ea69614ef59f080fce5ae13c001b9266dd77c37193ab62c98c40977"
+        ],
+        "native/runlog/PortTrace_node_4_port_2.csv": [
+          "2e34d77cd34dff2c7e63b51392c2d50f686fde86d0c2f71e8d6f7832826bcab2",
+          "2e34d77cd34dff2c7e63b51392c2d50f686fde86d0c2f71e8d6f7832826bcab2"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_2.csv": [
+          "f3d6db6921d080eb9bf48d6b95218c5218e6e7a8ae2dae7b706c8b83fce0b3c2",
+          "f3d6db6921d080eb9bf48d6b95218c5218e6e7a8ae2dae7b706c8b83fce0b3c2"
+        ],
+        "native/runlog/TaskTrace_node_0.csv": [
+          "0ca01fa68ff281d9f36b1a352acbdce5305b3c070525c855f5085d3cd7e4cce6",
+          "0ca01fa68ff281d9f36b1a352acbdce5305b3c070525c855f5085d3cd7e4cce6"
+        ],
+        "native/runlog/PortTrace_node_4_port_3.csv": [
+          "1786ee7392003019da5c218df884d4bbd3c7b663a89a7d9b90576ed3a7ef269f",
+          "1786ee7392003019da5c218df884d4bbd3c7b663a89a7d9b90576ed3a7ef269f"
+        ],
+        "native/runlog/TaskTrace_node_2.csv": [
+          "0122b43455ef5e1baf8d2def9206feb54a1201de5679dae1e20e37c48fb5906e",
+          "0122b43455ef5e1baf8d2def9206feb54a1201de5679dae1e20e37c48fb5906e"
+        ],
+        "native/runlog/PacketTrace_node_4.csv": [
+          "69e6532fcba64c16d7abea14e410261b2f4e25c66f19e23a8ad1856738469cc9",
+          "69e6532fcba64c16d7abea14e410261b2f4e25c66f19e23a8ad1856738469cc9"
+        ],
+        "native/runlog/PortTrace_node_2_port_0.csv": [
+          "57f5503b7748750730a53d0ab8676cfa280708ca4336fa041861cb5406c51c6e",
+          "57f5503b7748750730a53d0ab8676cfa280708ca4336fa041861cb5406c51c6e"
+        ],
+        "native/runlog/PortTrace_node_3_port_0.csv": [
+          "8c23d1d5f57b19ebdfff9ebdb098fdd47c622d054b323194e8d0751e9597ccac",
+          "8c23d1d5f57b19ebdfff9ebdb098fdd47c622d054b323194e8d0751e9597ccac"
+        ],
+        "native/runlog/PortTrace_node_1_port_0.csv": [
+          "63031d9405137370c1632fc01092585486f4ad3aaaea81818678d47a45b06ef5",
+          "63031d9405137370c1632fc01092585486f4ad3aaaea81818678d47a45b06ef5"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_3.csv": [
+          "38493cf1562a54d573d5a4f15b1960c9ef5d8ecbcd5e85de178191b174c2cca6",
+          "38493cf1562a54d573d5a4f15b1960c9ef5d8ecbcd5e85de178191b174c2cca6"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_3.csv": [
+          "58c1b2b6cb002674cd7da58b1e51e6d6c33dca9d0f24aa0bd899a8e4c5f9cac4",
+          "58c1b2b6cb002674cd7da58b1e51e6d6c33dca9d0f24aa0bd899a8e4c5f9cac4"
+        ],
+        "native/runlog/TaskTrace_node_3.csv": [
+          "d948d20e4812058593f26b3ab903666b51904ddd3a7b7e00a91cbf5435b60adb",
+          "d948d20e4812058593f26b3ab903666b51904ddd3a7b7e00a91cbf5435b60adb"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_0.csv": [
+          "e8eae59aaa8a20816c40c80f1115b186fe1ecc1a3d788351af376b7ec4869f8d",
+          "e8eae59aaa8a20816c40c80f1115b186fe1ecc1a3d788351af376b7ec4869f8d"
+        ]
+      },
+      "layer_latency_ps": 15241120,
+      "simulator_events": 12398,
+      "TA_count": 156,
+      "completed_tokens": 32,
+      "executed_graph_fnv1a64": "8c670e09f2a35754"
+    },
+    {
+      "case": "two-stage",
+      "variant": "scan-index",
+      "status": "PASS",
+      "input_sha256": "5c222425db99a6c40acac1bd03c307b6a22a3d5baee2585234af021872ae48bf",
+      "checks": {
+        "online-summary.json": [],
+        "validation.json": [],
+        "simulator-metrics.json": []
+      },
+      "byte_exact_hashes": {
+        "executed-transfers.csv": [
+          "da62aa05bb536f35dce1c50dcd6a58c74775f706cacee6865c5cc99e3a3fdca8",
+          "da62aa05bb536f35dce1c50dcd6a58c74775f706cacee6865c5cc99e3a3fdca8"
+        ],
+        "received-payloads.bin": [
+          "aaf170f5f6c0e739d32ef46e45a105dd67e3854099e3f3e28a94a3a83cc654cf",
+          "aaf170f5f6c0e739d32ef46e45a105dd67e3854099e3f3e28a94a3a83cc654cf"
+        ],
+        "payload-index.csv": [
+          "3759a811e21d1d0e31b1a25ea83639af9015ecc724f7d9c3e56c0e6672463287",
+          "3759a811e21d1d0e31b1a25ea83639af9015ecc724f7d9c3e56c0e6672463287"
+        ],
+        "events.csv": [
+          "73e73133fa11ee8e0467f991cd4b35494ca58e5c7d9fa192b39494c4c28e5507",
+          "73e73133fa11ee8e0467f991cd4b35494ca58e5c7d9fa192b39494c4c28e5507"
+        ],
+        "ta-identity.csv": [
+          "1faf0f0a53997a23dcb0f052777b9e68f65ea8d8341183dacfc439e065a0d8f0",
+          "1faf0f0a53997a23dcb0f052777b9e68f65ea8d8341183dacfc439e065a0d8f0"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_2.csv": [
+          "ab9b2cb8edeecaad0b2139956039f85cf46f2eeea89fb70d4bb97f544b206a69",
+          "ab9b2cb8edeecaad0b2139956039f85cf46f2eeea89fb70d4bb97f544b206a69"
+        ],
+        "native/runlog/PacketTrace_node_0.csv": [
+          "c9edd0e89eec52f78df66c4eba5c76be2e25d04e878bd3685546e8f77702d431",
+          "c9edd0e89eec52f78df66c4eba5c76be2e25d04e878bd3685546e8f77702d431"
+        ],
+        "native/runlog/PortTrace_node_0_port_0.csv": [
+          "83d45d34987e88cf977e716eba61849ec16c130ddf19c84ce042e9c58a1df2c1",
+          "83d45d34987e88cf977e716eba61849ec16c130ddf19c84ce042e9c58a1df2c1"
+        ],
+        "native/runlog/PortTrace_node_4_port_0.csv": [
+          "2e84f74583c4ead64b7bfa1064f2cae81aeb1f67f94f8274f31fa124bfe3628a",
+          "2e84f74583c4ead64b7bfa1064f2cae81aeb1f67f94f8274f31fa124bfe3628a"
+        ],
+        "native/runlog/TaskTrace_node_1.csv": [
+          "99f9512c3f76805071dd0f44b139cb6ac4c2d2015650fcc150f3e61a86f9cae7",
+          "99f9512c3f76805071dd0f44b139cb6ac4c2d2015650fcc150f3e61a86f9cae7"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_1.csv": [
+          "06beeab5f042596a4d33a4216632a2315742f4d320d94b0625239fea4437d9b8",
+          "06beeab5f042596a4d33a4216632a2315742f4d320d94b0625239fea4437d9b8"
+        ],
+        "native/runlog/PacketTrace_node_2.csv": [
+          "dbb5497d16380ab3792345df73c97dd9a18ef1b87c870224539dbc309048796a",
+          "dbb5497d16380ab3792345df73c97dd9a18ef1b87c870224539dbc309048796a"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_0.csv": [
+          "aa9ba6fa4d56961bc8e80aa8c47b496ff44853bcbde30cfdb9bacc458c74a00f",
+          "aa9ba6fa4d56961bc8e80aa8c47b496ff44853bcbde30cfdb9bacc458c74a00f"
+        ],
+        "native/runlog/PacketTrace_node_3.csv": [
+          "26b26dc75607041fdb046fcc60ad51e3c88344d2a403618e24bc83939cca0acf",
+          "26b26dc75607041fdb046fcc60ad51e3c88344d2a403618e24bc83939cca0acf"
+        ],
+        "native/runlog/PortTrace_node_4_port_1.csv": [
+          "71c4ad57a31b04fae6bcbdfc3398919efd569eaee86352297f6417bbd70494ba",
+          "71c4ad57a31b04fae6bcbdfc3398919efd569eaee86352297f6417bbd70494ba"
+        ],
+        "native/runlog/PacketTrace_node_1.csv": [
+          "b8b8a03014d1a150a082117fa68d2b862bc3eeaabda57b96af0f0ffdcffdf7f9",
+          "b8b8a03014d1a150a082117fa68d2b862bc3eeaabda57b96af0f0ffdcffdf7f9"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_1.csv": [
+          "8104c8545ea69614ef59f080fce5ae13c001b9266dd77c37193ab62c98c40977",
+          "8104c8545ea69614ef59f080fce5ae13c001b9266dd77c37193ab62c98c40977"
+        ],
+        "native/runlog/PortTrace_node_4_port_2.csv": [
+          "2e34d77cd34dff2c7e63b51392c2d50f686fde86d0c2f71e8d6f7832826bcab2",
+          "2e34d77cd34dff2c7e63b51392c2d50f686fde86d0c2f71e8d6f7832826bcab2"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_2.csv": [
+          "f3d6db6921d080eb9bf48d6b95218c5218e6e7a8ae2dae7b706c8b83fce0b3c2",
+          "f3d6db6921d080eb9bf48d6b95218c5218e6e7a8ae2dae7b706c8b83fce0b3c2"
+        ],
+        "native/runlog/TaskTrace_node_0.csv": [
+          "0ca01fa68ff281d9f36b1a352acbdce5305b3c070525c855f5085d3cd7e4cce6",
+          "0ca01fa68ff281d9f36b1a352acbdce5305b3c070525c855f5085d3cd7e4cce6"
+        ],
+        "native/runlog/PortTrace_node_4_port_3.csv": [
+          "1786ee7392003019da5c218df884d4bbd3c7b663a89a7d9b90576ed3a7ef269f",
+          "1786ee7392003019da5c218df884d4bbd3c7b663a89a7d9b90576ed3a7ef269f"
+        ],
+        "native/runlog/TaskTrace_node_2.csv": [
+          "0122b43455ef5e1baf8d2def9206feb54a1201de5679dae1e20e37c48fb5906e",
+          "0122b43455ef5e1baf8d2def9206feb54a1201de5679dae1e20e37c48fb5906e"
+        ],
+        "native/runlog/PacketTrace_node_4.csv": [
+          "69e6532fcba64c16d7abea14e410261b2f4e25c66f19e23a8ad1856738469cc9",
+          "69e6532fcba64c16d7abea14e410261b2f4e25c66f19e23a8ad1856738469cc9"
+        ],
+        "native/runlog/PortTrace_node_2_port_0.csv": [
+          "57f5503b7748750730a53d0ab8676cfa280708ca4336fa041861cb5406c51c6e",
+          "57f5503b7748750730a53d0ab8676cfa280708ca4336fa041861cb5406c51c6e"
+        ],
+        "native/runlog/PortTrace_node_3_port_0.csv": [
+          "8c23d1d5f57b19ebdfff9ebdb098fdd47c622d054b323194e8d0751e9597ccac",
+          "8c23d1d5f57b19ebdfff9ebdb098fdd47c622d054b323194e8d0751e9597ccac"
+        ],
+        "native/runlog/PortTrace_node_1_port_0.csv": [
+          "63031d9405137370c1632fc01092585486f4ad3aaaea81818678d47a45b06ef5",
+          "63031d9405137370c1632fc01092585486f4ad3aaaea81818678d47a45b06ef5"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_3.csv": [
+          "38493cf1562a54d573d5a4f15b1960c9ef5d8ecbcd5e85de178191b174c2cca6",
+          "38493cf1562a54d573d5a4f15b1960c9ef5d8ecbcd5e85de178191b174c2cca6"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_3.csv": [
+          "58c1b2b6cb002674cd7da58b1e51e6d6c33dca9d0f24aa0bd899a8e4c5f9cac4",
+          "58c1b2b6cb002674cd7da58b1e51e6d6c33dca9d0f24aa0bd899a8e4c5f9cac4"
+        ],
+        "native/runlog/TaskTrace_node_3.csv": [
+          "d948d20e4812058593f26b3ab903666b51904ddd3a7b7e00a91cbf5435b60adb",
+          "d948d20e4812058593f26b3ab903666b51904ddd3a7b7e00a91cbf5435b60adb"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_0.csv": [
+          "e8eae59aaa8a20816c40c80f1115b186fe1ecc1a3d788351af376b7ec4869f8d",
+          "e8eae59aaa8a20816c40c80f1115b186fe1ecc1a3d788351af376b7ec4869f8d"
+        ]
+      },
+      "layer_latency_ps": 15241120,
+      "simulator_events": 12398,
+      "TA_count": 156,
+      "completed_tokens": 32,
+      "executed_graph_fnv1a64": "8c670e09f2a35754"
+    },
+    {
+      "case": "two-stage",
+      "variant": "index-index",
+      "status": "PASS",
+      "input_sha256": "5c222425db99a6c40acac1bd03c307b6a22a3d5baee2585234af021872ae48bf",
+      "checks": {
+        "online-summary.json": [],
+        "validation.json": [],
+        "simulator-metrics.json": []
+      },
+      "byte_exact_hashes": {
+        "executed-transfers.csv": [
+          "da62aa05bb536f35dce1c50dcd6a58c74775f706cacee6865c5cc99e3a3fdca8",
+          "da62aa05bb536f35dce1c50dcd6a58c74775f706cacee6865c5cc99e3a3fdca8"
+        ],
+        "received-payloads.bin": [
+          "aaf170f5f6c0e739d32ef46e45a105dd67e3854099e3f3e28a94a3a83cc654cf",
+          "aaf170f5f6c0e739d32ef46e45a105dd67e3854099e3f3e28a94a3a83cc654cf"
+        ],
+        "payload-index.csv": [
+          "3759a811e21d1d0e31b1a25ea83639af9015ecc724f7d9c3e56c0e6672463287",
+          "3759a811e21d1d0e31b1a25ea83639af9015ecc724f7d9c3e56c0e6672463287"
+        ],
+        "events.csv": [
+          "73e73133fa11ee8e0467f991cd4b35494ca58e5c7d9fa192b39494c4c28e5507",
+          "73e73133fa11ee8e0467f991cd4b35494ca58e5c7d9fa192b39494c4c28e5507"
+        ],
+        "ta-identity.csv": [
+          "1faf0f0a53997a23dcb0f052777b9e68f65ea8d8341183dacfc439e065a0d8f0",
+          "1faf0f0a53997a23dcb0f052777b9e68f65ea8d8341183dacfc439e065a0d8f0"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_2.csv": [
+          "ab9b2cb8edeecaad0b2139956039f85cf46f2eeea89fb70d4bb97f544b206a69",
+          "ab9b2cb8edeecaad0b2139956039f85cf46f2eeea89fb70d4bb97f544b206a69"
+        ],
+        "native/runlog/PacketTrace_node_0.csv": [
+          "c9edd0e89eec52f78df66c4eba5c76be2e25d04e878bd3685546e8f77702d431",
+          "c9edd0e89eec52f78df66c4eba5c76be2e25d04e878bd3685546e8f77702d431"
+        ],
+        "native/runlog/PortTrace_node_0_port_0.csv": [
+          "83d45d34987e88cf977e716eba61849ec16c130ddf19c84ce042e9c58a1df2c1",
+          "83d45d34987e88cf977e716eba61849ec16c130ddf19c84ce042e9c58a1df2c1"
+        ],
+        "native/runlog/PortTrace_node_4_port_0.csv": [
+          "2e84f74583c4ead64b7bfa1064f2cae81aeb1f67f94f8274f31fa124bfe3628a",
+          "2e84f74583c4ead64b7bfa1064f2cae81aeb1f67f94f8274f31fa124bfe3628a"
+        ],
+        "native/runlog/TaskTrace_node_1.csv": [
+          "99f9512c3f76805071dd0f44b139cb6ac4c2d2015650fcc150f3e61a86f9cae7",
+          "99f9512c3f76805071dd0f44b139cb6ac4c2d2015650fcc150f3e61a86f9cae7"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_1.csv": [
+          "06beeab5f042596a4d33a4216632a2315742f4d320d94b0625239fea4437d9b8",
+          "06beeab5f042596a4d33a4216632a2315742f4d320d94b0625239fea4437d9b8"
+        ],
+        "native/runlog/PacketTrace_node_2.csv": [
+          "dbb5497d16380ab3792345df73c97dd9a18ef1b87c870224539dbc309048796a",
+          "dbb5497d16380ab3792345df73c97dd9a18ef1b87c870224539dbc309048796a"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_0.csv": [
+          "aa9ba6fa4d56961bc8e80aa8c47b496ff44853bcbde30cfdb9bacc458c74a00f",
+          "aa9ba6fa4d56961bc8e80aa8c47b496ff44853bcbde30cfdb9bacc458c74a00f"
+        ],
+        "native/runlog/PacketTrace_node_3.csv": [
+          "26b26dc75607041fdb046fcc60ad51e3c88344d2a403618e24bc83939cca0acf",
+          "26b26dc75607041fdb046fcc60ad51e3c88344d2a403618e24bc83939cca0acf"
+        ],
+        "native/runlog/PortTrace_node_4_port_1.csv": [
+          "71c4ad57a31b04fae6bcbdfc3398919efd569eaee86352297f6417bbd70494ba",
+          "71c4ad57a31b04fae6bcbdfc3398919efd569eaee86352297f6417bbd70494ba"
+        ],
+        "native/runlog/PacketTrace_node_1.csv": [
+          "b8b8a03014d1a150a082117fa68d2b862bc3eeaabda57b96af0f0ffdcffdf7f9",
+          "b8b8a03014d1a150a082117fa68d2b862bc3eeaabda57b96af0f0ffdcffdf7f9"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_1.csv": [
+          "8104c8545ea69614ef59f080fce5ae13c001b9266dd77c37193ab62c98c40977",
+          "8104c8545ea69614ef59f080fce5ae13c001b9266dd77c37193ab62c98c40977"
+        ],
+        "native/runlog/PortTrace_node_4_port_2.csv": [
+          "2e34d77cd34dff2c7e63b51392c2d50f686fde86d0c2f71e8d6f7832826bcab2",
+          "2e34d77cd34dff2c7e63b51392c2d50f686fde86d0c2f71e8d6f7832826bcab2"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_2.csv": [
+          "f3d6db6921d080eb9bf48d6b95218c5218e6e7a8ae2dae7b706c8b83fce0b3c2",
+          "f3d6db6921d080eb9bf48d6b95218c5218e6e7a8ae2dae7b706c8b83fce0b3c2"
+        ],
+        "native/runlog/TaskTrace_node_0.csv": [
+          "0ca01fa68ff281d9f36b1a352acbdce5305b3c070525c855f5085d3cd7e4cce6",
+          "0ca01fa68ff281d9f36b1a352acbdce5305b3c070525c855f5085d3cd7e4cce6"
+        ],
+        "native/runlog/PortTrace_node_4_port_3.csv": [
+          "1786ee7392003019da5c218df884d4bbd3c7b663a89a7d9b90576ed3a7ef269f",
+          "1786ee7392003019da5c218df884d4bbd3c7b663a89a7d9b90576ed3a7ef269f"
+        ],
+        "native/runlog/TaskTrace_node_2.csv": [
+          "0122b43455ef5e1baf8d2def9206feb54a1201de5679dae1e20e37c48fb5906e",
+          "0122b43455ef5e1baf8d2def9206feb54a1201de5679dae1e20e37c48fb5906e"
+        ],
+        "native/runlog/PacketTrace_node_4.csv": [
+          "69e6532fcba64c16d7abea14e410261b2f4e25c66f19e23a8ad1856738469cc9",
+          "69e6532fcba64c16d7abea14e410261b2f4e25c66f19e23a8ad1856738469cc9"
+        ],
+        "native/runlog/PortTrace_node_2_port_0.csv": [
+          "57f5503b7748750730a53d0ab8676cfa280708ca4336fa041861cb5406c51c6e",
+          "57f5503b7748750730a53d0ab8676cfa280708ca4336fa041861cb5406c51c6e"
+        ],
+        "native/runlog/PortTrace_node_3_port_0.csv": [
+          "8c23d1d5f57b19ebdfff9ebdb098fdd47c622d054b323194e8d0751e9597ccac",
+          "8c23d1d5f57b19ebdfff9ebdb098fdd47c622d054b323194e8d0751e9597ccac"
+        ],
+        "native/runlog/PortTrace_node_1_port_0.csv": [
+          "63031d9405137370c1632fc01092585486f4ad3aaaea81818678d47a45b06ef5",
+          "63031d9405137370c1632fc01092585486f4ad3aaaea81818678d47a45b06ef5"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_3.csv": [
+          "38493cf1562a54d573d5a4f15b1960c9ef5d8ecbcd5e85de178191b174c2cca6",
+          "38493cf1562a54d573d5a4f15b1960c9ef5d8ecbcd5e85de178191b174c2cca6"
+        ],
+        "native/runlog/AllPacketTrace_PKT_node_3.csv": [
+          "58c1b2b6cb002674cd7da58b1e51e6d6c33dca9d0f24aa0bd899a8e4c5f9cac4",
+          "58c1b2b6cb002674cd7da58b1e51e6d6c33dca9d0f24aa0bd899a8e4c5f9cac4"
+        ],
+        "native/runlog/TaskTrace_node_3.csv": [
+          "d948d20e4812058593f26b3ab903666b51904ddd3a7b7e00a91cbf5435b60adb",
+          "d948d20e4812058593f26b3ab903666b51904ddd3a7b7e00a91cbf5435b60adb"
+        ],
+        "native/runlog/AllPacketTrace_ACK_node_0.csv": [
+          "e8eae59aaa8a20816c40c80f1115b186fe1ecc1a3d788351af376b7ec4869f8d",
+          "e8eae59aaa8a20816c40c80f1115b186fe1ecc1a3d788351af376b7ec4869f8d"
+        ]
+      },
+      "layer_latency_ps": 15241120,
+      "simulator_events": 12398,
+      "TA_count": 156,
+      "completed_tokens": 32,
+      "executed_graph_fnv1a64": "8c670e09f2a35754"
+    }
+  ]
+}

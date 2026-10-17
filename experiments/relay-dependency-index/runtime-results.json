@@ -1,0 +1,113 @@
+{
+  "runs": [
+    {
+      "name": "index-index-control",
+      "dependency_mode": "index",
+      "online_mode": "index",
+      "timed": false,
+      "sampled": false,
+      "status": "PASS",
+      "guard": null,
+      "complete": true,
+      "wall_s": 266.48645026102895,
+      "user_cpu_s": 264.833753,
+      "system_cpu_s": 1.487843,
+      "peak_rss_kib": 1545056,
+      "layer_latency_ps": 5844141552,
+      "simulator_events": 23439135,
+      "completed_tokens": 256,
+      "graph_hash": "6ada88bf8945a70f"
+    },
+    {
+      "name": "index-index-timed",
+      "dependency_mode": "index",
+      "online_mode": "index",
+      "timed": true,
+      "sampled": false,
+      "status": "PASS",
+      "guard": null,
+      "complete": true,
+      "wall_s": 268.73459446796915,
+      "user_cpu_s": 266.64757,
+      "system_cpu_s": 1.963272,
+      "peak_rss_kib": 1545168,
+      "layer_latency_ps": 5844141552,
+      "simulator_events": 23439135,
+      "completed_tokens": 256,
+      "graph_hash": "6ada88bf8945a70f",
+      "partial_simulator_events": 23439135,
+      "partial_simulated_time_ps": 10000000000000,
+      "partial_progress": {
+        "remote_wqes_planned": 66122,
+        "remote_wqes_submitted": 66122,
+        "TA_count": 485576,
+        "sender_completions": 66122,
+        "completed_tokens": 256,
+        "pending_replica_weights": 0,
+        "packet_tx_total": 3884608,
+        "packet_rx_total": 3884608,
+        "byte_tx_total": 1250843776,
+        "byte_rx_total": 1250843776
+      },
+      "profile_complete": true,
+      "snapshot_overhead_cpu_ns": 84599114
+    },
+    {
+      "name": "index-scan-timed",
+      "dependency_mode": "index",
+      "online_mode": "scan",
+      "timed": true,
+      "sampled": false,
+      "status": "FAIL",
+      "guard": "wall_guard",
+      "complete": false,
+      "wall_s": 300.64008971798467,
+      "user_cpu_s": 298.307324,
+      "system_cpu_s": 2.052212,
+      "peak_rss_kib": 1536300,
+      "layer_latency_ps": null,
+      "simulator_events": null,
+      "completed_tokens": null,
+      "graph_hash": null,
+      "partial_simulator_events": 23439135,
+      "partial_simulated_time_ps": 10000000000000,
+      "partial_progress": {
+        "remote_wqes_planned": 66122,
+        "remote_wqes_submitted": 66122,
+        "TA_count": 485576,
+        "sender_completions": 66122,
+        "completed_tokens": 256,
+        "pending_replica_weights": 0,
+        "packet_tx_total": 3884608,
+        "packet_rx_total": 3884608,
+        "byte_tx_total": 1250843776,
+        "byte_rx_total": 1250843776
+      },
+      "profile_complete": false,
+      "snapshot_overhead_cpu_ns": 88611027
+    }
+  ],
+  "completed_output_parity": [
+    {
+      "reference": "index-index-control",
+      "candidate": "index-index-timed",
+      "file": "online-summary.json",
+      "stable_equal": true
+    },
+    {
+      "reference": "index-index-control",
+      "candidate": "index-index-timed",
+      "file": "validation.json",
+      "stable_equal": true
+    },
+    {
+      "reference": "index-index-control",
+      "candidate": "index-index-timed",
+      "file": "simulator-metrics.json",
+      "stable_equal": true
+    }
+  ],
+  "excluded_json_fields": [
+    "verification_wall_ns"
+  ]
+}

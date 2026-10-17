@@ -1,0 +1,101 @@
+mode,stage,file,line,function,primitive_calls,total_calls,self_seconds,cumulative_seconds
+scan,preparation,~,0,<built-in method builtins.exec>,1,22,7.7543e-05,204.23275774700002
+scan,preparation,/workspace/scratch/c6ba02920254/relay-dependency-index/experiments/qwen3-model-size/prepare.py,1,<module>,1,1,0.014262138,204.23274313500002
+scan,preparation,/workspace/scratch/c6ba02920254/relay-dependency-index/experiments/multi-npu-relay/adapter.py,39,emit,3,3,0.21201910000000002,202.73129487100002
+scan,preparation,/workspace/scratch/c6ba02920254/relay-dependency-index/experiments/multi-npu-relay/adapter.py,8,compile_dependencies,3,3,198.341309429,198.34130987
+scan,preparation,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py,183,dumps,11,11,0.031687442,4.142799729
+scan,preparation,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py,183,encode,11,11,0.385347099,4.111103473
+scan,preparation,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py,414,_iterencode,4163429,4163429,0.5830641040000001,3.678497091
+scan,preparation,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py,334,_iterencode_dict,4163429,8437206,1.733915547,3.095429202
+scan,preparation,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py,278,_iterencode_list,4161665,4627438,0.90198367,2.407800624
+scan,preparation,/workspace/scratch/c6ba02920254/relay-dependency-index/experiments/direct-weight-forward/adapter.py,21,emit,2,2,0.013440628000000001,0.816500691
+scan,preparation,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py,506,run,6,6,0.000101175,0.47093839800000004
+scan,preparation,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py,1165,communicate,6,6,4.5519e-05,0.467818618
+scan,preparation,/workspace/scratch/c6ba02920254/relay-dependency-index/planner/quota/planner.py,173,solve,1,1,0.00039620300000000003,0.46523244100000005
+scan,preparation,/workspace/scratch/c6ba02920254/relay-dependency-index/planner/quota/planner.py,179,solve_upstream,1,1,0.009058768,0.462843987
+scan,preparation,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/csv.py,163,writerow,74578,74578,0.030594800000000002,0.43414764400000005
+scan,preparation,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py,2062,_communicate,5,5,0.001140918,0.43305341300000005
+scan,preparation,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/selectors.py,402,select,447,447,0.0006701950000000001,0.427826509
+scan,preparation,~,0,<method 'poll' of 'select.poll' objects>,447,447,0.42699054900000005,0.42699054900000005
+scan,preparation,/workspace/scratch/c6ba02920254/relay-dependency-index/planner/quota/upstream.py,32,replication,1,1,3.6874e-05,0.400838901
+scan,preparation,~,0,<method 'writerow' of '_csv.writer' objects>,76627,76627,0.153660554,0.34484651800000005
+scan,preparation,~,0,<built-in method builtins.isinstance>,3661438,3661438,0.309488188,0.309638955
+scan,preparation,/workspace/scratch/c6ba02920254/relay-dependency-index/planner/quota/checker.py,9,check,2,2,0.036302463,0.233440526
+scan,preparation,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/csv.py,161,<genexpr>,919058,919058,0.138400727,0.21334470000000003
+scan,preparation,~,0,<built-in method builtins.sum>,43353,43353,0.018777704000000003,0.168410853
+scan,preparation,~,0,<built-in method _json.encode_basestring_ascii>,887263,887263,0.125829139,0.125829139
+scan,preflight,~,0,<built-in method builtins.exec>,1,16,6.9326e-05,197.8781495
+scan,preflight,/workspace/scratch/c6ba02920254/relay-dependency-index/experiments/tiered-logging/preflight.py,1,<module>,1,1,4.2363e-05,197.87814432200003
+scan,preflight,/workspace/scratch/c6ba02920254/relay-dependency-index/experiments/tiered-logging/preflight.py,188,main,1,1,0.019288504,197.874900378
+scan,preflight,/workspace/scratch/c6ba02920254/relay-dependency-index/experiments/tiered-logging/preflight.py,86,check,1,1,196.946436201,197.85420046800002
+scan,preflight,/workspace/scratch/c6ba02920254/relay-dependency-index/experiments/tiered-logging/preflight.py,35,fnv1a64,1,1,0.24556855800000002,0.24556855800000002
+scan,preflight,/workspace/scratch/c6ba02920254/relay-dependency-index/experiments/tiered-logging/preflight.py,29,canonical_graph,1,1,0.023175301000000002,0.22808676900000002
+scan,preflight,~,0,<method 'join' of 'str' objects>,66579,133086,0.08396737800000001,0.200010564
+scan,preflight,/workspace/scratch/c6ba02920254/relay-dependency-index/experiments/tiered-logging/preflight.py,32,<genexpr>,729608,729608,0.115921202,0.129647579
+scan,preflight,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py,299,loads,2,2,2.002e-05,0.12434787400000001
+scan,preflight,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py,333,decode,2,2,3.3172e-05,0.12432513
+scan,preflight,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py,344,raw_decode,2,2,0.12426667300000001,0.12426667300000001
+scan,preflight,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/csv.py,112,__next__,62233,62233,0.069069062,0.11131046900000001
+scan,preflight,/workspace/scratch/c6ba02920254/relay-dependency-index/planner/quota/checker.py,9,check,1,1,0.012528254,0.08400626700000001
+scan,preflight,~,0,<built-in method builtins.sum>,17205,17205,0.014330480000000001,0.07894788900000001
+scan,preflight,/workspace/scratch/c6ba02920254/relay-dependency-index/planner/quota/checker.py,50,<genexpr>,19648,19648,0.042656866,0.042656866
+scan,preflight,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py,1022,read_text,4,4,3.5422e-05,0.025091551
+scan,preflight,~,0,<method 'read' of '_io.TextIOWrapper' objects>,4,4,0.015214612,0.024620466
+scan,preflight,~,0,<built-in method builtins.next>,62236,62236,0.0223039,0.022304240000000003
+scan,preflight,/workspace/scratch/c6ba02920254/relay-dependency-index/experiments/tiered-logging/preflight.py,25,require,42412,42412,0.022251314,0.022251314
+scan,preflight,/workspace/scratch/c6ba02920254/relay-dependency-index/planner/quota/checker.py,72,check_upstream,1,1,0.012067094,0.021160765
+scan,preflight,/workspace/scratch/c6ba02920254/relay-dependency-index/experiments/qwen-chunk-cpu-profiling/python-stages/profile_stage.py,34,compiled,1,1,7.3768e-05,0.020398134000000002
+scan,preflight,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py,506,run,1,1,2.8313e-05,0.017198681
+scan,preflight,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py,1165,communicate,1,1,1.3621e-05,0.016487167
+scan,preflight,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py,2062,_communicate,1,1,0.000530979,0.016471303
+scan,preflight,~,0,<built-in method builtins.len>,204545,204629,0.014701998,0.014717903000000001
+indexed,preparation,~,0,<built-in method builtins.exec>,1,22,0.000129323,5.500980748
+indexed,preparation,/workspace/scratch/c6ba02920254/relay-dependency-index/experiments/qwen3-model-size/prepare.py,1,<module>,1,1,0.014810643,5.500965735
+indexed,preparation,/workspace/scratch/c6ba02920254/relay-dependency-index/experiments/multi-npu-relay/adapter.py,39,emit,3,3,0.22788038500000002,4.307695145
+indexed,preparation,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py,183,dumps,11,11,0.029438397,3.901549301
+indexed,preparation,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py,183,encode,11,11,0.37093363900000004,3.8721010270000003
+indexed,preparation,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py,414,_iterencode,4163429,4163429,0.5523835730000001,3.4572776210000002
+indexed,preparation,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py,334,_iterencode_dict,4163429,8437206,1.6420257070000002,2.904890094
+indexed,preparation,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py,278,_iterencode_list,4161665,4627438,0.8330712730000001,2.258876895
+indexed,preparation,/workspace/scratch/c6ba02920254/relay-dependency-index/experiments/direct-weight-forward/adapter.py,21,emit,2,2,0.014401412,0.730457325
+indexed,preparation,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/csv.py,163,writerow,74578,74578,0.026289060000000003,0.411977087
+indexed,preparation,~,0,<method 'writerow' of '_csv.writer' objects>,76627,76627,0.149654097,0.32898751200000004
+indexed,preparation,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py,506,run,6,6,0.00011788200000000001,0.309192515
+indexed,preparation,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py,1165,communicate,6,6,4.2337000000000005e-05,0.306337495
+indexed,preparation,~,0,<built-in method builtins.isinstance>,3661438,3661438,0.289260994,0.28940664800000004
+indexed,preparation,/workspace/scratch/c6ba02920254/relay-dependency-index/planner/quota/planner.py,173,solve,1,1,0.000346086,0.276721423
+indexed,preparation,/workspace/scratch/c6ba02920254/relay-dependency-index/planner/quota/planner.py,179,solve_upstream,1,1,0.00618988,0.27458752200000003
+indexed,preparation,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py,2062,_communicate,5,5,0.0011321570000000002,0.268562285
+indexed,preparation,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/selectors.py,402,select,466,466,0.000564241,0.263860404
+indexed,preparation,~,0,<method 'poll' of 'select.poll' objects>,466,466,0.263145617,0.263145617
+indexed,preparation,/workspace/scratch/c6ba02920254/relay-dependency-index/planner/quota/upstream.py,32,replication,1,1,3.5775e-05,0.238637644
+indexed,preparation,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/csv.py,161,<genexpr>,919058,919058,0.12771891300000002,0.19962020200000002
+indexed,preparation,/workspace/scratch/c6ba02920254/relay-dependency-index/planner/quota/checker.py,9,check,2,2,0.025439624,0.17464432100000002
+indexed,preparation,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/csv.py,112,__next__,62286,62286,0.079697127,0.126122745
+indexed,preparation,~,0,<built-in method builtins.sum>,43353,43353,0.015440883,0.12348615800000001
+indexed,preparation,~,0,<built-in method _json.encode_basestring_ascii>,887263,887263,0.11599244,0.11599244
+indexed,preflight,~,0,<built-in method builtins.exec>,1,16,4.2548e-05,1.2643080560000002
+indexed,preflight,/workspace/scratch/c6ba02920254/relay-dependency-index/experiments/tiered-logging/preflight.py,1,<module>,1,1,3.4041e-05,1.264303399
+indexed,preflight,/workspace/scratch/c6ba02920254/relay-dependency-index/experiments/tiered-logging/preflight.py,188,main,1,1,0.017260948,1.261356775
+indexed,preflight,/workspace/scratch/c6ba02920254/relay-dependency-index/experiments/tiered-logging/preflight.py,86,check,1,1,0.21140266300000002,1.242789348
+indexed,preflight,/workspace/scratch/c6ba02920254/relay-dependency-index/experiments/tiered-logging/preflight.py,35,fnv1a64,1,1,0.259652418,0.259652418
+indexed,preflight,/workspace/scratch/c6ba02920254/relay-dependency-index/experiments/tiered-logging/preflight.py,29,canonical_graph,1,1,0.02201099,0.223839013
+indexed,preflight,~,0,<method 'join' of 'str' objects>,66579,133086,0.082243941,0.19699355600000001
+indexed,preflight,/workspace/scratch/c6ba02920254/relay-dependency-index/experiments/tiered-logging/preflight.py,41,reconstruct_dependencies,1,1,0.111160637,0.14441116
+indexed,preflight,/workspace/scratch/c6ba02920254/relay-dependency-index/experiments/tiered-logging/preflight.py,32,<genexpr>,729608,729608,0.114629776,0.12826252000000002
+indexed,preflight,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/csv.py,112,__next__,62233,62233,0.07275139500000001,0.11928021100000001
+indexed,preflight,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py,299,loads,2,2,2.0461000000000003e-05,0.118072411
+indexed,preflight,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py,333,decode,2,2,3.4323e-05,0.11804953700000001
+indexed,preflight,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py,344,raw_decode,2,2,0.11798992700000001,0.11798992700000001
+indexed,preflight,/workspace/scratch/c6ba02920254/relay-dependency-index/planner/quota/checker.py,9,check,1,1,0.012092444,0.082597817
+indexed,preflight,~,0,<built-in method builtins.sum>,17205,17205,0.014003218000000001,0.077223942
+indexed,preflight,/workspace/scratch/c6ba02920254/relay-dependency-index/planner/quota/checker.py,50,<genexpr>,19648,19648,0.042549735000000005,0.042549735000000005
+indexed,preflight,~,0,<built-in method builtins.next>,62236,62236,0.025064776,0.025065127000000003
+indexed,preflight,~,0,<method 'append' of 'list' objects>,284300,284300,0.022970782000000002,0.022970782000000002
+indexed,preflight,/workspace/scratch/c6ba02920254/relay-dependency-index/planner/quota/checker.py,72,check_upstream,1,1,0.011649370000000001,0.020385667
+indexed,preflight,/workspace/scratch/c6ba02920254/relay-dependency-index/experiments/qwen-chunk-cpu-profiling/python-stages/profile_stage.py,34,compiled,1,1,6.2494e-05,0.018363155000000003
+indexed,preflight,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py,1022,read_text,4,4,3.0688e-05,0.017454634
+indexed,preflight,~,0,<method 'read' of '_io.TextIOWrapper' objects>,4,4,0.009495311000000001,0.01699146
+indexed,preflight,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py,506,run,1,1,2.688e-05,0.016906721
+indexed,preflight,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py,1165,communicate,1,1,1.2019000000000001e-05,0.016328546
+indexed,preflight,/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py,2062,_communicate,1,1,0.0005504850000000001,0.016314665000000002

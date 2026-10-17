@@ -1,0 +1,120 @@
+{
+  "status": "PASS",
+  "contributions": [
+    {
+      "name": "Python preparation: dependency construction",
+      "scan_cpu_seconds": 198.298786608,
+      "index_cpu_seconds": 0.10790151100000012,
+      "complete_scope": true,
+      "index_build_included": true,
+      "scope": "Dependency span; complete Python stage process/wall costs reported separately",
+      "scan_full_stage_process_cpu_seconds": 204.50768,
+      "index_full_stage_process_cpu_seconds": 5.835829,
+      "scan_full_stage_wall_seconds": 204.32494440797018,
+      "index_full_stage_wall_seconds": 5.768761479004752,
+      "observed_cpu_ratio": 1837.7758084221803
+    },
+    {
+      "name": "Python independent preflight: dependency validation",
+      "scan_cpu_seconds": 196.705943494,
+      "index_cpu_seconds": 0.14946604200000002,
+      "complete_scope": true,
+      "index_build_included": true,
+      "scope": "Dependency span; complete Python stage process/wall costs reported separately",
+      "scan_full_stage_process_cpu_seconds": 197.906035,
+      "index_full_stage_process_cpu_seconds": 1.326741,
+      "scan_full_stage_wall_seconds": 198.04113198601408,
+      "index_full_stage_wall_seconds": 1.505361718009226,
+      "observed_cpu_ratio": 1316.0577537337876
+    },
+    {
+      "name": "C++ Read: full parsing/setup",
+      "scan_cpu_seconds": 89.551843289,
+      "index_cpu_seconds": 0.307381791,
+      "complete_scope": true,
+      "index_build_included": true,
+      "scan_index_build_cpu_seconds": 4.61e-07,
+      "index_index_build_cpu_seconds": 0.004534881,
+      "scan_dependency_cpu_seconds": 89.256855231,
+      "index_dependency_cpu_seconds": 0.021724678,
+      "scope": "Full Read inclusive CPU includes index construction and local index destruction; parsing/setup is included. Graph export is excluded.",
+      "observed_cpu_ratio": 291.33750245147087
+    },
+    {
+      "counter_evidence": {
+        "scan": {
+          "audit_group_events": 11520,
+          "audit_weight_events": 51,
+          "audit_group_scan_candidates": 716912640,
+          "audit_group_scan_matches": 23040,
+          "audit_weight_scan_candidates": 3173832,
+          "audit_weight_scan_matches": 62232,
+          "online_index_build_candidates": 0
+        },
+        "index": {
+          "audit_group_events": 11520,
+          "audit_weight_events": 51,
+          "audit_group_scan_candidates": 23040,
+          "audit_group_scan_matches": 23040,
+          "audit_weight_scan_candidates": 62232,
+          "audit_weight_scan_matches": 62232,
+          "online_index_build_candidates": 62232
+        }
+      },
+      "name": "C++ online group/weight audit + index build",
+      "scan_cpu_seconds": 21.359505114,
+      "index_cpu_seconds": 0.056797932,
+      "complete_scope": true,
+      "index_build_included": true,
+      "scope": "Disjoint group/weight event scopes plus one InitAudit index-build scope. Persistent-index destruction remains in Layer destructor, separately reported.",
+      "scan_components_cpu_seconds": {
+        "Audit.group_scan": 21.329433505,
+        "Audit.weight_scan": 0.030070908,
+        "InitAudit.online_index_build": 7.01e-07
+      },
+      "index_components_cpu_seconds": {
+        "Audit.group_scan": 0.051152543,
+        "Audit.weight_scan": 0.001123257,
+        "InitAudit.online_index_build": 0.004522132
+      },
+      "scan_run": "index-scan-timed",
+      "index_run": "index-index-timed",
+      "completed_full_output_parity": false,
+      "scan_process_complete": false,
+      "index_process_complete": true,
+      "targeted_scope_completion_verified": true,
+      "common_progress": {
+        "remote_wqes_planned": 66122,
+        "remote_wqes_submitted": 66122,
+        "TA_count": 485576,
+        "sender_completions": 66122,
+        "completed_tokens": 256,
+        "pending_replica_weights": 0,
+        "packet_tx_total": 3884608,
+        "packet_rx_total": 3884608,
+        "byte_tx_total": 1250843776,
+        "byte_rx_total": 1250843776
+      },
+      "common_simulator_events": 23439135,
+      "common_completed_tokens": 256,
+      "common_layer_latency_ps": 5844141552,
+      "observed_cpu_ratio": 376.0613170564027
+    }
+  ],
+  "warnings": [
+    "Online scan whole run is INCOMPLETE: stopped in FinalAudit. Only verified completed online scopes are compared; no full-run speedup or scan latency claim."
+  ],
+  "limitations": [
+    "One observation per treatment, no confidence intervals.",
+    "Instrumented CPU includes timer/counter overhead; snapshot serialization is excluded and separately recorded.",
+    "Python, standalone Read and simulator measurements are separate experiments; do not sum ratios into end-to-end speedup.",
+    "Historical baseline timeouts are excluded. An incomplete FinalAudit run is used only when the specific online scopes and Simulator::Run are proven completed with identical event/progress counters; no whole-process ratio is inferred.",
+    "Index construction is included. Full Read includes local index destruction; persistent online-index destruction is included in whole-program CPU."
+  ],
+  "evidence_sha256": {
+    "python-timings.csv": "f2556eab4c5582b938a1246b13207b77ef5f21d485cdd864ee7f9fbabd93692b",
+    "cpp-read-timings.csv": "bf455223acaced17d7e611d28a9483fe57e1dc17d27192065ec5a9aa1bba3f4f",
+    "cpp-read-profile.json": "512dc2e8ce05044bac4d23d1387ab4c26140a1a475718c19e3478bc30d439a9b",
+    "runtime-results.json": "18fd52e8cac2bed94662ca1ae5584e7f882bad24856f42c9978ee9c714bc911d"
+  }
+}
