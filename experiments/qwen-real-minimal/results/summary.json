@@ -1,0 +1,135 @@
+{
+  "status": "PASS",
+  "source_requests": 8,
+  "source_prefill_tokens": 4275,
+  "batch_tokens": 256,
+  "layers": 94,
+  "top_k": 8,
+  "assignments_per_layer": 2048,
+  "unique_source_token_pairs": 256,
+  "source_request_lengths": [
+    22,
+    224,
+    393,
+    924,
+    832,
+    691,
+    597,
+    592
+  ],
+  "batch_boundaries": [
+    {
+      "manifest_request_index": 0,
+      "source_ordinal_start": 0,
+      "selected_tokens": 22
+    },
+    {
+      "manifest_request_index": 1,
+      "source_ordinal_start": 0,
+      "selected_tokens": 224
+    },
+    {
+      "manifest_request_index": 2,
+      "source_ordinal_start": 0,
+      "selected_tokens": 10
+    }
+  ],
+  "placement": "main_placement[e] = e // 2; 64 NPUs, 128 experts",
+  "source_placement": "source_npu = batch_token_ordinal % 64",
+  "ranking_rule": "Sort all 94 serialized layers ascending by (NoBalancing NPU max/mean, numeric serialized layer ID). Select ranks 1, 47, 94 (1-based); rank 47 is lower median, zero-based floor((94-1)/2).",
+  "selection": {
+    "low": {
+      "layer": 0,
+      "tokens": 256,
+      "assignments": 2048,
+      "expert_max": 75,
+      "expert_mean": 16,
+      "expert_max_mean": 4.6875,
+      "npu_max": 96,
+      "npu_mean": 32,
+      "npu_max_mean": 3.0,
+      "active_experts": 124,
+      "active_npus": 64,
+      "rank_1based": 1
+    },
+    "mid": {
+      "layer": 37,
+      "tokens": 256,
+      "assignments": 2048,
+      "expert_max": 184,
+      "expert_mean": 16,
+      "expert_max_mean": 11.5,
+      "npu_max": 186,
+      "npu_mean": 32,
+      "npu_max_mean": 5.8125,
+      "active_experts": 109,
+      "active_npus": 63,
+      "rank_1based": 47
+    },
+    "high": {
+      "layer": 52,
+      "tokens": 256,
+      "assignments": 2048,
+      "expert_max": 187,
+      "expert_mean": 16,
+      "expert_max_mean": 11.6875,
+      "npu_max": 336,
+      "npu_mean": 32,
+      "npu_max_mean": 10.5,
+      "active_experts": 111,
+      "active_npus": 64,
+      "rank_1based": 94
+    }
+  },
+  "validation": [
+    "All 8 raw source identities checked against manifest Git blob or canonical LFS pointer blob",
+    "All raw records validated: exactly serialized layers 0..93, equal row count, top-k 8 distinct integer experts 0..127",
+    "First 256 tokens in existing manifest request order and within-request ordinal order, identical source selection at every layer",
+    "No repeated (dataset path, revision, ordinal); no padding or token repetition",
+    "All 94 expert count vectors exactly match frozen published batch_prefix_256 aggregate",
+    "NPU load counted independently per assignment and checked against adjacent expert-pair sums"
+  ],
+  "limitations": [
+    "Offline concatenation of distinct requests; not an observed joint-forward batch",
+    "Record 0 phase interpretation follows existing dataset-card convention, without embedded phase proof",
+    "Serialized layer indices and token ordinals are not independently proven model-layer or tokenizer IDs"
+  ],
+  "raw_source_sha256": [
+    "c054b6b9b490229b89bf71a8b4d0a99ecce37d10f677f5905dfdff9b1c20532d",
+    "0243a81463c394368945000f55d017fa09de86e4ff98040597d7e2f1125f6c60",
+    "ad87ec2d4838e0a74adb04e1b4cb468d26f35e499b19ab586271b85d561a356d",
+    "1311aac6b78dafe218b3fce04977fb6601c6c39e052e5bccd6f7ff652f982033",
+    "e801fd094d29b69fa5487fbf72961ee7476c4a3d2b3f5a208c8a4604a94ca4c0",
+    "6bb7e5ce13373a29eb8567f1e6806a3994c6adca19a27197467b39d0697a960a",
+    "7e75c6f51bb4c0057bd8eaaae7fb7b7e230f49e83e284a2b4a7962035a8b252c",
+    "b08e4d3cad483969cc19799add1608ff6a080fcc7facd28f9b07d6789d7c194a"
+  ],
+  "source_manifest_sha256": "e327ba5a4c3306cf9608fbd672bb5a624e699f07962d861723944633322d642f",
+  "frozen_expert_counts_sha256": "e3163d85c2ada0373cb73dad19a3efeac7d0774f1b56852aacdcf9b264c94c4e",
+  "private_routing_export_verification": [
+    {
+      "serialized_layer": 0,
+      "tokens": 256,
+      "assignments": 2048,
+      "sha256": "e8cbfb411e89f5d2df35bbe5e2b276ca26dfa425dd7fd5962b3366a0e68f13f4",
+      "bytes": 26580,
+      "exact_readback": true
+    },
+    {
+      "serialized_layer": 37,
+      "tokens": 256,
+      "assignments": 2048,
+      "sha256": "c7b6289ade982d19893eca582a496002dfa495f24c0978474b8415f4bfdfe414",
+      "bytes": 26421,
+      "exact_readback": true
+    },
+    {
+      "serialized_layer": 52,
+      "tokens": 256,
+      "assignments": 2048,
+      "sha256": "497b44e2854938f272f6b62062961b2cb17ad3bb51311d956052155c9031ad53",
+      "bytes": 26385,
+      "exact_readback": true
+    }
+  ]
+}

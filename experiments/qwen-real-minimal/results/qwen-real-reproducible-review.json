@@ -1,0 +1,232 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "test": "complete raw94-layer/frozen aggregate audit",
+      "status": "PASS"
+    },
+    {
+      "test": "wrong layer",
+      "status": "PASS"
+    },
+    {
+      "test": "wrong request",
+      "status": "PASS"
+    },
+    {
+      "test": "wrong ordinal",
+      "status": "PASS"
+    },
+    {
+      "test": "wrong top-k order",
+      "status": "PASS"
+    },
+    {
+      "test": "wrong manifest hash",
+      "status": "PASS"
+    },
+    {
+      "test": "cross-request boundary order",
+      "status": "PASS"
+    },
+    {
+      "test": "duplicate identity",
+      "status": "PASS"
+    },
+    {
+      "test": "255 tokens",
+      "status": "PASS"
+    },
+    {
+      "test": "duplicate expert",
+      "status": "PASS"
+    },
+    {
+      "test": "expert boundary128",
+      "status": "PASS"
+    },
+    {
+      "test": "boolean expert",
+      "status": "PASS"
+    },
+    {
+      "test": "unknown root field",
+      "status": "PASS"
+    },
+    {
+      "test": "unknown token field",
+      "status": "PASS"
+    },
+    {
+      "test": "empty request",
+      "status": "PASS"
+    },
+    {
+      "test": "numeric request",
+      "status": "PASS"
+    },
+    {
+      "test": "negative ordinal",
+      "status": "PASS"
+    },
+    {
+      "test": "boolean ordinal",
+      "status": "PASS"
+    },
+    {
+      "test": "float ordinal",
+      "status": "PASS"
+    },
+    {
+      "test": "duplicate JSON root key",
+      "status": "PASS"
+    },
+    {
+      "test": "noninteger serialized layer False",
+      "status": "PASS"
+    },
+    {
+      "test": "noninteger serialized layer 0.0",
+      "status": "PASS"
+    },
+    {
+      "test": "wrong raw identity",
+      "status": "PASS"
+    },
+    {
+      "test": "changed manifest selection boundary",
+      "status": "PASS"
+    },
+    {
+      "test": "exact source prefix layer0 tokens1",
+      "status": "PASS"
+    },
+    {
+      "test": "exact source prefix layer0 tokens256",
+      "status": "PASS"
+    },
+    {
+      "test": "exact source prefix layer0 tokens512",
+      "status": "PASS"
+    },
+    {
+      "test": "exact source prefix layer0 tokens4096",
+      "status": "PASS"
+    },
+    {
+      "test": "exact source prefix layer0 tokens4275",
+      "status": "PASS"
+    },
+    {
+      "test": "exact source prefix layer93 tokens1",
+      "status": "PASS"
+    },
+    {
+      "test": "exact source prefix layer93 tokens4096",
+      "status": "PASS"
+    },
+    {
+      "test": "exact source prefix layer37 tokens256",
+      "status": "PASS"
+    },
+    {
+      "test": "exact source prefix layer52 tokens256",
+      "status": "PASS"
+    },
+    {
+      "test": "extraction rejects layer0 tokens4276",
+      "status": "PASS"
+    },
+    {
+      "test": "extraction rejects layer0 tokens0",
+      "status": "PASS"
+    },
+    {
+      "test": "extraction rejects layer0 tokensTrue",
+      "status": "PASS"
+    },
+    {
+      "test": "extraction rejects layer-1 tokens256",
+      "status": "PASS"
+    },
+    {
+      "test": "extraction rejects layer94 tokens256",
+      "status": "PASS"
+    },
+    {
+      "test": "extraction rejects layerTrue tokens256",
+      "status": "PASS"
+    },
+    {
+      "test": "FP8 complete disjoint native chunk coverage120 bytes",
+      "status": "PASS"
+    },
+    {
+      "test": "FP8 complete disjoint native chunk coverage18874368 bytes",
+      "status": "PASS"
+    },
+    {
+      "test": "legacy byte equality case0 no-balancing",
+      "status": "PASS"
+    },
+    {
+      "test": "legacy byte equality case0 ultraep",
+      "status": "PASS"
+    },
+    {
+      "test": "legacy byte equality case1 no-balancing",
+      "status": "PASS"
+    },
+    {
+      "test": "legacy byte equality case1 ultraep",
+      "status": "PASS"
+    },
+    {
+      "test": "legacy byte equality case2 no-balancing",
+      "status": "PASS"
+    },
+    {
+      "test": "legacy byte equality case2 ultraep",
+      "status": "PASS"
+    },
+    {
+      "test": "legacy byte equality case3 no-balancing",
+      "status": "PASS"
+    },
+    {
+      "test": "legacy byte equality case3 ultraep",
+      "status": "PASS"
+    },
+    {
+      "test": "legacy byte equality case4 no-balancing",
+      "status": "PASS"
+    },
+    {
+      "test": "legacy byte equality case4 ultraep",
+      "status": "PASS"
+    },
+    {
+      "test": "legacy byte equality case5 no-balancing",
+      "status": "PASS"
+    },
+    {
+      "test": "legacy byte equality case5 ultraep",
+      "status": "PASS"
+    },
+    {
+      "test": "legacy relay/preflight exact direct",
+      "status": "PASS"
+    },
+    {
+      "test": "legacy relay/preflight exact two-stage",
+      "status": "PASS"
+    },
+    {
+      "test": "legacy relay/preflight exact chunk-streaming",
+      "status": "PASS"
+    }
+  ],
+  "total": 56,
+  "no_simulation": true,
+  "raw_outputs_retained": false
+}

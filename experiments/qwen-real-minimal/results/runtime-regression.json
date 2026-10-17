@@ -1,0 +1,187 @@
+[
+  {
+    "case": "nb-small",
+    "status": "PASS",
+    "checks": {
+      "online-summary.json": {
+        "old_sha256": "71d74ba0cb1a4c8633c39c36e68819adfbc37cc71a8700379ce9e0e68d18ccc0",
+        "new_sha256": "e263662d66902a07620382af0ba50a9e40e56b66276596217a7e9482bab68ee5",
+        "equivalent_excluding_verification_wall_ns": true
+      },
+      "validation.json": {
+        "old_sha256": "30bd5085dea1d0aeff19c991b39843748cddb7a6c2ed20683096fb1abf224f04",
+        "new_sha256": "1cbafd924bda765a213de2f564094460e888a0f87c87e3af67f6f592798a6db8",
+        "equivalent_excluding_verification_wall_ns": true
+      },
+      "simulator-metrics.json": {
+        "old_sha256": "2d9bfdae4f3720f30daa1c39e14a65ec47cff625dc625c9abf2f462034f79e4a",
+        "new_sha256": "2d9bfdae4f3720f30daa1c39e14a65ec47cff625dc625c9abf2f462034f79e4a",
+        "equivalent_excluding_verification_wall_ns": true
+      }
+    },
+    "host": {
+      "status": "PASS",
+      "wall_seconds": 0.2519311049836688,
+      "peak_rss_kib": 17476,
+      "user_cpu_seconds": 0.025321999999999997,
+      "system_cpu_seconds": 0.0,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 3600,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1610612736,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    }
+  },
+  {
+    "case": "direct-small",
+    "status": "PASS",
+    "checks": {
+      "online-summary.json": {
+        "old_sha256": "92e59bba536963330dc81e83b1b1c34e3798d175992c6b6415c0b1f0b8ecba4d",
+        "new_sha256": "1ac57522176b3e8e8449f1a0eb72fa9cfbf9723ce56967644454519c15294949",
+        "equivalent_excluding_verification_wall_ns": true
+      },
+      "validation.json": {
+        "old_sha256": "ea3c2be620aa16a1c1169c2a60288068fac13d6b8217165eafa04590b130bbe1",
+        "new_sha256": "ccec41fe34676dbb3b38b191b789eef9a3a047365954d48f1fb8e755f31e2d72",
+        "equivalent_excluding_verification_wall_ns": true
+      },
+      "simulator-metrics.json": {
+        "old_sha256": "2d4505054674eadca022117fd2603d0b021cf0a731ea2a8781c9381443a4808e",
+        "new_sha256": "2d4505054674eadca022117fd2603d0b021cf0a731ea2a8781c9381443a4808e",
+        "equivalent_excluding_verification_wall_ns": true
+      }
+    },
+    "host": {
+      "status": "PASS",
+      "wall_seconds": 0.25203812395920977,
+      "peak_rss_kib": 17884,
+      "user_cpu_seconds": 0.046779999999999995,
+      "system_cpu_seconds": 0.007989,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 3600,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1610612736,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    }
+  },
+  {
+    "case": "chunk-small",
+    "status": "PASS",
+    "checks": {
+      "online-summary.json": {
+        "old_sha256": "796212eb3a358a1b7fd59a3a79cade22bd403dc9d36c560c3db0c338958a2208",
+        "new_sha256": "3ae091c638c471177c1bf3cb6e7ff2b6e383b10280742662256c1f01f3f0135a",
+        "equivalent_excluding_verification_wall_ns": true
+      },
+      "validation.json": {
+        "old_sha256": "9af9c7f297f444c05c66ef7cba8fad03004b45c5eb35246b1707ad4aff50b7f0",
+        "new_sha256": "2b3a940a05f7f6b416b32118aa00c01e0b86f472bf0e6b996a0d6271484c62bc",
+        "equivalent_excluding_verification_wall_ns": true
+      },
+      "simulator-metrics.json": {
+        "old_sha256": "fa841a41a68d72af11b8cc7bbd71f56979ac7e16a05cd79974b4c33e820307d3",
+        "new_sha256": "fa841a41a68d72af11b8cc7bbd71f56979ac7e16a05cd79974b4c33e820307d3",
+        "equivalent_excluding_verification_wall_ns": true
+      }
+    },
+    "host": {
+      "status": "PASS",
+      "wall_seconds": 0.25231251399964094,
+      "peak_rss_kib": 19248,
+      "user_cpu_seconds": 0.08026599999999999,
+      "system_cpu_seconds": 0.004148,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 3600,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1610612736,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    }
+  },
+  {
+    "case": "multichunk-multita",
+    "status": "PASS",
+    "checks": {
+      "online-summary.json": {
+        "old_sha256": "0ed0c62f483fc593739c92b6892ec86be3502bf28797363b3ea39127eb3aa280",
+        "new_sha256": "4ba437d5a396c6c2c3337e17c787587d569fc907f9f48e330e5507baa3d49964",
+        "equivalent_excluding_verification_wall_ns": true
+      },
+      "validation.json": {
+        "old_sha256": "6edde7ba3b0bfdbc91e3dc3a76942284ecaa79a067e078d40fb72c153d578f3e",
+        "new_sha256": "ce4408c9829bdb6e72b722ea07200e0b03c18b1e0a9700b3efe483621bf5c89c",
+        "equivalent_excluding_verification_wall_ns": true
+      },
+      "simulator-metrics.json": {
+        "old_sha256": "7753c7e5d96de78f414510621cba67cddd5a71ddf9aa6b1c8fbf2fede4913fff",
+        "new_sha256": "7753c7e5d96de78f414510621cba67cddd5a71ddf9aa6b1c8fbf2fede4913fff",
+        "equivalent_excluding_verification_wall_ns": true
+      }
+    },
+    "host": {
+      "status": "PASS",
+      "wall_seconds": 0.25197097298223525,
+      "peak_rss_kib": 17784,
+      "user_cpu_seconds": 0.047910999999999995,
+      "system_cpu_seconds": 0.0040089999999999995,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 3600,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1610612736,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    }
+  },
+  {
+    "case": "ep64-n256",
+    "status": "PASS",
+    "checks": {
+      "online-summary.json": {
+        "old_sha256": "4fa175d15ef2573208d271c129fce562dbfb5fe771c3ffc4163d520627a2f705",
+        "new_sha256": "bc23a92f45624d629093ec9b7db92c2363dd3fdbeb70a3e6c44d4031d9e22a13",
+        "equivalent_excluding_verification_wall_ns": true
+      },
+      "validation.json": {
+        "old_sha256": "770a66de95820c98c3314f418e89d1e1ae47de68d6354cf78d20a0d254385900",
+        "new_sha256": "02983d107dc5aa2883ada71a7879683c772032803eabcffec6ae8ec5bf30237a",
+        "equivalent_excluding_verification_wall_ns": true
+      },
+      "simulator-metrics.json": {
+        "old_sha256": "de78e03842c54c724daece985327d8ebe6c6891206bc765672956ad9bb6c3e7c",
+        "new_sha256": "de78e03842c54c724daece985327d8ebe6c6891206bc765672956ad9bb6c3e7c",
+        "equivalent_excluding_verification_wall_ns": true
+      }
+    },
+    "host": {
+      "status": "PASS",
+      "wall_seconds": 1.2548747489927337,
+      "peak_rss_kib": 145040,
+      "user_cpu_seconds": 1.192767,
+      "system_cpu_seconds": 0.036196,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 3600,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1610612736,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    }
+  }
+]

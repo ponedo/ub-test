@@ -1,0 +1,185 @@
+{
+  "status": "PASS",
+  "faults": {
+    "status": "PASS",
+    "tests": [
+      {
+        "fault": "payload-byte",
+        "status": "PASS",
+        "returncode": 2,
+        "validation": {
+          "status": "FAIL",
+          "error": "payload byte mismatch"
+        }
+      },
+      {
+        "fault": "duplicate-completion",
+        "status": "PASS",
+        "returncode": 2,
+        "validation": {
+          "status": "FAIL",
+          "error": "audit premature/duplicate sender completion"
+        }
+      },
+      {
+        "fault": "early-wqe",
+        "status": "PASS",
+        "returncode": 2,
+        "validation": {
+          "status": "FAIL",
+          "error": "sender completed before target data ready"
+        }
+      },
+      {
+        "fault": "missing-wqe",
+        "status": "PASS",
+        "returncode": 2,
+        "validation": {
+          "status": "FAIL",
+          "error": "unfinished layer"
+        }
+      },
+      {
+        "fault": "weight-byte",
+        "status": "PASS",
+        "returncode": 2,
+        "validation": {
+          "status": "FAIL",
+          "error": "payload byte mismatch"
+        }
+      },
+      {
+        "fault": "premature-ready",
+        "status": "PASS",
+        "returncode": 2,
+        "validation": {
+          "status": "FAIL",
+          "error": "ready before target completion coverage"
+        }
+      },
+      {
+        "fault": "duplicate-weight",
+        "status": "PASS",
+        "returncode": 2,
+        "validation": {
+          "status": "FAIL",
+          "error": "duplicate forwarding"
+        }
+      },
+      {
+        "fault": "early-compute",
+        "status": "PASS",
+        "returncode": 2,
+        "validation": {
+          "status": "FAIL",
+          "error": "compute token/gate dependency"
+        }
+      },
+      {
+        "fault": "early-group",
+        "status": "PASS",
+        "returncode": 2,
+        "validation": {
+          "status": "FAIL",
+          "error": "relay before target chunk ready (including group)"
+        }
+      },
+      {
+        "fault": "relay-byte",
+        "status": "PASS",
+        "returncode": 2,
+        "validation": {
+          "status": "FAIL",
+          "error": "payload byte mismatch"
+        }
+      },
+      {
+        "fault": "relay-buffer-byte",
+        "status": "PASS",
+        "returncode": 2,
+        "validation": {
+          "status": "FAIL",
+          "error": "payload byte mismatch"
+        }
+      },
+      {
+        "fault": "early-relay",
+        "status": "PASS",
+        "returncode": 2,
+        "validation": {
+          "status": "FAIL",
+          "error": "relay before target chunk ready (including group)"
+        }
+      },
+      {
+        "fault": "early-final-ready",
+        "status": "PASS",
+        "returncode": 2,
+        "validation": {
+          "status": "FAIL",
+          "error": "final ready before full weight coverage"
+        }
+      }
+    ]
+  },
+  "zipf_qwen30b_nb_256": {
+    "status": "PASS",
+    "checks": {
+      "online-summary.json": {
+        "old_sha256": "cfd1538878846a673e5926928f982e42b7d49d863cf85a5c22f38990dad80cf2",
+        "new_sha256": "4c87c7deb3d12558f3daef2605546b663d650b95a5c159b5b53ab7c9482b6a51",
+        "equal_except_verification_wall_ns": true
+      },
+      "validation.json": {
+        "old_sha256": "89fb395c42215ab9f931426097abf5f8fcfe04b8ad5980abf1c3d157534c56c4",
+        "new_sha256": "d2848b74dd4aa278cef8ca3ddd8e951720fd381dcb5edd12779e211c3ee17013",
+        "equal_except_verification_wall_ns": true
+      },
+      "simulator-metrics.json": {
+        "old_sha256": "62fec7524c7ffa63b2b20ecffc94ea61ba54f91f538ede2ddbb4aae4ba32d5b8",
+        "new_sha256": "62fec7524c7ffa63b2b20ecffc94ea61ba54f91f538ede2ddbb4aae4ba32d5b8",
+        "equal_except_verification_wall_ns": true
+      }
+    }
+  },
+  "fault_host": {
+    "start": "2026-10-17T20:01:54.514218+00:00",
+    "wall_seconds": 0.5025534859742038,
+    "returncode": 0,
+    "status": "PASS",
+    "guard": null,
+    "peak_rss_kib": 19548,
+    "sampled_peak_tree_rss_bytes": 31330304,
+    "max_observed_threads_per_process": 1,
+    "user_cpu_seconds": 0.35930599999999996,
+    "system_cpu_seconds": 0.053512,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  "zipf_host": {
+    "start": "2026-10-17T20:01:55.018335+00:00",
+    "wall_seconds": 2.256945959001314,
+    "returncode": 0,
+    "status": "PASS",
+    "guard": null,
+    "peak_rss_kib": 143944,
+    "sampled_peak_tree_rss_bytes": 147615744,
+    "max_observed_threads_per_process": 1,
+    "user_cpu_seconds": 2.163418,
+    "system_cpu_seconds": 0.051082999999999996,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  }
+}

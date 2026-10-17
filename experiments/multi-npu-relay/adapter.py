@@ -45,7 +45,7 @@ def emit(source,parameters,strategy,out,dependency_mode=None):
         if key!='force_relay' and (type(p[key]) is not int or p[key]<0):raise ValueError('relay parameter '+key)
     if not 1<=p['chunk_bytes']<=64*1024*1024 or not 1<=p['relay_max_relays']<=72 or p['reorder_ns']>100000000 or p['slow_relay_ns']>100000000 or (p['slow_relay_rank']!=4294967295 and p['slow_relay_rank']>=c['planner_input']['npus']):raise ValueError('relay parameter bounds')
     physical={x['id']:x for x in plan['physical']};order=plan.get('ordinal_physical_order',list(physical)) if kind else list(physical)
-    runtime=c['runtime'];cut=(runtime['matrices']-1)*runtime['model_dim']*runtime['ff_dim']*runtime['dtype_bytes']
+    runtime=c['runtime'];cut=(runtime['matrices']-1)*runtime['model_dim']*runtime['ff_dim']*runtime.get('weight_dtype_bytes',runtime['dtype_bytes'])
     if runtime['weight_size_kind']!='matrix_exact':cut=0
     import importlib.util
     spec=importlib.util.spec_from_file_location('weight_capacity',Path(__file__).with_name('capacity.py'));cap=importlib.util.module_from_spec(spec);spec.loader.exec_module(cap)

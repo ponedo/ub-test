@@ -86,6 +86,10 @@ def reconstruct_dependencies(edges, byid, start, mode='indexed'):
 def check(directory, graph_tool, execution_summary=None, dependency_mode='indexed'):
     root=Path(directory);c=json.loads((root/'config.json').read_text());plan=json.loads((root/'plan.json').read_text())
     pc=c['planner_input'];p=c['runtime'];n=pc['npus'];e=pc['experts'];k=pc['top_k'];mapping=pc['mapping'];physical=plan['physical'];byid={x['id']:x for x in physical}
+    if 'weight_dtype_bytes' in p:
+        wd=p['weight_dtype_bytes'];require(type(wd) is int and 1<=wd<=8,'weight dtype bytes')
+        formula=p['matrices']*p['model_dim']*p['ff_dim']*wd
+        require(p['weight_size_kind']==('matrix_exact' if p['weight_bytes']==formula else 'synthetic_override'),'weight precision formula metadata')
     budget=p.get('payload_budget_bytes',256*1024**2);limit=p.get('weight_task_limit',20000)
     require(type(budget) is int and 0<budget<=8*1024**3,'payload budget range')
     require(type(limit) is int and 0<limit<=1000000,'weight task limit range')
@@ -128,7 +132,7 @@ def check(directory, graph_tool, execution_summary=None, dependency_mode='indexe
     kind=KINDS[c['weight_strategy']]
     order=plan.get('ordinal_physical_order',list(byid)) if kind else list(byid)
     require(len(order)==len(physical) and set(order)==set(byid),'physical ordinal order')
-    cut=(p['matrices']-1)*p['model_dim']*p['ff_dim']*p['dtype_bytes'] if p['weight_size_kind']=='matrix_exact' else 0
+    cut=(p['matrices']-1)*p['model_dim']*p['ff_dim']*p.get('weight_dtype_bytes',p['dtype_bytes']) if p['weight_size_kind']=='matrix_exact' else 0
     opts=[p['chunk_bytes'],p['relay_min_replicas'],p['relay_max_relays'],p['relay_min_fanout_gain'],int(p['force_relay']),cut,p['reorder_ns'],p['slow_relay_rank'],p['slow_relay_ns']]
     physrow=lambda ph:[ph['id'],ph['expert'],ph['rank'],int(ph['kind']=='replica'),ph['quota'],ph['weight_source_physical'],ph['weight_source_rank']]
     head=dict(p,npus=n,experts=e,top_k=k,tokens=len(mapping))

@@ -1,0 +1,103 @@
+{
+  "status": "PASS",
+  "checks": [
+    "archive and selected file hashes",
+    "all256 input source/topk positions",
+    "source token_id%64",
+    "all2048 assignments and256 completed tokens",
+    "exact sender/target completion count",
+    "Direct/Chunk full Planner equality excluding cpu_wall_ns"
+  ],
+  "cases": [
+    {
+      "layer": 0,
+      "strategy": "no-balancing",
+      "status": "PASS",
+      "source_routing_sha256": "e8cbfb411e89f5d2df35bbe5e2b276ca26dfa425dd7fd5962b3366a0e68f13f4",
+      "stable_plan_sha256": "9dab72cbd7d44ac93d1048dfaea2206dfd5245e5c8918254e099200693c4b1db",
+      "archive_sha256": "d8b356f8853ab00b04eab46e6a92b0b832fa082a569ef129c657a7c718b48639",
+      "assignments": 2048,
+      "completed_tokens": 256
+    },
+    {
+      "layer": 0,
+      "strategy": "direct",
+      "status": "PASS",
+      "source_routing_sha256": "e8cbfb411e89f5d2df35bbe5e2b276ca26dfa425dd7fd5962b3366a0e68f13f4",
+      "stable_plan_sha256": "a7eb497a8e533deb2976b880f6ce20655ad484ea81dc165dfb8fb3b3168f02c7",
+      "archive_sha256": "58f8274f9a2ff579f4c1bffeef8b908fe0faadcc7d6dd8a1b8a2e781c91241be",
+      "assignments": 2048,
+      "completed_tokens": 256
+    },
+    {
+      "layer": 0,
+      "strategy": "chunk-streaming",
+      "status": "PASS",
+      "source_routing_sha256": "e8cbfb411e89f5d2df35bbe5e2b276ca26dfa425dd7fd5962b3366a0e68f13f4",
+      "stable_plan_sha256": "a7eb497a8e533deb2976b880f6ce20655ad484ea81dc165dfb8fb3b3168f02c7",
+      "archive_sha256": "1f67afeb80fdb7967a30569be19075c31d85663fdf71250b455b7419d0b78fa7",
+      "assignments": 2048,
+      "completed_tokens": 256
+    },
+    {
+      "layer": 37,
+      "strategy": "no-balancing",
+      "status": "PASS",
+      "source_routing_sha256": "c7b6289ade982d19893eca582a496002dfa495f24c0978474b8415f4bfdfe414",
+      "stable_plan_sha256": "8d57115faba6268fa4e766441288d4fc7464ebefa3c47b7c95568edc3a8e7f8e",
+      "archive_sha256": "71fe16ad8901cf3fb8c95496db5429f03194e0a4d935ec647671d5f005eea4b3",
+      "assignments": 2048,
+      "completed_tokens": 256
+    },
+    {
+      "layer": 37,
+      "strategy": "direct",
+      "status": "PASS",
+      "source_routing_sha256": "c7b6289ade982d19893eca582a496002dfa495f24c0978474b8415f4bfdfe414",
+      "stable_plan_sha256": "5df5e9b331e487985f0b53a8e0485e9acc477bd71d756430029f8b7427bed06d",
+      "archive_sha256": "0cddf7021413bce96f8cbb468e69b1905795d1f0188ccab0b63ca7fda7399cb3",
+      "assignments": 2048,
+      "completed_tokens": 256
+    },
+    {
+      "layer": 37,
+      "strategy": "chunk-streaming",
+      "status": "PASS",
+      "source_routing_sha256": "c7b6289ade982d19893eca582a496002dfa495f24c0978474b8415f4bfdfe414",
+      "stable_plan_sha256": "5df5e9b331e487985f0b53a8e0485e9acc477bd71d756430029f8b7427bed06d",
+      "archive_sha256": "37fd89f1322dfaaf13e137b9d0d345f4ac7b7a9f1df749f0444986c067165955",
+      "assignments": 2048,
+      "completed_tokens": 256
+    },
+    {
+      "layer": 52,
+      "strategy": "no-balancing",
+      "status": "PASS",
+      "source_routing_sha256": "497b44e2854938f272f6b62062961b2cb17ad3bb51311d956052155c9031ad53",
+      "stable_plan_sha256": "ef1826ccc27b72fb65d316d533c840a00515443b966771c92308ea2588a751ec",
+      "archive_sha256": "8b8c16cb6282c17558b4d9e104fba339fb564b5d7d4ac01af4af7c55a51349d9",
+      "assignments": 2048,
+      "completed_tokens": 256
+    },
+    {
+      "layer": 52,
+      "strategy": "direct",
+      "status": "PASS",
+      "source_routing_sha256": "497b44e2854938f272f6b62062961b2cb17ad3bb51311d956052155c9031ad53",
+      "stable_plan_sha256": "e0072f9dae21bff79cbd96f4e3c794da03150516f64552f98476dc5d47af0978",
+      "archive_sha256": "b4d700a86def287b509d84b7eceafcd3e06cd65c2133c0db0c2ff6091ff1ffdb",
+      "assignments": 2048,
+      "completed_tokens": 256
+    },
+    {
+      "layer": 52,
+      "strategy": "chunk-streaming",
+      "status": "PASS",
+      "source_routing_sha256": "497b44e2854938f272f6b62062961b2cb17ad3bb51311d956052155c9031ad53",
+      "stable_plan_sha256": "e0072f9dae21bff79cbd96f4e3c794da03150516f64552f98476dc5d47af0978",
+      "archive_sha256": "0bfd68b80935a1d649c73ba2a6a97c2c7767036a557cb83c44b1b250e884a80d",
+      "assignments": 2048,
+      "completed_tokens": 256
+    }
+  ]
+}

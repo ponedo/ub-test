@@ -28,7 +28,10 @@ def emit(c,parameters,mode,out):
     for key,limit in dict(model_dim=16384,ff_dim=65536,dtype_bytes=8,segment_bytes=65536,peak_gflops=10000000,util_permille=1000,link_gbps=10000).items():require(1<=params[key]<=limit,key)
     for key in ['planning_ns','reroute_ns','weight_completion_ns','setup_ns']:require(params[key]<=100000000,key)
     require(params['link_delay_ns']<=1000000 and params['seed']<=2**32-1,'network/seed bounds')
-    formula=params['matrices']*params['model_dim']*params['ff_dim']*params['dtype_bytes']
+    # Activation dtype remains independent from transmitted expert weights.
+    weight_dtype=params.get('weight_dtype_bytes',params['dtype_bytes'])
+    require(type(weight_dtype) is int and 1<=weight_dtype<=8,'weight dtype bytes')
+    formula=params['matrices']*params['model_dim']*params['ff_dim']*weight_dtype
     weight_bytes=params.get('weight_bytes',formula);require(type(weight_bytes) is int and 0<weight_bytes<=64*1024*1024,'weight size')
     params['weight_bytes']=weight_bytes;params['weight_size_kind']='matrix_exact' if weight_bytes==formula else 'synthetic_override'
     plan=solve(c) if mode=='ultraep' else baseline(c)

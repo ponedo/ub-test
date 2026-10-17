@@ -1,0 +1,59 @@
+{
+  "baseline_local_commit": "73c636b618c9f30694bc00a10443ea61c09dcd9a",
+  "native_commit": "2fde39d02920e639f5b200d0c5262a517326deb8",
+  "source_sha256": {
+    "experiments/pair-jetty/pair-layer.cc": "cc7f27573d9f0934b14d879b943b04dd33d4e76be1dd173ab16076a998e6cbbf",
+    "experiments/pair-jetty/online-validation.inc": "8eb6df0df5e4a1604e4cbbbec3fde442e5e8ed751efc258840bf7382ad70d40b",
+    "experiments/pair-jetty/pair-jetty-manager.h": "cef2eeae65c93836bc28e43fa397fa968a86c07a53bff6cf4b6723ba24f8bf40"
+  },
+  "binary_sha256": "0036817d5128f6bdf981126995fc000cbaa5eef970a8b2993729901e7b038752",
+  "reason": "Freshly compile unchanged accepted C++ executor with existing Release -O3 -g flags; only Python input precision/routing changed; native libraries reused unchanged.",
+  "compile": {
+    "command": [
+      "c++",
+      "-std=c++20",
+      "-O3",
+      "-g",
+      "/workspace/scratch/c6ba02920254/qwen-real-minimal/experiments/pair-jetty/pair-layer.cc",
+      "-I/workspace/scratch/c6ba02920254/wqe-completion-native/build/include",
+      "-L/workspace/scratch/c6ba02920254/wqe-completion-native/build/lib",
+      "-Wl,--disable-new-dtags",
+      "-Wl,-rpath,/workspace/scratch/c6ba02920254/wqe-completion-native/build/lib",
+      "-lns3.44-unified-bus",
+      "-lns3.44-network",
+      "-lns3.44-core",
+      "-o",
+      "/workspace/scratch/c6ba02920254/qwen-real-minimal-private/build/pair-layer"
+    ],
+    "wall_seconds": 17.560742911009584,
+    "user_cpu_seconds": 15.428078,
+    "system_cpu_seconds": 1.995647,
+    "peak_rss_kib": 979984,
+    "status": "PASS",
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    },
+    "guard": null
+  },
+  "native_libraries_sha256": {
+    "libns3.44-unified-bus-test.so": "f1b355ae252311b4382e7fe878d06109918b37fd324b5aa5944c75d4ebf244f6",
+    "libns3.44-bridge.so": "d180c5d03026a54f1b0868a3dfd65ff3791892d990c38312e0bc2b855ed2b09d",
+    "libns3.44-applications.so": "6a9785267d0071f824ddc4568ceebe0608951845f2c1829e2d76c36f435ea541",
+    "libns3.44-unified-bus.so": "15cacf669b476211cd3cffdd319ba975059f2db5f4471c256de9f3a7100752cf",
+    "libns3.44-core.so": "d91bc9c132c116801564364ba87a388cbda43140a274042c55cfcb29a973a099",
+    "libns3.44-config-store.so": "d9cd78f1aa44f6e189588451daef514cc0e65433a9df813f98f7819ba082c439",
+    "libns3.44-network.so": "54eb25cba1c2baf198cb8347010de7faf0bdca59569d69b0775b6942f875156c",
+    "libns3.44-traffic-control.so": "975837da10373f2ae45ace00789ca711f4144493cc7274bd9711c45defad5c88",
+    "libns3.44-internet.so": "1f4a558dadd6806f884a749cede475e26f08dc0f5755dbcbb1d9618e9590401f",
+    "libns3.44-stats.so": "1563bcafda54f981041211082f5d7246f539fc2cb78d0b4b04580061aca1af94",
+    "libns3.44-point-to-point.so": "1beb0d2e2ccb03a5efe1aa5a96aa11bb430a9212d39ed5b7f2c089fc6e44ab1c"
+  },
+  "graph_tool_sha256": "7674bd64a0646d659bfba9ecb09527d7293d7edc5d3e92a45489a75faa0d143b",
+  "native_tracked_source_diff": "clean",
+  "native_untracked_files": "historical scratch application sources; not used or changed by this task"
+}

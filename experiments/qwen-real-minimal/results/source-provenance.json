@@ -1,0 +1,21 @@
+{
+  "application_execution_base": {
+    "local_commit": "73c636b618c9f30694bc00a10443ea61c09dcd9a",
+    "published_commit": "289abb53132171b0028c8b3bb0b95a5c0f5ae172",
+    "local_tree": "71d3a598b7cde54a73528ba031857f8743b6742c"
+  },
+  "delivery_parent": {
+    "local_commit": "ee8874521f4af48634958c360a30085fd20c221b",
+    "published_commit": "86fbd409aa0091a2707913fe9afaab1226f786da",
+    "local_tree": "7a87255fd744ef42255b055233336909dbf4462d"
+  },
+  "application_paths_unchanged_between_bases": [
+    "experiments/pair-jetty",
+    "experiments/direct-weight-forward",
+    "experiments/multi-npu-relay",
+    "experiments/tiered-logging",
+    "experiments/qwen-prefill-token-scaling"
+  ],
+  "native_commit": "2fde39d02920e639f5b200d0c5262a517326deb8",
+  "note": "The publication worker maps local imported commit IDs to their verified published parents. New delivery preserves the complete latest survey parent tree; no native code changed. See build-provenance.json for source/library/binary hashes."
+}

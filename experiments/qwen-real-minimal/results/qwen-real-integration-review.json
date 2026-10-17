@@ -1,0 +1,99 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "test": "full independent raw/frozen audit",
+      "status": "PASS"
+    },
+    {
+      "test": "valid source and token_id%64 mapping",
+      "status": "PASS"
+    },
+    {
+      "test": "wrong layer",
+      "status": "PASS"
+    },
+    {
+      "test": "wrong request",
+      "status": "PASS"
+    },
+    {
+      "test": "wrong ordinal",
+      "status": "PASS"
+    },
+    {
+      "test": "wrong top-k order",
+      "status": "PASS"
+    },
+    {
+      "test": "wrong manifest hash",
+      "status": "PASS"
+    },
+    {
+      "test": "cross-request boundary order",
+      "status": "PASS"
+    },
+    {
+      "test": "duplicate identity",
+      "status": "PASS"
+    },
+    {
+      "test": "255 tokens",
+      "status": "PASS"
+    },
+    {
+      "test": "duplicate expert",
+      "status": "PASS"
+    },
+    {
+      "test": "expert boundary128",
+      "status": "PASS"
+    },
+    {
+      "test": "boolean expert",
+      "status": "PASS"
+    },
+    {
+      "test": "wrong raw source identity",
+      "status": "PASS"
+    },
+    {
+      "test": "changed manifest selection boundary",
+      "status": "PASS"
+    }
+  ],
+  "notes": [
+    "No simulation or repository edits.",
+    "Raw routing mutations were transient private temporary files and have been deleted.",
+    "Integration mutations use cached independently validated audit rows; actual audit separately checked malformed source identity and changed selection ordering."
+  ],
+  "compatibility_and_precision": {
+    "direct_adapter_exact_old_new_cases": 12,
+    "relay_exact_old_new_strategies": [
+      "direct",
+      "two-stage",
+      "chunk-streaming"
+    ],
+    "independent_preflight_exact_old_new": true,
+    "precision_unit_tests": 3,
+    "native_fp8_chunk_coverage": [
+      {
+        "weight_bytes": 120,
+        "shard_cut": 80,
+        "chunk_bytes": 17,
+        "replicas": 4,
+        "edges": 32,
+        "complete_nonoverlapping": true
+      },
+      {
+        "weight_bytes": 18874368,
+        "shard_cut": 12582912,
+        "chunk_bytes": 4096,
+        "replicas": 4,
+        "edges": 18432,
+        "complete_nonoverlapping": true
+      }
+    ]
+  },
+  "result_completeness": "PENDING: nine-case run outputs not yet reviewed"
+}

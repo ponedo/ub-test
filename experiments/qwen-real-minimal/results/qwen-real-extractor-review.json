@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "prefix_tests": [
+    {
+      "tokens": 1,
+      "status": "PASS",
+      "assignments": 8
+    },
+    {
+      "tokens": 256,
+      "status": "PASS",
+      "assignments": 2048
+    },
+    {
+      "tokens": 512,
+      "status": "PASS",
+      "assignments": 4096
+    },
+    {
+      "tokens": 4096,
+      "status": "PASS",
+      "assignments": 32768
+    },
+    {
+      "tokens": 4275,
+      "status": "PASS",
+      "assignments": 34200
+    }
+  ],
+  "extra_layers": [
+    37,
+    52,
+    93
+  ],
+  "invalid_inputs_rejected": 6,
+  "all_three_256_routing_files_byte_exact": true,
+  "notes": "One actual full source audit, cached only for repeated checks. No planner/simulator runs. No raw outputs retained."
+}
