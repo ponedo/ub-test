@@ -1,0 +1,15 @@
+/workspace/scratch/c6ba02920254/ep64-scaling-raw/regressions/build-native-test-host PASS 0.5 85176 None
+/workspace/scratch/c6ba02920254/ep64-scaling-raw/regressions/native-tests-host PASS 2.26 27436 None
+/workspace/scratch/c6ba02920254/ep64-scaling-raw/regressions/pair-basic-host PASS 0.5 20796 None
+/workspace/scratch/c6ba02920254/ep64-scaling-raw/regressions/pair-lifecycle-host PASS 13.29 857920 None
+/workspace/scratch/c6ba02920254/ep64-scaling-raw/regressions/pair-nb-host PASS 12.54 43076 None
+/workspace/scratch/c6ba02920254/ep64-scaling-raw/regressions/pair-weights-host PASS 44.89 53236 None
+/workspace/scratch/c6ba02920254/ep64-scaling-raw/regressions/pair-negative-host PASS 3.51 23556 None
+/workspace/scratch/c6ba02920254/ep64-scaling-raw/regressions/old-ultraep-host FAIL 14.82 952552 None
+Traceback (most recent call last):
+  File "/workspace/scratch/c6ba02920254/ep64-token-scaling/experiments/ep64-token-scaling/regressions.py", line 42, in <module>
+    execute('old-ultraep',['bash',snapshot/'experiments/multi-npu-relay/run.sh'],{'EVIDENCE':str(out/'old-evidence'),'RELAY_GRAPH_TOOL':str(out/'aux/graph-tool')},snapshot)
+  File "/workspace/scratch/c6ba02920254/ep64-token-scaling/experiments/ep64-token-scaling/regressions.py", line 14, in execute
+    if r['status']!='PASS':raise RuntimeError('regression '+name+' failed')
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: regression old-ultraep failed

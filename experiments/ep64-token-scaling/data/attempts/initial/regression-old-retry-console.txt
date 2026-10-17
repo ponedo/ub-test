@@ -1,0 +1,8 @@
+/workspace/scratch/c6ba02920254/ep64-scaling-raw/regressions-old-retry/old-ultraep-host FAIL 38.9 952720 None
+Traceback (most recent call last):
+  File "/workspace/scratch/c6ba02920254/ep64-token-scaling/experiments/ep64-token-scaling/regressions.py", line 47, in <module>
+    execute('old-ultraep',['bash',snapshot/'experiments/multi-npu-relay/run.sh'],{'EVIDENCE':str(out/'old-evidence'),'RELAY_GRAPH_TOOL':str(out/'aux/graph-tool')},snapshot)
+  File "/workspace/scratch/c6ba02920254/ep64-token-scaling/experiments/ep64-token-scaling/regressions.py", line 14, in execute
+    if r['status']!='PASS':raise RuntimeError('regression '+name+' failed')
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: regression old-ultraep failed

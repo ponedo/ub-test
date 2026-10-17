@@ -1,0 +1,11 @@
+/workspace/scratch/c6ba02920254/ep64-scaling-raw/regressions/build-native-test-host PASS 0.5 85172 None
+/workspace/scratch/c6ba02920254/ep64-scaling-raw/regressions/native-tests-host PASS 2.26 26952 None
+/workspace/scratch/c6ba02920254/ep64-scaling-raw/regressions/pair-basic-host PASS 0.5 20720 None
+/workspace/scratch/c6ba02920254/ep64-scaling-raw/regressions/pair-lifecycle-host FAIL 10.04 857928 None
+Traceback (most recent call last):
+  File "/workspace/scratch/c6ba02920254/ep64-token-scaling/experiments/ep64-token-scaling/regressions.py", line 18, in <module>
+    execute('pair-lifecycle',['bash',H.parent/'pair-jetty/run-pair-lifecycle.sh'],{'OUT':str(out/'pair-lifecycle')})
+  File "/workspace/scratch/c6ba02920254/ep64-token-scaling/experiments/ep64-token-scaling/regressions.py", line 14, in execute
+    if r['status']!='PASS':raise RuntimeError('regression '+name+' failed')
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: regression pair-lifecycle failed

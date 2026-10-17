@@ -1,0 +1,59 @@
+{
+  "application_sources": {
+    "experiments/pair-jetty/pair-layer.cc": {
+      "sha256": "1b3772e01818b571d630cbd671fb6d6fcdf81749db7b850bdf03405f5e602fc8",
+      "identical_to_accepted_baseline": true
+    },
+    "experiments/pair-jetty/pair-jetty-manager.h": {
+      "sha256": "cef2eeae65c93836bc28e43fa397fa968a86c07a53bff6cf4b6723ba24f8bf40",
+      "identical_to_accepted_baseline": true
+    },
+    "experiments/pair-jetty/verify.py": {
+      "sha256": "5b7952270fb00b731f0245ee1859ec87cbfe2fd2eef20b4dc7feaf0d15cbb06a",
+      "identical_to_accepted_baseline": true
+    },
+    "experiments/prefill-capacity/stage.py": {
+      "sha256": "0222dbc3abbc3d1a5f91e27db0c3ffea2232a2965b1811ebd34877dc6bd8bcac",
+      "identical_to_accepted_baseline": true
+    },
+    "experiments/direct-weight-forward/adapter.py": {
+      "sha256": "a4f32db2c6dda0261eaa32bd3c18202770cbe71b95c8b48c05568e7f6fdf82a9",
+      "identical_to_accepted_baseline": true
+    },
+    "experiments/multi-npu-relay/adapter.py": {
+      "sha256": "97d2fb4d61f5e345a3fe7cc6d4da534d7947a03dc6bfd9f0819482927adbdca7",
+      "identical_to_accepted_baseline": true
+    },
+    "experiments/multi-npu-relay/graph-tool.cc": {
+      "sha256": "c17385e6f35483e948d10fadbe17dc72819c064efc61558300e015ea52ee893a",
+      "identical_to_accepted_baseline": true
+    },
+    "experiments/multi-npu-relay/verify.py": {
+      "sha256": "0f49f668eec04e39c1daaf4200227c1ccce3b8bbffc6cf8e49ff9f13f1a5653f",
+      "identical_to_accepted_baseline": true
+    },
+    "planner/quota/planner.py": {
+      "sha256": "f1f3e3d24f6f2386fdf7fe4e063bda7fdfbcce558f2cb4978ee71ea3a1d89803",
+      "identical_to_accepted_baseline": true
+    },
+    "planner/quota/checker.py": {
+      "sha256": "0d287906932ccb14405ce05067217f3b51bce463e31e1433dfc953c80b3bcc6e",
+      "identical_to_accepted_baseline": true
+    }
+  },
+  "native_commit": "2fde39d02920e639f5b200d0c5262a517326deb8",
+  "native_tree": "c27d1faef570e6da9900a71aa0a37180a58dfba8",
+  "libraries": {
+    "libns3.44-unified-bus-test.so": "f1b355ae252311b4382e7fe878d06109918b37fd324b5aa5944c75d4ebf244f6",
+    "libns3.44-bridge.so": "d180c5d03026a54f1b0868a3dfd65ff3791892d990c38312e0bc2b855ed2b09d",
+    "libns3.44-applications.so": "6a9785267d0071f824ddc4568ceebe0608951845f2c1829e2d76c36f435ea541",
+    "libns3.44-unified-bus.so": "15cacf669b476211cd3cffdd319ba975059f2db5f4471c256de9f3a7100752cf",
+    "libns3.44-core.so": "d91bc9c132c116801564364ba87a388cbda43140a274042c55cfcb29a973a099",
+    "libns3.44-config-store.so": "d9cd78f1aa44f6e189588451daef514cc0e65433a9df813f98f7819ba082c439",
+    "libns3.44-network.so": "54eb25cba1c2baf198cb8347010de7faf0bdca59569d69b0775b6942f875156c",
+    "libns3.44-traffic-control.so": "975837da10373f2ae45ace00789ca711f4144493cc7274bd9711c45defad5c88",
+    "libns3.44-internet.so": "1f4a558dadd6806f884a749cede475e26f08dc0f5755dbcbb1d9618e9590401f",
+    "libns3.44-stats.so": "1563bcafda54f981041211082f5d7246f539fc2cb78d0b4b04580061aca1af94",
+    "libns3.44-point-to-point.so": "1beb0d2e2ccb03a5efe1aa5a96aa11bb430a9212d39ed5b7f2c089fc6e44ab1c"
+  }
+}
