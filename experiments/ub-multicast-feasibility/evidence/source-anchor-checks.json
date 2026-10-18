@@ -1,0 +1,147 @@
+{
+  "kind": "source-anchor text checks; not simulation tests",
+  "checked": 20,
+  "passed": true,
+  "anchors": [
+    {
+      "path": "src/unified-bus/model/ub-switch.cc",
+      "start": 973,
+      "end": 1005,
+      "needle": "ForwardDataPacket",
+      "passed": true
+    },
+    {
+      "path": "src/unified-bus/model/ub-switch.cc",
+      "start": 449,
+      "end": 478,
+      "needle": "ForwardDataPacketAfterAdmission",
+      "passed": true
+    },
+    {
+      "path": "src/unified-bus/model/ub-switch.cc",
+      "start": 819,
+      "end": 881,
+      "needle": "SinkTpDataPacket",
+      "passed": true
+    },
+    {
+      "path": "src/unified-bus/model/ub-switch-allocator.cc",
+      "start": 652,
+      "end": 710,
+      "needle": "AllocateNextPacket",
+      "passed": true
+    },
+    {
+      "path": "src/unified-bus/model/ub-port.cc",
+      "start": 790,
+      "end": 842,
+      "needle": "TransmitPacket",
+      "passed": true
+    },
+    {
+      "path": "src/unified-bus/model/ub-link.cc",
+      "start": 174,
+      "end": 203,
+      "needle": "TransmitStart",
+      "passed": true
+    },
+    {
+      "path": "src/unified-bus/model/protocol/ub-cbfc.cc",
+      "start": 147,
+      "end": 166,
+      "needle": "OnIngressReleased",
+      "passed": true
+    },
+    {
+      "path": "src/unified-bus/model/protocol/ub-routing-process.cc",
+      "start": 450,
+      "end": 532,
+      "needle": "GetOutPortInternal",
+      "passed": true
+    },
+    {
+      "path": "src/unified-bus/model/ub-transport-channel-manager.cc",
+      "start": 238,
+      "end": 299,
+      "needle": "ResolveInboundTp",
+      "passed": true
+    },
+    {
+      "path": "src/unified-bus/model/protocol/ub-function.cc",
+      "start": 155,
+      "end": 241,
+      "needle": "SubmitWqe",
+      "passed": true
+    },
+    {
+      "path": "src/unified-bus/model/protocol/ub-function.cc",
+      "start": 1058,
+      "end": 1072,
+      "needle": "CanAcceptWqe",
+      "passed": true
+    },
+    {
+      "path": "src/unified-bus/model/protocol/ub-function.cc",
+      "start": 1629,
+      "end": 1641,
+      "needle": "IsWqeCompleted",
+      "passed": true
+    },
+    {
+      "path": "src/unified-bus/model/protocol/ub-transaction.cc",
+      "start": 1859,
+      "end": 1918,
+      "needle": "RecordSegmentSuccess",
+      "passed": true
+    },
+    {
+      "path": "src/unified-bus/model/protocol/ub-transaction.cc",
+      "start": 2114,
+      "end": 2177,
+      "needle": "ProcessInboundTaResponse",
+      "passed": true
+    },
+    {
+      "path": "src/unified-bus/model/protocol/ub-transport.cc",
+      "start": 1043,
+      "end": 1067,
+      "needle": "BuildRtpDataPacket",
+      "passed": true
+    },
+    {
+      "path": "src/unified-bus/model/protocol/ub-transport.cc",
+      "start": 1343,
+      "end": 1360,
+      "needle": "ShouldCompleteOnTpAck",
+      "passed": true
+    },
+    {
+      "path": "src/unified-bus/model/protocol/ub-retrans.cc",
+      "start": 1201,
+      "end": 1225,
+      "needle": "OnTimeout",
+      "passed": true
+    },
+    {
+      "path": "src/network/model/packet.cc",
+      "start": 120,
+      "end": 125,
+      "needle": "Packet::Copy",
+      "passed": true
+    },
+    {
+      "path": "src/network/model/packet.h",
+      "start": 849,
+      "end": 852,
+      "needle": "GetSize",
+      "passed": true
+    },
+    {
+      "path": "src/core/model/assert.h",
+      "start": 39,
+      "end": 104,
+      "needle": "NS3_ASSERT_ENABLE",
+      "passed": true
+    }
+  ]
+}

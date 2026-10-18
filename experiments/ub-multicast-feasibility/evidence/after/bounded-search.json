@@ -1,0 +1,14 @@
+{
+  "pattern": "multicast|broadcast|replicat|IsMulticast|IsBroadcast|GetMulticast",
+  "scope": "src/unified-bus source/docs plus src/network/model/{packet.cc,packet.h,buffer.h,packet-tag-list.h,byte-tag-list.h}; and src/core/model/assert.h; excludes build/generated outputs",
+  "file_count": 119,
+  "match_count": 1,
+  "matches": [
+    {
+      "path": "src/network/model/packet.h",
+      "line": 461,
+      "text": "* should the uid be when the packet is sent over broadcast media, or"
+    }
+  ],
+  "interpretation": "Lexical evidence only. Absence of a match is not proof of specification absence or semantic impossibility."
+}
