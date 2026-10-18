@@ -1,0 +1,462 @@
+diff --git a/src/unified-bus/model/protocol/ub-cbfc.cc b/src/unified-bus/model/protocol/ub-cbfc.cc
+index 1dc8815..56b8865 100644
+--- a/src/unified-bus/model/protocol/ub-cbfc.cc
++++ b/src/unified-bus/model/protocol/ub-cbfc.cc
+@@ -120,6 +120,7 @@ bool UbCbfc::IsFcLimited(Ptr<UbIngressQueue> ingressQ)
+ 
+     int32_t consumeCellNum = ceil((float)nextPktSize / (m_cbfcCfg.m_flitLen * m_cbfcCfg.m_nFlitPerCell));
+     const bool blocked = m_crdTxfree[vl] < consumeCellNum;
++    if (blocked) { ++m_blockedQueryCount; }
+     if (m_creditBlockedLast[vl] != blocked) {
+         utils::UbUtils::CbfcStateNotify(m_nodeId,
+                                         m_portId,
+@@ -234,6 +235,7 @@ bool UbCbfc::CbfcConsumeCrd(Ptr<Packet> p)
+     NS_LOG_DEBUG("befor consume, m_crdTxfree[ " << (uint32_t)vlId << " ]: " << m_crdTxfree[vlId]);
+     if (m_crdTxfree[vlId] >= consumeCellNum) {
+         m_crdTxfree[vlId] -= consumeCellNum;
++        m_consumedCells += consumeCellNum;
+         utils::UbUtils::CbfcCreditLevelNotify(m_nodeId,
+                                               m_portId,
+                                               "CONSUME",
+@@ -280,6 +282,7 @@ bool UbCbfc::CbfcRestoreCrd(Ptr<Packet> p)
+         if (port->m_credits[index] > 0) {
+             resumeCellGrainNum = port->m_credits[index];
+             NS_LOG_DEBUG("before resume m_crdTxfree[ " << (uint32_t)index << " ]: " << m_crdTxfree[index]);
++            m_restoredCells += resumeCellGrainNum * m_cbfcCfg.m_retCellGrainControlPacket;
+             m_crdTxfree[index] += resumeCellGrainNum * m_cbfcCfg.m_retCellGrainControlPacket;  // 粒度数量 * 粒度大小
+             utils::UbUtils::CbfcCreditLevelNotify(m_nodeId,
+                                                   m_portId,
+@@ -330,6 +333,7 @@ void UbCbfc::AccumulateReturnedCredit(Ptr<Packet> p, uint32_t targetPortId)
+                      << " vlId: " << (uint32_t)vlId << " pktSize: " << pktSize);
+ 
+         int32_t consumeCellNum = ceil((float)(pktSize) / (m_cbfcCfg.m_flitLen * m_cbfcCfg.m_nFlitPerCell));
++        m_returnedCells += consumeCellNum;
+         SetCrdToReturn(vlId, consumeCellNum, port);
+     }
+ }
+@@ -470,6 +474,7 @@ UbCbfc::RestoreDataPacketCredit(Ptr<Packet> p)
+ 
+     const uint8_t targetVl = header.GetCreditTargetVL();
+     const int32_t restoreCells = m_cbfcCfg.m_retCellGrainDataPacket;
++    m_restoredCells += restoreCells;
+     m_crdTxfree[targetVl] += restoreCells;
+     utils::UbUtils::CbfcCreditLevelNotify(m_nodeId,
+                                           m_portId,
+diff --git a/src/unified-bus/model/protocol/ub-cbfc.h b/src/unified-bus/model/protocol/ub-cbfc.h
+index 5f5b71d..a5d5b64 100644
+--- a/src/unified-bus/model/protocol/ub-cbfc.h
++++ b/src/unified-bus/model/protocol/ub-cbfc.h
+@@ -26,6 +26,13 @@ public:
+     virtual void OnDataPacketReceived(Ptr<Packet> p) override;
+     virtual void OnIngressEnqueued(const UbFlowControlEventContext& context) override;
+     int32_t GetCrdToReturn(uint8_t vlId);
++    // Read-only accounting evidence for network tests; no credit policy changes.
++    int32_t GetTxFreeCells(uint8_t vl) const { return m_crdTxfree.at(vl); }
++    uint64_t GetBlockedQueryCount() const { return m_blockedQueryCount; }
++    uint64_t GetConsumedCells() const { return m_consumedCells; }
++    uint64_t GetReturnedCells() const { return m_returnedCells; }
++    uint64_t GetRestoredCells() const { return m_restoredCells; }
++
+     void SetCrdToReturn(uint8_t vlId, int32_t consumeCell, Ptr<UbPort> targetPort);
+     void UpdateCrdToReturn(uint8_t vlId, int32_t consumeCell, Ptr<UbPort> targetPort);
+     bool CbfcConsumeCrd(Ptr<Packet> p);
+@@ -56,6 +63,7 @@ protected:
+     std::vector<int32_t>  m_crdToReturn;    // 用于记录每个vl需要返回的信用证
+     std::vector<bool> m_creditBlockedLast;  // 上一次是否因 credit 不足而阻塞
+     uint8_t m_lastPiggybackVl {0};
++    uint64_t m_blockedQueryCount{0}, m_consumedCells{0}, m_returnedCells{0}, m_restoredCells{0};
+ 
+ protected:
+     bool TryAttachPiggybackCredit(Ptr<Packet> p);
+diff --git a/src/unified-bus/model/ub-queue-manager.cc b/src/unified-bus/model/ub-queue-manager.cc
+index a443fcf..73d466e 100644
+--- a/src/unified-bus/model/ub-queue-manager.cc
++++ b/src/unified-bus/model/ub-queue-manager.cc
+@@ -261,6 +261,34 @@ UbQueueManager::MoveInPortProcessingToVoq(uint32_t inPort,
+     m_traceOutPortBufferBytes(outPort, GetTotalOutPortBufferUsed(outPort));
+ }
+ 
++void UbQueueManager::MoveProcessingToNetworkBranches(uint32_t inPort, uint32_t firstOut,
++    uint32_t priority, uint32_t bytes, const std::vector<uint32_t>& outputs)
++{
++    NS_ABORT_MSG_IF(outputs.empty() || outputs.front() != firstOut, "Invalid branch outputs");
++    MoveInPortProcessingToVoq(inPort, firstOut, priority, bytes);
++    for (size_t i=1; i<outputs.size(); ++i) {
++        m_outPortBuffer[outputs[i]][priority] += bytes;
++        m_totalOutPortVoqBufferedBytes[outputs[i]] += bytes;
++        m_traceOutPortBufferBytes(outputs[i], GetTotalOutPortBufferUsed(outputs[i]));
++    }
++}
++
++void UbQueueManager::PopNetworkBranch(uint32_t inPort, uint32_t outPort,
++    uint32_t priority, uint32_t bytes, bool last)
++{
++    NS_ABORT_MSG_IF(m_outPortBuffer[outPort][priority] < bytes ||
++        m_totalOutPortVoqBufferedBytes[outPort] < bytes, "Network branch accounting underflow");
++    m_outPortBuffer[outPort][priority] -= bytes;
++    m_totalOutPortVoqBufferedBytes[outPort] -= bytes;
++    if (last) {
++        NS_ABORT_MSG_IF(m_totalVoqBufferedBytes < bytes, "Network parent accounting underflow");
++        m_totalVoqBufferedBytes -= bytes;
++        RemoveFromIngressAdmission(inPort, priority, bytes);
++        m_traceIngressQueueOccupancyBytes(inPort, priority, GetQueueIngressTotalBytes(inPort, priority));
++    }
++    m_traceOutPortBufferBytes(outPort, GetTotalOutPortBufferUsed(outPort));
++}
++
+ // ========== Detected-failure recovery transfer ==========
+ 
+ void
+diff --git a/src/unified-bus/model/ub-queue-manager.h b/src/unified-bus/model/ub-queue-manager.h
+index aebdd3a..f712324 100644
+--- a/src/unified-bus/model/ub-queue-manager.h
++++ b/src/unified-bus/model/ub-queue-manager.h
+@@ -124,6 +124,13 @@ public:
+     void PushToInPortProcessing(uint32_t inPort, uint32_t outPort, uint32_t priority, uint32_t pSize);
+     void MoveInPortProcessingToVoq(uint32_t inPort, uint32_t outPort, uint32_t priority, uint32_t pSize);
+ 
++    // Shared-payload network replication: ingress storage is physical; output views are logical.
++    void MoveProcessingToNetworkBranches(uint32_t inPort, uint32_t firstOut,
++                                         uint32_t priority, uint32_t bytes,
++                                         const std::vector<uint32_t>& outputs);
++    void PopNetworkBranch(uint32_t inPort, uint32_t outPort, uint32_t priority,
++                          uint32_t bytes, bool last);
++
+     // ========== Detected-failure recovery transfer ==========
+ 
+     /**
+diff --git a/src/unified-bus/model/ub-switch-allocator.cc b/src/unified-bus/model/ub-switch-allocator.cc
+index d03c387..5b5edfd 100644
+--- a/src/unified-bus/model/ub-switch-allocator.cc
++++ b/src/unified-bus/model/ub-switch-allocator.cc
+@@ -706,7 +706,9 @@ void UbRoundRobinAllocator::AllocateNextPacket(Ptr<UbPort> outPort)
+             // Forwarded packet (not locally generated)
+             auto node = NodeList::GetNode(m_nodeId);
+             auto inPort = DynamicCast<UbPort>(node->GetDevice(inPortId));
+-            node->GetObject<UbSwitch>()->NotifySwitchDequeue(inPortId, outPortId, priority, packet);
++            const bool released = node->GetObject<UbSwitch>()->NotifySwitchDequeue(
++                inPortId, outPortId, priority, packet);
++            context.upstreamCreditAlreadyReturned = context.upstreamCreditAlreadyReturned || !released;
+             inPort->GetFlowControl()->OnIngressReleased(context);
+             if (m_disposed) {
+                 ClearActiveIngressQueue(outPortId);
+@@ -1026,7 +1028,9 @@ void UbDwrrAllocator::AllocateNextPacket(Ptr<UbPort> outPort)
+                     // Forwarded packet (not locally generated)
+                     auto node = NodeList::GetNode(m_nodeId);
+                     auto inPort = DynamicCast<UbPort>(node->GetDevice(inPortId));
+-                    node->GetObject<UbSwitch>()->NotifySwitchDequeue(inPortId, outPortId, priority, packet);
++                    const bool released = node->GetObject<UbSwitch>()->NotifySwitchDequeue(
++                        inPortId, outPortId, priority, packet);
++                    context.upstreamCreditAlreadyReturned = context.upstreamCreditAlreadyReturned || !released;
+                     inPort->GetFlowControl()->OnIngressReleased(context);
+                     if (m_disposed) {
+                         ClearActiveIngressQueue(outPortId);
+diff --git a/src/unified-bus/model/ub-switch.cc b/src/unified-bus/model/ub-switch.cc
+index 7f615d1..caed146 100644
+--- a/src/unified-bus/model/ub-switch.cc
++++ b/src/unified-bus/model/ub-switch.cc
+@@ -272,6 +272,11 @@ void UbSwitch::Init()
+ 
+ void UbSwitch::DoDispose()
+ {
++    for (auto& event : m_networkEvents) { event.Cancel(); }
++    m_networkEvents.clear();
++    m_networkParents.clear();
++    m_networkReceive = Callback<void, uint32_t, uint32_t, Ptr<Packet>>();
++    m_networkSourceQueues.clear();
+     m_recoveryDisposed = true;
+     if (m_detectedFailedOutput != UINT32_MAX)
+     {
+@@ -716,6 +721,7 @@ UbPacketType_t UbSwitch::GetPacketType(Ptr<Packet> packet)
+  */
+ void UbSwitch::SwitchHandlePacket(Ptr<UbPort> port, Ptr<Packet> packet)
+ {
++    if (HandleNetworkPacket(port, packet)) { return; }
+     // 帧类型判断
+     auto packetType = GetPacketType(packet);
+     switch (packetType) {
+@@ -1886,8 +1892,34 @@ UbSwitch::FailedOutputRerouting()
+     return port == nullptr ? nullptr : port->GetReliableRerouting();
+ }
+ 
+-void UbSwitch::NotifySwitchDequeue(uint16_t inPortId, uint32_t outPort, uint32_t priority, Ptr<Packet> packet)
+-{
++bool UbSwitch::NotifySwitchDequeue(uint16_t inPortId, uint32_t outPort, uint32_t priority, Ptr<Packet> packet)
++{
++    UbNetworkReplicationTag tag;
++    if (packet->PeekPacketTag(tag)) {
++        auto it = m_networkParents.find(tag.parent);
++        NS_ABORT_MSG_IF(it == m_networkParents.end(), "Missing network parent");
++        auto& parent = it->second;
++        NS_ABORT_MSG_IF(outPort >= 64 || !(parent.pendingOutputs & (uint64_t{1} << outPort)) ||
++            parent.inPort != inPortId || parent.priority != priority || parent.bytes != packet->GetSize(),
++            "Invalid or duplicate network branch dequeue");
++        parent.pendingOutputs &= ~(uint64_t{1} << outPort);
++        const bool last = parent.pendingOutputs == 0;
++        m_queueManager->PopNetworkBranch(inPortId, outPort, priority, parent.bytes, last);
++        ++m_networkStats.branchDequeues;
++        m_networkStats.branchWaitNs[outPort] += Simulator::Now().GetNanoSeconds() - parent.readyNs;
++        ++m_networkStats.branchPackets[outPort];
++        NS_ABORT_MSG_IF(m_networkStats.branchBytes < parent.bytes || !m_networkStats.descriptors,
++                        "Network branch resource underflow");
++        m_networkStats.branchBytes -= parent.bytes;
++        --m_networkStats.descriptors;
++        if (last) {
++            ++m_networkStats.released;
++            m_networkStats.upstreamReturnBytes += parent.bytes;
++            m_networkStats.parentBytes -= parent.bytes;
++            m_networkParents.erase(it);
++        }
++        return last;
++    }
+     m_queueManager->PopFromVoq(inPortId, outPort, priority, packet->GetSize());
+ 
+     // 只有数据报文触发拥塞控制
+@@ -1898,6 +1930,160 @@ void UbSwitch::NotifySwitchDequeue(uint16_t inPortId, uint32_t outPort, uint32_t
+               << " VOQ outPort buffer:" << m_queueManager->GetTotalOutPortBufferUsed(outPort));
+         m_congestionCtrl->OnSwitchPostDequeue(inPortId, outPort, packet);
+     }
++    return true;
++}
++
++void UbSwitch::EnableNetworkReplication(const std::vector<uint32_t>& rankToPort)
++{
++    NS_ABORT_MSG_IF(GetNodeType() != UB_SWITCH || !IsCBFCEnable() ||
++        rankToPort.empty() || rankToPort.size() > 64 || m_portsNum > 64,
++        "Network PoC requires a CBFC single switch with <=64 ranks/ports");
++    uint64_t seen = 0;
++    for (uint32_t port : rankToPort) {
++        if (port == UINT32_MAX) { continue; }
++        NS_ABORT_MSG_IF(port >= m_portsNum || (seen & (uint64_t{1} << port)),
++                        "Network rank map must have distinct valid ports");
++        seen |= uint64_t{1} << port;
++    }
++    NS_ABORT_MSG_IF(!m_networkParents.empty(), "Cannot remap network ports while parents are active");
++    m_networkRankToPort = rankToPort;
++    m_networkReplicationEnabled = true;
++    m_networkStats.branchWaitNs.resize(m_portsNum);
++    m_networkStats.branchPackets.resize(m_portsNum);
++}
++
++void UbSwitch::EnableNetworkSink(uint32_t rank,
++    Callback<void, uint32_t, uint32_t, Ptr<Packet>> receive)
++{
++    NS_ABORT_MSG_IF(GetNodeType() != UB_DEVICE || rank >= 64 || receive.IsNull() || !IsCBFCEnable(),
++                    "Invalid network PoC sink");
++    m_networkSinkRank = rank;
++    m_networkReceive = receive;
++}
++
++bool UbSwitch::SubmitNetworkPacket(uint32_t outPort, Ptr<Packet> payload,
++    uint64_t destinations, uint32_t object, uint32_t sequence)
++{
++    NS_ABORT_MSG_IF(GetNodeType() != UB_DEVICE || !IsCBFCEnable() || outPort >= m_portsNum ||
++        !payload || !payload->GetSize() || !destinations,
++        "Invalid network PoC submission");
++    auto& queue = m_networkSourceQueues[outPort];
++    if (!queue) {
++        queue = CreateObject<UbPacketQueue>();
++        queue->SetInPortId(outPort);
++        queue->SetOutPortId(outPort);
++        queue->SetIngressPriority(1);
++        m_allocator->RegisterUbIngressQueue(queue, outPort, 1);
++    }
++    // Finite application injection queue; failed submissions retain caller ownership.
++    // At most 1024 packets and at most 4096 payload bytes per packet.
++    NS_ABORT_MSG_IF(payload->GetSize() > 4096, "Network PoC packet payload exceeds 4096 bytes");
++    if (queue->GetPacketCount() >= 1024) { return false; }
++    UintegerValue egressLimit;
++    DynamicCast<UbPort>(GetObject<Node>()->GetDevice(outPort))->GetUbQueue()->GetAttribute(
++        "MaxEgressBytes", egressLimit);
++    UbDatalinkPacketHeader sizeHeader;
++    NS_ABORT_MSG_IF(payload->GetSize() + sizeHeader.GetSerializedSize() > egressLimit.Get(),
++                    "Network packet cannot fit source egress capacity");
++    Ptr<Packet> packet = payload->Copy();
++    UbNetworkReplicationTag tag;
++    tag.destinations = destinations; tag.object = object; tag.sequence = sequence;
++    packet->AddPacketTag(tag);
++    UbDatalinkPacketHeader dl;
++    dl.SetPacketVL(1);
++    packet->AddHeader(dl);
++    queue->Push(packet);
++    DynamicCast<UbPort>(GetObject<Node>()->GetDevice(outPort))->TriggerTransmit();
++    return true;
++}
++
++bool UbSwitch::HandleNetworkPacket(Ptr<UbPort> port, Ptr<Packet> packet)
++{
++    UbNetworkReplicationTag tag;
++    if (!packet->PeekPacketTag(tag)) { return false; }
++    NS_ABORT_MSG_IF(!IsCBFCEnable(), "Network PoC cannot bypass CBFC");
++    // Consume/clear this hop's incoming piggyback credit BEFORE copying any branch.
++    port->GetFlowControl()->OnDataPacketReceived(packet);
++    UbDatalinkPacketHeader dl;
++    packet->PeekHeader(dl);
++    const uint32_t priority = dl.GetPacketVL();
++    NS_ABORT_MSG_IF(priority != 1, "Network PoC requires VL1");
++    if (GetNodeType() == UB_DEVICE) {
++        NS_ABORT_MSG_IF(tag.parent == 0 || tag.target != m_networkSinkRank ||
++            m_networkReceive.IsNull() || !(tag.destinations & (uint64_t{1} << tag.target)),
++            "Network packet reached an unselected/unconfigured sink");
++        auto payload = packet->Copy();
++        payload->RemoveHeader(dl);
++        m_networkReceive(tag.object, tag.sequence, payload);
++        port->GetFlowControl()->OnIngressEnqueued(MakeIngressFlowControlEventContext(
++            packet, nullptr, port->GetIfIndex(), port->GetIfIndex(), priority));
++        return true;
++    }
++    NS_ABORT_MSG_IF(!m_networkReplicationEnabled || tag.parent != 0 || !tag.destinations,
++                    "Network PoC supports exactly one configured switch");
++    std::vector<uint32_t> outputs, ranks;
++    uint64_t outputMask = 0;
++    for (uint32_t rank=0; rank<64; ++rank) {
++        if (!(tag.destinations & (uint64_t{1} << rank))) { continue; }
++        NS_ABORT_MSG_IF(rank >= m_networkRankToPort.size() ||
++            m_networkRankToPort[rank] >= m_portsNum ||
++            m_networkRankToPort[rank] == port->GetIfIndex(), "Unknown or reflected destination");
++        UintegerValue egressLimit;
++        DynamicCast<UbPort>(GetObject<Node>()->GetDevice(m_networkRankToPort[rank]))->GetUbQueue()->
++            GetAttribute("MaxEgressBytes", egressLimit);
++        NS_ABORT_MSG_IF(packet->GetSize() > egressLimit.Get(),
++                        "Network branch cannot fit destination egress capacity");
++        outputs.push_back(m_networkRankToPort[rank]);
++        ranks.push_back(rank);
++        outputMask |= uint64_t{1} << outputs.back();
++    }
++    const uint32_t bytes = packet->GetSize(), in = port->GetIfIndex();
++    NS_ABORT_MSG_IF(!m_queueManager->CheckInPortSpace(in, priority, bytes),
++                    "Network ingress capacity exceeded: check configured CBFC window");
++    NS_ABORT_MSG_IF(m_nextNetworkParent == UINT64_MAX, "Network parent identifier exhausted");
++    const uint64_t id = m_nextNetworkParent++;
++    m_queueManager->PushToInPortProcessing(in, outputs.front(), priority, bytes);
++    m_networkParents.emplace(id, NetworkParent{in, priority, bytes, outputMask, 0, packet, outputs, ranks});
++    ++m_networkStats.admitted;
++    m_networkStats.parentBytes += bytes;
++    m_networkStats.peakParentBytes = std::max(m_networkStats.peakParentBytes, m_networkStats.parentBytes);
++    // Each finite admitted packet has <=64 descriptors. No unbounded branch payload allocation.
++    m_networkStats.descriptors += outputs.size();
++    m_networkStats.peakDescriptors = std::max(m_networkStats.peakDescriptors, m_networkStats.descriptors);
++    NS_ABORT_MSG_IF(m_networkStats.descriptors > 64 * m_networkParents.size(),
++                    "Network descriptor bound violated");
++    if (m_inPortProcessingDelay <= NanoSeconds(0)) { CompleteNetworkProcessing(id); }
++    else { m_networkEvents.push_back(Simulator::Schedule(m_inPortProcessingDelay,
++            &UbSwitch::CompleteNetworkProcessing, this, id)); }
++    return true;
++}
++
++void UbSwitch::CompleteNetworkProcessing(uint64_t id)
++{
++    m_networkEvents.erase(std::remove_if(m_networkEvents.begin(), m_networkEvents.end(),
++        [](const EventId& e) { return !e.IsPending(); }), m_networkEvents.end());
++    auto it = m_networkParents.find(id);
++    NS_ABORT_MSG_IF(it == m_networkParents.end(), "Missing processing parent");
++    auto& parent = it->second;
++    parent.readyNs = Simulator::Now().GetNanoSeconds();
++    m_queueManager->MoveProcessingToNetworkBranches(parent.inPort, parent.outputs.front(),
++        parent.priority, parent.bytes, parent.outputs);
++    // Register all output references before waking any allocator (which may run synchronously).
++    const auto outputs = parent.outputs;
++    for (size_t i=0; i<outputs.size(); ++i) {
++        auto branch = parent.packet->Copy();
++        UbNetworkReplicationTag tag;
++        branch->RemovePacketTag(tag);
++        tag.parent = id; tag.target = parent.ranks[i];
++        branch->AddPacketTag(tag);
++        GetOrCreateVoq(outputs[i], parent.priority, parent.inPort)->Push(branch);
++        ++m_networkStats.branches;
++        m_networkStats.branchBytes += parent.bytes;
++    }
++    m_networkStats.peakBranchBytes = std::max(m_networkStats.peakBranchBytes, m_networkStats.branchBytes);
++    for (uint32_t output : outputs) {
++        DynamicCast<UbPort>(GetObject<Node>()->GetDevice(output))->TriggerTransmit();
++    }
+ }
+ 
+ bool UbSwitch::IsCBFCEnable()
+diff --git a/src/unified-bus/model/ub-switch.h b/src/unified-bus/model/ub-switch.h
+index 9178021..10449be 100644
+--- a/src/unified-bus/model/ub-switch.h
++++ b/src/unified-bus/model/ub-switch.h
+@@ -89,7 +89,21 @@ public:
+ 
+     void SwitchHandlePacket(Ptr<UbPort> port, Ptr<Packet> packet);
+     // 端口发送完毕，通知交换机出队列
+-    void NotifySwitchDequeue(uint16_t inPortId, uint32_t outPort, uint32_t priority, Ptr<Packet> p);
++    bool NotifySwitchDequeue(uint16_t inPortId, uint32_t outPort, uint32_t priority, Ptr<Packet> p);
++
++    struct NetworkReplicationStats {
++        uint64_t admitted{0}, released{0}, branches{0}, branchDequeues{0};
++        uint64_t parentBytes{0}, peakParentBytes{0}, branchBytes{0}, peakBranchBytes{0};
++        uint64_t descriptors{0}, peakDescriptors{0}, upstreamReturnBytes{0};
++        std::vector<uint64_t> branchWaitNs, branchPackets;
++    };
++    // Opt-in network-only interface; no WQE/TA/ACK/Response semantics.
++    void EnableNetworkReplication(const std::vector<uint32_t>& rankToPort);
++    void EnableNetworkSink(uint32_t rank, Callback<void, uint32_t, uint32_t, Ptr<Packet>> receive);
++    bool SubmitNetworkPacket(uint32_t outPort, Ptr<Packet> payload, uint64_t destinations,
++                             uint32_t object, uint32_t sequence);
++    const NetworkReplicationStats& GetNetworkReplicationStats() const { return m_networkStats; }
++    uint64_t GetNetworkOutstandingParents() const { return m_networkParents.size(); }
+ 
+     void Init();
+     void InitNodePortsFlowControl();
+@@ -200,6 +214,25 @@ protected:
+     UbPacketType_t GetPacketType(Ptr<Packet> packet);
+ 
+ private:
++    struct NetworkParent {
++        uint32_t inPort, priority, bytes;
++        uint64_t pendingOutputs;
++        uint64_t readyNs;
++        Ptr<Packet> packet;
++        std::vector<uint32_t> outputs, ranks;
++    };
++    bool HandleNetworkPacket(Ptr<UbPort> port, Ptr<Packet> packet);
++    void CompleteNetworkProcessing(uint64_t parent);
++    bool m_networkReplicationEnabled{false};
++    uint32_t m_networkSinkRank{UINT32_MAX};
++    std::vector<uint32_t> m_networkRankToPort;
++    Callback<void, uint32_t, uint32_t, Ptr<Packet>> m_networkReceive;
++    std::unordered_map<uint64_t, NetworkParent> m_networkParents;
++    std::unordered_map<uint32_t, Ptr<UbPacketQueue>> m_networkSourceQueues;
++    std::vector<EventId> m_networkEvents;
++    uint64_t m_nextNetworkParent{1};
++    NetworkReplicationStats m_networkStats;
++
+     struct BufferOverrideConfig {
+         std::optional<uint32_t> reservePerQueueBytes;
+         std::optional<uint64_t> sharedPoolBytes;
+diff --git a/src/unified-bus/model/ub-tag.h b/src/unified-bus/model/ub-tag.h
+index cfca0da..321069c 100644
+--- a/src/unified-bus/model/ub-tag.h
++++ b/src/unified-bus/model/ub-tag.h
+@@ -8,6 +8,29 @@
+ 
+ namespace ns3 {
+ 
++/** Idealized single-switch network PoC metadata: not serialized wire bytes. */
++class UbNetworkReplicationTag : public Tag {
++public:
++    uint64_t destinations{0}, parent{0};
++    uint32_t object{0}, sequence{0}, target{UINT32_MAX};
++    static TypeId GetTypeId() {
++        static TypeId t = TypeId("ns3::UbNetworkReplicationTag").SetParent<Tag>()
++            .AddConstructor<UbNetworkReplicationTag>();
++        return t;
++    }
++    TypeId GetInstanceTypeId() const override { return GetTypeId(); }
++    uint32_t GetSerializedSize() const override { return 28; }
++    void Serialize(TagBuffer b) const override {
++        b.WriteU64(destinations); b.WriteU64(parent); b.WriteU32(object);
++        b.WriteU32(sequence); b.WriteU32(target);
++    }
++    void Deserialize(TagBuffer b) override {
++        destinations=b.ReadU64(); parent=b.ReadU64(); object=b.ReadU32();
++        sequence=b.ReadU32(); target=b.ReadU32();
++    }
++    void Print(std::ostream& os) const override { os << "network-poc parent=" << parent; }
++};
++
+ enum class PacketType {
+     PACKET,
+     ACK,

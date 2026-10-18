@@ -1,0 +1,44 @@
+{
+  "native_base": "d6aa9e242d5a93f5bbd1ad54f39b1620c1b8757b",
+  "accepted_snapshot_local": "4df6011",
+  "public_parent": "64b69b888ec602cf064bd12d8a16f814840c5a12",
+  "native_changed_files": [
+    {
+      "path": "src/unified-bus/model/protocol/ub-cbfc.cc",
+      "sha256": "779a303e24914550aa4ea45729a6f4114034b27f6433b3d2cedc236eca055ec9"
+    },
+    {
+      "path": "src/unified-bus/model/protocol/ub-cbfc.h",
+      "sha256": "7cdf05f925218ec72f98be0d74a2314c493f462e15f7e38381ebfd50a0058f18"
+    },
+    {
+      "path": "src/unified-bus/model/ub-queue-manager.cc",
+      "sha256": "ebab6d546efaf22e53fc33d17152fe0e2c72962e03a2478ef1360787d2f4fa8b"
+    },
+    {
+      "path": "src/unified-bus/model/ub-queue-manager.h",
+      "sha256": "12c3863cf16eb5c62354f7a5a5ff11879a9313bb2c95129bb49ee84ae1db6c1e"
+    },
+    {
+      "path": "src/unified-bus/model/ub-switch-allocator.cc",
+      "sha256": "11a875709ac18e9dd1c6bdbe2ae8405ada030efb9c21b2088792de4156736ae3"
+    },
+    {
+      "path": "src/unified-bus/model/ub-switch.cc",
+      "sha256": "ea1e1e7a271f4e16ce8ddbd7e280ff75176710309535055d335acc8c92d9de91"
+    },
+    {
+      "path": "src/unified-bus/model/ub-switch.h",
+      "sha256": "2c59cdfb80f28526bf0f4be19a7588745a5335a6a1432b16487f8546582e2833"
+    },
+    {
+      "path": "src/unified-bus/model/ub-tag.h",
+      "sha256": "35d12c8a9f3394a32bbf429ac228dcd3ac6a016160fc3570a69de4c64138b362"
+    }
+  ],
+  "patches": {
+    "accepted-unicast-baseline.patch": "5e3df2572466862957c8a6c1a2554388993dca1513b80b7a9f56c2f1f51950c8",
+    "network-replication.patch": "ee0ac0d6da50e752b45fe86dd839ef4a2252822276059fc0e165292219c9e02b"
+  },
+  "native_implementation_commit_local": "828f393d685a3ecfcc88292327c456eb1c419051"
+}

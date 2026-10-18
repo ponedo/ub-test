@@ -1,0 +1,62 @@
+{
+  "review_status": "PASS_WITH_DOCUMENTED_COVERAGE_LIMIT",
+  "review_scope": "Independent source-diff review and verification of actual single-switch network replication evidence; not reliable multicast acceptance",
+  "native_files_changed": 8,
+  "source_review": {
+    "upstream_credit_once_per_parent": true,
+    "downstream_credit_per_branch": true,
+    "piggyback_consumed_before_copy": true,
+    "physical_ingress_parent_charged_once": true,
+    "logical_branch_backlog_separate": true,
+    "finite_native_egress_and_allocator": true,
+    "rr_and_dwrr_release_gate": true,
+    "unique_parent_ids": true,
+    "untagged_path_preserved": true,
+    "diff_whitespace_check": "PASS"
+  },
+  "actual_evidence": {
+    "positive_cases_independently_reverified": 13,
+    "negative_configuration_rejections_reviewed": 4,
+    "evidence_corruption_checks_reported": 7,
+    "multipart_and_dynamic_and_pressure_raw_sha256_recomputed": "PASS",
+    "rr_pressure_blocked_queries": 933,
+    "dwrr_pressure_blocked_queries": 1807,
+    "pressure_per_ingress_peak_bytes": 2056,
+    "pressure_ingress_limit_bytes": 2240,
+    "pressure_physical_egress_peak_bytes": 1028,
+    "pressure_egress_limit_bytes": 1040,
+    "all_port_credit_pending_cells": 0,
+    "cell_boundary_wire_bytes": [
+      160,
+      161
+    ],
+    "cell_boundary_consumed_cells": [
+      1,
+      2
+    ]
+  },
+  "unicast_regression": {
+    "native_quick_suites_passed": 48,
+    "native_quick_suites_attempted": 49,
+    "unpassed_suite": "unified-bus-examples",
+    "reason": "Official pinned ns-3-ub-tools parser absent; dependency visibility assertion cannot read generated task_statistics.csv. Both baseline and modified simulator complete the same reproduced dependency case, with the same missing parser output. Do not report this suite as PASS.",
+    "application_cases_independently_compared": [
+      "no-balancing",
+      "direct",
+      "two-stage",
+      "chunk-streaming"
+    ],
+    "all_simulation_summary_fields_equal": true,
+    "only_excluded_field": "verification_wall_ns",
+    "independent_postflight": "PASS"
+  },
+  "limitations": [
+    "Network-only single-switch CBFC path; no WQE/TA reliability, transaction acknowledgment, source-side completion CQE, retransmission or member failure recovery.",
+    "Idealized destination PacketTag adds zero wire bytes; the real datalink header and CBFC control packets do consume bandwidth.",
+    "Tests use up to five NPU endpoints, not an exhaustive 64-rank mask/topology test.",
+    "No multi-switch forwarding, transport congestion-control semantics or UltraEP integration tested for tagged packets.",
+    "Native regression is QUICK under the current MPI/MTP-disabled build; the external-parser-dependent suite remains unavailable.",
+    "No exhaustive fuzz or sanitizer campaign; negative cases and evidence mutations cover the stated faults, not every possible invalid external input."
+  ],
+  "review_resolution": "Initial DWRR upstream-credit suppression omission was found during review and corrected before runtime acceptance. No remaining correctness blocker found within the tested network-only scope."
+}

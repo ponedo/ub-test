@@ -1,0 +1,26 @@
+[
+  {
+    "case": "empty",
+    "status": "EXPECTED_REJECTION",
+    "returncode": -6,
+    "matched_error": "Invalid network PoC submission"
+  },
+  {
+    "case": "reflected",
+    "status": "EXPECTED_REJECTION",
+    "returncode": -6,
+    "matched_error": "Unknown or reflected destination"
+  },
+  {
+    "case": "unknown",
+    "status": "EXPECTED_REJECTION",
+    "returncode": -6,
+    "matched_error": "Unknown or reflected destination"
+  },
+  {
+    "case": "oversize",
+    "status": "EXPECTED_REJECTION",
+    "returncode": -6,
+    "matched_error": "payload exceeds 4096"
+  }
+]

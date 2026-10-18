@@ -1,0 +1,663 @@
+diff --git a/src/unified-bus/model/protocol/ub-function.cc b/src/unified-bus/model/protocol/ub-function.cc
+index 5fa3f56..ab62e3e 100644
+--- a/src/unified-bus/model/protocol/ub-function.cc
++++ b/src/unified-bus/model/protocol/ub-function.cc
+@@ -1232,6 +1232,7 @@ void UbJetty::CommitWqeSegmentAdmission(Ptr<UbWqeSegment> segment)
+     }
+     wqe->SetCanSend(true);
+     wqe->UpdateSentBytes(segment->GetSize());
++    wqe->m_lastAdmittedTaSsn = segment->GetTaSsn();
+     IncreaseTaSsnSndNxt();
+ }
+ 
+@@ -1388,6 +1389,7 @@ void UbJetty::PushWqe(Ptr<UbWqe> ubWqe, uint32_t maxSegmentBytes)
+                     "WQE is not compatible with Jetty source/destination binding");
+     NS_ABORT_MSG_IF(maxSegmentBytes == 0 || maxSegmentBytes > UB_WQE_TA_SEGMENT_BYTE,
+                     "WQE segment limit must be in [1, UB_WQE_TA_SEGMENT_BYTE]");
++    ubWqe->m_lastAdmittedTaSsn.reset();
+     ubWqe->SetJettyNum(m_jettyNum);
+     ubWqe->SetTaMsn(m_taMsnCnt);
+     ubWqe->SetTaSsnStart(m_taSsnCnt);
+@@ -1631,13 +1633,12 @@ bool UbJetty::IsWqeCompleted(Ptr<UbWqe> wqe)
+         return false;
+     }
+ 
+-    // 检查WQE的所有分段是否都已确认
+-    uint32_t wqeStartSsn = wqe->GetTaSsnStart();
+-    uint32_t wqeSsnSize = wqe->GetTaSsnSize();
+-    uint32_t wqeEndSsn = wqeStartSsn + wqeSsnSize - 1;
+-
+-    // 如果WQE的最后一个分段已经被确认，则WQE完成
+-    return (wqeEndSsn < m_taSsnSndUna);
++    // Admission may interleave the SSNs of concurrent WQEs. The reserved start + count
++    // is therefore not a completion boundary. Retain the existing Jetty prefix-completion
++    // ordering: every admitted SSN through the actual last one must be below sndUna.
++    // The sent-complete gate prevents success while more segments still await admission.
++    return wqe->IsSentCompleted() && wqe->m_lastAdmittedTaSsn.has_value() &&
++           *wqe->m_lastAdmittedTaSsn < m_taSsnSndUna;
+ }
+ 
+ void UbJetty::DoDispose()
+diff --git a/src/unified-bus/model/protocol/ub-function.h b/src/unified-bus/model/protocol/ub-function.h
+index 927c26b..d37a307 100644
+--- a/src/unified-bus/model/protocol/ub-function.h
++++ b/src/unified-bus/model/protocol/ub-function.h
+@@ -460,6 +460,7 @@ namespace ns3 {
+         /**
+          * @brief 检查并移除已完成的WQE
+          */
++        friend class UbTransaction; // Recheck only after exact WQE terminal cleanup.
+         void CheckAndRemoveCompletedWqe();
+ 
+         /**
+diff --git a/src/unified-bus/model/protocol/ub-transaction.cc b/src/unified-bus/model/protocol/ub-transaction.cc
+index a820f51..4691400 100644
+--- a/src/unified-bus/model/protocol/ub-transaction.cc
++++ b/src/unified-bus/model/protocol/ub-transaction.cc
+@@ -379,6 +379,7 @@ bool UbTransaction::JettyBindTp(uint32_t src,
+         {
+             return false;
+         }
++        UnindexJettyRtpReference(jettyNum);
+         m_jettyRtpReferences.insert_or_assign(
+             jettyNum,
+             UbRtpTransportReference::ForTpGroup(group->GetLifecycleIdentity()));
+@@ -405,11 +406,14 @@ bool UbTransaction::JettyBindTp(uint32_t src,
+         Ptr<UbTransportChannel> transport = requestedTransports[pos];
+         boundTransports.push_back(transport);
+         const uint32_t tpn = transport->GetTpn();
++        UnindexJettyRtpReference(jettyNum);
+         m_jettyRtpReferences.insert_or_assign(
+             jettyNum,
+             UbRtpTransportReference::ForDirectTp(tpn, transport->GetLifecycleOwner()));
+     }
+ 
++    IndexJettyRtpReference(jettyNum);
++
+     if (!boundTransports.empty()) {
+         m_jettyTpNextIndex[jettyNum] = m_nextJettyTpStartIndex % boundTransports.size();
+         m_nextJettyTpStartIndex = (m_nextJettyTpStartIndex + 1) % boundTransports.size();
+@@ -429,8 +433,53 @@ UbTransaction::HasJettyTpBinding(uint32_t jettyNum) const
+     return m_jettyRtpReferences.find(jettyNum) != m_jettyRtpReferences.end();
+ }
+ 
++void
++UbTransaction::IndexJettyRtpReference(uint32_t jettyNum)
++{
++    const auto& reference = m_jettyRtpReferences.at(jettyNum);
++    if (reference.IsDirectTp())
++    {
++        m_directJettiesByTpn[reference.GetDirectTpn()].insert(jettyNum);
++    }
++    else
++    {
++        m_jettiesByTpg[reference.GetIdentity().localId].insert(jettyNum);
++    }
++}
++
++void
++UbTransaction::UnindexJettyRtpReference(uint32_t jettyNum)
++{
++    const auto binding = m_jettyRtpReferences.find(jettyNum);
++    if (binding == m_jettyRtpReferences.end())
++    {
++        return;
++    }
++    const auto eraseJetty = [jettyNum](auto& index, auto key) {
++        const auto entry = index.find(key);
++        if (entry != index.end())
++        {
++            entry->second.erase(jettyNum);
++            if (entry->second.empty())
++            {
++                index.erase(entry);
++            }
++        }
++    };
++    const auto& reference = binding->second;
++    if (reference.IsDirectTp())
++    {
++        eraseJetty(m_directJettiesByTpn, reference.GetDirectTpn());
++    }
++    else
++    {
++        eraseJetty(m_jettiesByTpg, reference.GetIdentity().localId);
++    }
++}
++
+ void UbTransaction::DestroyJettyTpMap(uint32_t jettyNum)
+ {
++    UnindexJettyRtpReference(jettyNum);
+     m_jettyRtpReferences.erase(jettyNum);
+     m_jettyTpgMaterializations.erase(jettyNum);
+     m_jettyTpNextIndex.erase(jettyNum);
+@@ -592,9 +641,31 @@ UbTransaction::GetJettiesUsingTpn(uint32_t tpn)
+ {
+     NS_LOG_DEBUG(this);
+     std::vector<Ptr<UbJetty>> jetties;
+-    for (const auto& [jettyNum, reference] : m_jettyRtpReferences)
++    std::set<uint32_t> candidates;
++    const auto direct = m_directJettiesByTpn.find(tpn);
++    if (direct != m_directJettiesByTpn.end())
++    {
++        candidates.insert(direct->second.begin(), direct->second.end());
++    }
++    Ptr<UbController> controller = GetOwnerController();
++    Ptr<UbTransportChannelManager> manager =
++        controller == nullptr ? nullptr : controller->GetTransportChannelManager();
++    UbLifecycleResourceIdentity identity;
++    if (manager != nullptr && manager->TryGetEndpointIdentity(tpn, identity))
++    {
++        Ptr<UbTransportGroup> group = controller->ResolveRtpTpGroupForMember(identity);
++        if (group != nullptr)
++        {
++            const auto grouped = m_jettiesByTpg.find(group->GetLifecycleIdentity().localId);
++            if (grouped != m_jettiesByTpg.end())
++            {
++                candidates.insert(grouped->second.begin(), grouped->second.end());
++            }
++        }
++    }
++    // Match the old ordered binding scan, including exact-generation liveness checks.
++    for (uint32_t jettyNum : candidates)
+     {
+-        (void)reference;
+         const std::vector<Ptr<UbTransportChannel>> transports = GetJettyLiveTps(jettyNum);
+         const bool jettyUsesTpn =
+             std::any_of(transports.begin(),
+@@ -2826,7 +2897,16 @@ UbTransaction::CompleteWqeOperationForDrain(uint32_t jettyNum,
+     NS_ABORT_MSG_IF(operation == m_operations.end(),
+                     "Transaction outcome references an unknown, duplicate, or stale operation");
+     Ptr<UbWqe> wqe = operation->second.wqe;
++    Ptr<UbJetty> jetty = GetJetty(jettyNum);
+     FinishWqe(jettyNum, wqe, outcome, terminalMode);
++    // Cleanup can close a prefix hole without another response arriving. Recheck only
++    // after the terminal WQE was removed and notified, never during a bulk drain.
++    // Its callback may dispose or replace the Jetty; retain and verify the exact owner.
++    if (terminalMode == WqeTerminalMode::CONTINUE_ACCEPTED && m_function != nullptr &&
++        jetty != nullptr && m_function->GetJetty(jettyNum) == jetty)
++    {
++        jetty->CheckAndRemoveCompletedWqe();
++    }
+ }
+ 
+ void
+@@ -2910,6 +2990,8 @@ UbTransaction::DoDispose()
+     m_transportByTpn.clear();
+     m_orderedWqeIdsByJetty.clear();
+     m_jettyRtpReferences.clear();
++    m_directJettiesByTpn.clear();
++    m_jettiesByTpg.clear();
+     m_jettyTpgMaterializations.clear();
+     for (auto& it : m_remoteRtpWqeSegmentsByTpn)
+     {
+diff --git a/src/unified-bus/model/protocol/ub-transaction.h b/src/unified-bus/model/protocol/ub-transaction.h
+index d02919b..04ce114 100644
+--- a/src/unified-bus/model/protocol/ub-transaction.h
++++ b/src/unified-bus/model/protocol/ub-transaction.h
+@@ -16,6 +16,7 @@
+ #include <deque>
+ #include <map>
+ #include <optional>
++#include <set>
+ #include <tuple>
+ #include <unordered_map>
+ #include <vector>
+@@ -591,7 +592,13 @@ namespace ns3 {
+ 
+         // Tpn和Tp的对应map
+         std::map<uint32_t, Ptr<UbTransportChannel>> m_transportByTpn;
++        void IndexJettyRtpReference(uint32_t jettyNum);
++        void UnindexJettyRtpReference(uint32_t jettyNum);
+         std::map<uint32_t, UbRtpTransportReference> m_jettyRtpReferences;
++        // Candidate IDs only: canonical references still validate exact live generations.
++        std::map<uint32_t, std::set<uint32_t>> m_directJettiesByTpn;
++        // Compose with the Controller's TP-to-TPG index so membership changes are immediate.
++        std::map<uint64_t, std::set<uint32_t>> m_jettiesByTpg;
+         std::map<uint32_t, RtpTpgMaterialization> m_jettyTpgMaterializations;
+         // 每个 Jetty 下次从哪个 TP 开始调度，避免短 WQE 总被第一个 TP 抢占。
+         std::map<uint32_t, uint32_t> m_jettyTpNextIndex;
+diff --git a/src/unified-bus/model/ub-datatype.h b/src/unified-bus/model/ub-datatype.h
+index 0987e33..22bbe3a 100644
+--- a/src/unified-bus/model/ub-datatype.h
++++ b/src/unified-bus/model/ub-datatype.h
+@@ -1265,6 +1265,9 @@ private:
+ 
+     // ========== TA层动态信息 (追踪WQE segment的完成) ==========
+     uint32_t m_bytesLeft = 0; // 剩余的字节数
++    friend class UbJetty;
++    // Actual admission frontier, not the push-time contiguous SSN reservation.
++    std::optional<uint32_t> m_lastAdmittedTaSsn;
+ };
+ 
+ /**
+diff --git a/src/unified-bus/test/ub-target-execution-test.cc b/src/unified-bus/test/ub-target-execution-test.cc
+index 49b06ea..2fae11b 100644
+--- a/src/unified-bus/test/ub-target-execution-test.cc
++++ b/src/unified-bus/test/ub-target-execution-test.cc
+@@ -497,11 +497,248 @@ class UbTargetExecutorAsyncAndDedupTest : public TestCase
+     uint32_t m_responseCount{0};
+ };
+ 
++/** Preserve the global Jetty prefix barrier, but never use a reserved SSN interval. */
++class UbInterleavedWqeCompletionTest : public TestCase
++{
++  public:
++    UbInterleavedWqeCompletionTest()
++        : TestCase("concurrent segmented WQEs complete only after all actual target executions")
++    {
++    }
++
++  private:
++    void OnCompletion(uint32_t id, uint32_t jetty)
++    {
++        NS_TEST_ASSERT_MSG_EQ(jetty, kTargetExecutionJettyNum, "correct Jetty");
++        NS_TEST_ASSERT_MSG_EQ(++m_callbacks[id], 1u, "exactly one callback");
++        NS_TEST_ASSERT_MSG_EQ(m_completed[id], m_expected[id], "all owned TA executions precede success");
++    }
++
++    void RunCase(uint32_t count, uint32_t bytes, bool duplicate, bool late)
++    {
++        auto pair = BuildTargetExecutionPair();
++        m_callbacks.clear();
++        m_completed.clear();
++        m_expected.clear();
++        pair.senderJetty->SetTaSegmentBytes(1024);
++        pair.senderJetty->SetClientCallback(
++            MakeCallback(&UbInterleavedWqeCompletionTest::OnCompletion, this));
++        const bool installed = pair.receiverTransaction->SetTargetExecutor(UbTargetExecutor(
++            [this, duplicate](Ptr<const UbWqeSegment> request,
++                              const UbTransactionRule&,
++                              UbTargetCompletion done) {
++                const uint32_t id = request->GetTaskId();
++                const uint32_t ssn = request->GetTaSsn();
++                const uint64_t delay = 50000 + (id % 3) * 5000 + (ssn % 2) * 10000;
++                Simulator::Schedule(NanoSeconds(delay), [this, id, duplicate, done] {
++                    ++m_completed[id];
++                    done(UbWorkExecutionResult{});
++                    if (duplicate)
++                    {
++                        done(UbWorkExecutionResult{});
++                    }
++                });
++            }));
++        NS_TEST_ASSERT_MSG_EQ(installed, true, "install target executor");
++        for (uint32_t i = 0; i < count + (late ? 1u : 0u); ++i)
++        {
++            const uint32_t id = 1001 + i;
++            m_expected[id] = (bytes + 1023) / 1024;
++            Simulator::Schedule(NanoSeconds(i == count ? 25000 : 10), [&, id, bytes] {
++                auto wqe = pair.senderFunction->CreateWqe(pair.sender->GetId(),
++                                                          pair.receiver->GetId(), bytes, id,
++                                                          UbTransactionOpcode::WRITE);
++                wqe->SetOrderType(OrderType::ORDER_NO);
++                const auto result = pair.senderFunction->SubmitWqe(wqe, kTargetExecutionJettyNum);
++                NS_TEST_ASSERT_MSG_EQ(static_cast<uint32_t>(result.status),
++                                      static_cast<uint32_t>(UbWqeSubmissionStatus::ACCEPTED),
++                                      "concurrent WQE accepted without serialization");
++            });
++        }
++        Simulator::Stop(MilliSeconds(2));
++        Simulator::Run();
++        for (const auto& [id, expected] : m_expected)
++        {
++            NS_TEST_ASSERT_MSG_EQ(m_callbacks[id], 1u, "no missing callback");
++            NS_TEST_ASSERT_MSG_EQ(m_completed[id], expected, "all target executions complete");
++            NS_TEST_ASSERT_MSG_EQ(pair.senderTransaction->HasWqeOperation(kTargetExecutionJettyNum, id),
++                                  false, "operation is reclaimed");
++        }
++        NS_TEST_ASSERT_MSG_EQ(pair.senderTransaction->GetResidentOperationCount(), 0u,
++                              "all operation records reclaimed");
++        NS_TEST_ASSERT_MSG_EQ(pair.senderTransaction->GetResidentSegmentCount(), 0u, "all TA records reclaimed");
++        NS_TEST_ASSERT_MSG_EQ(pair.senderJetty->GetActiveWqeCount(), 0u, "all WQEs removed");
++        NS_TEST_ASSERT_MSG_EQ(pair.senderJetty->IsIdle(), true, "ACK prefix drained");
++        NS_TEST_ASSERT_MSG_EQ(pair.senderTp->GetOutstandingUnackedSegmentCount(), 0u,
++                              "sender transport state reclaimed");
++        NS_TEST_ASSERT_MSG_EQ(pair.receiverTp->GetOutstandingUnackedSegmentCount(), 0u,
++                              "response transport state reclaimed");
++        Simulator::Destroy();
++    }
++
++    void DoRun() override
++    {
++        RunCase(1, 64, false, false);
++        RunCase(1, 4128, false, false);
++        RunCase(3, 64, false, false);
++        RunCase(3, 4128, false, false);
++        RunCase(3, 4128, true, true);
++        RunCase(16, 32800, true, true);
++    }
++    std::map<uint32_t, uint32_t> m_expected, m_completed, m_callbacks;
++};
++
++/** A terminal cleanup can advance the prefix without a later network response. */
++class UbTerminalWqeWakeTest : public TestCase
++{
++  public:
++    UbTerminalWqeWakeTest()
++        : TestCase("cancel and failure wake completed successors after terminal cleanup")
++    {
++    }
++
++  private:
++    enum class Action { NONE, SUBMIT, CANCEL_SUCCESSOR, DESTROY, REPLACE, B_CANCEL_C, B_DESTROY };
++    TargetExecutionPair m_pair;
++    Action m_action{Action::NONE};
++    UbWorkOutcome m_terminal{UbWorkOutcome::CANCELED};
++    std::map<uint32_t, uint32_t> m_callbacks, m_targetDone;
++
++    void Submit(uint32_t id)
++    {
++        auto wqe = m_pair.senderFunction->CreateWqe(m_pair.sender->GetId(),
++                                                     m_pair.receiver->GetId(), 96, id,
++                                                     UbTransactionOpcode::WRITE);
++        wqe->SetOrderType(OrderType::ORDER_NO);
++        NS_TEST_ASSERT_MSG_EQ(static_cast<uint32_t>(
++                                  m_pair.senderFunction->SubmitWqe(wqe, kTargetExecutionJettyNum).status),
++                              static_cast<uint32_t>(UbWqeSubmissionStatus::ACCEPTED),
++                              "WQE accepted on the real native path");
++    }
++
++    void OnCompletion(UbWqeCompletion completion)
++    {
++        const uint32_t id = completion.wqeId;
++        NS_TEST_ASSERT_MSG_EQ(++m_callbacks[id], 1u, "terminal callback exactly once");
++        UbWorkOutcome expected = UbWorkOutcome::COMPLETED;
++        if (id == 1001) expected = m_terminal;
++        else if (id == 1002 && m_action == Action::CANCEL_SUCCESSOR)
++            expected = UbWorkOutcome::CANCELED;
++        else if (id == 1002 && (m_action == Action::DESTROY || m_action == Action::REPLACE))
++            expected = UbWorkOutcome::FLUSHED;
++        if (id == 1003 && m_action == Action::B_CANCEL_C) expected = UbWorkOutcome::CANCELED;
++        if (id == 1003 && m_action == Action::B_DESTROY) expected = UbWorkOutcome::FLUSHED;
++        NS_TEST_ASSERT_MSG_EQ(static_cast<uint32_t>(completion.outcome),
++                              static_cast<uint32_t>(expected), "correct terminal outcome");
++        if (completion.outcome == UbWorkOutcome::COMPLETED)
++            NS_TEST_ASSERT_MSG_EQ(m_targetDone[id], 2u, "all target executions precede success");
++        if (id == 1002 && m_action == Action::B_CANCEL_C)
++            m_pair.senderTransaction->CompleteWqeOperation(kTargetExecutionJettyNum, 1003,
++                                                           UbWorkOutcome::CANCELED);
++        if (id == 1002 && m_action == Action::B_DESTROY)
++        {
++            const auto status = m_pair.senderFunction->DestroyJetty(kTargetExecutionJettyNum,
++                                                                   UbDestroyReason::SIMULATION_STOP);
++            NS_TEST_ASSERT_MSG_EQ(static_cast<uint32_t>(status),
++                                  static_cast<uint32_t>(UbDestroyStatus::COMPLETED),
++                                  "awakened B callback can destroy the Jetty during recheck");
++        }
++        if (id != 1001) return;
++        NS_TEST_ASSERT_MSG_EQ(m_pair.senderJetty->GetActiveWqeCount(), 1u,
++                              "terminal A removed before its callback");
++        if (m_action == Action::SUBMIT || m_action == Action::B_CANCEL_C ||
++            m_action == Action::B_DESTROY) Submit(1003);
++        else if (m_action == Action::CANCEL_SUCCESSOR)
++            m_pair.senderTransaction->CompleteWqeOperation(kTargetExecutionJettyNum, 1002,
++                                                           UbWorkOutcome::CANCELED);
++        else if (m_action == Action::DESTROY || m_action == Action::REPLACE)
++        {
++            const auto status = m_pair.senderFunction->DestroyJetty(kTargetExecutionJettyNum,
++                                                                   UbDestroyReason::SIMULATION_STOP);
++            NS_TEST_ASSERT_MSG_EQ(static_cast<uint32_t>(status),
++                                  static_cast<uint32_t>(UbDestroyStatus::COMPLETED),
++                                  "reentrant forced destroy finishes");
++            if (m_action == Action::REPLACE)
++            {
++                m_pair.senderFunction->CreateJetty(m_pair.sender->GetId(), m_pair.receiver->GetId(),
++                                                   kTargetExecutionJettyNum);
++                NS_TEST_ASSERT_MSG_EQ(m_pair.senderTransaction->JettyBindTp(
++                                          m_pair.sender->GetId(), m_pair.receiver->GetId(),
++                                          kTargetExecutionJettyNum, false, {kTargetExecutionSenderTpn}),
++                                      true, "replacement Jetty binds");
++                m_pair.senderJetty = m_pair.senderFunction->GetJetty(kTargetExecutionJettyNum);
++                m_pair.senderJetty->SetTaSegmentBytes(64);
++                m_pair.senderJetty->SetWqeCompletionCallback(
++                    MakeCallback(&UbTerminalWqeWakeTest::OnCompletion, this));
++                Submit(1003);
++            }
++        }
++    }
++
++    void RunCase(UbWorkOutcome outcome, Action action)
++    {
++        m_pair = BuildTargetExecutionPair();
++        m_action = action; m_terminal = outcome;
++        m_callbacks.clear(); m_targetDone.clear();
++        m_pair.senderJetty->SetTaSegmentBytes(64);
++        m_pair.senderJetty->SetWqeCompletionCallback(
++            MakeCallback(&UbTerminalWqeWakeTest::OnCompletion, this));
++        NS_TEST_ASSERT_MSG_EQ(m_pair.receiverTransaction->SetTargetExecutor(UbTargetExecutor(
++            [this](Ptr<const UbWqeSegment> request, const UbTransactionRule&, UbTargetCompletion done) {
++                const uint32_t id = request->GetTaskId();
++                Simulator::Schedule(MicroSeconds(id == 1001 ? 200 : 1), [this, id, done] {
++                    ++m_targetDone[id];
++                    done(UbWorkExecutionResult{});
++                    done(UbWorkExecutionResult{}); // duplicate target notification remains suppressed
++                });
++            })), true, "target executor installed");
++        Simulator::Schedule(NanoSeconds(10), [this] { Submit(1001); Submit(1002); });
++        Simulator::Schedule(MicroSeconds(100), [this] {
++            NS_TEST_ASSERT_MSG_EQ(m_targetDone[1002], 2u, "B complete at target");
++            NS_TEST_ASSERT_MSG_EQ(m_callbacks[1002], 0u, "earlier A hole retains prefix barrier");
++            m_pair.senderTransaction->CompleteWqeOperation(kTargetExecutionJettyNum, 1001, m_terminal);
++            NS_TEST_ASSERT_MSG_EQ(m_callbacks[1001], 1u, "A terminal notified");
++            NS_TEST_ASSERT_MSG_EQ(m_callbacks[1002], 1u, "B notified without new traffic");
++            const uint32_t expectedC =
++                (m_action == Action::B_CANCEL_C || m_action == Action::B_DESTROY) ? 1u : 0u;
++            NS_TEST_ASSERT_MSG_EQ(m_callbacks[1003], expectedC,
++                                  "newly submitted C is only canceled or flushed, never premature success");
++        });
++        Simulator::Stop(MicroSeconds(300));
++        Simulator::Run();
++        NS_TEST_ASSERT_MSG_EQ(m_callbacks[1001], 1u, "late A responses cannot duplicate its terminal event");
++        NS_TEST_ASSERT_MSG_EQ(m_callbacks[1002], 1u, "B callback remains exactly once");
++        if (action == Action::SUBMIT || action == Action::REPLACE ||
++            action == Action::B_CANCEL_C || action == Action::B_DESTROY)
++            NS_TEST_ASSERT_MSG_EQ(m_callbacks[1003], 1u, "reentrant C receives its expected terminal outcome");
++        NS_TEST_ASSERT_MSG_EQ(m_pair.senderTransaction->GetResidentOperationCount(), 0u,
++                              "terminal and successful operation records reclaimed");
++        NS_TEST_ASSERT_MSG_EQ(m_pair.senderTransaction->GetResidentSegmentCount(), 0u,
++                              "all segment records reclaimed after late responses");
++        NS_TEST_ASSERT_MSG_EQ(m_pair.senderJetty->GetActiveWqeCount(), 0u, "no residual WQEs");
++        NS_TEST_ASSERT_MSG_EQ(m_pair.senderTp->GetOutstandingUnackedSegmentCount(), 0u,
++                              "sender transport reclaimed");
++        NS_TEST_ASSERT_MSG_EQ(m_pair.receiverTp->GetOutstandingUnackedSegmentCount(), 0u,
++                              "response transport reclaimed");
++        Simulator::Destroy();
++    }
++
++    void DoRun() override
++    {
++        for (auto outcome : {UbWorkOutcome::CANCELED, UbWorkOutcome::FAILED})
++            for (auto action : {Action::NONE, Action::SUBMIT, Action::CANCEL_SUCCESSOR,
++                                Action::DESTROY, Action::REPLACE, Action::B_CANCEL_C, Action::B_DESTROY})
++                RunCase(outcome, action);
++    }
++};
++
+ class UbTargetExecutionSeamSuite : public TestSuite
+ {
+   public:
+     UbTargetExecutionSeamSuite() : TestSuite("unified-bus-target-execution", Type::UNIT)
+     {
++        AddTestCase(new UbTerminalWqeWakeTest, TestCase::Duration::QUICK);
++        AddTestCase(new UbInterleavedWqeCompletionTest, TestCase::Duration::QUICK);
+         AddTestCase(new UbTargetExecutionInboundPathTest, TestCase::Duration::QUICK);
+         AddTestCase(new UbTargetExecutionDelayTimingTest, TestCase::Duration::QUICK);
+         AddTestCase(new UbTargetExecutorAsyncAndDedupTest, TestCase::Duration::QUICK);
+diff --git a/src/unified-bus/test/ub-test.cc b/src/unified-bus/test/ub-test.cc
+index c785133..57875a7 100644
+--- a/src/unified-bus/test/ub-test.cc
++++ b/src/unified-bus/test/ub-test.cc
+@@ -10237,6 +10237,141 @@ class UbRtpValidatedResolutionReuseTest : public TestCase
+     bool m_useTpg;
+ };
+ 
++class UbTpnJettyReverseIndexTest : public TestCase
++{
++  public:
++    UbTpnJettyReverseIndexTest()
++        : TestCase("UnifiedBus - TPN reverse index matches ordered live binding scan")
++    {
++    }
++
++    void DoRun() override
++    {
++        Config::Reset();
++        LocalTpTopology topo = BuildLocalTpTopology();
++        InstallStaticTpPair(topo);
++        InstallAdditionalTpPair(topo, 303, 404);
++        InstallAdditionalTpPair(topo, 305, 406);
++        Ptr<UbController> controller = topo.sender->GetObject<UbController>();
++        Ptr<UbFunction> function = controller->GetUbFunction();
++        Ptr<UbTransaction> transaction = controller->GetUbTransaction();
++        const uint32_t first = kUrmaWriteRegressionSenderTpn;
++        // Intentionally bind out of order, mixing direct and shared-group users.
++        const std::vector<uint32_t> ids{71, 12, 90, 35, 66};
++        for (uint32_t id : ids)
++        {
++            function->CreateJetty(topo.sender->GetId(), topo.receiver->GetId(), id);
++        }
++        const auto bind = [&](uint32_t id, bool group, std::vector<uint32_t> tpns) {
++            NS_TEST_ASSERT_MSG_EQ(transaction->JettyBindTp(topo.sender->GetId(),
++                                                           topo.receiver->GetId(),
++                                                           id,
++                                                           group,
++                                                           tpns),
++                                  true,
++                                  "Reverse-index fixture binding should succeed");
++        };
++        bind(71, false, {first});
++        bind(12, true, {first, 303});
++        bind(90, true, {first, 303});
++        bind(35, false, {first});
++        bind(66, false, {305});
++        const auto check = [&]() {
++            for (uint32_t tpn : {first, 303u, 305u, UINT32_MAX})
++            {
++                std::vector<Ptr<UbJetty>> expected;
++                // Preserve the pre-index implementation as an independent candidate oracle.
++                for (uint32_t id : {12u, 35u, 66u, 71u, 90u})
++                {
++                    const auto transports = transaction->GetJettyLiveTps(id);
++                    const bool uses = std::any_of(
++                        transports.begin(), transports.end(),
++                        [tpn](const Ptr<UbTransportChannel>& tp) {
++                            return tp != nullptr && tp->GetTpn() == tpn;
++                        });
++                    Ptr<UbJetty> jetty = uses ? transaction->GetJetty(id) : nullptr;
++                    if (jetty != nullptr)
++                    {
++                        expected.push_back(jetty);
++                    }
++                }
++                const auto actual = transaction->GetJettiesUsingTpn(tpn);
++                NS_TEST_ASSERT_MSG_EQ(actual.size(), expected.size(),
++                                      "Indexed membership must match the old scan");
++                for (size_t i = 0; i < std::min(actual.size(), expected.size()); ++i)
++                {
++                    NS_TEST_ASSERT_MSG_EQ(actual[i], expected[i],
++                                          "Indexed results must preserve ascending Jetty order");
++                }
++            }
++        };
++        check();
++        const auto groupIdentity = transaction->FindRtpTransportReference(12)->GetIdentity();
++        Ptr<UbTransportGroup> group = controller->ResolveRtpTpGroup(groupIdentity);
++        const auto thirdIdentity = controller->GetTransportChannelManager()->GetTp(305)
++                                       ->GetLifecycleOwner();
++        NS_TEST_ASSERT_MSG_EQ(static_cast<uint32_t>(controller->AddRtpTpGroupMember(
++                                  groupIdentity, thirdIdentity)),
++                              static_cast<uint32_t>(UbTpgMemberMutationStatus::ADDED),
++                              "Dynamic addition should appear for every bound Jetty");
++        check();
++        group->MarkMemberRetiring(0);
++        group->FreezeNewOperations();
++        check(); // Retiring and frozen members remain visible while their TP is live.
++        group->ResumeNewOperations();
++        NS_TEST_ASSERT_MSG_EQ(static_cast<uint32_t>(controller->RemoveRtpTpGroupMember(
++                                  groupIdentity, thirdIdentity, UbDestroyReason::EXPLICIT)),
++                              static_cast<uint32_t>(UbTpgMemberMutationStatus::REMOVED),
++                              "Dynamic removal should disappear for every bound Jetty");
++        check();
++        bind(71, false, {305});
++        bind(35, true, {first, 303});
++        bind(90, false, {305});
++        check();
++        NS_TEST_ASSERT_MSG_EQ(transaction->JettyBindTp(topo.sender->GetId(),
++                                                       topo.receiver->GetId(), 71, false, {}),
++                              false, "Failed rebind must retain the old index entry");
++        check();
++        transaction->DestroyJettyTpMap(66);
++        transaction->DestroyJettyTpMap(66);
++        check();
++        NS_TEST_ASSERT_MSG_EQ(static_cast<uint32_t>(function->DestroyJetty(71)),
++                              static_cast<uint32_t>(UbDestroyStatus::COMPLETED),
++                              "Jetty destruction should erase its index entry");
++        function->CreateJetty(topo.sender->GetId(), topo.receiver->GetId(), 71);
++        bind(71, false, {first});
++        check();
++        NS_TEST_ASSERT_MSG_EQ(static_cast<uint32_t>(controller->DestroyRtpTpGroup(groupIdentity)),
++                              static_cast<uint32_t>(UbDestroyStatus::COMPLETED),
++                              "Group destruction should erase shared reverse bindings");
++        check();
++        bind(12, false, {303});
++        Ptr<UbTransportChannelManager> manager = controller->GetTransportChannelManager();
++        const auto oldIdentity = manager->GetTp(303)->GetLifecycleOwner();
++        NS_TEST_ASSERT_MSG_EQ(static_cast<uint32_t>(manager->DestroyTp(303)),
++                              static_cast<uint32_t>(UbDestroyStatus::PENDING),
++                              "Bound endpoint should drain until its reference is released");
++        check(); // Draining endpoints must disappear even while candidates remain indexed.
++        transaction->ReleaseCompletedJettyTransportBinding(12, false);
++        NS_TEST_ASSERT_MSG_EQ(manager->Contains(303), false,
++                              "Releasing the last direct binding should finalize endpoint drain");
++        check();
++        NS_TEST_ASSERT_MSG_EQ(manager->CreateTp(topo.sender->GetId(), topo.receiver->GetId(),
++                                                topo.senderPort->GetIfIndex(),
++                                                topo.receiverPort->GetIfIndex(),
++                                                kUrmaWriteRegressionPriority, 303, 404,
++                                                UbCongestionControl::Create(UB_DEVICE)),
++                              true, "Endpoint number should be reusable");
++        NS_TEST_ASSERT_MSG_NE(manager->GetTp(303)->GetLifecycleOwner().generation,
++                              oldIdentity.generation, "Reused endpoint needs a new generation");
++        check(); // Endpoint reuse must not resurrect an erased Jetty binding.
++        bind(12, false, {303});
++        check();
++        Simulator::Destroy();
++        Config::Reset();
++    }
++};
++
+ class UbRtpTpgMaterializationReuseTest : public TestCase
+ {
+   public:
+@@ -12305,6 +12440,9 @@ class UbLifecycleLastTpgMemberRemovalWaitsForUseLeaseTest : public TestCase
+             m_groupIdentity,
+             m_lastTp->GetLifecycleOwner(),
+             UbDestroyReason::EXPLICIT);
++        NS_TEST_ASSERT_MSG_EQ(m_transaction->GetJettiesUsingTpn(m_lastTp->GetTpn()).size(),
++                              1u,
++                              "Pending last-member removal must retain the live reverse binding");
+         Ptr<UbFunction> function = m_controller->GetUbFunction();
+         Ptr<UbWqe> rejected = function->CreateWqe(m_lastTp->GetSrc(),
+                                                   m_lastTp->GetDest(),
+@@ -12553,6 +12691,12 @@ class UbLifecyclePendingLastRemovalAddMemberWakesHolderTest : public TestCase
+         m_addStatus = m_controller->AddRtpTpGroupMember(
+             m_groupIdentity,
+             m_newTp->GetLifecycleOwner());
++        NS_TEST_ASSERT_MSG_EQ(m_transaction->GetJettiesUsingTpn(m_oldTp->GetTpn()).empty(),
++                              true,
++                              "Replacement must remove the old member's reverse binding");
++        NS_TEST_ASSERT_MSG_EQ(m_transaction->GetJettiesUsingTpn(m_newTp->GetTpn()).size(),
++                              1u,
++                              "Replacement must immediately expose the new member's binding");
+         m_pendingClearedAfterAdd = !m_group->HasPendingLastMemberRemoval();
+         m_acceptingAfterAdd = m_group->IsAcceptingNewOperations();
+     }
+@@ -34022,6 +34166,7 @@ class UbRtpResolutionFocusedTestSuite : public TestSuite
+         AddTestCase(new UbRtpValidatedResolutionReuseTest(false), TestCase::Duration::QUICK);
+         AddTestCase(new UbRtpValidatedResolutionReuseTest(true), TestCase::Duration::QUICK);
+         AddTestCase(new UbRtpTpgMaterializationReuseTest(), TestCase::Duration::QUICK);
++        AddTestCase(new UbTpnJettyReverseIndexTest(), TestCase::Duration::QUICK);
+     }
+ };
+ 

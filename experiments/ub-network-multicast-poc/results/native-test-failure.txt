@@ -1,0 +1,25 @@
+FAIL unified-bus-examples 2.531 s
+  PASS UnifiedBus - ub-quick-example rejects missing case-path 0.015 s
+  PASS UnifiedBus - ub-quick-example completes an empty traffic case 0.076 s
+  PASS UnifiedBus - ub-quick-example rejects missing case directory 0.020 s
+  PASS UnifiedBus - ub-quick-example rejects case directory with missing required files 0.019 s
+  PASS UnifiedBus - ub-quick-example help marks case-path as required 0.017 s
+  PASS UnifiedBus - ub-quick-example exposes runtime parameter catalog metadata 0.050 s
+  PASS UnifiedBus - ub-quick-example local mtp-threads=1 runs as single-thread 0.125 s
+  PASS UnifiedBus - legacy scratch ub-quick-example remains usable 1.335 s
+  PASS UnifiedBus - ub-quick-example accepts equivalent duplicated case-path inputs 0.118 s
+  PASS UnifiedBus - ub-quick-example rejects conflicting case-path inputs 0.019 s
+  PASS UnifiedBus - ub-quick-example succeeds without transport_channel.csv 0.126 s
+  PASS UnifiedBus - ub-quick-example reports migration hint for legacy network attribute keys 0.019 s
+  PASS UnifiedBus - ub-quick-example reports migration hint for legacy CTP max outstanding 0.020 s
+  PASS UnifiedBus - ub-quick-example stops when packet drops with retransmission disabled 0.060 s
+  PASS UnifiedBus - ub-quick-example accepts GBN retransmission config 0.066 s
+  PASS UnifiedBus - ub-quick-example accepts selective retransmission config 0.068 s
+  PASS UnifiedBus - ub-quick-example local single URMA_WRITE runs in single-thread 0.057 s
+  PASS UnifiedBus - ub-quick-example local single URMA_READ runs in single-thread 0.058 s
+  PASS UnifiedBus - ub-quick-example local URMA_WRITE then URMA_READ runs in single-thread 0.055 s
+  PASS UnifiedBus - ub-quick-example local mixed URMA read-write workload runs in single-thread 0.058 s
+  PASS UnifiedBus - ub-quick-example local dependent DAG runs in single-thread 0.052 s
+  PASS UnifiedBus - ub-quick-example rejects out-of-range traffic priority 0.031 s
+  FAIL UnifiedBus - ub-quick-example local dependency visibility delay applies 0.052 s
+      test="hasTaskTimes (actual) == true (limit)" actual="0" limit="1" in="src/unified-bus/test/ub-test.cc:36248" dependent tasks should have start/finish times

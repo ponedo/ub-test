@@ -1,0 +1,94 @@
+[
+  {
+    "strategy": "no-balancing",
+    "status": "PASS",
+    "all_simulation_summary_fields_equal": true,
+    "excluded_host_only": [
+      "verification_wall_ns"
+    ],
+    "layer_latency_ps": 8600056,
+    "WQE": 112,
+    "TA": 112,
+    "simulator_events": 14041,
+    "timeline": {
+      "layer_start": 1000,
+      "planning_end": 1000,
+      "reroute_end": 1000,
+      "weights_end": 1000,
+      "dispatch_gate": 1000,
+      "layer_end": 8601056
+    },
+    "input_sha256": "c039b0db2803c368e46742d0f3338c68791e86fce6d180b244b1e3aa5c3bdfe7",
+    "wall_seconds": 0.2544473570014816,
+    "peak_rss_kib": 19576
+  },
+  {
+    "strategy": "direct",
+    "status": "PASS",
+    "all_simulation_summary_fields_equal": true,
+    "excluded_host_only": [
+      "verification_wall_ns"
+    ],
+    "layer_latency_ps": 28536080,
+    "WQE": 30,
+    "TA": 312,
+    "simulator_events": 24173,
+    "timeline": {
+      "layer_start": 1000,
+      "planning_end": 201000,
+      "reroute_end": 301000,
+      "weights_end": 27123320,
+      "dispatch_gate": 27123320,
+      "layer_end": 28537080
+    },
+    "input_sha256": "cdaf11f448c09aa8779e22ee5ecc111d6bb049bea7eed5a4230bf96ba996f681",
+    "wall_seconds": 0.2536386499996297,
+    "peak_rss_kib": 21008
+  },
+  {
+    "strategy": "two-stage",
+    "status": "PASS",
+    "all_simulation_summary_fields_equal": true,
+    "excluded_host_only": [
+      "verification_wall_ns"
+    ],
+    "layer_latency_ps": 19735920,
+    "WQE": 30,
+    "TA": 312,
+    "simulator_events": 23922,
+    "timeline": {
+      "layer_start": 1000,
+      "planning_end": 201000,
+      "reroute_end": 301000,
+      "weights_end": 18323160,
+      "dispatch_gate": 18323160,
+      "layer_end": 19736920
+    },
+    "input_sha256": "efdb454ab2023053bf13cab0b9e2bc6981e67ec9f801d7aa0eae4b9aa883efc3",
+    "wall_seconds": 0.2547981300012907,
+    "peak_rss_kib": 20732
+  },
+  {
+    "strategy": "chunk-streaming",
+    "status": "PASS",
+    "all_simulation_summary_fields_equal": true,
+    "excluded_host_only": [
+      "verification_wall_ns"
+    ],
+    "layer_latency_ps": 17803720,
+    "WQE": 96,
+    "TA": 312,
+    "simulator_events": 24058,
+    "timeline": {
+      "layer_start": 1000,
+      "planning_end": 201000,
+      "reroute_end": 301000,
+      "weights_end": 16388520,
+      "dispatch_gate": 16388520,
+      "layer_end": 17804720
+    },
+    "input_sha256": "797d0065a4658cf71770b82e13f4629c7fc66ac9082da768b99fff814b094355",
+    "wall_seconds": 0.25304044599761255,
+    "peak_rss_kib": 20876
+  }
+]
