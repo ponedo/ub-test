@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "checks": {
+    "timeline": true,
+    "compute_intervals": true,
+    "verified_bytes": true,
+    "remote_bytes": true,
+    "local_bytes": true,
+    "combine_fnv1a64": true,
+    "executed_graph_fnv1a64": true,
+    "sender_completions": true,
+    "stage_spans": true,
+    "per_npu_load": true,
+    "capacity": true,
+    "validation": true
+  },
+  "excluded_host_timing_fields": [
+    "verification_wall_ns"
+  ],
+  "latency_ps": 7387077112
+}

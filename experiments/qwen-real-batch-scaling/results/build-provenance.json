@@ -1,0 +1,25 @@
+{
+  "application_published_commit": "93bdf7fef154743738910da9e561d796f5955507",
+  "native_base": "d6aa9e242d5a93f5bbd1ad54f39b1620c1b8757b",
+  "native_target_source": "2fde39d02920e639f5b200d0c5262a517326deb8",
+  "reconstruction": [
+    "accepted tpn-jetty-index.patch",
+    "accepted combined-native.patch"
+  ],
+  "changed_native_snapshot_sha256": {
+    "src/unified-bus/model/protocol/ub-function.cc": "a1de4e3dc60381bddc05fb467e55894ac8e2ce313ad72d3273ccf1f59692a86f",
+    "src/unified-bus/model/protocol/ub-function.h": "fb809b9c6474f56e531545479df4f867c53e1e8735b6a0ab86d242b034abcec4",
+    "src/unified-bus/model/protocol/ub-transaction.cc": "9681014f1b571db9cce5e1584cef185966de9394118749a5bae9744296a32c6a",
+    "src/unified-bus/model/ub-datatype.h": "e992fe3ee2e84c0bb6c7be61c752ff8953f0918d54290f2db5957f1ed567d254",
+    "src/unified-bus/test/ub-target-execution-test.cc": "5a04978bf69d4b14cfc866357c87957c4debe0d19aeee101cc6e306c80a7279b"
+  },
+  "frozen_counts_git_blob": "8f685eacb43067b23a4acb0a036bb3611e890f0c",
+  "build_flags": [
+    "-O3",
+    "-DNDEBUG",
+    "-g"
+  ],
+  "pair_layer_binary_sha256": "58fed17d48800e45217ed3ded72dd9694008ab93b736a6d1989269f6d274c530",
+  "graph_tool_sha256": "7674bd64a0646d659bfba9ecb09527d7293d7edc5d3e92a45489a75faa0d143b",
+  "note": "Recovered dot host; native snapshot reconstructed from pinned base and accepted patches. No host-time comparison against historical machine."
+}

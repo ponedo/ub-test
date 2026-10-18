@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "new_cases": 27,
+  "protected_stages": 108,
+  "checks": [
+    {
+      "tokens": 512,
+      "cases": 9,
+      "protected_stages": 36,
+      "ledger_sha256": "d3b3be22da46408683452aae36039c5132330d72c5ebc76599165fee2ebe77a2"
+    },
+    {
+      "tokens": 1024,
+      "cases": 9,
+      "protected_stages": 36,
+      "ledger_sha256": "0dfca7fecc3be79785b924d18d8a14aa8d64519ee4dddf57a157510efca7e430"
+    },
+    {
+      "tokens": 2048,
+      "cases": 9,
+      "protected_stages": 36,
+      "ledger_sha256": "62fd1973a8a4650f9e3bb8116e01315e60b5215e14ccf66574eb6b8754ec8ae1"
+    }
+  ],
+  "scope_boundary": {
+    "status": "COMPLETE",
+    "stop_after_tokens": 2048,
+    "reason": "USER_SCOPE_LIMIT_REACHED",
+    "completed_cases": 9
+  },
+  "raw_outer_status_preserved": {
+    "status": "STOPPED",
+    "completed_sizes": [
+      512,
+      1024
+    ],
+    "current_size": 2048,
+    "reason": "size 2048 stopped; see driver.log and resource evidence"
+  },
+  "no_N4096_directory": true,
+  "conclusion": "All 27 requested new cases verified; legacy outer STOPPED reflects the explicit user scope boundary, not a failed experiment."
+}

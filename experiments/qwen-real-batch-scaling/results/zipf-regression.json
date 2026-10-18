@@ -1,0 +1,113 @@
+{
+  "status": "PASS",
+  "tokens": 256,
+  "model": "H64/I128",
+  "historical_source_commit": "93bdf7fef154743738910da9e561d796f5955507",
+  "checks": [
+    {
+      "strategy": "no-balancing",
+      "status": "PASS",
+      "comparisons": {
+        "latency": [
+          56199264,
+          56199264
+        ],
+        "wqe": [
+          4046,
+          4046
+        ],
+        "ta": [
+          4046,
+          4046
+        ],
+        "replicas": [
+          0,
+          0
+        ],
+        "events": [
+          233493,
+          233493
+        ],
+        "completions": [
+          4046,
+          4046
+        ],
+        "routing_sha256": [
+          "f0991ce98219ff3c4f008b40c703f05fb9a63ecb714dba2d3e923f1e07c2d59d",
+          "f0991ce98219ff3c4f008b40c703f05fb9a63ecb714dba2d3e923f1e07c2d59d"
+        ]
+      },
+      "online_validation": "PASS"
+    },
+    {
+      "strategy": "direct",
+      "status": "PASS",
+      "comparisons": {
+        "latency": [
+          68490416,
+          68490416
+        ],
+        "wqe": [
+          3941,
+          3941
+        ],
+        "ta": [
+          6338,
+          6338
+        ],
+        "replicas": [
+          51,
+          51
+        ],
+        "events": [
+          332353,
+          332353
+        ],
+        "completions": [
+          3941,
+          3941
+        ],
+        "routing_sha256": [
+          "f0991ce98219ff3c4f008b40c703f05fb9a63ecb714dba2d3e923f1e07c2d59d",
+          "f0991ce98219ff3c4f008b40c703f05fb9a63ecb714dba2d3e923f1e07c2d59d"
+        ]
+      },
+      "online_validation": "PASS"
+    },
+    {
+      "strategy": "chunk-streaming",
+      "status": "PASS",
+      "comparisons": {
+        "latency": [
+          33176256,
+          33176256
+        ],
+        "wqe": [
+          4238,
+          4238
+        ],
+        "ta": [
+          6338,
+          6338
+        ],
+        "replicas": [
+          51,
+          51
+        ],
+        "events": [
+          331395,
+          331395
+        ],
+        "completions": [
+          4238,
+          4238
+        ],
+        "routing_sha256": [
+          "f0991ce98219ff3c4f008b40c703f05fb9a63ecb714dba2d3e923f1e07c2d59d",
+          "f0991ce98219ff3c4f008b40c703f05fb9a63ecb714dba2d3e923f1e07c2d59d"
+        ]
+      },
+      "online_validation": "PASS"
+    }
+  ]
+}

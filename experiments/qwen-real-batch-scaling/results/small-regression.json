@@ -1,0 +1,94 @@
+{
+  "status": "PASS",
+  "case": "accepted small8 synthetic hot expert",
+  "strategies": [
+    {
+      "strategy": "no-balancing",
+      "status": "PASS",
+      "validation": {
+        "status": "PASS",
+        "checks": [
+          "per_task_state",
+          "per_segment_exact_once_order_delay",
+          "actual_payload_every_byte",
+          "terminal_payload_every_byte",
+          "quota_and_routing",
+          "relay_buffer_and_dependencies",
+          "weight_coverage",
+          "compute_duration_and_order",
+          "topk_conservation",
+          "wqe_completion",
+          "pair_idle"
+        ],
+        "checked_tasks": 128,
+        "checked_TAs": 112
+      }
+    },
+    {
+      "strategy": "direct",
+      "status": "PASS",
+      "validation": {
+        "status": "PASS",
+        "checks": [
+          "per_task_state",
+          "per_segment_exact_once_order_delay",
+          "actual_payload_every_byte",
+          "terminal_payload_every_byte",
+          "quota_and_routing",
+          "relay_buffer_and_dependencies",
+          "weight_coverage",
+          "compute_duration_and_order",
+          "topk_conservation",
+          "wqe_completion",
+          "pair_idle"
+        ],
+        "checked_tasks": 134,
+        "checked_TAs": 312
+      }
+    },
+    {
+      "strategy": "two-stage",
+      "status": "PASS",
+      "validation": {
+        "status": "PASS",
+        "checks": [
+          "per_task_state",
+          "per_segment_exact_once_order_delay",
+          "actual_payload_every_byte",
+          "terminal_payload_every_byte",
+          "quota_and_routing",
+          "relay_buffer_and_dependencies",
+          "weight_coverage",
+          "compute_duration_and_order",
+          "topk_conservation",
+          "wqe_completion",
+          "pair_idle"
+        ],
+        "checked_tasks": 134,
+        "checked_TAs": 312
+      }
+    },
+    {
+      "strategy": "chunk-streaming",
+      "status": "PASS",
+      "validation": {
+        "status": "PASS",
+        "checks": [
+          "per_task_state",
+          "per_segment_exact_once_order_delay",
+          "actual_payload_every_byte",
+          "terminal_payload_every_byte",
+          "quota_and_routing",
+          "relay_buffer_and_dependencies",
+          "weight_coverage",
+          "compute_duration_and_order",
+          "topk_conservation",
+          "wqe_completion",
+          "pair_idle"
+        ],
+        "checked_tasks": 200,
+        "checked_TAs": 312
+      }
+    }
+  ]
+}
