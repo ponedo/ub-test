@@ -1,0 +1,353 @@
+[
+  {
+    "mode": "full",
+    "scenario": "positive",
+    "status": "PASS",
+    "expected_failure": null,
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25772702699759975
+  },
+  {
+    "mode": "compact-oracle",
+    "scenario": "positive",
+    "status": "PASS",
+    "expected_failure": null,
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.5433049879939063
+  },
+  {
+    "mode": "compact-oracle",
+    "scenario": "wrong-group",
+    "status": "PASS",
+    "expected_failure": "oracle wire identity",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.26827066199621186
+  },
+  {
+    "mode": "compact-oracle",
+    "scenario": "wrong-sequence",
+    "status": "PASS",
+    "expected_failure": "oracle wire identity",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.2645433449943084
+  },
+  {
+    "mode": "compact-oracle",
+    "scenario": "wrong-length",
+    "status": "PASS",
+    "expected_failure": "oracle wire size/membership",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.2664835120085627
+  },
+  {
+    "mode": "compact-oracle",
+    "scenario": "wrong-count",
+    "status": "PASS",
+    "expected_failure": "oracle wire size/membership",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.2781762419908773
+  },
+  {
+    "mode": "compact-oracle",
+    "scenario": "wrong-bitmap",
+    "status": "PASS",
+    "expected_failure": "oracle wire size/membership",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.2587947110005189
+  },
+  {
+    "mode": "compact-oracle",
+    "scenario": "wrong-mode",
+    "status": "PASS",
+    "expected_failure": "oracle wire identity",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.2603111339994939
+  },
+  {
+    "mode": "compact-oracle",
+    "scenario": "wrong-member",
+    "status": "PASS",
+    "expected_failure": "oracle compact member identity",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.2615655319968937
+  },
+  {
+    "mode": "compact-oracle",
+    "scenario": "wrong-tp",
+    "status": "PASS",
+    "expected_failure": "oracle compact native identity",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.25842748799186666
+  },
+  {
+    "mode": "compact-oracle",
+    "scenario": "wrong-psn",
+    "status": "PASS",
+    "expected_failure": "oracle compact native identity",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.25354625399631914
+  },
+  {
+    "mode": "compact-oracle",
+    "scenario": "wrong-ssn",
+    "status": "PASS",
+    "expected_failure": "oracle compact native identity",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.2531139049970079
+  },
+  {
+    "mode": "compact-oracle",
+    "scenario": "payload-mismatch",
+    "status": "PASS",
+    "expected_failure": "oracle received payload mismatch",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.2534852209937526
+  },
+  {
+    "mode": "compact-oracle",
+    "scenario": "truncated",
+    "status": "PASS",
+    "expected_failure": "truncated envelope",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.2536732970038429
+  },
+  {
+    "mode": "compact-oracle",
+    "scenario": "trailing",
+    "status": "PASS",
+    "expected_failure": "oracle wire size/membership",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.25434586200572085
+  },
+  {
+    "mode": "compact-oracle",
+    "scenario": "missing-context",
+    "status": "PASS",
+    "expected_failure": "unknown/already consumed oracle envelope",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.26325738700688817
+  },
+  {
+    "mode": "compact-oracle",
+    "scenario": "wrong-range",
+    "status": "PASS",
+    "expected_failure": "oracle payload range",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.2787055349908769
+  },
+  {
+    "mode": "compact-oracle",
+    "scenario": "duplicate",
+    "status": "PASS",
+    "expected_failure": "oracle mode/member/duplicate mismatch",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.2546108170063235
+  },
+  {
+    "mode": "compact-oracle",
+    "scenario": "undrained",
+    "status": "PASS",
+    "expected_failure": "oracle native restoration metadata not drained",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.25338381400797516
+  },
+  {
+    "mode": "compact-oracle",
+    "scenario": "wrong-receiver",
+    "status": "PASS",
+    "expected_failure": "oracle mode/member/duplicate mismatch",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.25742776300467085
+  },
+  {
+    "mode": "compact-oracle",
+    "scenario": "wrong-callback-group",
+    "status": "PASS",
+    "expected_failure": "oracle receive identity",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.25425487400207203
+  },
+  {
+    "mode": "compact-oracle",
+    "scenario": "wrong-callback-sequence",
+    "status": "PASS",
+    "expected_failure": "unknown/already consumed oracle envelope",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.253208417998394
+  },
+  {
+    "mode": "ideal-oracle",
+    "scenario": "positive",
+    "status": "PASS",
+    "expected_failure": null,
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2529958589875605
+  },
+  {
+    "mode": "ideal-oracle",
+    "scenario": "wrong-group",
+    "status": "PASS",
+    "expected_failure": "oracle wire identity",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.253899471994373
+  },
+  {
+    "mode": "ideal-oracle",
+    "scenario": "wrong-sequence",
+    "status": "PASS",
+    "expected_failure": "oracle wire identity",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.25367935199756175
+  },
+  {
+    "mode": "ideal-oracle",
+    "scenario": "wrong-length",
+    "status": "PASS",
+    "expected_failure": "oracle wire size/membership",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.25304778100689873
+  },
+  {
+    "mode": "ideal-oracle",
+    "scenario": "wrong-count",
+    "status": "PASS",
+    "expected_failure": "oracle wire size/membership",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.25992294400930405
+  },
+  {
+    "mode": "ideal-oracle",
+    "scenario": "wrong-bitmap",
+    "status": "PASS",
+    "expected_failure": "oracle wire size/membership",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.2579694720043335
+  },
+  {
+    "mode": "ideal-oracle",
+    "scenario": "wrong-mode",
+    "status": "PASS",
+    "expected_failure": "oracle wire identity",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.25464237200503703
+  },
+  {
+    "mode": "ideal-oracle",
+    "scenario": "payload-mismatch",
+    "status": "PASS",
+    "expected_failure": "oracle received payload mismatch",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.2551350079884287
+  },
+  {
+    "mode": "ideal-oracle",
+    "scenario": "truncated",
+    "status": "PASS",
+    "expected_failure": "truncated envelope",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.2563154109957395
+  },
+  {
+    "mode": "ideal-oracle",
+    "scenario": "trailing",
+    "status": "PASS",
+    "expected_failure": "oracle wire size/membership",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.2584821450000163
+  },
+  {
+    "mode": "ideal-oracle",
+    "scenario": "missing-context",
+    "status": "PASS",
+    "expected_failure": "unknown/already consumed oracle envelope",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.25395303199184127
+  },
+  {
+    "mode": "ideal-oracle",
+    "scenario": "wrong-range",
+    "status": "PASS",
+    "expected_failure": "oracle payload range",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.2571682160050841
+  },
+  {
+    "mode": "ideal-oracle",
+    "scenario": "duplicate",
+    "status": "PASS",
+    "expected_failure": "oracle mode/member/duplicate mismatch",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.2552453370008152
+  },
+  {
+    "mode": "ideal-oracle",
+    "scenario": "undrained",
+    "status": "PASS",
+    "expected_failure": "oracle native restoration metadata not drained",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.26077683801122475
+  },
+  {
+    "mode": "ideal-oracle",
+    "scenario": "wrong-receiver",
+    "status": "PASS",
+    "expected_failure": "oracle mode/member/duplicate mismatch",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.292789597006049
+  },
+  {
+    "mode": "ideal-oracle",
+    "scenario": "wrong-callback-group",
+    "status": "PASS",
+    "expected_failure": "oracle receive identity",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.2569622400042135
+  },
+  {
+    "mode": "ideal-oracle",
+    "scenario": "wrong-callback-sequence",
+    "status": "PASS",
+    "expected_failure": "unknown/already consumed oracle envelope",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.2540384489984717
+  }
+]

@@ -1,0 +1,1283 @@
+[
+  {
+    "case": "full-three-target",
+    "header_model": "full",
+    "scenario": "basic",
+    "bytes": 16384,
+    "window": 1000,
+    "pressure": false,
+    "fault": "",
+    "status": "PASS",
+    "host": {
+      "wall_seconds": 0.25420657701033633,
+      "user_cpu_seconds": 0.12065999999999999,
+      "system_cpu_seconds": 0.022017,
+      "peak_rss_kib": 19080,
+      "returncode": 0,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 3600,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1610612736,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    "summary": {
+      "status": "PASS",
+      "groups": 1,
+      "source_payload_bytes": 16384,
+      "source_data_wire_bytes": 23472,
+      "envelopes": 16,
+      "branches": 48,
+      "feedback": 48,
+      "window_barrier_checks": 1,
+      "empty_waits": 1,
+      "window_waits": 0,
+      "blocked_queries": 0,
+      "header_model": "full",
+      "oracle_pending_envelopes": 0,
+      "oracle_native_metadata_bytes": 0,
+      "oracle_peak_envelopes": 0,
+      "oracle_peak_native_metadata_bytes": 0,
+      "oracle_envelope_limit": 0
+    },
+    "validation": {
+      "status": "PASS",
+      "header_model": "full",
+      "source_data_wire_bytes": 23472,
+      "maximum_tp_inflight": 5,
+      "payloads": [
+        {
+          "task": 1001,
+          "rank": 1,
+          "bytes": 16384,
+          "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+        },
+        {
+          "task": 1001,
+          "rank": 2,
+          "bytes": 16384,
+          "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+        },
+        {
+          "task": 1001,
+          "rank": 3,
+          "bytes": 16384,
+          "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+        }
+      ],
+      "checks": [
+        "actual_payload_bytes_and_sha256",
+        "exact_TA_and_chunk_coverage",
+        "receiver_sender_group_causality",
+        "native_feedback_count",
+        "exact_member_set",
+        "actual_header_bytes",
+        "physical_link_serialization",
+        "actual_wire_credit_cells",
+        "cross_link_credit_conservation",
+        "queue_limits",
+        "native_window_bounds_and_drain",
+        "oracle_bound_and_drain"
+      ]
+    }
+  },
+  {
+    "case": "full-dynamic",
+    "header_model": "full",
+    "scenario": "dynamic",
+    "bytes": 8192,
+    "window": 1000,
+    "pressure": false,
+    "fault": "",
+    "status": "PASS",
+    "host": {
+      "wall_seconds": 0.27730515600705985,
+      "user_cpu_seconds": 0.056729999999999996,
+      "system_cpu_seconds": 0.02207,
+      "peak_rss_kib": 18904,
+      "returncode": 0,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 3600,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1610612736,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    "summary": {
+      "status": "PASS",
+      "groups": 2,
+      "source_payload_bytes": 16384,
+      "source_data_wire_bytes": 21280,
+      "envelopes": 16,
+      "branches": 32,
+      "feedback": 32,
+      "window_barrier_checks": 1,
+      "empty_waits": 1,
+      "window_waits": 0,
+      "blocked_queries": 0,
+      "header_model": "full",
+      "oracle_pending_envelopes": 0,
+      "oracle_native_metadata_bytes": 0,
+      "oracle_peak_envelopes": 0,
+      "oracle_peak_native_metadata_bytes": 0,
+      "oracle_envelope_limit": 0
+    },
+    "validation": {
+      "status": "PASS",
+      "header_model": "full",
+      "source_data_wire_bytes": 21280,
+      "maximum_tp_inflight": 5,
+      "payloads": [
+        {
+          "task": 1001,
+          "rank": 1,
+          "bytes": 8192,
+          "sha256": "c7f9ffd1a3f130902dfb294fd206d6d150206a55e6976cef0607b19c38722abe"
+        },
+        {
+          "task": 1001,
+          "rank": 2,
+          "bytes": 8192,
+          "sha256": "c7f9ffd1a3f130902dfb294fd206d6d150206a55e6976cef0607b19c38722abe"
+        },
+        {
+          "task": 1002,
+          "rank": 2,
+          "bytes": 8192,
+          "sha256": "4f229fad9b9b2a48175a73b266637b09e8dc13c4a7215c0046d34c8660567156"
+        },
+        {
+          "task": 1002,
+          "rank": 3,
+          "bytes": 8192,
+          "sha256": "4f229fad9b9b2a48175a73b266637b09e8dc13c4a7215c0046d34c8660567156"
+        }
+      ],
+      "checks": [
+        "actual_payload_bytes_and_sha256",
+        "exact_TA_and_chunk_coverage",
+        "receiver_sender_group_causality",
+        "native_feedback_count",
+        "exact_member_set",
+        "actual_header_bytes",
+        "physical_link_serialization",
+        "actual_wire_credit_cells",
+        "cross_link_credit_conservation",
+        "queue_limits",
+        "native_window_bounds_and_drain",
+        "oracle_bound_and_drain"
+      ]
+    }
+  },
+  {
+    "case": "full-window2",
+    "header_model": "full",
+    "scenario": "basic",
+    "bytes": 32768,
+    "window": 2,
+    "pressure": false,
+    "fault": "",
+    "status": "PASS",
+    "host": {
+      "wall_seconds": 0.25540086200635415,
+      "user_cpu_seconds": 0.121014,
+      "system_cpu_seconds": 0.00588,
+      "peak_rss_kib": 19380,
+      "returncode": 0,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 3600,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1610612736,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    "summary": {
+      "status": "PASS",
+      "groups": 1,
+      "source_payload_bytes": 32768,
+      "source_data_wire_bytes": 46944,
+      "envelopes": 32,
+      "branches": 96,
+      "feedback": 96,
+      "window_barrier_checks": 135,
+      "empty_waits": 1,
+      "window_waits": 134,
+      "blocked_queries": 0,
+      "header_model": "full",
+      "oracle_pending_envelopes": 0,
+      "oracle_native_metadata_bytes": 0,
+      "oracle_peak_envelopes": 0,
+      "oracle_peak_native_metadata_bytes": 0,
+      "oracle_envelope_limit": 0
+    },
+    "validation": {
+      "status": "PASS",
+      "header_model": "full",
+      "source_data_wire_bytes": 46944,
+      "maximum_tp_inflight": 2,
+      "payloads": [
+        {
+          "task": 1001,
+          "rank": 1,
+          "bytes": 32768,
+          "sha256": "4ecdaab1b9694fdad1b021e7e72dfd0c7d6a3ecb7e5211ea423afcd5ce76a61a"
+        },
+        {
+          "task": 1001,
+          "rank": 2,
+          "bytes": 32768,
+          "sha256": "4ecdaab1b9694fdad1b021e7e72dfd0c7d6a3ecb7e5211ea423afcd5ce76a61a"
+        },
+        {
+          "task": 1001,
+          "rank": 3,
+          "bytes": 32768,
+          "sha256": "4ecdaab1b9694fdad1b021e7e72dfd0c7d6a3ecb7e5211ea423afcd5ce76a61a"
+        }
+      ],
+      "checks": [
+        "actual_payload_bytes_and_sha256",
+        "exact_TA_and_chunk_coverage",
+        "receiver_sender_group_causality",
+        "native_feedback_count",
+        "exact_member_set",
+        "actual_header_bytes",
+        "physical_link_serialization",
+        "actual_wire_credit_cells",
+        "cross_link_credit_conservation",
+        "queue_limits",
+        "native_window_bounds_and_drain",
+        "oracle_bound_and_drain"
+      ]
+    }
+  },
+  {
+    "case": "full-pressure",
+    "header_model": "full",
+    "scenario": "competition",
+    "bytes": 16384,
+    "window": 1000,
+    "pressure": true,
+    "fault": "",
+    "status": "PASS",
+    "host": {
+      "wall_seconds": 0.25379346900444943,
+      "user_cpu_seconds": 0.070341,
+      "system_cpu_seconds": 0.021339,
+      "peak_rss_kib": 19188,
+      "returncode": 0,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 3600,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1610612736,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    "summary": {
+      "status": "PASS",
+      "groups": 1,
+      "source_payload_bytes": 16384,
+      "source_data_wire_bytes": 23472,
+      "envelopes": 16,
+      "branches": 48,
+      "feedback": 48,
+      "window_barrier_checks": 1,
+      "empty_waits": 1,
+      "window_waits": 0,
+      "blocked_queries": 582,
+      "header_model": "full",
+      "oracle_pending_envelopes": 0,
+      "oracle_native_metadata_bytes": 0,
+      "oracle_peak_envelopes": 0,
+      "oracle_peak_native_metadata_bytes": 0,
+      "oracle_envelope_limit": 0
+    },
+    "validation": {
+      "status": "PASS",
+      "header_model": "full",
+      "source_data_wire_bytes": 23472,
+      "maximum_tp_inflight": 2,
+      "payloads": [
+        {
+          "task": 1001,
+          "rank": 1,
+          "bytes": 16384,
+          "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+        },
+        {
+          "task": 1001,
+          "rank": 2,
+          "bytes": 16384,
+          "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+        },
+        {
+          "task": 1001,
+          "rank": 3,
+          "bytes": 16384,
+          "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+        }
+      ],
+      "checks": [
+        "actual_payload_bytes_and_sha256",
+        "exact_TA_and_chunk_coverage",
+        "receiver_sender_group_causality",
+        "native_feedback_count",
+        "exact_member_set",
+        "actual_header_bytes",
+        "physical_link_serialization",
+        "actual_wire_credit_cells",
+        "cross_link_credit_conservation",
+        "queue_limits",
+        "native_window_bounds_and_drain",
+        "oracle_bound_and_drain"
+      ]
+    }
+  },
+  {
+    "case": "full-missing-feedback",
+    "header_model": "full",
+    "scenario": "basic",
+    "bytes": 4096,
+    "window": 1000,
+    "pressure": false,
+    "fault": "missing",
+    "status": "EXPECTED_REJECTION",
+    "host": {
+      "wall_seconds": 0.25705165600811597,
+      "user_cpu_seconds": 0.048068,
+      "system_cpu_seconds": 0.012766999999999999,
+      "peak_rss_kib": 18764,
+      "returncode": -6,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 3600,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1610612736,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    "expected_failure": "unfinished group: missing feedback"
+  },
+  {
+    "case": "full-duplicate-feedback",
+    "header_model": "full",
+    "scenario": "basic",
+    "bytes": 4096,
+    "window": 1000,
+    "pressure": false,
+    "fault": "duplicate",
+    "status": "EXPECTED_REJECTION",
+    "host": {
+      "wall_seconds": 0.2656487040076172,
+      "user_cpu_seconds": 0.079121,
+      "system_cpu_seconds": 0.008007,
+      "peak_rss_kib": 18740,
+      "returncode": -6,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 3600,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1610612736,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    "expected_failure": "duplicate feedback detected"
+  },
+  {
+    "case": "full-wrong-feedback",
+    "header_model": "full",
+    "scenario": "basic",
+    "bytes": 4096,
+    "window": 1000,
+    "pressure": false,
+    "fault": "wrong",
+    "status": "EXPECTED_REJECTION",
+    "host": {
+      "wall_seconds": 0.2548954869998852,
+      "user_cpu_seconds": 0.035443999999999996,
+      "system_cpu_seconds": 0.016744,
+      "peak_rss_kib": 18772,
+      "returncode": -6,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 3600,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1610612736,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    "expected_failure": "feedback kind/member"
+  },
+  {
+    "case": "compact-oracle-three-target",
+    "header_model": "compact-oracle",
+    "scenario": "basic",
+    "bytes": 16384,
+    "window": 1000,
+    "pressure": false,
+    "fault": "",
+    "status": "PASS",
+    "host": {
+      "wall_seconds": 0.2586284340068232,
+      "user_cpu_seconds": 0.051612,
+      "system_cpu_seconds": 0.004547,
+      "peak_rss_kib": 18992,
+      "returncode": 0,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 3600,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1610612736,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    "summary": {
+      "status": "PASS",
+      "groups": 1,
+      "source_payload_bytes": 16384,
+      "source_data_wire_bytes": 17664,
+      "envelopes": 16,
+      "branches": 48,
+      "feedback": 48,
+      "window_barrier_checks": 1,
+      "empty_waits": 1,
+      "window_waits": 0,
+      "blocked_queries": 0,
+      "header_model": "compact-oracle",
+      "oracle_pending_envelopes": 0,
+      "oracle_native_metadata_bytes": 0,
+      "oracle_peak_envelopes": 4,
+      "oracle_peak_native_metadata_bytes": 1548,
+      "oracle_envelope_limit": 1000
+    },
+    "validation": {
+      "status": "PASS",
+      "header_model": "compact-oracle",
+      "source_data_wire_bytes": 17664,
+      "maximum_tp_inflight": 5,
+      "payloads": [
+        {
+          "task": 1001,
+          "rank": 1,
+          "bytes": 16384,
+          "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+        },
+        {
+          "task": 1001,
+          "rank": 2,
+          "bytes": 16384,
+          "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+        },
+        {
+          "task": 1001,
+          "rank": 3,
+          "bytes": 16384,
+          "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+        }
+      ],
+      "checks": [
+        "actual_payload_bytes_and_sha256",
+        "exact_TA_and_chunk_coverage",
+        "receiver_sender_group_causality",
+        "native_feedback_count",
+        "exact_member_set",
+        "actual_header_bytes",
+        "physical_link_serialization",
+        "actual_wire_credit_cells",
+        "cross_link_credit_conservation",
+        "queue_limits",
+        "native_window_bounds_and_drain",
+        "oracle_bound_and_drain"
+      ]
+    }
+  },
+  {
+    "case": "compact-oracle-dynamic",
+    "header_model": "compact-oracle",
+    "scenario": "dynamic",
+    "bytes": 8192,
+    "window": 1000,
+    "pressure": false,
+    "fault": "",
+    "status": "PASS",
+    "host": {
+      "wall_seconds": 0.2537311159976525,
+      "user_cpu_seconds": 0.032984,
+      "system_cpu_seconds": 0.008099,
+      "peak_rss_kib": 18960,
+      "returncode": 0,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 3600,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1610612736,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    "summary": {
+      "status": "PASS",
+      "groups": 2,
+      "source_payload_bytes": 16384,
+      "source_data_wire_bytes": 17408,
+      "envelopes": 16,
+      "branches": 32,
+      "feedback": 32,
+      "window_barrier_checks": 1,
+      "empty_waits": 1,
+      "window_waits": 0,
+      "blocked_queries": 0,
+      "header_model": "compact-oracle",
+      "oracle_pending_envelopes": 0,
+      "oracle_native_metadata_bytes": 0,
+      "oracle_peak_envelopes": 4,
+      "oracle_peak_native_metadata_bytes": 1032,
+      "oracle_envelope_limit": 1000
+    },
+    "validation": {
+      "status": "PASS",
+      "header_model": "compact-oracle",
+      "source_data_wire_bytes": 17408,
+      "maximum_tp_inflight": 5,
+      "payloads": [
+        {
+          "task": 1001,
+          "rank": 1,
+          "bytes": 8192,
+          "sha256": "c7f9ffd1a3f130902dfb294fd206d6d150206a55e6976cef0607b19c38722abe"
+        },
+        {
+          "task": 1001,
+          "rank": 2,
+          "bytes": 8192,
+          "sha256": "c7f9ffd1a3f130902dfb294fd206d6d150206a55e6976cef0607b19c38722abe"
+        },
+        {
+          "task": 1002,
+          "rank": 2,
+          "bytes": 8192,
+          "sha256": "4f229fad9b9b2a48175a73b266637b09e8dc13c4a7215c0046d34c8660567156"
+        },
+        {
+          "task": 1002,
+          "rank": 3,
+          "bytes": 8192,
+          "sha256": "4f229fad9b9b2a48175a73b266637b09e8dc13c4a7215c0046d34c8660567156"
+        }
+      ],
+      "checks": [
+        "actual_payload_bytes_and_sha256",
+        "exact_TA_and_chunk_coverage",
+        "receiver_sender_group_causality",
+        "native_feedback_count",
+        "exact_member_set",
+        "actual_header_bytes",
+        "physical_link_serialization",
+        "actual_wire_credit_cells",
+        "cross_link_credit_conservation",
+        "queue_limits",
+        "native_window_bounds_and_drain",
+        "oracle_bound_and_drain"
+      ]
+    }
+  },
+  {
+    "case": "compact-oracle-window2",
+    "header_model": "compact-oracle",
+    "scenario": "basic",
+    "bytes": 32768,
+    "window": 2,
+    "pressure": false,
+    "fault": "",
+    "status": "PASS",
+    "host": {
+      "wall_seconds": 0.2739888060023077,
+      "user_cpu_seconds": 0.045746999999999996,
+      "system_cpu_seconds": 0.020898999999999997,
+      "peak_rss_kib": 19096,
+      "returncode": 0,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 3600,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1610612736,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    "summary": {
+      "status": "PASS",
+      "groups": 1,
+      "source_payload_bytes": 32768,
+      "source_data_wire_bytes": 35328,
+      "envelopes": 32,
+      "branches": 96,
+      "feedback": 96,
+      "window_barrier_checks": 135,
+      "empty_waits": 1,
+      "window_waits": 134,
+      "blocked_queries": 0,
+      "header_model": "compact-oracle",
+      "oracle_pending_envelopes": 0,
+      "oracle_native_metadata_bytes": 0,
+      "oracle_peak_envelopes": 2,
+      "oracle_peak_native_metadata_bytes": 774,
+      "oracle_envelope_limit": 2
+    },
+    "validation": {
+      "status": "PASS",
+      "header_model": "compact-oracle",
+      "source_data_wire_bytes": 35328,
+      "maximum_tp_inflight": 2,
+      "payloads": [
+        {
+          "task": 1001,
+          "rank": 1,
+          "bytes": 32768,
+          "sha256": "4ecdaab1b9694fdad1b021e7e72dfd0c7d6a3ecb7e5211ea423afcd5ce76a61a"
+        },
+        {
+          "task": 1001,
+          "rank": 2,
+          "bytes": 32768,
+          "sha256": "4ecdaab1b9694fdad1b021e7e72dfd0c7d6a3ecb7e5211ea423afcd5ce76a61a"
+        },
+        {
+          "task": 1001,
+          "rank": 3,
+          "bytes": 32768,
+          "sha256": "4ecdaab1b9694fdad1b021e7e72dfd0c7d6a3ecb7e5211ea423afcd5ce76a61a"
+        }
+      ],
+      "checks": [
+        "actual_payload_bytes_and_sha256",
+        "exact_TA_and_chunk_coverage",
+        "receiver_sender_group_causality",
+        "native_feedback_count",
+        "exact_member_set",
+        "actual_header_bytes",
+        "physical_link_serialization",
+        "actual_wire_credit_cells",
+        "cross_link_credit_conservation",
+        "queue_limits",
+        "native_window_bounds_and_drain",
+        "oracle_bound_and_drain"
+      ]
+    }
+  },
+  {
+    "case": "compact-oracle-pressure",
+    "header_model": "compact-oracle",
+    "scenario": "competition",
+    "bytes": 16384,
+    "window": 1000,
+    "pressure": true,
+    "fault": "",
+    "status": "PASS",
+    "host": {
+      "wall_seconds": 0.2542381160019431,
+      "user_cpu_seconds": 0.07163,
+      "system_cpu_seconds": 0.010033,
+      "peak_rss_kib": 19128,
+      "returncode": 0,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 3600,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1610612736,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    "summary": {
+      "status": "PASS",
+      "groups": 1,
+      "source_payload_bytes": 16384,
+      "source_data_wire_bytes": 17664,
+      "envelopes": 16,
+      "branches": 48,
+      "feedback": 48,
+      "window_barrier_checks": 1,
+      "empty_waits": 1,
+      "window_waits": 0,
+      "blocked_queries": 512,
+      "header_model": "compact-oracle",
+      "oracle_pending_envelopes": 0,
+      "oracle_native_metadata_bytes": 0,
+      "oracle_peak_envelopes": 2,
+      "oracle_peak_native_metadata_bytes": 774,
+      "oracle_envelope_limit": 1000
+    },
+    "validation": {
+      "status": "PASS",
+      "header_model": "compact-oracle",
+      "source_data_wire_bytes": 17664,
+      "maximum_tp_inflight": 2,
+      "payloads": [
+        {
+          "task": 1001,
+          "rank": 1,
+          "bytes": 16384,
+          "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+        },
+        {
+          "task": 1001,
+          "rank": 2,
+          "bytes": 16384,
+          "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+        },
+        {
+          "task": 1001,
+          "rank": 3,
+          "bytes": 16384,
+          "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+        }
+      ],
+      "checks": [
+        "actual_payload_bytes_and_sha256",
+        "exact_TA_and_chunk_coverage",
+        "receiver_sender_group_causality",
+        "native_feedback_count",
+        "exact_member_set",
+        "actual_header_bytes",
+        "physical_link_serialization",
+        "actual_wire_credit_cells",
+        "cross_link_credit_conservation",
+        "queue_limits",
+        "native_window_bounds_and_drain",
+        "oracle_bound_and_drain"
+      ]
+    }
+  },
+  {
+    "case": "compact-oracle-missing-feedback",
+    "header_model": "compact-oracle",
+    "scenario": "basic",
+    "bytes": 4096,
+    "window": 1000,
+    "pressure": false,
+    "fault": "missing",
+    "status": "EXPECTED_REJECTION",
+    "host": {
+      "wall_seconds": 0.25403802600339986,
+      "user_cpu_seconds": 0.03252,
+      "system_cpu_seconds": 0.009684,
+      "peak_rss_kib": 18848,
+      "returncode": -6,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 3600,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1610612736,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    "expected_failure": "unfinished group: missing feedback"
+  },
+  {
+    "case": "compact-oracle-duplicate-feedback",
+    "header_model": "compact-oracle",
+    "scenario": "basic",
+    "bytes": 4096,
+    "window": 1000,
+    "pressure": false,
+    "fault": "duplicate",
+    "status": "EXPECTED_REJECTION",
+    "host": {
+      "wall_seconds": 0.2567378849926172,
+      "user_cpu_seconds": 0.028034,
+      "system_cpu_seconds": 0.014785,
+      "peak_rss_kib": 18856,
+      "returncode": -6,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 3600,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1610612736,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    "expected_failure": "duplicate feedback detected"
+  },
+  {
+    "case": "compact-oracle-wrong-feedback",
+    "header_model": "compact-oracle",
+    "scenario": "basic",
+    "bytes": 4096,
+    "window": 1000,
+    "pressure": false,
+    "fault": "wrong",
+    "status": "EXPECTED_REJECTION",
+    "host": {
+      "wall_seconds": 0.25553073499759194,
+      "user_cpu_seconds": 0.044782999999999996,
+      "system_cpu_seconds": 0.004358,
+      "peak_rss_kib": 18988,
+      "returncode": -6,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 3600,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1610612736,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    "expected_failure": "feedback kind/member"
+  },
+  {
+    "case": "ideal-oracle-three-target",
+    "header_model": "ideal-oracle",
+    "scenario": "basic",
+    "bytes": 16384,
+    "window": 1000,
+    "pressure": false,
+    "fault": "",
+    "status": "PASS",
+    "host": {
+      "wall_seconds": 0.255865282000741,
+      "user_cpu_seconds": 0.040415,
+      "system_cpu_seconds": 0.004275,
+      "peak_rss_kib": 19116,
+      "returncode": 0,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 3600,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1610612736,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    "summary": {
+      "status": "PASS",
+      "groups": 1,
+      "source_payload_bytes": 16384,
+      "source_data_wire_bytes": 16896,
+      "envelopes": 16,
+      "branches": 48,
+      "feedback": 48,
+      "window_barrier_checks": 1,
+      "empty_waits": 1,
+      "window_waits": 0,
+      "blocked_queries": 0,
+      "header_model": "ideal-oracle",
+      "oracle_pending_envelopes": 0,
+      "oracle_native_metadata_bytes": 0,
+      "oracle_peak_envelopes": 4,
+      "oracle_peak_native_metadata_bytes": 1548,
+      "oracle_envelope_limit": 1000
+    },
+    "validation": {
+      "status": "PASS",
+      "header_model": "ideal-oracle",
+      "source_data_wire_bytes": 16896,
+      "maximum_tp_inflight": 5,
+      "payloads": [
+        {
+          "task": 1001,
+          "rank": 1,
+          "bytes": 16384,
+          "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+        },
+        {
+          "task": 1001,
+          "rank": 2,
+          "bytes": 16384,
+          "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+        },
+        {
+          "task": 1001,
+          "rank": 3,
+          "bytes": 16384,
+          "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+        }
+      ],
+      "checks": [
+        "actual_payload_bytes_and_sha256",
+        "exact_TA_and_chunk_coverage",
+        "receiver_sender_group_causality",
+        "native_feedback_count",
+        "exact_member_set",
+        "actual_header_bytes",
+        "physical_link_serialization",
+        "actual_wire_credit_cells",
+        "cross_link_credit_conservation",
+        "queue_limits",
+        "native_window_bounds_and_drain",
+        "oracle_bound_and_drain"
+      ]
+    }
+  },
+  {
+    "case": "ideal-oracle-dynamic",
+    "header_model": "ideal-oracle",
+    "scenario": "dynamic",
+    "bytes": 8192,
+    "window": 1000,
+    "pressure": false,
+    "fault": "",
+    "status": "PASS",
+    "host": {
+      "wall_seconds": 0.25493819400435314,
+      "user_cpu_seconds": 0.03551,
+      "system_cpu_seconds": 0.004156,
+      "peak_rss_kib": 18960,
+      "returncode": 0,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 3600,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1610612736,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    "summary": {
+      "status": "PASS",
+      "groups": 2,
+      "source_payload_bytes": 16384,
+      "source_data_wire_bytes": 16896,
+      "envelopes": 16,
+      "branches": 32,
+      "feedback": 32,
+      "window_barrier_checks": 1,
+      "empty_waits": 1,
+      "window_waits": 0,
+      "blocked_queries": 0,
+      "header_model": "ideal-oracle",
+      "oracle_pending_envelopes": 0,
+      "oracle_native_metadata_bytes": 0,
+      "oracle_peak_envelopes": 5,
+      "oracle_peak_native_metadata_bytes": 1290,
+      "oracle_envelope_limit": 1000
+    },
+    "validation": {
+      "status": "PASS",
+      "header_model": "ideal-oracle",
+      "source_data_wire_bytes": 16896,
+      "maximum_tp_inflight": 5,
+      "payloads": [
+        {
+          "task": 1001,
+          "rank": 1,
+          "bytes": 8192,
+          "sha256": "c7f9ffd1a3f130902dfb294fd206d6d150206a55e6976cef0607b19c38722abe"
+        },
+        {
+          "task": 1001,
+          "rank": 2,
+          "bytes": 8192,
+          "sha256": "c7f9ffd1a3f130902dfb294fd206d6d150206a55e6976cef0607b19c38722abe"
+        },
+        {
+          "task": 1002,
+          "rank": 2,
+          "bytes": 8192,
+          "sha256": "4f229fad9b9b2a48175a73b266637b09e8dc13c4a7215c0046d34c8660567156"
+        },
+        {
+          "task": 1002,
+          "rank": 3,
+          "bytes": 8192,
+          "sha256": "4f229fad9b9b2a48175a73b266637b09e8dc13c4a7215c0046d34c8660567156"
+        }
+      ],
+      "checks": [
+        "actual_payload_bytes_and_sha256",
+        "exact_TA_and_chunk_coverage",
+        "receiver_sender_group_causality",
+        "native_feedback_count",
+        "exact_member_set",
+        "actual_header_bytes",
+        "physical_link_serialization",
+        "actual_wire_credit_cells",
+        "cross_link_credit_conservation",
+        "queue_limits",
+        "native_window_bounds_and_drain",
+        "oracle_bound_and_drain"
+      ]
+    }
+  },
+  {
+    "case": "ideal-oracle-window2",
+    "header_model": "ideal-oracle",
+    "scenario": "basic",
+    "bytes": 32768,
+    "window": 2,
+    "pressure": false,
+    "fault": "",
+    "status": "PASS",
+    "host": {
+      "wall_seconds": 0.256890887991176,
+      "user_cpu_seconds": 0.053042,
+      "system_cpu_seconds": 0.013191,
+      "peak_rss_kib": 19120,
+      "returncode": 0,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 3600,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1610612736,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    "summary": {
+      "status": "PASS",
+      "groups": 1,
+      "source_payload_bytes": 32768,
+      "source_data_wire_bytes": 33792,
+      "envelopes": 32,
+      "branches": 96,
+      "feedback": 96,
+      "window_barrier_checks": 135,
+      "empty_waits": 1,
+      "window_waits": 134,
+      "blocked_queries": 0,
+      "header_model": "ideal-oracle",
+      "oracle_pending_envelopes": 0,
+      "oracle_native_metadata_bytes": 0,
+      "oracle_peak_envelopes": 2,
+      "oracle_peak_native_metadata_bytes": 774,
+      "oracle_envelope_limit": 2
+    },
+    "validation": {
+      "status": "PASS",
+      "header_model": "ideal-oracle",
+      "source_data_wire_bytes": 33792,
+      "maximum_tp_inflight": 2,
+      "payloads": [
+        {
+          "task": 1001,
+          "rank": 1,
+          "bytes": 32768,
+          "sha256": "4ecdaab1b9694fdad1b021e7e72dfd0c7d6a3ecb7e5211ea423afcd5ce76a61a"
+        },
+        {
+          "task": 1001,
+          "rank": 2,
+          "bytes": 32768,
+          "sha256": "4ecdaab1b9694fdad1b021e7e72dfd0c7d6a3ecb7e5211ea423afcd5ce76a61a"
+        },
+        {
+          "task": 1001,
+          "rank": 3,
+          "bytes": 32768,
+          "sha256": "4ecdaab1b9694fdad1b021e7e72dfd0c7d6a3ecb7e5211ea423afcd5ce76a61a"
+        }
+      ],
+      "checks": [
+        "actual_payload_bytes_and_sha256",
+        "exact_TA_and_chunk_coverage",
+        "receiver_sender_group_causality",
+        "native_feedback_count",
+        "exact_member_set",
+        "actual_header_bytes",
+        "physical_link_serialization",
+        "actual_wire_credit_cells",
+        "cross_link_credit_conservation",
+        "queue_limits",
+        "native_window_bounds_and_drain",
+        "oracle_bound_and_drain"
+      ]
+    }
+  },
+  {
+    "case": "ideal-oracle-pressure",
+    "header_model": "ideal-oracle",
+    "scenario": "competition",
+    "bytes": 16384,
+    "window": 1000,
+    "pressure": true,
+    "fault": "",
+    "status": "PASS",
+    "host": {
+      "wall_seconds": 0.2536624189961003,
+      "user_cpu_seconds": 0.059357,
+      "system_cpu_seconds": 0.009883,
+      "peak_rss_kib": 19120,
+      "returncode": 0,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 3600,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1610612736,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    "summary": {
+      "status": "PASS",
+      "groups": 1,
+      "source_payload_bytes": 16384,
+      "source_data_wire_bytes": 16896,
+      "envelopes": 16,
+      "branches": 48,
+      "feedback": 48,
+      "window_barrier_checks": 1,
+      "empty_waits": 1,
+      "window_waits": 0,
+      "blocked_queries": 510,
+      "header_model": "ideal-oracle",
+      "oracle_pending_envelopes": 0,
+      "oracle_native_metadata_bytes": 0,
+      "oracle_peak_envelopes": 2,
+      "oracle_peak_native_metadata_bytes": 774,
+      "oracle_envelope_limit": 1000
+    },
+    "validation": {
+      "status": "PASS",
+      "header_model": "ideal-oracle",
+      "source_data_wire_bytes": 16896,
+      "maximum_tp_inflight": 2,
+      "payloads": [
+        {
+          "task": 1001,
+          "rank": 1,
+          "bytes": 16384,
+          "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+        },
+        {
+          "task": 1001,
+          "rank": 2,
+          "bytes": 16384,
+          "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+        },
+        {
+          "task": 1001,
+          "rank": 3,
+          "bytes": 16384,
+          "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+        }
+      ],
+      "checks": [
+        "actual_payload_bytes_and_sha256",
+        "exact_TA_and_chunk_coverage",
+        "receiver_sender_group_causality",
+        "native_feedback_count",
+        "exact_member_set",
+        "actual_header_bytes",
+        "physical_link_serialization",
+        "actual_wire_credit_cells",
+        "cross_link_credit_conservation",
+        "queue_limits",
+        "native_window_bounds_and_drain",
+        "oracle_bound_and_drain"
+      ]
+    }
+  },
+  {
+    "case": "ideal-oracle-missing-feedback",
+    "header_model": "ideal-oracle",
+    "scenario": "basic",
+    "bytes": 4096,
+    "window": 1000,
+    "pressure": false,
+    "fault": "missing",
+    "status": "EXPECTED_REJECTION",
+    "host": {
+      "wall_seconds": 0.25752833699516486,
+      "user_cpu_seconds": 0.066118,
+      "system_cpu_seconds": 0.025029,
+      "peak_rss_kib": 18792,
+      "returncode": -6,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 3600,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1610612736,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    "expected_failure": "unfinished group: missing feedback"
+  },
+  {
+    "case": "ideal-oracle-duplicate-feedback",
+    "header_model": "ideal-oracle",
+    "scenario": "basic",
+    "bytes": 4096,
+    "window": 1000,
+    "pressure": false,
+    "fault": "duplicate",
+    "status": "EXPECTED_REJECTION",
+    "host": {
+      "wall_seconds": 0.25903909499174915,
+      "user_cpu_seconds": 0.03877,
+      "system_cpu_seconds": 0.004769,
+      "peak_rss_kib": 18956,
+      "returncode": -6,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 3600,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1610612736,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    "expected_failure": "duplicate feedback detected"
+  },
+  {
+    "case": "ideal-oracle-wrong-feedback",
+    "header_model": "ideal-oracle",
+    "scenario": "basic",
+    "bytes": 4096,
+    "window": 1000,
+    "pressure": false,
+    "fault": "wrong",
+    "status": "EXPECTED_REJECTION",
+    "host": {
+      "wall_seconds": 0.2563006230047904,
+      "user_cpu_seconds": 0.019292,
+      "system_cpu_seconds": 0.022001,
+      "peak_rss_kib": 18944,
+      "returncode": -6,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 3600,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1610612736,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    "expected_failure": "feedback kind/member"
+  }
+]

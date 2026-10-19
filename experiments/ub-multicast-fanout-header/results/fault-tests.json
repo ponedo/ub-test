@@ -1,0 +1,121 @@
+[
+  {
+    "case": "full-weight-byte",
+    "status": "PASS",
+    "expected_failure": "payload byte mismatch",
+    "returncode": 2,
+    "guard": null
+  },
+  {
+    "case": "full-early-wqe",
+    "status": "PASS",
+    "expected_failure": "sender completed before target data ready",
+    "returncode": 2,
+    "guard": null
+  },
+  {
+    "case": "full-duplicate-completion",
+    "status": "PASS",
+    "expected_failure": "audit premature/duplicate sender completion",
+    "returncode": 2,
+    "guard": null
+  },
+  {
+    "case": "full-premature-ready",
+    "status": "PASS",
+    "expected_failure": "ready before target completion coverage",
+    "returncode": 2,
+    "guard": null
+  },
+  {
+    "case": "full-missing-wqe",
+    "status": "PASS",
+    "expected_failure": "unfinished native transfer",
+    "returncode": 2,
+    "guard": null
+  },
+  {
+    "case": "compact-oracle-weight-byte",
+    "status": "PASS",
+    "expected_failure": "payload byte mismatch",
+    "returncode": 2,
+    "guard": null
+  },
+  {
+    "case": "compact-oracle-early-wqe",
+    "status": "PASS",
+    "expected_failure": "sender completed before target data ready",
+    "returncode": 2,
+    "guard": null
+  },
+  {
+    "case": "compact-oracle-duplicate-completion",
+    "status": "PASS",
+    "expected_failure": "audit premature/duplicate sender completion",
+    "returncode": 2,
+    "guard": null
+  },
+  {
+    "case": "compact-oracle-premature-ready",
+    "status": "PASS",
+    "expected_failure": "ready before target completion coverage",
+    "returncode": 2,
+    "guard": null
+  },
+  {
+    "case": "compact-oracle-missing-wqe",
+    "status": "PASS",
+    "expected_failure": "unfinished native transfer",
+    "returncode": 2,
+    "guard": null
+  },
+  {
+    "case": "ideal-oracle-weight-byte",
+    "status": "PASS",
+    "expected_failure": "payload byte mismatch",
+    "returncode": 2,
+    "guard": null
+  },
+  {
+    "case": "ideal-oracle-early-wqe",
+    "status": "PASS",
+    "expected_failure": "sender completed before target data ready",
+    "returncode": 2,
+    "guard": null
+  },
+  {
+    "case": "ideal-oracle-duplicate-completion",
+    "status": "PASS",
+    "expected_failure": "audit premature/duplicate sender completion",
+    "returncode": 2,
+    "guard": null
+  },
+  {
+    "case": "ideal-oracle-premature-ready",
+    "status": "PASS",
+    "expected_failure": "ready before target completion coverage",
+    "returncode": 2,
+    "guard": null
+  },
+  {
+    "case": "ideal-oracle-missing-wqe",
+    "status": "PASS",
+    "expected_failure": "unfinished native transfer",
+    "returncode": 2,
+    "guard": null
+  },
+  {
+    "case": "chunk-early-relay",
+    "status": "PASS",
+    "expected_failure": "relay before target chunk ready",
+    "returncode": 2,
+    "guard": null
+  },
+  {
+    "case": "chunk-relay-buffer-byte",
+    "status": "PASS",
+    "expected_failure": "payload byte mismatch",
+    "returncode": 2,
+    "guard": null
+  }
+]

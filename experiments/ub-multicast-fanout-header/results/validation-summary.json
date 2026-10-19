@@ -1,0 +1,36 @@
+{
+  "status": "PASS_WITH_KNOWN_NATIVE_SUITE_FAILURE",
+  "matrix": {
+    "small": {
+      "completed": 25,
+      "passed": 25,
+      "protected_stops": 0
+    },
+    "main": {
+      "completed": 20,
+      "passed": 20,
+      "protected_stops": 0
+    },
+    "ideal": {
+      "completed": 5,
+      "passed": 5,
+      "protected_stops": 0
+    }
+  },
+  "header_codec": {
+    "PASS": 39
+  },
+  "application_faults": {
+    "PASS": 17
+  },
+  "pressure": {
+    "PASS": 12,
+    "EXPECTED_REJECTION": 9
+  },
+  "legacy_debug_pairs": 4,
+  "independent_verifier_tests": 38,
+  "native_pass": 48,
+  "native_total": 49,
+  "protocol_source_changed": false,
+  "coverage_note": "Online validation retains all per-TA checks; Summary independent replay is per-WQE; bounded Debug independently replays TA and wire events."
+}

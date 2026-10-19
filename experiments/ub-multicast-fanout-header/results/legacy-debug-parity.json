@@ -1,0 +1,358 @@
+[
+  {
+    "case": "singleton",
+    "fanout": 1,
+    "strategy": "multicast",
+    "status": "PASS",
+    "online_simulated_fields_equal": true,
+    "files": [
+      {
+        "file": "events.csv",
+        "sha256": "ce0abd9bd2256efe02e5e620c214007eb7b1f9ac41976608d651ec9b8770281e",
+        "bytes_equal": true
+      },
+      {
+        "file": "wire.csv",
+        "sha256": "5871242fa6fbf519a04242609249b568d8a370101f9a89a3587f743a5a9fe023",
+        "bytes_equal": true
+      },
+      {
+        "file": "ta-identity.csv",
+        "sha256": "ce73725a743408b5d15afb62f604587333ed955407b6c4707fc6205bceccdd85",
+        "bytes_equal": true
+      },
+      {
+        "file": "ta-audit.csv",
+        "sha256": "43cf60970fb3c9193b84db71c9deb6e9a94e3fed1bbcae178e4b6fa676aca37f",
+        "bytes_equal": true
+      },
+      {
+        "file": "executed-transfers.csv",
+        "sha256": "df53601c33234afe4508134bcdb76855849f099cf965822aeb6a5818890396c5",
+        "bytes_equal": true
+      },
+      {
+        "file": "task-timeline.csv",
+        "sha256": "23770475142e38d9e601460e8d9079344fdf11d076cab29204ada18194eab458",
+        "bytes_equal": true
+      },
+      {
+        "file": "receiver-stats.csv",
+        "sha256": "04d50b6696a54779d640fdfc987584c7bd47dbc8fb1004fa9369ef34dfe76248",
+        "bytes_equal": true
+      },
+      {
+        "file": "targets.csv",
+        "sha256": "2659f8ec604a23834864cb742a08decdd0be4d6b6e9f3d9fd7651f2c2dba35bc",
+        "bytes_equal": true
+      },
+      {
+        "file": "packet-counts.csv",
+        "sha256": "1c6606a35002650ce3c78c1baa2223920395ba7f57e67ec769af1868a2286c5f",
+        "bytes_equal": true
+      },
+      {
+        "file": "packet-sizes.csv",
+        "sha256": "ef1ac8e58246ae798cfb01c19e61b068bd24db0ebf106c0d970fc7fdd26838c1",
+        "bytes_equal": true
+      },
+      {
+        "file": "ports.csv",
+        "sha256": "0f5afc9e4f5e5c163c16a23abc8495b6fe811b7914b1d64e72a2116e00276a21",
+        "bytes_equal": true
+      },
+      {
+        "file": "queue-stats.csv",
+        "sha256": "2eb7162cb3b3d0ac523cb4fc1c1f5d1be93fc27ae3d50873cf4a54d100e2d747",
+        "bytes_equal": true
+      },
+      {
+        "file": "native-final-state.csv",
+        "sha256": "5c9ad3d439cee91303f9616d773c9e8072ecc0a0f56e842ba4d9bb5a066bac22",
+        "bytes_equal": true
+      },
+      {
+        "file": "fanout-summary.json",
+        "sha256": "d933f6cfdafd9f980a984cd5f2be1427e71db78ee813a24408a26f29ab1361b2",
+        "bytes_equal": true
+      },
+      {
+        "file": "header-accounting.csv",
+        "sha256": "1460ce1253aa4e72defc42919cacf7a010d60d4dd3f287f5b810f24cd8ef3edb",
+        "bytes_equal": true
+      },
+      {
+        "file": "replication-state.csv",
+        "sha256": "1569649ba1f4b84a89e1d42569492608787ed53424429fdd6de0629218ca839a",
+        "bytes_equal": true
+      }
+    ]
+  },
+  {
+    "case": "direct",
+    "fanout": 4,
+    "strategy": "direct",
+    "status": "PASS",
+    "online_simulated_fields_equal": true,
+    "files": [
+      {
+        "file": "events.csv",
+        "sha256": "d79528a4a0694a8a9a7b444aa3671b054a71ac747902b686f267031dd9a45e7d",
+        "bytes_equal": true
+      },
+      {
+        "file": "wire.csv",
+        "sha256": "3dbacd3a4a077e98d42badcb6d3b33dba5cb67ccb2afcd7bbae430d6ef5f8d36",
+        "bytes_equal": true
+      },
+      {
+        "file": "ta-identity.csv",
+        "sha256": "2ad8c15a8e7425ae153d4ee5e8e2c3bc17016315209791b68af30b463dde7583",
+        "bytes_equal": true
+      },
+      {
+        "file": "ta-audit.csv",
+        "sha256": "b7824b978a004fe929b4cf108b7adef23326fc4b1e62fe5ecebead5fc4806aab",
+        "bytes_equal": true
+      },
+      {
+        "file": "executed-transfers.csv",
+        "sha256": "006c11a35ef76cd6d66eb08431fde3bcadf1134a9493a4009f6079f031c8d83c",
+        "bytes_equal": true
+      },
+      {
+        "file": "task-timeline.csv",
+        "sha256": "793c9f9f70346f6980c561948ccecd0d40fe9ae1bc268927461b7ddecdc79c2c",
+        "bytes_equal": true
+      },
+      {
+        "file": "receiver-stats.csv",
+        "sha256": "cbf399840bd4c5137cd12c5f47a11635dbb348e1ba2302e8877337563150730b",
+        "bytes_equal": true
+      },
+      {
+        "file": "targets.csv",
+        "sha256": "e33dc51613441d55e676f4f6c4923e44e74911afb6d3ce2938d13080e4d2a19c",
+        "bytes_equal": true
+      },
+      {
+        "file": "packet-counts.csv",
+        "sha256": "d7544fe75838f6fa59427527c7570e631ead991bc842fa171d146f203caef1b8",
+        "bytes_equal": true
+      },
+      {
+        "file": "packet-sizes.csv",
+        "sha256": "13eea8f776efd6463155c4916161065e460de18d415e4c95e5cf364ec46f5988",
+        "bytes_equal": true
+      },
+      {
+        "file": "ports.csv",
+        "sha256": "633a3e07059c1ae6c1d34196c3247cd8e7d63517ddb524bafa2cf16303bae821",
+        "bytes_equal": true
+      },
+      {
+        "file": "queue-stats.csv",
+        "sha256": "385d5a11f79a56e0cf336ddb77c8ca2326c48d36be297d3dd3531a1ef20e1c0c",
+        "bytes_equal": true
+      },
+      {
+        "file": "native-final-state.csv",
+        "sha256": "cfe78045b0b8026a201cc365e05fdcbaebda653d4ef2f97a1dbdc702f03d7c88",
+        "bytes_equal": true
+      },
+      {
+        "file": "fanout-summary.json",
+        "sha256": "44c59e6c1f23722db3d8cbfea598e169210a339f89d882a596ec246840597c11",
+        "bytes_equal": true
+      },
+      {
+        "file": "header-accounting.csv",
+        "sha256": "17dadec8b8078c156ed1e5b65012ebdf096f2f1e116558ed494220b75104e091",
+        "bytes_equal": true
+      },
+      {
+        "file": "replication-state.csv",
+        "sha256": "ce3eaad882307be6c5f7c389c3eb6bd3cf0cb0a070963bd63330d58ba24e5c48",
+        "bytes_equal": true
+      }
+    ]
+  },
+  {
+    "case": "chunk",
+    "fanout": 4,
+    "strategy": "chunk-streaming",
+    "status": "PASS",
+    "online_simulated_fields_equal": true,
+    "files": [
+      {
+        "file": "events.csv",
+        "sha256": "d20b003ac409dee44f349ab15a40b8cdd5b108e742e75c6187209f5c726fcbbe",
+        "bytes_equal": true
+      },
+      {
+        "file": "wire.csv",
+        "sha256": "29c0163839d31896027be466614c1e9b9f896a7e37a65309273d371c7463386f",
+        "bytes_equal": true
+      },
+      {
+        "file": "ta-identity.csv",
+        "sha256": "34e76da335d202744831996e6e406bd114db4de03fe6f2e6627901c78660e9f1",
+        "bytes_equal": true
+      },
+      {
+        "file": "ta-audit.csv",
+        "sha256": "aaca979f0dceb7d189a5fbe9c415e440cd3c4925f9222cefffd6b4a2fe15013b",
+        "bytes_equal": true
+      },
+      {
+        "file": "executed-transfers.csv",
+        "sha256": "5c38bcd70af2707e81334f42a2c1f77f9d901f5b1bc41643651641bd4742416d",
+        "bytes_equal": true
+      },
+      {
+        "file": "task-timeline.csv",
+        "sha256": "049214b2d436ae0255b99bde35df739910fb17ad54d4be55161188fe800bb35b",
+        "bytes_equal": true
+      },
+      {
+        "file": "receiver-stats.csv",
+        "sha256": "cbf399840bd4c5137cd12c5f47a11635dbb348e1ba2302e8877337563150730b",
+        "bytes_equal": true
+      },
+      {
+        "file": "targets.csv",
+        "sha256": "89ebe9ac03c8f9f68ff98a071c27bcd424d2f9fe47a3b1acf5b80e15caae29b9",
+        "bytes_equal": true
+      },
+      {
+        "file": "packet-counts.csv",
+        "sha256": "af0ca203b3c85f3a46a759997e22eaac0f31b8c92f181756e299378dd0c748d5",
+        "bytes_equal": true
+      },
+      {
+        "file": "packet-sizes.csv",
+        "sha256": "706ec555a28aa782a8facb01b035f24c88b8b6360eb9232fa4c2e20db8a5d5de",
+        "bytes_equal": true
+      },
+      {
+        "file": "ports.csv",
+        "sha256": "34387616668e0494c55ad3d2c422f0d00121f4618b3b0cc0f11093bec12572eb",
+        "bytes_equal": true
+      },
+      {
+        "file": "queue-stats.csv",
+        "sha256": "8102b71e200199a5dedeee86d969c9389b1acea04293129dd65934359d2baaa0",
+        "bytes_equal": true
+      },
+      {
+        "file": "native-final-state.csv",
+        "sha256": "8f53ce47f612db13fd3646bc10fcf06dc044e7053f549fcccb93124f13df3c46",
+        "bytes_equal": true
+      },
+      {
+        "file": "fanout-summary.json",
+        "sha256": "140b437e416f77146143fc6f6042ef4ffba45cba69ab6ffda30640c95fdcfc1b",
+        "bytes_equal": true
+      },
+      {
+        "file": "header-accounting.csv",
+        "sha256": "17dadec8b8078c156ed1e5b65012ebdf096f2f1e116558ed494220b75104e091",
+        "bytes_equal": true
+      },
+      {
+        "file": "replication-state.csv",
+        "sha256": "ce3eaad882307be6c5f7c389c3eb6bd3cf0cb0a070963bd63330d58ba24e5c48",
+        "bytes_equal": true
+      }
+    ]
+  },
+  {
+    "case": "multicast",
+    "fanout": 8,
+    "strategy": "multicast",
+    "status": "PASS",
+    "online_simulated_fields_equal": true,
+    "files": [
+      {
+        "file": "events.csv",
+        "sha256": "f47a1add933fc8f6caed04e51f5e32dafd15d69623749068c3d7cce55c120382",
+        "bytes_equal": true
+      },
+      {
+        "file": "wire.csv",
+        "sha256": "e105e39af00a85164d088d83514ddc9a6c54a249128183ef6a5f570bc0f0fc5e",
+        "bytes_equal": true
+      },
+      {
+        "file": "ta-identity.csv",
+        "sha256": "e666474576f4a160206a32aa64d3140436608a700786b595eb50c8359c9043ae",
+        "bytes_equal": true
+      },
+      {
+        "file": "ta-audit.csv",
+        "sha256": "8c45223e9f2f4ffdfe0b2adfc70f91df17e41d89eff70172431fed4ba8f6ded0",
+        "bytes_equal": true
+      },
+      {
+        "file": "executed-transfers.csv",
+        "sha256": "1c31ee6486732172dffba9b934cbd9a7b1aa27602aab7237691e8fbbd03d548b",
+        "bytes_equal": true
+      },
+      {
+        "file": "task-timeline.csv",
+        "sha256": "02f1cc3c437f374312bc12361fc2f7620f589e86f2fc7f0e0acc7343cd603598",
+        "bytes_equal": true
+      },
+      {
+        "file": "receiver-stats.csv",
+        "sha256": "3cc452ef61acbd709f183c21e3f6fdb099785bb0db21ced45144b910ba721d96",
+        "bytes_equal": true
+      },
+      {
+        "file": "targets.csv",
+        "sha256": "d59f4cc195fd1facf00f9a798c206f708c842f3d74cef872cc3c98d7eaf1189c",
+        "bytes_equal": true
+      },
+      {
+        "file": "packet-counts.csv",
+        "sha256": "e3fc64256d34ad5701458a74c35e15a2211e36fd8cd51e8842ce45120a03f5a6",
+        "bytes_equal": true
+      },
+      {
+        "file": "packet-sizes.csv",
+        "sha256": "fd5afc87e66f3c51a00f301f86454e016467f3f6d738293f5ad6864bd5848fb8",
+        "bytes_equal": true
+      },
+      {
+        "file": "ports.csv",
+        "sha256": "d1e58c86e2b1689b66c8e4a55e74b6fa832e19456fdf6986971fabfc98f238f4",
+        "bytes_equal": true
+      },
+      {
+        "file": "queue-stats.csv",
+        "sha256": "4c3c5fde192ee2e529d9e17e14e3442fb1570c5d61b2a4a0b09dcb62963b56cf",
+        "bytes_equal": true
+      },
+      {
+        "file": "native-final-state.csv",
+        "sha256": "9759ecb8e8e918486bb8b3e3fe84a825c00a67c66f9048b37641f37c52861e12",
+        "bytes_equal": true
+      },
+      {
+        "file": "fanout-summary.json",
+        "sha256": "40c0ebaa32ce9a8a5342f154bfacd96cbaeda6c5c0dadc5cd94b0cfe5d5681df",
+        "bytes_equal": true
+      },
+      {
+        "file": "header-accounting.csv",
+        "sha256": "a7b6b92e44330ce49390127e5b6c30421efbdeb60027e673ad166c749c576ee8",
+        "bytes_equal": true
+      },
+      {
+        "file": "replication-state.csv",
+        "sha256": "8afe58fb22c5a682361cf329599091ae015bc0a0dfcf7a87f73c2917468c6052",
+        "bytes_equal": true
+      }
+    ]
+  }
+]

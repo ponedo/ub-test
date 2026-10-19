@@ -1,0 +1,6 @@
+{
+  "build": "reproduce.sh NATIVE FRESH_PRIVATE GRAPH_TOOL BASELINE_LAYER",
+  "run": "python run.py --binary BINARY --out FRESH_PRIVATE --phase small|main|ideal",
+  "case_command": "BINARY --out=CASE --fanout=F --bytes=BYTES --strategy=direct|chunk-streaming|multicast --headerModel=full|compact-oracle|ideal-oracle --logLevel=summary",
+  "serial": true
+}

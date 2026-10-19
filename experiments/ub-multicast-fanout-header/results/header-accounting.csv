@@ -1,0 +1,16 @@
+case_id,group,fanout,header_model,payload_sent,wire_data_bytes,charged_header_bytes,native_child_header_bytes,full_model_header_bytes,envelopes,oracle_pending_count,oracle_native_metadata_bytes,peak_oracle_native_metadata_bytes,peak_oracle_envelopes,window_wait_queries,empty_wait_queries,barrier_queries
+main-f1-full,1,1,full,18874368,20312064,1437696,1437696,1437696,0,0,0,0,0,0,0,0
+main-f1-compact-oracle,1,1,compact-oracle,18874368,20312064,1437696,1437696,1437696,0,0,0,0,0,0,0,0
+main-f2-full,1,2,full,18874368,24514560,5640192,2875392,5640192,18432,0,0,0,0,0,1,1
+main-f2-compact-oracle,1,2,compact-oracle,18874368,20054016,1179648,2875392,5640192,18432,0,0,1290,5,0,1,1
+main-f3-full,1,3,full,18874368,27039744,8165376,4313088,8165376,18432,0,0,0,0,0,1,1
+main-f3-compact-oracle,1,3,compact-oracle,18874368,20348928,1474560,4313088,8165376,18432,0,0,1548,4,0,1,1
+main-f4-full,1,4,full,18874368,29564928,10690560,5750784,10690560,18432,0,0,0,0,0,1,1
+main-f4-compact-oracle,1,4,compact-oracle,18874368,20643840,1769472,5750784,10690560,18432,0,0,2064,4,0,1,1
+main-f8-full,1,8,full,18874368,39665664,20791296,11501568,20791296,18432,0,0,0,0,0,1,1
+main-f8-compact-oracle,1,8,compact-oracle,18874368,21823488,2949120,11501568,20791296,18432,0,0,4128,4,0,1,1
+ideal-f1-ideal-oracle,1,1,ideal-oracle,18874368,20312064,1437696,1437696,1437696,0,0,0,0,0,0,0,0
+ideal-f2-ideal-oracle,1,2,ideal-oracle,18874368,19464192,589824,2875392,5640192,18432,0,0,1290,5,0,1,1
+ideal-f3-ideal-oracle,1,3,ideal-oracle,18874368,19464192,589824,4313088,8165376,18432,0,0,1548,4,0,1,1
+ideal-f4-ideal-oracle,1,4,ideal-oracle,18874368,19464192,589824,5750784,10690560,18432,0,0,2064,4,0,1,1
+ideal-f8-ideal-oracle,1,8,ideal-oracle,18874368,19464192,589824,11501568,20791296,18432,0,0,4128,4,0,1,1
