@@ -1,0 +1,468 @@
+{
+  "method": "Read-only text-anchor and range SHA256 checks; not dynamic execution or full semantic proof",
+  "native_base": "d6aa9e242d5a93f5bbd1ad54f39b1620c1b8757b",
+  "public_base": "5f3fccf8e09b08c60963f1c4a69cf9f3de9c714b",
+  "native_local_snapshot": "cc3b9e29d2f59fa9cb5b94217bab989d44dc0ae7",
+  "anchors": [
+    {
+      "root": "N",
+      "path": "src/core/model/default-simulator-impl.cc",
+      "start_line": 119,
+      "end_line": 134,
+      "function": "DefaultSimulatorImpl::ProcessOneEvent",
+      "required_anchor": "m_currentTs",
+      "status": "PASS",
+      "range_sha256": "ee3bb19eb81744418bfed0c414726e0d1e241d9b13dbd349f19e22e920362bb5"
+    },
+    {
+      "root": "N",
+      "path": "src/core/model/default-simulator-impl.cc",
+      "start_line": 265,
+      "end_line": 270,
+      "function": "DefaultSimulatorImpl::ScheduleNow",
+      "required_anchor": "Schedule",
+      "status": "PASS",
+      "range_sha256": "80acf8a1cf1c6c1ea76d4724bf1589a74fab2623cd6e3e518d847f721f88097b"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/ub-controller.cc",
+      "start_line": 26,
+      "end_line": 37,
+      "function": "UbController::GetTypeId",
+      "required_anchor": "InitiatorProtocolDispatchDelay",
+      "status": "PASS",
+      "range_sha256": "324703d022a929420964bf90ba891c9de2e89c2a6e8bfec9359a8ccbd210aed6"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/protocol/ub-function.cc",
+      "start_line": 113,
+      "end_line": 139,
+      "function": "UbFunction::CreateWqe",
+      "required_anchor": "CreateWqe",
+      "status": "PASS",
+      "range_sha256": "14f586b390af8a0ba3e1986601e77a1c603fdec12ac01b48c37323edcafc92d6"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/protocol/ub-function.cc",
+      "start_line": 155,
+      "end_line": 241,
+      "function": "UbFunction::SubmitWqe",
+      "required_anchor": "TriggerScheduleWqeSegment",
+      "status": "PASS",
+      "range_sha256": "1d7bbdd5c930c24189bdea63f38547fa5c59e7552eedd37278d866ff8e2ac5b5"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/protocol/ub-transaction.cc",
+      "start_line": 710,
+      "end_line": 774,
+      "function": "UbTransaction::StartDispatchGate",
+      "required_anchor": "GetInitiatorProtocolDispatchDelay",
+      "status": "PASS",
+      "range_sha256": "1911ad89e4729a2492460d8e7d0dc86e4bb79e0632c580367728560cfeee91ab"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/protocol/ub-transaction.cc",
+      "start_line": 914,
+      "end_line": 1025,
+      "function": "RTP prepare/admit",
+      "required_anchor": "ScheduleNow",
+      "status": "PASS",
+      "range_sha256": "df5af719c5028d1d789bd84ac9826654b6544ca90df6c21b2583a73273acac68"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/protocol/ub-transaction.cc",
+      "start_line": 202,
+      "end_line": 213,
+      "function": "UbTransaction::GetTypeId",
+      "required_anchor": "TargetExecutionDelay",
+      "status": "PASS",
+      "range_sha256": "167b39f7c2cd991b4eff481cc13ec4737bef653dfe48125bd19a2d1760ee906d"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/protocol/ub-transaction.cc",
+      "start_line": 1968,
+      "end_line": 2044,
+      "function": "ExecuteInboundTransaction / RunInboundTransaction",
+      "required_anchor": "BuildTransactionResponse",
+      "status": "PASS",
+      "range_sha256": "cb94041bd35670ba3ebb1bc441fe84069fc5dec824553943382bb62d12a2ebe3"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/protocol/ub-transaction.cc",
+      "start_line": 2056,
+      "end_line": 2112,
+      "function": "BuildTransactionResponse / EnqueueInboundTaResponse",
+      "required_anchor": "EnqueueRemoteRtpWqeSegment",
+      "status": "PASS",
+      "range_sha256": "df8a9b7e4d4e7e31c79d5aa04026d78ed6a1a5bab16fa64945e678e7c20db745"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/protocol/ub-transaction.cc",
+      "start_line": 2114,
+      "end_line": 2177,
+      "function": "UbTransaction::ProcessInboundTaResponse",
+      "required_anchor": "ProcessWqeSegmentComplete",
+      "status": "PASS",
+      "range_sha256": "c9bdcf38c7553e17bf9decd8c0961f26b9d24a35f3eea9f9e8f22cf6ca5e8fc4"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/protocol/ub-transport.cc",
+      "start_line": 1343,
+      "end_line": 1360,
+      "function": "ShouldCompleteOnTpAck",
+      "required_anchor": "requiresResponse",
+      "status": "PASS",
+      "range_sha256": "1e2c03f4b52f4ba1f31dc3fac3107b594e10318a2585f064799d0dcdf60377d8"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/protocol/ub-transport.cc",
+      "start_line": 2065,
+      "end_line": 2113,
+      "function": "BuildTransportResponsePacket",
+      "required_anchor": "response.opcode",
+      "status": "PASS",
+      "range_sha256": "ecc91077d51d55a46f8cd6c706f7161c2f5fbe587db00a88bee006537c4d114b"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/protocol/ub-transport.cc",
+      "start_line": 2353,
+      "end_line": 2391,
+      "function": "RecvDataPacket",
+      "required_anchor": "CompleteInboundTaUnits",
+      "status": "PASS",
+      "range_sha256": "ea2358edb71456c93b902e71f446a922355319e3bbcbc2c09097b6fc6753b92b"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/protocol/ub-function.cc",
+      "start_line": 1629,
+      "end_line": 1641,
+      "function": "UbJetty::IsWqeCompleted",
+      "required_anchor": "m_lastAdmittedTaSsn",
+      "status": "PASS",
+      "range_sha256": "771aa2ed825b3dce188391fb92a8f7d66593f69b63255ccdaae9829f33756506"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/ub-app.cc",
+      "start_line": 506,
+      "end_line": 526,
+      "function": "UbApp::OnTaskCompleted",
+      "required_anchor": "GetInitiatorProtocolCompletionVisibilityDelay",
+      "status": "PASS",
+      "range_sha256": "5339503a292df91d12b8661f97684aba88b8bf42d35d91cad4ea12e7a9fa112e"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/ub-switch-allocator.cc",
+      "start_line": 75,
+      "end_line": 89,
+      "function": "UbSwitchAllocator::GetTypeId",
+      "required_anchor": "NanoSeconds(5)",
+      "status": "PASS",
+      "range_sha256": "04074636b4572d6468e9234b55adae10159b3f1673751508895f9d875a5fc29c"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/ub-switch-allocator.cc",
+      "start_line": 158,
+      "end_line": 177,
+      "function": "ScheduleAllocation",
+      "required_anchor": "Simulator::Schedule",
+      "status": "PASS",
+      "range_sha256": "e9a6780b93bc5d38325d7016baf574979508285d78f6682345db69aaabb7a257"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/ub-port.cc",
+      "start_line": 805,
+      "end_line": 840,
+      "function": "port packet transmission",
+      "required_anchor": "CalculateBytesTxTime",
+      "status": "PASS",
+      "range_sha256": "baa31b225f44e78b2a6d775aab5dd118c94c050fea07ab135482b053ad7c90e9"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/ub-link.cc",
+      "start_line": 174,
+      "end_line": 195,
+      "function": "UbLink::TransmitStart",
+      "required_anchor": "txTime + m_delay",
+      "status": "PASS",
+      "range_sha256": "1cd48b5e863e9a722609e8778f8e27e95f9e5d5ed5a2539677db758dceea3dd7"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/ub-switch.cc",
+      "start_line": 79,
+      "end_line": 84,
+      "function": "UbSwitch::GetTypeId",
+      "required_anchor": "NanoSeconds(0)",
+      "status": "PASS",
+      "range_sha256": "e0c1f1c9a59b8dfbfb7106bc52cf87b45f0d2c2c236a8e5168f8b6c81f082f61"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/ub-queue-manager.h",
+      "start_line": 23,
+      "end_line": 25,
+      "function": "default ingress capacity",
+      "required_anchor": "1048576",
+      "status": "PASS",
+      "range_sha256": "3085582defc62c8eb961154dbe65d44666519a5e0b10d12b5d9ab073459ee574"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/ub-port.cc",
+      "start_line": 46,
+      "end_line": 51,
+      "function": "UbEgressQueue::GetTypeId",
+      "required_anchor": "512",
+      "status": "PASS",
+      "range_sha256": "8d642488c3ef2af42c6e14a21835c7cf430b66728cacbfe228d1fb234013a448"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/ub-port.cc",
+      "start_line": 270,
+      "end_line": 313,
+      "function": "UbPort::GetTypeId CBFC defaults",
+      "required_anchor": "6553",
+      "status": "PASS",
+      "range_sha256": "119c61e5aa5d783710c695e614ad2857ffa374d165c0a2e926a7f87c3f1ead30"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/protocol/ub-transport.cc",
+      "start_line": 225,
+      "end_line": 273,
+      "function": "UbTransportChannel::GetTypeId",
+      "required_anchor": "1000",
+      "status": "PASS",
+      "range_sha256": "50630f4fc5ecdc503dd6cec651d60c01781f0536be5cdfb38308ce1955e5b1dc"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/protocol/ub-transport.cc",
+      "start_line": 2557,
+      "end_line": 2599,
+      "function": "active pipeline / send limits",
+      "required_anchor": "kShallowPipelineActiveSendDepth",
+      "status": "PASS",
+      "range_sha256": "4ce87562bc6ac375e9dd5aa4846baacedf6fd08635c24a6049d0167a2ca34e3d"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/protocol/ub-function.cc",
+      "start_line": 1020,
+      "end_line": 1034,
+      "function": "UbJetty::GetTypeId",
+      "required_anchor": "512",
+      "status": "PASS",
+      "range_sha256": "93a22eefdb0668caf5c052c18999351349d01905e188f25a9a2d6c323de0b26f"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/protocol/ub-transport.cc",
+      "start_line": 1069,
+      "end_line": 1163,
+      "function": "BuildRtpDataPacket / header serialization",
+      "required_anchor": "AddHeader",
+      "status": "PASS",
+      "range_sha256": "1dffa009299a0df429765a8b8a6783827acdda80a4b2da5cd87094eea87a3838"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/protocol/ub-header.cc",
+      "start_line": 454,
+      "end_line": 456,
+      "function": "UbDatalinkPacketHeader::GetSerializedSize",
+      "required_anchor": "4",
+      "status": "PASS",
+      "range_sha256": "b1c11b3f2ff088c09dc0781ce0f3d23fe4b8d6145173030d8993b58e39341f38"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/protocol/ub-header.cc",
+      "start_line": 2484,
+      "end_line": 2486,
+      "function": "UbMAExtTah::GetSerializedSize",
+      "required_anchor": "16",
+      "status": "PASS",
+      "range_sha256": "44736c79837dbc6276c8fcf4facebbc431b3518cabe7cc87e39eb263dbea6251"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/ub-switch.cc",
+      "start_line": 1964,
+      "end_line": 1997,
+      "function": "SubmitNetworkPacket",
+      "required_anchor": "SetPacketVL(1)",
+      "status": "PASS",
+      "range_sha256": "126b028cb8a1773b3fe2a97a6675a0535da7629de4829f70f8b506bf3dbf7f5c"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/ub-switch.cc",
+      "start_line": 2000,
+      "end_line": 2020,
+      "function": "HandleNetworkPacket sink",
+      "required_anchor": "m_networkReceive",
+      "status": "PASS",
+      "range_sha256": "3087f28f85d1fd84ca2a1092d22d3f7943472b8c1b8c7eb943a3048562a0b917"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/ub-switch.cc",
+      "start_line": 2040,
+      "end_line": 2086,
+      "function": "network replication",
+      "required_anchor": "m_inPortProcessingDelay",
+      "status": "PASS",
+      "range_sha256": "601a5618730cb2764bc7c40bbd1c06c17fc4143c372d489e301b60a2eb8f4bae"
+    },
+    {
+      "root": "N",
+      "path": "src/unified-bus/model/ub-tag.h",
+      "start_line": 11,
+      "end_line": 29,
+      "function": "UbNetworkReplicationTag",
+      "required_anchor": "28",
+      "status": "PASS",
+      "range_sha256": "e0b789dbe50c246184d679759124a1617f7afd0732975512bc7880dd9af6af15"
+    },
+    {
+      "root": "P",
+      "path": "experiments/pair-jetty/pair-layer.cc",
+      "start_line": 198,
+      "end_line": 258,
+      "function": "Init / Pair / Topology",
+      "required_anchor": "BooleanValue(false)",
+      "status": "PASS",
+      "range_sha256": "949d5b60eb01419919ae50c112a285f277934fc44b34c944e2c77d410ad57bf1"
+    },
+    {
+      "root": "P",
+      "path": "experiments/pair-jetty/pair-layer.cc",
+      "start_line": 262,
+      "end_line": 283,
+      "function": "target executor",
+      "required_anchor": "done(UbWorkExecutionResult{})",
+      "status": "PASS",
+      "range_sha256": "ee3c70d7d7a75611e5fc56cd9bf4a0d42ba45517824b8ecd324b009caae41226"
+    },
+    {
+      "root": "P",
+      "path": "experiments/pair-jetty/pair-layer.cc",
+      "start_line": 58,
+      "end_line": 64,
+      "function": "Layer::SenderComplete",
+      "required_anchor": "senderCount",
+      "status": "PASS",
+      "range_sha256": "6bd8c9a66a5837118ce39aa153bff5b36c11b7fc6950bd51fa4298f9358d75e3"
+    },
+    {
+      "root": "P",
+      "path": "experiments/pair-jetty/pair-layer.cc",
+      "start_line": 325,
+      "end_line": 347,
+      "function": "Ready / FinalWeight",
+      "required_anchor": "Event(\"layer_end\")",
+      "status": "PASS",
+      "range_sha256": "a76efacb16632d7cd5f9e658409c5fb5029d6a12fa87d6ef2c18494e69d9a3fb"
+    },
+    {
+      "root": "P",
+      "path": "experiments/pair-jetty/pair-layer.cc",
+      "start_line": 367,
+      "end_line": 392,
+      "function": "Gate / Start / Run",
+      "required_anchor": "senderCount==remoteCount",
+      "status": "PASS",
+      "range_sha256": "db008d0dca0a5f1c5927416d2d12031e9a578c8519f34698b484e438a6cea809"
+    },
+    {
+      "root": "P",
+      "path": "experiments/pair-jetty/online-validation.inc",
+      "start_line": 127,
+      "end_line": 134,
+      "function": "WriteSummary",
+      "required_anchor": "At(\"layer_end\")-At(\"layer_start\")",
+      "status": "PASS",
+      "range_sha256": "0488780cb8de1c33019f546c52b49852d7fedb15db705c50c013c98d98c1480e"
+    },
+    {
+      "root": "P",
+      "path": "experiments/pair-jetty/pair-jetty-manager.h",
+      "start_line": 18,
+      "end_line": 36,
+      "function": "PairJettyManager::Get",
+      "required_anchor": "SetClientCallback",
+      "status": "PASS",
+      "range_sha256": "9081cca989cc52507123caa8ac65411ae8fa94f4773cb660daa132f6e9317e97"
+    },
+    {
+      "root": "P",
+      "path": "experiments/qwen-real-minimal/prepare.py",
+      "start_line": 61,
+      "end_line": 79,
+      "function": "main config lineage",
+      "required_anchor": "qwen-prefill-token-scaling/fixed-config.json",
+      "status": "PASS",
+      "range_sha256": "3e50d4163ecef46b4b0845b5cc927025156a8c2ab0819fa79e232c20acaade69"
+    },
+    {
+      "root": "P",
+      "path": "experiments/qwen-real-batch-scaling/run_size.py",
+      "start_line": 38,
+      "end_line": 50,
+      "function": "actual simulation command",
+      "required_anchor": "--logLevel=summary",
+      "status": "PASS",
+      "range_sha256": "0ee1450fdc01c654f9a18fd4c4c6128c217856530f7db7e31d0f64227c29d712"
+    },
+    {
+      "root": "P",
+      "path": "experiments/qwen-prefill-token-scaling/fixed-config.json",
+      "start_line": 224,
+      "end_line": 251,
+      "function": "consumed configuration",
+      "required_anchor": "\"weight_completion_ns\": 0",
+      "status": "PASS",
+      "range_sha256": "1431da07d4cb1ccef3c37ffae952507cdfdb1c257da3e3d648129544d2102ede"
+    },
+    {
+      "root": "P",
+      "path": "experiments/ub-network-multicast-poc/network-poc.cc",
+      "start_line": 86,
+      "end_line": 112,
+      "function": "PoC actual config",
+      "required_anchor": "NanoSeconds(10)",
+      "status": "PASS",
+      "range_sha256": "5fe773f664b9bd1bead9ddf7bd164a3028c2dc19abe4181d47b001927e470202"
+    },
+    {
+      "root": "P",
+      "path": "experiments/ub-network-multicast-poc/network-poc.cc",
+      "start_line": 150,
+      "end_line": 159,
+      "function": "PoC source submission",
+      "required_anchor": "SubmitNetworkPacket",
+      "status": "PASS",
+      "range_sha256": "d80334a296f2f2640559efedf764352eefd116f3e9d359bf854abe33354c1577"
+    }
+  ]
+}
