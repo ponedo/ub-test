@@ -1,0 +1,45 @@
+{
+  "status": "PASS_WITH_KNOWN_NATIVE_SUITE_FAILURE",
+  "native_pass": 48,
+  "native_total": 49,
+  "application_parity": [
+    {
+      "strategy": "no-balancing",
+      "status": "PASS",
+      "all_simulated_summary_fields_equal": true
+    },
+    {
+      "strategy": "direct",
+      "status": "PASS",
+      "all_simulated_summary_fields_equal": true
+    },
+    {
+      "strategy": "two-stage",
+      "status": "PASS",
+      "all_simulated_summary_fields_equal": true
+    },
+    {
+      "strategy": "chunk-streaming",
+      "status": "PASS",
+      "all_simulated_summary_fields_equal": true
+    }
+  ],
+  "concurrent": {
+    "positive": 5,
+    "expected_rejections": 4
+  },
+  "singleton_exact_pairs": 7,
+  "old_multicast": {
+    "positive": 5,
+    "expected_rejections": 3
+  },
+  "verifier_mutations_detected": 5,
+  "network": {
+    "positive": 13,
+    "expected_rejections": 4
+  },
+  "harness_tests": 3,
+  "unexpected_failures": 0,
+  "known_failure": "unified-bus-examples: missing scratch/ns-3-ub-tools/trace_analysis/parse_trace.py; no source edits or guard relaxation",
+  "negative_capacity_checks": 2
+}

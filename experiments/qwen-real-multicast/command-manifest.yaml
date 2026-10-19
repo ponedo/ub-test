@@ -1,0 +1,26 @@
+{
+  "order": [
+    37,
+    0,
+    52
+  ],
+  "strategies": [
+    "no-balancing",
+    "direct",
+    "chunk-streaming",
+    "multicast"
+  ],
+  "entrypoint": "bash experiments/qwen-real-multicast/reproduce.sh \"$NATIVE\" \"$BIN\" \"$GRAPH\" \"$REFERENCE\" \"$MANIFEST\" \"$COUNTS\" \"$FRESH_PRIVATE\"",
+  "phases": [
+    "run.py --phase prepare-multicast",
+    "capacity.py",
+    "run.py --phase run",
+    "verify_campaign.py",
+    "verify_baselines.py",
+    "collect.py",
+    "analyze.py"
+  ],
+  "guards": "unchanged guard.py; separate3600s Preparation/Preflight/Simulator/Postflight",
+  "observed_harness_resume": "L37 completed simulations retained; explicit --resume-ledger after validating only cpu_wall_ns caused raw-plan hash mismatch. No case rerun.",
+  "regressions": "ub-concurrent-multicast/run-regressions.py with accepted native/binary, baseline-layer and fresh privateout"
+}

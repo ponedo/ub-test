@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "simulation_cases": [
+    {
+      "strategy": "no-balancing",
+      "layer_latency_ms": 89.129315416,
+      "weight_ms": 0.0,
+      "validation": "PASS"
+    },
+    {
+      "strategy": "direct",
+      "layer_latency_ms": 27.073308104,
+      "weight_ms": 6.86717956,
+      "validation": "PASS"
+    },
+    {
+      "strategy": "chunk-streaming",
+      "layer_latency_ms": 25.357403064,
+      "weight_ms": 5.15095912,
+      "validation": "PASS"
+    },
+    {
+      "strategy": "multicast",
+      "layer_latency_ms": 24.712331144,
+      "weight_ms": 4.50572864,
+      "validation": "PASS"
+    }
+  ],
+  "driver_stop": "raw plan hash includes differing cpu_wall_ns; loaded driver original line37",
+  "correction": "Exclude only top-level measured CPU wall time for semantic plan equality. Retain raw hashes and initial ledger. No rerun or input edits.",
+  "all_other_plan_fields_exact": true,
+  "routing_exact": true,
+  "assignments_exact": true,
+  "final_token_hash_equal": true
+}

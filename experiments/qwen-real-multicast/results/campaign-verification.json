@@ -1,0 +1,174 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "layer": 0,
+      "strategy": "no-balancing",
+      "status": "PASS",
+      "token_assignment_conservation": true,
+      "online_validation": true,
+      "independent_postflight": true,
+      "measured_packet_totals_reconcile": true,
+      "queue_bound": true,
+      "receiver_gate": true
+    },
+    {
+      "layer": 0,
+      "strategy": "direct",
+      "status": "PASS",
+      "token_assignment_conservation": true,
+      "online_validation": true,
+      "independent_postflight": true,
+      "measured_packet_totals_reconcile": true,
+      "queue_bound": true,
+      "receiver_gate": true
+    },
+    {
+      "layer": 0,
+      "strategy": "chunk-streaming",
+      "status": "PASS",
+      "token_assignment_conservation": true,
+      "online_validation": true,
+      "independent_postflight": true,
+      "measured_packet_totals_reconcile": true,
+      "queue_bound": true,
+      "receiver_gate": true
+    },
+    {
+      "layer": 0,
+      "strategy": "multicast",
+      "status": "PASS",
+      "token_assignment_conservation": true,
+      "online_validation": true,
+      "independent_postflight": true,
+      "measured_packet_totals_reconcile": true,
+      "queue_bound": true,
+      "receiver_gate": true
+    },
+    {
+      "layer": 0,
+      "strategy": "multicast-independent",
+      "status": "PASS",
+      "children": 41,
+      "groups": 28,
+      "unique_child_identity": true,
+      "all_targets_before_native_sender_complete": true,
+      "group_complete_exact_child_max": true,
+      "weight_gate_exact_receiver_max": true,
+      "cross_link_credit_conservation": true
+    },
+    {
+      "layer": 37,
+      "strategy": "no-balancing",
+      "status": "PASS",
+      "token_assignment_conservation": true,
+      "online_validation": true,
+      "independent_postflight": true,
+      "measured_packet_totals_reconcile": true,
+      "queue_bound": true,
+      "receiver_gate": true
+    },
+    {
+      "layer": 37,
+      "strategy": "direct",
+      "status": "PASS",
+      "token_assignment_conservation": true,
+      "online_validation": true,
+      "independent_postflight": true,
+      "measured_packet_totals_reconcile": true,
+      "queue_bound": true,
+      "receiver_gate": true
+    },
+    {
+      "layer": 37,
+      "strategy": "chunk-streaming",
+      "status": "PASS",
+      "token_assignment_conservation": true,
+      "online_validation": true,
+      "independent_postflight": true,
+      "measured_packet_totals_reconcile": true,
+      "queue_bound": true,
+      "receiver_gate": true
+    },
+    {
+      "layer": 37,
+      "strategy": "multicast",
+      "status": "PASS",
+      "token_assignment_conservation": true,
+      "online_validation": true,
+      "independent_postflight": true,
+      "measured_packet_totals_reconcile": true,
+      "queue_bound": true,
+      "receiver_gate": true
+    },
+    {
+      "layer": 37,
+      "strategy": "multicast-independent",
+      "status": "PASS",
+      "children": 53,
+      "groups": 22,
+      "unique_child_identity": true,
+      "all_targets_before_native_sender_complete": true,
+      "group_complete_exact_child_max": true,
+      "weight_gate_exact_receiver_max": true,
+      "cross_link_credit_conservation": true
+    },
+    {
+      "layer": 52,
+      "strategy": "no-balancing",
+      "status": "PASS",
+      "token_assignment_conservation": true,
+      "online_validation": true,
+      "independent_postflight": true,
+      "measured_packet_totals_reconcile": true,
+      "queue_bound": true,
+      "receiver_gate": true
+    },
+    {
+      "layer": 52,
+      "strategy": "direct",
+      "status": "PASS",
+      "token_assignment_conservation": true,
+      "online_validation": true,
+      "independent_postflight": true,
+      "measured_packet_totals_reconcile": true,
+      "queue_bound": true,
+      "receiver_gate": true
+    },
+    {
+      "layer": 52,
+      "strategy": "chunk-streaming",
+      "status": "PASS",
+      "token_assignment_conservation": true,
+      "online_validation": true,
+      "independent_postflight": true,
+      "measured_packet_totals_reconcile": true,
+      "queue_bound": true,
+      "receiver_gate": true
+    },
+    {
+      "layer": 52,
+      "strategy": "multicast",
+      "status": "PASS",
+      "token_assignment_conservation": true,
+      "online_validation": true,
+      "independent_postflight": true,
+      "measured_packet_totals_reconcile": true,
+      "queue_bound": true,
+      "receiver_gate": true
+    },
+    {
+      "layer": 52,
+      "strategy": "multicast-independent",
+      "status": "PASS",
+      "children": 46,
+      "groups": 21,
+      "unique_child_identity": true,
+      "all_targets_before_native_sender_complete": true,
+      "group_complete_exact_child_max": true,
+      "weight_gate_exact_receiver_max": true,
+      "cross_link_credit_conservation": true
+    }
+  ],
+  "scope": "aggregate and per-child checks supplement accepted online per-TA/payload verification; no validation disabled"
+}

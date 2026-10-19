@@ -1,0 +1,335 @@
+[
+  {
+    "case": "same-source",
+    "host": {
+      "status": "PASS",
+      "wall_seconds": 0.25409591299830936,
+      "user_cpu_seconds": 0.063884,
+      "system_cpu_seconds": 0.012273,
+      "peak_rss_kib": 19112,
+      "returncode": 0,
+      "guard": null
+    },
+    "status": "PASS",
+    "validation": {
+      "status": "PASS",
+      "groups": [
+        {
+          "group": 1001,
+          "source": 0,
+          "start_ps": 100000,
+          "complete_ps": 4015720,
+          "payload_sha256": {
+            "10011": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef",
+            "10012": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+          },
+          "source_payload_bytes": 16384,
+          "source_wire_bytes": 21280
+        },
+        {
+          "group": 1002,
+          "source": 0,
+          "start_ps": 100000,
+          "complete_ps": 3797920,
+          "payload_sha256": {
+            "10022": "f4bb39d5770971c7072ba0c5bd0a41b0e3f356dd8709215439688f6f2bd8a627",
+            "10023": "f4bb39d5770971c7072ba0c5bd0a41b0e3f356dd8709215439688f6f2bd8a627"
+          },
+          "source_payload_bytes": 16384,
+          "source_wire_bytes": 21280
+        }
+      ],
+      "checks": [
+        "actual_payload_sha256",
+        "per_task_exact_segment_coverage",
+        "target_before_sender",
+        "all_child_before_group",
+        "single_source_payload",
+        "paid_metadata",
+        "physical_branch_counts",
+        "overlap",
+        "native_port_conservation_assertions"
+      ]
+    }
+  },
+  {
+    "case": "different-source",
+    "host": {
+      "status": "PASS",
+      "wall_seconds": 0.252944527004729,
+      "user_cpu_seconds": 0.15454099999999998,
+      "system_cpu_seconds": 0.076752,
+      "peak_rss_kib": 19144,
+      "returncode": 0,
+      "guard": null
+    },
+    "status": "PASS",
+    "validation": {
+      "status": "PASS",
+      "groups": [
+        {
+          "group": 1001,
+          "source": 0,
+          "start_ps": 100000,
+          "complete_ps": 3684720,
+          "payload_sha256": {
+            "10011": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef",
+            "10012": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+          },
+          "source_payload_bytes": 16384,
+          "source_wire_bytes": 21280
+        },
+        {
+          "group": 1002,
+          "source": 4,
+          "start_ps": 100000,
+          "complete_ps": 3791120,
+          "payload_sha256": {
+            "10022": "f4bb39d5770971c7072ba0c5bd0a41b0e3f356dd8709215439688f6f2bd8a627",
+            "10023": "f4bb39d5770971c7072ba0c5bd0a41b0e3f356dd8709215439688f6f2bd8a627"
+          },
+          "source_payload_bytes": 16384,
+          "source_wire_bytes": 21280
+        }
+      ],
+      "checks": [
+        "actual_payload_sha256",
+        "per_task_exact_segment_coverage",
+        "target_before_sender",
+        "all_child_before_group",
+        "single_source_payload",
+        "paid_metadata",
+        "physical_branch_counts",
+        "overlap",
+        "native_port_conservation_assertions"
+      ]
+    }
+  },
+  {
+    "case": "dynamic",
+    "host": {
+      "status": "PASS",
+      "wall_seconds": 0.2568344320025062,
+      "user_cpu_seconds": 0.056112999999999996,
+      "system_cpu_seconds": 0.012188,
+      "peak_rss_kib": 19336,
+      "returncode": 0,
+      "guard": null
+    },
+    "status": "PASS",
+    "validation": {
+      "status": "PASS",
+      "groups": [
+        {
+          "group": 1001,
+          "source": 0,
+          "start_ps": 100000,
+          "complete_ps": 5872640,
+          "payload_sha256": {
+            "10011": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef",
+            "10012": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+          },
+          "source_payload_bytes": 16384,
+          "source_wire_bytes": 21280
+        },
+        {
+          "group": 1002,
+          "source": 0,
+          "start_ps": 100000,
+          "complete_ps": 5412080,
+          "payload_sha256": {
+            "10022": "f4bb39d5770971c7072ba0c5bd0a41b0e3f356dd8709215439688f6f2bd8a627",
+            "10023": "f4bb39d5770971c7072ba0c5bd0a41b0e3f356dd8709215439688f6f2bd8a627"
+          },
+          "source_payload_bytes": 16384,
+          "source_wire_bytes": 21280
+        },
+        {
+          "group": 1003,
+          "source": 0,
+          "start_ps": 500000,
+          "complete_ps": 5751240,
+          "payload_sha256": {
+            "10031": "0251f76a05cfa96d1b08fd506d96192fff8dcea66c9146f8e060f143d48e0f18",
+            "10033": "0251f76a05cfa96d1b08fd506d96192fff8dcea66c9146f8e060f143d48e0f18"
+          },
+          "source_payload_bytes": 16384,
+          "source_wire_bytes": 21280
+        }
+      ],
+      "checks": [
+        "actual_payload_sha256",
+        "per_task_exact_segment_coverage",
+        "target_before_sender",
+        "all_child_before_group",
+        "single_source_payload",
+        "paid_metadata",
+        "physical_branch_counts",
+        "overlap",
+        "native_port_conservation_assertions"
+      ]
+    }
+  },
+  {
+    "case": "window",
+    "host": {
+      "status": "PASS",
+      "wall_seconds": 0.2561032680096105,
+      "user_cpu_seconds": 0.039526,
+      "system_cpu_seconds": 0.0038929999999999998,
+      "peak_rss_kib": 19176,
+      "returncode": 0,
+      "guard": null
+    },
+    "status": "PASS",
+    "validation": {
+      "status": "PASS",
+      "groups": [
+        {
+          "group": 1001,
+          "source": 0,
+          "start_ps": 100000,
+          "complete_ps": 6388520,
+          "payload_sha256": {
+            "10011": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef",
+            "10012": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+          },
+          "source_payload_bytes": 16384,
+          "source_wire_bytes": 21280
+        },
+        {
+          "group": 1002,
+          "source": 0,
+          "start_ps": 100000,
+          "complete_ps": 5619880,
+          "payload_sha256": {
+            "10022": "f4bb39d5770971c7072ba0c5bd0a41b0e3f356dd8709215439688f6f2bd8a627",
+            "10023": "f4bb39d5770971c7072ba0c5bd0a41b0e3f356dd8709215439688f6f2bd8a627"
+          },
+          "source_payload_bytes": 16384,
+          "source_wire_bytes": 21280
+        }
+      ],
+      "checks": [
+        "actual_payload_sha256",
+        "per_task_exact_segment_coverage",
+        "target_before_sender",
+        "all_child_before_group",
+        "single_source_payload",
+        "paid_metadata",
+        "physical_branch_counts",
+        "overlap",
+        "native_port_conservation_assertions"
+      ]
+    }
+  },
+  {
+    "case": "pressure",
+    "host": {
+      "status": "PASS",
+      "wall_seconds": 0.2539822840044508,
+      "user_cpu_seconds": 0.077043,
+      "system_cpu_seconds": 0.010832999999999999,
+      "peak_rss_kib": 19080,
+      "returncode": 0,
+      "guard": null
+    },
+    "status": "PASS",
+    "validation": {
+      "status": "PASS",
+      "groups": [
+        {
+          "group": 1001,
+          "source": 0,
+          "start_ps": 100000,
+          "complete_ps": 6205720,
+          "payload_sha256": {
+            "10011": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef",
+            "10012": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+          },
+          "source_payload_bytes": 16384,
+          "source_wire_bytes": 21280
+        },
+        {
+          "group": 1002,
+          "source": 0,
+          "start_ps": 100000,
+          "complete_ps": 6879400,
+          "payload_sha256": {
+            "10022": "f4bb39d5770971c7072ba0c5bd0a41b0e3f356dd8709215439688f6f2bd8a627",
+            "10023": "f4bb39d5770971c7072ba0c5bd0a41b0e3f356dd8709215439688f6f2bd8a627"
+          },
+          "source_payload_bytes": 16384,
+          "source_wire_bytes": 21280
+        }
+      ],
+      "checks": [
+        "actual_payload_sha256",
+        "per_task_exact_segment_coverage",
+        "target_before_sender",
+        "all_child_before_group",
+        "single_source_payload",
+        "paid_metadata",
+        "physical_branch_counts",
+        "overlap",
+        "native_port_conservation_assertions"
+      ]
+    }
+  },
+  {
+    "case": "duplicate",
+    "host": {
+      "status": "FAIL",
+      "wall_seconds": 0.2548344989918405,
+      "user_cpu_seconds": 0.036618,
+      "system_cpu_seconds": 0.009623,
+      "peak_rss_kib": 18960,
+      "returncode": -6,
+      "guard": null
+    },
+    "status": "EXPECTED_REJECTION",
+    "reason": "duplicate multicast feedback"
+  },
+  {
+    "case": "wrong",
+    "host": {
+      "status": "FAIL",
+      "wall_seconds": 0.2540896069986047,
+      "user_cpu_seconds": 0.04334,
+      "system_cpu_seconds": 0.013585999999999999,
+      "peak_rss_kib": 18884,
+      "returncode": -6,
+      "guard": null
+    },
+    "status": "EXPECTED_REJECTION",
+    "reason": "multicast feedback endpoint"
+  },
+  {
+    "case": "missing",
+    "host": {
+      "status": "FAIL",
+      "wall_seconds": 0.25451193400658667,
+      "user_cpu_seconds": 0.055221,
+      "system_cpu_seconds": 0.0,
+      "peak_rss_kib": 19024,
+      "returncode": -6,
+      "guard": null
+    },
+    "status": "EXPECTED_REJECTION",
+    "reason": "unfinished multicast group"
+  },
+  {
+    "case": "wrong-task",
+    "host": {
+      "status": "FAIL",
+      "wall_seconds": 0.2549287319998257,
+      "user_cpu_seconds": 0.043171,
+      "system_cpu_seconds": 0.005810999999999999,
+      "peak_rss_kib": 18908,
+      "returncode": -6,
+      "guard": null
+    },
+    "status": "EXPECTED_REJECTION",
+    "reason": "multicast feedback task/endpoint mismatch"
+  }
+]

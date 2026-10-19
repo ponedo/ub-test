@@ -1,0 +1,356 @@
+{
+  "schema_version": 1,
+  "audited_at_utc": "2026-10-19T08:53:15Z",
+  "documented_at_utc": "2026-10-19T08:54:35Z",
+  "static_status": "PASS",
+  "scope": "Static audit only of frozen real N2048 L0/L37/L52 plans under accepted multicast. No simulator execution performed by this audit.",
+  "model": {
+    "label": "Qwen3-235B real routing, fixed expert execution model",
+    "EP": 64,
+    "N": 2048,
+    "experts": 128,
+    "top_k": 8,
+    "model_dim": 4096,
+    "ff_dim": 1536,
+    "matrices": 3,
+    "activation_dtype": "BF16",
+    "weight_dtype": "idealized FP8 without scale metadata",
+    "weight_bytes_per_expert": 18874368,
+    "segment_bytes": 1024,
+    "TAs_per_child": 18432,
+    "chunk_bytes": 4096,
+    "effective_GFLOP_per_second": 500,
+    "link_Gbps": 100,
+    "link_delay_ns": 20,
+    "topology": "single switch",
+    "flow_control": "CBFC",
+    "congestion_control": false,
+    "retransmission": false
+  },
+  "provenance": {
+    "accepted_public_commit": "a848419aa4324668c7a17cefbf1ee601ce60d9eb",
+    "historical_baseline_commit": "6a870170b0519267efff6a73a6be38ee575280ae",
+    "native_commit": "b8375b51a094d3b1217b697989e1ab979f609e64",
+    "receipt_status": "verified",
+    "receipt_verified_at_utc": "2026-10-19T07:51:18.113Z",
+    "publication_receipt_sha256": "1b4419d8767c710ff91332b671dfb6d76190885ed2edd86289a204d08007150f",
+    "public_file_parity_count": 71,
+    "public_file_parity_rechecked": true,
+    "native_source_hash_count_verified_by_parent": 108,
+    "binaries_verified_by_parent": true,
+    "verification_record": "results/accepted-source-verification.json",
+    "local_git_object_caveat": "Resolved by verified publication receipt plus exact source, native, and binary hashes. The partial local repository need not contain the public commit object."
+  },
+  "fixed_limits": {
+    "lifetime_groups_per_layer": 128,
+    "children_per_group": 63,
+    "ranks": 64,
+    "segment_bytes_max": 4096,
+    "ingress_reserve_bytes": 1048576,
+    "egress_max_bytes": 524288,
+    "CBFC_cell_bytes": 160,
+    "initial_CBFC_cells_per_VL": 6553,
+    "Jetty_inflight_TAs": 512,
+    "Jetty_out_of_order_window": 2048,
+    "TP_outstanding_segments": 1000,
+    "TP_inflight_packets": 1000,
+    "TP_out_of_order_window": 2048,
+    "wire_TPN_max": 16777215,
+    "wire_Jetty_ID_max": 16777215,
+    "wire_TASSN_cycle": 65536,
+    "physical_experts_max": 1024,
+    "assignments_max": 100000,
+    "logical_tasks_max": 2147483647,
+    "logical_TAs_max": 4294967295,
+    "preserved_payload_budget_bytes": 8589934592,
+    "preserved_weight_task_limit": 1000000
+  },
+  "frame_by_fanout": {
+    "1": {
+      "bytes": 1102,
+      "cells": 7
+    },
+    "2": {
+      "bytes": 1330,
+      "cells": 9
+    },
+    "3": {
+      "bytes": 1467,
+      "cells": 10
+    },
+    "4": {
+      "bytes": 1604,
+      "cells": 11
+    }
+  },
+  "layers": [
+    {
+      "layer": 0,
+      "static_status": "PASS",
+      "groups": 28,
+      "fanout_histogram": {
+        "1": 15,
+        "2": 13
+      },
+      "max_groups_per_source": 1,
+      "max_children_per_source": 2,
+      "max_children_per_target": 2,
+      "child_WQEs": 41,
+      "child_TAs": 755712,
+      "child_TPs": 82,
+      "child_Jettys": 41,
+      "token_pair_Jettys": 4032,
+      "total_Jettys": 4073,
+      "total_TPs": 4114,
+      "remote_WQEs": 32009,
+      "remote_TAs": 1011456,
+      "logical_tasks": 32809,
+      "logical_TAs": 1017856,
+      "physical_experts": 169,
+      "max_TPN": 69714,
+      "max_Jetty_ID": 36905,
+      "max_frame_bytes": 1330,
+      "max_frame_cells": 9,
+      "logical_payload_bytes": 1042284544,
+      "static_payload_array_lower_bound_bytes": 1816133632,
+      "source_weight_payload_bytes": 528482304,
+      "direct_source_weight_payload_bytes": 773849088,
+      "source_weight_data_wire_bytes": 623370240,
+      "switch_weight_data_wire_bytes": 942059520,
+      "direct_source_weight_data_wire_bytes": 832794624,
+      "source_multicast_envelopes": 239616,
+      "source_native_singleton_packets": 276480,
+      "switch_weight_data_branch_packets": 755712,
+      "request_event_estimates": {
+        "basis": "Static event-label counts expected from successful no-loss execution; not measured ns-3 scheduler events.",
+        "application_send_events": 32809,
+        "native_request_TA_admissions": 1011456,
+        "weight_child_request_TA_admissions": 755712,
+        "remote_target_received_events": 1011456,
+        "remote_target_complete_events": 1011456,
+        "source_weight_data_packet_grants": 516096,
+        "total_ns3_simulator_events": null
+      },
+      "input_evidence": {
+        "archive_id": "tokens-2048/layer-0/direct/prepared-evidence",
+        "archive_sha256": "9c7d9c80d64ef5d821cae2ac90fa02e007ae8e5a1591ce3796a18163cd7011b1",
+        "manifest_sha256": "858694410a4b2188b11a8f5213ca33fe8b47a4e3964df0c62ad5f5ee8c938858",
+        "plan_sha256": "8b69588bcea690e80bdfcb95eaddf8a24992e17eedf3d10638d8428e2a14fa6d",
+        "assignments_sha256": "93a068971ae2c8b12d71a9cfd274e323306e7fb6bdef8edfc4f946b9d49aee2c",
+        "config_sha256": "2514ebafc81cc870b7417e3733ad077c0b2ce7dce80c48d56204611af9b88d73",
+        "selected_member_hashes_verified": true
+      }
+    },
+    {
+      "layer": 37,
+      "static_status": "PASS",
+      "groups": 22,
+      "fanout_histogram": {
+        "1": 2,
+        "2": 11,
+        "3": 7,
+        "4": 2
+      },
+      "max_groups_per_source": 1,
+      "max_children_per_source": 4,
+      "max_children_per_target": 2,
+      "child_WQEs": 53,
+      "child_TAs": 976896,
+      "child_TPs": 106,
+      "child_Jettys": 53,
+      "token_pair_Jettys": 4020,
+      "total_Jettys": 4073,
+      "total_TPs": 4126,
+      "remote_WQEs": 31593,
+      "remote_TAs": 1229216,
+      "logical_tasks": 32821,
+      "logical_TAs": 1239040,
+      "physical_experts": 181,
+      "max_TPN": 69738,
+      "max_Jetty_ID": 36917,
+      "max_frame_bytes": 1604,
+      "max_frame_cells": 11,
+      "logical_payload_bytes": 1268776960,
+      "static_payload_array_lower_bound_bytes": 2269118464,
+      "source_weight_payload_bytes": 415236096,
+      "direct_source_weight_payload_bytes": 1000341504,
+      "source_weight_data_wire_bytes": 558692352,
+      "switch_weight_data_wire_bytes": 1384298496,
+      "direct_source_weight_data_wire_bytes": 1076539392,
+      "source_multicast_envelopes": 368640,
+      "source_native_singleton_packets": 36864,
+      "switch_weight_data_branch_packets": 976896,
+      "request_event_estimates": {
+        "basis": "Static event-label counts expected from successful no-loss execution; not measured ns-3 scheduler events.",
+        "application_send_events": 32821,
+        "native_request_TA_admissions": 1229216,
+        "weight_child_request_TA_admissions": 976896,
+        "remote_target_received_events": 1229216,
+        "remote_target_complete_events": 1229216,
+        "source_weight_data_packet_grants": 405504,
+        "total_ns3_simulator_events": null
+      },
+      "input_evidence": {
+        "archive_id": "tokens-2048/layer-37/direct/prepared-evidence",
+        "archive_sha256": "d4f40e3ba5e76b807f695ff6fcce6217708a837e092b3c8ccccc22080e810357",
+        "manifest_sha256": "ea45bdc6a0989f97361bdab6879b628a009f66da5a80bc5a0360f3b171667528",
+        "plan_sha256": "5db823a132e1219d8fb4452cf17f2a0d135fe566a8e1d8e50a3ded35a9980e12",
+        "assignments_sha256": "1a7f767d035076f898f5ce7ee8ab02d65eb9f40d057cc2c99931e97c9c1bf566",
+        "config_sha256": "44495a2fbf49cfc2d4d6fb6ee17d62bbf1393dceb1c452910fc5d4534e3bc014",
+        "selected_member_hashes_verified": true
+      }
+    },
+    {
+      "layer": 52,
+      "static_status": "PASS",
+      "groups": 21,
+      "fanout_histogram": {
+        "1": 4,
+        "2": 11,
+        "3": 4,
+        "4": 2
+      },
+      "max_groups_per_source": 2,
+      "max_children_per_source": 5,
+      "max_children_per_target": 2,
+      "child_WQEs": 46,
+      "child_TAs": 847872,
+      "child_TPs": 92,
+      "child_Jettys": 46,
+      "token_pair_Jettys": 4024,
+      "total_Jettys": 4070,
+      "total_TPs": 4116,
+      "remote_WQEs": 31706,
+      "remote_TAs": 1101152,
+      "logical_tasks": 32814,
+      "logical_TAs": 1110016,
+      "physical_experts": 174,
+      "max_TPN": 69724,
+      "max_Jetty_ID": 36910,
+      "max_frame_bytes": 1604,
+      "max_frame_cells": 11,
+      "logical_payload_bytes": 1136656384,
+      "static_payload_array_lower_bound_bytes": 2004877312,
+      "source_weight_payload_bytes": 396361728,
+      "direct_source_weight_payload_bytes": 868220928,
+      "source_weight_data_wire_bytes": 518197248,
+      "switch_weight_data_wire_bytes": 1181564928,
+      "direct_source_weight_data_wire_bytes": 934354944,
+      "source_multicast_envelopes": 313344,
+      "source_native_singleton_packets": 73728,
+      "switch_weight_data_branch_packets": 847872,
+      "request_event_estimates": {
+        "basis": "Static event-label counts expected from successful no-loss execution; not measured ns-3 scheduler events.",
+        "application_send_events": 32814,
+        "native_request_TA_admissions": 1101152,
+        "weight_child_request_TA_admissions": 847872,
+        "remote_target_received_events": 1101152,
+        "remote_target_complete_events": 1101152,
+        "source_weight_data_packet_grants": 387072,
+        "total_ns3_simulator_events": null
+      },
+      "input_evidence": {
+        "archive_id": "tokens-2048/layer-52/direct/prepared-evidence",
+        "archive_sha256": "9c6436627e536b4b4acc98fde5040888994e2d51edfc00152103a9defe0ad033",
+        "manifest_sha256": "3446f89e454a4cdec68deda677ec99ded099dfc8e17c13a1f0f9f046911edb58",
+        "plan_sha256": "8cd97d07eb88c9e4e37bad49c9235623292366009e57d923a382cfb54b7ad892",
+        "assignments_sha256": "51175f789cbcfc8fb1f026be4a5f123e4b99a2344c7cbbfa2d0995a0c26f5af5",
+        "config_sha256": "f11e237ccb41f5615c48848a6b36ac1e4f8e281e3b3995c526b6153dc13e6f86",
+        "selected_member_hashes_verified": true
+      }
+    }
+  ],
+  "host_guards": {
+    "wall_seconds_per_stage": 3600,
+    "tree_rss_bytes": 6442450944,
+    "address_space_bytes": 7516192768,
+    "min_case_disk_free_bytes": 8589934592,
+    "min_tmp_free_bytes": 2147483648,
+    "min_host_available_bytes": 1610612736,
+    "on_failure": "STOP; do not raise limits or alter protocol/planner/configuration."
+  },
+  "interpretation": {
+    "counts": "Static expectations from actual accepted plan/config; WQE/TA counts and request-event estimates are not measured simulation output.",
+    "memory": "Lower bound includes application transfer payload arrays and replica weight arrays only. It excludes transient copies, native WQE payloads, per-segment bookkeeping, allocator overhead, and other process state; it is neither estimated peak nor measured RSS.",
+    "wire_bytes": "Weight request data only, including serialized envelope overhead; excludes feedback, credit, dispatch, and combine traffic.",
+    "required_runtime_checks": [
+      "GroupManager::CheckCapacity before submission",
+      "native admission and endpoint identity checks",
+      "online payload/completion correctness",
+      "child TP drain",
+      "native ingress/egress/branch drain",
+      "cross-link credit conservation",
+      "independent postflight",
+      "unchanged host resource guards"
+    ],
+    "no_raw_routing_or_request_content": true
+  },
+  "source_references": [
+    {
+      "root": "project",
+      "path": "experiments/pair-jetty/pair-layer.cc",
+      "lines": "118-167, 239-260, 275-291",
+      "purpose": "dimensions, budgets, logical task/TA limits, token pair resources"
+    },
+    {
+      "root": "project",
+      "path": "experiments/pair-jetty/multicast-integration.inc",
+      "lines": "2-18",
+      "purpose": "group derivation, dedicated child TP/Jetty allocation, runtime capacity gate"
+    },
+    {
+      "root": "project",
+      "path": "experiments/ub-concurrent-multicast/group-manager.h",
+      "lines": "16-46",
+      "purpose": "group/member bounds, ownership, frame admission, drain"
+    },
+    {
+      "root": "project",
+      "path": "experiments/ub-lightweight-multicast-adapter/adapter.h",
+      "symbol": "SharedSource::GetNextPacketSize, SharedSource::Install",
+      "purpose": "serialized frame formula, no-CC/no-retrans constraints"
+    },
+    {
+      "root": "native",
+      "path": "src/unified-bus/model/ub-port.cc",
+      "lines": "47-51, 271-306",
+      "purpose": "egress capacity and CBFC cell/credit defaults"
+    },
+    {
+      "root": "native",
+      "path": "src/unified-bus/model/ub-queue-manager.h",
+      "lines": "23-25",
+      "purpose": "ingress reserve and disabled shared/headroom pools"
+    },
+    {
+      "root": "native",
+      "path": "src/unified-bus/model/protocol/ub-function.cc",
+      "lines": "1020-1034",
+      "purpose": "Jetty inflight and OOO windows"
+    },
+    {
+      "root": "native",
+      "path": "src/unified-bus/model/protocol/ub-transport.cc",
+      "lines": "259-273",
+      "purpose": "TP queue/inflight/OOO limits"
+    },
+    {
+      "root": "native",
+      "path": "src/unified-bus/model/protocol/ub-header.cc",
+      "lines": "1066-1075, 1162-1170",
+      "purpose": "24-bit wire TPN encoding"
+    },
+    {
+      "root": "native",
+      "path": "src/unified-bus/model/ub-switch.cc",
+      "lines": "1939-1954, 2073-2098",
+      "purpose": "single-switch/rank limits and ingress/branch protections"
+    },
+    {
+      "root": "project",
+      "path": "experiments/wqe-completion-fix/guard.py",
+      "symbol": "run",
+      "purpose": "unchanged wall/RSS/AS/disk/memory process guards"
+    }
+  ]
+}

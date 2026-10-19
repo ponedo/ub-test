@@ -1,0 +1,151 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "layer": 0,
+      "strategy": "no-balancing",
+      "status": "PASS",
+      "simulated_summary_equal": true,
+      "excluded_host_field": "verification_wall_ns",
+      "metrics_equal": true,
+      "byte_exact_inputs": {
+        "input.txt": "0723671096de92aa4c73a9de1d4c77e68608df3bcace8441e8d80b9247757508",
+        "graph-input.txt": "74d9ac19d86a2e4439ef3db46181b75161cb7772510a3c2070458adb49c1eac4",
+        "assignments.csv": "c7fdc3e483d3e84ffd69ac49d3795e3700b0180a88612f29980cd6db9fce3443",
+        "weight-edges.csv": "4f46cdfcb37e1143b093f782ccd420ed83be3a51ba945ec0fe1b821ad433b8b9"
+      },
+      "plan_equal_except_host_cpu_wall_ns": true,
+      "archive_sha256": "96075a7e99869c9c49fc2bca73f339bbcc0137252c5c6279a85a20516fb0b574"
+    },
+    {
+      "layer": 0,
+      "strategy": "direct",
+      "status": "PASS",
+      "simulated_summary_equal": true,
+      "excluded_host_field": "verification_wall_ns",
+      "metrics_equal": true,
+      "byte_exact_inputs": {
+        "input.txt": "9facdbec9bba5b7dd866db804fb071b3ac9b3c89f5c3e12abff56df7e749b09f",
+        "graph-input.txt": "e2d1ee856d82b13b4ae46121fdbb57ace9a574a6b3b1854b3d2590f3bd0edcb1",
+        "assignments.csv": "93a068971ae2c8b12d71a9cfd274e323306e7fb6bdef8edfc4f946b9d49aee2c",
+        "weight-edges.csv": "2047b1b0827d0373358a4bd5a4a76992bf848545c2299fcf48356649aed60a44"
+      },
+      "plan_equal_except_host_cpu_wall_ns": true,
+      "archive_sha256": "9c7d9c80d64ef5d821cae2ac90fa02e007ae8e5a1591ce3796a18163cd7011b1"
+    },
+    {
+      "layer": 0,
+      "strategy": "chunk-streaming",
+      "status": "PASS",
+      "simulated_summary_equal": true,
+      "excluded_host_field": "verification_wall_ns",
+      "metrics_equal": true,
+      "byte_exact_inputs": {
+        "input.txt": "c989fb195b1e60abb38b4a581fad642638c91fb0f12917c5144f88e583cd27a4",
+        "graph-input.txt": "ddc6e56c65b5004de5b5e0f5f8e5dafebf776ed65dca2cd56f8996ef9780d656",
+        "assignments.csv": "93a068971ae2c8b12d71a9cfd274e323306e7fb6bdef8edfc4f946b9d49aee2c",
+        "weight-edges.csv": "0d234a5b5403ae440ff13821715eaf3115aa9c0ea405db9913a801d128ff058d"
+      },
+      "plan_equal_except_host_cpu_wall_ns": true,
+      "archive_sha256": "8516907c79186c771d03c15ddf7809ca2fdc790f320c3c5968b990147309070d"
+    },
+    {
+      "layer": 37,
+      "strategy": "no-balancing",
+      "status": "PASS",
+      "simulated_summary_equal": true,
+      "excluded_host_field": "verification_wall_ns",
+      "metrics_equal": true,
+      "byte_exact_inputs": {
+        "input.txt": "20182d938ebd8fe13192484e62d1bf377d28a2d08eecb9fe8b315bfec6121ac6",
+        "graph-input.txt": "8c8d0a146f98b9ef94b6cbcc28599c551747d51a39d2850b0ab1f41ae349e0cc",
+        "assignments.csv": "b63e71fec9589ebc44a303c32306d8210794e9f4517eec7e772adba6166ad402",
+        "weight-edges.csv": "4f46cdfcb37e1143b093f782ccd420ed83be3a51ba945ec0fe1b821ad433b8b9"
+      },
+      "plan_equal_except_host_cpu_wall_ns": true,
+      "archive_sha256": "0857c7771f9a525622ba94f4c526561aecd08f873173180614adb892f838279f"
+    },
+    {
+      "layer": 37,
+      "strategy": "direct",
+      "status": "PASS",
+      "simulated_summary_equal": true,
+      "excluded_host_field": "verification_wall_ns",
+      "metrics_equal": true,
+      "byte_exact_inputs": {
+        "input.txt": "7c3c2dbd276652a4e154488b962aae2fb0f5a3022c4a147ccdf5d6d3d7096f0d",
+        "graph-input.txt": "48dfb213f72678e8f2c70978225bbfd925846db398513880f8156d37528b089d",
+        "assignments.csv": "1a7f767d035076f898f5ce7ee8ab02d65eb9f40d057cc2c99931e97c9c1bf566",
+        "weight-edges.csv": "d4e1ad231b20c9c076f3fd5a262c6cb0c9aac005247252da18b6ac1ef0d6457f"
+      },
+      "plan_equal_except_host_cpu_wall_ns": true,
+      "archive_sha256": "d4f40e3ba5e76b807f695ff6fcce6217708a837e092b3c8ccccc22080e810357"
+    },
+    {
+      "layer": 37,
+      "strategy": "chunk-streaming",
+      "status": "PASS",
+      "simulated_summary_equal": true,
+      "excluded_host_field": "verification_wall_ns",
+      "metrics_equal": true,
+      "byte_exact_inputs": {
+        "input.txt": "035e0f129ca1d4c2b85bab68332bb0421b1f0debd18bbd5cdcf8b1ca420e4b8d",
+        "graph-input.txt": "aca4a0d0d221442fe14be26c685f0c92a6f1fdf635bc67d9216f6a382d7309a6",
+        "assignments.csv": "1a7f767d035076f898f5ce7ee8ab02d65eb9f40d057cc2c99931e97c9c1bf566",
+        "weight-edges.csv": "91feee9c9b6fbaf847024ec2e1cb18b5f5a7f11e0739a0b89c58ee31fe274b93"
+      },
+      "plan_equal_except_host_cpu_wall_ns": true,
+      "archive_sha256": "bae584d9bd4ebe301eeaf2494376fd4816009dee167f91a6b6128d6d0f6bc19b"
+    },
+    {
+      "layer": 52,
+      "strategy": "no-balancing",
+      "status": "PASS",
+      "simulated_summary_equal": true,
+      "excluded_host_field": "verification_wall_ns",
+      "metrics_equal": true,
+      "byte_exact_inputs": {
+        "input.txt": "abcb6bdadd16bc47103d1514c7716c6da37318aa169cb263cf377b1900e71016",
+        "graph-input.txt": "18f7f9b2f694907f300e6168571b77faa4a59c98b86a433423a13860ddab0dc7",
+        "assignments.csv": "da8bb7a4bb6dc3fce680bc6cac6986f79540d6762bf83a1e2672f755a047de14",
+        "weight-edges.csv": "4f46cdfcb37e1143b093f782ccd420ed83be3a51ba945ec0fe1b821ad433b8b9"
+      },
+      "plan_equal_except_host_cpu_wall_ns": true,
+      "archive_sha256": "c749a56ea0282a025bc6c1f8d294820b36195fb0e7f0d4173aa724adcff13e65"
+    },
+    {
+      "layer": 52,
+      "strategy": "direct",
+      "status": "PASS",
+      "simulated_summary_equal": true,
+      "excluded_host_field": "verification_wall_ns",
+      "metrics_equal": true,
+      "byte_exact_inputs": {
+        "input.txt": "4e304c3f6728632a43eb9f8285a1693b3db3ef33a66bc49afad333723db564d4",
+        "graph-input.txt": "b45da5ff209ebe54388946ad4b9970710a79d0269849b23ef1045355cfb5a510",
+        "assignments.csv": "51175f789cbcfc8fb1f026be4a5f123e4b99a2344c7cbbfa2d0995a0c26f5af5",
+        "weight-edges.csv": "95fb8957fd5748dd0403071fcba15915d34e64df2caae1ab8002cfbac4bf1abd"
+      },
+      "plan_equal_except_host_cpu_wall_ns": true,
+      "archive_sha256": "9c6436627e536b4b4acc98fde5040888994e2d51edfc00152103a9defe0ad033"
+    },
+    {
+      "layer": 52,
+      "strategy": "chunk-streaming",
+      "status": "PASS",
+      "simulated_summary_equal": true,
+      "excluded_host_field": "verification_wall_ns",
+      "metrics_equal": true,
+      "byte_exact_inputs": {
+        "input.txt": "c7b51b219c2a5dcdcef825a44616041e9f994334f41573faa800193e88465258",
+        "graph-input.txt": "c0628e08c874401419bf83cea66cec5cc7a0eed29de870258457e44347abc995",
+        "assignments.csv": "51175f789cbcfc8fb1f026be4a5f123e4b99a2344c7cbbfa2d0995a0c26f5af5",
+        "weight-edges.csv": "09d2fcbbdd3f8fa8b5cc521d91f1c7690ae715aa14cb69c51b171066f38ef1a6"
+      },
+      "plan_equal_except_host_cpu_wall_ns": true,
+      "archive_sha256": "8845f63baf1c51e7d14ab08efba91419aebf4540b90322316b8b65b82ccac380"
+    }
+  ],
+  "historical_commit": "6a870170b0519267efff6a73a6be38ee575280ae",
+  "current_implementation": "a848419aa4324668c7a17cefbf1ee601ce60d9eb"
+}

@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "scope": "fixed configuration static admission; not a measured RSS or event-time result",
+  "layers": {
+    "0": {
+      "groups": 28,
+      "replicas": 41,
+      "fanout_histogram": {
+        "2": 13,
+        "1": 15
+      },
+      "max_frame_bytes": 1330,
+      "max_frame_cells": 9,
+      "max_child_tpn": 69714,
+      "max_jetty": 36905,
+      "logical_payload_bytes": 1042284544,
+      "logical_tas": 1017856,
+      "input_sha256": "163d750218da49f0e5086edd134c637b4cb4419b7348fa55d56316e15f76c3fa",
+      "config_sha256": "f473038e46e0251bf70c34f300c68f5d2af594f069efd004c66d5757f5885eb0"
+    },
+    "37": {
+      "groups": 22,
+      "replicas": 53,
+      "fanout_histogram": {
+        "1": 2,
+        "4": 2,
+        "2": 11,
+        "3": 7
+      },
+      "max_frame_bytes": 1604,
+      "max_frame_cells": 11,
+      "max_child_tpn": 69738,
+      "max_jetty": 36917,
+      "logical_payload_bytes": 1268776960,
+      "logical_tas": 1239040,
+      "input_sha256": "bad9ea76cac132dd1badbe4f4919d2de33f7489ee8c2a8f710cb85799a45114a",
+      "config_sha256": "0421d94eccaea731703ef7078f1738a1066a8d33e92f3b0e37797c6ab9a4e695"
+    },
+    "52": {
+      "groups": 21,
+      "replicas": 46,
+      "fanout_histogram": {
+        "2": 11,
+        "1": 4,
+        "4": 2,
+        "3": 4
+      },
+      "max_frame_bytes": 1604,
+      "max_frame_cells": 11,
+      "max_child_tpn": 69724,
+      "max_jetty": 36910,
+      "logical_payload_bytes": 1136656384,
+      "logical_tas": 1110016,
+      "input_sha256": "e08505e1022e02ae870e6df30f118dced6772245f1d38873accac5caf0565e83",
+      "config_sha256": "fd066b95f6d45a07058138e88fcdbe8226e32124e034e2e49983a206dd57b901"
+    }
+  },
+  "native_source_files_verified": 108,
+  "unchanged_limits": {
+    "groups": 128,
+    "ingress_reserve_bytes": 1048576,
+    "egress_bytes": 524288,
+    "initial_credit_cells": 6553,
+    "payload_budget_bytes": 8589934592,
+    "weight_tasks": 1000000
+  }
+}
