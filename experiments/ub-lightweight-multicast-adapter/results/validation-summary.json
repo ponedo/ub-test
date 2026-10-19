@@ -1,0 +1,22 @@
+{
+  "status": "PASS_WITH_DOCUMENTED_NATIVE_SUITE_LIMIT",
+  "singleton_exact_pairs": 7,
+  "shared_source_gate": true,
+  "multitarget_positive": 5,
+  "feedback_expected_rejections": 3,
+  "independent_verifier_mutations_detected": 5,
+  "legacy_network_positive": 13,
+  "legacy_network_expected_rejections": 4,
+  "legacy_network_byteexact_files": 118,
+  "native_suites_passed": 48,
+  "native_suites_attempted": 49,
+  "application_strategies_byteequal_simulation_summary": 4,
+  "protected_existing_files_checked": 347,
+  "unchanged_protected_files": 345,
+  "only_existing_source_changes": [
+    "src/unified-bus/model/ub-switch.cc",
+    "src/unified-bus/model/ub-tag.h"
+  ],
+  "scope": "Local single switch, one active group, multiple native TAs in flight, CC/retransmission disabled; not UltraEP integration",
+  "review": "Read-only independent review found no core correctness defect in this scope; all flagged gate, window, injection and accounting gaps addressed."
+}

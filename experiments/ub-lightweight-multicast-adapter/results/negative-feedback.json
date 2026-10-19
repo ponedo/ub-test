@@ -1,0 +1,26 @@
+[
+  {
+    "case": "duplicate",
+    "status": "EXPECTED_REJECTION",
+    "returncode": -6,
+    "reason": "duplicate feedback detected",
+    "no_group_success": true,
+    "console_excerpt": "aborted. cond=\"!seenFeedback.insert({rank,h.GetPsn()}).second\", msg=\"duplicate feedback detected\", +0.000000464640s 0 file=qwen-real-batch-scaling/experiments/ub-lightweight-multicast-adapter/multitarget.cc, line=49\nNS_FATAL, terminating\nterminate called without an active exception\n"
+  },
+  {
+    "case": "missing",
+    "status": "EXPECTED_REJECTION",
+    "returncode": -6,
+    "reason": "unfinished group: missing feedback",
+    "no_group_success": true,
+    "console_excerpt": "aborted. cond=\"groupsDone.size()!=members.size()\", msg=\"unfinished group: missing feedback\", +0.010000000000s -1 file=qwen-real-batch-scaling/experiments/ub-lightweight-multicast-adapter/multitarget.cc, line=79\nNS_FATAL, terminating\nterminate called without an active exception\n"
+  },
+  {
+    "case": "wrong",
+    "status": "EXPECTED_REJECTION",
+    "returncode": -6,
+    "reason": "feedback kind/member",
+    "no_group_success": true,
+    "console_excerpt": "aborted. cond=\"rank<1||rank>3||ctx.transactionHeader.GetUbTransactionOpcode()!=uint8_t(UbTransactionOpcode::TAACK)\", msg=\"feedback kind/member\", +0.000000464640s 0 file=qwen-real-batch-scaling/experiments/ub-lightweight-multicast-adapter/multitarget.cc, line=49\nNS_FATAL, terminating\nterminate called without an active exception\n"
+  }
+]

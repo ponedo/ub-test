@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "checks": [
+    "actual_received_payload",
+    "per_target_TA_coverage",
+    "receiver_and_sender_causality",
+    "exact_member_set",
+    "source_single_payload",
+    "paid_envelope_bytes",
+    "native_feedback_count",
+    "link_serialization_and_propagation",
+    "credit_wire_accounting",
+    "group_completion"
+  ],
+  "payloads": [
+    {
+      "task": 1001,
+      "rank": 1,
+      "bytes": 16384,
+      "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+    },
+    {
+      "task": 1001,
+      "rank": 2,
+      "bytes": 16384,
+      "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+    },
+    {
+      "task": 1001,
+      "rank": 3,
+      "bytes": 16384,
+      "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+    }
+  ]
+}

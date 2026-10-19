@@ -1,0 +1,142 @@
+diff --git a/src/unified-bus/model/ub-switch.cc b/src/unified-bus/model/ub-switch.cc
+index caed146..e801301 100644
+--- a/src/unified-bus/model/ub-switch.cc
++++ b/src/unified-bus/model/ub-switch.cc
+@@ -1918,6 +1918,9 @@ bool UbSwitch::NotifySwitchDequeue(uint16_t inPortId, uint32_t outPort, uint32_t
+             m_networkStats.parentBytes -= parent.bytes;
+             m_networkParents.erase(it);
+         }
++        if (tag.nativeSingleton && m_congestionCtrl != nullptr) {
++            m_congestionCtrl->OnSwitchPostDequeue(inPortId, outPort, packet);
++        }
+         return last;
+     }
+     m_queueManager->PopFromVoq(inPortId, outPort, priority, packet->GetSize());
+@@ -2001,26 +2004,67 @@ bool UbSwitch::HandleNetworkPacket(Ptr<UbPort> port, Ptr<Packet> packet)
+ {
+     UbNetworkReplicationTag tag;
+     if (!packet->PeekPacketTag(tag)) { return false; }
++    if (tag.nativeSingleton) {
++        NS_ABORT_MSG_IF(!tag.destinations || (tag.destinations & (tag.destinations - 1)),
++                        "Native replication calibration requires one target");
++        NS_ABORT_MSG_IF(GetPacketType(packet) != UB_URMA_DATA_PACKET,
++                        "Native replication calibration requires an URMA packet");
++        ParsedURMAHeaders headers;
++        ParseURMAPacketHeader(packet->Copy(), headers);
++        uint32_t rank = 0;
++        while (!(tag.destinations & (uint64_t{1} << rank))) { ++rank; }
++        NS_ABORT_MSG_IF(headers.ipv4Header.GetDestination() != NodeIdToIp(rank, 0),
++                        "Singleton selection differs from native destination");
++        if (GetNodeType() == UB_DEVICE) {
++            NS_ABORT_MSG_IF(tag.parent == 0 || tag.target != GetObject<Node>()->GetId() ||
++                            tag.target != rank, "Native singleton reached incorrect target");
++            // Re-enter native parsing BEFORE either CBFC receive/credit-return callback.
++            packet->RemovePacketTag(tag);
++            return false;
++        }
++    }
+     NS_ABORT_MSG_IF(!IsCBFCEnable(), "Network PoC cannot bypass CBFC");
+     // Consume/clear this hop's incoming piggyback credit BEFORE copying any branch.
+     port->GetFlowControl()->OnDataPacketReceived(packet);
+     UbDatalinkPacketHeader dl;
+     packet->PeekHeader(dl);
+     const uint32_t priority = dl.GetPacketVL();
+-    NS_ABORT_MSG_IF(priority != 1, "Network PoC requires VL1");
++    NS_ABORT_MSG_IF((!tag.nativeSingleton && !tag.nativeEnvelope && priority != 1) || priority == 0 || priority >= m_vlNum,
++                    "Network replication has invalid VL");
+     if (GetNodeType() == UB_DEVICE) {
+         NS_ABORT_MSG_IF(tag.parent == 0 || tag.target != m_networkSinkRank ||
+             m_networkReceive.IsNull() || !(tag.destinations & (uint64_t{1} << tag.target)),
+             "Network packet reached an unselected/unconfigured sink");
+         auto payload = packet->Copy();
+         payload->RemoveHeader(dl);
+-        m_networkReceive(tag.object, tag.sequence, payload);
+-        port->GetFlowControl()->OnIngressEnqueued(MakeIngressFlowControlEventContext(
+-            packet, nullptr, port->GetIfIndex(), port->GetIfIndex(), priority));
++        // Native-envelope adapters consume reconstructed TA data only after the full
++        // serialized envelope has returned its one receive-credit reservation.
++        if (tag.nativeEnvelope) {
++            port->GetFlowControl()->OnIngressEnqueued(MakeIngressFlowControlEventContext(
++                packet, nullptr, port->GetIfIndex(), port->GetIfIndex(), priority));
++            m_networkReceive(tag.object, tag.sequence, payload);
++        } else {
++            m_networkReceive(tag.object, tag.sequence, payload);
++            port->GetFlowControl()->OnIngressEnqueued(MakeIngressFlowControlEventContext(
++                packet, nullptr, port->GetIfIndex(), port->GetIfIndex(), priority));
++        }
+         return true;
+     }
+     NS_ABORT_MSG_IF(!m_networkReplicationEnabled || tag.parent != 0 || !tag.destinations,
+                     "Network PoC supports exactly one configured switch");
++    if (tag.nativeSingleton) {
++        ParsedURMAHeaders headers;
++        ParseURMAPacketHeader(packet, headers);
++        LastPacketTraversesNotify(GetObject<Node>()->GetId(), headers.transportHeader);
++        RoutingKey key;
++        bool shortest = false;
++        const int selected = ResolveURMAOutput(packet, headers, port->GetIfIndex(), key, shortest);
++        uint32_t rank = 0;
++        while (!(tag.destinations & (uint64_t{1} << rank))) { ++rank; }
++        NS_ABORT_MSG_IF(selected < 0 || rank >= m_networkRankToPort.size() ||
++                        uint32_t(selected) != m_networkRankToPort[rank],
++                        "Singleton replication differs from native route");
++    }
+     std::vector<uint32_t> outputs, ranks;
+     uint64_t outputMask = 0;
+     for (uint32_t rank=0; rank<64; ++rank) {
+@@ -2070,17 +2114,24 @@ void UbSwitch::CompleteNetworkProcessing(uint64_t id)
+         parent.priority, parent.bytes, parent.outputs);
+     // Register all output references before waking any allocator (which may run synchronously).
+     const auto outputs = parent.outputs;
++    Ptr<Packet> nativeBranch;
+     for (size_t i=0; i<outputs.size(); ++i) {
+         auto branch = parent.packet->Copy();
+         UbNetworkReplicationTag tag;
+         branch->RemovePacketTag(tag);
+         tag.parent = id; tag.target = parent.ranks[i];
+         branch->AddPacketTag(tag);
++        if (tag.nativeSingleton) { nativeBranch = branch; }
+         GetOrCreateVoq(outputs[i], parent.priority, parent.inPort)->Push(branch);
+         ++m_networkStats.branches;
+         m_networkStats.branchBytes += parent.bytes;
+     }
+     m_networkStats.peakBranchBytes = std::max(m_networkStats.peakBranchBytes, m_networkStats.branchBytes);
++    if (nativeBranch != nullptr) {
++        // Preserve native congestion/flow-control enqueue hooks and allocator wake ordering.
++        FinalizeForwardedPacketEnqueue(nativeBranch, parent.inPort, outputs.front(), parent.priority);
++        return;
++    }
+     for (uint32_t output : outputs) {
+         DynamicCast<UbPort>(GetObject<Node>()->GetDevice(output))->TriggerTransmit();
+     }
+diff --git a/src/unified-bus/model/ub-tag.h b/src/unified-bus/model/ub-tag.h
+index 321069c..103a5ee 100644
+--- a/src/unified-bus/model/ub-tag.h
++++ b/src/unified-bus/model/ub-tag.h
+@@ -13,20 +13,23 @@ class UbNetworkReplicationTag : public Tag {
+ public:
+     uint64_t destinations{0}, parent{0};
+     uint32_t object{0}, sequence{0}, target{UINT32_MAX};
++    // Singleton calibration only: bytes are a complete native URMA packet.
++    bool nativeSingleton{false};
++    bool nativeEnvelope{false};
+     static TypeId GetTypeId() {
+         static TypeId t = TypeId("ns3::UbNetworkReplicationTag").SetParent<Tag>()
+             .AddConstructor<UbNetworkReplicationTag>();
+         return t;
+     }
+     TypeId GetInstanceTypeId() const override { return GetTypeId(); }
+-    uint32_t GetSerializedSize() const override { return 28; }
++    uint32_t GetSerializedSize() const override { return 30; }
+     void Serialize(TagBuffer b) const override {
+         b.WriteU64(destinations); b.WriteU64(parent); b.WriteU32(object);
+-        b.WriteU32(sequence); b.WriteU32(target);
++        b.WriteU32(sequence); b.WriteU32(target); b.WriteU8(nativeSingleton); b.WriteU8(nativeEnvelope);
+     }
+     void Deserialize(TagBuffer b) override {
+         destinations=b.ReadU64(); parent=b.ReadU64(); object=b.ReadU32();
+-        sequence=b.ReadU32(); target=b.ReadU32();
++        sequence=b.ReadU32(); target=b.ReadU32(); nativeSingleton=b.ReadU8(); nativeEnvelope=b.ReadU8();
+     }
+     void Print(std::ostream& os) const override { os << "network-poc parent=" << parent; }
+ };
