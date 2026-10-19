@@ -1,0 +1,11 @@
+case,group,source,fanout,payload_bytes,wire_bytes,envelopes,window_wait_checks,empty_wait_checks
+single4,1,0,1,49152,52896,0,0,0
+multi4_force,1,0,3,49152,70416,48,0,1
+tail4,1,0,3,50310,117646,152,0,1
+multi_expert8,1,0,2,49152,63840,48,0,1
+multi_expert8,2,0,1,49152,52896,0,0,0
+multi_expert8,3,1,2,49152,63840,48,0,1
+multi_expert8,4,1,1,49152,52896,0,0,0
+slow_relay8,1,0,6,49152,90144,48,0,1
+topk2_4,1,0,1,49152,52896,0,0,0
+topk2_4,2,0,2,49152,63840,48,0,0

@@ -7,7 +7,7 @@ int main() {
     for(auto& p:ps) if(!(std::cin>>p.id>>p.expert>>p.rank>>p.replica>>p.quota>>p.mainId>>p.mainRank)) return 2;
     try {
         std::vector<WeightEdge> edges;
-        if(kind==0) edges=DirectWeightDistribution().Edges(ps,bytes);
+        if(kind==0||kind==3) edges=DirectWeightDistribution().Edges(ps,bytes);
         else if(kind==1) edges=TwoStageRelay(o).Edges(ps,bytes);
         else if(kind==2) edges=ChunkStreamingRelay(o).Edges(ps,bytes);
         else return 2;

@@ -2,7 +2,7 @@
 import csv,io,json,os,shutil,subprocess
 from pathlib import Path
 
-KINDS={'direct':0,'two-stage':1,'chunk-streaming':2}
+KINDS={'direct':0,'two-stage':1,'chunk-streaming':2,'multicast':3}
 DEFAULT_RELAY=dict(chunk_bytes=4096,relay_min_replicas=4,relay_max_relays=8,relay_min_fanout_gain=2,force_relay=False,reorder_ns=0,slow_relay_rank=4294967295,slow_relay_ns=0)
 
 def compile_dependencies(transfers, edges, physical, start, mode='indexed'):
@@ -44,7 +44,7 @@ def emit(source,parameters,strategy,out,dependency_mode=None):
     for key in DEFAULT_RELAY:
         if key!='force_relay' and (type(p[key]) is not int or p[key]<0):raise ValueError('relay parameter '+key)
     if not 1<=p['chunk_bytes']<=64*1024*1024 or not 1<=p['relay_max_relays']<=72 or p['reorder_ns']>100000000 or p['slow_relay_ns']>100000000 or (p['slow_relay_rank']!=4294967295 and p['slow_relay_rank']>=c['planner_input']['npus']):raise ValueError('relay parameter bounds')
-    physical={x['id']:x for x in plan['physical']};order=plan.get('ordinal_physical_order',list(physical)) if kind else list(physical)
+    physical={x['id']:x for x in plan['physical']};order=plan.get('ordinal_physical_order',list(physical)) if kind in (1,2) else list(physical)
     runtime=c['runtime'];cut=(runtime['matrices']-1)*runtime['model_dim']*runtime['ff_dim']*runtime.get('weight_dtype_bytes',runtime['dtype_bytes'])
     if runtime['weight_size_kind']!='matrix_exact':cut=0
     import importlib.util
@@ -70,6 +70,16 @@ def emit(source,parameters,strategy,out,dependency_mode=None):
     compile_dependencies(transfers, edges, physical, start, dependency_mode or os.environ.get('RELAY_DEPENDENCY_MODE', 'indexed'))
     c.update(transfers=transfers,weight_strategy=strategy,relay_parameters=p,readiness='upstream-group-chunk' if kind==2 else 'whole-expert')
     c['runtime'].update(p,weight_strategy=strategy);c['parameters'].update(p,weight_strategy=strategy)
+    c.pop('multicast_groups',None)
+    if kind==3:
+        if c['planner_input']['npus']>64 or runtime['segment_bytes']>4096:raise ValueError('multicast dimensions/segment bound')
+        groups={}
+        for x in transfers[start:]:
+            expert=physical[x['physical']]['expert'];g=groups.setdefault(expert,dict(group=expert+1,expert=expert,source=x['source'],members=[]))
+            g['members'].append(dict(task=x['task'],target=x['target'],physical=x['physical']))
+        if len(groups)>128:raise ValueError('multicast lifetime group capacity')
+        c['multicast_groups']=[groups[x] for x in sorted(groups)]
+
     (out/'config.json').write_text(json.dumps(c,indent=2)+'\n')
     with (out/'transfers.csv').open('w') as f:
         w=csv.DictWriter(f,fieldnames=list(transfers[0]) if transfers else ['task'],lineterminator='\n');w.writeheader()

@@ -1,0 +1,39 @@
+{
+  "public_parent": "c28c18c7f000de7468aecae7e89326f1509abf32",
+  "native_commit": "b8375b51a094d3b1217b697989e1ab979f609e64",
+  "native_tree": "6e404be184201380cfe61859eca5971d1b1f3eb9",
+  "native_source_modified": false,
+  "sources": {
+    "experiments/multi-npu-relay/adapter.py": "be745d78642127cc3f19d17ad9310c7a57060c4cc7dfcb4e374b9039956642da",
+    "experiments/multi-npu-relay/graph-tool.cc": "417c421aca60c99cfc4d8ee6add5b2ce7adde596111856569b19d12d6d4cedaa",
+    "experiments/pair-jetty/pair-layer.cc": "859320eda92f3397a6d26751d049233857d69e217457ffc3627bde3f8f7dba29",
+    "experiments/pair-jetty/verify.py": "155d082bcd1b5386e44cb86fbc9b92adc14be7c41341eee524bdc1a29917bb46",
+    "experiments/tiered-logging/preflight.py": "215a8239c55bd09058997f0270ca9b4bdcd1bfe47d9f4ab40f4f55295e655c88",
+    "experiments/ub-lightweight-multicast-adapter/adapter.h": "eec78c578e44de3c6f8bcc962c655b32ace53e9e0871907ba45580ca0d61d4e6",
+    "experiments/ub-concurrent-multicast/collect.py": "fc97938118c3bbaaf195fb6f9ce02831d6c50c00a9b32f5e0f874e9d49b31803",
+    "experiments/ub-concurrent-multicast/concurrent.cc": "b71331f75f4ea0dcf68c209f95e79d7e12336c7024e670789f33a419795132ed",
+    "experiments/ub-concurrent-multicast/group-manager.h": "d242440302e4ff91779da8a9d93c4dd85d9008144447cd0929a3bc70a7d7efa5",
+    "experiments/ub-concurrent-multicast/reproduce.sh": "2357462bc6f0d9094fed4c745934cd94f42f7702fecd124844af2a962023473a",
+    "experiments/ub-concurrent-multicast/run-concurrent.py": "dcca754f14680530243e02c965ea2e1d630cb4a1313f76ba0d9730630bbe2a33",
+    "experiments/ub-concurrent-multicast/run-layer.py": "5530e1ff7dd7271409ee5f6aff9f9793040281ec9b28f492b44dd0d640f41340",
+    "experiments/ub-concurrent-multicast/run-regressions.py": "4d64b9804c9a2438c00ada00f860f9953f03f14c7b2b102dac1b2bb370a8caa2",
+    "experiments/ub-concurrent-multicast/test-layer-faults.py": "a03cac81d44415a94ef97a5a15ab33eabc4b116523fc9072aee8edb5e97fc5ac",
+    "experiments/ub-concurrent-multicast/verify-concurrent.py": "2b9396162422ee96e4a04d60b7e7d358732aa08f1d8681a060d0bbdcb01300da",
+    "experiments/ub-concurrent-multicast/verify-debug.py": "7243461ebfa4cee613190993be5fade3b8ab5c8bda486c72454e0cea6140c048",
+    "experiments/pair-jetty/multicast-integration.inc": "c4202c5f01ea66cd760b32c85aaba12ec00563f4c7368abe86c067cd17c9256d"
+  },
+  "binaries": {
+    "concurrent-release": "11b38a7474e7cb4fa43811956f214fd8c959bf562005660911d5bb5433bdc032",
+    "pair-layer-queue-stats": "aea5b779a71f4712a8fd940dcc7575307006e107bdb819c3fad7e94de8ea4bd1",
+    "graph-tool": "171cc8af3b5e8f66a3d04d385c3f9e3026dec5b997da255aa124640cacfccda8"
+  },
+  "compiler_flags": [
+    "-std=c++20",
+    "-O3",
+    "-g"
+  ],
+  "final_application_evidence": "layer-queue-stats",
+  "final_debug_evidence": "debug-queue-stats",
+  "final_feedback_evidence": "concurrent-release-results",
+  "final_fault_evidence": "faults-queue-stats"
+}

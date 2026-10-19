@@ -1,0 +1,757 @@
+diff --git a/experiments/multi-npu-relay/adapter.py b/experiments/multi-npu-relay/adapter.py
+--- a/experiments/multi-npu-relay/adapter.py
++++ b/experiments/multi-npu-relay/adapter.py
+@@ -2,7 +2,7 @@
+ import csv,io,json,os,shutil,subprocess
+ from pathlib import Path
+ 
+-KINDS={'direct':0,'two-stage':1,'chunk-streaming':2}
++KINDS={'direct':0,'two-stage':1,'chunk-streaming':2,'multicast':3}
+ DEFAULT_RELAY=dict(chunk_bytes=4096,relay_min_replicas=4,relay_max_relays=8,relay_min_fanout_gain=2,force_relay=False,reorder_ns=0,slow_relay_rank=4294967295,slow_relay_ns=0)
+ 
+ def compile_dependencies(transfers, edges, physical, start, mode='indexed'):
+@@ -44,7 +44,7 @@
+     for key in DEFAULT_RELAY:
+         if key!='force_relay' and (type(p[key]) is not int or p[key]<0):raise ValueError('relay parameter '+key)
+     if not 1<=p['chunk_bytes']<=64*1024*1024 or not 1<=p['relay_max_relays']<=72 or p['reorder_ns']>100000000 or p['slow_relay_ns']>100000000 or (p['slow_relay_rank']!=4294967295 and p['slow_relay_rank']>=c['planner_input']['npus']):raise ValueError('relay parameter bounds')
+-    physical={x['id']:x for x in plan['physical']};order=plan.get('ordinal_physical_order',list(physical)) if kind else list(physical)
++    physical={x['id']:x for x in plan['physical']};order=plan.get('ordinal_physical_order',list(physical)) if kind in (1,2) else list(physical)
+     runtime=c['runtime'];cut=(runtime['matrices']-1)*runtime['model_dim']*runtime['ff_dim']*runtime.get('weight_dtype_bytes',runtime['dtype_bytes'])
+     if runtime['weight_size_kind']!='matrix_exact':cut=0
+     import importlib.util
+@@ -70,6 +70,16 @@
+     compile_dependencies(transfers, edges, physical, start, dependency_mode or os.environ.get('RELAY_DEPENDENCY_MODE', 'indexed'))
+     c.update(transfers=transfers,weight_strategy=strategy,relay_parameters=p,readiness='upstream-group-chunk' if kind==2 else 'whole-expert')
+     c['runtime'].update(p,weight_strategy=strategy);c['parameters'].update(p,weight_strategy=strategy)
++    c.pop('multicast_groups',None)
++    if kind==3:
++        if c['planner_input']['npus']>64 or runtime['segment_bytes']>4096:raise ValueError('multicast dimensions/segment bound')
++        groups={}
++        for x in transfers[start:]:
++            expert=physical[x['physical']]['expert'];g=groups.setdefault(expert,dict(group=expert+1,expert=expert,source=x['source'],members=[]))
++            g['members'].append(dict(task=x['task'],target=x['target'],physical=x['physical']))
++        if len(groups)>128:raise ValueError('multicast lifetime group capacity')
++        c['multicast_groups']=[groups[x] for x in sorted(groups)]
++
+     (out/'config.json').write_text(json.dumps(c,indent=2)+'\n')
+     with (out/'transfers.csv').open('w') as f:
+         w=csv.DictWriter(f,fieldnames=list(transfers[0]) if transfers else ['task'],lineterminator='\n');w.writeheader()
+diff --git a/experiments/multi-npu-relay/graph-tool.cc b/experiments/multi-npu-relay/graph-tool.cc
+--- a/experiments/multi-npu-relay/graph-tool.cc
++++ b/experiments/multi-npu-relay/graph-tool.cc
+@@ -7,7 +7,7 @@
+     for(auto& p:ps) if(!(std::cin>>p.id>>p.expert>>p.rank>>p.replica>>p.quota>>p.mainId>>p.mainRank)) return 2;
+     try {
+         std::vector<WeightEdge> edges;
+-        if(kind==0) edges=DirectWeightDistribution().Edges(ps,bytes);
++        if(kind==0||kind==3) edges=DirectWeightDistribution().Edges(ps,bytes);
+         else if(kind==1) edges=TwoStageRelay(o).Edges(ps,bytes);
+         else if(kind==2) edges=ChunkStreamingRelay(o).Edges(ps,bytes);
+         else return 2;
+diff --git a/experiments/pair-jetty/pair-layer.cc b/experiments/pair-jetty/pair-layer.cc
+--- a/experiments/pair-jetty/pair-layer.cc
++++ b/experiments/pair-jetty/pair-layer.cc
+@@ -4,6 +4,7 @@
+ #include "ns3/unified-bus-module.h"
+ #include "../no-balancing-layer/nb-tracker.h"
+ #include "pair-jetty-manager.h"
++#include "../ub-concurrent-multicast/group-manager.h"
+ #include "../direct-weight-forward/weight-distribution.h"
+ #include <filesystem>
+ #include <fstream>
+@@ -49,6 +50,19 @@
+     std::string jettyMode="pair",logLevel="summary";bool combineLogged=false;
+ #include "online-validation.inc"
+     std::unique_ptr<PairJettyManager> pairJetties;
++    lightweight::GroupManager multicast;
++    Ptr<UbTransportChannel> packetParser;
++    std::map<std::pair<uint32_t,uint32_t>,int64_t> portInitialCredit;
++    std::map<uint32_t,std::vector<uint32_t>> multicastTasks;
++    std::map<uint32_t,Ptr<UbJetty>> multicastJetties;
++    std::map<uint32_t,uint64_t> multicastCompletePs;
++    std::map<std::pair<uint32_t,uint32_t>,uint64_t> portTxWire,portQueuePeak;
++    std::map<std::tuple<uint32_t,uint32_t,std::string>,std::pair<uint64_t,uint64_t>> packetStats;
++    std::map<uint32_t,std::vector<uint64_t>> groupGrantTimes;
++    struct QueueTiming {uint64_t last=0,count=0,departed=0,residencePs=0;};
++    std::map<std::pair<uint32_t,uint32_t>,QueueTiming> queueTiming;
++
++
+     std::map<std::pair<uint32_t,uint32_t>,uint32_t> nextSsn;
+     std::ofstream admissions;
+     uint64_t payloadBudgetBytes=UINT64_C(256)*1024*1024,weightTaskLimit=20000;
+@@ -60,6 +74,7 @@
+         Require(x.ready,"sender completed before target data ready");
+         if(fault=="missing-wqe")return;
+         x.senderDone=true;++senderCount;TE("sender_complete",task,x.source);
++        if(strategy==3&&x.stage==2)multicast.Completed(task);
+         if(fault=="duplicate-completion")TE("sender_complete",task,x.source);
+     }
+     uint32_t reorderNs=0,slowRelayRank=UINT32_MAX,slowRelayNs=0;
+@@ -103,8 +118,9 @@
+         Require(n>=1&&n<=72&&e>=1&&e<=512&&k>=1&&k<=e&&t<=100000,"invalid dimensions");
+         Require(dim>=1&&dim<=16384&&ff>=1&&ff<=65536&&dtype>=1&&dtype<=8&&segment>=1&&segment<=65536&&peak>=1&&peak<=10000000&&util>=1&&util<=1000&&setup<=100000000,"invalid model");
+         Require(linkGbps>=1&&linkGbps<=10000&&linkDelayNs<=1000000,"invalid link");
+-        Require((matrices==2||matrices==3)&&weightBytes>0&&weightBytes<=64*1024*1024&&planningNs<=100000000&&rerouteNs<=100000000&&weightCompleteNs<=100000000&&balanced<=1&&strategy<=2,"unsupported execution parameters/strategy");
++        Require((matrices==2||matrices==3)&&weightBytes>0&&weightBytes<=64*1024*1024&&planningNs<=100000000&&rerouteNs<=100000000&&weightCompleteNs<=100000000&&balanced<=1&&strategy<=3,"unsupported execution parameters/strategy");
+         Require(np>=e&&np<=1024,"physical count");
++        if(strategy==3)Require(n<=64&&segment<=4096&&jettyMode=="pair","multicast supports EP<=64, TA<=4096, pair token mode");
+         Require(payloadBudgetBytes>0&&payloadBudgetBytes<=UINT64_C(8)*1024*1024*1024,"payload budget range");Require(weightTaskLimit>0&&weightTaskLimit<=1000000,"weight task limit range");
+         bytes=dim*dtype;const auto assignmentCount=CheckedMul(t,k);const auto logicalPayload=CheckedAdd(CheckedMul(CheckedMul(assignmentCount,bytes),2),CheckedMul(np-e,weightBytes));
+         Require(assignmentCount<=100000&&logicalPayload<=payloadBudgetBytes,"payload bound");
+@@ -141,7 +157,7 @@
+             predictedEdges=CheckedAdd(predictedEdges,CheckedMul(count,pieces));}
+         Require(predictedEdges<=weightTaskLimit,"weight task count bound");
+         std::vector<WeightEdge> edges;
+-        if(strategy==0)edges=DirectWeightDistribution().Edges(physical,weightBytes);
++        if(strategy==0||strategy==3)edges=DirectWeightDistribution().Edges(physical,weightBytes);
+         else if(strategy==1)edges=TwoStageRelay(weightOptions).Edges(ordered,weightBytes);
+         else edges=ChunkStreamingRelay(weightOptions).Edges(ordered,weightBytes);
+         Require(edges.size()==predictedEdges&&edges.size()<=weightTaskLimit,"weight task count bound");
+@@ -216,7 +232,12 @@
+         Ctrl(a)->GetTpConnManager()->AddUnilateralConnection(c,a);Ctrl(b)->GetTpConnManager()->AddUnilateralConnection(c,b);
+         for(auto [src,dst]:{std::pair{a,b},std::pair{b,a}}){
+             Ctrl(src)->GetTransportChannelManager()->CreateTp(src,dst,0,0,7,Tpn(src,dst),Tpn(dst,src),UbCongestionControl::Create(UB_DEVICE));
+-            Ctrl(src)->GetTransportChannelManager()->GetTp(Tpn(src,dst))->TraceConnectWithoutContext("WqeSegmentSendsNotify",Callback<void,uint32_t,uint32_t,uint32_t>([this,src](uint32_t,uint32_t task,uint32_t ssn){
++            TrackTp(src,Ctrl(src)->GetTransportChannelManager()->GetTp(Tpn(src,dst)));
++        }
++    }
++    void TrackTp(uint32_t src,Ptr<UbTransportChannel> tp){
++        if(!packetParser)packetParser=tp;
++        tp->TraceConnectWithoutContext("WqeSegmentSendsNotify",Callback<void,uint32_t,uint32_t,uint32_t>([this,src](uint32_t,uint32_t task,uint32_t ssn){
+                 auto& x=transfers.at(task);
+                 if(src==x.source){
+                     uint32_t logical=nextSsn[{x.source,x.jettyId}]++;
+@@ -227,6 +248,7 @@
+                     x.pendingResponses[ssn].push_back(logical);x.nextOffset+=len;++taCount;
+                     if(logLevel=="debug")admissions<<Simulator::Now().GetPicoSeconds()<<','<<task<<','<<x.jettyId<<','<<logical<<','<<off<<','<<len<<'\n';
+                     TE("ta_admitted",task,src,off,len);
++                    if(strategy==3)multicast.Refresh(src);
+                 }else{
+                     // Responses retain the request SSN, never allocate payload offsets.
+                     auto it=x.pendingResponses.find(ssn);
+@@ -236,8 +258,8 @@
+                     TE("ta_response_admitted",task,src,x.segmentOffsets.at(logical),0);
+                 }
+             }));
+-        }
+-    }
++    }
++#include "multicast-integration.inc"
+     void Topology(const std::string& out){
+         GlobalValue::Bind("UB_CC_ENABLED",BooleanValue(false));UbUtils::Get();
+         for(auto key:{"UB_TRACE_ENABLE","UB_PACKET_TRACE_ENABLE","UB_PORT_TRACE_ENABLE","UB_RECORD_PKT_TRACE"})GlobalValue::Bind(key,BooleanValue(logLevel=="debug"));
+@@ -245,10 +267,11 @@
+         nodes.resize(n+1);for(uint32_t i=0;i<n;++i)Init(i,true,1);Init(n,false,n);
+         for(uint32_t i=0;i<n;++i){auto link=CreateObject<UbLink>();link->SetAttribute("Delay",TimeValue(NanoSeconds(linkDelayNs)));DynamicCast<UbPort>(nodes[i]->GetDevice(0))->Attach(link);DynamicCast<UbPort>(nodes[n]->GetDevice(i))->Attach(link);Route(n,i,i);for(uint32_t j=0;j<n;++j)if(i!=j)Route(i,j,0);}
+         std::set<std::pair<uint32_t,uint32_t>> pairs;
+-        for(auto& x:transfers)if(x.source!=x.target)pairs.insert(std::minmax(x.source,x.target));
++        for(auto& x:transfers)if(x.source!=x.target&&!(strategy==3&&x.stage==2))pairs.insert(std::minmax(x.source,x.target));
+         for(auto [a,b]:pairs)Pair(a,b);
+         pairJetties=std::make_unique<PairJettyManager>([this](uint32_t rank){return Ctrl(rank);},n,segment,MakeCallback(&Layer::SenderComplete,this));
+         for(uint32_t task=0;task<transfers.size();++task){auto& x=transfers[task];if(x.source==x.target)continue;++remoteCount;
++            if(strategy==3&&x.stage==2)continue;
+             if(jettyMode=="pair"){
+                 const auto& entry=pairJetties->Get(x.source,x.target,Tpn(x.source,x.target));x.jettyId=entry.id;
+             }else{
+@@ -259,6 +282,7 @@
+             }
+         }
+         if(jettyMode=="pair")jettyCount=pairJetties->Size();
++        if(strategy==3)SetupMulticast();
+         for(uint32_t node=0;node<n;++node)Require(Ctrl(node)->GetUbTransaction()->SetTargetExecutor(UbTargetExecutor([this,node](Ptr<const UbWqeSegment> req,const UbTransactionRule&,UbTargetCompletion done){
+             uint32_t task=req->GetTaskId();auto& x=transfers.at(task);
+             Require(req->GetJettyNum()==x.jettyId&&req->GetSrc()==x.source&&req->GetDest()==node&&node==x.target&&req->GetType()==UbTransactionOpcode::WRITE&&req->HasTransactionResolved()&&x.sent,"target identity");
+@@ -287,6 +311,7 @@
+             p->TraceConnectWithoutContext("PortTxNotify",Callback<void,uint32_t,uint32_t,uint32_t>([this,rank](uint32_t,uint32_t,uint32_t size){++txPackets[rank];txBytes[rank]+=size;}));
+             p->TraceConnectWithoutContext("PortRxNotify",Callback<void,uint32_t,uint32_t,uint32_t>([this,rank](uint32_t,uint32_t,uint32_t size){++rxPackets[rank];rxBytes[rank]+=size;}));
+         }
++        for(uint32_t rank=0;rank<nodes.size();++rank)for(uint32_t p=0;p<nodes[rank]->GetNDevices();++p){auto port=DynamicCast<UbPort>(nodes[rank]->GetDevice(p));portInitialCredit[{rank,p}]=DynamicCast<UbCbfc>(port->GetFlowControl())->GetTxFreeCells(7);port->TraceConnectWithoutContext("TraComEventNotify",Callback<void,Ptr<Packet>,Time>([this,rank,p](Ptr<Packet> packet,Time){RecordPacket(rank,p,packet);}));port->GetUbQueue()->TraceConnectWithoutContext("UbEnqueue",Callback<void,Ptr<const Packet>,uint32_t>([this,rank,p](Ptr<const Packet>,uint32_t size){ObserveQueue(rank,p,true,size);}));port->GetUbQueue()->TraceConnectWithoutContext("UbDequeue",Callback<void,Ptr<const Packet>,uint32_t>([this,rank,p](Ptr<const Packet>,uint32_t size){ObserveQueue(rank,p,false,size);}));}
+         if(logLevel=="debug"){UbUtils::Get()->TopoTraceConnect();for(auto [a,b]:pairs){UbUtils::Get()->SingleTpTraceConnect(a,Tpn(a,b));UbUtils::Get()->SingleTpTraceConnect(b,Tpn(b,a));}}
+     }
+     void Validate(uint32_t task,uint64_t off,const std::vector<uint8_t>& data){auto wall=std::chrono::steady_clock::now();auto& x=transfers.at(task);for(size_t i=0;i<data.size();++i){Require(data[i]==ExpectedByte(task,off+i),"payload byte mismatch");x.data[off+i]=data[i];if(x.stage==2)weightData[pIndex.at(x.physical)][x.offset+off+i]=data[i];}verificationNs+=std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now()-wall).count();}
+@@ -312,6 +337,7 @@
+         if(x.stage==2&&fault=="premature-ready")Ready(task);
+         if(x.source==x.target){Simulator::ScheduleNow([this,task,data]{auto& x=transfers[task];Validate(task,0,data);TE("local_verified",task,x.target,0,x.bytes);Ready(task);});return;}
+         auto fn=Ctrl(x.source)->GetUbFunction();auto wqe=fn->CreateWqe(x.source,x.target,x.bytes,task,UbTransactionOpcode::WRITE);wqe->SetExplicitPayload(Create<Packet>(data.data(),data.size()));Require(fn->SubmitWqe(wqe,x.jettyId).status==UbWqeSubmissionStatus::ACCEPTED,"WQE rejected");
++        if(strategy==3&&x.stage==2)multicast.Refresh(x.source);
+     }
+     uint64_t Duration(uint32_t count){__uint128_t num=__uint128_t(count)*2*matrices*dim*ff*1000000;uint64_t den=uint64_t(peak)*util;auto duration=num/den+(num%den!=0)+uint64_t(setup)*1000;Require(duration<UINT64_C(1000000000000000),"compute bound");return uint64_t(duration);}
+     void Compute(uint32_t node){
+@@ -369,6 +395,7 @@
+         Simulator::Schedule(NanoSeconds(planningNs),[this]{planningDone=true;Event("planning_end");Event("reroute_start");Event("weights_start");
+             Simulator::Schedule(NanoSeconds(rerouteNs),[this]{rerouteDone=true;Event("reroute_end");Gate();});
+             if(!pendingWeights){weightsDone=true;Event("weights_end");Gate();}
++            if(strategy==3)for(auto& [id,g]:multicast.groups)multicast.Start(id);
+             for(uint32_t task=2*assignments.size();task<transfers.size();++task){
+                 if(transfers[task].dependencies.empty()){Send(task);if(fault=="duplicate-weight")Send(task);}
+                 else if(fault=="early-relay")Send(task);
+@@ -390,8 +417,9 @@
+         for(auto& x:transfers)if(x.source!=x.target)Require(x.nextOffset==x.bytes&&x.pendingResponses.empty(),"incomplete TA admission/response tracking");
+         Require(dispatchStarted&&receivedTokens==t&&pendingWeights==0&&senderCount==remoteCount,"unfinished layer");for(auto& x:transfers)Require(x.sent&&x.ready,"missing transfer");for(auto r:weightReady)Require(r,"missing weight");
+         pairJetties->CheckIdle();FinalAudit();
++        if(strategy==3){multicast.CheckDrained();for(auto&[task,j]:multicastJetties)Require(j->IsIdle(),"multicast jetty not idle");WriteMulticast(out);}
+         std::cout<<"PASS forward: N="<<n<<" assignments="<<assignments.size()<<" replicas="<<physical.size()-e<<" remote_WQEs="<<remoteCount<<" target-verified bytes\n";
+-        WriteSummary(out);if(logLevel=="debug")WritePayloads(out);admissions.close();log.close();UbUtils::Get()->Destroy();traceOn=false;Simulator::Destroy();
++        WriteNetworkStats(out);WriteSummary(out);if(logLevel=="debug")WritePayloads(out);admissions.close();log.close();UbUtils::Get()->Destroy();traceOn=false;Simulator::Destroy();
+     }
+ };
+ int main(int argc,char** argv){Time::SetResolution(Time::PS);Layer layer;std::string input,out;CommandLine cmd;cmd.AddValue("input","validated execution input",input);cmd.AddValue("out","output directory",out);cmd.AddValue("capacityMetrics","optional post-run capacity counters",layer.capacityMetrics);cmd.AddValue("fault","test-only fault injection",layer.fault);cmd.AddValue("logLevel","summary (default), events, debug",layer.logLevel);cmd.AddValue("jettyMode","pair or per-wqe",layer.jettyMode);cmd.AddValue("payloadBudgetBytes","logical payload budget, default 256 MiB, maximum 8 GiB",layer.payloadBudgetBytes);cmd.AddValue("weightTaskLimit","weight WQE budget, default 20000, maximum 1000000",layer.weightTaskLimit);cmd.AddValue("dependencyMode","index (default) or scan dependency construction",layer.dependencyMode);cmd.AddValue("onlineMembershipMode","index (default) or scan immutable audit membership",layer.onlineMembershipMode);cmd.Parse(argc,argv);try{Require(layer.dependencyMode=="index"||layer.dependencyMode=="scan","unknown dependency mode");Require(layer.onlineMembershipMode=="index"||layer.onlineMembershipMode=="scan","unknown online membership mode");Require(layer.logLevel=="summary"||layer.logLevel=="events"||layer.logLevel=="debug","unknown log level");Require(layer.jettyMode=="pair"||layer.jettyMode=="per-wqe","unknown Jetty mode");Require(layer.fault=="payload-byte"||layer.fault=="early-wqe"||layer.fault=="missing-wqe"||layer.fault=="duplicate-completion"||layer.fault.empty()||layer.fault=="weight-byte"||layer.fault=="premature-ready"||layer.fault=="duplicate-weight"||layer.fault=="early-compute"||layer.fault=="early-group"||layer.fault=="relay-byte"||layer.fault=="relay-buffer-byte"||layer.fault=="duplicate-notify"||layer.fault=="early-relay"||layer.fault=="early-final-ready","unknown fault");Require(!input.empty()&&!out.empty(),"input/out");layer.Run(input,out);}catch(const std::exception& ex){if(!out.empty()){std::filesystem::create_directories(out);std::ofstream failed(out+"/validation.json");failed<<"{\"status\":\"FAIL\",\"error\":\""<<ex.what()<<"\"}\n";}if(layer.log){layer.Event("error");layer.log.flush();}if(layer.traceOn)UbUtils::Get()->Destroy();std::cerr<<"ERROR: "<<ex.what()<<'\n';return 2;}return 0;}
+diff --git a/experiments/pair-jetty/verify.py b/experiments/pair-jetty/verify.py
+--- a/experiments/pair-jetty/verify.py
++++ b/experiments/pair-jetty/verify.py
+@@ -37,12 +37,16 @@
+  if any(sender[k]<t for k,t in target.items()):raise ValueError('early sender success')
+  metrics=json.loads((path/'simulator-metrics.json').read_text())
+  if len(admitted)!=metrics['TA_count']:raise ValueError('TA count mismatch')
+- pairs={};stages={}
++ pairs={};stages={};weight_jetties=set();multicast=config.get("weight_strategy")=="multicast"
+  for task,jetty in task_jetties.items():
+-  x=transfers[task];pair=(x['source'],x['target']);pairs.setdefault(pair,set()).add(jetty);stages.setdefault(pair,set()).add(x['stage'])
++  x=transfers[task]
++  if multicast and x['stage']==2:
++   if jetty!=config['planner_input']['npus']**2+1+task or jetty in weight_jetties:raise ValueError('multicast child Jetty identity')
++   weight_jetties.add(jetty);continue
++  pair=(x['source'],x['target']);pairs.setdefault(pair,set()).add(jetty);stages.setdefault(pair,set()).add(x['stage'])
+   if mode=='pair' and jetty!=x['source']*config['planner_input']['npus']+x['target']+1:raise ValueError('pair Jetty identity')
+   if mode=='per-wqe' and jetty!=task:raise ValueError('legacy Jetty identity')
+- if mode=='pair' and (any(len(v)!=1 for v in pairs.values()) or metrics['jettys']!=len(pairs)):raise ValueError('pair Jetty resource count')
++ if mode=='pair' and (any(len(v)!=1 for v in pairs.values()) or metrics['jettys']!=len(pairs)+len(weight_jetties)):raise ValueError('pair Jetty resource count')
+  if mode=='per-wqe' and metrics['jettys']!=len(sender):raise ValueError('legacy Jetty resource count')
+  if any(active.values()):raise ValueError('pending application WQE')
+  logical=load('logical',H.parent/'jetty-resource-mapping/harness.py').logical(path)
+diff --git a/experiments/tiered-logging/preflight.py b/experiments/tiered-logging/preflight.py
+--- a/experiments/tiered-logging/preflight.py
++++ b/experiments/tiered-logging/preflight.py
+@@ -20,7 +20,7 @@
+ KEYS = ['npus','experts','top_k','tokens','model_dim','ff_dim','dtype_bytes',
+         'segment_bytes','peak_gflops','util_permille','setup_ns','seed','link_gbps','link_delay_ns']
+ FIELDS = ['task','stage','id','source','target','physical','bytes','source_physical','offset','dependencies']
+-KINDS = {'direct':0,'two-stage':1,'chunk-streaming':2}
++KINDS = {'direct':0,'two-stage':1,'chunk-streaming':2,'multicast':3}
+ 
+ def require(value, message):
+     if not value:
+@@ -130,7 +130,7 @@
+     else:
+         require(not replicas and not p['planning_ns'] and not p['reroute_ns'],'baseline replication/planning')
+     kind=KINDS[c['weight_strategy']]
+-    order=plan.get('ordinal_physical_order',list(byid)) if kind else list(byid)
++    order=plan.get('ordinal_physical_order',list(byid)) if kind in (1,2) else list(byid)
+     require(len(order)==len(physical) and set(order)==set(byid),'physical ordinal order')
+     cut=(p['matrices']-1)*p['model_dim']*p['ff_dim']*p.get('weight_dtype_bytes',p['dtype_bytes']) if p['weight_size_kind']=='matrix_exact' else 0
+     opts=[p['chunk_bytes'],p['relay_min_replicas'],p['relay_max_relays'],p['relay_min_fanout_gain'],int(p['force_relay']),cut,p['reorder_ns'],p['slow_relay_rank'],p['slow_relay_ns']]
+@@ -171,6 +171,36 @@
+         for x, dependencies in zip(transfers[start:], reconstruct_dependencies(edges, byid, start, dependency_mode)):
+             x['dependencies'] = dependencies
+     require(transfers==c['transfers'],'config transfer graph differs from accepted graph tool')
++    if kind==3:
++        require(n<=64 and p['segment_bytes']<=4096,'multicast supported dimensions')
++        grouped={}
++        for x in transfers[start:]:
++            ph=byid[x['physical']];expert=ph['expert'];grouped.setdefault(expert,[]).append(dict(task=x['task'],target=ph['rank'],physical=ph['id']))
++        expected_groups=[dict(group=expert+1,expert=expert,source=pc['main_placement'][expert],members=members) for expert,members in sorted(grouped.items())]
++        require(len(expected_groups)<=128 and c.get('multicast_groups')==expected_groups,'multicast group membership contract')
++        if execution_summary:
++            actual=list(csv.DictReader((root/'multicast-groups.csv').open()));expected_rows=[]
++            for g in expected_groups:
++                for m in g['members']:expected_rows.append(dict(group=g['group'],expert=g['expert'],source=g['source'],**m,bytes=p['weight_bytes']))
++            require(len(actual)==len(expected_rows),'executed multicast member count')
++            complete={}
++            summary=json.loads(Path(execution_summary).read_text());planning=summary['timeline']['planning_end']
++            debug_events=list(csv.DictReader((root/'events.csv').open())) if summary.get('log_level')=='debug' else None
++            for row,want in zip(actual,expected_rows):
++                require(all(int(row[key])==value for key,value in want.items()),'executed multicast member identity')
++                ready,sender,group_done=map(int,(row['receiver_ready_ps'],row['sender_complete_ps'],row['group_complete_ps']))
++                require(planning<=ready<=sender<=group_done,'multicast receiver/sender causal order');
++                if debug_events is not None:
++                    for name,expected_time in [('edge_ready',ready),('sender_complete',sender)]:
++                        times=[int(x['time_ps']) for x in debug_events if x['event']==name and int(x['task'])==want['task']];require(times==[expected_time],'multicast per-child event timestamp')
++                complete.setdefault(want['group'],[]).append((sender,group_done))
++            for members in complete.values():require(len({x[1] for x in members})==1 and max(x[0] for x in members)==members[0][1],'multicast all-target completion aggregation')
++            stats=list(csv.DictReader((root/'multicast-stats.csv').open()));require(len(stats)==len(expected_groups),'multicast statistics count')
++            for row,g in zip(stats,expected_groups):
++                fanout=len(g['members']);size=p['weight_bytes'];seg=p['segment_bytes'];packets=(size+seg-1)//seg;header=78 if fanout==1 else 32+137*fanout
++                require(int(row['envelopes'])==(packets if fanout>1 else 0),'multicast envelope count')
++                require(int(row['group'])==g['group'] and int(row['source'])==g['source'] and int(row['fanout'])==fanout and int(row['payload_bytes'])==size and int(row['wire_bytes'])==size+packets*header,'multicast source bytes/fanout')
++            summary=json.loads(Path(execution_summary).read_text());require(max((int(x['receiver_ready_ps']) for x in actual),default=summary['timeline']['planning_end'])==summary['timeline']['weights_end'],'multicast weight ready must use receiver completion')
+     canonical=canonical_graph(transfers).encode()
+     if (root/'executed-transfers.csv').exists():
+         require((root/'executed-transfers.csv').read_bytes()==canonical,'actual executed transfer graph mismatch')
+diff --git a/experiments/ub-lightweight-multicast-adapter/adapter.h b/experiments/ub-lightweight-multicast-adapter/adapter.h
+--- a/experiments/ub-lightweight-multicast-adapter/adapter.h
++++ b/experiments/ub-lightweight-multicast-adapter/adapter.h
+@@ -5,6 +5,7 @@
+ #include <set>
+ #include <vector>
+ #include <algorithm>
++#include <functional>
+ namespace lightweight {
+ using namespace ns3;
+ // Versioned experimental envelope, not a standardized UB header. All bytes below are on wire.
+@@ -15,9 +16,10 @@
+ class SharedSource : public UbIngressQueue {
+ public:
+  struct Child {uint32_t rank;Ptr<UbTransportChannel> tp;};
+- std::vector<Child> all,active; std::set<uint32_t> memberDone;
++ std::vector<Child> all,active; std::set<uint32_t> memberDone; std::map<uint32_t,uint32_t> memberTasks;
+  uint32_t group{0},sequence{0},totalBytes{0},sentBytes{0},segmentBytes{1024};
+  uint64_t envelopes{0},payloadSent{0},wireDataBytes{0},barrierChecks{0},emptyWaits{0},windowWaits{0};
++ std::function<void(uint32_t,bool)> grantObserver;
+  Ptr<UbPort> port;
+  static TypeId GetTypeId(){static TypeId t=TypeId("ns3::LightweightSharedSource").SetParent<UbIngressQueue>().AddConstructor<SharedSource>();return t;}
+  IngressQueueType GetIngressQueueType() override{return IngressQueueType::CTP;}
+@@ -25,8 +27,10 @@
+   std::set<uint32_t> ranks;std::set<const UbTransportChannel*> pointers;BooleanValue cc;GlobalValue::GetValueByName("UB_CC_ENABLED",cc);NS_ABORT_MSG_IF(cc.Get(),"adapter excludes congestion control");for(auto& x:all){NS_ABORT_MSG_IF(!x.tp||x.rank>=64||!ranks.insert(x.rank).second||!pointers.insert(PeekPointer(x.tp)).second||x.tp->GetSrc()!=p->GetNode()->GetId()||x.tp->GetDest()!=x.rank||x.tp->GetOutPortId()!=p->GetIfIndex()||x.tp->GetIngressPriority()!=7,"invalid/duplicate native child binding");NS_ABORT_MSG_IF(!x.tp->IsSafeForExplicitDestroy(),"install requires quiescent TP");BooleanValue enabled;x.tp->GetAttribute("EnableRetrans",enabled);NS_ABORT_MSG_IF(enabled.Get(),"adapter excludes retransmission");alloc->UnregisterUbIngressQueue(x.tp,p->GetIfIndex(),7);}
+   alloc->RegisterUbIngressQueue(this,p->GetIfIndex(),7);
+  }
+- void Select(uint32_t id,uint32_t bytes,const std::vector<uint32_t>& ranks){NS_ABORT_MSG_IF(sentBytes!=totalBytes||(totalBytes&&memberDone.size()!=active.size()),"replace active group before native member completion");memberDone.clear();group=id;totalBytes=bytes;sentBytes=sequence=0;active.clear();std::set<uint32_t> unique;for(auto r:ranks){NS_ABORT_MSG_IF(r>=64||!unique.insert(r).second,"duplicate/out-of-range group member");auto it=std::find_if(all.begin(),all.end(),[&](const Child& c){return c.rank==r;});NS_ABORT_MSG_IF(it==all.end(),"unprovisioned group member");active.push_back(*it);}NS_ABORT_MSG_IF(active.empty(),"empty group");}
+- bool MemberComplete(uint32_t rank,uint32_t task){NS_ABORT_MSG_IF(task!=group||!totalBytes||sentBytes!=totalBytes||std::none_of(active.begin(),active.end(),[&](const Child& c){return c.rank==rank;})||!memberDone.insert(rank).second,"invalid/duplicate/early member completion");return memberDone.size()==active.size();}
++ void Select(uint32_t id,uint32_t bytes,const std::vector<uint32_t>& ranks){NS_ABORT_MSG_IF(sentBytes!=totalBytes||(totalBytes&&memberDone.size()!=active.size()),"replace active group before native member completion");memberDone.clear();memberTasks.clear();group=id;totalBytes=bytes;sentBytes=sequence=0;active.clear();std::set<uint32_t> unique;for(auto r:ranks){NS_ABORT_MSG_IF(r>=64||!unique.insert(r).second,"duplicate/out-of-range group member");auto it=std::find_if(all.begin(),all.end(),[&](const Child& c){return c.rank==r;});NS_ABORT_MSG_IF(it==all.end(),"unprovisioned group member");active.push_back(*it);}NS_ABORT_MSG_IF(active.empty(),"empty group");}
++ void SetMemberTasks(const std::map<uint32_t,uint32_t>& tasks){NS_ABORT_MSG_IF(sentBytes||tasks.size()!=active.size(),"member task setup");std::set<uint32_t> unique;for(auto& c:active)NS_ABORT_MSG_IF(!tasks.count(c.rank)||!unique.insert(tasks.at(c.rank)).second,"member task identity");memberTasks=tasks;}
++ uint32_t MemberTask(uint32_t rank)const{auto it=memberTasks.find(rank);return it==memberTasks.end()?group:it->second;}
++ bool MemberComplete(uint32_t rank,uint32_t task){NS_ABORT_MSG_IF(task!=MemberTask(rank)||!totalBytes||sentBytes!=totalBytes||std::none_of(active.begin(),active.end(),[&](const Child& c){return c.rank==rank;})||!memberDone.insert(rank).second,"invalid/duplicate/early member completion");return memberDone.size()==active.size();}
+  void Refresh(){RefreshAllocatorSummary();}
+  Ptr<UbTransportChannel> Control(){for(auto& c:all)if(!c.tp->m_cnpQ.empty())return c.tp;for(auto& c:all)if(!c.tp->m_ackQ.empty())return c.tp;return nullptr;}
+  bool IsEmpty() override{for(auto& c:all)if(!c.tp->IsEmpty())return false;return true;}
+@@ -37,16 +41,17 @@
+   return 4+28+active.size()*(8+78+8+42+1)+len;
+  }
+  Ptr<Packet> GetNextPacket() override{
++  if(grantObserver)grantObserver(group,bool(Control()));
+   if(auto t=Control()){auto p=t->GetNextPacket();Refresh();return p;}
+   NS_ABORT_MSG_IF(IsLimited(),"coalescer dequeue before all native children eligible");
+-  if(active.size()==1){auto p=active.front().tp->GetNextPacket();NS_ABORT_MSG_IF(!p,"empty singleton dequeue");UbNetworkReplicationTag tag;tag.destinations=uint64_t{1}<<active.front().rank;tag.nativeSingleton=true;tag.object=group;p->AddPacketTag(tag);if(totalBytes){NS_ABORT_MSG_IF(p->GetSize()<78,"singleton WRITE size");auto len=p->GetSize()-78;sentBytes+=len;payloadSent+=len;wireDataBytes+=p->GetSize();}Refresh();return p;}
++  if(active.size()==1){auto p=active.front().tp->GetNextPacket();NS_ABORT_MSG_IF(!p,"empty singleton dequeue");if(totalBytes){UbTransportChannel::ReceivedDataPacketContext ctx;NS_ABORT_MSG_IF(!active.front().tp->ParseReceivedDataPacketForTest(p->Copy(),ctx)||ctx.flowTag.GetFlowId()!=MemberTask(active.front().rank)||ctx.transactionHeader.GetUbTransactionOpcode()!=uint8_t(UbTransactionOpcode::WRITE)||ctx.payloadBytes!=std::min(segmentBytes,totalBytes-sentBytes),"singleton child identity/length");}UbNetworkReplicationTag tag;tag.destinations=uint64_t{1}<<active.front().rank;tag.nativeSingleton=true;tag.object=group;p->AddPacketTag(tag);if(totalBytes){NS_ABORT_MSG_IF(p->GetSize()<78,"singleton WRITE size");auto len=p->GetSize()-78;sentBytes+=len;payloadSent+=len;wireDataBytes+=p->GetSize();}Refresh();return p;}
+   const uint32_t expectedSize=GetNextPacketSize(),len=std::min(segmentBytes,totalBytes-sentBytes);
+   for(auto& c:active)NS_ABORT_MSG_IF(c.tp->GetNextPacketSize()!=78+len,"unmatched next native packet size");
+   uint64_t mask=0;for(auto& c:active)mask|=uint64_t{1}<<c.rank;
+   std::vector<uint8_t> b;Put(b,0x55424d31);Put(b,group);Put(b,sequence);Put(b,len);Put(b,active.size());Put(b,uint32_t(mask>>32));Put(b,uint32_t(mask));
+   std::vector<uint8_t> shared;
+   for(auto& c:active){auto packet=c.tp->GetNextPacket();NS_ABORT_MSG_IF(!packet,"native child dequeue failed");UbTransportChannel::ReceivedDataPacketContext ctx;NS_ABORT_MSG_IF(!c.tp->ParseReceivedDataPacketForTest(packet->Copy(),ctx),"native child decode failed");
+-   NS_ABORT_MSG_IF(ctx.flowTag.GetFlowId()!=group||ctx.transactionHeader.GetUbTransactionOpcode()!=uint8_t(UbTransactionOpcode::WRITE)||ctx.payloadBytes!=len,"native child range/type differs");
++   NS_ABORT_MSG_IF(ctx.flowTag.GetFlowId()!=MemberTask(c.rank)||ctx.transactionHeader.GetUbTransactionOpcode()!=uint8_t(UbTransactionOpcode::WRITE)||ctx.payloadBytes!=len,"native child range/type differs");
+    std::vector<uint8_t> raw(packet->GetSize());packet->CopyData(raw.data(),raw.size());std::vector<uint8_t> payload(raw.end()-len,raw.end());if(shared.empty())shared=payload;else NS_ABORT_MSG_IF(shared!=payload,"native child payload differs");
+    Put(b,c.rank);Put(b,raw.size()-len);b.insert(b.end(),raw.begin(),raw.end()-len);PutTag<UbFlowTag>(b,packet);PutTag<UbTransactionCorrelationTag>(b,packet);PutTag<UbExplicitPayloadTag>(b,packet);
+   }
+diff --git a/experiments/ub-concurrent-multicast/collect.py b/experiments/ub-concurrent-multicast/collect.py
+new file mode 100644
+--- /dev/null
++++ b/experiments/ub-concurrent-multicast/collect.py
+@@ -0,0 +1,42 @@
++#!/usr/bin/env python3
++"""Publish small aggregate evidence only; never copies Payload or native packet traces."""
++import argparse,csv,json,hashlib,shutil
++from pathlib import Path
++p=argparse.ArgumentParser();p.add_argument('--private',type=Path,required=True);p.add_argument('--out',type=Path,required=True);a=p.parse_args();r=a.private;o=a.out;o.mkdir(parents=True,exist_ok=True)
++def write_csv(name,rows):
++ if not rows:return
++ with (o/name).open('w') as f:w=csv.DictWriter(f,fieldnames=list(rows[0]));w.writeheader();w.writerows(rows)
++results=json.loads((r/'layer-queue-stats/results.json').read_text());perf=[];hosts=[];groups=[];ports=[];counts=[];queues=[];summaries=[];inputs=[]
++for row in results:
++ case,mode=row['case'],row['strategy'];d=r/'layer-queue-stats'/case/mode;s=row['summary'];c=json.loads((d/'config.json').read_text());n=c['planner_input']['npus'];packets=list(csv.DictReader((d/'packet-counts.csv').open()));weight=[x for x in c['transfers'] if x['stage']==2];byid={x['id']:x for x in json.loads((d/'plan.json').read_text())['physical']}
++ stats=list(csv.DictReader((d/'multicast-stats.csv').open())) if mode=='multicast' else []
++ main_payload=sum(int(x['payload_bytes']) for x in stats) if mode=='multicast' else sum(x['bytes'] for x in weight if byid[x['source_physical']]['kind']=='main')
++ all_payload=sum(int(x['payload_bytes']) for x in stats) if mode=='multicast' else sum(x['bytes'] for x in weight)
++ cpu=row['host']['simulator']['user_cpu_seconds']+row['host']['simulator']['system_cpu_seconds'];phase=s['timeline']
++ perf.append(dict(case=case,strategy=mode,tokens=c['planner_input']['tokens'] if 'tokens' in c['planner_input'] else len(c['planner_input']['mapping']),top_k=c['planner_input']['top_k'],npus=n,replicas=s['replicas'],groups=len(stats),layer_latency_us=s['layer_latency_ps']/1e6,weight_duration_us=(phase['weights_end']-phase['planning_end'])/1e6,remote_WQEs=s['remote_WQEs'],logical_TAs=s['TA_count'],jettys=s['jettys'],main_weight_payload_bytes=main_payload,all_npu_weight_payload_bytes=all_payload,host_origin_weight_wire_bytes=sum(int(x['wire_bytes']) for x in packets if int(x['node'])<n and x['kind'] in ('weight_write','multicast_data')),total_network_wire_bytes=sum(int(x['wire_bytes']) for x in packets),host_origin_transport_ack_packets=sum(int(x['packets']) for x in packets if int(x['node'])<n and x['kind']=='transport_ack'),host_origin_transaction_response_packets=sum(int(x['packets']) for x in packets if int(x['node'])<n and x['kind']=='transaction_response'),wall_seconds=row['host']['simulator']['wall_seconds'],cpu_seconds=cpu,peak_rss_kib=row['host']['simulator']['peak_rss_kib'],validation='PASS'))
++ for stage,h in row['host'].items():hosts.append(dict(case=case,strategy=mode,stage=stage,status=h['status'],wall_seconds=h['wall_seconds'],cpu_seconds=h['user_cpu_seconds']+h['system_cpu_seconds'],peak_rss_kib=h['peak_rss_kib'],guard=h['guard']))
++ summaries.append({k:row[k] for k in ['case','strategy','status','plan_hash','assignments_hash','summary','validation']})
++ inputs.append(dict(case=case,strategy=mode,input_sha256=hashlib.sha256((d/'input.txt').read_bytes()).hexdigest(),config_sha256=hashlib.sha256((d/'config.json').read_bytes()).hexdigest(),plan_sha256=row['plan_hash'],assignments_sha256=row['assignments_hash'],runtime=c['runtime'],planner_parameters={k:v for k,v in c['planner_input'].items() if k!='mapping'}))
++ if mode=='multicast':
++  for x in stats:groups.append(dict(case=case,**x))
++  for x in csv.DictReader((d/'multicast-ports.csv').open()):ports.append(dict(case=case,**x))
++ for x in csv.DictReader((d/'queue-stats.csv').open()):queues.append(dict(case=case,strategy=mode,**x))
++ for x in packets:counts.append(dict(case=case,strategy=mode,**x))
++for x in perf:
++ direct=next(y for y in perf if y['case']==x['case'] and y['strategy']=='direct');x['speedup_vs_direct']=direct['layer_latency_us']/x['layer_latency_us']
++write_csv('queue-wait.csv',queues);write_csv('performance.csv',perf);write_csv('host-resources.csv',hosts);write_csv('groups.csv',groups);write_csv('multicast-ports.csv',ports);write_csv('packet-counts.csv',counts)
++(o/'execution-summaries.json').write_text(json.dumps(summaries,indent=2)+'\n');(o/'input-provenance.json').write_text(json.dumps(inputs,indent=2)+'\n')
++for src,name in [('concurrent-release-results/results.json','concurrent-tests.json'),('regressions1/singleton-results/results.json','singleton-gate.json'),('regressions1/old-multi-results/results.json','old-multicast-tests.json'),('regressions1/old-verifier-mutations/results.json','old-verifier-mutations.json'),('regressions1/application-parity.json','application-parity.json'),('regressions1/network-parity.json','network-byte-parity.json'),('regressions1/native-final.json','native-tests.json'),('debug-parity-final.json','debug-parity.json'),('telemetry-parity.json','telemetry-parity.json'),('faults-queue-stats/results.json','layer-faults.json')]:
++ shutil.copy2(r/src,o/name)
++for file in ['groups.csv']:
++ shutil.copy2(r/'concurrent-release-results/dynamic'/file,o/('dynamic-'+file))
++shutil.copy2(r/'layer-queue-stats/slow_relay8/multicast/multicast-groups.csv',o/'slow-target-ready.csv')
++shutil.copy2(r/'regressions1/native-retry/unified-bus-examples/console.txt',o/'known-native-parser-failure.txt')
++# Hash large/private evidence rather than publishing it.
++manifest=[]
++for sub in ['concurrent-release-results','debug-queue-stats','layer-queue-stats','faults-queue-stats']:
++ for f in sorted((r/sub).rglob('*')):
++  if f.is_file() and f.suffix in ('.csv','.json','.bin'):
++   manifest.append(dict(path=str(f.relative_to(r)),bytes=f.stat().st_size,sha256=hashlib.sha256(f.read_bytes()).hexdigest()))
++(o/'private-evidence-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
++print('Collected',len(perf),'measured application cases')
+diff --git a/experiments/ub-concurrent-multicast/concurrent.cc b/experiments/ub-concurrent-multicast/concurrent.cc
+new file mode 100644
+--- /dev/null
++++ b/experiments/ub-concurrent-multicast/concurrent.cc
+@@ -0,0 +1,60 @@
++// SPDX-License-Identifier: GPL-2.0-only
++#include "group-manager.h"
++#include "ns3/core-module.h"
++#include "ns3/network-module.h"
++#include <filesystem>
++#include <fstream>
++using namespace ns3;
++struct Test {
++ std::string out,scenario="same-source",fault;uint32_t bytes=16384,window=1000;bool pressure=false,injected=false;
++ std::vector<Ptr<Node>> nodes;lightweight::GroupManager manager;
++ struct Child {uint32_t task,group,src,dst,jid;Ptr<UbTransportChannel> tx,rx;Ptr<UbJetty> jetty;uint32_t admitted=0,covered=0;std::map<uint32_t,uint32_t> offsets;std::set<uint32_t> seen;bool ready=false,done=false;std::vector<uint8_t> data;};
++ std::map<uint32_t,Child> children;std::map<uint32_t,std::vector<uint8_t>> payload;std::map<uint32_t,std::vector<uint32_t>> groupTasks;
++ std::set<std::tuple<uint32_t,uint32_t,uint32_t>> feedbackSeen;uint64_t feedback=0;std::ofstream events,wire;
++ struct Counts {uint64_t consumed=0,returned=0,peak=0;};std::map<std::pair<uint32_t,uint32_t>,Counts> counts;
++ Ptr<UbController> C(uint32_t n){return nodes[n]->GetObject<UbController>();}
++ void Event(std::string name,uint32_t group=0,uint32_t task=0,uint32_t node=0,uint32_t off=0,uint32_t len=0){events<<Simulator::Now().GetPicoSeconds()<<','<<name<<','<<group<<','<<task<<','<<node<<','<<off<<','<<len<<'\n';events.flush();}
++ void Pair(uint32_t src,uint32_t dst,uint32_t a,uint32_t b,Ptr<UbTransportChannel>& tx,Ptr<UbTransportChannel>& rx){Connection c;c.ownerNodeId=src;c.node1=src;c.node2=dst;c.port1=c.port2=0;c.tpn1=a;c.tpn2=b;c.priority=7;c.metrics=0;
++  C(src)->GetTpConnManager()->AddUnilateralConnection(c,src);C(dst)->GetTpConnManager()->AddUnilateralConnection(c,dst);
++  C(src)->GetTransportChannelManager()->CreateTp(src,dst,0,0,7,a,b,UbCongestionControl::Create(UB_DEVICE));C(dst)->GetTransportChannelManager()->CreateTp(dst,src,0,0,7,b,a,UbCongestionControl::Create(UB_DEVICE));tx=C(src)->GetTransportChannelManager()->GetTp(a);rx=C(dst)->GetTransportChannelManager()->GetTp(b);
++ }
++ void Add(uint32_t id,uint32_t src,std::vector<uint32_t> ranks){std::vector<lightweight::GroupManager::Member> members;payload[id].resize(bytes);for(uint32_t i=0;i<bytes;++i)payload[id][i]=uint8_t((id*73+i*131+(i>>8)*17)%251);
++  for(auto dst:ranks){uint32_t task=id*10+dst,a=task*2,b=a+1,jid=task;Child c{task,id,src,dst,jid};Pair(src,dst,a,b,c.tx,c.rx);C(src)->GetUbFunction()->CreateJetty(src,dst,jid);NS_ABORT_MSG_IF(!C(src)->GetUbTransaction()->JettyBindTp(src,dst,jid,false,{a}),"bind");c.jetty=C(src)->GetUbFunction()->GetJetty(jid);c.jetty->SetTaSegmentBytes(1024);c.data.resize(bytes);children.emplace(task,std::move(c));groupTasks[id].push_back(task);auto& child=children.at(task);
++   child.jetty->SetClientCallback(Callback<void,uint32_t,uint32_t>([this](uint32_t task,uint32_t jetty){auto& c=children.at(task);NS_ABORT_MSG_IF(c.jid!=jetty||!c.ready||c.done,"early/duplicate child completion");c.done=true;Event("sender_complete",c.group,task,c.src);manager.Completed(task);}));
++   child.tx->TraceConnectWithoutContext("WqeSegmentSendsNotify",Callback<void,uint32_t,uint32_t,uint32_t>([this,task](uint32_t,uint32_t tid,uint32_t ssn){auto& c=children.at(task);NS_ABORT_MSG_IF(tid!=task||c.admitted>=bytes||!c.offsets.emplace(ssn,c.admitted).second,"admission identity");auto off=c.admitted;c.admitted+=std::min(1024u,bytes-off);Event("ta_admitted",c.group,task,c.src,off,c.admitted-off);manager.Refresh(c.src);}));
++   members.push_back({dst,task,child.tx,child.rx});
++  }
++  manager.Add(id,src,bytes,1024,DynamicCast<UbPort>(nodes[src]->GetDevice(0)),members);manager.groups.at(id).queue->grantObserver=[this,src](uint32_t group,bool control){Event(control?"control_grant":"data_grant",group,0,src);};
++ }
++ void Submit(uint32_t id){manager.Start(id);auto& g=manager.groups.at(id);Event("group_submit",id,0,g.source,0,bytes);for(auto task:groupTasks.at(id)){auto& c=children.at(task);auto w=C(c.src)->GetUbFunction()->CreateWqe(c.src,c.dst,bytes,task,UbTransactionOpcode::WRITE);w->SetExplicitPayload(Create<Packet>(payload.at(id).data(),bytes));NS_ABORT_MSG_IF(C(c.src)->GetUbFunction()->SubmitWqe(w,c.jid).status!=UbWqeSubmissionStatus::ACCEPTED,"submit");}manager.Refresh(g.source);}
++ void Receive(uint32_t node,Ptr<UbPort> port,Ptr<Packet> packet){auto sw=nodes[node]->GetObject<UbSwitch>();if(sw->GetPacketTypeForTest(packet)==UB_URMA_DATA_PACKET){auto copy=packet->Copy();UbDatalinkPacketHeader dl;UbIpBasedNetworkHeader net;Ipv4Header ip;UdpHeader udp;UbTransportHeader h;copy->RemoveHeader(dl);copy->RemoveHeader(net);copy->RemoveHeader(ip);copy->RemoveHeader(udp);copy->RemoveHeader(h);
++   if(!UbTransportChannel::IsTransportResponseOpcode(h.GetTPOpcode())){UbTransportChannel::ReceivedDataPacketContext ctx;NS_ABORT_MSG_IF(!children.begin()->second.tx->ParseReceivedDataPacketForTest(packet->Copy(),ctx),"decode");if(ctx.transactionHeader.GetUbTransactionOpcode()==uint8_t(UbTransactionOpcode::TAACK)){
++    if(!injected&&!fault.empty()){injected=true;Event("fault",0,ctx.flowTag.GetFlowId(),node);if(fault=="missing")return;if(fault=="duplicate"){Receive(node,port,packet->Copy());Receive(node,port,packet->Copy());return;}if(fault=="wrong-task"){UbFlowTag old;packet->RemovePacketTag(old);packet->AddPacketTag(UbFlowTag(0,bytes));Receive(node,port,packet);return;}if(fault=="wrong"){h.SetSrcTpn(999);copy->AddHeader(h);copy->AddHeader(udp);copy->AddHeader(ip);copy->AddHeader(net);copy->AddHeader(dl);Receive(node,port,copy);return;}}
++    auto tid=ctx.flowTag.GetFlowId();++feedback;Event("feedback",children.count(tid)?children.at(tid).group:0,tid,node,h.GetPsn(),packet->GetSize());
++   }}
++  }manager.ReceiveNative(node,port,packet);
++ }
++ void Init(){GlobalValue::Bind("UB_CC_ENABLED",BooleanValue(false));utils::UbUtils::Get();for(auto key:{"UB_TRACE_ENABLE","UB_PACKET_TRACE_ENABLE","UB_PORT_TRACE_ENABLE","UB_RECORD_PKT_TRACE"})GlobalValue::Bind(key,BooleanValue(false));Config::SetDefault("ns3::UbTransportChannel::DefaultMaxInflightPacketSize",UintegerValue(window));Config::SetDefault("ns3::UbTransportChannel::DefaultMaxWqeSegNum",UintegerValue(1000));Config::SetDefault("ns3::UbJetty::UbJettyInflightMax",UintegerValue(512));
++  if(pressure){UbEgressQueue::GetTypeId();Config::SetDefault("ns3::UbEgressQueue::MaxEgressBytes",UintegerValue(1600));Config::SetDefault("ns3::UbPort::CbfcCtrlCrdRtrThldCell",IntegerValue(1));}
++  for(uint32_t n=0;n<6;++n){auto node=CreateObject<Node>();nodes.push_back(node);auto sw=CreateObject<UbSwitch>();node->AggregateObject(sw);sw->SetNodeType(n==5?UB_SWITCH:UB_DEVICE);if(n<5){auto c=CreateObject<UbController>();node->AggregateObject(c);c->CreateUbFunction();c->CreateUbTransaction();}if(pressure){sw->SetReservePerQueueBytes(1600);sw->SetCbfcCredits(10,0);sw->SetCbfcCellGeometry(20,8);sw->SetCbfcReturnCellGrain(1,1);}for(uint32_t p=0;p<(n==5?5:1);++p){auto port=CreateObject<UbPort>();port->SetAddress(Mac48Address::Allocate());port->SetAttribute("UbDataRate",DataRateValue(DataRate("100Gbps")));node->AddDevice(port);}sw->Init();UbCongestionControl::Create(UB_SWITCH)->OnSwitchAttached(sw);}
++  for(uint32_t n=0;n<5;++n){auto link=CreateObject<UbLink>();link->SetAttribute("Delay",TimeValue(NanoSeconds(20)));DynamicCast<UbPort>(nodes[n]->GetDevice(0))->Attach(link);DynamicCast<UbPort>(nodes[5]->GetDevice(n))->Attach(link);}
++  for(uint32_t n=0;n<6;++n)for(uint32_t d=0;d<5;++d)if(n!=d){uint16_t p=n==5?d:0;auto& t=nodes[n]->GetObject<UbSwitch>()->GetRoutingProcess()->GetRoutingTable();t.AddShortestRoute(NodeIdToIp(d).Get(),{p});t.AddShortestRoute(NodeIdToIp(d,0).Get(),{p});}nodes[5]->GetObject<UbSwitch>()->EnableNetworkReplication({0,1,2,3,4});
++  if(scenario=="capacity")manager.limit=1;Add(1001,0,scenario=="oversize"?std::vector<uint32_t>{1,2,3,4}:std::vector<uint32_t>{1,2});Add(1002,scenario=="different-source"?4:0,{2,3});if(scenario=="dynamic")Add(1003,0,{1,3});
++  manager.onComplete=[this](uint32_t id){Event("group_complete",id,0,manager.groups.at(id).source);};
++  for(uint32_t n=0;n<5;++n){auto sw=nodes[n]->GetObject<UbSwitch>();sw->EnableNetworkSink(n,Callback<void,uint32_t,uint32_t,Ptr<Packet>>([this,n](uint32_t g,uint32_t seq,Ptr<Packet> p){manager.Receive(n,g,seq,p);}));auto port=DynamicCast<UbPort>(nodes[n]->GetDevice(0));port->SetReceiveHandler(Callback<void,Ptr<UbPort>,Ptr<Packet>>([this,n](Ptr<UbPort> p,Ptr<Packet> b){Receive(n,p,b);}));
++   C(n)->GetUbTransaction()->SetTargetExecutor(UbTargetExecutor([this,n](Ptr<const UbWqeSegment> req,const UbTransactionRule&,UbTargetCompletion done){auto tid=req->GetTaskId();NS_ABORT_MSG_IF(!children.count(tid),"target task");auto& c=children.at(tid);auto ssn=req->GetTaSsn();NS_ABORT_MSG_IF(c.dst!=n||c.src!=req->GetSrc()||c.jid!=req->GetJettyNum()||!c.offsets.count(ssn)||!c.seen.insert(ssn).second,"target ownership");auto off=c.offsets.at(ssn),len=req->GetPayloadBytes();NS_ABORT_MSG_IF(len!=std::min(1024u,bytes-off),"target length");std::vector<uint8_t> b(len);req->GetExplicitPayload()->CopyData(b.data(),len);NS_ABORT_MSG_IF(!std::equal(b.begin(),b.end(),payload.at(c.group).begin()+off),"payload");std::copy(b.begin(),b.end(),c.data.begin()+off);
++    auto complete=[this,tid,off,len,done]{auto& c=children.at(tid);done(UbWorkExecutionResult{});c.covered+=len;Event("target_complete",c.group,tid,c.dst,off,len);NS_ABORT_MSG_IF(c.covered>bytes,"overcoverage");if(c.covered==bytes){c.ready=true;Event("receiver_ready",c.group,tid,c.dst);}};if(scenario=="window"&&c.group==1001)Simulator::Schedule(NanoSeconds(1000),complete);else complete();
++   }));
++  }
++  for(uint32_t n=0;n<6;++n)for(uint32_t p=0;p<nodes[n]->GetNDevices();++p){auto port=DynamicCast<UbPort>(nodes[n]->GetDevice(p));auto record=[this,n,p](std::string ev,Ptr<Packet> packet){auto& s=counts[{n,p}];auto sw=nodes[n]->GetObject<UbSwitch>();UbNetworkReplicationTag tag;bool env=packet->PeekPacketTag(tag)&&tag.nativeEnvelope;bool credit=!env&&sw->GetPacketTypeForTest(packet)==UB_CONTROL_FRAME;if(!credit){if(ev=="tx")s.consumed+=(packet->GetSize()+159)/160;else s.returned+=(packet->GetSize()+159)/160;}wire<<Simulator::Now().GetPicoSeconds()<<','<<ev<<','<<n<<','<<p<<','<<packet->GetSize()<<','<<(env?tag.object:0)<<','<<(env?tag.sequence:0)<<','<<(credit?"credit":env?"envelope":"native")<<'\n';};
++   port->TraceConnectWithoutContext("TraComEventNotify",Callback<void,Ptr<Packet>,Time>([record](Ptr<Packet> b,Time){record("tx",b);}));port->TraceConnectWithoutContext("PktRcvNotify",Callback<void,Ptr<Packet>>([record](Ptr<Packet> b){record("rx",b);}));port->GetUbQueue()->TraceConnectWithoutContext("UbEnqueue",Callback<void,Ptr<const Packet>,uint32_t>([this,n,p](Ptr<const Packet>,uint32_t used){counts[{n,p}].peak=std::max(counts[{n,p}].peak,uint64_t(used));}));}
++ }
++ void Run(){std::filesystem::create_directories(out);events.open(out+"/events.csv");wire.open(out+"/wire.csv");events<<"time_ps,event,group,task,node,offset,bytes\n";wire<<"time_ps,event,node,port,bytes,group,sequence,kind\n";Init();manager.CheckCapacity(nodes);Simulator::Schedule(NanoSeconds(100),[this]{Submit(1001);Submit(1002);});if(scenario=="dynamic")Simulator::Schedule(NanoSeconds(500),[this]{Submit(1003);});Simulator::Stop(MilliSeconds(10));Simulator::Run();manager.CheckDrained();
++  std::ofstream summary(out+"/groups.csv");summary<<"group,source,fanout,payload_bytes,wire_bytes,envelopes,window_waits,members\n";for(auto&[id,g]:manager.groups){summary<<id<<','<<g.source<<','<<g.members.size()<<','<<g.queue->payloadSent<<','<<g.queue->wireDataBytes<<','<<g.queue->envelopes<<','<<g.queue->windowWaits<<',';for(auto& m:g.members)summary<<m.rank<<':'<<m.task<<';';summary<<'\n';}
++  for(auto&[task,c]:children){NS_ABORT_MSG_IF(!c.done||!c.ready||c.covered!=bytes||c.data!=payload.at(c.group)||!c.jetty->IsIdle(),"child final state");std::ofstream f(out+"/payload-"+std::to_string(task)+".bin",std::ios::binary);f.write((char*)c.data.data(),c.data.size());}
++  uint64_t blocked=0;std::ofstream ports(out+"/ports.csv");ports<<"node,port,peak,consumed,returned,restored,free,pending,blocked\n";
++  for(uint32_t n=0;n<6;++n)for(uint32_t p=0;p<nodes[n]->GetNDevices();++p){auto port=DynamicCast<UbPort>(nodes[n]->GetDevice(p));auto fc=DynamicCast<UbCbfc>(port->GetFlowControl());auto s=counts[{n,p}];NS_ABORT_MSG_IF(fc->GetConsumedCells()!=s.consumed||fc->GetReturnedCells()!=s.returned||int64_t(pressure?10:6553)-int64_t(fc->GetConsumedCells())+int64_t(fc->GetRestoredCells())!=fc->GetTxFreeCells(7)||port->GetUbQueue()->GetCurrentBytes()||s.peak>(pressure?1600:524288),"port conservation");blocked+=fc->GetBlockedQueryCount();ports<<n<<','<<p<<','<<s.peak<<','<<s.consumed<<','<<s.returned<<','<<fc->GetRestoredCells()<<','<<fc->GetTxFreeCells(7)<<','<<fc->GetCrdToReturn(7)<<','<<fc->GetBlockedQueryCount()<<'\n';}
++  NS_ABORT_MSG_IF(pressure&&!blocked,"pressure not exercised");auto sw=nodes[5]->GetObject<UbSwitch>();auto s=sw->GetNetworkReplicationStats();NS_ABORT_MSG_IF(s.admitted!=s.released||s.branches!=s.branchDequeues||s.parentBytes||s.branchBytes||s.descriptors||sw->GetQueueManager()->GetSwitchBufferOccupancy().total_buffered_bytes,"switch drain");std::ofstream ok(out+"/summary.json");ok<<"{\"status\":\"PASS\",\"groups\":"<<manager.groups.size()<<",\"feedback\":"<<feedback<<",\"blocked\":"<<blocked<<"}\n";events.close();wire.close();Simulator::Destroy();
++ }
++};
++int main(int argc,char**argv){Time::SetResolution(Time::PS);Test t;CommandLine c;c.AddValue("out","Private output",t.out);c.AddValue("scenario","same-source/different-source/dynamic/window",t.scenario);c.AddValue("bytes","Payload bytes",t.bytes);c.AddValue("window","TP packet window",t.window);c.AddValue("pressure","CBFC pressure",t.pressure);c.AddValue("fault","Feedback fault",t.fault);c.Parse(argc,argv);NS_ABORT_MSG_IF(t.out.empty()||!t.bytes||t.bytes>1048576||t.bytes%1024||!t.window,"config");t.Run();}
+diff --git a/experiments/ub-concurrent-multicast/group-manager.h b/experiments/ub-concurrent-multicast/group-manager.h
+new file mode 100644
+--- /dev/null
++++ b/experiments/ub-concurrent-multicast/group-manager.h
+@@ -0,0 +1,48 @@
++// SPDX-License-Identifier: GPL-2.0-only
++#pragma once
++#include "../ub-lightweight-multicast-adapter/adapter.h"
++#include <functional>
++namespace lightweight {
++// Bounded operation registry. Arbitration is exclusively the native source allocator.
++// Caller provisions disjoint native children; each native WQE keeps its own task ID.
++class GroupManager {
++public:
++ struct Member {uint32_t rank,task; ns3::Ptr<ns3::UbTransportChannel> tx,rx;};
++ struct Group {uint32_t id,source,bytes;std::vector<Member> members;ns3::Ptr<SharedSource> queue;bool started=false,complete=false;std::map<uint32_t,uint32_t> nextSequence;};
++ std::map<uint32_t,Group> groups;
++ std::map<uint32_t,std::pair<uint32_t,uint32_t>> tasks;
++ std::set<const ns3::UbTransportChannel*> owned,receivers;
++ std::function<void(uint32_t)> onComplete;
++ uint32_t limit=128;
++ std::map<uint32_t,uint64_t> senderTimes;
++ std::set<std::tuple<uint32_t,uint32_t,uint32_t>> seenFeedback;
++ uint64_t responses=0;
++ std::map<std::pair<uint32_t,uint32_t>,uint32_t> responseEndpoints;
++ void Add(uint32_t id,uint32_t source,uint32_t bytes,uint32_t segment,ns3::Ptr<ns3::UbPort> port,const std::vector<Member>& members){
++  NS_ABORT_MSG_IF(!limit||limit>128||groups.size()>=limit||groups.count(id)||!bytes||!segment||segment>4096||source>=64||port->GetNode()->GetId()!=source||members.empty()||members.size()>63,"multicast group capacity/configuration");
++  std::vector<SharedSource::Child> children;std::vector<uint32_t> ranks;std::map<uint32_t,uint32_t> identities;
++  for(auto& m:members){NS_ABORT_MSG_IF(m.rank==source||m.rank>=64||!m.tx||!m.rx||m.rx->GetSrc()!=m.rank||m.rx->GetDest()!=source||m.tx->GetDestTpn()!=m.rx->GetTpn()||m.rx->GetDestTpn()!=m.tx->GetTpn()||!receivers.insert(ns3::PeekPointer(m.rx)).second||!owned.insert(ns3::PeekPointer(m.tx)).second||!tasks.emplace(m.task,std::make_pair(id,m.rank)).second||!identities.emplace(m.rank,m.task).second,"multicast child ownership");NS_ABORT_MSG_IF(!responseEndpoints.emplace(std::make_pair(source,m.tx->GetTpn()),m.task).second,"duplicate response endpoint");children.push_back({m.rank,m.tx});ranks.push_back(m.rank);}
++  auto q=ns3::CreateObject<SharedSource>();q->segmentBytes=segment;q->Install(port,children);q->Select(id,bytes,ranks);q->SetMemberTasks(identities);
++  groups.emplace(id,Group{id,source,bytes,members,q});
++ }
++ void Start(uint32_t id){auto& g=groups.at(id);NS_ABORT_MSG_IF(g.started,"duplicate group start");g.started=true;}
++ void Refresh(uint32_t source){for(auto&[id,g]:groups)if(g.source==source)g.queue->Refresh();}
++ void Completed(uint32_t task){NS_ABORT_MSG_IF(!senderTimes.emplace(task,ns3::Simulator::Now().GetPicoSeconds()).second,"duplicate child sender notification");auto [id,rank]=tasks.at(task);auto& g=groups.at(id);NS_ABORT_MSG_IF(!g.started||g.complete,"group completion state");if(g.queue->MemberComplete(rank,task)){g.complete=true;if(onComplete)onComplete(id);}}
++ void Receive(uint32_t rank,uint32_t id,uint32_t seq,ns3::Ptr<ns3::Packet> payload){
++  NS_ABORT_MSG_IF(!groups.count(id),"unknown group envelope");auto& g=groups.at(id);auto it=std::find_if(g.members.begin(),g.members.end(),[&](auto& m){return m.rank==rank;});
++  NS_ABORT_MSG_IF(!g.started||g.complete||it==g.members.end()||seq!=g.nextSequence[rank]++,"wrong/duplicate group envelope");auto packet=Reconstruct(rank,id,seq,payload);ns3::UbTransportChannel::ReceivedDataPacketContext ctx;
++  NS_ABORT_MSG_IF(!it->rx->ParseReceivedDataPacketForTest(packet->Copy(),ctx)||ctx.flowTag.GetFlowId()!=it->task,"group child packet identity");
++  auto receiver=ns3::NodeList::GetNode(rank)->GetObject<ns3::UbController>();auto endpoint=receiver->GetTransportChannelManager()->ResolveInboundTp(ctx.transportHeader.GetSrcTpn(),ctx.transportHeader.GetDestTpn(),ctx.ipv4Header.GetSource(),ctx.ipv4Header.GetDestination(),ctx.dataLinkHeader.GetPacketVL());
++  NS_ABORT_MSG_IF(endpoint.state!=ns3::UbInboundTpState::LIVE||endpoint.endpoint!=it->rx,"group endpoint mismatch");it->rx->RecvDataPacket(packet);
++ }
++ // Inspect native transaction feedback, then invoke the unchanged receive handler.
++ void ReceiveNative(uint32_t node,ns3::Ptr<ns3::UbPort> port,ns3::Ptr<ns3::Packet> packet){auto sw=port->GetNode()->GetObject<ns3::UbSwitch>();
++  if(!groups.empty()&&sw->GetPacketTypeForTest(packet)==ns3::UB_URMA_DATA_PACKET){auto copy=packet->Copy();ns3::UbDatalinkPacketHeader dl;ns3::UbIpBasedNetworkHeader net;ns3::Ipv4Header ip;ns3::UdpHeader udp;ns3::UbTransportHeader h;copy->RemoveHeader(dl);copy->RemoveHeader(net);copy->RemoveHeader(ip);copy->RemoveHeader(udp);copy->RemoveHeader(h);
++   if(!ns3::UbTransportChannel::IsTransportResponseOpcode(h.GetTPOpcode())){ns3::UbTransportChannel::ReceivedDataPacketContext ctx;auto parser=groups.begin()->second.members.front().tx;NS_ABORT_MSG_IF(!parser->ParseReceivedDataPacketForTest(packet->Copy(),ctx),"native feedback decode");auto task=ctx.flowTag.GetFlowId();auto binding=responseEndpoints.find({node,h.GetDestTpn()});if(ctx.transactionHeader.GetUbTransactionOpcode()==uint8_t(ns3::UbTransactionOpcode::TAACK)&&(binding!=responseEndpoints.end()||tasks.count(task))){NS_ABORT_MSG_IF(binding==responseEndpoints.end()||binding->second!=task,"multicast feedback task/endpoint mismatch");auto[id,rank]=tasks.at(task);auto& g=groups.at(id);auto it=std::find_if(g.members.begin(),g.members.end(),[&](auto& m){return m.task==task;});NS_ABORT_MSG_IF(!g.started||it==g.members.end()||node!=g.source||h.GetSrcTpn()!=it->rx->GetTpn()||h.GetDestTpn()!=it->tx->GetTpn(),"multicast feedback endpoint");NS_ABORT_MSG_IF(!seenFeedback.emplace(node,h.GetSrcTpn(),h.GetPsn()).second,"duplicate multicast feedback");++responses;}}
++  }sw->SwitchHandlePacket(port,packet);Refresh(node);
++ }
++ // Conservative admission check for this fixed 160-byte CBFC-cell single-switch model.
++ void CheckCapacity(const std::vector<ns3::Ptr<ns3::Node>>& nodes){for(auto&[id,g]:groups){uint32_t frame=g.members.size()==1?78+std::min(g.bytes,g.queue->segmentBytes):32+137*g.members.size()+std::min(g.bytes,g.queue->segmentBytes);for(auto node:nodes){auto sw=node->GetObject<ns3::UbSwitch>();NS_ABORT_MSG_IF(frame>sw->GetQueueManager()->GetReservePerQueueBytes(),"group frame exceeds ingress capacity");for(uint32_t i=0;i<node->GetNDevices();++i){auto port=ns3::DynamicCast<ns3::UbPort>(node->GetDevice(i));ns3::UintegerValue cap;port->GetUbQueue()->GetAttribute("MaxEgressBytes",cap);auto fc=ns3::DynamicCast<ns3::UbCbfc>(port->GetFlowControl());NS_ABORT_MSG_IF(frame>cap.Get()||!fc||int64_t((frame+159)/160)>fc->GetTxFreeCells(7),"group frame exceeds egress/initial credit capacity");}}}}
++ void CheckDrained(){for(auto&[id,g]:groups){NS_ABORT_MSG_IF(!g.started||!g.complete||g.queue->sentBytes!=g.bytes,"unfinished multicast group");for(auto& m:g.members)NS_ABORT_MSG_IF(!m.tx->IsSafeForExplicitDestroy()||!m.rx->IsSafeForExplicitDestroy(),"multicast child state not drained");}}
++};
++}
+diff --git a/experiments/ub-concurrent-multicast/reproduce.sh b/experiments/ub-concurrent-multicast/reproduce.sh
+new file mode 100644
+--- /dev/null
++++ b/experiments/ub-concurrent-multicast/reproduce.sh
+@@ -0,0 +1,25 @@
++#!/usr/bin/env bash
++set -euo pipefail
++NATIVE=$(cd "$1" && pwd)
++OUT=$2
++HERE=$(cd "$(dirname "$0")" && pwd)
++[[ ! -e "$OUT" ]] || { echo 'Choose a fresh private output directory' >&2; exit 2; }
++# Native protocol code is the accepted lightweight-adapter baseline, unchanged here.
++mkdir -p "$OUT"
++python3 - "$HERE" "$NATIVE" "$OUT" <<'PY'
++import sys,json,hashlib
++from pathlib import Path
++h,n,o=map(lambda x:Path(x).resolve(),sys.argv[1:]);e=h.parent;sys.path.insert(0,str(e/'wqe-completion-fix'));from guard import run
++for relative,digest in json.loads((h/'native-source-sha256.json').read_text()).items():assert hashlib.sha256((n/relative).read_bytes()).hexdigest()==digest,relative
++r=run(['cmake','--build',n/'cmake-cache','--target','unified-bus','-j2'],o/'native-build',3600,case=o);assert r['status']=='PASS'
++for name,src in [('concurrent',h/'concurrent.cc'),('pair-layer',e/'pair-jetty/pair-layer.cc'),('graph-tool',e/'multi-npu-relay/graph-tool.cc')]:
++ cmd=['c++','-std=c++20','-O3','-g',src]
++ if name!='graph-tool':cmd+=['-I'+str(n/'build/include'),'-L'+str(n/'build/lib'),'-Wl,--disable-new-dtags','-Wl,-rpath,'+str(n/'build/lib'),'-lns3.44-unified-bus','-lns3.44-internet','-lns3.44-network','-lns3.44-core']
++ r=run(cmd+['-o',o/name],o/(name+'-build'),3600,case=o);assert r['status']=='PASS'
++PY
++python3 "$HERE/run-concurrent.py" --binary "$OUT/concurrent" --out "$OUT/concurrent-results"
++python3 "$HERE/run-layer.py" --binary "$OUT/pair-layer" --graph-tool "$OUT/graph-tool" --out "$OUT/layer" --case all
++python3 "$HERE/run-layer.py" --binary "$OUT/pair-layer" --graph-tool "$OUT/graph-tool" --out "$OUT/debug" --case topk2_4 --log-level debug
++python3 "$HERE/test-layer-faults.py" --binary "$OUT/pair-layer" --graph-tool "$OUT/graph-tool" --input "$OUT/layer/topk2_4/multicast" --out "$OUT/faults"
++python3 "$HERE/verify-debug.py" --summary "$OUT/layer/topk2_4" --debug "$OUT/debug/topk2_4" --out "$OUT/debug-parity.json"
++echo 'PASS; review private results, including explicit limitations, before interpreting performance.'
+diff --git a/experiments/ub-concurrent-multicast/run-concurrent.py b/experiments/ub-concurrent-multicast/run-concurrent.py
+new file mode 100644
+--- /dev/null
++++ b/experiments/ub-concurrent-multicast/run-concurrent.py
+@@ -0,0 +1,14 @@
++#!/usr/bin/env python3
++import argparse,json,sys,subprocess
++from pathlib import Path
++X=Path(__file__).resolve().parent;sys.path.insert(0,str(X.parent/'wqe-completion-fix'));from guard import run
++p=argparse.ArgumentParser();p.add_argument('--binary',type=Path,required=True);p.add_argument('--out',type=Path,required=True);a=p.parse_args();a.out.mkdir(parents=True,exist_ok=False);rows=[]
++for name,scenario,window,pressure,fault in [('same-source','same-source',1000,False,''),('different-source','different-source',1000,False,''),('dynamic','dynamic',1000,False,''),('window','window',1,False,''),('pressure','same-source',1000,True,''),('duplicate','same-source',1000,False,'duplicate'),('wrong','same-source',1000,False,'wrong'),('missing','same-source',1000,False,'missing'),('wrong-task','same-source',1000,False,'wrong-task')]:
++ dest=a.out/name;cmd=[a.binary,'--out='+str(dest),'--scenario='+scenario,'--window='+str(window),'--pressure='+str(int(pressure))]+(['--fault='+fault] if fault else [])
++ r=run(cmd,a.out/(name+'-host'),3600,case=a.out);row={'case':name,'host':{k:r[k] for k in ('status','wall_seconds','user_cpu_seconds','system_cpu_seconds','peak_rss_kib','returncode','guard')}};rows.append(row)
++ if fault:
++  reason={'duplicate':'duplicate multicast feedback','wrong':'multicast feedback endpoint','missing':'unfinished multicast group','wrong-task':'multicast feedback task/endpoint mismatch'}[fault];assert r['returncode'] and not r['guard'] and reason in (a.out/(name+'-host')/'console.txt').read_text();assert not (dest/'summary.json').exists();row.update(status='EXPECTED_REJECTION',reason=reason)
++ else:
++  assert r['status']=='PASS';subprocess.run([sys.executable,X/'verify-concurrent.py',dest,'--scenario',scenario if name!='pressure' else 'pressure'],check=True);row.update(status='PASS',validation=json.loads((dest/'independent-validation.json').read_text()))
++  if name=='window':assert any(int(g['window_waits'])>0 for g in __import__('csv').DictReader((dest/'groups.csv').open()))
++ (a.out/'results.json').write_text(json.dumps(rows,indent=2)+'\n')
+diff --git a/experiments/ub-concurrent-multicast/run-layer.py b/experiments/ub-concurrent-multicast/run-layer.py
+new file mode 100644
+--- /dev/null
++++ b/experiments/ub-concurrent-multicast/run-layer.py
+@@ -0,0 +1,24 @@
++#!/usr/bin/env python3
++"""Fixed small end-to-end matrix, all strategies share exactly the same accepted plan."""
++import argparse,sys,json,os,subprocess,hashlib,csv
++from pathlib import Path
++X=Path(__file__).resolve().parent;E=X.parent
++sys.path.insert(0,str(E/'wqe-completion-fix'));from guard import run
++sys.path.insert(0,str(E/'multi-npu-relay'));import cases,adapter
++p=argparse.ArgumentParser();p.add_argument('--binary',type=Path,required=True);p.add_argument('--graph-tool',type=Path,required=True);p.add_argument('--out',type=Path,required=True);p.add_argument('--case',default='multi4_force');p.add_argument('--log-level',default='summary');a=p.parse_args();a.out.mkdir(parents=True,exist_ok=False);os.environ['RELAY_GRAPH_TOOL']=str(a.graph_tool.resolve());ledger=[]
++# Same bounded synthetic fixtures as the accepted relay cases, without loading its unrelated EP64 artifact.
++topk2=cases.loads(4,2,[0]*8,slots=2);topk2.update(top_k=2,mapping=[dict(source=i%4,experts=[0,1]) for i in range(32)])
++single=cases.loads(4,1,[8,0,4,4]);multi=cases.loads(4,1,[32,0,0,0]);many=cases.loads(8,2,[40]*4+[0]*12,slots=3)
++selected={'topk2_4':(topk2,{},dict(force_relay=True)),'single4':(single,{},{}),'slots_zero4':(cases.loads(4,1,[32,0,0,0],slots=0),{},{}),'multi4_force':(multi,{},dict(force_relay=True)),'tail4':(multi,dict(model_dim=65,ff_dim=129,segment_bytes=333),dict(force_relay=True,chunk_bytes=2000)),'multi_expert8':(many,{},dict(force_relay=True)),'slow_relay8':(cases.loads(8,1,[64]+[0]*7),{},dict(slow_relay_rank=1,slow_relay_ns=20000))};names=['single4','slots_zero4','multi4_force','tail4','multi_expert8','slow_relay8','topk2_4'] if a.case=='all' else [a.case]
++for name in names:
++ cfg,model,relay=selected[name];base=a.out/name/'base';cases.base.emit(cfg,model,'ultraep',base);identity={x:hashlib.sha256((base/x).read_bytes()).hexdigest() for x in ['plan.json','assignments.csv']}
++ for mode in ['direct','chunk-streaming','multicast']:
++  dest=a.out/name/mode;adapter.emit(base,relay,mode,dest);assert all(hashlib.sha256((dest/x).read_bytes()).hexdigest()==h for x,h in identity.items())
++  cmd=[sys.executable,E/'tiered-logging/preflight.py',dest,'--graph-tool',a.graph_tool,'--out',dest/'preflight.json','--input-summary',dest/'input-summary.json']
++  for stage,command in [('preflight',cmd),('simulator',[a.binary,'--input='+str(dest/'input.txt'),'--out='+str(dest),'--logLevel='+a.log_level,'--jettyMode=pair','--capacityMetrics='+str(dest/'simulator-metrics.json')]),('postflight',cmd+['--execution-summary',dest/'online-summary.json'])]:
++   r=run(command,dest/(stage+'-host'),3600,case=a.out);assert r['status']=='PASS',(name,mode,stage)
++  summary=json.loads((dest/'online-summary.json').read_text());validation=json.loads((dest/'validation.json').read_text());assert validation['status']=='PASS'
++  row=dict(case=name,strategy=mode,status='PASS',plan_hash=identity['plan.json'],assignments_hash=identity['assignments.csv'],summary=summary,validation=validation,host={stage:json.loads((dest/(stage+'-host/resource.json')).read_text()) for stage in ['preflight','simulator','postflight']});ledger.append(row)
++  (a.out/'results.json').write_text(json.dumps(ledger,indent=2)+'\n')
++ rows=ledger[-3:];assert len({r['summary']['combine_fnv1a64'] for r in rows})==1;assert len({r['summary']['completed_tokens'] for r in rows})==1
++print('PASS end-to-end fixed matrix')
+diff --git a/experiments/ub-concurrent-multicast/run-regressions.py b/experiments/ub-concurrent-multicast/run-regressions.py
+new file mode 100644
+--- /dev/null
++++ b/experiments/ub-concurrent-multicast/run-regressions.py
+@@ -0,0 +1,26 @@
++#!/usr/bin/env python3
++import argparse,json,sys,subprocess,shutil,hashlib
++from pathlib import Path
++X=Path(__file__).resolve().parent;E=X.parent;sys.path.insert(0,str(E/'wqe-completion-fix'));from guard import run
++p=argparse.ArgumentParser();p.add_argument('--native',type=Path,required=True);p.add_argument('--out',type=Path,required=True);p.add_argument('--layer',type=Path,required=True);p.add_argument('--graph-tool',type=Path,required=True);p.add_argument('--baseline-layer',type=Path,required=True);a=p.parse_args();assert shutil.which('cmake') and shutil.which('ninja'),'Restore the existing project build toolchain PATH/PYTHONPATH first (README)';a.out.mkdir(parents=True,exist_ok=False);n=a.native.resolve();out=a.out.resolve()
++def guarded(cmd,name):
++ r=run(cmd,out/name,3600,case=out);assert r['status']=='PASS',(name,r['status']);return r
++for name,src in [('concurrent',X/'concurrent.cc'),('singleton',E/'ub-lightweight-multicast-adapter/singleton.cc'),('multitarget',E/'ub-lightweight-multicast-adapter/multitarget.cc')]:
++ guarded(['c++','-std=c++20','-O3','-g',src,'-I'+str(n/'build/include'),'-L'+str(n/'build/lib'),'-Wl,--disable-new-dtags','-Wl,-rpath,'+str(n/'build/lib'),'-lns3.44-unified-bus','-lns3.44-internet','-lns3.44-network','-lns3.44-core','-o',out/name],name+'-build')
++guarded([sys.executable,X/'run-concurrent.py','--binary',out/'concurrent','--out',out/'concurrent-results'],'concurrent-host')
++for scenario,reason in [('capacity','multicast group capacity/configuration'),('oversize','group frame exceeds')]:
++ cmd=[out/'concurrent','--out='+str(out/scenario),'--scenario='+scenario]+(['--pressure=1'] if scenario=='oversize' else [])
++ r=run(cmd,out/(scenario+'-host'),3600,case=out);assert r['returncode']!=0 and not r['guard'] and reason in (out/(scenario+'-host/console.txt')).read_text()
++guarded([sys.executable,E/'ub-lightweight-multicast-adapter/run-singleton.py','--shared','--binary',out/'singleton','--private',out/'singleton-results'],'singleton-host')
++guarded([sys.executable,E/'ub-lightweight-multicast-adapter/run-multi.py','--binary',out/'multitarget','--private',out/'old-multi-results','--singleton-gate',out/'singleton-results/results.json'],'old-multi-host')
++guarded([sys.executable,E/'ub-lightweight-multicast-adapter/test-verifier.py',out/'old-multi-results/three-target','--out',out/'old-verifier-mutations'],'old-verifier-host')
++for label,binary in [('baseline',a.baseline_layer),('candidate',a.layer)]:
++ guarded([sys.executable,E/'qwen-real-batch-scaling/regress_small.py','--private',out/label,'--binary',binary,'--lib',n/'build/lib','--graph-tool',a.graph_tool],label+'-host')
++b=json.loads((out/'baseline/results.json').read_text());c=json.loads((out/'candidate/results.json').read_text());parity=[]
++for old,new in zip(b,c):
++ old['summary'].pop('verification_wall_ns',None);new['summary'].pop('verification_wall_ns',None);assert old==new or (old['strategy']==new['strategy'] and old['summary']==new['summary']);parity.append(dict(strategy=old['strategy'],status='PASS',all_simulated_summary_fields_equal=True))
++(out/'application-parity.json').write_text(json.dumps(parity,indent=2)+'\n')
++guarded([sys.executable,E/'ub-network-multicast-poc/run.py','--binary',n/'build/scratch/ns3.44-network-poc','--private',out/'network','--public',out/'network-collected'],'network-host')
++r=run([sys.executable,E/'ub-network-multicast-poc/run-native-tests.py','--native',n,'--out',out/'native'],out/'native-host',3600,case=out)
++rows=json.loads((out/'native/summary.json').read_text());assert len(rows)==49 and sum(x['status']=='PASS' for x in rows)==48 and [x['suite'] for x in rows if x['status']!='PASS']==['unified-bus-examples'];assert not r['guard']
++(out/'status.json').write_text(json.dumps(dict(status='PASS_WITH_KNOWN_NATIVE_SUITE_FAILURE',native_pass=48,native_total=49,application_parity=parity),indent=2)+'\n');print('REGRESSIONS COMPLETE')
+diff --git a/experiments/ub-concurrent-multicast/test-layer-faults.py b/experiments/ub-concurrent-multicast/test-layer-faults.py
+new file mode 100644
+--- /dev/null
++++ b/experiments/ub-concurrent-multicast/test-layer-faults.py
+@@ -0,0 +1,29 @@
++#!/usr/bin/env python3
++import argparse,sys,json,shutil,subprocess,importlib.util
++from pathlib import Path
++X=Path(__file__).resolve().parent;E=X.parent;sys.path.insert(0,str(E/'wqe-completion-fix'));from guard import run
++p=argparse.ArgumentParser();p.add_argument('--binary',type=Path,required=True);p.add_argument('--input',type=Path,required=True);p.add_argument('--out',type=Path,required=True);p.add_argument('--graph-tool',type=Path,required=True);a=p.parse_args();a.out.mkdir(parents=True,exist_ok=False);rows=[]
++for fault in ['weight-byte','early-final-ready','early-wqe','missing-wqe','duplicate-completion']:
++ out=a.out/fault;r=run([a.binary,'--input='+str(a.input/'input.txt'),'--out='+str(out),'--logLevel=summary','--jettyMode=pair','--fault='+fault],a.out/(fault+'-host'),3600,case=a.out)
++ assert r['returncode']!=0 and not r['guard'];v=json.loads((out/'validation.json').read_text());assert v['status']=='FAIL';rows.append(dict(case=fault,status='EXPECTED_REJECTION',error=v['error'],returncode=r['returncode']))
++# Duplicate target notifications remain idempotent rather than adding coverage.
++out=a.out/'duplicate-notify';r=run([a.binary,'--input='+str(a.input/'input.txt'),'--out='+str(out),'--logLevel=summary','--jettyMode=pair','--fault=duplicate-notify'],a.out/'duplicate-notify-host',3600,case=a.out);assert r['status']=='PASS';rows.append(dict(case='duplicate-notify',status='PASS_IDEMPOTENT'))
++# Mutate only input/output evidence; independent preflight must reject.
++spec=importlib.util.spec_from_file_location('pre',E/'tiered-logging/preflight.py');pre=importlib.util.module_from_spec(spec);spec.loader.exec_module(pre)
++for name in ['missing-member','wrong-member','wrong-envelope-count','early-receiver']:
++ dest=a.out/name;dest.mkdir()
++ for file in ['config.json','plan.json','assignments.csv','input.txt','online-summary.json','multicast-groups.csv','multicast-stats.csv']:
++  shutil.copy2(a.input/file,dest/file)
++ if name in ('missing-member','wrong-member'):
++  c=json.loads((dest/'config.json').read_text())
++  if name=='missing-member':c['multicast_groups'][0]['members'].pop()
++  else:c['multicast_groups'][0]['members'][0]['target']=0
++  (dest/'config.json').write_text(json.dumps(c))
++ else:
++  import csv
++  file='multicast-stats.csv' if name=='wrong-envelope-count' else 'multicast-groups.csv';lines=list(csv.DictReader((dest/file).open()));key='envelopes' if name=='wrong-envelope-count' else 'receiver_ready_ps';lines[0][key]=str(int(lines[0][key])+1) if name=='wrong-envelope-count' else '0'
++  with (dest/file).open('w') as f:w=csv.DictWriter(f,fieldnames=list(lines[0]));w.writeheader();w.writerows(lines)
++ try:pre.check(dest,a.graph_tool,dest/'online-summary.json')
++ except ValueError as e:rows.append(dict(case=name,status='EXPECTED_REJECTION',error=str(e)))
++ else:raise AssertionError('mutation accepted: '+name)
++(a.out/'results.json').write_text(json.dumps(rows,indent=2)+'\n');print('PASS E2E faults and independent mutations')
+diff --git a/experiments/ub-concurrent-multicast/verify-concurrent.py b/experiments/ub-concurrent-multicast/verify-concurrent.py
+new file mode 100644
+--- /dev/null
++++ b/experiments/ub-concurrent-multicast/verify-concurrent.py
+@@ -0,0 +1,41 @@
++#!/usr/bin/env python3
++"""Independent checks on actual packet/target events and reconstructed received bytes."""
++import csv,json,argparse,hashlib
++from pathlib import Path
++p=argparse.ArgumentParser();p.add_argument('path',type=Path);p.add_argument('--scenario',default='same-source');a=p.parse_args();r=a.path
++rows=lambda name:list(csv.DictReader((r/name).open()))
++events=rows('events.csv');wire=rows('wire.csv');groups=rows('groups.csv');report=[]
++for g in groups:
++ gid=int(g['group']);src=int(g['source']);N=int(g['payload_bytes']);fanout=int(g['fanout']);assert fanout==2
++ ev=[x for x in events if int(x['group'])==gid];submitted=[int(x['time_ps']) for x in ev if x['event']=='group_submit'];finished=[int(x['time_ps']) for x in ev if x['event']=='group_complete'];assert len(submitted)==len(finished)==1
++ members=dict(tuple(map(int,x.split(':'))) for x in g['members'].split(';') if x);tasks=sorted(members.values());assert len(tasks)==fanout and set(tasks)=={int(x['task']) for x in ev if x['event']=='sender_complete'}
++ hashes={}
++ for task in tasks:
++  te=[x for x in ev if int(x['task'])==task];completed=sorted((int(x['offset']),int(x['bytes']),int(x['time_ps'])) for x in te if x['event']=='target_complete');assert [x[0] for x in completed]==list(range(0,N,1024));assert all(x[1]==min(1024,N-x[0]) for x in completed)
++  ready=[int(x['time_ps']) for x in te if x['event']=='receiver_ready'];done=[int(x['time_ps']) for x in te if x['event']=='sender_complete'];assert len(ready)==len(done)==1 and max(x[2] for x in completed)==ready[0]<=done[0]<=finished[0]
++  b=(r/f'payload-{task}.bin').read_bytes();assert b==bytes((gid*73+i*131+(i>>8)*17)%251 for i in range(N));hashes[task]=hashlib.sha256(b).hexdigest()
++  assert sum(x['event']=='feedback' for x in te)==len(completed)
++ packets=[x for x in wire if int(x['group'])==gid and x['kind']=='envelope'];source=[x for x in packets if x['event']=='tx' and int(x['node'])==src];assert len(source)==(N+1023)//1024
++ assert [int(x['sequence']) for x in source]==list(range(len(source)))
++ assert all(int(x['bytes'])==32+137*fanout+min(1024,N-int(x['sequence'])*1024) for x in source)
++ assert sum(int(x['bytes']) for x in source)==int(g['wire_bytes'])
++ for seq in range(len(source)):
++  packet=[x for x in packets if int(x['sequence'])==seq];assert len([x for x in packet if x['event']=='tx'])==1+fanout;assert len([x for x in packet if x['event']=='rx'])==1+fanout;assert {int(x['node']) for x in packet if x['event']=='rx'}=={5}|set(members)
++ report.append(dict(group=gid,source=src,start_ps=submitted[0],complete_ps=finished[0],payload_sha256=hashes,source_payload_bytes=N,source_wire_bytes=int(g['wire_bytes'])))
++# First two groups overlap in flight; distinct source paths can progress independently.
++assert max(x['start_ps'] for x in report[:2])<min(x['complete_ps'] for x in report[:2])
++if a.scenario=='same-source':
++ seq=[int(x['group']) for x in wire if x['event']=='tx' and int(x['node'])==0 and x['kind']=='envelope']
++ assert set(seq)=={1001,1002} and seq[:6]==[1001,1002]*3
++ # Native RR grants include control feedback; data-only sequence need not alternate.
++ grants=[int(x['group']) for x in events if x['event'] in ('data_grant','control_grant') and x['node']=='0'];assert grants[:6]==[1001,1002]*3
++if a.scenario=='window':
++ data1=[int(x['time_ps']) for x in events if x['event']=='data_grant' and x['group']=='1001'];data2=[int(x['time_ps']) for x in events if x['event']=='data_grant' and x['group']=='1002'];assert any(data1[0]<time<data1[-1] for time in data2)
++if a.scenario=='dynamic':assert report[2]['start_ps']<min(x['complete_ps'] for x in report[:2])
++if a.scenario=='different-source':assert {x['source'] for x in report}=={0,4}
++for row in rows('ports.csv'):
++ assert int(row['consumed'])>=0 and int(row['returned'])>=0
++ initial=10 if a.scenario=='pressure' else 6553;assert initial-int(row['consumed'])+int(row['restored'])==int(row['free'])
++ expected_tx=sum((int(x['bytes'])+159)//160 for x in wire if x['event']=='tx' and x['node']==row['node'] and x['port']==row['port'] and x['kind']!='credit');expected_rx=sum((int(x['bytes'])+159)//160 for x in wire if x['event']=='rx' and x['node']==row['node'] and x['port']==row['port'] and x['kind']!='credit');assert expected_tx==int(row['consumed']) and expected_rx==int(row['returned'])
++out={'status':'PASS','groups':report,'checks':['actual_payload_sha256','per_task_exact_segment_coverage','target_before_sender','all_child_before_group','single_source_payload','paid_metadata','physical_branch_counts','overlap','native_port_conservation_assertions']}
++(r/'independent-validation.json').write_text(json.dumps(out,indent=2)+'\n');print('PASS concurrent independent validation')
+diff --git a/experiments/ub-concurrent-multicast/verify-debug.py b/experiments/ub-concurrent-multicast/verify-debug.py
+new file mode 100644
+--- /dev/null
++++ b/experiments/ub-concurrent-multicast/verify-debug.py
+@@ -0,0 +1,13 @@
++#!/usr/bin/env python3
++import argparse,importlib.util,json
++from pathlib import Path
++p=argparse.ArgumentParser();p.add_argument('--summary',type=Path,required=True);p.add_argument('--debug',type=Path,required=True);p.add_argument('--out',type=Path,required=True);a=p.parse_args();E=Path(__file__).resolve().parent.parent
++spec=importlib.util.spec_from_file_location('pair_verify',E/'pair-jetty/verify.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);rows=[]
++for strategy in ['direct','chunk-streaming','multicast']:
++ d=a.debug/strategy;s=a.summary/strategy;v=m.verify(d,'pair')
++ x=json.loads((s/'online-summary.json').read_text());y=json.loads((d/'online-summary.json').read_text())
++ for row in (x,y):
++  for field in ['verification_wall_ns','log_level']:row.pop(field,None)
++ assert x==y,strategy
++ rows.append(dict(strategy=strategy,status='PASS',all_simulation_summary_fields_identical=True,strict_debug_verifier='PASS',layer_latency_ps=x['layer_latency_ps']))
++a.out.write_text(json.dumps(rows,indent=2)+'\n');print('PASS strict Debug and summary parity')
+diff --git a/experiments/pair-jetty/multicast-integration.inc b/experiments/pair-jetty/multicast-integration.inc
+new file mode 100644
+--- /dev/null
++++ b/experiments/pair-jetty/multicast-integration.inc
+@@ -0,0 +1,45 @@
++    // Only strategy 3 enters this path. Logical tasks and their audit remain unchanged.
++    void SetupMulticast(){
++        for(uint32_t task=2*assignments.size();task<transfers.size();++task){auto& x=transfers[task];Require(x.offset==0&&x.bytes==weightBytes&&x.dependencies.empty()&&!P(x.sourcePhysical).replica,"multicast direct child graph");multicastTasks[P(x.physical).expert+1].push_back(task);}
++        Require(multicastTasks.size()<=multicast.limit,"multicast lifetime operation limit");
++        std::vector<uint32_t> ports;for(uint32_t i=0;i<n;++i)ports.push_back(i);nodes[n]->GetObject<UbSwitch>()->EnableNetworkReplication(ports);
++        for(auto&[id,tasks]:multicastTasks){std::vector<lightweight::GroupManager::Member> members;auto src=transfers[tasks.front()].source;
++            for(auto task:tasks){auto& x=transfers[task];Require(x.source==src&&x.source!=x.target,"multicast main source");
++                const uint32_t txid=n*n+1+2*task,rxid=txid+1,jid=n*n+1+task;Require(uint64_t(n)*n+2ULL*task+2<=UINT32_MAX,"multicast endpoint range");
++                Connection c;c.ownerNodeId=src;c.node1=src;c.node2=x.target;c.port1=c.port2=0;c.tpn1=txid;c.tpn2=rxid;c.priority=7;c.metrics=0;
++                Ctrl(src)->GetTpConnManager()->AddUnilateralConnection(c,src);Ctrl(x.target)->GetTpConnManager()->AddUnilateralConnection(c,x.target);
++                Ctrl(src)->GetTransportChannelManager()->CreateTp(src,x.target,0,0,7,txid,rxid,UbCongestionControl::Create(UB_DEVICE));
++                Ctrl(x.target)->GetTransportChannelManager()->CreateTp(x.target,src,0,0,7,rxid,txid,UbCongestionControl::Create(UB_DEVICE));
++                auto tx=Ctrl(src)->GetTransportChannelManager()->GetTp(txid),rx=Ctrl(x.target)->GetTransportChannelManager()->GetTp(rxid);TrackTp(src,tx);TrackTp(x.target,rx);
++                auto fn=Ctrl(src)->GetUbFunction();Require(!fn->GetJetty(jid),"multicast jetty collision");fn->CreateJetty(src,x.target,jid);Require(Ctrl(src)->GetUbTransaction()->JettyBindTp(src,x.target,jid,false,{txid}),"multicast child bind");auto jetty=fn->GetJetty(jid);jetty->SetTaSegmentBytes(segment);jetty->SetClientCallback(MakeCallback(&Layer::SenderComplete,this));x.jettyId=jid;multicastJetties[task]=jetty;++jettyCount;members.push_back({x.target,task,tx,rx});
++            }
++            multicast.Add(id,src,weightBytes,segment,DynamicCast<UbPort>(nodes[src]->GetDevice(0)),members);multicast.groups.at(id).queue->grantObserver=[this](uint32_t id,bool control){if(!control)groupGrantTimes[id].push_back(Simulator::Now().GetPicoSeconds());};
++        }
++        multicast.CheckCapacity(nodes);
++        multicast.onComplete=[this](uint32_t id){Require(multicastCompletePs.emplace(id,Simulator::Now().GetPicoSeconds()).second,"duplicate multicast completion");};
++        for(uint32_t rank=0;rank<n;++rank){nodes[rank]->GetObject<UbSwitch>()->EnableNetworkSink(rank,Callback<void,uint32_t,uint32_t,Ptr<Packet>>([this,rank](uint32_t id,uint32_t seq,Ptr<Packet> p){multicast.Receive(rank,id,seq,p);}));auto port=DynamicCast<UbPort>(nodes[rank]->GetDevice(0));port->SetReceiveHandler(Callback<void,Ptr<UbPort>,Ptr<Packet>>([this,rank](Ptr<UbPort> port,Ptr<Packet> p){multicast.ReceiveNative(rank,port,p);}));}
++    }
++    void WriteMulticast(const std::string& out){
++        std::ofstream groups(out+"/multicast-groups.csv");groups<<"group,expert,source,task,target,physical,bytes,receiver_ready_ps,sender_complete_ps,group_complete_ps\n";
++        for(auto&[id,tasks]:multicastTasks)for(auto task:tasks){auto& x=transfers[task];groups<<id<<','<<P(x.physical).expert<<','<<x.source<<','<<task<<','<<x.target<<','<<x.physical<<','<<x.bytes<<','<<taskAudit[task].finish<<','<<multicast.senderTimes.at(task)<<','<<multicastCompletePs.at(id)<<'\n';}
++        std::ofstream stats(out+"/multicast-stats.csv");stats<<"group,source,fanout,payload_bytes,wire_bytes,envelopes,window_wait_checks,empty_wait_checks\n";for(auto&[id,g]:multicast.groups)stats<<id<<','<<g.source<<','<<g.members.size()<<','<<g.queue->payloadSent<<','<<g.queue->wireDataBytes<<','<<g.queue->envelopes<<','<<g.queue->windowWaits<<','<<g.queue->emptyWaits<<'\n';
++        std::ofstream ports(out+"/multicast-ports.csv");ports<<"node,port,wire_tx_bytes,peak_egress_bytes,consumed_cells,returned_cells,restored_cells,free_cells,pending_cells,blocked_queries\n";for(uint32_t rank=0;rank<nodes.size();++rank)for(uint32_t p=0;p<nodes[rank]->GetNDevices();++p){auto port=DynamicCast<UbPort>(nodes[rank]->GetDevice(p));auto fc=DynamicCast<UbCbfc>(port->GetFlowControl());Require(bool(fc)&&!port->GetUbQueue()->GetCurrentBytes(),"multicast port drain");Require(portInitialCredit.at({rank,p})-int64_t(fc->GetConsumedCells())+int64_t(fc->GetRestoredCells())==fc->GetTxFreeCells(7),"multicast credit balance");auto peer=DynamicCast<UbPort>(nodes[rank==n?p:n]->GetDevice(rank==n?0:rank));auto peerFc=DynamicCast<UbCbfc>(peer->GetFlowControl());Require(fc->GetConsumedCells()==peerFc->GetReturnedCells()&&peerFc->GetReturnedCells()==fc->GetRestoredCells()+uint64_t(peerFc->GetCrdToReturn(7)),"multicast cross-link credit conservation");ports<<rank<<','<<p<<','<<portTxWire[{rank,p}]<<','<<portQueuePeak[{rank,p}]<<','<<fc->GetConsumedCells()<<','<<fc->GetReturnedCells()<<','<<fc->GetRestoredCells()<<','<<fc->GetTxFreeCells(7)<<','<<fc->GetCrdToReturn(7)<<','<<fc->GetBlockedQueryCount()<<'\n';}
++        auto sw=nodes[n]->GetObject<UbSwitch>();auto s=sw->GetNetworkReplicationStats();Require(s.admitted==s.released&&s.branches==s.branchDequeues&&!s.parentBytes&&!s.branchBytes&&!s.descriptors&&!sw->GetQueueManager()->GetSwitchBufferOccupancy().total_buffered_bytes,"multicast branch drain");
++    }
++
++    void RecordPacket(uint32_t node,uint32_t port,Ptr<Packet> packet){
++        portTxWire[{node,port}]+=packet->GetSize();UbNetworkReplicationTag tag;std::string kind;
++        if(packet->PeekPacketTag(tag)&&tag.nativeEnvelope)kind="multicast_data";
++        else if(nodes[node]->GetObject<UbSwitch>()->GetPacketTypeForTest(packet)==UB_CONTROL_FRAME)kind="credit";
++        else {auto copy=packet->Copy();UbDatalinkPacketHeader dl;UbIpBasedNetworkHeader net;Ipv4Header ip;UdpHeader udp;UbTransportHeader h;copy->RemoveHeader(dl);copy->RemoveHeader(net);copy->RemoveHeader(ip);copy->RemoveHeader(udp);copy->RemoveHeader(h);
++            if(UbTransportChannel::IsTransportResponseOpcode(h.GetTPOpcode()))kind="transport_ack";
++            else {UbTransportChannel::ReceivedDataPacketContext ctx;Require(packetParser&&packetParser->ParseReceivedDataPacketForTest(packet->Copy(),ctx),"statistics native decode");if(ctx.transactionHeader.GetUbTransactionOpcode()==uint8_t(UbTransactionOpcode::WRITE)){Require(ctx.flowTag.GetFlowId()<transfers.size(),"statistics task");kind=transfers[ctx.flowTag.GetFlowId()].stage==2?"weight_write":"token_write";}else kind="transaction_response";}
++        }
++        auto& stat=packetStats[{node,port,kind}];++stat.first;stat.second+=packet->GetSize();
++    }
++    void ObserveQueue(uint32_t node,uint32_t port,bool enqueue,uint32_t size){auto& q=queueTiming[{node,port}];uint64_t now=Simulator::Now().GetPicoSeconds();Require(now>=q.last,"queue observation clock");q.residencePs+=q.count*(now-q.last);q.last=now;if(enqueue)++q.count;else{Require(q.count>0,"queue observation unmatched dequeue");--q.count;++q.departed;}portQueuePeak[{node,port}]=std::max(portQueuePeak[{node,port}],uint64_t(size));}
++    void WriteNetworkStats(const std::string& out){
++        std::ofstream packets(out+"/packet-counts.csv");packets<<"node,port,kind,packets,wire_bytes\n";for(auto&[key,value]:packetStats){auto[node,port,kind]=key;packets<<node<<','<<port<<','<<kind<<','<<value.first<<','<<value.second<<'\n';}
++        std::ofstream queues(out+"/queue-stats.csv");queues<<"node,port,peak_egress_bytes,wire_tx_bytes,dequeued_packets,total_egress_residence_ps\n";for(auto&[key,peak]:portQueuePeak){auto& q=queueTiming[key];Require(!q.count,"queue observation outstanding packets");queues<<key.first<<','<<key.second<<','<<peak<<','<<portTxWire[key]<<','<<q.departed<<','<<q.residencePs<<'\n';}
++        if(strategy==3){std::ofstream grants(out+"/multicast-grants.csv");grants<<"group,sequence,grant_ps,since_previous_grant_ps\n";for(auto&[id,times]:groupGrantTimes)for(size_t i=0;i<times.size();++i)grants<<id<<','<<i<<','<<times[i]<<','<<times[i]-(i?times[i-1]:At("planning_end"))<<'\n';}
++    }

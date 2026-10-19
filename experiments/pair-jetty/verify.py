@@ -37,12 +37,16 @@ def verify(path, mode=None):
  if any(sender[k]<t for k,t in target.items()):raise ValueError('early sender success')
  metrics=json.loads((path/'simulator-metrics.json').read_text())
  if len(admitted)!=metrics['TA_count']:raise ValueError('TA count mismatch')
- pairs={};stages={}
+ pairs={};stages={};weight_jetties=set();multicast=config.get("weight_strategy")=="multicast"
  for task,jetty in task_jetties.items():
-  x=transfers[task];pair=(x['source'],x['target']);pairs.setdefault(pair,set()).add(jetty);stages.setdefault(pair,set()).add(x['stage'])
+  x=transfers[task]
+  if multicast and x['stage']==2:
+   if jetty!=config['planner_input']['npus']**2+1+task or jetty in weight_jetties:raise ValueError('multicast child Jetty identity')
+   weight_jetties.add(jetty);continue
+  pair=(x['source'],x['target']);pairs.setdefault(pair,set()).add(jetty);stages.setdefault(pair,set()).add(x['stage'])
   if mode=='pair' and jetty!=x['source']*config['planner_input']['npus']+x['target']+1:raise ValueError('pair Jetty identity')
   if mode=='per-wqe' and jetty!=task:raise ValueError('legacy Jetty identity')
- if mode=='pair' and (any(len(v)!=1 for v in pairs.values()) or metrics['jettys']!=len(pairs)):raise ValueError('pair Jetty resource count')
+ if mode=='pair' and (any(len(v)!=1 for v in pairs.values()) or metrics['jettys']!=len(pairs)+len(weight_jetties)):raise ValueError('pair Jetty resource count')
  if mode=='per-wqe' and metrics['jettys']!=len(sender):raise ValueError('legacy Jetty resource count')
  if any(active.values()):raise ValueError('pending application WQE')
  logical=load('logical',H.parent/'jetty-resource-mapping/harness.py').logical(path)

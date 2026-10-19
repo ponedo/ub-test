@@ -4,6 +4,7 @@
 #include "ns3/unified-bus-module.h"
 #include "../no-balancing-layer/nb-tracker.h"
 #include "pair-jetty-manager.h"
+#include "../ub-concurrent-multicast/group-manager.h"
 #include "../direct-weight-forward/weight-distribution.h"
 #include <filesystem>
 #include <fstream>
@@ -49,6 +50,19 @@ public:
     std::string jettyMode="pair",logLevel="summary";bool combineLogged=false;
 #include "online-validation.inc"
     std::unique_ptr<PairJettyManager> pairJetties;
+    lightweight::GroupManager multicast;
+    Ptr<UbTransportChannel> packetParser;
+    std::map<std::pair<uint32_t,uint32_t>,int64_t> portInitialCredit;
+    std::map<uint32_t,std::vector<uint32_t>> multicastTasks;
+    std::map<uint32_t,Ptr<UbJetty>> multicastJetties;
+    std::map<uint32_t,uint64_t> multicastCompletePs;
+    std::map<std::pair<uint32_t,uint32_t>,uint64_t> portTxWire,portQueuePeak;
+    std::map<std::tuple<uint32_t,uint32_t,std::string>,std::pair<uint64_t,uint64_t>> packetStats;
+    std::map<uint32_t,std::vector<uint64_t>> groupGrantTimes;
+    struct QueueTiming {uint64_t last=0,count=0,departed=0,residencePs=0;};
+    std::map<std::pair<uint32_t,uint32_t>,QueueTiming> queueTiming;
+
+
     std::map<std::pair<uint32_t,uint32_t>,uint32_t> nextSsn;
     std::ofstream admissions;
     uint64_t payloadBudgetBytes=UINT64_C(256)*1024*1024,weightTaskLimit=20000;
@@ -60,6 +74,7 @@ public:
         Require(x.ready,"sender completed before target data ready");
         if(fault=="missing-wqe")return;
         x.senderDone=true;++senderCount;TE("sender_complete",task,x.source);
+        if(strategy==3&&x.stage==2)multicast.Completed(task);
         if(fault=="duplicate-completion")TE("sender_complete",task,x.source);
     }
     uint32_t reorderNs=0,slowRelayRank=UINT32_MAX,slowRelayNs=0;
@@ -103,8 +118,9 @@ public:
         Require(n>=1&&n<=72&&e>=1&&e<=512&&k>=1&&k<=e&&t<=100000,"invalid dimensions");
         Require(dim>=1&&dim<=16384&&ff>=1&&ff<=65536&&dtype>=1&&dtype<=8&&segment>=1&&segment<=65536&&peak>=1&&peak<=10000000&&util>=1&&util<=1000&&setup<=100000000,"invalid model");
         Require(linkGbps>=1&&linkGbps<=10000&&linkDelayNs<=1000000,"invalid link");
-        Require((matrices==2||matrices==3)&&weightBytes>0&&weightBytes<=64*1024*1024&&planningNs<=100000000&&rerouteNs<=100000000&&weightCompleteNs<=100000000&&balanced<=1&&strategy<=2,"unsupported execution parameters/strategy");
+        Require((matrices==2||matrices==3)&&weightBytes>0&&weightBytes<=64*1024*1024&&planningNs<=100000000&&rerouteNs<=100000000&&weightCompleteNs<=100000000&&balanced<=1&&strategy<=3,"unsupported execution parameters/strategy");
         Require(np>=e&&np<=1024,"physical count");
+        if(strategy==3)Require(n<=64&&segment<=4096&&jettyMode=="pair","multicast supports EP<=64, TA<=4096, pair token mode");
         Require(payloadBudgetBytes>0&&payloadBudgetBytes<=UINT64_C(8)*1024*1024*1024,"payload budget range");Require(weightTaskLimit>0&&weightTaskLimit<=1000000,"weight task limit range");
         bytes=dim*dtype;const auto assignmentCount=CheckedMul(t,k);const auto logicalPayload=CheckedAdd(CheckedMul(CheckedMul(assignmentCount,bytes),2),CheckedMul(np-e,weightBytes));
         Require(assignmentCount<=100000&&logicalPayload<=payloadBudgetBytes,"payload bound");
@@ -141,7 +157,7 @@ public:
             predictedEdges=CheckedAdd(predictedEdges,CheckedMul(count,pieces));}
         Require(predictedEdges<=weightTaskLimit,"weight task count bound");
         std::vector<WeightEdge> edges;
-        if(strategy==0)edges=DirectWeightDistribution().Edges(physical,weightBytes);
+        if(strategy==0||strategy==3)edges=DirectWeightDistribution().Edges(physical,weightBytes);
         else if(strategy==1)edges=TwoStageRelay(weightOptions).Edges(ordered,weightBytes);
         else edges=ChunkStreamingRelay(weightOptions).Edges(ordered,weightBytes);
         Require(edges.size()==predictedEdges&&edges.size()<=weightTaskLimit,"weight task count bound");
@@ -216,7 +232,12 @@ public:
         Ctrl(a)->GetTpConnManager()->AddUnilateralConnection(c,a);Ctrl(b)->GetTpConnManager()->AddUnilateralConnection(c,b);
         for(auto [src,dst]:{std::pair{a,b},std::pair{b,a}}){
             Ctrl(src)->GetTransportChannelManager()->CreateTp(src,dst,0,0,7,Tpn(src,dst),Tpn(dst,src),UbCongestionControl::Create(UB_DEVICE));
-            Ctrl(src)->GetTransportChannelManager()->GetTp(Tpn(src,dst))->TraceConnectWithoutContext("WqeSegmentSendsNotify",Callback<void,uint32_t,uint32_t,uint32_t>([this,src](uint32_t,uint32_t task,uint32_t ssn){
+            TrackTp(src,Ctrl(src)->GetTransportChannelManager()->GetTp(Tpn(src,dst)));
+        }
+    }
+    void TrackTp(uint32_t src,Ptr<UbTransportChannel> tp){
+        if(!packetParser)packetParser=tp;
+        tp->TraceConnectWithoutContext("WqeSegmentSendsNotify",Callback<void,uint32_t,uint32_t,uint32_t>([this,src](uint32_t,uint32_t task,uint32_t ssn){
                 auto& x=transfers.at(task);
                 if(src==x.source){
                     uint32_t logical=nextSsn[{x.source,x.jettyId}]++;
@@ -227,6 +248,7 @@ public:
                     x.pendingResponses[ssn].push_back(logical);x.nextOffset+=len;++taCount;
                     if(logLevel=="debug")admissions<<Simulator::Now().GetPicoSeconds()<<','<<task<<','<<x.jettyId<<','<<logical<<','<<off<<','<<len<<'\n';
                     TE("ta_admitted",task,src,off,len);
+                    if(strategy==3)multicast.Refresh(src);
                 }else{
                     // Responses retain the request SSN, never allocate payload offsets.
                     auto it=x.pendingResponses.find(ssn);
@@ -236,8 +258,8 @@ public:
                     TE("ta_response_admitted",task,src,x.segmentOffsets.at(logical),0);
                 }
             }));
-        }
     }
+#include "multicast-integration.inc"
     void Topology(const std::string& out){
         GlobalValue::Bind("UB_CC_ENABLED",BooleanValue(false));UbUtils::Get();
         for(auto key:{"UB_TRACE_ENABLE","UB_PACKET_TRACE_ENABLE","UB_PORT_TRACE_ENABLE","UB_RECORD_PKT_TRACE"})GlobalValue::Bind(key,BooleanValue(logLevel=="debug"));
@@ -245,10 +267,11 @@ public:
         nodes.resize(n+1);for(uint32_t i=0;i<n;++i)Init(i,true,1);Init(n,false,n);
         for(uint32_t i=0;i<n;++i){auto link=CreateObject<UbLink>();link->SetAttribute("Delay",TimeValue(NanoSeconds(linkDelayNs)));DynamicCast<UbPort>(nodes[i]->GetDevice(0))->Attach(link);DynamicCast<UbPort>(nodes[n]->GetDevice(i))->Attach(link);Route(n,i,i);for(uint32_t j=0;j<n;++j)if(i!=j)Route(i,j,0);}
         std::set<std::pair<uint32_t,uint32_t>> pairs;
-        for(auto& x:transfers)if(x.source!=x.target)pairs.insert(std::minmax(x.source,x.target));
+        for(auto& x:transfers)if(x.source!=x.target&&!(strategy==3&&x.stage==2))pairs.insert(std::minmax(x.source,x.target));
         for(auto [a,b]:pairs)Pair(a,b);
         pairJetties=std::make_unique<PairJettyManager>([this](uint32_t rank){return Ctrl(rank);},n,segment,MakeCallback(&Layer::SenderComplete,this));
         for(uint32_t task=0;task<transfers.size();++task){auto& x=transfers[task];if(x.source==x.target)continue;++remoteCount;
+            if(strategy==3&&x.stage==2)continue;
             if(jettyMode=="pair"){
                 const auto& entry=pairJetties->Get(x.source,x.target,Tpn(x.source,x.target));x.jettyId=entry.id;
             }else{
@@ -259,6 +282,7 @@ public:
             }
         }
         if(jettyMode=="pair")jettyCount=pairJetties->Size();
+        if(strategy==3)SetupMulticast();
         for(uint32_t node=0;node<n;++node)Require(Ctrl(node)->GetUbTransaction()->SetTargetExecutor(UbTargetExecutor([this,node](Ptr<const UbWqeSegment> req,const UbTransactionRule&,UbTargetCompletion done){
             uint32_t task=req->GetTaskId();auto& x=transfers.at(task);
             Require(req->GetJettyNum()==x.jettyId&&req->GetSrc()==x.source&&req->GetDest()==node&&node==x.target&&req->GetType()==UbTransactionOpcode::WRITE&&req->HasTransactionResolved()&&x.sent,"target identity");
@@ -287,6 +311,7 @@ public:
             p->TraceConnectWithoutContext("PortTxNotify",Callback<void,uint32_t,uint32_t,uint32_t>([this,rank](uint32_t,uint32_t,uint32_t size){++txPackets[rank];txBytes[rank]+=size;}));
             p->TraceConnectWithoutContext("PortRxNotify",Callback<void,uint32_t,uint32_t,uint32_t>([this,rank](uint32_t,uint32_t,uint32_t size){++rxPackets[rank];rxBytes[rank]+=size;}));
         }
+        for(uint32_t rank=0;rank<nodes.size();++rank)for(uint32_t p=0;p<nodes[rank]->GetNDevices();++p){auto port=DynamicCast<UbPort>(nodes[rank]->GetDevice(p));portInitialCredit[{rank,p}]=DynamicCast<UbCbfc>(port->GetFlowControl())->GetTxFreeCells(7);port->TraceConnectWithoutContext("TraComEventNotify",Callback<void,Ptr<Packet>,Time>([this,rank,p](Ptr<Packet> packet,Time){RecordPacket(rank,p,packet);}));port->GetUbQueue()->TraceConnectWithoutContext("UbEnqueue",Callback<void,Ptr<const Packet>,uint32_t>([this,rank,p](Ptr<const Packet>,uint32_t size){ObserveQueue(rank,p,true,size);}));port->GetUbQueue()->TraceConnectWithoutContext("UbDequeue",Callback<void,Ptr<const Packet>,uint32_t>([this,rank,p](Ptr<const Packet>,uint32_t size){ObserveQueue(rank,p,false,size);}));}
         if(logLevel=="debug"){UbUtils::Get()->TopoTraceConnect();for(auto [a,b]:pairs){UbUtils::Get()->SingleTpTraceConnect(a,Tpn(a,b));UbUtils::Get()->SingleTpTraceConnect(b,Tpn(b,a));}}
     }
     void Validate(uint32_t task,uint64_t off,const std::vector<uint8_t>& data){auto wall=std::chrono::steady_clock::now();auto& x=transfers.at(task);for(size_t i=0;i<data.size();++i){Require(data[i]==ExpectedByte(task,off+i),"payload byte mismatch");x.data[off+i]=data[i];if(x.stage==2)weightData[pIndex.at(x.physical)][x.offset+off+i]=data[i];}verificationNs+=std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now()-wall).count();}
@@ -312,6 +337,7 @@ public:
         if(x.stage==2&&fault=="premature-ready")Ready(task);
         if(x.source==x.target){Simulator::ScheduleNow([this,task,data]{auto& x=transfers[task];Validate(task,0,data);TE("local_verified",task,x.target,0,x.bytes);Ready(task);});return;}
         auto fn=Ctrl(x.source)->GetUbFunction();auto wqe=fn->CreateWqe(x.source,x.target,x.bytes,task,UbTransactionOpcode::WRITE);wqe->SetExplicitPayload(Create<Packet>(data.data(),data.size()));Require(fn->SubmitWqe(wqe,x.jettyId).status==UbWqeSubmissionStatus::ACCEPTED,"WQE rejected");
+        if(strategy==3&&x.stage==2)multicast.Refresh(x.source);
     }
     uint64_t Duration(uint32_t count){__uint128_t num=__uint128_t(count)*2*matrices*dim*ff*1000000;uint64_t den=uint64_t(peak)*util;auto duration=num/den+(num%den!=0)+uint64_t(setup)*1000;Require(duration<UINT64_C(1000000000000000),"compute bound");return uint64_t(duration);}
     void Compute(uint32_t node){
@@ -369,6 +395,7 @@ public:
         Simulator::Schedule(NanoSeconds(planningNs),[this]{planningDone=true;Event("planning_end");Event("reroute_start");Event("weights_start");
             Simulator::Schedule(NanoSeconds(rerouteNs),[this]{rerouteDone=true;Event("reroute_end");Gate();});
             if(!pendingWeights){weightsDone=true;Event("weights_end");Gate();}
+            if(strategy==3)for(auto& [id,g]:multicast.groups)multicast.Start(id);
             for(uint32_t task=2*assignments.size();task<transfers.size();++task){
                 if(transfers[task].dependencies.empty()){Send(task);if(fault=="duplicate-weight")Send(task);}
                 else if(fault=="early-relay")Send(task);
@@ -390,8 +417,9 @@ public:
         for(auto& x:transfers)if(x.source!=x.target)Require(x.nextOffset==x.bytes&&x.pendingResponses.empty(),"incomplete TA admission/response tracking");
         Require(dispatchStarted&&receivedTokens==t&&pendingWeights==0&&senderCount==remoteCount,"unfinished layer");for(auto& x:transfers)Require(x.sent&&x.ready,"missing transfer");for(auto r:weightReady)Require(r,"missing weight");
         pairJetties->CheckIdle();FinalAudit();
+        if(strategy==3){multicast.CheckDrained();for(auto&[task,j]:multicastJetties)Require(j->IsIdle(),"multicast jetty not idle");WriteMulticast(out);}
         std::cout<<"PASS forward: N="<<n<<" assignments="<<assignments.size()<<" replicas="<<physical.size()-e<<" remote_WQEs="<<remoteCount<<" target-verified bytes\n";
-        WriteSummary(out);if(logLevel=="debug")WritePayloads(out);admissions.close();log.close();UbUtils::Get()->Destroy();traceOn=false;Simulator::Destroy();
+        WriteNetworkStats(out);WriteSummary(out);if(logLevel=="debug")WritePayloads(out);admissions.close();log.close();UbUtils::Get()->Destroy();traceOn=false;Simulator::Destroy();
     }
 };
 int main(int argc,char** argv){Time::SetResolution(Time::PS);Layer layer;std::string input,out;CommandLine cmd;cmd.AddValue("input","validated execution input",input);cmd.AddValue("out","output directory",out);cmd.AddValue("capacityMetrics","optional post-run capacity counters",layer.capacityMetrics);cmd.AddValue("fault","test-only fault injection",layer.fault);cmd.AddValue("logLevel","summary (default), events, debug",layer.logLevel);cmd.AddValue("jettyMode","pair or per-wqe",layer.jettyMode);cmd.AddValue("payloadBudgetBytes","logical payload budget, default 256 MiB, maximum 8 GiB",layer.payloadBudgetBytes);cmd.AddValue("weightTaskLimit","weight WQE budget, default 20000, maximum 1000000",layer.weightTaskLimit);cmd.AddValue("dependencyMode","index (default) or scan dependency construction",layer.dependencyMode);cmd.AddValue("onlineMembershipMode","index (default) or scan immutable audit membership",layer.onlineMembershipMode);cmd.Parse(argc,argv);try{Require(layer.dependencyMode=="index"||layer.dependencyMode=="scan","unknown dependency mode");Require(layer.onlineMembershipMode=="index"||layer.onlineMembershipMode=="scan","unknown online membership mode");Require(layer.logLevel=="summary"||layer.logLevel=="events"||layer.logLevel=="debug","unknown log level");Require(layer.jettyMode=="pair"||layer.jettyMode=="per-wqe","unknown Jetty mode");Require(layer.fault=="payload-byte"||layer.fault=="early-wqe"||layer.fault=="missing-wqe"||layer.fault=="duplicate-completion"||layer.fault.empty()||layer.fault=="weight-byte"||layer.fault=="premature-ready"||layer.fault=="duplicate-weight"||layer.fault=="early-compute"||layer.fault=="early-group"||layer.fault=="relay-byte"||layer.fault=="relay-buffer-byte"||layer.fault=="duplicate-notify"||layer.fault=="early-relay"||layer.fault=="early-final-ready","unknown fault");Require(!input.empty()&&!out.empty(),"input/out");layer.Run(input,out);}catch(const std::exception& ex){if(!out.empty()){std::filesystem::create_directories(out);std::ofstream failed(out+"/validation.json");failed<<"{\"status\":\"FAIL\",\"error\":\""<<ex.what()<<"\"}\n";}if(layer.log){layer.Event("error");layer.log.flush();}if(layer.traceOn)UbUtils::Get()->Destroy();std::cerr<<"ERROR: "<<ex.what()<<'\n';return 2;}return 0;}

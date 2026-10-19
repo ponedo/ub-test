@@ -1,0 +1,5881 @@
+[
+  {
+    "case": "single4",
+    "strategy": "direct",
+    "status": "PASS",
+    "plan_hash": "0b9bb202502b64a2256662f6351aad4c131d875a51572937137ad8e59a5fb9e2",
+    "assignments_hash": "4f2a44909d755d191c2579f25ef3c317d476d84156eb2326ea62f159f9b0dd0d",
+    "summary": {
+      "schema": 1,
+      "log_level": "summary",
+      "layer_latency_ps": 5757264,
+      "remote_WQEs": 21,
+      "TA_count": 68,
+      "target_segments": 68,
+      "sender_completions": 21,
+      "completed_tokens": 16,
+      "assignments": 16,
+      "replicas": 1,
+      "jettys": 11,
+      "simulator_events": 8113,
+      "verification_wall_ns": 7022828,
+      "combine_fnv1a64": "7c42dc8e5523bf25",
+      "executed_graph_fnv1a64": "436aeb26a6cc92bb",
+      "max_npu_load": 6,
+      "per_npu_load": [
+        6,
+        2,
+        4,
+        4
+      ],
+      "verified_bytes": [
+        2048,
+        2048,
+        49152
+      ],
+      "remote_bytes": [
+        1280,
+        1280,
+        49152
+      ],
+      "local_bytes": [
+        768,
+        768,
+        0
+      ],
+      "packet_tx_per_node": [
+        120,
+        104,
+        24,
+        24,
+        272
+      ],
+      "packet_rx_per_node": [
+        120,
+        104,
+        24,
+        24,
+        272
+      ],
+      "byte_tx_per_node": [
+        58224,
+        6736,
+        2352,
+        2352,
+        69664
+      ],
+      "byte_rx_per_node": [
+        8304,
+        56656,
+        2352,
+        2352,
+        69664
+      ],
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 4795240,
+        "dispatch_gate": 4795240,
+        "layer_end": 5758264
+      },
+      "event_spans": {
+        "compute_end": [
+          5091848,
+          5625864,
+          4
+        ],
+        "compute_start": [
+          4795240,
+          4936040,
+          4
+        ],
+        "data_ready": [
+          4795240,
+          5758264,
+          32
+        ],
+        "dispatch_gate": [
+          4795240,
+          4795240,
+          1
+        ],
+        "edge_ready": [
+          4795240,
+          4795240,
+          1
+        ],
+        "expert_end": [
+          5091848,
+          5625864,
+          4
+        ],
+        "expert_start": [
+          4795240,
+          4936040,
+          4
+        ],
+        "layer_end": [
+          5758264,
+          5758264,
+          1
+        ],
+        "layer_start": [
+          1000,
+          1000,
+          1
+        ],
+        "local_verified": [
+          4795240,
+          5625864,
+          12
+        ],
+        "main_weight_ready": [
+          1000,
+          1000,
+          4
+        ],
+        "payload_verified": [
+          427320,
+          5758264,
+          68
+        ],
+        "planning_end": [
+          201000,
+          201000,
+          1
+        ],
+        "planning_start": [
+          1000,
+          1000,
+          1
+        ],
+        "reroute_end": [
+          301000,
+          301000,
+          1
+        ],
+        "reroute_start": [
+          201000,
+          201000,
+          1
+        ],
+        "send": [
+          201000,
+          5625864,
+          33
+        ],
+        "sender_complete": [
+          4903080,
+          5826664,
+          21
+        ],
+        "ta_admitted": [
+          201000,
+          5625864,
+          68
+        ],
+        "ta_response_admitted": [
+          427320,
+          5758264,
+          68
+        ],
+        "target_complete": [
+          427320,
+          5758264,
+          68
+        ],
+        "target_received": [
+          427320,
+          5758264,
+          68
+        ],
+        "token_complete": [
+          5091848,
+          5758264,
+          16
+        ],
+        "weight_ready": [
+          4795240,
+          4795240,
+          1
+        ],
+        "weights_end": [
+          4795240,
+          4795240,
+          1
+        ],
+        "weights_start": [
+          201000,
+          201000,
+          1
+        ]
+      },
+      "stage_intervals": [
+        [
+          4795240,
+          4936040
+        ],
+        [
+          5091848,
+          5758264
+        ],
+        [
+          201000,
+          4795240
+        ]
+      ],
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 4936040,
+          "end_ps": 5625864
+        },
+        {
+          "node": 1,
+          "start_ps": 4795240,
+          "end_ps": 5091848
+        },
+        {
+          "node": 2,
+          "start_ps": 4911160,
+          "end_ps": 5404376
+        },
+        {
+          "node": 3,
+          "start_ps": 4927640,
+          "end_ps": 5420856
+        }
+      ]
+    },
+    "validation": {
+      "status": "PASS",
+      "checks": [
+        "per_task_state",
+        "per_segment_exact_once_order_delay",
+        "actual_payload_every_byte",
+        "terminal_payload_every_byte",
+        "quota_and_routing",
+        "relay_buffer_and_dependencies",
+        "weight_coverage",
+        "compute_duration_and_order",
+        "topk_conservation",
+        "wqe_completion",
+        "pair_idle"
+      ],
+      "checked_tasks": 33,
+      "checked_TAs": 68,
+      "verification_wall_ns": 7022828
+    }
+  },
+  {
+    "case": "single4",
+    "strategy": "chunk-streaming",
+    "status": "PASS",
+    "plan_hash": "0b9bb202502b64a2256662f6351aad4c131d875a51572937137ad8e59a5fb9e2",
+    "assignments_hash": "4f2a44909d755d191c2579f25ef3c317d476d84156eb2326ea62f159f9b0dd0d",
+    "summary": {
+      "schema": 1,
+      "log_level": "summary",
+      "layer_latency_ps": 5757264,
+      "remote_WQEs": 21,
+      "TA_count": 68,
+      "target_segments": 68,
+      "sender_completions": 21,
+      "completed_tokens": 16,
+      "assignments": 16,
+      "replicas": 1,
+      "jettys": 11,
+      "simulator_events": 8113,
+      "verification_wall_ns": 9167264,
+      "combine_fnv1a64": "7c42dc8e5523bf25",
+      "executed_graph_fnv1a64": "436aeb26a6cc92bb",
+      "max_npu_load": 6,
+      "per_npu_load": [
+        6,
+        2,
+        4,
+        4
+      ],
+      "verified_bytes": [
+        2048,
+        2048,
+        49152
+      ],
+      "remote_bytes": [
+        1280,
+        1280,
+        49152
+      ],
+      "local_bytes": [
+        768,
+        768,
+        0
+      ],
+      "packet_tx_per_node": [
+        120,
+        104,
+        24,
+        24,
+        272
+      ],
+      "packet_rx_per_node": [
+        120,
+        104,
+        24,
+        24,
+        272
+      ],
+      "byte_tx_per_node": [
+        58224,
+        6736,
+        2352,
+        2352,
+        69664
+      ],
+      "byte_rx_per_node": [
+        8304,
+        56656,
+        2352,
+        2352,
+        69664
+      ],
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 4795240,
+        "dispatch_gate": 4795240,
+        "layer_end": 5758264
+      },
+      "event_spans": {
+        "compute_end": [
+          5091848,
+          5625864,
+          4
+        ],
+        "compute_start": [
+          4795240,
+          4936040,
+          4
+        ],
+        "data_ready": [
+          4795240,
+          5758264,
+          32
+        ],
+        "dispatch_gate": [
+          4795240,
+          4795240,
+          1
+        ],
+        "edge_ready": [
+          4795240,
+          4795240,
+          1
+        ],
+        "expert_end": [
+          5091848,
+          5625864,
+          4
+        ],
+        "expert_start": [
+          4795240,
+          4936040,
+          4
+        ],
+        "layer_end": [
+          5758264,
+          5758264,
+          1
+        ],
+        "layer_start": [
+          1000,
+          1000,
+          1
+        ],
+        "local_verified": [
+          4795240,
+          5625864,
+          12
+        ],
+        "main_weight_ready": [
+          1000,
+          1000,
+          4
+        ],
+        "payload_verified": [
+          427320,
+          5758264,
+          68
+        ],
+        "planning_end": [
+          201000,
+          201000,
+          1
+        ],
+        "planning_start": [
+          1000,
+          1000,
+          1
+        ],
+        "reroute_end": [
+          301000,
+          301000,
+          1
+        ],
+        "reroute_start": [
+          201000,
+          201000,
+          1
+        ],
+        "send": [
+          201000,
+          5625864,
+          33
+        ],
+        "sender_complete": [
+          4903080,
+          5826664,
+          21
+        ],
+        "ta_admitted": [
+          201000,
+          5625864,
+          68
+        ],
+        "ta_response_admitted": [
+          427320,
+          5758264,
+          68
+        ],
+        "target_complete": [
+          427320,
+          5758264,
+          68
+        ],
+        "target_received": [
+          427320,
+          5758264,
+          68
+        ],
+        "token_complete": [
+          5091848,
+          5758264,
+          16
+        ],
+        "weight_ready": [
+          4795240,
+          4795240,
+          1
+        ],
+        "weights_end": [
+          4795240,
+          4795240,
+          1
+        ],
+        "weights_start": [
+          201000,
+          201000,
+          1
+        ]
+      },
+      "stage_intervals": [
+        [
+          4795240,
+          4936040
+        ],
+        [
+          5091848,
+          5758264
+        ],
+        [
+          201000,
+          4795240
+        ]
+      ],
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 4936040,
+          "end_ps": 5625864
+        },
+        {
+          "node": 1,
+          "start_ps": 4795240,
+          "end_ps": 5091848
+        },
+        {
+          "node": 2,
+          "start_ps": 4911160,
+          "end_ps": 5404376
+        },
+        {
+          "node": 3,
+          "start_ps": 4927640,
+          "end_ps": 5420856
+        }
+      ]
+    },
+    "validation": {
+      "status": "PASS",
+      "checks": [
+        "per_task_state",
+        "per_segment_exact_once_order_delay",
+        "actual_payload_every_byte",
+        "terminal_payload_every_byte",
+        "quota_and_routing",
+        "relay_buffer_and_dependencies",
+        "weight_coverage",
+        "compute_duration_and_order",
+        "topk_conservation",
+        "wqe_completion",
+        "pair_idle"
+      ],
+      "checked_tasks": 33,
+      "checked_TAs": 68,
+      "verification_wall_ns": 9167264
+    }
+  },
+  {
+    "case": "single4",
+    "strategy": "multicast",
+    "status": "PASS",
+    "plan_hash": "0b9bb202502b64a2256662f6351aad4c131d875a51572937137ad8e59a5fb9e2",
+    "assignments_hash": "4f2a44909d755d191c2579f25ef3c317d476d84156eb2326ea62f159f9b0dd0d",
+    "summary": {
+      "schema": 1,
+      "log_level": "summary",
+      "layer_latency_ps": 5757264,
+      "remote_WQEs": 21,
+      "TA_count": 68,
+      "target_segments": 68,
+      "sender_completions": 21,
+      "completed_tokens": 16,
+      "assignments": 16,
+      "replicas": 1,
+      "jettys": 11,
+      "simulator_events": 8113,
+      "verification_wall_ns": 8432005,
+      "combine_fnv1a64": "7c42dc8e5523bf25",
+      "executed_graph_fnv1a64": "436aeb26a6cc92bb",
+      "max_npu_load": 6,
+      "per_npu_load": [
+        6,
+        2,
+        4,
+        4
+      ],
+      "verified_bytes": [
+        2048,
+        2048,
+        49152
+      ],
+      "remote_bytes": [
+        1280,
+        1280,
+        49152
+      ],
+      "local_bytes": [
+        768,
+        768,
+        0
+      ],
+      "packet_tx_per_node": [
+        120,
+        104,
+        24,
+        24,
+        272
+      ],
+      "packet_rx_per_node": [
+        120,
+        104,
+        24,
+        24,
+        272
+      ],
+      "byte_tx_per_node": [
+        58224,
+        6736,
+        2352,
+        2352,
+        69664
+      ],
+      "byte_rx_per_node": [
+        8304,
+        56656,
+        2352,
+        2352,
+        69664
+      ],
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 4795240,
+        "dispatch_gate": 4795240,
+        "layer_end": 5758264
+      },
+      "event_spans": {
+        "compute_end": [
+          5091848,
+          5625864,
+          4
+        ],
+        "compute_start": [
+          4795240,
+          4936040,
+          4
+        ],
+        "data_ready": [
+          4795240,
+          5758264,
+          32
+        ],
+        "dispatch_gate": [
+          4795240,
+          4795240,
+          1
+        ],
+        "edge_ready": [
+          4795240,
+          4795240,
+          1
+        ],
+        "expert_end": [
+          5091848,
+          5625864,
+          4
+        ],
+        "expert_start": [
+          4795240,
+          4936040,
+          4
+        ],
+        "layer_end": [
+          5758264,
+          5758264,
+          1
+        ],
+        "layer_start": [
+          1000,
+          1000,
+          1
+        ],
+        "local_verified": [
+          4795240,
+          5625864,
+          12
+        ],
+        "main_weight_ready": [
+          1000,
+          1000,
+          4
+        ],
+        "payload_verified": [
+          427320,
+          5758264,
+          68
+        ],
+        "planning_end": [
+          201000,
+          201000,
+          1
+        ],
+        "planning_start": [
+          1000,
+          1000,
+          1
+        ],
+        "reroute_end": [
+          301000,
+          301000,
+          1
+        ],
+        "reroute_start": [
+          201000,
+          201000,
+          1
+        ],
+        "send": [
+          201000,
+          5625864,
+          33
+        ],
+        "sender_complete": [
+          4903080,
+          5826664,
+          21
+        ],
+        "ta_admitted": [
+          201000,
+          5625864,
+          68
+        ],
+        "ta_response_admitted": [
+          427320,
+          5758264,
+          68
+        ],
+        "target_complete": [
+          427320,
+          5758264,
+          68
+        ],
+        "target_received": [
+          427320,
+          5758264,
+          68
+        ],
+        "token_complete": [
+          5091848,
+          5758264,
+          16
+        ],
+        "weight_ready": [
+          4795240,
+          4795240,
+          1
+        ],
+        "weights_end": [
+          4795240,
+          4795240,
+          1
+        ],
+        "weights_start": [
+          201000,
+          201000,
+          1
+        ]
+      },
+      "stage_intervals": [
+        [
+          4795240,
+          4936040
+        ],
+        [
+          5091848,
+          5758264
+        ],
+        [
+          201000,
+          4795240
+        ]
+      ],
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 4936040,
+          "end_ps": 5625864
+        },
+        {
+          "node": 1,
+          "start_ps": 4795240,
+          "end_ps": 5091848
+        },
+        {
+          "node": 2,
+          "start_ps": 4911160,
+          "end_ps": 5404376
+        },
+        {
+          "node": 3,
+          "start_ps": 4927640,
+          "end_ps": 5420856
+        }
+      ]
+    },
+    "validation": {
+      "status": "PASS",
+      "checks": [
+        "per_task_state",
+        "per_segment_exact_once_order_delay",
+        "actual_payload_every_byte",
+        "terminal_payload_every_byte",
+        "quota_and_routing",
+        "relay_buffer_and_dependencies",
+        "weight_coverage",
+        "compute_duration_and_order",
+        "topk_conservation",
+        "wqe_completion",
+        "pair_idle"
+      ],
+      "checked_tasks": 33,
+      "checked_TAs": 68,
+      "verification_wall_ns": 8432005
+    }
+  },
+  {
+    "case": "slots_zero4",
+    "strategy": "direct",
+    "status": "PASS",
+    "plan_hash": "249708a34a04f15984bf13dfef77398f00d0757840541301dab7b7a569a20b33",
+    "assignments_hash": "36fc2dcb07ccc87af788abba0ed5db421d36c743aec673599875042f6e5fecc2",
+    "summary": {
+      "schema": 1,
+      "log_level": "summary",
+      "layer_latency_ps": 4544688,
+      "remote_WQEs": 48,
+      "TA_count": 48,
+      "target_segments": 48,
+      "sender_completions": 48,
+      "completed_tokens": 32,
+      "assignments": 32,
+      "replicas": 0,
+      "jettys": 6,
+      "simulator_events": 7158,
+      "verification_wall_ns": 549255,
+      "combine_fnv1a64": "f69f2d11e6645a25",
+      "executed_graph_fnv1a64": "6ec6f4ec036e396a",
+      "max_npu_load": 32,
+      "per_npu_load": [
+        32,
+        0,
+        0,
+        0
+      ],
+      "verified_bytes": [
+        4096,
+        4096,
+        0
+      ],
+      "remote_bytes": [
+        3072,
+        3072,
+        0
+      ],
+      "local_bytes": [
+        1024,
+        1024,
+        0
+      ],
+      "packet_tx_per_node": [
+        96,
+        32,
+        32,
+        32,
+        192
+      ],
+      "packet_rx_per_node": [
+        96,
+        32,
+        32,
+        32,
+        192
+      ],
+      "byte_tx_per_node": [
+        9408,
+        3136,
+        3136,
+        3136,
+        18816
+      ],
+      "byte_rx_per_node": [
+        9408,
+        3136,
+        3136,
+        3136,
+        18816
+      ],
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 201000,
+        "dispatch_gate": 301000,
+        "layer_end": 4545688
+      },
+      "event_spans": {
+        "compute_end": [
+          4008728,
+          4008728,
+          1
+        ],
+        "compute_idle": [
+          301000,
+          301000,
+          3
+        ],
+        "compute_start": [
+          763000,
+          763000,
+          1
+        ],
+        "data_ready": [
+          301000,
+          4545688,
+          64
+        ],
+        "dispatch_gate": [
+          301000,
+          301000,
+          1
+        ],
+        "expert_end": [
+          4008728,
+          4008728,
+          1
+        ],
+        "expert_start": [
+          763000,
+          763000,
+          1
+        ],
+        "layer_end": [
+          4545688,
+          4545688,
+          1
+        ],
+        "layer_start": [
+          1000,
+          1000,
+          1
+        ],
+        "local_verified": [
+          301000,
+          4008728,
+          16
+        ],
+        "main_weight_ready": [
+          1000,
+          1000,
+          4
+        ],
+        "payload_verified": [
+          383960,
+          4545688,
+          48
+        ],
+        "planning_end": [
+          201000,
+          201000,
+          1
+        ],
+        "planning_start": [
+          1000,
+          1000,
+          1
+        ],
+        "reroute_end": [
+          301000,
+          301000,
+          1
+        ],
+        "reroute_start": [
+          201000,
+          201000,
+          1
+        ],
+        "send": [
+          301000,
+          4008728,
+          64
+        ],
+        "sender_complete": [
+          448880,
+          4614088,
+          48
+        ],
+        "ta_admitted": [
+          301000,
+          4320888,
+          48
+        ],
+        "ta_response_admitted": [
+          383960,
+          4545688,
+          48
+        ],
+        "target_complete": [
+          383960,
+          4545688,
+          48
+        ],
+        "target_received": [
+          383960,
+          4545688,
+          48
+        ],
+        "token_complete": [
+          4008728,
+          4545688,
+          32
+        ],
+        "weights_end": [
+          201000,
+          201000,
+          1
+        ],
+        "weights_start": [
+          201000,
+          201000,
+          1
+        ]
+      },
+      "stage_intervals": [
+        [
+          301000,
+          763000
+        ],
+        [
+          4008728,
+          4545688
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 763000,
+          "end_ps": 4008728
+        }
+      ]
+    },
+    "validation": {
+      "status": "PASS",
+      "checks": [
+        "per_task_state",
+        "per_segment_exact_once_order_delay",
+        "actual_payload_every_byte",
+        "terminal_payload_every_byte",
+        "quota_and_routing",
+        "relay_buffer_and_dependencies",
+        "weight_coverage",
+        "compute_duration_and_order",
+        "topk_conservation",
+        "wqe_completion",
+        "pair_idle"
+      ],
+      "checked_tasks": 64,
+      "checked_TAs": 48,
+      "verification_wall_ns": 549255
+    }
+  },
+  {
+    "case": "slots_zero4",
+    "strategy": "chunk-streaming",
+    "status": "PASS",
+    "plan_hash": "249708a34a04f15984bf13dfef77398f00d0757840541301dab7b7a569a20b33",
+    "assignments_hash": "36fc2dcb07ccc87af788abba0ed5db421d36c743aec673599875042f6e5fecc2",
+    "summary": {
+      "schema": 1,
+      "log_level": "summary",
+      "layer_latency_ps": 4544688,
+      "remote_WQEs": 48,
+      "TA_count": 48,
+      "target_segments": 48,
+      "sender_completions": 48,
+      "completed_tokens": 32,
+      "assignments": 32,
+      "replicas": 0,
+      "jettys": 6,
+      "simulator_events": 7158,
+      "verification_wall_ns": 703035,
+      "combine_fnv1a64": "f69f2d11e6645a25",
+      "executed_graph_fnv1a64": "6ec6f4ec036e396a",
+      "max_npu_load": 32,
+      "per_npu_load": [
+        32,
+        0,
+        0,
+        0
+      ],
+      "verified_bytes": [
+        4096,
+        4096,
+        0
+      ],
+      "remote_bytes": [
+        3072,
+        3072,
+        0
+      ],
+      "local_bytes": [
+        1024,
+        1024,
+        0
+      ],
+      "packet_tx_per_node": [
+        96,
+        32,
+        32,
+        32,
+        192
+      ],
+      "packet_rx_per_node": [
+        96,
+        32,
+        32,
+        32,
+        192
+      ],
+      "byte_tx_per_node": [
+        9408,
+        3136,
+        3136,
+        3136,
+        18816
+      ],
+      "byte_rx_per_node": [
+        9408,
+        3136,
+        3136,
+        3136,
+        18816
+      ],
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 201000,
+        "dispatch_gate": 301000,
+        "layer_end": 4545688
+      },
+      "event_spans": {
+        "compute_end": [
+          4008728,
+          4008728,
+          1
+        ],
+        "compute_idle": [
+          301000,
+          301000,
+          3
+        ],
+        "compute_start": [
+          763000,
+          763000,
+          1
+        ],
+        "data_ready": [
+          301000,
+          4545688,
+          64
+        ],
+        "dispatch_gate": [
+          301000,
+          301000,
+          1
+        ],
+        "expert_end": [
+          4008728,
+          4008728,
+          1
+        ],
+        "expert_start": [
+          763000,
+          763000,
+          1
+        ],
+        "layer_end": [
+          4545688,
+          4545688,
+          1
+        ],
+        "layer_start": [
+          1000,
+          1000,
+          1
+        ],
+        "local_verified": [
+          301000,
+          4008728,
+          16
+        ],
+        "main_weight_ready": [
+          1000,
+          1000,
+          4
+        ],
+        "payload_verified": [
+          383960,
+          4545688,
+          48
+        ],
+        "planning_end": [
+          201000,
+          201000,
+          1
+        ],
+        "planning_start": [
+          1000,
+          1000,
+          1
+        ],
+        "reroute_end": [
+          301000,
+          301000,
+          1
+        ],
+        "reroute_start": [
+          201000,
+          201000,
+          1
+        ],
+        "send": [
+          301000,
+          4008728,
+          64
+        ],
+        "sender_complete": [
+          448880,
+          4614088,
+          48
+        ],
+        "ta_admitted": [
+          301000,
+          4320888,
+          48
+        ],
+        "ta_response_admitted": [
+          383960,
+          4545688,
+          48
+        ],
+        "target_complete": [
+          383960,
+          4545688,
+          48
+        ],
+        "target_received": [
+          383960,
+          4545688,
+          48
+        ],
+        "token_complete": [
+          4008728,
+          4545688,
+          32
+        ],
+        "weights_end": [
+          201000,
+          201000,
+          1
+        ],
+        "weights_start": [
+          201000,
+          201000,
+          1
+        ]
+      },
+      "stage_intervals": [
+        [
+          301000,
+          763000
+        ],
+        [
+          4008728,
+          4545688
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 763000,
+          "end_ps": 4008728
+        }
+      ]
+    },
+    "validation": {
+      "status": "PASS",
+      "checks": [
+        "per_task_state",
+        "per_segment_exact_once_order_delay",
+        "actual_payload_every_byte",
+        "terminal_payload_every_byte",
+        "quota_and_routing",
+        "relay_buffer_and_dependencies",
+        "weight_coverage",
+        "compute_duration_and_order",
+        "topk_conservation",
+        "wqe_completion",
+        "pair_idle"
+      ],
+      "checked_tasks": 64,
+      "checked_TAs": 48,
+      "verification_wall_ns": 703035
+    }
+  },
+  {
+    "case": "slots_zero4",
+    "strategy": "multicast",
+    "status": "PASS",
+    "plan_hash": "249708a34a04f15984bf13dfef77398f00d0757840541301dab7b7a569a20b33",
+    "assignments_hash": "36fc2dcb07ccc87af788abba0ed5db421d36c743aec673599875042f6e5fecc2",
+    "summary": {
+      "schema": 1,
+      "log_level": "summary",
+      "layer_latency_ps": 4544688,
+      "remote_WQEs": 48,
+      "TA_count": 48,
+      "target_segments": 48,
+      "sender_completions": 48,
+      "completed_tokens": 32,
+      "assignments": 32,
+      "replicas": 0,
+      "jettys": 6,
+      "simulator_events": 7158,
+      "verification_wall_ns": 424965,
+      "combine_fnv1a64": "f69f2d11e6645a25",
+      "executed_graph_fnv1a64": "6ec6f4ec036e396a",
+      "max_npu_load": 32,
+      "per_npu_load": [
+        32,
+        0,
+        0,
+        0
+      ],
+      "verified_bytes": [
+        4096,
+        4096,
+        0
+      ],
+      "remote_bytes": [
+        3072,
+        3072,
+        0
+      ],
+      "local_bytes": [
+        1024,
+        1024,
+        0
+      ],
+      "packet_tx_per_node": [
+        96,
+        32,
+        32,
+        32,
+        192
+      ],
+      "packet_rx_per_node": [
+        96,
+        32,
+        32,
+        32,
+        192
+      ],
+      "byte_tx_per_node": [
+        9408,
+        3136,
+        3136,
+        3136,
+        18816
+      ],
+      "byte_rx_per_node": [
+        9408,
+        3136,
+        3136,
+        3136,
+        18816
+      ],
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 201000,
+        "dispatch_gate": 301000,
+        "layer_end": 4545688
+      },
+      "event_spans": {
+        "compute_end": [
+          4008728,
+          4008728,
+          1
+        ],
+        "compute_idle": [
+          301000,
+          301000,
+          3
+        ],
+        "compute_start": [
+          763000,
+          763000,
+          1
+        ],
+        "data_ready": [
+          301000,
+          4545688,
+          64
+        ],
+        "dispatch_gate": [
+          301000,
+          301000,
+          1
+        ],
+        "expert_end": [
+          4008728,
+          4008728,
+          1
+        ],
+        "expert_start": [
+          763000,
+          763000,
+          1
+        ],
+        "layer_end": [
+          4545688,
+          4545688,
+          1
+        ],
+        "layer_start": [
+          1000,
+          1000,
+          1
+        ],
+        "local_verified": [
+          301000,
+          4008728,
+          16
+        ],
+        "main_weight_ready": [
+          1000,
+          1000,
+          4
+        ],
+        "payload_verified": [
+          383960,
+          4545688,
+          48
+        ],
+        "planning_end": [
+          201000,
+          201000,
+          1
+        ],
+        "planning_start": [
+          1000,
+          1000,
+          1
+        ],
+        "reroute_end": [
+          301000,
+          301000,
+          1
+        ],
+        "reroute_start": [
+          201000,
+          201000,
+          1
+        ],
+        "send": [
+          301000,
+          4008728,
+          64
+        ],
+        "sender_complete": [
+          448880,
+          4614088,
+          48
+        ],
+        "ta_admitted": [
+          301000,
+          4320888,
+          48
+        ],
+        "ta_response_admitted": [
+          383960,
+          4545688,
+          48
+        ],
+        "target_complete": [
+          383960,
+          4545688,
+          48
+        ],
+        "target_received": [
+          383960,
+          4545688,
+          48
+        ],
+        "token_complete": [
+          4008728,
+          4545688,
+          32
+        ],
+        "weights_end": [
+          201000,
+          201000,
+          1
+        ],
+        "weights_start": [
+          201000,
+          201000,
+          1
+        ]
+      },
+      "stage_intervals": [
+        [
+          301000,
+          763000
+        ],
+        [
+          4008728,
+          4545688
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 763000,
+          "end_ps": 4008728
+        }
+      ]
+    },
+    "validation": {
+      "status": "PASS",
+      "checks": [
+        "per_task_state",
+        "per_segment_exact_once_order_delay",
+        "actual_payload_every_byte",
+        "terminal_payload_every_byte",
+        "quota_and_routing",
+        "relay_buffer_and_dependencies",
+        "weight_coverage",
+        "compute_duration_and_order",
+        "topk_conservation",
+        "wqe_completion",
+        "pair_idle"
+      ],
+      "checked_tasks": 64,
+      "checked_TAs": 48,
+      "verification_wall_ns": 424965
+    }
+  },
+  {
+    "case": "multi4_force",
+    "strategy": "direct",
+    "status": "PASS",
+    "plan_hash": "b5c370919bb5adf95f4ae343a3149d13d5eae3a44d473b883ecac91ca16755ae",
+    "assignments_hash": "b9f4abafa1d66a8f34d83cec759450ffa56726a8895bb7a6a0a3cd501e0d9619",
+    "summary": {
+      "schema": 1,
+      "log_level": "summary",
+      "layer_latency_ps": 15095720,
+      "remote_WQEs": 15,
+      "TA_count": 156,
+      "target_segments": 156,
+      "sender_completions": 15,
+      "completed_tokens": 32,
+      "assignments": 32,
+      "replicas": 3,
+      "jettys": 8,
+      "simulator_events": 12550,
+      "verification_wall_ns": 19966004,
+      "combine_fnv1a64": "f69f2d11e6645a25",
+      "executed_graph_fnv1a64": "db6aa306499b6874",
+      "max_npu_load": 10,
+      "per_npu_load": [
+        10,
+        10,
+        10,
+        2
+      ],
+      "verified_bytes": [
+        4096,
+        4096,
+        147456
+      ],
+      "remote_bytes": [
+        768,
+        768,
+        147456
+      ],
+      "local_bytes": [
+        3328,
+        3328,
+        0
+      ],
+      "packet_tx_per_node": [
+        296,
+        104,
+        104,
+        120,
+        624
+      ],
+      "packet_rx_per_node": [
+        296,
+        104,
+        104,
+        120,
+        624
+      ],
+      "byte_tx_per_node": [
+        168400,
+        6736,
+        6736,
+        8304,
+        190176
+      ],
+      "byte_rx_per_node": [
+        18640,
+        56656,
+        56656,
+        58224,
+        190176
+      ],
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 13722400,
+        "dispatch_gate": 13722400,
+        "layer_end": 15096720
+      },
+      "event_spans": {
+        "compute_end": [
+          14019008,
+          14980800,
+          4
+        ],
+        "compute_start": [
+          13722400,
+          13897760,
+          4
+        ],
+        "data_ready": [
+          13722400,
+          15096720,
+          64
+        ],
+        "dispatch_gate": [
+          13722400,
+          13722400,
+          1
+        ],
+        "edge_ready": [
+          13546080,
+          13722400,
+          3
+        ],
+        "expert_end": [
+          14019008,
+          14980800,
+          4
+        ],
+        "expert_start": [
+          13722400,
+          13897760,
+          4
+        ],
+        "layer_end": [
+          15096720,
+          15096720,
+          1
+        ],
+        "layer_start": [
+          1000,
+          1000,
+          1
+        ],
+        "local_verified": [
+          13722400,
+          14980800,
+          52
+        ],
+        "main_weight_ready": [
+          1000,
+          1000,
+          4
+        ],
+        "payload_verified": [
+          427320,
+          15096720,
+          156
+        ],
+        "planning_end": [
+          201000,
+          201000,
+          1
+        ],
+        "planning_start": [
+          1000,
+          1000,
+          1
+        ],
+        "reroute_end": [
+          301000,
+          301000,
+          1
+        ],
+        "reroute_start": [
+          201000,
+          201000,
+          1
+        ],
+        "send": [
+          201000,
+          14980800,
+          67
+        ],
+        "sender_complete": [
+          13611000,
+          15165120,
+          15
+        ],
+        "ta_admitted": [
+          201000,
+          14980800,
+          156
+        ],
+        "ta_response_admitted": [
+          427320,
+          15096720,
+          156
+        ],
+        "target_complete": [
+          427320,
+          15096720,
+          156
+        ],
+        "target_received": [
+          427320,
+          15096720,
+          156
+        ],
+        "token_complete": [
+          14019008,
+          15096720,
+          32
+        ],
+        "weight_ready": [
+          13546080,
+          13722400,
+          3
+        ],
+        "weights_end": [
+          13722400,
+          13722400,
+          1
+        ],
+        "weights_start": [
+          201000,
+          201000,
+          1
+        ]
+      },
+      "stage_intervals": [
+        [
+          13722400,
+          13897760
+        ],
+        [
+          14019008,
+          15096720
+        ],
+        [
+          201000,
+          13722400
+        ]
+      ],
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 13897760,
+          "end_ps": 14980800
+        },
+        {
+          "node": 1,
+          "start_ps": 13848320,
+          "end_ps": 14931360
+        },
+        {
+          "node": 2,
+          "start_ps": 13864800,
+          "end_ps": 14947840
+        },
+        {
+          "node": 3,
+          "start_ps": 13722400,
+          "end_ps": 14019008
+        }
+      ]
+    },
+    "validation": {
+      "status": "PASS",
+      "checks": [
+        "per_task_state",
+        "per_segment_exact_once_order_delay",
+        "actual_payload_every_byte",
+        "terminal_payload_every_byte",
+        "quota_and_routing",
+        "relay_buffer_and_dependencies",
+        "weight_coverage",
+        "compute_duration_and_order",
+        "topk_conservation",
+        "wqe_completion",
+        "pair_idle"
+      ],
+      "checked_tasks": 67,
+      "checked_TAs": 156,
+      "verification_wall_ns": 19966004
+    }
+  },
+  {
+    "case": "multi4_force",
+    "strategy": "chunk-streaming",
+    "status": "PASS",
+    "plan_hash": "b5c370919bb5adf95f4ae343a3149d13d5eae3a44d473b883ecac91ca16755ae",
+    "assignments_hash": "b9f4abafa1d66a8f34d83cec759450ffa56726a8895bb7a6a0a3cd501e0d9619",
+    "summary": {
+      "schema": 1,
+      "log_level": "summary",
+      "layer_latency_ps": 14321600,
+      "remote_WQEs": 48,
+      "TA_count": 156,
+      "target_segments": 156,
+      "sender_completions": 48,
+      "completed_tokens": 32,
+      "assignments": 32,
+      "replicas": 3,
+      "jettys": 8,
+      "simulator_events": 12500,
+      "verification_wall_ns": 26788063,
+      "combine_fnv1a64": "f69f2d11e6645a25",
+      "executed_graph_fnv1a64": "87cac9aed96c89ff",
+      "max_npu_load": 10,
+      "per_npu_load": [
+        10,
+        10,
+        10,
+        2
+      ],
+      "verified_bytes": [
+        4096,
+        4096,
+        147456
+      ],
+      "remote_bytes": [
+        768,
+        768,
+        147456
+      ],
+      "local_bytes": [
+        3328,
+        3328,
+        0
+      ],
+      "packet_tx_per_node": [
+        104,
+        296,
+        104,
+        120,
+        624
+      ],
+      "packet_rx_per_node": [
+        104,
+        296,
+        104,
+        120,
+        624
+      ],
+      "byte_tx_per_node": [
+        56656,
+        118480,
+        6736,
+        8304,
+        190176
+      ],
+      "byte_rx_per_node": [
+        6736,
+        68560,
+        56656,
+        58224,
+        190176
+      ],
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 12941800,
+        "dispatch_gate": 12941800,
+        "layer_end": 14322600
+      },
+      "event_spans": {
+        "compute_end": [
+          13238408,
+          14190200,
+          4
+        ],
+        "compute_start": [
+          12941800,
+          13107160,
+          4
+        ],
+        "data_ready": [
+          12941800,
+          14322600,
+          64
+        ],
+        "dispatch_gate": [
+          12941800,
+          12941800,
+          1
+        ],
+        "edge_ready": [
+          3765640,
+          12941800,
+          36
+        ],
+        "expert_end": [
+          13238408,
+          14190200,
+          4
+        ],
+        "expert_start": [
+          12941800,
+          13107160,
+          4
+        ],
+        "group_chunk_ready": [
+          3765640,
+          4830360,
+          12
+        ],
+        "layer_end": [
+          14322600,
+          14322600,
+          1
+        ],
+        "layer_start": [
+          1000,
+          1000,
+          1
+        ],
+        "local_verified": [
+          12941800,
+          14190200,
+          52
+        ],
+        "main_weight_ready": [
+          1000,
+          1000,
+          4
+        ],
+        "payload_verified": [
+          427320,
+          14322600,
+          156
+        ],
+        "planning_end": [
+          201000,
+          201000,
+          1
+        ],
+        "planning_start": [
+          1000,
+          1000,
+          1
+        ],
+        "relay_buffer_read": [
+          3765640,
+          4830360,
+          24
+        ],
+        "reroute_end": [
+          301000,
+          301000,
+          1
+        ],
+        "reroute_start": [
+          201000,
+          201000,
+          1
+        ],
+        "send": [
+          201000,
+          14190200,
+          100
+        ],
+        "sender_complete": [
+          4006880,
+          14391000,
+          48
+        ],
+        "ta_admitted": [
+          201000,
+          14190200,
+          156
+        ],
+        "ta_response_admitted": [
+          427320,
+          14322600,
+          156
+        ],
+        "target_complete": [
+          427320,
+          14322600,
+          156
+        ],
+        "target_received": [
+          427320,
+          14322600,
+          156
+        ],
+        "token_complete": [
+          13238408,
+          14322600,
+          32
+        ],
+        "weight_ready": [
+          4830360,
+          12941800,
+          3
+        ],
+        "weights_end": [
+          12941800,
+          12941800,
+          1
+        ],
+        "weights_start": [
+          201000,
+          201000,
+          1
+        ]
+      },
+      "stage_intervals": [
+        [
+          12941800,
+          13107160
+        ],
+        [
+          13238408,
+          14322600
+        ],
+        [
+          201000,
+          12941800
+        ]
+      ],
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 13074200,
+          "end_ps": 14157240
+        },
+        {
+          "node": 1,
+          "start_ps": 13090680,
+          "end_ps": 14173720
+        },
+        {
+          "node": 2,
+          "start_ps": 13107160,
+          "end_ps": 14190200
+        },
+        {
+          "node": 3,
+          "start_ps": 12941800,
+          "end_ps": 13238408
+        }
+      ]
+    },
+    "validation": {
+      "status": "PASS",
+      "checks": [
+        "per_task_state",
+        "per_segment_exact_once_order_delay",
+        "actual_payload_every_byte",
+        "terminal_payload_every_byte",
+        "quota_and_routing",
+        "relay_buffer_and_dependencies",
+        "weight_coverage",
+        "compute_duration_and_order",
+        "topk_conservation",
+        "wqe_completion",
+        "pair_idle"
+      ],
+      "checked_tasks": 100,
+      "checked_TAs": 156,
+      "verification_wall_ns": 26788063
+    }
+  },
+  {
+    "case": "multi4_force",
+    "strategy": "multicast",
+    "status": "PASS",
+    "plan_hash": "b5c370919bb5adf95f4ae343a3149d13d5eae3a44d473b883ecac91ca16755ae",
+    "assignments_hash": "b9f4abafa1d66a8f34d83cec759450ffa56726a8895bb7a6a0a3cd501e0d9619",
+    "summary": {
+      "schema": 1,
+      "log_level": "summary",
+      "layer_latency_ps": 8056400,
+      "remote_WQEs": 15,
+      "TA_count": 156,
+      "target_segments": 156,
+      "sender_completions": 15,
+      "completed_tokens": 32,
+      "assignments": 32,
+      "replicas": 3,
+      "jettys": 9,
+      "simulator_events": 11755,
+      "verification_wall_ns": 22506863,
+      "combine_fnv1a64": "f69f2d11e6645a25",
+      "executed_graph_fnv1a64": "db6aa306499b6874",
+      "max_npu_load": 10,
+      "per_npu_load": [
+        10,
+        10,
+        10,
+        2
+      ],
+      "verified_bytes": [
+        4096,
+        4096,
+        147456
+      ],
+      "remote_bytes": [
+        768,
+        768,
+        147456
+      ],
+      "local_bytes": [
+        3328,
+        3328,
+        0
+      ],
+      "packet_tx_per_node": [
+        200,
+        104,
+        104,
+        120,
+        624
+      ],
+      "packet_rx_per_node": [
+        296,
+        104,
+        104,
+        120,
+        528
+      ],
+      "byte_tx_per_node": [
+        80128,
+        6736,
+        6736,
+        8304,
+        242736
+      ],
+      "byte_rx_per_node": [
+        18640,
+        74176,
+        74176,
+        75744,
+        101904
+      ],
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 6666600,
+        "dispatch_gate": 6666600,
+        "layer_end": 8057400
+      },
+      "event_spans": {
+        "compute_end": [
+          6963208,
+          7925000,
+          4
+        ],
+        "compute_start": [
+          6666600,
+          6841960,
+          4
+        ],
+        "data_ready": [
+          6666600,
+          8057400,
+          64
+        ],
+        "dispatch_gate": [
+          6666600,
+          6666600,
+          1
+        ],
+        "edge_ready": [
+          6666600,
+          6666600,
+          3
+        ],
+        "expert_end": [
+          6963208,
+          7925000,
+          4
+        ],
+        "expert_start": [
+          6666600,
+          6841960,
+          4
+        ],
+        "layer_end": [
+          8057400,
+          8057400,
+          1
+        ],
+        "layer_start": [
+          1000,
+          1000,
+          1
+        ],
+        "local_verified": [
+          6666600,
+          7925000,
+          52
+        ],
+        "main_weight_ready": [
+          1000,
+          1000,
+          4
+        ],
+        "payload_verified": [
+          490720,
+          8057400,
+          156
+        ],
+        "planning_end": [
+          201000,
+          201000,
+          1
+        ],
+        "planning_start": [
+          1000,
+          1000,
+          1
+        ],
+        "reroute_end": [
+          301000,
+          301000,
+          1
+        ],
+        "reroute_start": [
+          201000,
+          201000,
+          1
+        ],
+        "send": [
+          201000,
+          7925000,
+          67
+        ],
+        "sender_complete": [
+          6741520,
+          8125800,
+          15
+        ],
+        "ta_admitted": [
+          201000,
+          7925000,
+          156
+        ],
+        "ta_response_admitted": [
+          490720,
+          8057400,
+          156
+        ],
+        "target_complete": [
+          490720,
+          8057400,
+          156
+        ],
+        "target_received": [
+          490720,
+          8057400,
+          156
+        ],
+        "token_complete": [
+          6963208,
+          8057400,
+          32
+        ],
+        "weight_ready": [
+          6666600,
+          6666600,
+          3
+        ],
+        "weights_end": [
+          6666600,
+          6666600,
+          1
+        ],
+        "weights_start": [
+          201000,
+          201000,
+          1
+        ]
+      },
+      "stage_intervals": [
+        [
+          6666600,
+          6841960
+        ],
+        [
+          6963208,
+          8057400
+        ],
+        [
+          201000,
+          6666600
+        ]
+      ],
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 6809000,
+          "end_ps": 7892040
+        },
+        {
+          "node": 1,
+          "start_ps": 6827920,
+          "end_ps": 7910960
+        },
+        {
+          "node": 2,
+          "start_ps": 6841960,
+          "end_ps": 7925000
+        },
+        {
+          "node": 3,
+          "start_ps": 6666600,
+          "end_ps": 6963208
+        }
+      ]
+    },
+    "validation": {
+      "status": "PASS",
+      "checks": [
+        "per_task_state",
+        "per_segment_exact_once_order_delay",
+        "actual_payload_every_byte",
+        "terminal_payload_every_byte",
+        "quota_and_routing",
+        "relay_buffer_and_dependencies",
+        "weight_coverage",
+        "compute_duration_and_order",
+        "topk_conservation",
+        "wqe_completion",
+        "pair_idle"
+      ],
+      "checked_tasks": 67,
+      "checked_TAs": 156,
+      "verification_wall_ns": 22506863
+    }
+  },
+  {
+    "case": "tail4",
+    "strategy": "direct",
+    "status": "PASS",
+    "plan_hash": "fa60149ec96e09cdc484f2d0114a9813776153160701603f6367daab6fd4b794",
+    "assignments_hash": "b9f4abafa1d66a8f34d83cec759450ffa56726a8895bb7a6a0a3cd501e0d9619",
+    "summary": {
+      "schema": 1,
+      "log_level": "summary",
+      "layer_latency_ps": 18822160,
+      "remote_WQEs": 15,
+      "TA_count": 468,
+      "target_segments": 468,
+      "sender_completions": 15,
+      "completed_tokens": 32,
+      "assignments": 32,
+      "replicas": 3,
+      "jettys": 8,
+      "simulator_events": 26256,
+      "verification_wall_ns": 21837995,
+      "combine_fnv1a64": "eb86ce4f011cec85",
+      "executed_graph_fnv1a64": "b3d168a9230c03ec",
+      "max_npu_load": 10,
+      "per_npu_load": [
+        10,
+        10,
+        10,
+        2
+      ],
+      "verified_bytes": [
+        4160,
+        4160,
+        150930
+      ],
+      "remote_bytes": [
+        780,
+        780,
+        150930
+      ],
+      "local_bytes": [
+        3380,
+        3380,
+        0
+      ],
+      "packet_tx_per_node": [
+        920,
+        312,
+        312,
+        328,
+        1872
+      ],
+      "packet_rx_per_node": [
+        920,
+        312,
+        312,
+        328,
+        1872
+      ],
+      "byte_tx_per_node": [
+        215558,
+        19636,
+        19636,
+        21212,
+        276042
+      ],
+      "byte_rx_per_node": [
+        57332,
+        72378,
+        72378,
+        73954,
+        276042
+      ],
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 17421320,
+        "dispatch_gate": 17421320,
+        "layer_end": 18823160
+      },
+      "event_spans": {
+        "compute_end": [
+          17722560,
+          18703280,
+          4
+        ],
+        "compute_start": [
+          17421320,
+          17597080,
+          4
+        ],
+        "data_ready": [
+          17421320,
+          18823160,
+          64
+        ],
+        "dispatch_gate": [
+          17421320,
+          17421320,
+          1
+        ],
+        "edge_ready": [
+          17394520,
+          17421320,
+          3
+        ],
+        "expert_end": [
+          17722560,
+          18703280,
+          4
+        ],
+        "expert_start": [
+          17421320,
+          17597080,
+          4
+        ],
+        "layer_end": [
+          18823160,
+          18823160,
+          1
+        ],
+        "layer_start": [
+          1000,
+          1000,
+          1
+        ],
+        "local_verified": [
+          17421320,
+          18703280,
+          52
+        ],
+        "main_weight_ready": [
+          1000,
+          1000,
+          4
+        ],
+        "payload_verified": [
+          316760,
+          18823160,
+          468
+        ],
+        "planning_end": [
+          201000,
+          201000,
+          1
+        ],
+        "planning_start": [
+          1000,
+          1000,
+          1
+        ],
+        "reroute_end": [
+          301000,
+          301000,
+          1
+        ],
+        "reroute_start": [
+          201000,
+          201000,
+          1
+        ],
+        "send": [
+          201000,
+          18703280,
+          67
+        ],
+        "sender_complete": [
+          17459440,
+          18891400,
+          15
+        ],
+        "ta_admitted": [
+          201000,
+          18703280,
+          468
+        ],
+        "ta_response_admitted": [
+          316760,
+          18823160,
+          468
+        ],
+        "target_complete": [
+          316760,
+          18823160,
+          468
+        ],
+        "target_received": [
+          316760,
+          18823160,
+          468
+        ],
+        "token_complete": [
+          17722560,
+          18823160,
+          32
+        ],
+        "weight_ready": [
+          17394520,
+          17421320,
+          3
+        ],
+        "weights_end": [
+          17421320,
+          17421320,
+          1
+        ],
+        "weights_start": [
+          201000,
+          201000,
+          1
+        ]
+      },
+      "stage_intervals": [
+        [
+          17421320,
+          17597080
+        ],
+        [
+          17722560,
+          18823160
+        ],
+        [
+          201000,
+          17421320
+        ]
+      ],
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 17597080,
+          "end_ps": 18703280
+        },
+        {
+          "node": 1,
+          "start_ps": 17550480,
+          "end_ps": 18656680
+        },
+        {
+          "node": 2,
+          "start_ps": 17563800,
+          "end_ps": 18670000
+        },
+        {
+          "node": 3,
+          "start_ps": 17421320,
+          "end_ps": 17722560
+        }
+      ]
+    },
+    "validation": {
+      "status": "PASS",
+      "checks": [
+        "per_task_state",
+        "per_segment_exact_once_order_delay",
+        "actual_payload_every_byte",
+        "terminal_payload_every_byte",
+        "quota_and_routing",
+        "relay_buffer_and_dependencies",
+        "weight_coverage",
+        "compute_duration_and_order",
+        "topk_conservation",
+        "wqe_completion",
+        "pair_idle"
+      ],
+      "checked_tasks": 67,
+      "checked_TAs": 468,
+      "verification_wall_ns": 21837995
+    }
+  },
+  {
+    "case": "tail4",
+    "strategy": "chunk-streaming",
+    "status": "PASS",
+    "plan_hash": "fa60149ec96e09cdc484f2d0114a9813776153160701603f6367daab6fd4b794",
+    "assignments_hash": "b9f4abafa1d66a8f34d83cec759450ffa56726a8895bb7a6a0a3cd501e0d9619",
+    "summary": {
+      "schema": 1,
+      "log_level": "summary",
+      "layer_latency_ps": 19222280,
+      "remote_WQEs": 90,
+      "TA_count": 540,
+      "target_segments": 540,
+      "sender_completions": 90,
+      "completed_tokens": 32,
+      "assignments": 32,
+      "replicas": 3,
+      "jettys": 8,
+      "simulator_events": 28690,
+      "verification_wall_ns": 43349302,
+      "combine_fnv1a64": "eb86ce4f011cec85",
+      "executed_graph_fnv1a64": "9ed3e5c5a45a7bd8",
+      "max_npu_load": 10,
+      "per_npu_load": [
+        10,
+        10,
+        10,
+        2
+      ],
+      "verified_bytes": [
+        4160,
+        4160,
+        150930
+      ],
+      "remote_bytes": [
+        780,
+        780,
+        150930
+      ],
+      "local_bytes": [
+        3380,
+        3380,
+        0
+      ],
+      "packet_tx_per_node": [
+        360,
+        1064,
+        360,
+        376,
+        2160
+      ],
+      "packet_rx_per_node": [
+        360,
+        1064,
+        360,
+        376,
+        2160
+      ],
+      "byte_tx_per_node": [
+        75738,
+        172512,
+        22612,
+        24188,
+        295050
+      ],
+      "byte_rx_per_node": [
+        22612,
+        119386,
+        75738,
+        77314,
+        295050
+      ],
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 17824040,
+        "dispatch_gate": 17824040,
+        "layer_end": 19223280
+      },
+      "event_spans": {
+        "compute_end": [
+          18125280,
+          19106720,
+          4
+        ],
+        "compute_start": [
+          17824040,
+          18000520,
+          4
+        ],
+        "data_ready": [
+          17824040,
+          19223280,
+          64
+        ],
+        "dispatch_gate": [
+          17824040,
+          17824040,
+          1
+        ],
+        "edge_ready": [
+          3190160,
+          17824040,
+          78
+        ],
+        "expert_end": [
+          18125280,
+          19106720,
+          4
+        ],
+        "expert_start": [
+          17824040,
+          18000520,
+          4
+        ],
+        "group_chunk_ready": [
+          3190160,
+          6311320,
+          26
+        ],
+        "layer_end": [
+          19223280,
+          19223280,
+          1
+        ],
+        "layer_start": [
+          1000,
+          1000,
+          1
+        ],
+        "local_verified": [
+          17824040,
+          19106720,
+          52
+        ],
+        "main_weight_ready": [
+          1000,
+          1000,
+          4
+        ],
+        "payload_verified": [
+          316760,
+          19223280,
+          540
+        ],
+        "planning_end": [
+          201000,
+          201000,
+          1
+        ],
+        "planning_start": [
+          1000,
+          1000,
+          1
+        ],
+        "relay_buffer_read": [
+          3190160,
+          6311320,
+          52
+        ],
+        "reroute_end": [
+          301000,
+          301000,
+          1
+        ],
+        "reroute_start": [
+          201000,
+          201000,
+          1
+        ],
+        "send": [
+          201000,
+          19106720,
+          142
+        ],
+        "sender_complete": [
+          3320840,
+          19291520,
+          90
+        ],
+        "ta_admitted": [
+          201000,
+          19106720,
+          540
+        ],
+        "ta_response_admitted": [
+          316760,
+          19223280,
+          540
+        ],
+        "target_complete": [
+          316760,
+          19223280,
+          540
+        ],
+        "target_received": [
+          316760,
+          19223280,
+          540
+        ],
+        "token_complete": [
+          18125280,
+          19223280,
+          32
+        ],
+        "weight_ready": [
+          6311320,
+          17824040,
+          3
+        ],
+        "weights_end": [
+          17824040,
+          17824040,
+          1
+        ],
+        "weights_start": [
+          201000,
+          201000,
+          1
+        ]
+      },
+      "stage_intervals": [
+        [
+          17824040,
+          18000520
+        ],
+        [
+          18125280,
+          19223280
+        ],
+        [
+          201000,
+          17824040
+        ]
+      ],
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 17967240,
+          "end_ps": 19073440
+        },
+        {
+          "node": 1,
+          "start_ps": 18000520,
+          "end_ps": 19106720
+        },
+        {
+          "node": 2,
+          "start_ps": 17950600,
+          "end_ps": 19056800
+        },
+        {
+          "node": 3,
+          "start_ps": 17824040,
+          "end_ps": 18125280
+        }
+      ]
+    },
+    "validation": {
+      "status": "PASS",
+      "checks": [
+        "per_task_state",
+        "per_segment_exact_once_order_delay",
+        "actual_payload_every_byte",
+        "terminal_payload_every_byte",
+        "quota_and_routing",
+        "relay_buffer_and_dependencies",
+        "weight_coverage",
+        "compute_duration_and_order",
+        "topk_conservation",
+        "wqe_completion",
+        "pair_idle"
+      ],
+      "checked_tasks": 142,
+      "checked_TAs": 540,
+      "verification_wall_ns": 43349302
+    }
+  },
+  {
+    "case": "tail4",
+    "strategy": "multicast",
+    "status": "PASS",
+    "plan_hash": "fa60149ec96e09cdc484f2d0114a9813776153160701603f6367daab6fd4b794",
+    "assignments_hash": "b9f4abafa1d66a8f34d83cec759450ffa56726a8895bb7a6a0a3cd501e0d9619",
+    "summary": {
+      "schema": 1,
+      "log_level": "summary",
+      "layer_latency_ps": 13332680,
+      "remote_WQEs": 15,
+      "TA_count": 468,
+      "target_segments": 468,
+      "sender_completions": 15,
+      "completed_tokens": 32,
+      "assignments": 32,
+      "replicas": 3,
+      "jettys": 9,
+      "simulator_events": 24208,
+      "verification_wall_ns": 21950825,
+      "combine_fnv1a64": "eb86ce4f011cec85",
+      "executed_graph_fnv1a64": "b3d168a9230c03ec",
+      "max_npu_load": 10,
+      "per_npu_load": [
+        10,
+        10,
+        10,
+        2
+      ],
+      "verified_bytes": [
+        4160,
+        4160,
+        150930
+      ],
+      "remote_bytes": [
+        780,
+        780,
+        150930
+      ],
+      "local_bytes": [
+        3380,
+        3380,
+        0
+      ],
+      "packet_tx_per_node": [
+        616,
+        312,
+        312,
+        328,
+        1872
+      ],
+      "packet_rx_per_node": [
+        920,
+        312,
+        312,
+        328,
+        1568
+      ],
+      "byte_tx_per_node": [
+        146706,
+        19636,
+        19636,
+        21212,
+        442482
+      ],
+      "byte_rx_per_node": [
+        57332,
+        127858,
+        127858,
+        129434,
+        207190
+      ],
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 11917840,
+        "dispatch_gate": 11917840,
+        "layer_end": 13333680
+      },
+      "event_spans": {
+        "compute_end": [
+          12219080,
+          13200480,
+          4
+        ],
+        "compute_start": [
+          11917840,
+          12094280,
+          4
+        ],
+        "data_ready": [
+          11917840,
+          13333680,
+          64
+        ],
+        "dispatch_gate": [
+          11917840,
+          11917840,
+          1
+        ],
+        "edge_ready": [
+          11917840,
+          11917840,
+          3
+        ],
+        "expert_end": [
+          12219080,
+          13200480,
+          4
+        ],
+        "expert_start": [
+          11917840,
+          12094280,
+          4
+        ],
+        "layer_end": [
+          13333680,
+          13333680,
+          1
+        ],
+        "layer_start": [
+          1000,
+          1000,
+          1
+        ],
+        "local_verified": [
+          11917840,
+          13200480,
+          52
+        ],
+        "main_weight_ready": [
+          1000,
+          1000,
+          4
+        ],
+        "payload_verified": [
+          380160,
+          13333680,
+          468
+        ],
+        "planning_end": [
+          201000,
+          201000,
+          1
+        ],
+        "planning_start": [
+          1000,
+          1000,
+          1
+        ],
+        "reroute_end": [
+          301000,
+          301000,
+          1
+        ],
+        "reroute_start": [
+          201000,
+          201000,
+          1
+        ],
+        "send": [
+          201000,
+          13200480,
+          67
+        ],
+        "sender_complete": [
+          11995120,
+          13401920,
+          15
+        ],
+        "ta_admitted": [
+          201000,
+          13200480,
+          468
+        ],
+        "ta_response_admitted": [
+          380160,
+          13333680,
+          468
+        ],
+        "target_complete": [
+          380160,
+          13333680,
+          468
+        ],
+        "target_received": [
+          380160,
+          13333680,
+          468
+        ],
+        "token_complete": [
+          12219080,
+          13333680,
+          32
+        ],
+        "weight_ready": [
+          11917840,
+          11917840,
+          3
+        ],
+        "weights_end": [
+          11917840,
+          11917840,
+          1
+        ],
+        "weights_start": [
+          201000,
+          201000,
+          1
+        ]
+      },
+      "stage_intervals": [
+        [
+          11917840,
+          12094280
+        ],
+        [
+          12219080,
+          13333680
+        ],
+        [
+          201000,
+          11917840
+        ]
+      ],
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 12061000,
+          "end_ps": 13167200
+        },
+        {
+          "node": 1,
+          "start_ps": 12081680,
+          "end_ps": 13187880
+        },
+        {
+          "node": 2,
+          "start_ps": 12094280,
+          "end_ps": 13200480
+        },
+        {
+          "node": 3,
+          "start_ps": 11917840,
+          "end_ps": 12219080
+        }
+      ]
+    },
+    "validation": {
+      "status": "PASS",
+      "checks": [
+        "per_task_state",
+        "per_segment_exact_once_order_delay",
+        "actual_payload_every_byte",
+        "terminal_payload_every_byte",
+        "quota_and_routing",
+        "relay_buffer_and_dependencies",
+        "weight_coverage",
+        "compute_duration_and_order",
+        "topk_conservation",
+        "wqe_completion",
+        "pair_idle"
+      ],
+      "checked_tasks": 67,
+      "checked_TAs": 468,
+      "verification_wall_ns": 21950825
+    }
+  },
+  {
+    "case": "multi_expert8",
+    "strategy": "direct",
+    "status": "PASS",
+    "plan_hash": "8331b5d969367e4a33e123d46c4f6b28432eb2fabf00b936e29d0827a634ba0e",
+    "assignments_hash": "ef7ecaa6d23a5d507a2c9b264fe16915ccdabdd16384881655370edf64983812",
+    "summary": {
+      "schema": 1,
+      "log_level": "summary",
+      "layer_latency_ps": 16915608,
+      "remote_WQEs": 242,
+      "TA_count": 524,
+      "target_segments": 524,
+      "sender_completions": 242,
+      "completed_tokens": 160,
+      "assignments": 160,
+      "replicas": 6,
+      "jettys": 50,
+      "simulator_events": 32479,
+      "verification_wall_ns": 44544811,
+      "combine_fnv1a64": "ac6d7129f513d525",
+      "executed_graph_fnv1a64": "f6c8329fda73ef68",
+      "max_npu_load": 22,
+      "per_npu_load": [
+        22,
+        22,
+        22,
+        17,
+        19,
+        22,
+        17,
+        19
+      ],
+      "verified_bytes": [
+        20480,
+        20480,
+        294912
+      ],
+      "remote_bytes": [
+        15104,
+        15104,
+        294912
+      ],
+      "local_bytes": [
+        5376,
+        5376,
+        0
+      ],
+      "packet_tx_per_node": [
+        408,
+        408,
+        224,
+        204,
+        212,
+        224,
+        204,
+        212,
+        2096
+      ],
+      "packet_rx_per_node": [
+        408,
+        408,
+        224,
+        204,
+        212,
+        224,
+        204,
+        212,
+        2096
+      ],
+      "byte_tx_per_node": [
+        179376,
+        179376,
+        18496,
+        16536,
+        17320,
+        18496,
+        16536,
+        17320,
+        463456
+      ],
+      "byte_rx_per_node": [
+        29616,
+        29616,
+        68416,
+        66456,
+        67240,
+        68416,
+        66456,
+        67240,
+        463456
+      ],
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 13722400,
+        "dispatch_gate": 13722400,
+        "layer_end": 16916608
+      },
+      "event_spans": {
+        "compute_end": [
+          15789288,
+          16513088,
+          8
+        ],
+        "compute_start": [
+          14018120,
+          14166920,
+          8
+        ],
+        "data_ready": [
+          13722400,
+          16916608,
+          320
+        ],
+        "dispatch_gate": [
+          13722400,
+          13722400,
+          1
+        ],
+        "edge_ready": [
+          13546080,
+          13722400,
+          6
+        ],
+        "expert_end": [
+          14343784,
+          16513088,
+          10
+        ],
+        "expert_start": [
+          14018120,
+          14348704,
+          10
+        ],
+        "layer_end": [
+          16916608,
+          16916608,
+          1
+        ],
+        "layer_start": [
+          1000,
+          1000,
+          1
+        ],
+        "local_verified": [
+          13722400,
+          16513088,
+          84
+        ],
+        "main_weight_ready": [
+          1000,
+          1000,
+          16
+        ],
+        "payload_verified": [
+          427320,
+          16916608,
+          524
+        ],
+        "planning_end": [
+          201000,
+          201000,
+          1
+        ],
+        "planning_start": [
+          1000,
+          1000,
+          1
+        ],
+        "reroute_end": [
+          301000,
+          301000,
+          1
+        ],
+        "reroute_start": [
+          201000,
+          201000,
+          1
+        ],
+        "send": [
+          201000,
+          16513088,
+          326
+        ],
+        "sender_complete": [
+          13611000,
+          16990968,
+          242
+        ],
+        "ta_admitted": [
+          201000,
+          16664888,
+          524
+        ],
+        "ta_response_admitted": [
+          427320,
+          16916608,
+          524
+        ],
+        "target_complete": [
+          427320,
+          16916608,
+          524
+        ],
+        "target_received": [
+          427320,
+          16916608,
+          524
+        ],
+        "token_complete": [
+          15789288,
+          16916608,
+          160
+        ],
+        "weight_ready": [
+          13546080,
+          13722400,
+          6
+        ],
+        "weights_end": [
+          13722400,
+          13722400,
+          1
+        ],
+        "weights_start": [
+          201000,
+          201000,
+          1
+        ]
+      },
+      "stage_intervals": [
+        [
+          13722400,
+          14166920
+        ],
+        [
+          15789288,
+          16916608
+        ],
+        [
+          201000,
+          13722400
+        ]
+      ],
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 14145480,
+          "end_ps": 16508168
+        },
+        {
+          "node": 1,
+          "start_ps": 14150400,
+          "end_ps": 16513088
+        },
+        {
+          "node": 2,
+          "start_ps": 14143920,
+          "end_ps": 16406608
+        },
+        {
+          "node": 3,
+          "start_ps": 14018120,
+          "end_ps": 15789288
+        },
+        {
+          "node": 4,
+          "start_ps": 14127520,
+          "end_ps": 16095296
+        },
+        {
+          "node": 5,
+          "start_ps": 14166920,
+          "end_ps": 16429608
+        },
+        {
+          "node": 6,
+          "start_ps": 14066000,
+          "end_ps": 15837168
+        },
+        {
+          "node": 7,
+          "start_ps": 14128960,
+          "end_ps": 16096736
+        }
+      ]
+    },
+    "validation": {
+      "status": "PASS",
+      "checks": [
+        "per_task_state",
+        "per_segment_exact_once_order_delay",
+        "actual_payload_every_byte",
+        "terminal_payload_every_byte",
+        "quota_and_routing",
+        "relay_buffer_and_dependencies",
+        "weight_coverage",
+        "compute_duration_and_order",
+        "topk_conservation",
+        "wqe_completion",
+        "pair_idle"
+      ],
+      "checked_tasks": 326,
+      "checked_TAs": 524,
+      "verification_wall_ns": 44544811
+    }
+  },
+  {
+    "case": "multi_expert8",
+    "strategy": "chunk-streaming",
+    "status": "PASS",
+    "plan_hash": "8331b5d969367e4a33e123d46c4f6b28432eb2fabf00b936e29d0827a634ba0e",
+    "assignments_hash": "ef7ecaa6d23a5d507a2c9b264fe16915ccdabdd16384881655370edf64983812",
+    "summary": {
+      "schema": 1,
+      "log_level": "summary",
+      "layer_latency_ps": 15050008,
+      "remote_WQEs": 286,
+      "TA_count": 524,
+      "target_segments": 524,
+      "sender_completions": 286,
+      "completed_tokens": 160,
+      "assignments": 160,
+      "replicas": 6,
+      "jettys": 52,
+      "simulator_events": 32284,
+      "verification_wall_ns": 56277300,
+      "combine_fnv1a64": "ac6d7129f513d525",
+      "executed_graph_fnv1a64": "8aa43c5ec4c242d7",
+      "max_npu_load": 22,
+      "per_npu_load": [
+        22,
+        22,
+        22,
+        17,
+        19,
+        22,
+        17,
+        19
+      ],
+      "verified_bytes": [
+        20480,
+        20480,
+        294912
+      ],
+      "remote_bytes": [
+        15104,
+        15104,
+        294912
+      ],
+      "local_bytes": [
+        5376,
+        5376,
+        0
+      ],
+      "packet_tx_per_node": [
+        312,
+        312,
+        320,
+        204,
+        212,
+        320,
+        204,
+        212,
+        2096
+      ],
+      "packet_rx_per_node": [
+        312,
+        312,
+        320,
+        204,
+        212,
+        320,
+        204,
+        212,
+        2096
+      ],
+      "byte_tx_per_node": [
+        123504,
+        123504,
+        74368,
+        16536,
+        17320,
+        74368,
+        16536,
+        17320,
+        463456
+      ],
+      "byte_rx_per_node": [
+        23664,
+        23664,
+        74368,
+        66456,
+        67240,
+        74368,
+        66456,
+        67240,
+        463456
+      ],
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 11828880,
+        "dispatch_gate": 11828880,
+        "layer_end": 15051008
+      },
+      "event_spans": {
+        "compute_end": [
+          13900768,
+          14641088,
+          8
+        ],
+        "compute_start": [
+          12129600,
+          12278400,
+          8
+        ],
+        "data_ready": [
+          11828880,
+          15051008,
+          320
+        ],
+        "dispatch_gate": [
+          11828880,
+          11828880,
+          1
+        ],
+        "edge_ready": [
+          7124520,
+          11828880,
+          50
+        ],
+        "expert_end": [
+          12450184,
+          14641088,
+          10
+        ],
+        "expert_start": [
+          12129600,
+          12476704,
+          10
+        ],
+        "group_chunk_ready": [
+          7124520,
+          9257160,
+          24
+        ],
+        "layer_end": [
+          15051008,
+          15051008,
+          1
+        ],
+        "layer_start": [
+          1000,
+          1000,
+          1
+        ],
+        "local_verified": [
+          11828880,
+          14641088,
+          84
+        ],
+        "main_weight_ready": [
+          1000,
+          1000,
+          16
+        ],
+        "payload_verified": [
+          427320,
+          15051008,
+          524
+        ],
+        "planning_end": [
+          201000,
+          201000,
+          1
+        ],
+        "planning_start": [
+          1000,
+          1000,
+          1
+        ],
+        "relay_buffer_read": [
+          7124520,
+          9257160,
+          24
+        ],
+        "reroute_end": [
+          301000,
+          301000,
+          1
+        ],
+        "reroute_start": [
+          201000,
+          201000,
+          1
+        ],
+        "send": [
+          201000,
+          14641088,
+          370
+        ],
+        "sender_complete": [
+          7277600,
+          15117408,
+          286
+        ],
+        "ta_admitted": [
+          201000,
+          14705528,
+          524
+        ],
+        "ta_response_admitted": [
+          427320,
+          15051008,
+          524
+        ],
+        "target_complete": [
+          427320,
+          15051008,
+          524
+        ],
+        "target_received": [
+          427320,
+          15051008,
+          524
+        ],
+        "token_complete": [
+          13900768,
+          15051008,
+          160
+        ],
+        "weight_ready": [
+          9169000,
+          11828880,
+          6
+        ],
+        "weights_end": [
+          11828880,
+          11828880,
+          1
+        ],
+        "weights_start": [
+          201000,
+          201000,
+          1
+        ]
+      },
+      "stage_intervals": [
+        [
+          11828880,
+          12278400
+        ],
+        [
+          13900768,
+          15051008
+        ],
+        [
+          201000,
+          11828880
+        ]
+      ],
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 12251880,
+          "end_ps": 14614568
+        },
+        {
+          "node": 1,
+          "start_ps": 12278400,
+          "end_ps": 14641088
+        },
+        {
+          "node": 2,
+          "start_ps": 12258880,
+          "end_ps": 14521568
+        },
+        {
+          "node": 3,
+          "start_ps": 12129600,
+          "end_ps": 13900768
+        },
+        {
+          "node": 4,
+          "start_ps": 12182480,
+          "end_ps": 14150256
+        },
+        {
+          "node": 5,
+          "start_ps": 12276960,
+          "end_ps": 14539648
+        },
+        {
+          "node": 6,
+          "start_ps": 12171000,
+          "end_ps": 13942168
+        },
+        {
+          "node": 7,
+          "start_ps": 12233920,
+          "end_ps": 14201696
+        }
+      ]
+    },
+    "validation": {
+      "status": "PASS",
+      "checks": [
+        "per_task_state",
+        "per_segment_exact_once_order_delay",
+        "actual_payload_every_byte",
+        "terminal_payload_every_byte",
+        "quota_and_routing",
+        "relay_buffer_and_dependencies",
+        "weight_coverage",
+        "compute_duration_and_order",
+        "topk_conservation",
+        "wqe_completion",
+        "pair_idle"
+      ],
+      "checked_tasks": 370,
+      "checked_TAs": 524,
+      "verification_wall_ns": 56277300
+    }
+  },
+  {
+    "case": "multi_expert8",
+    "strategy": "multicast",
+    "status": "PASS",
+    "plan_hash": "8331b5d969367e4a33e123d46c4f6b28432eb2fabf00b936e29d0827a634ba0e",
+    "assignments_hash": "ef7ecaa6d23a5d507a2c9b264fe16915ccdabdd16384881655370edf64983812",
+    "summary": {
+      "schema": 1,
+      "log_level": "summary",
+      "layer_latency_ps": 13578368,
+      "remote_WQEs": 242,
+      "TA_count": 524,
+      "target_segments": 524,
+      "sender_completions": 242,
+      "completed_tokens": 160,
+      "assignments": 160,
+      "replicas": 6,
+      "jettys": 54,
+      "simulator_events": 31764,
+      "verification_wall_ns": 50420233,
+      "combine_fnv1a64": "ac6d7129f513d525",
+      "executed_graph_fnv1a64": "f6c8329fda73ef68",
+      "max_npu_load": 22,
+      "per_npu_load": [
+        22,
+        22,
+        22,
+        17,
+        19,
+        22,
+        17,
+        19
+      ],
+      "verified_bytes": [
+        20480,
+        20480,
+        294912
+      ],
+      "remote_bytes": [
+        15104,
+        15104,
+        294912
+      ],
+      "local_bytes": [
+        5376,
+        5376,
+        0
+      ],
+      "packet_tx_per_node": [
+        360,
+        360,
+        224,
+        204,
+        212,
+        224,
+        204,
+        212,
+        2096
+      ],
+      "packet_rx_per_node": [
+        408,
+        408,
+        224,
+        204,
+        212,
+        224,
+        204,
+        212,
+        2000
+      ],
+      "byte_tx_per_node": [
+        137424,
+        137424,
+        18496,
+        16536,
+        17320,
+        18496,
+        16536,
+        17320,
+        507232
+      ],
+      "byte_rx_per_node": [
+        29616,
+        29616,
+        79360,
+        77400,
+        67240,
+        79360,
+        77400,
+        67240,
+        379552
+      ],
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 10380600,
+        "dispatch_gate": 10380600,
+        "layer_end": 13579368
+      },
+      "event_spans": {
+        "compute_end": [
+          12432488,
+          13176288,
+          8
+        ],
+        "compute_start": [
+          10661320,
+          10815080,
+          8
+        ],
+        "data_ready": [
+          10380600,
+          13579368,
+          320
+        ],
+        "dispatch_gate": [
+          10380600,
+          10380600,
+          1
+        ],
+        "edge_ready": [
+          8520000,
+          10380600,
+          6
+        ],
+        "expert_end": [
+          10997464,
+          13176288,
+          10
+        ],
+        "expert_start": [
+          10661320,
+          11011904,
+          10
+        ],
+        "layer_end": [
+          13579368,
+          13579368,
+          1
+        ],
+        "layer_start": [
+          1000,
+          1000,
+          1
+        ],
+        "local_verified": [
+          10380600,
+          13176288,
+          84
+        ],
+        "main_weight_ready": [
+          1000,
+          1000,
+          16
+        ],
+        "payload_verified": [
+          468800,
+          13579368,
+          524
+        ],
+        "planning_end": [
+          201000,
+          201000,
+          1
+        ],
+        "planning_start": [
+          1000,
+          1000,
+          1
+        ],
+        "reroute_end": [
+          301000,
+          301000,
+          1
+        ],
+        "reroute_start": [
+          201000,
+          201000,
+          1
+        ],
+        "send": [
+          201000,
+          13176288,
+          326
+        ],
+        "sender_complete": [
+          8584920,
+          13657168,
+          242
+        ],
+        "ta_admitted": [
+          201000,
+          13252208,
+          524
+        ],
+        "ta_response_admitted": [
+          468800,
+          13579368,
+          524
+        ],
+        "target_complete": [
+          468800,
+          13579368,
+          524
+        ],
+        "target_received": [
+          468800,
+          13579368,
+          524
+        ],
+        "token_complete": [
+          12432488,
+          13579368,
+          160
+        ],
+        "weight_ready": [
+          8520000,
+          10380600,
+          6
+        ],
+        "weights_end": [
+          10380600,
+          10380600,
+          1
+        ],
+        "weights_start": [
+          201000,
+          201000,
+          1
+        ]
+      },
+      "stage_intervals": [
+        [
+          10380600,
+          10815080
+        ],
+        [
+          12432488,
+          13579368
+        ],
+        [
+          201000,
+          10380600
+        ]
+      ],
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 10799160,
+          "end_ps": 13161848
+        },
+        {
+          "node": 1,
+          "start_ps": 10813600,
+          "end_ps": 13176288
+        },
+        {
+          "node": 2,
+          "start_ps": 10802240,
+          "end_ps": 13064928
+        },
+        {
+          "node": 3,
+          "start_ps": 10661320,
+          "end_ps": 12432488
+        },
+        {
+          "node": 4,
+          "start_ps": 10770680,
+          "end_ps": 12738456
+        },
+        {
+          "node": 5,
+          "start_ps": 10815080,
+          "end_ps": 13077768
+        },
+        {
+          "node": 6,
+          "start_ps": 10699280,
+          "end_ps": 12470448
+        },
+        {
+          "node": 7,
+          "start_ps": 10798680,
+          "end_ps": 12766456
+        }
+      ]
+    },
+    "validation": {
+      "status": "PASS",
+      "checks": [
+        "per_task_state",
+        "per_segment_exact_once_order_delay",
+        "actual_payload_every_byte",
+        "terminal_payload_every_byte",
+        "quota_and_routing",
+        "relay_buffer_and_dependencies",
+        "weight_coverage",
+        "compute_duration_and_order",
+        "topk_conservation",
+        "wqe_completion",
+        "pair_idle"
+      ],
+      "checked_tasks": 326,
+      "checked_TAs": 524,
+      "verification_wall_ns": 50420233
+    }
+  },
+  {
+    "case": "slow_relay8",
+    "strategy": "direct",
+    "status": "PASS",
+    "plan_hash": "09714eea48d7d78a1cd839ee22c0d443d12fbc1419f9b152731884b81b1f6be7",
+    "assignments_hash": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613",
+    "summary": {
+      "schema": 1,
+      "log_level": "summary",
+      "layer_latency_ps": 37136920,
+      "remote_WQEs": 30,
+      "TA_count": 312,
+      "target_segments": 312,
+      "sender_completions": 30,
+      "completed_tokens": 64,
+      "assignments": 64,
+      "replicas": 6,
+      "jettys": 26,
+      "simulator_events": 24341,
+      "verification_wall_ns": 46743400,
+      "combine_fnv1a64": "a0236cb7321d4125",
+      "executed_graph_fnv1a64": "769413d776eefac0",
+      "max_npu_load": 10,
+      "per_npu_load": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        4,
+        0
+      ],
+      "verified_bytes": [
+        8192,
+        8192,
+        294912
+      ],
+      "remote_bytes": [
+        1536,
+        1536,
+        294912
+      ],
+      "local_bytes": [
+        6656,
+        6656,
+        0
+      ],
+      "packet_tx_per_node": [
+        584,
+        104,
+        104,
+        104,
+        104,
+        104,
+        112,
+        32,
+        1248
+      ],
+      "packet_rx_per_node": [
+        584,
+        104,
+        104,
+        104,
+        104,
+        104,
+        112,
+        32,
+        1248
+      ],
+      "byte_tx_per_node": [
+        336016,
+        6736,
+        6736,
+        6736,
+        6736,
+        6736,
+        7520,
+        3136,
+        380352
+      ],
+      "byte_rx_per_node": [
+        36496,
+        56656,
+        56656,
+        56656,
+        56656,
+        56656,
+        57440,
+        3136,
+        380352
+      ],
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 35724160,
+        "dispatch_gate": 35724160,
+        "layer_end": 37137920
+      },
+      "event_spans": {
+        "compute_end": [
+          36217376,
+          37005520,
+          7
+        ],
+        "compute_idle": [
+          35724160,
+          35724160,
+          1
+        ],
+        "compute_start": [
+          35724160,
+          35922480,
+          7
+        ],
+        "data_ready": [
+          35724160,
+          37137920,
+          128
+        ],
+        "dispatch_gate": [
+          35724160,
+          35724160,
+          1
+        ],
+        "edge_ready": [
+          26630440,
+          35724160,
+          6
+        ],
+        "expert_end": [
+          36217376,
+          37005520,
+          7
+        ],
+        "expert_start": [
+          35724160,
+          35922480,
+          7
+        ],
+        "layer_end": [
+          37137920,
+          37137920,
+          1
+        ],
+        "layer_start": [
+          1000,
+          1000,
+          1
+        ],
+        "local_verified": [
+          35724160,
+          37005520,
+          104
+        ],
+        "main_weight_ready": [
+          1000,
+          1000,
+          8
+        ],
+        "payload_verified": [
+          427320,
+          37137920,
+          312
+        ],
+        "planning_end": [
+          201000,
+          201000,
+          1
+        ],
+        "planning_start": [
+          1000,
+          1000,
+          1
+        ],
+        "reroute_end": [
+          301000,
+          301000,
+          1
+        ],
+        "reroute_start": [
+          201000,
+          201000,
+          1
+        ],
+        "send": [
+          201000,
+          37005520,
+          134
+        ],
+        "sender_complete": [
+          26695360,
+          37206320,
+          30
+        ],
+        "ta_admitted": [
+          201000,
+          37005520,
+          312
+        ],
+        "ta_response_admitted": [
+          515480,
+          37137920,
+          312
+        ],
+        "target_complete": [
+          515480,
+          37137920,
+          312
+        ],
+        "target_received": [
+          427320,
+          37137920,
+          312
+        ],
+        "token_complete": [
+          36217376,
+          37137920,
+          64
+        ],
+        "weight_ready": [
+          26630440,
+          35724160,
+          6
+        ],
+        "weights_end": [
+          35724160,
+          35724160,
+          1
+        ],
+        "weights_start": [
+          201000,
+          201000,
+          1
+        ]
+      },
+      "stage_intervals": [
+        [
+          35724160,
+          35922480
+        ],
+        [
+          36217376,
+          37137920
+        ],
+        [
+          201000,
+          35724160
+        ]
+      ],
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 35906000,
+          "end_ps": 36989040
+        },
+        {
+          "node": 1,
+          "start_ps": 35922480,
+          "end_ps": 37005520
+        },
+        {
+          "node": 2,
+          "start_ps": 35840080,
+          "end_ps": 36923120
+        },
+        {
+          "node": 3,
+          "start_ps": 35856560,
+          "end_ps": 36939600
+        },
+        {
+          "node": 4,
+          "start_ps": 35873040,
+          "end_ps": 36956080
+        },
+        {
+          "node": 5,
+          "start_ps": 35889520,
+          "end_ps": 36972560
+        },
+        {
+          "node": 6,
+          "start_ps": 35724160,
+          "end_ps": 36217376
+        }
+      ]
+    },
+    "validation": {
+      "status": "PASS",
+      "checks": [
+        "per_task_state",
+        "per_segment_exact_once_order_delay",
+        "actual_payload_every_byte",
+        "terminal_payload_every_byte",
+        "quota_and_routing",
+        "relay_buffer_and_dependencies",
+        "weight_coverage",
+        "compute_duration_and_order",
+        "topk_conservation",
+        "wqe_completion",
+        "pair_idle"
+      ],
+      "checked_tasks": 134,
+      "checked_TAs": 312,
+      "verification_wall_ns": 46743400
+    }
+  },
+  {
+    "case": "slow_relay8",
+    "strategy": "chunk-streaming",
+    "status": "PASS",
+    "plan_hash": "09714eea48d7d78a1cd839ee22c0d443d12fbc1419f9b152731884b81b1f6be7",
+    "assignments_hash": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613",
+    "summary": {
+      "schema": 1,
+      "log_level": "summary",
+      "layer_latency_ps": 35889760,
+      "remote_WQEs": 96,
+      "TA_count": 312,
+      "target_segments": 312,
+      "sender_completions": 96,
+      "completed_tokens": 64,
+      "assignments": 64,
+      "replicas": 6,
+      "jettys": 25,
+      "simulator_events": 24253,
+      "verification_wall_ns": 52959648,
+      "combine_fnv1a64": "a0236cb7321d4125",
+      "executed_graph_fnv1a64": "20c01cbe1d5d129e",
+      "max_npu_load": 10,
+      "per_npu_load": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        4,
+        0
+      ],
+      "verified_bytes": [
+        8192,
+        8192,
+        294912
+      ],
+      "remote_bytes": [
+        1536,
+        1536,
+        294912
+      ],
+      "local_bytes": [
+        6656,
+        6656,
+        0
+      ],
+      "packet_tx_per_node": [
+        200,
+        296,
+        296,
+        104,
+        104,
+        104,
+        112,
+        32,
+        1248
+      ],
+      "packet_rx_per_node": [
+        200,
+        296,
+        296,
+        104,
+        104,
+        104,
+        112,
+        32,
+        1248
+      ],
+      "byte_tx_per_node": [
+        112528,
+        118480,
+        118480,
+        6736,
+        6736,
+        6736,
+        7520,
+        3136,
+        380352
+      ],
+      "byte_rx_per_node": [
+        12688,
+        68560,
+        68560,
+        56656,
+        56656,
+        56656,
+        57440,
+        3136,
+        380352
+      ],
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 34477000,
+        "dispatch_gate": 34477000,
+        "layer_end": 35890760
+      },
+      "event_spans": {
+        "compute_end": [
+          34970216,
+          35758360,
+          7
+        ],
+        "compute_idle": [
+          34477000,
+          34477000,
+          1
+        ],
+        "compute_start": [
+          34477000,
+          34675320,
+          7
+        ],
+        "data_ready": [
+          34477000,
+          35890760,
+          128
+        ],
+        "dispatch_gate": [
+          34477000,
+          34477000,
+          1
+        ],
+        "edge_ready": [
+          7997600,
+          34477000,
+          72
+        ],
+        "expert_end": [
+          34970216,
+          35758360,
+          7
+        ],
+        "expert_start": [
+          34477000,
+          34675320,
+          7
+        ],
+        "group_chunk_ready": [
+          25361080,
+          26801640,
+          12
+        ],
+        "layer_end": [
+          35890760,
+          35890760,
+          1
+        ],
+        "layer_start": [
+          1000,
+          1000,
+          1
+        ],
+        "local_verified": [
+          34477000,
+          35758360,
+          104
+        ],
+        "main_weight_ready": [
+          1000,
+          1000,
+          8
+        ],
+        "payload_verified": [
+          427320,
+          35890760,
+          312
+        ],
+        "planning_end": [
+          201000,
+          201000,
+          1
+        ],
+        "planning_start": [
+          1000,
+          1000,
+          1
+        ],
+        "relay_buffer_read": [
+          25361080,
+          26801640,
+          48
+        ],
+        "reroute_end": [
+          301000,
+          301000,
+          1
+        ],
+        "reroute_start": [
+          201000,
+          201000,
+          1
+        ],
+        "send": [
+          201000,
+          35758360,
+          200
+        ],
+        "sender_complete": [
+          8062520,
+          35959160,
+          96
+        ],
+        "ta_admitted": [
+          201000,
+          35758360,
+          312
+        ],
+        "ta_response_admitted": [
+          515480,
+          35890760,
+          312
+        ],
+        "target_complete": [
+          515480,
+          35890760,
+          312
+        ],
+        "target_received": [
+          427320,
+          35890760,
+          312
+        ],
+        "token_complete": [
+          34970216,
+          35890760,
+          64
+        ],
+        "weight_ready": [
+          9027200,
+          34477000,
+          6
+        ],
+        "weights_end": [
+          34477000,
+          34477000,
+          1
+        ],
+        "weights_start": [
+          201000,
+          201000,
+          1
+        ]
+      },
+      "stage_intervals": [
+        [
+          34477000,
+          34675320
+        ],
+        [
+          34970216,
+          35890760
+        ],
+        [
+          201000,
+          34477000
+        ]
+      ],
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 34658840,
+          "end_ps": 35741880
+        },
+        {
+          "node": 1,
+          "start_ps": 34675320,
+          "end_ps": 35758360
+        },
+        {
+          "node": 2,
+          "start_ps": 34592920,
+          "end_ps": 35675960
+        },
+        {
+          "node": 3,
+          "start_ps": 34609400,
+          "end_ps": 35692440
+        },
+        {
+          "node": 4,
+          "start_ps": 34625880,
+          "end_ps": 35708920
+        },
+        {
+          "node": 5,
+          "start_ps": 34642360,
+          "end_ps": 35725400
+        },
+        {
+          "node": 6,
+          "start_ps": 34477000,
+          "end_ps": 34970216
+        }
+      ]
+    },
+    "validation": {
+      "status": "PASS",
+      "checks": [
+        "per_task_state",
+        "per_segment_exact_once_order_delay",
+        "actual_payload_every_byte",
+        "terminal_payload_every_byte",
+        "quota_and_routing",
+        "relay_buffer_and_dependencies",
+        "weight_coverage",
+        "compute_duration_and_order",
+        "topk_conservation",
+        "wqe_completion",
+        "pair_idle"
+      ],
+      "checked_tasks": 200,
+      "checked_TAs": 312,
+      "verification_wall_ns": 52959648
+    }
+  },
+  {
+    "case": "slow_relay8",
+    "strategy": "multicast",
+    "status": "PASS",
+    "plan_hash": "09714eea48d7d78a1cd839ee22c0d443d12fbc1419f9b152731884b81b1f6be7",
+    "assignments_hash": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613",
+    "summary": {
+      "schema": 1,
+      "log_level": "summary",
+      "layer_latency_ps": 30130480,
+      "remote_WQEs": 30,
+      "TA_count": 312,
+      "target_segments": 312,
+      "sender_completions": 30,
+      "completed_tokens": 64,
+      "assignments": 64,
+      "replicas": 6,
+      "jettys": 26,
+      "simulator_events": 22476,
+      "verification_wall_ns": 44270566,
+      "combine_fnv1a64": "a0236cb7321d4125",
+      "executed_graph_fnv1a64": "769413d776eefac0",
+      "max_npu_load": 10,
+      "per_npu_load": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        4,
+        0
+      ],
+      "verified_bytes": [
+        8192,
+        8192,
+        294912
+      ],
+      "remote_bytes": [
+        1536,
+        1536,
+        294912
+      ],
+      "local_bytes": [
+        6656,
+        6656,
+        0
+      ],
+      "packet_tx_per_node": [
+        344,
+        104,
+        104,
+        104,
+        104,
+        104,
+        112,
+        32,
+        1248
+      ],
+      "packet_rx_per_node": [
+        584,
+        104,
+        104,
+        104,
+        104,
+        104,
+        112,
+        32,
+        1008
+      ],
+      "byte_tx_per_node": [
+        108784,
+        6736,
+        6736,
+        6736,
+        6736,
+        6736,
+        7520,
+        3136,
+        603840
+      ],
+      "byte_rx_per_node": [
+        36496,
+        93904,
+        93904,
+        93904,
+        93904,
+        93904,
+        94688,
+        3136,
+        153120
+      ],
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 28717720,
+        "dispatch_gate": 28717720,
+        "layer_end": 30131480
+      },
+      "event_spans": {
+        "compute_end": [
+          29210936,
+          29999080,
+          7
+        ],
+        "compute_idle": [
+          28717720,
+          28717720,
+          1
+        ],
+        "compute_start": [
+          28717720,
+          28916040,
+          7
+        ],
+        "data_ready": [
+          28717720,
+          30131480,
+          128
+        ],
+        "dispatch_gate": [
+          28717720,
+          28717720,
+          1
+        ],
+        "edge_ready": [
+          8717720,
+          28717720,
+          6
+        ],
+        "expert_end": [
+          29210936,
+          29999080,
+          7
+        ],
+        "expert_start": [
+          28717720,
+          28916040,
+          7
+        ],
+        "layer_end": [
+          30131480,
+          30131480,
+          1
+        ],
+        "layer_start": [
+          1000,
+          1000,
+          1
+        ],
+        "local_verified": [
+          28717720,
+          29999080,
+          104
+        ],
+        "main_weight_ready": [
+          1000,
+          1000,
+          8
+        ],
+        "payload_verified": [
+          556480,
+          30131480,
+          312
+        ],
+        "planning_end": [
+          201000,
+          201000,
+          1
+        ],
+        "planning_start": [
+          1000,
+          1000,
+          1
+        ],
+        "reroute_end": [
+          301000,
+          301000,
+          1
+        ],
+        "reroute_start": [
+          201000,
+          201000,
+          1
+        ],
+        "send": [
+          201000,
+          29999080,
+          134
+        ],
+        "sender_complete": [
+          8807640,
+          30199880,
+          30
+        ],
+        "ta_admitted": [
+          201000,
+          29999080,
+          312
+        ],
+        "ta_response_admitted": [
+          556480,
+          30131480,
+          312
+        ],
+        "target_complete": [
+          556480,
+          30131480,
+          312
+        ],
+        "target_received": [
+          556480,
+          30131480,
+          312
+        ],
+        "token_complete": [
+          29210936,
+          30131480,
+          64
+        ],
+        "weight_ready": [
+          8717720,
+          28717720,
+          6
+        ],
+        "weights_end": [
+          28717720,
+          28717720,
+          1
+        ],
+        "weights_start": [
+          201000,
+          201000,
+          1
+        ]
+      },
+      "stage_intervals": [
+        [
+          28717720,
+          28916040
+        ],
+        [
+          29210936,
+          30131480
+        ],
+        [
+          201000,
+          28717720
+        ]
+      ],
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 28899560,
+          "end_ps": 29982600
+        },
+        {
+          "node": 1,
+          "start_ps": 28916040,
+          "end_ps": 29999080
+        },
+        {
+          "node": 2,
+          "start_ps": 28833640,
+          "end_ps": 29916680
+        },
+        {
+          "node": 3,
+          "start_ps": 28850120,
+          "end_ps": 29933160
+        },
+        {
+          "node": 4,
+          "start_ps": 28866600,
+          "end_ps": 29949640
+        },
+        {
+          "node": 5,
+          "start_ps": 28883080,
+          "end_ps": 29966120
+        },
+        {
+          "node": 6,
+          "start_ps": 28717720,
+          "end_ps": 29210936
+        }
+      ]
+    },
+    "validation": {
+      "status": "PASS",
+      "checks": [
+        "per_task_state",
+        "per_segment_exact_once_order_delay",
+        "actual_payload_every_byte",
+        "terminal_payload_every_byte",
+        "quota_and_routing",
+        "relay_buffer_and_dependencies",
+        "weight_coverage",
+        "compute_duration_and_order",
+        "topk_conservation",
+        "wqe_completion",
+        "pair_idle"
+      ],
+      "checked_tasks": 134,
+      "checked_TAs": 312,
+      "verification_wall_ns": 44270566
+    }
+  },
+  {
+    "case": "topk2_4",
+    "strategy": "direct",
+    "status": "PASS",
+    "plan_hash": "c3390f6df7643ba7eaa6e02d07c2a161225aa7af0f7961cbed1ab195d659ef6e",
+    "assignments_hash": "152217cd03ad2a804d17fa22525d74ddf5a5ecd3f622db7f67f36563d06db708",
+    "summary": {
+      "schema": 1,
+      "log_level": "summary",
+      "layer_latency_ps": 16117352,
+      "remote_WQEs": 59,
+      "TA_count": 200,
+      "target_segments": 200,
+      "sender_completions": 59,
+      "completed_tokens": 32,
+      "assignments": 64,
+      "replicas": 3,
+      "jettys": 9,
+      "simulator_events": 14376,
+      "verification_wall_ns": 21524559,
+      "combine_fnv1a64": "1debd84e993ae925",
+      "executed_graph_fnv1a64": "f36da7bf9c50bc4a",
+      "max_npu_load": 18,
+      "per_npu_load": [
+        18,
+        18,
+        18,
+        10
+      ],
+      "verified_bytes": [
+        8192,
+        8192,
+        147456
+      ],
+      "remote_bytes": [
+        3584,
+        3584,
+        147456
+      ],
+      "local_bytes": [
+        4608,
+        4608,
+        0
+      ],
+      "packet_tx_per_node": [
+        328,
+        168,
+        168,
+        136,
+        800
+      ],
+      "packet_rx_per_node": [
+        328,
+        168,
+        168,
+        136,
+        800
+      ],
+      "byte_tx_per_node": [
+        171536,
+        13008,
+        13008,
+        9872,
+        207424
+      ],
+      "byte_rx_per_node": [
+        21776,
+        62928,
+        62928,
+        59792,
+        207424
+      ],
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 13722400,
+        "dispatch_gate": 13722400,
+        "layer_end": 16118352
+      },
+      "event_spans": {
+        "compute_end": [
+          14921360,
+          15883712,
+          4
+        ],
+        "compute_start": [
+          13838320,
+          13978600,
+          4
+        ],
+        "data_ready": [
+          13722400,
+          16118352,
+          128
+        ],
+        "dispatch_gate": [
+          13722400,
+          13722400,
+          1
+        ],
+        "edge_ready": [
+          13546080,
+          13722400,
+          3
+        ],
+        "expert_end": [
+          14921360,
+          15883712,
+          5
+        ],
+        "expert_start": [
+          13838320,
+          15390496,
+          5
+        ],
+        "layer_end": [
+          16118352,
+          16118352,
+          1
+        ],
+        "layer_start": [
+          1000,
+          1000,
+          1
+        ],
+        "local_verified": [
+          13722400,
+          15883712,
+          72
+        ],
+        "main_weight_ready": [
+          1000,
+          1000,
+          8
+        ],
+        "payload_verified": [
+          427320,
+          16118352,
+          200
+        ],
+        "planning_end": [
+          201000,
+          201000,
+          1
+        ],
+        "planning_start": [
+          1000,
+          1000,
+          1
+        ],
+        "reroute_end": [
+          301000,
+          301000,
+          1
+        ],
+        "reroute_start": [
+          201000,
+          201000,
+          1
+        ],
+        "send": [
+          201000,
+          15883712,
+          131
+        ],
+        "sender_complete": [
+          13611000,
+          16196752,
+          59
+        ],
+        "ta_admitted": [
+          201000,
+          15966952,
+          200
+        ],
+        "ta_response_admitted": [
+          427320,
+          16118352,
+          200
+        ],
+        "target_complete": [
+          427320,
+          16118352,
+          200
+        ],
+        "target_received": [
+          427320,
+          16118352,
+          200
+        ],
+        "token_complete": [
+          15843152,
+          16118352,
+          32
+        ],
+        "weight_ready": [
+          13546080,
+          13722400,
+          3
+        ],
+        "weights_end": [
+          13722400,
+          13722400,
+          1
+        ],
+        "weights_start": [
+          201000,
+          201000,
+          1
+        ]
+      },
+      "stage_intervals": [
+        [
+          13722400,
+          13978600
+        ],
+        [
+          14921360,
+          16118352
+        ],
+        [
+          201000,
+          13722400
+        ]
+      ],
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 13914240,
+          "end_ps": 15883712
+        },
+        {
+          "node": 1,
+          "start_ps": 13973680,
+          "end_ps": 15843152
+        },
+        {
+          "node": 2,
+          "start_ps": 13978600,
+          "end_ps": 15848072
+        },
+        {
+          "node": 3,
+          "start_ps": 13838320,
+          "end_ps": 14921360
+        }
+      ]
+    },
+    "validation": {
+      "status": "PASS",
+      "checks": [
+        "per_task_state",
+        "per_segment_exact_once_order_delay",
+        "actual_payload_every_byte",
+        "terminal_payload_every_byte",
+        "quota_and_routing",
+        "relay_buffer_and_dependencies",
+        "weight_coverage",
+        "compute_duration_and_order",
+        "topk_conservation",
+        "wqe_completion",
+        "pair_idle"
+      ],
+      "checked_tasks": 131,
+      "checked_TAs": 200,
+      "verification_wall_ns": 21524559
+    }
+  },
+  {
+    "case": "topk2_4",
+    "strategy": "chunk-streaming",
+    "status": "PASS",
+    "plan_hash": "c3390f6df7643ba7eaa6e02d07c2a161225aa7af0f7961cbed1ab195d659ef6e",
+    "assignments_hash": "152217cd03ad2a804d17fa22525d74ddf5a5ecd3f622db7f67f36563d06db708",
+    "summary": {
+      "schema": 1,
+      "log_level": "summary",
+      "layer_latency_ps": 14356392,
+      "remote_WQEs": 81,
+      "TA_count": 200,
+      "target_segments": 200,
+      "sender_completions": 81,
+      "completed_tokens": 32,
+      "assignments": 64,
+      "replicas": 3,
+      "jettys": 10,
+      "simulator_events": 14247,
+      "verification_wall_ns": 25708338,
+      "combine_fnv1a64": "1debd84e993ae925",
+      "executed_graph_fnv1a64": "13725aaac0436ca6",
+      "max_npu_load": 18,
+      "per_npu_load": [
+        18,
+        18,
+        18,
+        10
+      ],
+      "verified_bytes": [
+        8192,
+        8192,
+        147456
+      ],
+      "remote_bytes": [
+        3584,
+        3584,
+        147456
+      ],
+      "local_bytes": [
+        4608,
+        4608,
+        0
+      ],
+      "packet_tx_per_node": [
+        232,
+        168,
+        264,
+        136,
+        800
+      ],
+      "packet_rx_per_node": [
+        232,
+        168,
+        264,
+        136,
+        800
+      ],
+      "byte_tx_per_node": [
+        115664,
+        13008,
+        68880,
+        9872,
+        207424
+      ],
+      "byte_rx_per_node": [
+        15824,
+        62928,
+        68880,
+        59792,
+        207424
+      ],
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 11922160,
+        "dispatch_gate": 11922160,
+        "layer_end": 14357392
+      },
+      "event_spans": {
+        "compute_end": [
+          13121120,
+          14061232,
+          4
+        ],
+        "compute_start": [
+          12038080,
+          12191760,
+          4
+        ],
+        "data_ready": [
+          11922160,
+          14357392,
+          128
+        ],
+        "dispatch_gate": [
+          11922160,
+          11922160,
+          1
+        ],
+        "edge_ready": [
+          7212680,
+          11922160,
+          25
+        ],
+        "expert_end": [
+          13121120,
+          14061232,
+          5
+        ],
+        "expert_start": [
+          12038080,
+          13563776,
+          5
+        ],
+        "group_chunk_ready": [
+          7212680,
+          9265720,
+          12
+        ],
+        "layer_end": [
+          14357392,
+          14357392,
+          1
+        ],
+        "layer_start": [
+          1000,
+          1000,
+          1
+        ],
+        "local_verified": [
+          11922160,
+          14061232,
+          72
+        ],
+        "main_weight_ready": [
+          1000,
+          1000,
+          8
+        ],
+        "payload_verified": [
+          427320,
+          14357392,
+          200
+        ],
+        "planning_end": [
+          201000,
+          201000,
+          1
+        ],
+        "planning_start": [
+          1000,
+          1000,
+          1
+        ],
+        "relay_buffer_read": [
+          7212680,
+          9265720,
+          12
+        ],
+        "reroute_end": [
+          301000,
+          301000,
+          1
+        ],
+        "reroute_start": [
+          201000,
+          201000,
+          1
+        ],
+        "send": [
+          201000,
+          14061232,
+          153
+        ],
+        "sender_complete": [
+          7365760,
+          14432312,
+          81
+        ],
+        "ta_admitted": [
+          201000,
+          14195112,
+          200
+        ],
+        "ta_response_admitted": [
+          427320,
+          14357392,
+          200
+        ],
+        "target_complete": [
+          427320,
+          14357392,
+          200
+        ],
+        "target_received": [
+          427320,
+          14357392,
+          200
+        ],
+        "token_complete": [
+          14049392,
+          14357392,
+          32
+        ],
+        "weight_ready": [
+          9164000,
+          11922160,
+          3
+        ],
+        "weights_end": [
+          11922160,
+          11922160,
+          1
+        ],
+        "weights_start": [
+          201000,
+          201000,
+          1
+        ]
+      },
+      "stage_intervals": [
+        [
+          11922160,
+          12191760
+        ],
+        [
+          13121120,
+          14357392
+        ],
+        [
+          201000,
+          11922160
+        ]
+      ],
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 12087520,
+          "end_ps": 14056992
+        },
+        {
+          "node": 1,
+          "start_ps": 12179920,
+          "end_ps": 14049392
+        },
+        {
+          "node": 2,
+          "start_ps": 12191760,
+          "end_ps": 14061232
+        },
+        {
+          "node": 3,
+          "start_ps": 12038080,
+          "end_ps": 13121120
+        }
+      ]
+    },
+    "validation": {
+      "status": "PASS",
+      "checks": [
+        "per_task_state",
+        "per_segment_exact_once_order_delay",
+        "actual_payload_every_byte",
+        "terminal_payload_every_byte",
+        "quota_and_routing",
+        "relay_buffer_and_dependencies",
+        "weight_coverage",
+        "compute_duration_and_order",
+        "topk_conservation",
+        "wqe_completion",
+        "pair_idle"
+      ],
+      "checked_tasks": 153,
+      "checked_TAs": 200,
+      "verification_wall_ns": 25708338
+    }
+  },
+  {
+    "case": "topk2_4",
+    "strategy": "multicast",
+    "status": "PASS",
+    "plan_hash": "c3390f6df7643ba7eaa6e02d07c2a161225aa7af0f7961cbed1ab195d659ef6e",
+    "assignments_hash": "152217cd03ad2a804d17fa22525d74ddf5a5ecd3f622db7f67f36563d06db708",
+    "summary": {
+      "schema": 1,
+      "log_level": "summary",
+      "layer_latency_ps": 12776472,
+      "remote_WQEs": 59,
+      "TA_count": 200,
+      "target_segments": 200,
+      "sender_completions": 59,
+      "completed_tokens": 32,
+      "assignments": 64,
+      "replicas": 3,
+      "jettys": 11,
+      "simulator_events": 14045,
+      "verification_wall_ns": 27492167,
+      "combine_fnv1a64": "1debd84e993ae925",
+      "executed_graph_fnv1a64": "f36da7bf9c50bc4a",
+      "max_npu_load": 18,
+      "per_npu_load": [
+        18,
+        18,
+        18,
+        10
+      ],
+      "verified_bytes": [
+        8192,
+        8192,
+        147456
+      ],
+      "remote_bytes": [
+        3584,
+        3584,
+        147456
+      ],
+      "local_bytes": [
+        4608,
+        4608,
+        0
+      ],
+      "packet_tx_per_node": [
+        280,
+        168,
+        168,
+        136,
+        800
+      ],
+      "packet_rx_per_node": [
+        328,
+        168,
+        168,
+        136,
+        752
+      ],
+      "byte_tx_per_node": [
+        129584,
+        13008,
+        13008,
+        9872,
+        229312
+      ],
+      "byte_rx_per_node": [
+        21776,
+        62928,
+        73872,
+        70736,
+        165472
+      ],
+      "timeline": {
+        "layer_start": 1000,
+        "planning_end": 201000,
+        "reroute_end": 301000,
+        "weights_end": 10385680,
+        "dispatch_gate": 10385680,
+        "layer_end": 12777472
+      },
+      "event_spans": {
+        "compute_end": [
+          11584640,
+          12538952,
+          4
+        ],
+        "compute_start": [
+          10501600,
+          10658440,
+          4
+        ],
+        "data_ready": [
+          10385680,
+          12777472,
+          128
+        ],
+        "dispatch_gate": [
+          10385680,
+          10385680,
+          1
+        ],
+        "edge_ready": [
+          8510040,
+          10385680,
+          3
+        ],
+        "expert_end": [
+          11584640,
+          12538952,
+          5
+        ],
+        "expert_start": [
+          10501600,
+          12045736,
+          5
+        ],
+        "layer_end": [
+          12777472,
+          12777472,
+          1
+        ],
+        "layer_start": [
+          1000,
+          1000,
+          1
+        ],
+        "local_verified": [
+          10385680,
+          12538952,
+          72
+        ],
+        "main_weight_ready": [
+          1000,
+          1000,
+          8
+        ],
+        "payload_verified": [
+          427320,
+          12777472,
+          200
+        ],
+        "planning_end": [
+          201000,
+          201000,
+          1
+        ],
+        "planning_start": [
+          1000,
+          1000,
+          1
+        ],
+        "reroute_end": [
+          301000,
+          301000,
+          1
+        ],
+        "reroute_start": [
+          201000,
+          201000,
+          1
+        ],
+        "send": [
+          201000,
+          12538952,
+          131
+        ],
+        "sender_complete": [
+          8574960,
+          12850872,
+          59
+        ],
+        "ta_admitted": [
+          201000,
+          12625192,
+          200
+        ],
+        "ta_response_admitted": [
+          427320,
+          12777472,
+          200
+        ],
+        "target_complete": [
+          427320,
+          12777472,
+          200
+        ],
+        "target_received": [
+          427320,
+          12777472,
+          200
+        ],
+        "token_complete": [
+          12527912,
+          12777472,
+          32
+        ],
+        "weight_ready": [
+          8510040,
+          10385680,
+          3
+        ],
+        "weights_end": [
+          10385680,
+          10385680,
+          1
+        ],
+        "weights_start": [
+          201000,
+          201000,
+          1
+        ]
+      },
+      "stage_intervals": [
+        [
+          10385680,
+          10658440
+        ],
+        [
+          11584640,
+          12777472
+        ],
+        [
+          201000,
+          10385680
+        ]
+      ],
+      "compute_intervals": [
+        {
+          "node": 0,
+          "start_ps": 10569480,
+          "end_ps": 12538952
+        },
+        {
+          "node": 1,
+          "start_ps": 10658440,
+          "end_ps": 12527912
+        },
+        {
+          "node": 2,
+          "start_ps": 10641840,
+          "end_ps": 12511312
+        },
+        {
+          "node": 3,
+          "start_ps": 10501600,
+          "end_ps": 11584640
+        }
+      ]
+    },
+    "validation": {
+      "status": "PASS",
+      "checks": [
+        "per_task_state",
+        "per_segment_exact_once_order_delay",
+        "actual_payload_every_byte",
+        "terminal_payload_every_byte",
+        "quota_and_routing",
+        "relay_buffer_and_dependencies",
+        "weight_coverage",
+        "compute_duration_and_order",
+        "topk_conservation",
+        "wqe_completion",
+        "pair_idle"
+      ],
+      "checked_tasks": 131,
+      "checked_TAs": 200,
+      "verification_wall_ns": 27492167
+    }
+  }
+]

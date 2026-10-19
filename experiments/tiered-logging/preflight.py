@@ -20,7 +20,7 @@ HERE = Path(__file__).resolve().parent
 KEYS = ['npus','experts','top_k','tokens','model_dim','ff_dim','dtype_bytes',
         'segment_bytes','peak_gflops','util_permille','setup_ns','seed','link_gbps','link_delay_ns']
 FIELDS = ['task','stage','id','source','target','physical','bytes','source_physical','offset','dependencies']
-KINDS = {'direct':0,'two-stage':1,'chunk-streaming':2}
+KINDS = {'direct':0,'two-stage':1,'chunk-streaming':2,'multicast':3}
 
 def require(value, message):
     if not value:
@@ -130,7 +130,7 @@ def check(directory, graph_tool, execution_summary=None, dependency_mode='indexe
     else:
         require(not replicas and not p['planning_ns'] and not p['reroute_ns'],'baseline replication/planning')
     kind=KINDS[c['weight_strategy']]
-    order=plan.get('ordinal_physical_order',list(byid)) if kind else list(byid)
+    order=plan.get('ordinal_physical_order',list(byid)) if kind in (1,2) else list(byid)
     require(len(order)==len(physical) and set(order)==set(byid),'physical ordinal order')
     cut=(p['matrices']-1)*p['model_dim']*p['ff_dim']*p.get('weight_dtype_bytes',p['dtype_bytes']) if p['weight_size_kind']=='matrix_exact' else 0
     opts=[p['chunk_bytes'],p['relay_min_replicas'],p['relay_max_relays'],p['relay_min_fanout_gain'],int(p['force_relay']),cut,p['reorder_ns'],p['slow_relay_rank'],p['slow_relay_ns']]
@@ -171,6 +171,36 @@ def check(directory, graph_tool, execution_summary=None, dependency_mode='indexe
         for x, dependencies in zip(transfers[start:], reconstruct_dependencies(edges, byid, start, dependency_mode)):
             x['dependencies'] = dependencies
     require(transfers==c['transfers'],'config transfer graph differs from accepted graph tool')
+    if kind==3:
+        require(n<=64 and p['segment_bytes']<=4096,'multicast supported dimensions')
+        grouped={}
+        for x in transfers[start:]:
+            ph=byid[x['physical']];expert=ph['expert'];grouped.setdefault(expert,[]).append(dict(task=x['task'],target=ph['rank'],physical=ph['id']))
+        expected_groups=[dict(group=expert+1,expert=expert,source=pc['main_placement'][expert],members=members) for expert,members in sorted(grouped.items())]
+        require(len(expected_groups)<=128 and c.get('multicast_groups')==expected_groups,'multicast group membership contract')
+        if execution_summary:
+            actual=list(csv.DictReader((root/'multicast-groups.csv').open()));expected_rows=[]
+            for g in expected_groups:
+                for m in g['members']:expected_rows.append(dict(group=g['group'],expert=g['expert'],source=g['source'],**m,bytes=p['weight_bytes']))
+            require(len(actual)==len(expected_rows),'executed multicast member count')
+            complete={}
+            summary=json.loads(Path(execution_summary).read_text());planning=summary['timeline']['planning_end']
+            debug_events=list(csv.DictReader((root/'events.csv').open())) if summary.get('log_level')=='debug' else None
+            for row,want in zip(actual,expected_rows):
+                require(all(int(row[key])==value for key,value in want.items()),'executed multicast member identity')
+                ready,sender,group_done=map(int,(row['receiver_ready_ps'],row['sender_complete_ps'],row['group_complete_ps']))
+                require(planning<=ready<=sender<=group_done,'multicast receiver/sender causal order');
+                if debug_events is not None:
+                    for name,expected_time in [('edge_ready',ready),('sender_complete',sender)]:
+                        times=[int(x['time_ps']) for x in debug_events if x['event']==name and int(x['task'])==want['task']];require(times==[expected_time],'multicast per-child event timestamp')
+                complete.setdefault(want['group'],[]).append((sender,group_done))
+            for members in complete.values():require(len({x[1] for x in members})==1 and max(x[0] for x in members)==members[0][1],'multicast all-target completion aggregation')
+            stats=list(csv.DictReader((root/'multicast-stats.csv').open()));require(len(stats)==len(expected_groups),'multicast statistics count')
+            for row,g in zip(stats,expected_groups):
+                fanout=len(g['members']);size=p['weight_bytes'];seg=p['segment_bytes'];packets=(size+seg-1)//seg;header=78 if fanout==1 else 32+137*fanout
+                require(int(row['envelopes'])==(packets if fanout>1 else 0),'multicast envelope count')
+                require(int(row['group'])==g['group'] and int(row['source'])==g['source'] and int(row['fanout'])==fanout and int(row['payload_bytes'])==size and int(row['wire_bytes'])==size+packets*header,'multicast source bytes/fanout')
+            summary=json.loads(Path(execution_summary).read_text());require(max((int(x['receiver_ready_ps']) for x in actual),default=summary['timeline']['planning_end'])==summary['timeline']['weights_end'],'multicast weight ready must use receiver completion')
     canonical=canonical_graph(transfers).encode()
     if (root/'executed-transfers.csv').exists():
         require((root/'executed-transfers.csv').read_bytes()==canonical,'actual executed transfer graph mismatch')

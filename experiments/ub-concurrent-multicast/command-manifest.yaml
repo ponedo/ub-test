@@ -1,0 +1,10 @@
+[
+  {
+    "stage": "adapter",
+    "command": "python3 run-concurrent.py --binary \"$CONCURRENT\" --out \"$PRIVATE/concurrent\""
+  },
+  {
+    "stage": "application",
+    "command": "python3 run-layer.py --binary \"$LAYER\" --graph-tool \"$GRAPH\" --out \"$PRIVATE/layer\" --case all"
+  }
+]

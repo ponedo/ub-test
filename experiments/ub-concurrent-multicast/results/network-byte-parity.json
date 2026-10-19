@@ -1,0 +1,833 @@
+{
+  "status": "PASS",
+  "cases": 13,
+  "files": 118,
+  "comparisons": [
+    {
+      "case": "basic-direct",
+      "file": "targets.csv",
+      "sha256": "2bd290bdeee17d4534ddeae8e4c5c633f52bdfb06abf41d3e1674b9243050986",
+      "bytes": 118,
+      "equal": true
+    },
+    {
+      "case": "basic-direct",
+      "file": "ports.csv",
+      "sha256": "d040a444042bca2dff3c09c0f2c78180e271a1f9edbb5569aa89e77c2cb90341",
+      "bytes": 559,
+      "equal": true
+    },
+    {
+      "case": "basic-direct",
+      "file": "summary.csv",
+      "sha256": "15d51e46dd9a10484bfa0c17d799340773aa540d1cf20a09468793d243e9be91",
+      "bytes": 279,
+      "equal": true
+    },
+    {
+      "case": "basic-direct",
+      "file": "arbitration.csv",
+      "sha256": "2f59a67817561df1c3b0e05f1e95d66dac86b18111dc40822a55668dc3c1dad6",
+      "bytes": 68,
+      "equal": true
+    },
+    {
+      "case": "basic-direct",
+      "file": "rank1-object0.bin",
+      "sha256": "0ec833f8746c98808793414863b26056da05a7df4c55584c5a83934cc4949b25",
+      "bytes": 64,
+      "equal": true
+    },
+    {
+      "case": "basic-direct",
+      "file": "rank2-object0.bin",
+      "sha256": "0ec833f8746c98808793414863b26056da05a7df4c55584c5a83934cc4949b25",
+      "bytes": 64,
+      "equal": true
+    },
+    {
+      "case": "basic-direct",
+      "file": "rank3-object0.bin",
+      "sha256": "0ec833f8746c98808793414863b26056da05a7df4c55584c5a83934cc4949b25",
+      "bytes": 64,
+      "equal": true
+    },
+    {
+      "case": "basic-direct",
+      "file": "source-object0.bin",
+      "sha256": "0ec833f8746c98808793414863b26056da05a7df4c55584c5a83934cc4949b25",
+      "bytes": 64,
+      "equal": true
+    },
+    {
+      "case": "basic-multicast",
+      "file": "targets.csv",
+      "sha256": "5210e28437ad7ce0f3ae7992bcc6253c1e0f4a692412b70d27c998fc72fb8ee2",
+      "bytes": 118,
+      "equal": true
+    },
+    {
+      "case": "basic-multicast",
+      "file": "ports.csv",
+      "sha256": "2d6fcbb33819152ed3096f1dac1953ae56506f846b61465321af3c4ddb6cdda3",
+      "bytes": 553,
+      "equal": true
+    },
+    {
+      "case": "basic-multicast",
+      "file": "summary.csv",
+      "sha256": "23cbda9e67b8c7db4656f50b5f011b8d156d8d3e84b7ac1336ed4177f02207f5",
+      "bytes": 277,
+      "equal": true
+    },
+    {
+      "case": "basic-multicast",
+      "file": "arbitration.csv",
+      "sha256": "2f59a67817561df1c3b0e05f1e95d66dac86b18111dc40822a55668dc3c1dad6",
+      "bytes": 68,
+      "equal": true
+    },
+    {
+      "case": "basic-multicast",
+      "file": "rank1-object0.bin",
+      "sha256": "0ec833f8746c98808793414863b26056da05a7df4c55584c5a83934cc4949b25",
+      "bytes": 64,
+      "equal": true
+    },
+    {
+      "case": "basic-multicast",
+      "file": "rank2-object0.bin",
+      "sha256": "0ec833f8746c98808793414863b26056da05a7df4c55584c5a83934cc4949b25",
+      "bytes": 64,
+      "equal": true
+    },
+    {
+      "case": "basic-multicast",
+      "file": "rank3-object0.bin",
+      "sha256": "0ec833f8746c98808793414863b26056da05a7df4c55584c5a83934cc4949b25",
+      "bytes": 64,
+      "equal": true
+    },
+    {
+      "case": "basic-multicast",
+      "file": "source-object0.bin",
+      "sha256": "0ec833f8746c98808793414863b26056da05a7df4c55584c5a83934cc4949b25",
+      "bytes": 64,
+      "equal": true
+    },
+    {
+      "case": "cell156",
+      "file": "targets.csv",
+      "sha256": "3925ac3c5157a5e21ae2595e369d3e70b5b8f5b710b81e04203254bb235807ed",
+      "bytes": 121,
+      "equal": true
+    },
+    {
+      "case": "cell156",
+      "file": "ports.csv",
+      "sha256": "64871b52b645a7bb7d4376f035b247fcd6d2a8906be5d6d18d90abbbb03599dd",
+      "bytes": 573,
+      "equal": true
+    },
+    {
+      "case": "cell156",
+      "file": "summary.csv",
+      "sha256": "b53fff36b35555589319507cbfb30e16cec360b0b08c0a950eceb41c1f966cd9",
+      "bytes": 281,
+      "equal": true
+    },
+    {
+      "case": "cell156",
+      "file": "arbitration.csv",
+      "sha256": "2f59a67817561df1c3b0e05f1e95d66dac86b18111dc40822a55668dc3c1dad6",
+      "bytes": 68,
+      "equal": true
+    },
+    {
+      "case": "cell156",
+      "file": "rank1-object0.bin",
+      "sha256": "2db0faac197579f4e652c125028c1f122fc0622c69122028e30475057b302ca0",
+      "bytes": 156,
+      "equal": true
+    },
+    {
+      "case": "cell156",
+      "file": "rank2-object0.bin",
+      "sha256": "2db0faac197579f4e652c125028c1f122fc0622c69122028e30475057b302ca0",
+      "bytes": 156,
+      "equal": true
+    },
+    {
+      "case": "cell156",
+      "file": "rank3-object0.bin",
+      "sha256": "2db0faac197579f4e652c125028c1f122fc0622c69122028e30475057b302ca0",
+      "bytes": 156,
+      "equal": true
+    },
+    {
+      "case": "cell156",
+      "file": "source-object0.bin",
+      "sha256": "2db0faac197579f4e652c125028c1f122fc0622c69122028e30475057b302ca0",
+      "bytes": 156,
+      "equal": true
+    },
+    {
+      "case": "cell157",
+      "file": "targets.csv",
+      "sha256": "cdabb71928884d5c10097243acc99979d0fd3091811d2ea8353d7c75446bf4d3",
+      "bytes": 121,
+      "equal": true
+    },
+    {
+      "case": "cell157",
+      "file": "ports.csv",
+      "sha256": "69f7d8c84c7df98f9fa1e0063db8f08db7a56734264be4cc1815a2f05c8d552a",
+      "bytes": 573,
+      "equal": true
+    },
+    {
+      "case": "cell157",
+      "file": "summary.csv",
+      "sha256": "a036c59a821b4ad3fd368d3cbb18aff05b1b8a1970a130d6d34d0de5fb54a779",
+      "bytes": 281,
+      "equal": true
+    },
+    {
+      "case": "cell157",
+      "file": "arbitration.csv",
+      "sha256": "2f59a67817561df1c3b0e05f1e95d66dac86b18111dc40822a55668dc3c1dad6",
+      "bytes": 68,
+      "equal": true
+    },
+    {
+      "case": "cell157",
+      "file": "rank1-object0.bin",
+      "sha256": "dcc06a36033a01687bb78e000922ce509c1380e5b9c883ee040a1879d9273b13",
+      "bytes": 157,
+      "equal": true
+    },
+    {
+      "case": "cell157",
+      "file": "rank2-object0.bin",
+      "sha256": "dcc06a36033a01687bb78e000922ce509c1380e5b9c883ee040a1879d9273b13",
+      "bytes": 157,
+      "equal": true
+    },
+    {
+      "case": "cell157",
+      "file": "rank3-object0.bin",
+      "sha256": "dcc06a36033a01687bb78e000922ce509c1380e5b9c883ee040a1879d9273b13",
+      "bytes": 157,
+      "equal": true
+    },
+    {
+      "case": "cell157",
+      "file": "source-object0.bin",
+      "sha256": "dcc06a36033a01687bb78e000922ce509c1380e5b9c883ee040a1879d9273b13",
+      "bytes": 157,
+      "equal": true
+    },
+    {
+      "case": "competition-direct",
+      "file": "targets.csv",
+      "sha256": "ab55a30f9e15b8c53c75f4c3fe0a78b23f849dd3eb17060bc6ec93b766960c39",
+      "bytes": 172,
+      "equal": true
+    },
+    {
+      "case": "competition-direct",
+      "file": "ports.csv",
+      "sha256": "68de1faf1cda46cf3a7ad3cb0dfaf7f28e86dd44060c3b7e594526155b276040",
+      "bytes": 717,
+      "equal": true
+    },
+    {
+      "case": "competition-direct",
+      "file": "summary.csv",
+      "sha256": "b8d1e01696b639a3a7563aeb4b38ac2ea172afc6363e0825018aef2efd9ae414",
+      "bytes": 305,
+      "equal": true
+    },
+    {
+      "case": "competition-direct",
+      "file": "arbitration.csv",
+      "sha256": "3ad05724c22000852268a1fa65f95a98e04566b552441c833c19772bad566646",
+      "bytes": 81,
+      "equal": true
+    },
+    {
+      "case": "competition-direct",
+      "file": "rank1-object0.bin",
+      "sha256": "2bf6bb87884cb57a66af95cbc7abda5d2eb27081e87127aa68a46699a76b9ea8",
+      "bytes": 65536,
+      "equal": true
+    },
+    {
+      "case": "competition-direct",
+      "file": "rank1-object1.bin",
+      "sha256": "7b0b35e0a797bf44b73587a19c49da3847c2200f30c3c894f9c19d23e586f097",
+      "bytes": 131072,
+      "equal": true
+    },
+    {
+      "case": "competition-direct",
+      "file": "rank2-object0.bin",
+      "sha256": "2bf6bb87884cb57a66af95cbc7abda5d2eb27081e87127aa68a46699a76b9ea8",
+      "bytes": 65536,
+      "equal": true
+    },
+    {
+      "case": "competition-direct",
+      "file": "rank3-object0.bin",
+      "sha256": "2bf6bb87884cb57a66af95cbc7abda5d2eb27081e87127aa68a46699a76b9ea8",
+      "bytes": 65536,
+      "equal": true
+    },
+    {
+      "case": "competition-direct",
+      "file": "source-object0.bin",
+      "sha256": "2bf6bb87884cb57a66af95cbc7abda5d2eb27081e87127aa68a46699a76b9ea8",
+      "bytes": 65536,
+      "equal": true
+    },
+    {
+      "case": "competition-direct",
+      "file": "source-object1.bin",
+      "sha256": "7b0b35e0a797bf44b73587a19c49da3847c2200f30c3c894f9c19d23e586f097",
+      "bytes": 131072,
+      "equal": true
+    },
+    {
+      "case": "competition-multicast",
+      "file": "targets.csv",
+      "sha256": "5c9b1b17e568a138282511332d3500fee2585108f80005c3f890d596636c914c",
+      "bytes": 168,
+      "equal": true
+    },
+    {
+      "case": "competition-multicast",
+      "file": "ports.csv",
+      "sha256": "ef4fe8997709b8da74f31cd5750eab709397c876c4056151b37d9b42a4a2c2a0",
+      "bytes": 709,
+      "equal": true
+    },
+    {
+      "case": "competition-multicast",
+      "file": "summary.csv",
+      "sha256": "a8f9ae5816d18c334b9f37f71536dfd9e6662a62d208736cdead5245848a2f9f",
+      "bytes": 305,
+      "equal": true
+    },
+    {
+      "case": "competition-multicast",
+      "file": "arbitration.csv",
+      "sha256": "035a679367ab0bd950987b79f58cd0bc6fab5cd96e738ccb8a8dedeb041c4f89",
+      "bytes": 81,
+      "equal": true
+    },
+    {
+      "case": "competition-multicast",
+      "file": "rank1-object0.bin",
+      "sha256": "2bf6bb87884cb57a66af95cbc7abda5d2eb27081e87127aa68a46699a76b9ea8",
+      "bytes": 65536,
+      "equal": true
+    },
+    {
+      "case": "competition-multicast",
+      "file": "rank1-object1.bin",
+      "sha256": "7b0b35e0a797bf44b73587a19c49da3847c2200f30c3c894f9c19d23e586f097",
+      "bytes": 131072,
+      "equal": true
+    },
+    {
+      "case": "competition-multicast",
+      "file": "rank2-object0.bin",
+      "sha256": "2bf6bb87884cb57a66af95cbc7abda5d2eb27081e87127aa68a46699a76b9ea8",
+      "bytes": 65536,
+      "equal": true
+    },
+    {
+      "case": "competition-multicast",
+      "file": "rank3-object0.bin",
+      "sha256": "2bf6bb87884cb57a66af95cbc7abda5d2eb27081e87127aa68a46699a76b9ea8",
+      "bytes": 65536,
+      "equal": true
+    },
+    {
+      "case": "competition-multicast",
+      "file": "source-object0.bin",
+      "sha256": "2bf6bb87884cb57a66af95cbc7abda5d2eb27081e87127aa68a46699a76b9ea8",
+      "bytes": 65536,
+      "equal": true
+    },
+    {
+      "case": "competition-multicast",
+      "file": "source-object1.bin",
+      "sha256": "7b0b35e0a797bf44b73587a19c49da3847c2200f30c3c894f9c19d23e586f097",
+      "bytes": 131072,
+      "equal": true
+    },
+    {
+      "case": "dwrr-pressure",
+      "file": "targets.csv",
+      "sha256": "52d63e307380ba471d4f3f0ede8f67b579372af346e5574b3c2e77904af0aeac",
+      "bytes": 172,
+      "equal": true
+    },
+    {
+      "case": "dwrr-pressure",
+      "file": "ports.csv",
+      "sha256": "3a5a92bc2930fe5e2d9ed757f04e470aeae9e9179df1c6fb1eaf2f986799e759",
+      "bytes": 703,
+      "equal": true
+    },
+    {
+      "case": "dwrr-pressure",
+      "file": "summary.csv",
+      "sha256": "a2f9322696bfa6b64d1f1f41496baaf873c6df89907217a415d557a092d1070e",
+      "bytes": 296,
+      "equal": true
+    },
+    {
+      "case": "dwrr-pressure",
+      "file": "arbitration.csv",
+      "sha256": "9ba96a826d3bd9603b781c1a80e35ec411e28bef6560b4ad75a1a5da7a790454",
+      "bytes": 80,
+      "equal": true
+    },
+    {
+      "case": "dwrr-pressure",
+      "file": "rank1-object0.bin",
+      "sha256": "2bf6bb87884cb57a66af95cbc7abda5d2eb27081e87127aa68a46699a76b9ea8",
+      "bytes": 65536,
+      "equal": true
+    },
+    {
+      "case": "dwrr-pressure",
+      "file": "rank1-object1.bin",
+      "sha256": "7b0b35e0a797bf44b73587a19c49da3847c2200f30c3c894f9c19d23e586f097",
+      "bytes": 131072,
+      "equal": true
+    },
+    {
+      "case": "dwrr-pressure",
+      "file": "rank2-object0.bin",
+      "sha256": "2bf6bb87884cb57a66af95cbc7abda5d2eb27081e87127aa68a46699a76b9ea8",
+      "bytes": 65536,
+      "equal": true
+    },
+    {
+      "case": "dwrr-pressure",
+      "file": "rank3-object0.bin",
+      "sha256": "2bf6bb87884cb57a66af95cbc7abda5d2eb27081e87127aa68a46699a76b9ea8",
+      "bytes": 65536,
+      "equal": true
+    },
+    {
+      "case": "dwrr-pressure",
+      "file": "source-object0.bin",
+      "sha256": "2bf6bb87884cb57a66af95cbc7abda5d2eb27081e87127aa68a46699a76b9ea8",
+      "bytes": 65536,
+      "equal": true
+    },
+    {
+      "case": "dwrr-pressure",
+      "file": "source-object1.bin",
+      "sha256": "7b0b35e0a797bf44b73587a19c49da3847c2200f30c3c894f9c19d23e586f097",
+      "bytes": 131072,
+      "equal": true
+    },
+    {
+      "case": "dynamic-direct",
+      "file": "targets.csv",
+      "sha256": "ef64e051c3f2278bee748a90ebdc0ea4d91b5b60d23c5d716ab3f857e40707a7",
+      "bytes": 166,
+      "equal": true
+    },
+    {
+      "case": "dynamic-direct",
+      "file": "ports.csv",
+      "sha256": "7f7b9fa698c1f28e7579e9d78339f71298bfb86718cad3ea9b6bf6b79f8adbee",
+      "bytes": 663,
+      "equal": true
+    },
+    {
+      "case": "dynamic-direct",
+      "file": "summary.csv",
+      "sha256": "5df7ea2272593e80738c0fbc0d5aea4b8ac8320694043723aa42b91bd8a35fe6",
+      "bytes": 294,
+      "equal": true
+    },
+    {
+      "case": "dynamic-direct",
+      "file": "arbitration.csv",
+      "sha256": "6183734f684fdb35b4fe69c0ba7ace8bb9d5fd6e8819fc166b72a8abd1e6b721",
+      "bytes": 77,
+      "equal": true
+    },
+    {
+      "case": "dynamic-direct",
+      "file": "rank1-object0.bin",
+      "sha256": "1da6718fdd17128bff7295bd378d754e12ece9975b8d8bcd608f3fd4bf578300",
+      "bytes": 32768,
+      "equal": true
+    },
+    {
+      "case": "dynamic-direct",
+      "file": "rank2-object0.bin",
+      "sha256": "1da6718fdd17128bff7295bd378d754e12ece9975b8d8bcd608f3fd4bf578300",
+      "bytes": 32768,
+      "equal": true
+    },
+    {
+      "case": "dynamic-direct",
+      "file": "rank2-object1.bin",
+      "sha256": "f2a8397e6969e0a56baef3f1c4c1194a7a9818e18c401fd7695555e2f59823d1",
+      "bytes": 32768,
+      "equal": true
+    },
+    {
+      "case": "dynamic-direct",
+      "file": "rank3-object1.bin",
+      "sha256": "f2a8397e6969e0a56baef3f1c4c1194a7a9818e18c401fd7695555e2f59823d1",
+      "bytes": 32768,
+      "equal": true
+    },
+    {
+      "case": "dynamic-direct",
+      "file": "source-object0.bin",
+      "sha256": "1da6718fdd17128bff7295bd378d754e12ece9975b8d8bcd608f3fd4bf578300",
+      "bytes": 32768,
+      "equal": true
+    },
+    {
+      "case": "dynamic-direct",
+      "file": "source-object1.bin",
+      "sha256": "f2a8397e6969e0a56baef3f1c4c1194a7a9818e18c401fd7695555e2f59823d1",
+      "bytes": 32768,
+      "equal": true
+    },
+    {
+      "case": "dynamic-multicast",
+      "file": "targets.csv",
+      "sha256": "58f5dc1bf9bf76d28ea8e87faf52f1f912938484681a8777e000df3c169f69a5",
+      "bytes": 162,
+      "equal": true
+    },
+    {
+      "case": "dynamic-multicast",
+      "file": "ports.csv",
+      "sha256": "6ec337c803fe7a811e0badb8bd2791f17ffc5f75eb744e4f29573ce01ede9c7d",
+      "bytes": 657,
+      "equal": true
+    },
+    {
+      "case": "dynamic-multicast",
+      "file": "summary.csv",
+      "sha256": "a003c18ed47b65a79a212779594dc5ef7d39c39328da9178f59070de2ab8cc98",
+      "bytes": 292,
+      "equal": true
+    },
+    {
+      "case": "dynamic-multicast",
+      "file": "arbitration.csv",
+      "sha256": "6183734f684fdb35b4fe69c0ba7ace8bb9d5fd6e8819fc166b72a8abd1e6b721",
+      "bytes": 77,
+      "equal": true
+    },
+    {
+      "case": "dynamic-multicast",
+      "file": "rank1-object0.bin",
+      "sha256": "1da6718fdd17128bff7295bd378d754e12ece9975b8d8bcd608f3fd4bf578300",
+      "bytes": 32768,
+      "equal": true
+    },
+    {
+      "case": "dynamic-multicast",
+      "file": "rank2-object0.bin",
+      "sha256": "1da6718fdd17128bff7295bd378d754e12ece9975b8d8bcd608f3fd4bf578300",
+      "bytes": 32768,
+      "equal": true
+    },
+    {
+      "case": "dynamic-multicast",
+      "file": "rank2-object1.bin",
+      "sha256": "f2a8397e6969e0a56baef3f1c4c1194a7a9818e18c401fd7695555e2f59823d1",
+      "bytes": 32768,
+      "equal": true
+    },
+    {
+      "case": "dynamic-multicast",
+      "file": "rank3-object1.bin",
+      "sha256": "f2a8397e6969e0a56baef3f1c4c1194a7a9818e18c401fd7695555e2f59823d1",
+      "bytes": 32768,
+      "equal": true
+    },
+    {
+      "case": "dynamic-multicast",
+      "file": "source-object0.bin",
+      "sha256": "1da6718fdd17128bff7295bd378d754e12ece9975b8d8bcd608f3fd4bf578300",
+      "bytes": 32768,
+      "equal": true
+    },
+    {
+      "case": "dynamic-multicast",
+      "file": "source-object1.bin",
+      "sha256": "f2a8397e6969e0a56baef3f1c4c1194a7a9818e18c401fd7695555e2f59823d1",
+      "bytes": 32768,
+      "equal": true
+    },
+    {
+      "case": "multipart-direct",
+      "file": "targets.csv",
+      "sha256": "b2be0bc5280169aa5cd59e8f7ec6b062cb65260fbda70b848feb6ee85b4c5cb6",
+      "bytes": 142,
+      "equal": true
+    },
+    {
+      "case": "multipart-direct",
+      "file": "ports.csv",
+      "sha256": "14f1feca41995b2aa52617640f46352163557aa3ad7b79cd09a707decf71d32c",
+      "bytes": 666,
+      "equal": true
+    },
+    {
+      "case": "multipart-direct",
+      "file": "summary.csv",
+      "sha256": "2af163b03eaa7084cead3e328b17eaeceaa0abf9f60260c445f7b7fee8980d82",
+      "bytes": 296,
+      "equal": true
+    },
+    {
+      "case": "multipart-direct",
+      "file": "arbitration.csv",
+      "sha256": "c2c2396192b9fe9a7ad7386959f0308489245c3540b1539b8552ee51ec33d2ad",
+      "bytes": 77,
+      "equal": true
+    },
+    {
+      "case": "multipart-direct",
+      "file": "rank1-object0.bin",
+      "sha256": "2bf6bb87884cb57a66af95cbc7abda5d2eb27081e87127aa68a46699a76b9ea8",
+      "bytes": 65536,
+      "equal": true
+    },
+    {
+      "case": "multipart-direct",
+      "file": "rank2-object0.bin",
+      "sha256": "2bf6bb87884cb57a66af95cbc7abda5d2eb27081e87127aa68a46699a76b9ea8",
+      "bytes": 65536,
+      "equal": true
+    },
+    {
+      "case": "multipart-direct",
+      "file": "rank3-object0.bin",
+      "sha256": "2bf6bb87884cb57a66af95cbc7abda5d2eb27081e87127aa68a46699a76b9ea8",
+      "bytes": 65536,
+      "equal": true
+    },
+    {
+      "case": "multipart-direct",
+      "file": "source-object0.bin",
+      "sha256": "2bf6bb87884cb57a66af95cbc7abda5d2eb27081e87127aa68a46699a76b9ea8",
+      "bytes": 65536,
+      "equal": true
+    },
+    {
+      "case": "multipart-multicast",
+      "file": "targets.csv",
+      "sha256": "694d4f906eb4f8a93ce969770cd3b6b50960e9c8f419e25daf2a153fdbdeeb41",
+      "bytes": 136,
+      "equal": true
+    },
+    {
+      "case": "multipart-multicast",
+      "file": "ports.csv",
+      "sha256": "5ac3c6592616de120a2526076a4e095fe404c168abcfe7db11234fc77ed01ea8",
+      "bytes": 657,
+      "equal": true
+    },
+    {
+      "case": "multipart-multicast",
+      "file": "summary.csv",
+      "sha256": "e25ed7522d9b99fe6f5dbad4efc494a48f6a527d8d141c0c00eccee38e85d4dc",
+      "bytes": 294,
+      "equal": true
+    },
+    {
+      "case": "multipart-multicast",
+      "file": "arbitration.csv",
+      "sha256": "c2c2396192b9fe9a7ad7386959f0308489245c3540b1539b8552ee51ec33d2ad",
+      "bytes": 77,
+      "equal": true
+    },
+    {
+      "case": "multipart-multicast",
+      "file": "rank1-object0.bin",
+      "sha256": "2bf6bb87884cb57a66af95cbc7abda5d2eb27081e87127aa68a46699a76b9ea8",
+      "bytes": 65536,
+      "equal": true
+    },
+    {
+      "case": "multipart-multicast",
+      "file": "rank2-object0.bin",
+      "sha256": "2bf6bb87884cb57a66af95cbc7abda5d2eb27081e87127aa68a46699a76b9ea8",
+      "bytes": 65536,
+      "equal": true
+    },
+    {
+      "case": "multipart-multicast",
+      "file": "rank3-object0.bin",
+      "sha256": "2bf6bb87884cb57a66af95cbc7abda5d2eb27081e87127aa68a46699a76b9ea8",
+      "bytes": 65536,
+      "equal": true
+    },
+    {
+      "case": "multipart-multicast",
+      "file": "source-object0.bin",
+      "sha256": "2bf6bb87884cb57a66af95cbc7abda5d2eb27081e87127aa68a46699a76b9ea8",
+      "bytes": 65536,
+      "equal": true
+    },
+    {
+      "case": "pressure-direct",
+      "file": "targets.csv",
+      "sha256": "5d5a67d4ed5769b4f8e28ba979e49bacfee9f958253443aea55d8fe1b9c6632c",
+      "bytes": 172,
+      "equal": true
+    },
+    {
+      "case": "pressure-direct",
+      "file": "ports.csv",
+      "sha256": "202cd052d8756b247ea726dad9089fd6d2607a8ef65b78de73203baec5378dda",
+      "bytes": 711,
+      "equal": true
+    },
+    {
+      "case": "pressure-direct",
+      "file": "summary.csv",
+      "sha256": "ab49324d94a7d9c5dfcbcf4269287ca14c40cba1248b919d2dbe468d5daca422",
+      "bytes": 295,
+      "equal": true
+    },
+    {
+      "case": "pressure-direct",
+      "file": "arbitration.csv",
+      "sha256": "d56021f0ad13d099993d7873750628cb1a8ee4b1b45c9b48317ab7191b2882a3",
+      "bytes": 80,
+      "equal": true
+    },
+    {
+      "case": "pressure-direct",
+      "file": "rank1-object0.bin",
+      "sha256": "2bf6bb87884cb57a66af95cbc7abda5d2eb27081e87127aa68a46699a76b9ea8",
+      "bytes": 65536,
+      "equal": true
+    },
+    {
+      "case": "pressure-direct",
+      "file": "rank1-object1.bin",
+      "sha256": "7b0b35e0a797bf44b73587a19c49da3847c2200f30c3c894f9c19d23e586f097",
+      "bytes": 131072,
+      "equal": true
+    },
+    {
+      "case": "pressure-direct",
+      "file": "rank2-object0.bin",
+      "sha256": "2bf6bb87884cb57a66af95cbc7abda5d2eb27081e87127aa68a46699a76b9ea8",
+      "bytes": 65536,
+      "equal": true
+    },
+    {
+      "case": "pressure-direct",
+      "file": "rank3-object0.bin",
+      "sha256": "2bf6bb87884cb57a66af95cbc7abda5d2eb27081e87127aa68a46699a76b9ea8",
+      "bytes": 65536,
+      "equal": true
+    },
+    {
+      "case": "pressure-direct",
+      "file": "source-object0.bin",
+      "sha256": "2bf6bb87884cb57a66af95cbc7abda5d2eb27081e87127aa68a46699a76b9ea8",
+      "bytes": 65536,
+      "equal": true
+    },
+    {
+      "case": "pressure-direct",
+      "file": "source-object1.bin",
+      "sha256": "7b0b35e0a797bf44b73587a19c49da3847c2200f30c3c894f9c19d23e586f097",
+      "bytes": 131072,
+      "equal": true
+    },
+    {
+      "case": "pressure-multicast",
+      "file": "targets.csv",
+      "sha256": "52d63e307380ba471d4f3f0ede8f67b579372af346e5574b3c2e77904af0aeac",
+      "bytes": 172,
+      "equal": true
+    },
+    {
+      "case": "pressure-multicast",
+      "file": "ports.csv",
+      "sha256": "b678a38d7d7028a5545610d21dd7579ecc76bed70817306a0952279315330dc1",
+      "bytes": 702,
+      "equal": true
+    },
+    {
+      "case": "pressure-multicast",
+      "file": "summary.csv",
+      "sha256": "4f4ae978f46acb81a55755e8d3ed22c700ab36d9d5386a0126f7660052867cba",
+      "bytes": 295,
+      "equal": true
+    },
+    {
+      "case": "pressure-multicast",
+      "file": "arbitration.csv",
+      "sha256": "9ba96a826d3bd9603b781c1a80e35ec411e28bef6560b4ad75a1a5da7a790454",
+      "bytes": 80,
+      "equal": true
+    },
+    {
+      "case": "pressure-multicast",
+      "file": "rank1-object0.bin",
+      "sha256": "2bf6bb87884cb57a66af95cbc7abda5d2eb27081e87127aa68a46699a76b9ea8",
+      "bytes": 65536,
+      "equal": true
+    },
+    {
+      "case": "pressure-multicast",
+      "file": "rank1-object1.bin",
+      "sha256": "7b0b35e0a797bf44b73587a19c49da3847c2200f30c3c894f9c19d23e586f097",
+      "bytes": 131072,
+      "equal": true
+    },
+    {
+      "case": "pressure-multicast",
+      "file": "rank2-object0.bin",
+      "sha256": "2bf6bb87884cb57a66af95cbc7abda5d2eb27081e87127aa68a46699a76b9ea8",
+      "bytes": 65536,
+      "equal": true
+    },
+    {
+      "case": "pressure-multicast",
+      "file": "rank3-object0.bin",
+      "sha256": "2bf6bb87884cb57a66af95cbc7abda5d2eb27081e87127aa68a46699a76b9ea8",
+      "bytes": 65536,
+      "equal": true
+    },
+    {
+      "case": "pressure-multicast",
+      "file": "source-object0.bin",
+      "sha256": "2bf6bb87884cb57a66af95cbc7abda5d2eb27081e87127aa68a46699a76b9ea8",
+      "bytes": 65536,
+      "equal": true
+    },
+    {
+      "case": "pressure-multicast",
+      "file": "source-object1.bin",
+      "sha256": "7b0b35e0a797bf44b73587a19c49da3847c2200f30c3c894f9c19d23e586f097",
+      "bytes": 131072,
+      "equal": true
+    }
+  ]
+}

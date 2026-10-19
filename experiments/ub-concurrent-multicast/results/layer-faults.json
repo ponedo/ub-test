@@ -1,0 +1,56 @@
+[
+  {
+    "case": "weight-byte",
+    "status": "EXPECTED_REJECTION",
+    "error": "payload byte mismatch",
+    "returncode": 2
+  },
+  {
+    "case": "early-final-ready",
+    "status": "EXPECTED_REJECTION",
+    "error": "final ready before full weight coverage",
+    "returncode": 2
+  },
+  {
+    "case": "early-wqe",
+    "status": "EXPECTED_REJECTION",
+    "error": "sender completed before target data ready",
+    "returncode": 2
+  },
+  {
+    "case": "missing-wqe",
+    "status": "EXPECTED_REJECTION",
+    "error": "unfinished layer",
+    "returncode": 2
+  },
+  {
+    "case": "duplicate-completion",
+    "status": "EXPECTED_REJECTION",
+    "error": "audit premature/duplicate sender completion",
+    "returncode": 2
+  },
+  {
+    "case": "duplicate-notify",
+    "status": "PASS_IDEMPOTENT"
+  },
+  {
+    "case": "missing-member",
+    "status": "EXPECTED_REJECTION",
+    "error": "multicast group membership contract"
+  },
+  {
+    "case": "wrong-member",
+    "status": "EXPECTED_REJECTION",
+    "error": "multicast group membership contract"
+  },
+  {
+    "case": "wrong-envelope-count",
+    "status": "EXPECTED_REJECTION",
+    "error": "multicast envelope count"
+  },
+  {
+    "case": "early-receiver",
+    "status": "EXPECTED_REJECTION",
+    "error": "multicast receiver/sender causal order"
+  }
+]

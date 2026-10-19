@@ -5,6 +5,7 @@
 #include <set>
 #include <vector>
 #include <algorithm>
+#include <functional>
 namespace lightweight {
 using namespace ns3;
 // Versioned experimental envelope, not a standardized UB header. All bytes below are on wire.
@@ -15,9 +16,10 @@ template<class T> void TakeTag(const std::vector<uint8_t>& b,size_t& at,Ptr<Pack
 class SharedSource : public UbIngressQueue {
 public:
  struct Child {uint32_t rank;Ptr<UbTransportChannel> tp;};
- std::vector<Child> all,active; std::set<uint32_t> memberDone;
+ std::vector<Child> all,active; std::set<uint32_t> memberDone; std::map<uint32_t,uint32_t> memberTasks;
  uint32_t group{0},sequence{0},totalBytes{0},sentBytes{0},segmentBytes{1024};
  uint64_t envelopes{0},payloadSent{0},wireDataBytes{0},barrierChecks{0},emptyWaits{0},windowWaits{0};
+ std::function<void(uint32_t,bool)> grantObserver;
  Ptr<UbPort> port;
  static TypeId GetTypeId(){static TypeId t=TypeId("ns3::LightweightSharedSource").SetParent<UbIngressQueue>().AddConstructor<SharedSource>();return t;}
  IngressQueueType GetIngressQueueType() override{return IngressQueueType::CTP;}
@@ -25,8 +27,10 @@ public:
   std::set<uint32_t> ranks;std::set<const UbTransportChannel*> pointers;BooleanValue cc;GlobalValue::GetValueByName("UB_CC_ENABLED",cc);NS_ABORT_MSG_IF(cc.Get(),"adapter excludes congestion control");for(auto& x:all){NS_ABORT_MSG_IF(!x.tp||x.rank>=64||!ranks.insert(x.rank).second||!pointers.insert(PeekPointer(x.tp)).second||x.tp->GetSrc()!=p->GetNode()->GetId()||x.tp->GetDest()!=x.rank||x.tp->GetOutPortId()!=p->GetIfIndex()||x.tp->GetIngressPriority()!=7,"invalid/duplicate native child binding");NS_ABORT_MSG_IF(!x.tp->IsSafeForExplicitDestroy(),"install requires quiescent TP");BooleanValue enabled;x.tp->GetAttribute("EnableRetrans",enabled);NS_ABORT_MSG_IF(enabled.Get(),"adapter excludes retransmission");alloc->UnregisterUbIngressQueue(x.tp,p->GetIfIndex(),7);}
   alloc->RegisterUbIngressQueue(this,p->GetIfIndex(),7);
  }
- void Select(uint32_t id,uint32_t bytes,const std::vector<uint32_t>& ranks){NS_ABORT_MSG_IF(sentBytes!=totalBytes||(totalBytes&&memberDone.size()!=active.size()),"replace active group before native member completion");memberDone.clear();group=id;totalBytes=bytes;sentBytes=sequence=0;active.clear();std::set<uint32_t> unique;for(auto r:ranks){NS_ABORT_MSG_IF(r>=64||!unique.insert(r).second,"duplicate/out-of-range group member");auto it=std::find_if(all.begin(),all.end(),[&](const Child& c){return c.rank==r;});NS_ABORT_MSG_IF(it==all.end(),"unprovisioned group member");active.push_back(*it);}NS_ABORT_MSG_IF(active.empty(),"empty group");}
- bool MemberComplete(uint32_t rank,uint32_t task){NS_ABORT_MSG_IF(task!=group||!totalBytes||sentBytes!=totalBytes||std::none_of(active.begin(),active.end(),[&](const Child& c){return c.rank==rank;})||!memberDone.insert(rank).second,"invalid/duplicate/early member completion");return memberDone.size()==active.size();}
+ void Select(uint32_t id,uint32_t bytes,const std::vector<uint32_t>& ranks){NS_ABORT_MSG_IF(sentBytes!=totalBytes||(totalBytes&&memberDone.size()!=active.size()),"replace active group before native member completion");memberDone.clear();memberTasks.clear();group=id;totalBytes=bytes;sentBytes=sequence=0;active.clear();std::set<uint32_t> unique;for(auto r:ranks){NS_ABORT_MSG_IF(r>=64||!unique.insert(r).second,"duplicate/out-of-range group member");auto it=std::find_if(all.begin(),all.end(),[&](const Child& c){return c.rank==r;});NS_ABORT_MSG_IF(it==all.end(),"unprovisioned group member");active.push_back(*it);}NS_ABORT_MSG_IF(active.empty(),"empty group");}
+ void SetMemberTasks(const std::map<uint32_t,uint32_t>& tasks){NS_ABORT_MSG_IF(sentBytes||tasks.size()!=active.size(),"member task setup");std::set<uint32_t> unique;for(auto& c:active)NS_ABORT_MSG_IF(!tasks.count(c.rank)||!unique.insert(tasks.at(c.rank)).second,"member task identity");memberTasks=tasks;}
+ uint32_t MemberTask(uint32_t rank)const{auto it=memberTasks.find(rank);return it==memberTasks.end()?group:it->second;}
+ bool MemberComplete(uint32_t rank,uint32_t task){NS_ABORT_MSG_IF(task!=MemberTask(rank)||!totalBytes||sentBytes!=totalBytes||std::none_of(active.begin(),active.end(),[&](const Child& c){return c.rank==rank;})||!memberDone.insert(rank).second,"invalid/duplicate/early member completion");return memberDone.size()==active.size();}
  void Refresh(){RefreshAllocatorSummary();}
  Ptr<UbTransportChannel> Control(){for(auto& c:all)if(!c.tp->m_cnpQ.empty())return c.tp;for(auto& c:all)if(!c.tp->m_ackQ.empty())return c.tp;return nullptr;}
  bool IsEmpty() override{for(auto& c:all)if(!c.tp->IsEmpty())return false;return true;}
@@ -37,16 +41,17 @@ public:
   return 4+28+active.size()*(8+78+8+42+1)+len;
  }
  Ptr<Packet> GetNextPacket() override{
+  if(grantObserver)grantObserver(group,bool(Control()));
   if(auto t=Control()){auto p=t->GetNextPacket();Refresh();return p;}
   NS_ABORT_MSG_IF(IsLimited(),"coalescer dequeue before all native children eligible");
-  if(active.size()==1){auto p=active.front().tp->GetNextPacket();NS_ABORT_MSG_IF(!p,"empty singleton dequeue");UbNetworkReplicationTag tag;tag.destinations=uint64_t{1}<<active.front().rank;tag.nativeSingleton=true;tag.object=group;p->AddPacketTag(tag);if(totalBytes){NS_ABORT_MSG_IF(p->GetSize()<78,"singleton WRITE size");auto len=p->GetSize()-78;sentBytes+=len;payloadSent+=len;wireDataBytes+=p->GetSize();}Refresh();return p;}
+  if(active.size()==1){auto p=active.front().tp->GetNextPacket();NS_ABORT_MSG_IF(!p,"empty singleton dequeue");if(totalBytes){UbTransportChannel::ReceivedDataPacketContext ctx;NS_ABORT_MSG_IF(!active.front().tp->ParseReceivedDataPacketForTest(p->Copy(),ctx)||ctx.flowTag.GetFlowId()!=MemberTask(active.front().rank)||ctx.transactionHeader.GetUbTransactionOpcode()!=uint8_t(UbTransactionOpcode::WRITE)||ctx.payloadBytes!=std::min(segmentBytes,totalBytes-sentBytes),"singleton child identity/length");}UbNetworkReplicationTag tag;tag.destinations=uint64_t{1}<<active.front().rank;tag.nativeSingleton=true;tag.object=group;p->AddPacketTag(tag);if(totalBytes){NS_ABORT_MSG_IF(p->GetSize()<78,"singleton WRITE size");auto len=p->GetSize()-78;sentBytes+=len;payloadSent+=len;wireDataBytes+=p->GetSize();}Refresh();return p;}
   const uint32_t expectedSize=GetNextPacketSize(),len=std::min(segmentBytes,totalBytes-sentBytes);
   for(auto& c:active)NS_ABORT_MSG_IF(c.tp->GetNextPacketSize()!=78+len,"unmatched next native packet size");
   uint64_t mask=0;for(auto& c:active)mask|=uint64_t{1}<<c.rank;
   std::vector<uint8_t> b;Put(b,0x55424d31);Put(b,group);Put(b,sequence);Put(b,len);Put(b,active.size());Put(b,uint32_t(mask>>32));Put(b,uint32_t(mask));
   std::vector<uint8_t> shared;
   for(auto& c:active){auto packet=c.tp->GetNextPacket();NS_ABORT_MSG_IF(!packet,"native child dequeue failed");UbTransportChannel::ReceivedDataPacketContext ctx;NS_ABORT_MSG_IF(!c.tp->ParseReceivedDataPacketForTest(packet->Copy(),ctx),"native child decode failed");
-   NS_ABORT_MSG_IF(ctx.flowTag.GetFlowId()!=group||ctx.transactionHeader.GetUbTransactionOpcode()!=uint8_t(UbTransactionOpcode::WRITE)||ctx.payloadBytes!=len,"native child range/type differs");
+   NS_ABORT_MSG_IF(ctx.flowTag.GetFlowId()!=MemberTask(c.rank)||ctx.transactionHeader.GetUbTransactionOpcode()!=uint8_t(UbTransactionOpcode::WRITE)||ctx.payloadBytes!=len,"native child range/type differs");
    std::vector<uint8_t> raw(packet->GetSize());packet->CopyData(raw.data(),raw.size());std::vector<uint8_t> payload(raw.end()-len,raw.end());if(shared.empty())shared=payload;else NS_ABORT_MSG_IF(shared!=payload,"native child payload differs");
    Put(b,c.rank);Put(b,raw.size()-len);b.insert(b.end(),raw.begin(),raw.end()-len);PutTag<UbFlowTag>(b,packet);PutTag<UbTransactionCorrelationTag>(b,packet);PutTag<UbExplicitPayloadTag>(b,packet);
   }

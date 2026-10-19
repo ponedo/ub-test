@@ -1,0 +1,238 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "case": "single4",
+      "strategy": "direct",
+      "status": "PASS",
+      "all_simulated_fields_identical": true
+    },
+    {
+      "case": "single4",
+      "strategy": "chunk-streaming",
+      "status": "PASS",
+      "all_simulated_fields_identical": true
+    },
+    {
+      "case": "single4",
+      "strategy": "multicast",
+      "status": "PASS",
+      "all_simulated_fields_identical": true
+    },
+    {
+      "case": "slots_zero4",
+      "strategy": "direct",
+      "status": "PASS",
+      "all_simulated_fields_identical": true
+    },
+    {
+      "case": "slots_zero4",
+      "strategy": "chunk-streaming",
+      "status": "PASS",
+      "all_simulated_fields_identical": true
+    },
+    {
+      "case": "slots_zero4",
+      "strategy": "multicast",
+      "status": "PASS",
+      "all_simulated_fields_identical": true
+    },
+    {
+      "case": "multi4_force",
+      "strategy": "direct",
+      "status": "PASS",
+      "all_simulated_fields_identical": true
+    },
+    {
+      "case": "multi4_force",
+      "strategy": "chunk-streaming",
+      "status": "PASS",
+      "all_simulated_fields_identical": true
+    },
+    {
+      "case": "multi4_force",
+      "strategy": "multicast",
+      "status": "PASS",
+      "all_simulated_fields_identical": true
+    },
+    {
+      "case": "tail4",
+      "strategy": "direct",
+      "status": "PASS",
+      "all_simulated_fields_identical": true
+    },
+    {
+      "case": "tail4",
+      "strategy": "chunk-streaming",
+      "status": "PASS",
+      "all_simulated_fields_identical": true
+    },
+    {
+      "case": "tail4",
+      "strategy": "multicast",
+      "status": "PASS",
+      "all_simulated_fields_identical": true
+    },
+    {
+      "case": "multi_expert8",
+      "strategy": "direct",
+      "status": "PASS",
+      "all_simulated_fields_identical": true
+    },
+    {
+      "case": "multi_expert8",
+      "strategy": "chunk-streaming",
+      "status": "PASS",
+      "all_simulated_fields_identical": true
+    },
+    {
+      "case": "multi_expert8",
+      "strategy": "multicast",
+      "status": "PASS",
+      "all_simulated_fields_identical": true
+    },
+    {
+      "case": "slow_relay8",
+      "strategy": "direct",
+      "status": "PASS",
+      "all_simulated_fields_identical": true
+    },
+    {
+      "case": "slow_relay8",
+      "strategy": "chunk-streaming",
+      "status": "PASS",
+      "all_simulated_fields_identical": true
+    },
+    {
+      "case": "slow_relay8",
+      "strategy": "multicast",
+      "status": "PASS",
+      "all_simulated_fields_identical": true
+    },
+    {
+      "case": "topk2_4",
+      "strategy": "direct",
+      "status": "PASS",
+      "all_simulated_fields_identical": true
+    },
+    {
+      "case": "topk2_4",
+      "strategy": "chunk-streaming",
+      "status": "PASS",
+      "all_simulated_fields_identical": true
+    },
+    {
+      "case": "topk2_4",
+      "strategy": "multicast",
+      "status": "PASS",
+      "all_simulated_fields_identical": true
+    }
+  ],
+  "debug_files": [
+    {
+      "strategy": "direct",
+      "file": "events.csv",
+      "bytes": 60746,
+      "sha256": "5ca0ac6333dd9b6f42880efd3b75eb983ef1537aeb2ae89469fdabac703f3e7e",
+      "equal": true
+    },
+    {
+      "strategy": "direct",
+      "file": "executed-transfers.csv",
+      "bytes": 3156,
+      "sha256": "e98aa51aa538f2c158fc75bfd7660a8a7b3e31d45acd49ba6128e5c9fa738456",
+      "equal": true
+    },
+    {
+      "strategy": "direct",
+      "file": "payload-index.csv",
+      "bytes": 1660,
+      "sha256": "6b68866036945970ec724a284941135a7297743383bb106888b9abcf22b3279a",
+      "equal": true
+    },
+    {
+      "strategy": "direct",
+      "file": "received-payloads.bin",
+      "bytes": 163840,
+      "sha256": "e7fe4290146d1fdeab79e1b653535a6626ec2921766c2d4a11077a33a91ad06d",
+      "equal": true
+    },
+    {
+      "strategy": "direct",
+      "file": "ta-identity.csv",
+      "bytes": 5301,
+      "sha256": "f8900b4b934f46fbf2a69f8d5c388c8c1d692f2a65e3a39db2626b69c632c947",
+      "equal": true
+    },
+    {
+      "strategy": "chunk-streaming",
+      "file": "events.csv",
+      "bytes": 63404,
+      "sha256": "572a61321191aa0fdd27abbc05fee877e78e05f0eb9438594000540b25b2e34b",
+      "equal": true
+    },
+    {
+      "strategy": "chunk-streaming",
+      "file": "executed-transfers.csv",
+      "bytes": 3858,
+      "sha256": "f0e22905498424534b1199aa4c44dd2dd22824b87a97fff7ed4eb5df16b78b24",
+      "equal": true
+    },
+    {
+      "strategy": "chunk-streaming",
+      "file": "payload-index.csv",
+      "bytes": 2002,
+      "sha256": "1e1e2418ff4776b99c62932f45dd8033f8d3b46a6f5aa48bba30110bee74ee6c",
+      "equal": true
+    },
+    {
+      "strategy": "chunk-streaming",
+      "file": "received-payloads.bin",
+      "bytes": 163840,
+      "sha256": "e7fe4290146d1fdeab79e1b653535a6626ec2921766c2d4a11077a33a91ad06d",
+      "equal": true
+    },
+    {
+      "strategy": "chunk-streaming",
+      "file": "ta-identity.csv",
+      "bytes": 5189,
+      "sha256": "6fce7eb47bb2a50036ae45b3e45bc158c9fcbafdd3b36c6cc589a821276d2b71",
+      "equal": true
+    },
+    {
+      "strategy": "multicast",
+      "file": "events.csv",
+      "bytes": 60569,
+      "sha256": "842e83ff6ed048ff8a597b94de7f9fd3dc56d2d2a89a6e0edb8e15271883a805",
+      "equal": true
+    },
+    {
+      "strategy": "multicast",
+      "file": "executed-transfers.csv",
+      "bytes": 3156,
+      "sha256": "e98aa51aa538f2c158fc75bfd7660a8a7b3e31d45acd49ba6128e5c9fa738456",
+      "equal": true
+    },
+    {
+      "strategy": "multicast",
+      "file": "payload-index.csv",
+      "bytes": 1660,
+      "sha256": "6b68866036945970ec724a284941135a7297743383bb106888b9abcf22b3279a",
+      "equal": true
+    },
+    {
+      "strategy": "multicast",
+      "file": "received-payloads.bin",
+      "bytes": 163840,
+      "sha256": "e7fe4290146d1fdeab79e1b653535a6626ec2921766c2d4a11077a33a91ad06d",
+      "equal": true
+    },
+    {
+      "strategy": "multicast",
+      "file": "ta-identity.csv",
+      "bytes": 5545,
+      "sha256": "8829be4a40e540f0b8dccaa7d3356e967b7e84d4632546733d77ffbb0e9eba74",
+      "equal": true
+    }
+  ]
+}
