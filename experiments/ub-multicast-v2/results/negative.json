@@ -1,0 +1,98 @@
+[
+  {
+    "case": "association-duplicate-host",
+    "observed_status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "interpretation": "EXPECTED_REJECTION",
+    "diagnostic": "aborted. cond=\"it==pending.end()\", msg=\"unknown/consumed v2 association\", +0.000000000s -1 file=<dot-host>/v2-host-project/experiments/ub-multicast-v2/adapter-v2.h, line=76\nNS_FATAL, terminating\nterminate called without an active exception\n"
+  },
+  {
+    "case": "association-expired-host",
+    "observed_status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "interpretation": "EXPECTED_REJECTION",
+    "diagnostic": "aborted. cond=\"Simulator::Now()>r.expires || member!=r.next || member>=r.members.size()\", msg=\"expired/duplicate v2 member\", +0.000000000s -1 file=<dot-host>/v2-host-project/experiments/ub-multicast-v2/adapter-v2.h, line=77\nNS_FATAL, terminating\nterminate called without an active exception\n"
+  },
+  {
+    "case": "association-header-host",
+    "observed_status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "interpretation": "EXPECTED_REJECTION",
+    "diagnostic": "aborted. cond=\"header!=m.header\", msg=\"v2 actual protocol identity/header differs\", +0.000000000s -1 file=<dot-host>/v2-host-project/experiments/ub-multicast-v2/adapter-v2.h, line=81\nNS_FATAL, terminating\nterminate called without an active exception\n"
+  },
+  {
+    "case": "association-member-host",
+    "observed_status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "interpretation": "EXPECTED_REJECTION",
+    "diagnostic": "aborted. cond=\"Simulator::Now()>r.expires || member!=r.next || member>=r.members.size()\", msg=\"expired/duplicate v2 member\", +0.000000000s -1 file=<dot-host>/v2-host-project/experiments/ub-multicast-v2/adapter-v2.h, line=77\nNS_FATAL, terminating\nterminate called without an active exception\n"
+  },
+  {
+    "case": "association-missing-host",
+    "observed_status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "interpretation": "EXPECTED_REJECTION",
+    "diagnostic": "aborted. cond=\"it==pending.end()\", msg=\"unknown/consumed v2 association\", file=<dot-host>/v2-host-project/experiments/ub-multicast-v2/adapter-v2.h, line=76\nNS_FATAL, terminating\nterminate called without an active exception\n"
+  },
+  {
+    "case": "fault-v1-duplicate-host",
+    "observed_status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "interpretation": "EXPECTED_REJECTION",
+    "diagnostic": "aborted. cond=\"!seenFeedback.insert({rank,h.GetPsn()}).second\", msg=\"duplicate feedback detected\", +0.000000464640s 0 file=<dot-host>/v2-host-project/experiments/ub-multicast-v2/micro.cc, line=62\nNS_FATAL, terminating\nterminate called without an active exception\n"
+  },
+  {
+    "case": "fault-v1-missing-host",
+    "observed_status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "interpretation": "EXPECTED_REJECTION",
+    "diagnostic": "aborted. cond=\"groupsDone.size()!=members.size()\", msg=\"unfinished group: missing feedback\", +0.010000000000s -1 file=<dot-host>/v2-host-project/experiments/ub-multicast-v2/micro.cc, line=99\nNS_FATAL, terminating\nterminate called without an active exception\n"
+  },
+  {
+    "case": "fault-v1-wrong-host",
+    "observed_status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "interpretation": "EXPECTED_REJECTION",
+    "diagnostic": "aborted. cond=\"rank<1||rank>3||ctx.transactionHeader.GetUbTransactionOpcode()!=uint8_t(UbTransactionOpcode::TAACK)\", msg=\"feedback kind/member\", +0.000000464640s 0 file=<dot-host>/v2-host-project/experiments/ub-multicast-v2/micro.cc, line=62\nNS_FATAL, terminating\nterminate called without an active exception\n"
+  },
+  {
+    "case": "fault-v2-duplicate-host",
+    "observed_status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "interpretation": "EXPECTED_REJECTION",
+    "diagnostic": "aborted. cond=\"!seenFeedback.insert({rank,h.GetPsn()}).second\", msg=\"duplicate feedback detected\", +0.000000420160s 0 file=<dot-host>/v2-host-project/experiments/ub-multicast-v2/micro.cc, line=62\nNS_FATAL, terminating\nterminate called without an active exception\n"
+  },
+  {
+    "case": "fault-v2-missing-host",
+    "observed_status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "interpretation": "EXPECTED_REJECTION",
+    "diagnostic": "aborted. cond=\"groupsDone.size()!=members.size()\", msg=\"unfinished group: missing feedback\", +0.010000000000s -1 file=<dot-host>/v2-host-project/experiments/ub-multicast-v2/micro.cc, line=99\nNS_FATAL, terminating\nterminate called without an active exception\n"
+  },
+  {
+    "case": "fault-v2-payload-host",
+    "observed_status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "interpretation": "EXPECTED_REJECTION",
+    "diagnostic": "aborted. cond=\"!std::equal(b.begin(),b.end(),source.at(task).begin()+off)\", msg=\"target payload\", +0.000000345240s 1 file=<dot-host>/v2-host-project/experiments/ub-multicast-v2/micro.cc, line=81\nNS_FATAL, terminating\nterminate called without an active exception\n"
+  },
+  {
+    "case": "fault-v2-wrong-host",
+    "observed_status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "interpretation": "EXPECTED_REJECTION",
+    "diagnostic": "aborted. cond=\"rank<1||rank>3||ctx.transactionHeader.GetUbTransactionOpcode()!=uint8_t(UbTransactionOpcode::TAACK)\", msg=\"feedback kind/member\", +0.000000420160s 0 file=<dot-host>/v2-host-project/experiments/ub-multicast-v2/micro.cc, line=62\nNS_FATAL, terminating\nterminate called without an active exception\n"
+  }
+]

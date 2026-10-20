@@ -1,0 +1,407 @@
+diff --git a/src/unified-bus/CMakeLists.txt b/src/unified-bus/CMakeLists.txt
+index d308fd6..e859199 100644
+--- a/src/unified-bus/CMakeLists.txt
++++ b/src/unified-bus/CMakeLists.txt
+@@ -72,6 +72,7 @@ build_lib(
+ 	model/ub-tp-connection-manager.cc
+ 	model/ub-tag.cc
+   HEADER_FILES
++    model/ub-write-v2.h
+     ${mpi_headers}
+ 	model/ub-traffic-gen.h
+ 	model/ub-app.h
+diff --git a/src/unified-bus/model/ub-port.cc b/src/unified-bus/model/ub-port.cc
+index 7238704..6bba45d 100644
+--- a/src/unified-bus/model/ub-port.cc
++++ b/src/unified-bus/model/ub-port.cc
+@@ -1,4 +1,5 @@
+ // SPDX-License-Identifier: GPL-2.0-only
++#include "ub-write-v2.h"
+ #include "ns3/ub-port.h"
+ #include "ns3/ub-cbfc.h"
+ #include "ns3/ub-link.h"
+@@ -574,6 +575,7 @@ UbPort::IsDllDataPacket(Ptr<Packet> packet) const
+     if (packet->GetSize() < 2) {
+         return false;
+     }
++    if (UbWriteV2::IsEnvelope(packet)) return true;
+     UbDatalinkHeader dlHeader;
+     packet->PeekHeader(dlHeader);
+     switch (static_cast<UbDatalinkHeaderConfig>(dlHeader.GetConfig())) {
+diff --git a/src/unified-bus/model/ub-queue-manager.cc b/src/unified-bus/model/ub-queue-manager.cc
+index 73d466e..5e5e109 100644
+--- a/src/unified-bus/model/ub-queue-manager.cc
++++ b/src/unified-bus/model/ub-queue-manager.cc
+@@ -240,7 +240,7 @@ void
+ UbQueueManager::MoveInPortProcessingToVoq(uint32_t inPort,
+                                           uint32_t outPort,
+                                           uint32_t priority,
+-                                          uint32_t pSize)
++                                          uint32_t pSize, uint32_t outputBytes)
+ {
+     NS_ASSERT_MSG(!IsLocallyGeneratedControlFrame(inPort, outPort, priority),
+                   "In-port processing is only for forwarded data packets");
+@@ -254,33 +254,36 @@ UbQueueManager::MoveInPortProcessingToVoq(uint32_t inPort,
+     m_inPortProcessingBytes[inPort][priority] -= pSize;
+     m_outPortProcessingBytes[outPort][priority] -= pSize;
+     m_totalProcessingBytes -= pSize;
+-    m_outPortBuffer[outPort][priority] += pSize;
++    m_outPortBuffer[outPort][priority] += outputBytes ? outputBytes : pSize;
+     m_totalVoqBufferedBytes += pSize;
+-    m_totalOutPortVoqBufferedBytes[outPort] += pSize;
++    m_totalOutPortVoqBufferedBytes[outPort] += outputBytes ? outputBytes : pSize;
+     m_traceIngressQueueOccupancyBytes(inPort, priority, GetQueueIngressTotalBytes(inPort, priority));
+     m_traceOutPortBufferBytes(outPort, GetTotalOutPortBufferUsed(outPort));
+ }
+ 
+ void UbQueueManager::MoveProcessingToNetworkBranches(uint32_t inPort, uint32_t firstOut,
+-    uint32_t priority, uint32_t bytes, const std::vector<uint32_t>& outputs)
++    uint32_t priority, uint32_t bytes, const std::vector<uint32_t>& outputs, const std::vector<uint32_t>& branchBytes)
+ {
+     NS_ABORT_MSG_IF(outputs.empty() || outputs.front() != firstOut, "Invalid branch outputs");
+-    MoveInPortProcessingToVoq(inPort, firstOut, priority, bytes);
++    NS_ABORT_MSG_IF(!branchBytes.empty() && branchBytes.size()!=outputs.size(), "branch size count");
++    MoveInPortProcessingToVoq(inPort, firstOut, priority, bytes, branchBytes.empty()?bytes:branchBytes.front());
+     for (size_t i=1; i<outputs.size(); ++i) {
+-        m_outPortBuffer[outputs[i]][priority] += bytes;
+-        m_totalOutPortVoqBufferedBytes[outputs[i]] += bytes;
++        const auto logical=branchBytes.empty()?bytes:branchBytes[i];
++        m_outPortBuffer[outputs[i]][priority] += logical;
++        m_totalOutPortVoqBufferedBytes[outputs[i]] += logical;
+         m_traceOutPortBufferBytes(outputs[i], GetTotalOutPortBufferUsed(outputs[i]));
+     }
+ }
+ 
+ void UbQueueManager::PopNetworkBranch(uint32_t inPort, uint32_t outPort,
+-    uint32_t priority, uint32_t bytes, bool last)
++    uint32_t priority, uint32_t bytes, bool last, uint32_t inputBytes)
+ {
+     NS_ABORT_MSG_IF(m_outPortBuffer[outPort][priority] < bytes ||
+         m_totalOutPortVoqBufferedBytes[outPort] < bytes, "Network branch accounting underflow");
+     m_outPortBuffer[outPort][priority] -= bytes;
+     m_totalOutPortVoqBufferedBytes[outPort] -= bytes;
+     if (last) {
++        if (inputBytes) bytes=inputBytes;
+         NS_ABORT_MSG_IF(m_totalVoqBufferedBytes < bytes, "Network parent accounting underflow");
+         m_totalVoqBufferedBytes -= bytes;
+         RemoveFromIngressAdmission(inPort, priority, bytes);
+diff --git a/src/unified-bus/model/ub-queue-manager.h b/src/unified-bus/model/ub-queue-manager.h
+index f712324..e479dc2 100644
+--- a/src/unified-bus/model/ub-queue-manager.h
++++ b/src/unified-bus/model/ub-queue-manager.h
+@@ -122,14 +122,14 @@ public:
+      */
+     void PopFromVoq(uint32_t inPort, uint32_t outPort, uint32_t priority, uint32_t pSize);
+     void PushToInPortProcessing(uint32_t inPort, uint32_t outPort, uint32_t priority, uint32_t pSize);
+-    void MoveInPortProcessingToVoq(uint32_t inPort, uint32_t outPort, uint32_t priority, uint32_t pSize);
++    void MoveInPortProcessingToVoq(uint32_t inPort, uint32_t outPort, uint32_t priority, uint32_t pSize, uint32_t outputBytes = 0);
+ 
+     // Shared-payload network replication: ingress storage is physical; output views are logical.
+     void MoveProcessingToNetworkBranches(uint32_t inPort, uint32_t firstOut,
+                                          uint32_t priority, uint32_t bytes,
+-                                         const std::vector<uint32_t>& outputs);
++                                         const std::vector<uint32_t>& outputs, const std::vector<uint32_t>& branchBytes = {});
+     void PopNetworkBranch(uint32_t inPort, uint32_t outPort, uint32_t priority,
+-                          uint32_t bytes, bool last);
++                          uint32_t bytes, bool last, uint32_t inputBytes = 0);
+ 
+     // ========== Detected-failure recovery transfer ==========
+ 
+diff --git a/src/unified-bus/model/ub-switch-allocator.cc b/src/unified-bus/model/ub-switch-allocator.cc
+index 5b5edfd..179a84b 100644
+--- a/src/unified-bus/model/ub-switch-allocator.cc
++++ b/src/unified-bus/model/ub-switch-allocator.cc
+@@ -706,8 +706,10 @@ void UbRoundRobinAllocator::AllocateNextPacket(Ptr<UbPort> outPort)
+             // Forwarded packet (not locally generated)
+             auto node = NodeList::GetNode(m_nodeId);
+             auto inPort = DynamicCast<UbPort>(node->GetDevice(inPortId));
++            Ptr<Packet> releasedInput;
+             const bool released = node->GetObject<UbSwitch>()->NotifySwitchDequeue(
+-                inPortId, outPortId, priority, packet);
++                inPortId, outPortId, priority, packet, &releasedInput);
++            if (releasedInput) context.packet = releasedInput;
+             context.upstreamCreditAlreadyReturned = context.upstreamCreditAlreadyReturned || !released;
+             inPort->GetFlowControl()->OnIngressReleased(context);
+             if (m_disposed) {
+@@ -1028,8 +1030,10 @@ void UbDwrrAllocator::AllocateNextPacket(Ptr<UbPort> outPort)
+                     // Forwarded packet (not locally generated)
+                     auto node = NodeList::GetNode(m_nodeId);
+                     auto inPort = DynamicCast<UbPort>(node->GetDevice(inPortId));
++                    Ptr<Packet> releasedInput;
+                     const bool released = node->GetObject<UbSwitch>()->NotifySwitchDequeue(
+-                        inPortId, outPortId, priority, packet);
++                        inPortId, outPortId, priority, packet, &releasedInput);
++                    if (releasedInput) context.packet = releasedInput;
+                     context.upstreamCreditAlreadyReturned = context.upstreamCreditAlreadyReturned || !released;
+                     inPort->GetFlowControl()->OnIngressReleased(context);
+                     if (m_disposed) {
+diff --git a/src/unified-bus/model/ub-switch.cc b/src/unified-bus/model/ub-switch.cc
+index e801301..4ea1da1 100644
+--- a/src/unified-bus/model/ub-switch.cc
++++ b/src/unified-bus/model/ub-switch.cc
+@@ -1,4 +1,5 @@
+ // SPDX-License-Identifier: GPL-2.0-only
++#include "ub-write-v2.h"
+ 
+ #include <algorithm>
+ #include <limits>
+@@ -721,6 +722,7 @@ UbPacketType_t UbSwitch::GetPacketType(Ptr<Packet> packet)
+  */
+ void UbSwitch::SwitchHandlePacket(Ptr<UbPort> port, Ptr<Packet> packet)
+ {
++    if (HandleWriteV2(port, packet)) { return; }
+     if (HandleNetworkPacket(port, packet)) { return; }
+     // 帧类型判断
+     auto packetType = GetPacketType(packet);
+@@ -1892,7 +1894,7 @@ UbSwitch::FailedOutputRerouting()
+     return port == nullptr ? nullptr : port->GetReliableRerouting();
+ }
+ 
+-bool UbSwitch::NotifySwitchDequeue(uint16_t inPortId, uint32_t outPort, uint32_t priority, Ptr<Packet> packet)
++bool UbSwitch::NotifySwitchDequeue(uint16_t inPortId, uint32_t outPort, uint32_t priority, Ptr<Packet> packet, Ptr<Packet>* releasedInput)
+ {
+     UbNetworkReplicationTag tag;
+     if (packet->PeekPacketTag(tag)) {
+@@ -1900,17 +1902,24 @@ bool UbSwitch::NotifySwitchDequeue(uint16_t inPortId, uint32_t outPort, uint32_t
+         NS_ABORT_MSG_IF(it == m_networkParents.end(), "Missing network parent");
+         auto& parent = it->second;
+         NS_ABORT_MSG_IF(outPort >= 64 || !(parent.pendingOutputs & (uint64_t{1} << outPort)) ||
+-            parent.inPort != inPortId || parent.priority != priority || parent.bytes != packet->GetSize(),
++            parent.inPort != inPortId || parent.priority != priority ||
++            (parent.nativeBranches.empty() && parent.bytes != packet->GetSize()),
+             "Invalid or duplicate network branch dequeue");
+         parent.pendingOutputs &= ~(uint64_t{1} << outPort);
+         const bool last = parent.pendingOutputs == 0;
+-        m_queueManager->PopNetworkBranch(inPortId, outPort, priority, parent.bytes, last);
++        const uint32_t branchBytes = packet->GetSize();
++        m_queueManager->PopNetworkBranch(inPortId, outPort, priority, branchBytes, last, parent.bytes);
++        if (!parent.nativeBranches.empty()) {
++            NS_ABORT_MSG_IF(!releasedInput, "v2 requires input credit context");
++            if (last) *releasedInput = parent.packet;
++            packet->RemovePacketTag(tag); // receiver now sees only native unicast
++        }
+         ++m_networkStats.branchDequeues;
+         m_networkStats.branchWaitNs[outPort] += Simulator::Now().GetNanoSeconds() - parent.readyNs;
+         ++m_networkStats.branchPackets[outPort];
+-        NS_ABORT_MSG_IF(m_networkStats.branchBytes < parent.bytes || !m_networkStats.descriptors,
++        NS_ABORT_MSG_IF(m_networkStats.branchBytes < branchBytes || !m_networkStats.descriptors,
+                         "Network branch resource underflow");
+-        m_networkStats.branchBytes -= parent.bytes;
++        m_networkStats.branchBytes -= branchBytes;
+         --m_networkStats.descriptors;
+         if (last) {
+             ++m_networkStats.released;
+@@ -2110,13 +2119,15 @@ void UbSwitch::CompleteNetworkProcessing(uint64_t id)
+     NS_ABORT_MSG_IF(it == m_networkParents.end(), "Missing processing parent");
+     auto& parent = it->second;
+     parent.readyNs = Simulator::Now().GetNanoSeconds();
++    std::vector<uint32_t> sizes;
++    for (auto p : parent.nativeBranches) sizes.push_back(p->GetSize());
+     m_queueManager->MoveProcessingToNetworkBranches(parent.inPort, parent.outputs.front(),
+-        parent.priority, parent.bytes, parent.outputs);
++        parent.priority, parent.bytes, parent.outputs, sizes);
+     // Register all output references before waking any allocator (which may run synchronously).
+     const auto outputs = parent.outputs;
+     Ptr<Packet> nativeBranch;
+     for (size_t i=0; i<outputs.size(); ++i) {
+-        auto branch = parent.packet->Copy();
++        auto branch = parent.nativeBranches.empty() ? parent.packet->Copy() : parent.nativeBranches[i];
+         UbNetworkReplicationTag tag;
+         branch->RemovePacketTag(tag);
+         tag.parent = id; tag.target = parent.ranks[i];
+@@ -2124,7 +2135,7 @@ void UbSwitch::CompleteNetworkProcessing(uint64_t id)
+         if (tag.nativeSingleton) { nativeBranch = branch; }
+         GetOrCreateVoq(outputs[i], parent.priority, parent.inPort)->Push(branch);
+         ++m_networkStats.branches;
+-        m_networkStats.branchBytes += parent.bytes;
++        m_networkStats.branchBytes += branch->GetSize();
+     }
+     m_networkStats.peakBranchBytes = std::max(m_networkStats.peakBranchBytes, m_networkStats.branchBytes);
+     if (nativeBranch != nullptr) {
+@@ -2209,3 +2220,65 @@ UbSwitch::GetVoqPacketCountForTest(uint32_t outPort, uint32_t priority, uint32_t
+ }
+ 
+ }  // namespace ns3
++
++namespace ns3 {
++void UbSwitch::SetWriteV2MetadataResolver(uint32_t inPort,
++    Callback<void, uint32_t, uint32_t, uint32_t, Ptr<Packet>> resolver)
++{
++    NS_ABORT_MSG_IF(GetNodeType()!=UB_SWITCH || inPort>=m_portsNum || resolver.IsNull() ||
++                    m_writeV2Resolvers.count(inPort), "invalid/duplicate v2 resolver");
++    m_writeV2Resolvers.emplace(inPort,resolver);
++}
++bool UbSwitch::HandleWriteV2(Ptr<UbPort> port, Ptr<Packet> packet)
++{
++    if (!UbWriteV2::IsEnvelope(packet)) return false;
++    const auto in=port->GetIfIndex();
++    NS_ABORT_MSG_IF(GetNodeType()!=UB_SWITCH || !IsCBFCEnable() || !m_writeV2Resolvers.count(in),
++                    "v2 requires one configured CBFC switch");
++    auto raw=packet->Copy(); UbDatalinkPacketHeader outer; raw->RemoveHeader(outer);
++    auto priority=outer.GetPacketVL();
++    NS_ABORT_MSG_IF(!priority || priority>=m_vlNum,"v2 priority");
++    std::vector<uint8_t> bytes(raw->GetSize()); raw->CopyData(bytes.data(),bytes.size());
++    UbWriteV2 envelope;
++    try { envelope=UbWriteV2::Decode(bytes); }
++    catch(const std::exception& e) { NS_ABORT_MSG("invalid v2 envelope: " << e.what()); }
++    // Consume this input hop's piggyback exactly once; reconstructed DL has no credit.
++    port->GetFlowControl()->OnDataPacketReceived(packet);
++    auto sharedPayload=Create<Packet>(envelope.payload.data(),envelope.payload.size());
++    std::vector<uint32_t> outputs,ranks; std::vector<Ptr<Packet>> branches; uint64_t mask=0;
++    for (size_t i=0;i<envelope.headers.size();++i) {
++        auto& h=envelope.headers[i]; auto branch=Create<Packet>(h.data(),h.size());
++        branch->AddAtEnd(sharedPayload);
++        UbDatalinkPacketHeader dl=outer; dl.SetCredit(false); dl.SetACK(false);
++        dl.SetConfig(static_cast<uint8_t>(UbDatalinkHeaderConfig::PACKET_IPV4)); branch->AddHeader(dl);
++        // The resolver may restore tags only. Neither header nor payload comes from it.
++        std::vector<uint8_t> before(branch->GetSize()); branch->CopyData(before.data(),before.size());
++        m_writeV2Resolvers.at(in)(envelope.operation,envelope.sequence,i,branch);
++        std::vector<uint8_t> after(branch->GetSize()); branch->CopyData(after.data(),after.size());
++        NS_ABORT_MSG_IF(before!=after,"v2 resolver changed wire bytes");
++        ParsedURMAHeaders parsed; ParseURMAPacketHeader(branch,parsed);
++        RoutingKey key; bool shortest=false;
++        int output=ResolveURMAOutput(branch,parsed,in,key,shortest);
++        NS_ABORT_MSG_IF(output<0 || uint32_t(output)==in || output>=64 ||
++                        (mask & (uint64_t{1}<<output)),"v2 missing/reflected/shared output route");
++        UintegerValue limit; DynamicCast<UbPort>(GetObject<Node>()->GetDevice(output))->GetUbQueue()->
++            GetAttribute("MaxEgressBytes",limit);
++        NS_ABORT_MSG_IF(branch->GetSize()>limit.Get(),"v2 native branch exceeds finite egress");
++        mask|=uint64_t{1}<<output; outputs.push_back(output); ranks.push_back(i); branches.push_back(branch);
++        LastPacketTraversesNotify(GetObject<Node>()->GetId(),parsed.transportHeader);
++    }
++    uint32_t inputBytes=packet->GetSize();
++    NS_ABORT_MSG_IF(!m_queueManager->CheckInPortSpace(in,priority,inputBytes),"v2 ingress capacity");
++    NS_ABORT_MSG_IF(m_nextNetworkParent==UINT64_MAX,"v2 parent exhausted");
++    auto id=m_nextNetworkParent++;
++    m_queueManager->PushToInPortProcessing(in,outputs.front(),priority,inputBytes);
++    m_networkParents.emplace(id,NetworkParent{in,priority,inputBytes,mask,0,packet,outputs,ranks,branches});
++    ++m_networkStats.admitted; m_networkStats.parentBytes+=inputBytes;
++    m_networkStats.peakParentBytes=std::max(m_networkStats.peakParentBytes,m_networkStats.parentBytes);
++    m_networkStats.descriptors+=outputs.size();
++    m_networkStats.peakDescriptors=std::max(m_networkStats.peakDescriptors,m_networkStats.descriptors);
++    if(m_inPortProcessingDelay<=NanoSeconds(0)) CompleteNetworkProcessing(id);
++    else m_networkEvents.push_back(Simulator::Schedule(m_inPortProcessingDelay,&UbSwitch::CompleteNetworkProcessing,this,id));
++    return true;
++}
++}
+diff --git a/src/unified-bus/model/ub-switch.h b/src/unified-bus/model/ub-switch.h
+index 10449be..c09429f 100644
+--- a/src/unified-bus/model/ub-switch.h
++++ b/src/unified-bus/model/ub-switch.h
+@@ -4,6 +4,7 @@
+ #include "ns3/ub-ldst-packet-utils.h"
+ 
+ #include <optional>
++#include <map>
+ #include <unordered_map>
+ #include <vector>
+ #include "ns3/nstime.h"
+@@ -89,7 +90,8 @@ public:
+ 
+     void SwitchHandlePacket(Ptr<UbPort> port, Ptr<Packet> packet);
+     // 端口发送完毕，通知交换机出队列
+-    bool NotifySwitchDequeue(uint16_t inPortId, uint32_t outPort, uint32_t priority, Ptr<Packet> p);
++    bool NotifySwitchDequeue(uint16_t inPortId, uint32_t outPort, uint32_t priority, Ptr<Packet> p, Ptr<Packet>* releasedInput = nullptr);
++    void SetWriteV2MetadataResolver(uint32_t inPort, Callback<void, uint32_t, uint32_t, uint32_t, Ptr<Packet>> resolver);
+ 
+     struct NetworkReplicationStats {
+         uint64_t admitted{0}, released{0}, branches{0}, branchDequeues{0};
+@@ -220,8 +222,11 @@ private:
+         uint64_t readyNs;
+         Ptr<Packet> packet;
+         std::vector<uint32_t> outputs, ranks;
++        std::vector<Ptr<Packet>> nativeBranches;
+     };
+     bool HandleNetworkPacket(Ptr<UbPort> port, Ptr<Packet> packet);
++    bool HandleWriteV2(Ptr<UbPort> port, Ptr<Packet> packet);
++    std::map<uint32_t, Callback<void, uint32_t, uint32_t, uint32_t, Ptr<Packet>>> m_writeV2Resolvers;
+     void CompleteNetworkProcessing(uint64_t parent);
+     bool m_networkReplicationEnabled{false};
+     uint32_t m_networkSinkRank{UINT32_MAX};
+diff --git a/src/unified-bus/model/ub-write-v2.h b/src/unified-bus/model/ub-write-v2.h
+new file mode 100644
+index 0000000..ee6f01c
+--- /dev/null
++++ b/src/unified-bus/model/ub-write-v2.h
+@@ -0,0 +1,81 @@
++// SPDX-License-Identifier: GPL-2.0-only
++#ifndef UB_WRITE_V2_H
++#define UB_WRITE_V2_H
++#include "ns3/packet.h"
++#include "ns3/ipv4-header.h"
++#include "ns3/udp-header.h"
++#include "ns3/ub-header.h"
++#include "ns3/ub-ta-codec.h"
++#include <vector>
++#include <set>
++#include <stdexcept>
++namespace ns3 {
++// Experimental single-switch WRITE envelope. No PacketTag serialization.
++struct UbWriteV2 {
++    static constexpr uint32_t MAGIC = 0x55425732; // UBW2; distinct from v1 oracle magic
++    uint32_t operation{}, sequence{};
++    std::vector<std::vector<uint8_t>> headers;
++    std::vector<uint8_t> payload;
++    static void Check(bool ok, const char* what) { if (!ok) throw std::runtime_error(what); }
++    static void Put(std::vector<uint8_t>& b, uint32_t v, unsigned n) {
++        for (unsigned i=n; i; --i) b.push_back(v >> (8*(i-1)));
++    }
++    static uint32_t Take(const std::vector<uint8_t>& b, size_t& at, unsigned n) {
++        Check(at <= b.size() && n <= b.size()-at, "truncated v2");
++        uint32_t v=0; while(n--) v=(v<<8)|b[at++]; return v;
++    }
++    // Validate the native header using the native rule and header codecs. No tags used.
++    static uint32_t Destination(const std::vector<uint8_t>& h, uint32_t payloadBytes) {
++        Check(h.size()>=74 && h.size()<=65535, "native header length");
++        Check((h[6]>>4)==4 && (h[6]&15)==5, "v2 requires native IPv4 without options");
++        auto p=Create<Packet>(h.data(),h.size());
++        UbIpBasedNetworkHeader net; Ipv4Header ip; UdpHeader udp;
++        UbTransportHeader tp; UbTransactionHeader ta;
++        p->RemoveHeader(net); p->RemoveHeader(ip); p->RemoveHeader(udp);
++        p->RemoveHeader(tp); p->RemoveHeader(ta);
++        Check(ip.GetProtocol()==17 && size_t(ip.GetPayloadSize())+20==h.size()-6+payloadBytes,
++              "native IP length/protocol");
++        Check(tp.GetTPOpcode()==1 && ta.GetUbTransactionOpcode()==uint8_t(UbTransactionOpcode::WRITE),
++              "v2 supports WRITE request only");
++        Check(!ta.GetTvEn() && !ta.GetMtEn(), "unsupported WRITE flags");
++        auto plan=UbTaHeaderPlan::ForRequest(*FindTransactionRule(UbTransactionOpcode::WRITE),
++                                            {false,false,ta.GetUdFlg()});
++        Check(p->GetSize()==plan.GetExtensionBytes(16), "WRITE header plan length");
++        return ip.GetDestination().Get();
++    }
++    void Validate() const {
++        Check(!headers.empty() && headers.size()<=64, "v2 member count");
++        Check(!payload.empty() && payload.size()<=4096, "v2 payload bound");
++        std::set<uint32_t> destinations;
++        for(auto& h:headers) Check(destinations.insert(Destination(h,payload.size())).second,
++                                  "duplicate v2 destination");
++    }
++    std::vector<uint8_t> Encode() const {
++        Validate(); std::vector<uint8_t> b;
++        Put(b,MAGIC,4); Put(b,2,1); Put(b,0,1); Put(b,headers.size(),2);
++        Put(b,operation,4); Put(b,sequence,4); Put(b,payload.size(),4);
++        for(auto& h:headers) Put(b,h.size(),2);
++        for(auto& h:headers) b.insert(b.end(),h.begin(),h.end());
++        b.insert(b.end(),payload.begin(),payload.end()); return b;
++    }
++    static UbWriteV2 Decode(const std::vector<uint8_t>& b) {
++        size_t at=0; Check(Take(b,at,4)==MAGIC,"v2 magic/type");
++        Check(Take(b,at,1)==2 && Take(b,at,1)==0,"v2 version/flags");
++        auto count=Take(b,at,2); Check(count && count<=64,"v2 member count");
++        UbWriteV2 v; v.operation=Take(b,at,4); v.sequence=Take(b,at,4);
++        auto len=Take(b,at,4); Check(len && len<=4096,"v2 payload bound");
++        std::vector<uint32_t> sizes; size_t total=0;
++        for(unsigned i=0;i<count;++i) { auto n=Take(b,at,2); Check(n>=74,"v2 header length"); sizes.push_back(n); total+=n; }
++        Check(total+len==b.size()-at,"v2 total length");
++        for(auto n:sizes) { v.headers.emplace_back(b.begin()+at,b.begin()+at+n); at+=n; }
++        v.payload.assign(b.begin()+at,b.end()); v.Validate(); return v;
++    }
++    static bool IsEnvelope(Ptr<const Packet> p) {
++        if(p->GetSize()<4) return false;
++        uint8_t b[4]; p->CopyData(b,4);
++        // Reserved experimental DL config, not an official UB protocol assignment.
++        return (b[1]&15)==15;
++    }
++};
++}
++#endif

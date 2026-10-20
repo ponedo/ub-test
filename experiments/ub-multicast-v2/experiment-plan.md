@@ -1,0 +1,11 @@
+# Approved bounded protocol experiment
+
+Claim: a switch-decoded WRITE envelope preserves independent native completion while reducing source and switch-output data bytes against Full v1. Control: existing Full SharedSource and receiver restoration. Treatment: v2 only. Fixed: old multitarget topology (source0, destinations1/2/3, competitor4, switch5), native queues/windows/CBFC, 100Gb/s links, 20ns propagation, 1024B TAs, identical deterministic payload. No Planner and no UltraEP layer benchmark.
+
+Prediction: per-TA source v1=32+137*3+1024=1467; v2=24+(74+2)*3+1024=1276. Switch outputs v1=3*1467, v2=3*1102. Control traffic and completion timing are measured, not inferred from this algebra. Falsification: any data/header mismatch, premature/duplicate completion, nonzero final association/cache, credit mismatch, queue overrun, or missing independent ACK/Response.
+
+Matrix: codec 1/2/4/8/64 mixed lengths and negative byte inputs; 12KiB and 64KiB basic v1/v2; 12KiB dynamic groups, competition, pressure and window=2 in both modes; negative existing feedback faults. Guard stage: 3600s,6GiB RSS,7GiB AS,8GiB disk,2GiB tmp,1.5GiB available host memory. Sequential stages. No 18MiB optional point. Halt on any unexpected failure or protected stop; debug only affected code/test, retain original failure evidence. Known native missing parser remains FAIL/unavailable, never relabeled PASS. Public evidence: small aggregate CSV/JSON; private raw payloads/windows remain outside repo.
+
+Before first simulation, add a v2-only mixed-header case (target2 carries native UDETAH, other targets do not), metadata consumption/expiry/header-binding seam negatives, and one actual received-payload corruption negative. These close explicit task acceptance gaps without changing the performance matrix. The corruption must reach the native target verifier and fail; the metadata service must never replace the payload.
+
+Post-implementation call-site review adds one v2-only DWRR pressure check: both allocator implementations now propagate the distinct input credit Packet, so the second implementation needs direct unequal-size branch coverage. No performance case is replaced or retuned. Old-network DWRR equal-size regression already passed; this extra test covers the new size difference specifically.

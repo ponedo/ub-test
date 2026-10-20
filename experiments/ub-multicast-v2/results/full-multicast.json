@@ -1,0 +1,363 @@
+[
+  {
+    "case": "three-target",
+    "scenario": "basic",
+    "bytes": 16384,
+    "status": "PASS",
+    "host": {
+      "wall_seconds": 0.2532384980004281,
+      "user_cpu_seconds": 0.025637999999999998,
+      "system_cpu_seconds": 0.008413,
+      "peak_rss_kib": 18876,
+      "returncode": 0,
+      "guard": null
+    },
+    "summary": {
+      "status": "PASS",
+      "groups": 1,
+      "source_payload_bytes": 16384,
+      "source_data_wire_bytes": 23472,
+      "envelopes": 16,
+      "branches": 48,
+      "feedback": 48,
+      "window_barrier_checks": 1,
+      "empty_waits": 1,
+      "window_waits": 0,
+      "blocked_queries": 0
+    },
+    "validation": {
+      "status": "PASS",
+      "checks": [
+        "actual_received_payload",
+        "per_target_TA_coverage",
+        "receiver_and_sender_causality",
+        "exact_member_set",
+        "source_single_payload",
+        "paid_envelope_bytes",
+        "native_feedback_count",
+        "link_serialization_and_propagation",
+        "credit_wire_accounting",
+        "group_completion"
+      ],
+      "payloads": [
+        {
+          "task": 1001,
+          "rank": 1,
+          "bytes": 16384,
+          "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+        },
+        {
+          "task": 1001,
+          "rank": 2,
+          "bytes": 16384,
+          "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+        },
+        {
+          "task": 1001,
+          "rank": 3,
+          "bytes": 16384,
+          "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+        }
+      ]
+    }
+  },
+  {
+    "case": "dynamic",
+    "scenario": "dynamic",
+    "bytes": 8192,
+    "status": "PASS",
+    "host": {
+      "wall_seconds": 0.25269725599991943,
+      "user_cpu_seconds": 0.027281999999999997,
+      "system_cpu_seconds": 0.010534,
+      "peak_rss_kib": 18820,
+      "returncode": 0,
+      "guard": null
+    },
+    "summary": {
+      "status": "PASS",
+      "groups": 2,
+      "source_payload_bytes": 16384,
+      "source_data_wire_bytes": 21280,
+      "envelopes": 16,
+      "branches": 32,
+      "feedback": 32,
+      "window_barrier_checks": 1,
+      "empty_waits": 1,
+      "window_waits": 0,
+      "blocked_queries": 0
+    },
+    "validation": {
+      "status": "PASS",
+      "checks": [
+        "actual_received_payload",
+        "per_target_TA_coverage",
+        "receiver_and_sender_causality",
+        "exact_member_set",
+        "source_single_payload",
+        "paid_envelope_bytes",
+        "native_feedback_count",
+        "link_serialization_and_propagation",
+        "credit_wire_accounting",
+        "group_completion"
+      ],
+      "payloads": [
+        {
+          "task": 1001,
+          "rank": 1,
+          "bytes": 8192,
+          "sha256": "c7f9ffd1a3f130902dfb294fd206d6d150206a55e6976cef0607b19c38722abe"
+        },
+        {
+          "task": 1001,
+          "rank": 2,
+          "bytes": 8192,
+          "sha256": "c7f9ffd1a3f130902dfb294fd206d6d150206a55e6976cef0607b19c38722abe"
+        },
+        {
+          "task": 1002,
+          "rank": 2,
+          "bytes": 8192,
+          "sha256": "4f229fad9b9b2a48175a73b266637b09e8dc13c4a7215c0046d34c8660567156"
+        },
+        {
+          "task": 1002,
+          "rank": 3,
+          "bytes": 8192,
+          "sha256": "4f229fad9b9b2a48175a73b266637b09e8dc13c4a7215c0046d34c8660567156"
+        }
+      ]
+    }
+  },
+  {
+    "case": "competition",
+    "scenario": "competition",
+    "bytes": 16384,
+    "status": "PASS",
+    "host": {
+      "wall_seconds": 0.25257988999965164,
+      "user_cpu_seconds": 0.024897,
+      "system_cpu_seconds": 0.015373,
+      "peak_rss_kib": 19280,
+      "returncode": 0,
+      "guard": null
+    },
+    "summary": {
+      "status": "PASS",
+      "groups": 1,
+      "source_payload_bytes": 16384,
+      "source_data_wire_bytes": 23472,
+      "envelopes": 16,
+      "branches": 48,
+      "feedback": 48,
+      "window_barrier_checks": 1,
+      "empty_waits": 1,
+      "window_waits": 0,
+      "blocked_queries": 0
+    },
+    "validation": {
+      "status": "PASS",
+      "checks": [
+        "actual_received_payload",
+        "per_target_TA_coverage",
+        "receiver_and_sender_causality",
+        "exact_member_set",
+        "source_single_payload",
+        "paid_envelope_bytes",
+        "native_feedback_count",
+        "link_serialization_and_propagation",
+        "credit_wire_accounting",
+        "group_completion"
+      ],
+      "payloads": [
+        {
+          "task": 1001,
+          "rank": 1,
+          "bytes": 16384,
+          "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+        },
+        {
+          "task": 1001,
+          "rank": 2,
+          "bytes": 16384,
+          "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+        },
+        {
+          "task": 1001,
+          "rank": 3,
+          "bytes": 16384,
+          "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+        }
+      ]
+    }
+  },
+  {
+    "case": "window",
+    "scenario": "basic",
+    "bytes": 32768,
+    "status": "PASS",
+    "host": {
+      "wall_seconds": 0.2525708579996717,
+      "user_cpu_seconds": 0.044021,
+      "system_cpu_seconds": 0.009472999999999999,
+      "peak_rss_kib": 19240,
+      "returncode": 0,
+      "guard": null
+    },
+    "summary": {
+      "status": "PASS",
+      "groups": 1,
+      "source_payload_bytes": 32768,
+      "source_data_wire_bytes": 46944,
+      "envelopes": 32,
+      "branches": 96,
+      "feedback": 96,
+      "window_barrier_checks": 155,
+      "empty_waits": 1,
+      "window_waits": 154,
+      "blocked_queries": 0
+    },
+    "validation": {
+      "status": "PASS",
+      "checks": [
+        "actual_received_payload",
+        "per_target_TA_coverage",
+        "receiver_and_sender_causality",
+        "exact_member_set",
+        "source_single_payload",
+        "paid_envelope_bytes",
+        "native_feedback_count",
+        "link_serialization_and_propagation",
+        "credit_wire_accounting",
+        "group_completion"
+      ],
+      "payloads": [
+        {
+          "task": 1001,
+          "rank": 1,
+          "bytes": 32768,
+          "sha256": "4ecdaab1b9694fdad1b021e7e72dfd0c7d6a3ecb7e5211ea423afcd5ce76a61a"
+        },
+        {
+          "task": 1001,
+          "rank": 2,
+          "bytes": 32768,
+          "sha256": "4ecdaab1b9694fdad1b021e7e72dfd0c7d6a3ecb7e5211ea423afcd5ce76a61a"
+        },
+        {
+          "task": 1001,
+          "rank": 3,
+          "bytes": 32768,
+          "sha256": "4ecdaab1b9694fdad1b021e7e72dfd0c7d6a3ecb7e5211ea423afcd5ce76a61a"
+        }
+      ]
+    }
+  },
+  {
+    "case": "pressure",
+    "scenario": "competition",
+    "bytes": 16384,
+    "status": "PASS",
+    "host": {
+      "wall_seconds": 0.2529162330001782,
+      "user_cpu_seconds": 0.037603,
+      "system_cpu_seconds": 0.011845,
+      "peak_rss_kib": 19116,
+      "returncode": 0,
+      "guard": null
+    },
+    "summary": {
+      "status": "PASS",
+      "groups": 1,
+      "source_payload_bytes": 16384,
+      "source_data_wire_bytes": 23472,
+      "envelopes": 16,
+      "branches": 48,
+      "feedback": 48,
+      "window_barrier_checks": 1,
+      "empty_waits": 1,
+      "window_waits": 0,
+      "blocked_queries": 582
+    },
+    "validation": {
+      "status": "PASS",
+      "checks": [
+        "actual_received_payload",
+        "per_target_TA_coverage",
+        "receiver_and_sender_causality",
+        "exact_member_set",
+        "source_single_payload",
+        "paid_envelope_bytes",
+        "native_feedback_count",
+        "link_serialization_and_propagation",
+        "credit_wire_accounting",
+        "group_completion"
+      ],
+      "payloads": [
+        {
+          "task": 1001,
+          "rank": 1,
+          "bytes": 16384,
+          "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+        },
+        {
+          "task": 1001,
+          "rank": 2,
+          "bytes": 16384,
+          "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+        },
+        {
+          "task": 1001,
+          "rank": 3,
+          "bytes": 16384,
+          "sha256": "122a884848aa66e29254c29d237a9a4f3934bf1549b33ea186e886dc23edecef"
+        }
+      ]
+    }
+  },
+  {
+    "case": "duplicate",
+    "scenario": "basic",
+    "bytes": 4096,
+    "status": "EXPECTED_REJECTION",
+    "host": {
+      "wall_seconds": 0.25294199300060427,
+      "user_cpu_seconds": 0.022406,
+      "system_cpu_seconds": 0.003909999999999999,
+      "peak_rss_kib": 18972,
+      "returncode": -6,
+      "guard": null
+    },
+    "reason": "duplicate feedback detected"
+  },
+  {
+    "case": "missing",
+    "scenario": "basic",
+    "bytes": 4096,
+    "status": "EXPECTED_REJECTION",
+    "host": {
+      "wall_seconds": 0.25269275099981314,
+      "user_cpu_seconds": 0.016291,
+      "system_cpu_seconds": 0.012924,
+      "peak_rss_kib": 18780,
+      "returncode": -6,
+      "guard": null
+    },
+    "reason": "unfinished group: missing feedback"
+  },
+  {
+    "case": "wrong",
+    "scenario": "basic",
+    "bytes": 4096,
+    "status": "EXPECTED_REJECTION",
+    "host": {
+      "wall_seconds": 0.25271444600002724,
+      "user_cpu_seconds": 0.025980999999999997,
+      "system_cpu_seconds": 0.0037059999999999997,
+      "peak_rss_kib": 18940,
+      "returncode": -6,
+      "guard": null
+    },
+    "reason": "feedback kind/member"
+  }
+]

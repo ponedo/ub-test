@@ -1,0 +1,5 @@
+commands:
+  - python3 build.py --native NATIVE --out PRIVATE/build
+  - python3 run.py --build PRIVATE/build --out PRIVATE/matrix
+checkpoint_policy: halt_on_unexpected_failure_or_resource_guard
+outputs: fresh_private_paths_only

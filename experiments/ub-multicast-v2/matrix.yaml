@@ -1,0 +1,16 @@
+# Fixed before execution. N refers to object bytes; TAs remain 1024 bytes.
+codec_fanout: [1, 2, 4, 8, 64]
+modes: [v1, v2]
+positive_cases:
+  - {id: 12k, bytes: 12288, scenario: basic}
+  - {id: 64k, bytes: 65536, scenario: basic}
+  - {id: dynamic, bytes: 12288, scenario: dynamic}
+  - {id: competition, bytes: 12288, scenario: competition}
+  - {id: pressure, bytes: 12288, scenario: basic, pressure: 1}
+  - {id: window, bytes: 12288, scenario: basic, window: 2}
+negative_feedback: [missing, duplicate, wrong]
+v2_only:
+  - {id: mixed, bytes: 12288, scenario: basic, mixed: 1}
+negative_association: [duplicate, missing, expired, member, header]
+negative_received_payload: [v2]
+additional_allocator_check: {id: dwrr, mode: v2, bytes: 12288, pressure: 1, dwrr: 1}

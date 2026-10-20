@@ -1,0 +1,3213 @@
+[
+  {
+    "stage": "build",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 390.3249321559997,
+    "user_cpu_seconds": 733.298762,
+    "system_cpu_seconds": 40.371709,
+    "peak_rss_kib": 859256,
+    "sampled_peak_tree_rss_bytes": 1361182720,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "configure",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 2.009547055999974,
+    "user_cpu_seconds": 1.220492,
+    "system_cpu_seconds": 0.6067049999999999,
+    "peak_rss_kib": 26248,
+    "sampled_peak_tree_rss_bytes": 30785536,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "fixtures/association-test-build",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 8.276762096999846,
+    "user_cpu_seconds": 7.826797,
+    "system_cpu_seconds": 0.41700899999999996,
+    "peak_rss_kib": 807588,
+    "sampled_peak_tree_rss_bytes": 826269696,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "fixtures/codec-test-build",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 6.523407699000018,
+    "user_cpu_seconds": 6.131987,
+    "system_cpu_seconds": 0.320895,
+    "peak_rss_kib": 708756,
+    "sampled_peak_tree_rss_bytes": 717492224,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "fixtures/micro-build",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 18.05736046200036,
+    "user_cpu_seconds": 17.312614,
+    "system_cpu_seconds": 0.56645,
+    "peak_rss_kib": 1010708,
+    "sampled_peak_tree_rss_bytes": 1036275712,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/12k-v1-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2525491440001133,
+    "user_cpu_seconds": 0.032892,
+    "system_cpu_seconds": 0.0,
+    "peak_rss_kib": 19072,
+    "sampled_peak_tree_rss_bytes": 819200,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/12k-v1-verify-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25300060200061125,
+    "user_cpu_seconds": 0.027294,
+    "system_cpu_seconds": 0.011212,
+    "peak_rss_kib": 11008,
+    "sampled_peak_tree_rss_bytes": 913408,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/12k-v2-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2525905109996529,
+    "user_cpu_seconds": 0.027677,
+    "system_cpu_seconds": 0.0,
+    "peak_rss_kib": 19036,
+    "sampled_peak_tree_rss_bytes": 1044480,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/12k-v2-verify-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25276431200018123,
+    "user_cpu_seconds": 0.030144999999999998,
+    "system_cpu_seconds": 0.0043809999999999995,
+    "peak_rss_kib": 11008,
+    "sampled_peak_tree_rss_bytes": 741376,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/64k-v1-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.252232374000414,
+    "user_cpu_seconds": 0.038675,
+    "system_cpu_seconds": 0.007781,
+    "peak_rss_kib": 19600,
+    "sampled_peak_tree_rss_bytes": 442368,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/64k-v1-verify-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25222909999956755,
+    "user_cpu_seconds": 0.05921,
+    "system_cpu_seconds": 0.007979,
+    "peak_rss_kib": 12928,
+    "sampled_peak_tree_rss_bytes": 90112,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/64k-v2-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2522929300002943,
+    "user_cpu_seconds": 0.043181,
+    "system_cpu_seconds": 0.004154,
+    "peak_rss_kib": 19516,
+    "sampled_peak_tree_rss_bytes": 798720,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/64k-v2-verify-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2524649050001244,
+    "user_cpu_seconds": 0.057412,
+    "system_cpu_seconds": 0.017667,
+    "peak_rss_kib": 12672,
+    "sampled_peak_tree_rss_bytes": 335872,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/association-duplicate-host",
+    "status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.25263470800018695,
+    "user_cpu_seconds": 0.01307,
+    "system_cpu_seconds": 0.0,
+    "peak_rss_kib": 17980,
+    "sampled_peak_tree_rss_bytes": 696320,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/association-expired-host",
+    "status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.2522738789994037,
+    "user_cpu_seconds": 0.018716999999999998,
+    "system_cpu_seconds": 0.0,
+    "peak_rss_kib": 17832,
+    "sampled_peak_tree_rss_bytes": 974848,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/association-header-host",
+    "status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.252883600000132,
+    "user_cpu_seconds": 0.011231,
+    "system_cpu_seconds": 0.0038309999999999998,
+    "peak_rss_kib": 17916,
+    "sampled_peak_tree_rss_bytes": 761856,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/association-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2526774319994729,
+    "user_cpu_seconds": 0.017683,
+    "system_cpu_seconds": 0.0,
+    "peak_rss_kib": 17888,
+    "sampled_peak_tree_rss_bytes": 352256,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/association-member-host",
+    "status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.2549013220004781,
+    "user_cpu_seconds": 0.010074,
+    "system_cpu_seconds": 0.005122,
+    "peak_rss_kib": 17848,
+    "sampled_peak_tree_rss_bytes": 1019904,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/association-missing-host",
+    "status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.25269835499966575,
+    "user_cpu_seconds": 0.011445,
+    "system_cpu_seconds": 0.0034609999999999997,
+    "peak_rss_kib": 17908,
+    "sampled_peak_tree_rss_bytes": 425984,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/codec-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2526795059993674,
+    "user_cpu_seconds": 0.029391999999999998,
+    "system_cpu_seconds": 0.0,
+    "peak_rss_kib": 17844,
+    "sampled_peak_tree_rss_bytes": 147456,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/competition-v1-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2521858230002181,
+    "user_cpu_seconds": 0.030192999999999998,
+    "system_cpu_seconds": 0.004593,
+    "peak_rss_kib": 19228,
+    "sampled_peak_tree_rss_bytes": 671744,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/competition-v1-verify-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25214735899953666,
+    "user_cpu_seconds": 0.036494,
+    "system_cpu_seconds": 0.0,
+    "peak_rss_kib": 11392,
+    "sampled_peak_tree_rss_bytes": 278528,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/competition-v2-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2526665220002542,
+    "user_cpu_seconds": 0.051719,
+    "system_cpu_seconds": 0.0,
+    "peak_rss_kib": 19340,
+    "sampled_peak_tree_rss_bytes": 794624,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/competition-v2-verify-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25219209700026113,
+    "user_cpu_seconds": 0.034745,
+    "system_cpu_seconds": 0.0039369999999999995,
+    "peak_rss_kib": 11392,
+    "sampled_peak_tree_rss_bytes": 278528,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/dwrr-v2-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25225849999969796,
+    "user_cpu_seconds": 0.036809999999999996,
+    "system_cpu_seconds": 0.0076749999999999995,
+    "peak_rss_kib": 19336,
+    "sampled_peak_tree_rss_bytes": 700416,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/dwrr-v2-verify-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25277211499997065,
+    "user_cpu_seconds": 0.039604,
+    "system_cpu_seconds": 0.007911999999999999,
+    "peak_rss_kib": 12160,
+    "sampled_peak_tree_rss_bytes": 339968,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/dynamic-v1-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2524093809997794,
+    "user_cpu_seconds": 0.02804,
+    "system_cpu_seconds": 0.004592,
+    "peak_rss_kib": 19104,
+    "sampled_peak_tree_rss_bytes": 835584,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/dynamic-v1-verify-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2531903210001474,
+    "user_cpu_seconds": 0.027837999999999998,
+    "system_cpu_seconds": 0.012338,
+    "peak_rss_kib": 11136,
+    "sampled_peak_tree_rss_bytes": 933888,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/dynamic-v2-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2538691829995514,
+    "user_cpu_seconds": 0.031908,
+    "system_cpu_seconds": 0.003789,
+    "peak_rss_kib": 19244,
+    "sampled_peak_tree_rss_bytes": 1089536,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/dynamic-v2-verify-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25309409300007246,
+    "user_cpu_seconds": 0.044343999999999995,
+    "system_cpu_seconds": 0.012129,
+    "peak_rss_kib": 11136,
+    "sampled_peak_tree_rss_bytes": 262144,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/fault-v1-duplicate-host",
+    "status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.25261933199999476,
+    "user_cpu_seconds": 0.024007,
+    "system_cpu_seconds": 0.004445999999999999,
+    "peak_rss_kib": 19024,
+    "sampled_peak_tree_rss_bytes": 94208,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/fault-v1-missing-host",
+    "status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.25212625800031674,
+    "user_cpu_seconds": 0.029078999999999997,
+    "system_cpu_seconds": 0.0,
+    "peak_rss_kib": 18936,
+    "sampled_peak_tree_rss_bytes": 831488,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/fault-v1-wrong-host",
+    "status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.25222275700070895,
+    "user_cpu_seconds": 0.0243,
+    "system_cpu_seconds": 0.0036739999999999997,
+    "peak_rss_kib": 18848,
+    "sampled_peak_tree_rss_bytes": 872448,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/fault-v2-duplicate-host",
+    "status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.2523362609999822,
+    "user_cpu_seconds": 0.024551,
+    "system_cpu_seconds": 0.005939,
+    "peak_rss_kib": 18944,
+    "sampled_peak_tree_rss_bytes": 790528,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/fault-v2-missing-host",
+    "status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.2527739739998651,
+    "user_cpu_seconds": 0.024718,
+    "system_cpu_seconds": 0.013784,
+    "peak_rss_kib": 18932,
+    "sampled_peak_tree_rss_bytes": 823296,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/fault-v2-payload-host",
+    "status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.25205633100085834,
+    "user_cpu_seconds": 0.018566,
+    "system_cpu_seconds": 0.003913,
+    "peak_rss_kib": 18988,
+    "sampled_peak_tree_rss_bytes": 1044480,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/fault-v2-wrong-host",
+    "status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.25224158099990746,
+    "user_cpu_seconds": 0.021204,
+    "system_cpu_seconds": 0.004343,
+    "peak_rss_kib": 18964,
+    "sampled_peak_tree_rss_bytes": 516096,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/mixed-v2-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2522225029997571,
+    "user_cpu_seconds": 0.037108999999999996,
+    "system_cpu_seconds": 0.015375,
+    "peak_rss_kib": 19072,
+    "sampled_peak_tree_rss_bytes": 647168,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/mixed-v2-verify-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25256618699950195,
+    "user_cpu_seconds": 0.029870999999999998,
+    "system_cpu_seconds": 0.008615,
+    "peak_rss_kib": 11008,
+    "sampled_peak_tree_rss_bytes": 307200,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/pressure-v1-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2520989799995732,
+    "user_cpu_seconds": 0.035810999999999996,
+    "system_cpu_seconds": 0.004196,
+    "peak_rss_kib": 19252,
+    "sampled_peak_tree_rss_bytes": 671744,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/pressure-v1-verify-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25210522700035654,
+    "user_cpu_seconds": 0.12104999999999999,
+    "system_cpu_seconds": 0.039522,
+    "peak_rss_kib": 12160,
+    "sampled_peak_tree_rss_bytes": 278528,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/pressure-v2-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2533469790005256,
+    "user_cpu_seconds": 0.037544,
+    "system_cpu_seconds": 0.0,
+    "peak_rss_kib": 19176,
+    "sampled_peak_tree_rss_bytes": 1974272,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/pressure-v2-verify-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25499368400051026,
+    "user_cpu_seconds": 0.023611,
+    "system_cpu_seconds": 0.015536,
+    "peak_rss_kib": 12160,
+    "sampled_peak_tree_rss_bytes": 1646592,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/window-v1-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2520993810003347,
+    "user_cpu_seconds": 0.025339999999999998,
+    "system_cpu_seconds": 0.003573,
+    "peak_rss_kib": 19100,
+    "sampled_peak_tree_rss_bytes": 471040,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/window-v1-verify-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2544591340001716,
+    "user_cpu_seconds": 0.027901,
+    "system_cpu_seconds": 0.011956,
+    "peak_rss_kib": 11008,
+    "sampled_peak_tree_rss_bytes": 249856,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/window-v2-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25235283199981495,
+    "user_cpu_seconds": 0.038185,
+    "system_cpu_seconds": 0.005352,
+    "peak_rss_kib": 19320,
+    "sampled_peak_tree_rss_bytes": 1069056,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "matrix/window-v2-verify-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2519552539997676,
+    "user_cpu_seconds": 0.036722,
+    "system_cpu_seconds": 0.00339,
+    "peak_rss_kib": 11008,
+    "sampled_peak_tree_rss_bytes": 278528,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25228461699953186,
+    "user_cpu_seconds": 0.154417,
+    "system_cpu_seconds": 0.047820999999999995,
+    "peak_rss_kib": 40792,
+    "sampled_peak_tree_rss_bytes": 937984,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-atomic",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2521479659999386,
+    "user_cpu_seconds": 0.08136199999999999,
+    "system_cpu_seconds": 0.013699999999999999,
+    "peak_rss_kib": 37084,
+    "sampled_peak_tree_rss_bytes": 524288,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-congestion-control",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25224762500056386,
+    "user_cpu_seconds": 0.041296,
+    "system_cpu_seconds": 0.003875,
+    "peak_rss_kib": 36476,
+    "sampled_peak_tree_rss_bytes": 1413120,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-create-node-delay-mapping",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25189486399995076,
+    "user_cpu_seconds": 0.025899,
+    "system_cpu_seconds": 0.011377,
+    "peak_rss_kib": 35144,
+    "sampled_peak_tree_rss_bytes": 499712,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-ctp-endpoint",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2522553489998245,
+    "user_cpu_seconds": 0.047,
+    "system_cpu_seconds": 0.008817,
+    "peak_rss_kib": 35360,
+    "sampled_peak_tree_rss_bytes": 536576,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-ctp-input",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25253769200026,
+    "user_cpu_seconds": 0.039761,
+    "system_cpu_seconds": 0.011694999999999999,
+    "peak_rss_kib": 35252,
+    "sampled_peak_tree_rss_bytes": 385024,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-ctp-lifecycle",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.252439802000481,
+    "user_cpu_seconds": 0.02862,
+    "system_cpu_seconds": 0.012440999999999999,
+    "peak_rss_kib": 35540,
+    "sampled_peak_tree_rss_bytes": 499712,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-ctp-transaction",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2522169700005179,
+    "user_cpu_seconds": 0.041063999999999996,
+    "system_cpu_seconds": 0.0012129999999999999,
+    "peak_rss_kib": 35368,
+    "sampled_peak_tree_rss_bytes": 872448,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-dcqcn-marking",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2520769580005435,
+    "user_cpu_seconds": 0.018465,
+    "system_cpu_seconds": 0.014554999999999998,
+    "peak_rss_kib": 34840,
+    "sampled_peak_tree_rss_bytes": 651264,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-empty-traffic",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25187382500007516,
+    "user_cpu_seconds": 0.057946,
+    "system_cpu_seconds": 0.015604,
+    "peak_rss_kib": 34916,
+    "sampled_peak_tree_rss_bytes": 528384,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-examples",
+    "status": "FAIL",
+    "returncode": 1,
+    "guard": null,
+    "wall_seconds": 1.508765155999754,
+    "user_cpu_seconds": 1.120486,
+    "system_cpu_seconds": 0.273767,
+    "peak_rss_kib": 34872,
+    "sampled_peak_tree_rss_bytes": 60338176,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-examples-compat",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.7537632240000676,
+    "user_cpu_seconds": 0.5530689999999999,
+    "system_cpu_seconds": 0.12029999999999999,
+    "peak_rss_kib": 35232,
+    "sampled_peak_tree_rss_bytes": 70520832,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-examples-smoke",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.5031929689994286,
+    "user_cpu_seconds": 0.319694,
+    "system_cpu_seconds": 0.065452,
+    "peak_rss_kib": 34228,
+    "sampled_peak_tree_rss_bytes": 34557952,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-flow-control",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25259627099967474,
+    "user_cpu_seconds": 0.041694999999999996,
+    "system_cpu_seconds": 0.008055,
+    "peak_rss_kib": 35632,
+    "sampled_peak_tree_rss_bytes": 1728512,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-identity-connection-destroy",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2520246630001566,
+    "user_cpu_seconds": 0.024945,
+    "system_cpu_seconds": 0.008472,
+    "peak_rss_kib": 34788,
+    "sampled_peak_tree_rss_bytes": 663552,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-initial-task-start-offset",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2520948239998688,
+    "user_cpu_seconds": 0.019551,
+    "system_cpu_seconds": 0.016076999999999998,
+    "peak_rss_kib": 34280,
+    "sampled_peak_tree_rss_bytes": 602112,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-jetty-inflight",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2525540019996697,
+    "user_cpu_seconds": 0.029765,
+    "system_cpu_seconds": 0.011571999999999999,
+    "peak_rss_kib": 34968,
+    "sampled_peak_tree_rss_bytes": 1753088,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-ldst-cfg",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.252075285000501,
+    "user_cpu_seconds": 0.042814,
+    "system_cpu_seconds": 0.013385,
+    "peak_rss_kib": 35064,
+    "sampled_peak_tree_rss_bytes": 438272,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-ldst-lifecycle",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2524300780005433,
+    "user_cpu_seconds": 0.039431999999999995,
+    "system_cpu_seconds": 0.0063019999999999994,
+    "peak_rss_kib": 34892,
+    "sampled_peak_tree_rss_bytes": 1273856,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-lifecycle",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2536973300002501,
+    "user_cpu_seconds": 0.11141699999999999,
+    "system_cpu_seconds": 0.035071,
+    "peak_rss_kib": 38532,
+    "sampled_peak_tree_rss_bytes": 1855488,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-lifecycle-storage",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25215950300025725,
+    "user_cpu_seconds": 0.038557999999999995,
+    "system_cpu_seconds": 0.007918,
+    "peak_rss_kib": 34144,
+    "sampled_peak_tree_rss_bytes": 1298432,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-lifecycle-trace",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2527492640001583,
+    "user_cpu_seconds": 0.025706999999999997,
+    "system_cpu_seconds": 0.011914,
+    "peak_rss_kib": 34276,
+    "sampled_peak_tree_rss_bytes": 978944,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-link-delay-offset",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25208084200039593,
+    "user_cpu_seconds": 0.029795,
+    "system_cpu_seconds": 0.00666,
+    "peak_rss_kib": 34320,
+    "sampled_peak_tree_rss_bytes": 180224,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-link-fault-input",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2522221620001801,
+    "user_cpu_seconds": 0.0423,
+    "system_cpu_seconds": 0.0,
+    "peak_rss_kib": 34564,
+    "sampled_peak_tree_rss_bytes": 495616,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-modulo-sequence-regression",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2519516829997883,
+    "user_cpu_seconds": 0.037987,
+    "system_cpu_seconds": 0.0,
+    "peak_rss_kib": 35304,
+    "sampled_peak_tree_rss_bytes": 540672,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-packet-rate-control",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.252130144000148,
+    "user_cpu_seconds": 0.028443999999999997,
+    "system_cpu_seconds": 0.004063,
+    "peak_rss_kib": 34208,
+    "sampled_peak_tree_rss_bytes": 684032,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-parallel-lifecycle",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25258612200013886,
+    "user_cpu_seconds": 0.037322,
+    "system_cpu_seconds": 0.0038699999999999997,
+    "peak_rss_kib": 35220,
+    "sampled_peak_tree_rss_bytes": 1474560,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-reliable-rerouting",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25231259600059275,
+    "user_cpu_seconds": 0.045448999999999996,
+    "system_cpu_seconds": 0.010407,
+    "peak_rss_kib": 35100,
+    "sampled_peak_tree_rss_bytes": 720896,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-retrans-cc-regression",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25201443400055723,
+    "user_cpu_seconds": 0.033614,
+    "system_cpu_seconds": 0.0,
+    "peak_rss_kib": 35352,
+    "sampled_peak_tree_rss_bytes": 528384,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-retrans-timer-scan",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25262481899972045,
+    "user_cpu_seconds": 0.048652,
+    "system_cpu_seconds": 0.008050999999999999,
+    "peak_rss_kib": 36024,
+    "sampled_peak_tree_rss_bytes": 942080,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-routing",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2523181990000012,
+    "user_cpu_seconds": 0.032563999999999996,
+    "system_cpu_seconds": 0.008222,
+    "peak_rss_kib": 33848,
+    "sampled_peak_tree_rss_bytes": 692224,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-routing-modes",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25201770099920395,
+    "user_cpu_seconds": 0.041992,
+    "system_cpu_seconds": 0.003593,
+    "peak_rss_kib": 35868,
+    "sampled_peak_tree_rss_bytes": 122880,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-rtp-resolution",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25222833499992703,
+    "user_cpu_seconds": 0.030969999999999998,
+    "system_cpu_seconds": 0.00789,
+    "peak_rss_kib": 35696,
+    "sampled_peak_tree_rss_bytes": 847872,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-runtime-storage-snapshot",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.5030380850002985,
+    "user_cpu_seconds": 0.244908,
+    "system_cpu_seconds": 0.030122999999999997,
+    "peak_rss_kib": 35000,
+    "sampled_peak_tree_rss_bytes": 54853632,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-runtime-tools",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2523171270004241,
+    "user_cpu_seconds": 0.057290999999999995,
+    "system_cpu_seconds": 0.049121,
+    "peak_rss_kib": 37916,
+    "sampled_peak_tree_rss_bytes": 516096,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-structured-routing",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25231066400010604,
+    "user_cpu_seconds": 0.055685,
+    "system_cpu_seconds": 0.010712,
+    "peak_rss_kib": 35448,
+    "sampled_peak_tree_rss_bytes": 663552,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-switch-voq",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2521218929996394,
+    "user_cpu_seconds": 0.034844,
+    "system_cpu_seconds": 0.007685,
+    "peak_rss_kib": 36036,
+    "sampled_peak_tree_rss_bytes": 372736,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-target-execution",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25196128100014903,
+    "user_cpu_seconds": 0.07600699999999999,
+    "system_cpu_seconds": 0.0,
+    "peak_rss_kib": 36868,
+    "sampled_peak_tree_rss_bytes": 602112,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-tp-reservation",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25315323599988915,
+    "user_cpu_seconds": 0.032898,
+    "system_cpu_seconds": 0.018602999999999998,
+    "peak_rss_kib": 35516,
+    "sampled_peak_tree_rss_bytes": 1773568,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-tp-teardown",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2518264399996042,
+    "user_cpu_seconds": 0.029471999999999998,
+    "system_cpu_seconds": 0.003862,
+    "peak_rss_kib": 34836,
+    "sampled_peak_tree_rss_bytes": 503808,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-trace-writer",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2526536119994489,
+    "user_cpu_seconds": 0.053382,
+    "system_cpu_seconds": 0.05065,
+    "peak_rss_kib": 35148,
+    "sampled_peak_tree_rss_bytes": 700416,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-transaction-extensions",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2522022969997124,
+    "user_cpu_seconds": 0.032797,
+    "system_cpu_seconds": 0.007859999999999999,
+    "peak_rss_kib": 35692,
+    "sampled_peak_tree_rss_bytes": 729088,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-transaction-header-codecs",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25204682599996886,
+    "user_cpu_seconds": 0.034467,
+    "system_cpu_seconds": 0.0,
+    "peak_rss_kib": 33728,
+    "sampled_peak_tree_rss_bytes": 679936,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-transaction-rules",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25237081500017666,
+    "user_cpu_seconds": 0.027618999999999998,
+    "system_cpu_seconds": 0.008515,
+    "peak_rss_kib": 34036,
+    "sampled_peak_tree_rss_bytes": 684032,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-transaction-urma",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25325053300002764,
+    "user_cpu_seconds": 0.040073,
+    "system_cpu_seconds": 0.004112,
+    "peak_rss_kib": 36036,
+    "sampled_peak_tree_rss_bytes": 696320,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-transport-ooo-regression",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.251980652000384,
+    "user_cpu_seconds": 0.034623,
+    "system_cpu_seconds": 0.0,
+    "peak_rss_kib": 35276,
+    "sampled_peak_tree_rss_bytes": 520192,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-transport-pipeline",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.252394553999693,
+    "user_cpu_seconds": 0.02247,
+    "system_cpu_seconds": 0.011340999999999999,
+    "peak_rss_kib": 34516,
+    "sampled_peak_tree_rss_bytes": 667648,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-transport-retrans",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25225932200009993,
+    "user_cpu_seconds": 0.03829,
+    "system_cpu_seconds": 0.008955,
+    "peak_rss_kib": 36104,
+    "sampled_peak_tree_rss_bytes": 1056768,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests/unified-bus-wire-format",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25406527900031506,
+    "user_cpu_seconds": 0.034877,
+    "system_cpu_seconds": 0.0038829999999999997,
+    "peak_rss_kib": 36364,
+    "sampled_peak_tree_rss_bytes": 4870144,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests-build",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 327.42739401699964,
+    "user_cpu_seconds": 625.346979,
+    "system_cpu_seconds": 22.434783,
+    "peak_rss_kib": 3072240,
+    "sampled_peak_tree_rss_bytes": 3602857984,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "native-tests-host",
+    "status": "FAIL",
+    "returncode": 1,
+    "guard": null,
+    "wall_seconds": 14.802746293000382,
+    "user_cpu_seconds": 4.290215,
+    "system_cpu_seconds": 1.087857,
+    "peak_rss_kib": 40792,
+    "sampled_peak_tree_rss_bytes": 79028224,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/application/chunk-streaming/post-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25302144899978884,
+    "user_cpu_seconds": 0.047681999999999995,
+    "system_cpu_seconds": 0.008447,
+    "peak_rss_kib": 13568,
+    "sampled_peak_tree_rss_bytes": 294912,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/application/chunk-streaming/pre-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2524879390002752,
+    "user_cpu_seconds": 0.034059,
+    "system_cpu_seconds": 0.012312,
+    "peak_rss_kib": 13568,
+    "sampled_peak_tree_rss_bytes": 417792,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/application/chunk-streaming/sim-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25367915900005755,
+    "user_cpu_seconds": 0.109973,
+    "system_cpu_seconds": 0.004188,
+    "peak_rss_kib": 21064,
+    "sampled_peak_tree_rss_bytes": 1540096,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/application/direct/post-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25298944099995424,
+    "user_cpu_seconds": 0.042408,
+    "system_cpu_seconds": 0.017089999999999998,
+    "peak_rss_kib": 13568,
+    "sampled_peak_tree_rss_bytes": 446464,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/application/direct/pre-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2527081919997727,
+    "user_cpu_seconds": 0.038451,
+    "system_cpu_seconds": 0.017152,
+    "peak_rss_kib": 13440,
+    "sampled_peak_tree_rss_bytes": 385024,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/application/direct/sim-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2524120589996528,
+    "user_cpu_seconds": 0.089684,
+    "system_cpu_seconds": 0.013234,
+    "peak_rss_kib": 21276,
+    "sampled_peak_tree_rss_bytes": 1028096,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/application/no-balancing/post-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25619807399925776,
+    "user_cpu_seconds": 0.049575,
+    "system_cpu_seconds": 0.0059819999999999995,
+    "peak_rss_kib": 12800,
+    "sampled_peak_tree_rss_bytes": 344064,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/application/no-balancing/pre-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25248787500004255,
+    "user_cpu_seconds": 0.046128999999999996,
+    "system_cpu_seconds": 0.007941,
+    "peak_rss_kib": 12800,
+    "sampled_peak_tree_rss_bytes": 401408,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/application/no-balancing/sim-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25237750799988135,
+    "user_cpu_seconds": 0.036971,
+    "system_cpu_seconds": 0.0,
+    "peak_rss_kib": 19772,
+    "sampled_peak_tree_rss_bytes": 827392,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/application/two-stage/post-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25366567999935796,
+    "user_cpu_seconds": 0.068489,
+    "system_cpu_seconds": 0.009406,
+    "peak_rss_kib": 13568,
+    "sampled_peak_tree_rss_bytes": 364544,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/application/two-stage/pre-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2527378790000512,
+    "user_cpu_seconds": 0.039888,
+    "system_cpu_seconds": 0.010839,
+    "peak_rss_kib": 13440,
+    "sampled_peak_tree_rss_bytes": 552960,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/application/two-stage/sim-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2553986650000297,
+    "user_cpu_seconds": 0.092198,
+    "system_cpu_seconds": 0.011956999999999999,
+    "peak_rss_kib": 21204,
+    "sampled_peak_tree_rss_bytes": 1056768,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/concurrent-build-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 19.065373536000152,
+    "user_cpu_seconds": 18.154132,
+    "system_cpu_seconds": 0.6664559999999999,
+    "peak_rss_kib": 943484,
+    "sampled_peak_tree_rss_bytes": 967454720,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/concurrent-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 2.760174852000091,
+    "user_cpu_seconds": 0.547211,
+    "system_cpu_seconds": 0.147807,
+    "peak_rss_kib": 19392,
+    "sampled_peak_tree_rss_bytes": 25608192,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/concurrent-results/different-source-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2528090030000385,
+    "user_cpu_seconds": 0.027847999999999998,
+    "system_cpu_seconds": 0.008411,
+    "peak_rss_kib": 19216,
+    "sampled_peak_tree_rss_bytes": 1024000,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/concurrent-results/duplicate-host",
+    "status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.2528894279994347,
+    "user_cpu_seconds": 0.030729999999999997,
+    "system_cpu_seconds": 0.0,
+    "peak_rss_kib": 18832,
+    "sampled_peak_tree_rss_bytes": 839680,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/concurrent-results/dynamic-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2525489170002402,
+    "user_cpu_seconds": 0.023437,
+    "system_cpu_seconds": 0.011725,
+    "peak_rss_kib": 19392,
+    "sampled_peak_tree_rss_bytes": 1024000,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/concurrent-results/missing-host",
+    "status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.2528610999997909,
+    "user_cpu_seconds": 0.028180999999999998,
+    "system_cpu_seconds": 0.008941,
+    "peak_rss_kib": 19052,
+    "sampled_peak_tree_rss_bytes": 925696,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/concurrent-results/pressure-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25234030800038454,
+    "user_cpu_seconds": 0.032417,
+    "system_cpu_seconds": 0.008137,
+    "peak_rss_kib": 19176,
+    "sampled_peak_tree_rss_bytes": 819200,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/concurrent-results/same-source-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.254226158000165,
+    "user_cpu_seconds": 0.027885999999999998,
+    "system_cpu_seconds": 0.007963999999999999,
+    "peak_rss_kib": 19064,
+    "sampled_peak_tree_rss_bytes": 2367488,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/concurrent-results/window-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2528748650001944,
+    "user_cpu_seconds": 0.034566,
+    "system_cpu_seconds": 0.0036799999999999997,
+    "peak_rss_kib": 19060,
+    "sampled_peak_tree_rss_bytes": 651264,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/concurrent-results/wrong-host",
+    "status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.2532040079995568,
+    "user_cpu_seconds": 0.018848999999999998,
+    "system_cpu_seconds": 0.008277,
+    "peak_rss_kib": 18904,
+    "sampled_peak_tree_rss_bytes": 1060864,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/concurrent-results/wrong-task-host",
+    "status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.25267243399957806,
+    "user_cpu_seconds": 0.016864,
+    "system_cpu_seconds": 0.010612,
+    "peak_rss_kib": 19032,
+    "sampled_peak_tree_rss_bytes": 1105920,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/direct-chunk-small-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 3.5150261409999075,
+    "user_cpu_seconds": 0.886713,
+    "system_cpu_seconds": 0.46205599999999997,
+    "peak_rss_kib": 21276,
+    "sampled_peak_tree_rss_bytes": 37625856,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/full-multicast-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 2.509599616999367,
+    "user_cpu_seconds": 0.592266,
+    "system_cpu_seconds": 0.14490899999999998,
+    "peak_rss_kib": 19280,
+    "sampled_peak_tree_rss_bytes": 31916032,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/graph-tool-build-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 1.50784136799939,
+    "user_cpu_seconds": 1.340009,
+    "system_cpu_seconds": 0.11678,
+    "peak_rss_kib": 130600,
+    "sampled_peak_tree_rss_bytes": 131801088,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/multi-results/competition-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25257988999965164,
+    "user_cpu_seconds": 0.024897,
+    "system_cpu_seconds": 0.015373,
+    "peak_rss_kib": 19280,
+    "sampled_peak_tree_rss_bytes": 745472,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/multi-results/duplicate-host",
+    "status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.25294199300060427,
+    "user_cpu_seconds": 0.022406,
+    "system_cpu_seconds": 0.003909999999999999,
+    "peak_rss_kib": 18972,
+    "sampled_peak_tree_rss_bytes": 1060864,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/multi-results/dynamic-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25269725599991943,
+    "user_cpu_seconds": 0.027281999999999997,
+    "system_cpu_seconds": 0.010534,
+    "peak_rss_kib": 18820,
+    "sampled_peak_tree_rss_bytes": 1101824,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/multi-results/missing-host",
+    "status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.25269275099981314,
+    "user_cpu_seconds": 0.016291,
+    "system_cpu_seconds": 0.012924,
+    "peak_rss_kib": 18780,
+    "sampled_peak_tree_rss_bytes": 1056768,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/multi-results/pressure-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2529162330001782,
+    "user_cpu_seconds": 0.037603,
+    "system_cpu_seconds": 0.011845,
+    "peak_rss_kib": 19116,
+    "sampled_peak_tree_rss_bytes": 229376,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/multi-results/three-target-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2532384980004281,
+    "user_cpu_seconds": 0.025637999999999998,
+    "system_cpu_seconds": 0.008413,
+    "peak_rss_kib": 18876,
+    "sampled_peak_tree_rss_bytes": 1843200,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/multi-results/window-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2525708579996717,
+    "user_cpu_seconds": 0.044021,
+    "system_cpu_seconds": 0.009472999999999999,
+    "peak_rss_kib": 19240,
+    "sampled_peak_tree_rss_bytes": 671744,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/multi-results/wrong-host",
+    "status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.25271444600002724,
+    "user_cpu_seconds": 0.025980999999999997,
+    "system_cpu_seconds": 0.0037059999999999997,
+    "peak_rss_kib": 18940,
+    "sampled_peak_tree_rss_bytes": 1069056,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/multitarget-build-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 17.563194580000527,
+    "user_cpu_seconds": 16.764158,
+    "system_cpu_seconds": 0.549082,
+    "peak_rss_kib": 960036,
+    "sampled_peak_tree_rss_bytes": 983740416,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/network-poc-build-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 9.783920568999747,
+    "user_cpu_seconds": 9.156036,
+    "system_cpu_seconds": 0.437479,
+    "peak_rss_kib": 675232,
+    "sampled_peak_tree_rss_bytes": 689922048,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/network-poc-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 4.51638897399971,
+    "user_cpu_seconds": 0.327854,
+    "system_cpu_seconds": 0.147387,
+    "peak_rss_kib": 19700,
+    "sampled_peak_tree_rss_bytes": 13926400,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/network-results/basic-direct/host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25237527399985993,
+    "user_cpu_seconds": 0.010556999999999999,
+    "system_cpu_seconds": 0.0035489999999999996,
+    "peak_rss_kib": 18452,
+    "sampled_peak_tree_rss_bytes": 892928,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/network-results/basic-multicast/host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2527693560004991,
+    "user_cpu_seconds": 0.00793,
+    "system_cpu_seconds": 0.011183,
+    "peak_rss_kib": 18448,
+    "sampled_peak_tree_rss_bytes": 864256,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/network-results/cell156/host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2566126350002378,
+    "user_cpu_seconds": 0.015868,
+    "system_cpu_seconds": 0.005265,
+    "peak_rss_kib": 18228,
+    "sampled_peak_tree_rss_bytes": 921600,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/network-results/cell157/host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25251812300029997,
+    "user_cpu_seconds": 0.007048,
+    "system_cpu_seconds": 0.010650999999999999,
+    "peak_rss_kib": 18232,
+    "sampled_peak_tree_rss_bytes": 786432,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/network-results/competition-direct/host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25282106200029375,
+    "user_cpu_seconds": 0.025065999999999998,
+    "system_cpu_seconds": 0.0,
+    "peak_rss_kib": 19308,
+    "sampled_peak_tree_rss_bytes": 233472,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/network-results/competition-multicast/host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2524039459995038,
+    "user_cpu_seconds": 0.015375999999999999,
+    "system_cpu_seconds": 0.003914,
+    "peak_rss_kib": 18940,
+    "sampled_peak_tree_rss_bytes": 843776,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/network-results/dwrr-pressure/host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25444756199976837,
+    "user_cpu_seconds": 0.020491,
+    "system_cpu_seconds": 0.007722,
+    "peak_rss_kib": 19560,
+    "sampled_peak_tree_rss_bytes": 843776,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/network-results/dynamic-direct/host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25244781199944555,
+    "user_cpu_seconds": 0.007411999999999999,
+    "system_cpu_seconds": 0.007411999999999999,
+    "peak_rss_kib": 18968,
+    "sampled_peak_tree_rss_bytes": 880640,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/network-results/dynamic-multicast/host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2522264400004133,
+    "user_cpu_seconds": 0.007897,
+    "system_cpu_seconds": 0.007897,
+    "peak_rss_kib": 19024,
+    "sampled_peak_tree_rss_bytes": 724992,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/network-results/multipart-direct/host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25209975899997517,
+    "user_cpu_seconds": 0.01639,
+    "system_cpu_seconds": 0.0,
+    "peak_rss_kib": 18900,
+    "sampled_peak_tree_rss_bytes": 774144,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/network-results/multipart-multicast/host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2523217929992825,
+    "user_cpu_seconds": 0.013628999999999999,
+    "system_cpu_seconds": 0.004371,
+    "peak_rss_kib": 19012,
+    "sampled_peak_tree_rss_bytes": 770048,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/network-results/negative-empty/host",
+    "status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.2523754960002407,
+    "user_cpu_seconds": 0.011503,
+    "system_cpu_seconds": 0.01112,
+    "peak_rss_kib": 18056,
+    "sampled_peak_tree_rss_bytes": 798720,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/network-results/negative-oversize/host",
+    "status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.2566657410006883,
+    "user_cpu_seconds": 0.013217999999999999,
+    "system_cpu_seconds": 0.013717,
+    "peak_rss_kib": 18140,
+    "sampled_peak_tree_rss_bytes": 819200,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/network-results/negative-reflected/host",
+    "status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.25298578000001726,
+    "user_cpu_seconds": 0.018342999999999998,
+    "system_cpu_seconds": 0.0044989999999999995,
+    "peak_rss_kib": 17812,
+    "sampled_peak_tree_rss_bytes": 847872,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/network-results/negative-unknown/host",
+    "status": "FAIL",
+    "returncode": -6,
+    "guard": null,
+    "wall_seconds": 0.25247037900044234,
+    "user_cpu_seconds": 0.013888999999999999,
+    "system_cpu_seconds": 0.003825,
+    "peak_rss_kib": 17868,
+    "sampled_peak_tree_rss_bytes": 843776,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/network-results/pressure-direct/host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25240345599922875,
+    "user_cpu_seconds": 0.01619,
+    "system_cpu_seconds": 0.003512,
+    "peak_rss_kib": 19700,
+    "sampled_peak_tree_rss_bytes": 434176,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/network-results/pressure-multicast/host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2521824750001542,
+    "user_cpu_seconds": 0.012679,
+    "system_cpu_seconds": 0.013417,
+    "peak_rss_kib": 19436,
+    "sampled_peak_tree_rss_bytes": 249856,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/pair-layer-build-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 25.60028092900029,
+    "user_cpu_seconds": 24.652568,
+    "system_cpu_seconds": 0.83848,
+    "peak_rss_kib": 1304916,
+    "sampled_peak_tree_rss_bytes": 1336029184,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/singleton-build-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 14.796439147000456,
+    "user_cpu_seconds": 14.062694,
+    "system_cpu_seconds": 0.578108,
+    "peak_rss_kib": 939012,
+    "sampled_peak_tree_rss_bytes": 962924544,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/singleton-host",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 3.7648753980001857,
+    "user_cpu_seconds": 0.570715,
+    "system_cpu_seconds": 0.153758,
+    "peak_rss_kib": 19104,
+    "sampled_peak_tree_rss_bytes": 18718720,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/singleton-results/backpressure/host-0",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25273265299983905,
+    "user_cpu_seconds": 0.051011,
+    "system_cpu_seconds": 0.008603999999999999,
+    "peak_rss_kib": 18736,
+    "sampled_peak_tree_rss_bytes": 1081344,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/singleton-results/backpressure/host-1",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25363891500001046,
+    "user_cpu_seconds": 0.07008299999999999,
+    "system_cpu_seconds": 0.006202999999999999,
+    "peak_rss_kib": 18996,
+    "sampled_peak_tree_rss_bytes": 2007040,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/singleton-results/concurrent/host-0",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2531375010003103,
+    "user_cpu_seconds": 0.026549999999999997,
+    "system_cpu_seconds": 0.014462,
+    "peak_rss_kib": 18828,
+    "sampled_peak_tree_rss_bytes": 1146880,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/singleton-results/concurrent/host-1",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25317935600014607,
+    "user_cpu_seconds": 0.033812999999999996,
+    "system_cpu_seconds": 0.004458999999999999,
+    "peak_rss_kib": 18920,
+    "sampled_peak_tree_rss_bytes": 1003520,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/singleton-results/delayed-switch/host-0",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25300465899999836,
+    "user_cpu_seconds": 0.018172999999999998,
+    "system_cpu_seconds": 0.010907,
+    "peak_rss_kib": 18512,
+    "sampled_peak_tree_rss_bytes": 823296,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/singleton-results/delayed-switch/host-1",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2530206230003387,
+    "user_cpu_seconds": 0.019645,
+    "system_cpu_seconds": 0.0077859999999999995,
+    "peak_rss_kib": 18716,
+    "sampled_peak_tree_rss_bytes": 1056768,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/singleton-results/fragmented-ta/host-0",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25227661400003853,
+    "user_cpu_seconds": 0.024311,
+    "system_cpu_seconds": 0.00911,
+    "peak_rss_kib": 18740,
+    "sampled_peak_tree_rss_bytes": 831488,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/singleton-results/fragmented-ta/host-1",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.26117584199982957,
+    "user_cpu_seconds": 0.024973,
+    "system_cpu_seconds": 0.012603999999999999,
+    "peak_rss_kib": 18840,
+    "sampled_peak_tree_rss_bytes": 4300800,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/singleton-results/multi-ta/host-0",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2526288099998055,
+    "user_cpu_seconds": 0.022843,
+    "system_cpu_seconds": 0.004176,
+    "peak_rss_kib": 18664,
+    "sampled_peak_tree_rss_bytes": 1052672,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/singleton-results/multi-ta/host-1",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.2526397210003779,
+    "user_cpu_seconds": 0.026073,
+    "system_cpu_seconds": 0.0,
+    "peak_rss_kib": 18796,
+    "sampled_peak_tree_rss_bytes": 1081344,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/singleton-results/small/host-0",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25255247600034636,
+    "user_cpu_seconds": 0.020690999999999998,
+    "system_cpu_seconds": 0.004435,
+    "peak_rss_kib": 18644,
+    "sampled_peak_tree_rss_bytes": 1069056,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/singleton-results/small/host-1",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.252110050999363,
+    "user_cpu_seconds": 0.014029,
+    "system_cpu_seconds": 0.010771,
+    "peak_rss_kib": 18512,
+    "sampled_peak_tree_rss_bytes": 827392,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/singleton-results/window/host-0",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25375999199968646,
+    "user_cpu_seconds": 0.040715999999999995,
+    "system_cpu_seconds": 0.012163,
+    "peak_rss_kib": 18996,
+    "sampled_peak_tree_rss_bytes": 1093632,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  },
+  {
+    "stage": "regressions/singleton-results/window/host-1",
+    "status": "PASS",
+    "returncode": 0,
+    "guard": null,
+    "wall_seconds": 0.25356175899923983,
+    "user_cpu_seconds": 0.056398,
+    "system_cpu_seconds": 0.008027,
+    "peak_rss_kib": 19104,
+    "sampled_peak_tree_rss_bytes": 258048,
+    "limits": {
+      "wall_seconds": 3600,
+      "tree_rss_bytes": 6442450944,
+      "min_host_available_bytes": 1610612736,
+      "address_space_bytes": 7516192768,
+      "min_disk_free_bytes": 8589934592,
+      "min_tmp_disk_free_bytes": 2147483648
+    }
+  }
+]
