@@ -1,0 +1,13 @@
+# Sequential only. Exact native setup is in reproduce.sh.
+commands:
+  - configure native with NS3_ASSERT=ON and inherited resource guard
+  - build native unified-bus -j2
+  - python3 build.py --native NATIVE --out PRIVATE/fixtures
+  - python3 run.py --build PRIVATE/fixtures --out PRIVATE/matrix
+  - python3 ../ub-multicast-v2/build.py --native NATIVE --out PRIVATE/v2-fixtures
+  - python3 ../ub-multicast-v2/run.py --build PRIVATE/v2-fixtures --out PRIVATE/v2-regression
+  - python3 ../ub-multicast-v2/regress.py --native NATIVE --out PRIVATE/old-regression
+  - python3 test-verifier.py PRIVATE/matrix/data-once under original guard
+  - python3 -O verify.py PRIVATE/matrix/data-once data-once (expected rejection)
+  - compare14 v2 simulation metric rows to accepted baseline
+  - python3 collect.py --private PRIVATE --out PRIVATE/compact-results

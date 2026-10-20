@@ -1,0 +1,36 @@
+--- a/src/unified-bus/model/ub-switch.cc
++++ b/src/unified-bus/model/ub-switch.cc
+@@ -868,6 +868,12 @@
+                      << static_cast<uint32_t>(headers.datalinkPacketHeader.GetPacketVL())
+                      << " packetUid=" << packet->GetUid());
+     }
++    const uint32_t deliveries = transportDeliveryFaultForTest.IsNull() ? 1 :
++        transportDeliveryFaultForTest(packet);
++    NS_ABORT_MSG_IF(deliveries > 2, "Invalid bounded test delivery multiplicity");
++    Ptr<Packet> repeated = deliveries == 2 ? packet->Copy() : nullptr;
++    for (uint32_t delivery = 0; delivery < deliveries; ++delivery) {
++        if (delivery) packet = repeated;
+     const uint8_t tpOpcode = headers.transportHeader.GetTPOpcode();
+     if (UbTransportChannel::IsTransportResponseOpcode(tpOpcode)) {
+         NS_LOG_DEBUG("[UbPort recv] is ACK");
+@@ -886,6 +892,7 @@
+     } else {
+         NS_LOG_WARN("Dropping reserved transport opcode " << static_cast<uint32_t>(tpOpcode));
+         utils::UbUtils::RecordRuntimePacketDrop("reserved transport opcode");
++    }
+     }
+     return true;
+ }
+--- a/src/unified-bus/model/ub-switch.h
++++ b/src/unified-bus/model/ub-switch.h
+@@ -83,6 +83,10 @@
+  */
+ class UbSwitch : public Object {
+ public:
++    // Test-only endpoint transport delivery seam. Link and CBFC have already processed
++    // the actual received packet. Empty callback preserves the production path.
++    Callback<uint32_t, Ptr<Packet>> transportDeliveryFaultForTest;
++
+     UbSwitch();
+     ~UbSwitch();
+     void DoDispose() override;
