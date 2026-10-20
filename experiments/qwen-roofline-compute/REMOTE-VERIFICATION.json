@@ -1,0 +1,727 @@
+{
+  "status": "VERIFIED",
+  "repository": "ponedo/ub-test",
+  "content_commit": "0bfecf00d0b547636e7fdc42410541f0afd93bb5",
+  "content_tree": "4617ab76a17c9bead8539d0a884a2b945a4753c5",
+  "parent_commit": "ef1ec5c801ab854363b6382a2af9aa5237ade4c8",
+  "verified_utc": "2026-10-20T20:23:00Z",
+  "method": "GitHub recursive Git tree: all119 delivery paths, sizes and Git blob hashes match local bytes; content commit parent/tree and raw report numerical readback verified. Local SHA-256 also recorded.",
+  "privacy": "No raw routing, actual per-token data, payload bytes or per-connection sequence-state CSVs. Transport drain evidence is endpoint-free aggregate JSON.",
+  "files": [
+    {
+      "path": "experiments/qwen-roofline-compute/MODEL.md",
+      "size": 4525,
+      "sha256": "6a118a732bde06eb80588ecda81015b847bc528cdc72ea8e948bb6bcbb2f37bf",
+      "git_blob_sha": "15df02b17edf90b5e31e2d4b793feee875d331f7"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/README.md",
+      "size": 4497,
+      "sha256": "3e69a3233a15d5d920d5d684a5d93f4ff01938481a4a49c733d7eeb01de2a1d9",
+      "git_blob_sha": "8be58870ec6c9c88f3a47a120574604c321b25fb"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/REPORT.md",
+      "size": 9309,
+      "sha256": "0471ebd05d0057ffe97b21ea79d10007a908cb26c0b11413b636acafd07bf0fc",
+      "git_blob_sha": "2e398a4455c2751b79b6b73c019282e61c560884"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/TASK.md",
+      "size": 1270,
+      "sha256": "17f0957453d3172c2ded04d57e9912bbb56bf16a49e5756eedd40fdcc8fc7b61",
+      "git_blob_sha": "a0c1aac2fa86c4b4ec06f2bb306e92753ba8ee63"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/build.py",
+      "size": 867,
+      "sha256": "d95ee434cad674c44cc7baa3a71a4cad39031aecb37866bfff5a31e8854e1d81",
+      "git_blob_sha": "e1de5c4209611c3a95f110b00a1132eb7f784af5"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/cases/chunk-streaming/experiment-spec.md",
+      "size": 143,
+      "sha256": "38437ef49b7ec2002f50c0d8c6523acc565ca66e173a84c845333d56455956d1",
+      "git_blob_sha": "c20308367e05c2d4b16e3a3dcaa8123b3e013966"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/cases/direct/experiment-spec.md",
+      "size": 134,
+      "sha256": "5aabe449cf0ff623b03e3fb6c6d8489f4c40dd3d33f7e3a614fd9bf6911d4a12",
+      "git_blob_sha": "f0be3b5921178d4c0bcbee9af73a29d13f49d28f"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/cases/legacy-parity/experiment-spec.md",
+      "size": 141,
+      "sha256": "d1d852ecbaf5a97dc61017a76812edf52aad5e567c756aeba7c2f900fd779c71",
+      "git_blob_sha": "b87428993b6711d4896222e9df69a1ebfec41bad"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/cases/multicast-v2/experiment-spec.md",
+      "size": 140,
+      "sha256": "7e3b84a7b3fc4fa2a34ab93eb4afc0e473722be7dc63b9f518e6491d751a4f40",
+      "git_blob_sha": "5a97c43495716251785bb68a6d61a5296f6d4f81"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/cases/no-balancing/experiment-spec.md",
+      "size": 140,
+      "sha256": "1e93d52a5e35b99a5ee549d21d75d13bc35f6ce5d14d654864478c203bdde291",
+      "git_blob_sha": "85e9d6eb0b23e4f1d6577e1ce52690cdb676dbb1"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/cases/retry-smoke/experiment-spec.md",
+      "size": 139,
+      "sha256": "0be492aaf126502a1dcec1f28b57b33b66a35333af19ba4f6542ae51072d98c5",
+      "git_blob_sha": "a51225463172e7c9e0b70c2f07b3609ba8c913bd"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/cases/roofline-small/experiment-spec.md",
+      "size": 142,
+      "sha256": "a5d00a1a77ca4a3d7c7a733a824d16b03c08cf076b945b5c6094d8b75f8b9d93",
+      "git_blob_sha": "474f4735e87ec25a8e20cf7a5cf9561174b722af"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/cases/unit/experiment-spec.md",
+      "size": 132,
+      "sha256": "e96fd3924ccb3eb797ffabec2aa539f71e6b8444a37633c3c92befd0cebedd6c",
+      "git_blob_sha": "f2df10c6d2808ceaa06086a6b993233fef9ac5f8"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/collect.py",
+      "size": 10450,
+      "sha256": "49eb741673bf1261b1d37ee6c0956f00a2cbd8e8bea555ae9ab4439c44300ed1",
+      "git_blob_sha": "d077f59f45e7f89b3701c1dec927712beafbc2e7"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/command-manifest.yaml",
+      "size": 219,
+      "sha256": "ad00653073b7875a4ea40173f0a60de846c0a961887fc4a04df6fe312fd1e8e5",
+      "git_blob_sha": "d69a90e3e8046814d334bcee1d9d7412b2041920"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/compute-model.h",
+      "size": 1888,
+      "sha256": "2431ef6a7af8512a764e0d26804cbd712b446d57e98f38827b65cfef084cea1d",
+      "git_blob_sha": "844c793f33117c4ade47304100294ece279e4835"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/experiment-plan.md",
+      "size": 1600,
+      "sha256": "f616e3342eee372f77ea0de1282de01e755136f56a4e6f7ee607c27da9bed97f",
+      "git_blob_sha": "6f0b29a37a0851624564ea64b0c71dfca660197c"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/guard.py",
+      "size": 3376,
+      "sha256": "3c0e33790677b9e5e59428c62f82c6a74124060162c526f8e3e119721abce36f",
+      "git_blob_sha": "eb320b2de8398c0190ec7de589889638fa6a091b"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/layer.cc",
+      "size": 44404,
+      "sha256": "5e4360dcf4e0f641baab6068b21c2f9c11f86f4e38bb42daa0d08917f7b5286f",
+      "git_blob_sha": "2ef14590494265d8eb185bc52b74f65aea5a1321"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/matrix.yaml",
+      "size": 268,
+      "sha256": "a4b6decdf42d9bc88b679ae2a9ba6a490aa2a84f4c98744518850da26a788581",
+      "git_blob_sha": "5cc772a822336307043fcb5170205610a838319f"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/model-probe.cc",
+      "size": 881,
+      "sha256": "14735235ed6264941b1dea7cd8f0bd3deac094e621f16c95f9f71ec954fbdc67",
+      "git_blob_sha": "88a4628fbd7d8004bbe130dc64f914f68a5f567b"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/oracle.py",
+      "size": 1126,
+      "sha256": "49b4889b6c51bef3339703640e4c2693336be1b15afb07afced2caa678cdf040",
+      "git_blob_sha": "f31c9c8d726b35b4f22837987e19e77011ec51b0"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/plot.py",
+      "size": 1882,
+      "sha256": "6cd953dcd06b1d367a488326490f0df9494aee8142b0c9a6ec3aef07383143e8",
+      "git_blob_sha": "7b0f5a10e7c70aeffa08942a8da1e8c57498329c"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/prepare-real.py",
+      "size": 4027,
+      "sha256": "40952f65dc1fccb3fd5b6ef4c59d14afd99e89159e48656f75d29a951cb33eb4",
+      "git_blob_sha": "3b18c54f0a8bde6ec2b72d8f8a75b4fb70e19e9f"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/report.py",
+      "size": 10205,
+      "sha256": "6dc855d99a9cbfa2b566947902b7378f9fec4e39dffbbed61ff80e7fbd845213",
+      "git_blob_sha": "5928abc1fac83ea062a89236baa9962b5bd09736"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/reproduce.sh",
+      "size": 1784,
+      "sha256": "a6659653521c0eacc0f00e9149795524729eab2f88d597531a5112270bb63684",
+      "git_blob_sha": "98257f0617fda54ec112ee65807566132bac6b86"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/communication.csv",
+      "size": 368,
+      "sha256": "4b9da45bb05def1724953a2c0a0e47eae66e1f69b1f7d0742c41ddb49d69a44b",
+      "git_blob_sha": "342185318a197de153dc9e1fdab81da6b88f754b"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/comparison.csv",
+      "size": 313,
+      "sha256": "670643b63160ee14e1121e6082cd25dfdc37f09387730a6487ccb6fb98015abd",
+      "git_blob_sha": "740a0e5de3d5807e6cccdf62e05df5a42f7c00f5"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/compute-aggregate.csv",
+      "size": 570,
+      "sha256": "6dafdcfce2c2abc2358ae025b0b0a86196567c88a0f818bedfc732de80335cbc",
+      "git_blob_sha": "1ba985e6885bbbe92b105a5b307efd4d87b8fd8a"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/host-pressure-summary.json",
+      "size": 295,
+      "sha256": "722b068f7e5a28e6b55f3fe14abe4b66f72e1578884a56a7285aac900c2c468d",
+      "git_blob_sha": "c4618d0b13ad906f6aa3db12194ac508fb7f558a"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/layer-comparison.png",
+      "size": 81910,
+      "sha256": "6b1e82a866b86bdc11cad61318706bc12f2ad4047b5f3f4358ae35f535b0a63f",
+      "git_blob_sha": "ef479708b85ca0d9530707ce9622807e51db9e74"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/layer-comparison.svg",
+      "size": 21354,
+      "sha256": "2447e73bbf4c11299644a5299cad16774cc4ca664ac699c74385ba97dbccfa65",
+      "git_blob_sha": "372b7e1b5da1b1ad80a10a5ca4561275484b2b58"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/native-configure-restored-tools.json",
+      "size": 513,
+      "sha256": "8596d200673676e030ce59c117de5fbded5771923a9e945fa737813b488b9ed8",
+      "git_blob_sha": "0685202dbe4ffcfe5839a8c74f733c4f6211ef84"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/native-full-build-resume-j2.json",
+      "size": 509,
+      "sha256": "575dbb067456aaee6f9310061888491897c67f534c7a65845c50af4e27f15d9b",
+      "git_blob_sha": "41fe6980634bf87d5e3de5594e6b810b2c1eec4d"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/native-full-build.json",
+      "size": 528,
+      "sha256": "cce208c52f7ba7663f131db8d5647cbddccbcde41b1dba8c8054f8a739176b06",
+      "git_blob_sha": "ee64aebb378ec79bfea59ebf1b583802390c9d8b"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/parallel-resource-record.json",
+      "size": 2169,
+      "sha256": "e8171947d92ce8df571c6d58602418d01059d676c8bded99b466a3b3d40aa111",
+      "git_blob_sha": "92d35326db53e8a8741568b1ed73587608c84da9"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/performance.csv",
+      "size": 1928,
+      "sha256": "647c881b4dd709af4fd30a4c81b78feb45d71dc169fd4f0cbeffca5dd05c1471",
+      "git_blob_sha": "40aa699d95655a13be0d7b52b00a48268fa7c7ee"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/chunk-streaming/compute-model.json",
+      "size": 398,
+      "sha256": "909783e99b59da26aaa4d47689889b92098a5bcaa91f1df00eb9c05ea131b2cb",
+      "git_blob_sha": "1489105a69f8bf7cb52658d3341b025a1434534f"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/chunk-streaming/compute-validation.json",
+      "size": 161,
+      "sha256": "1384c3c9717a53bf0e3faf00f1be729e9168778b4e46719aee337e9f83881913",
+      "git_blob_sha": "126c1ce810a540d668fc8cc6d00ef67f60ecc87f"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/chunk-streaming/expert-compute.csv",
+      "size": 23089,
+      "sha256": "904415713ca11ef4541c0b098396c0084ce2bc14101a9a21b9bde9f9c911cc2f",
+      "git_blob_sha": "a1ef906e125982ba36ac7c402bf477b0dcbad533"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/chunk-streaming/expert-ready.csv",
+      "size": 376,
+      "sha256": "3c00b0555652cc0a7ee03d2cf15ec52d8df527076b125e9398c110c6e82cbd40",
+      "git_blob_sha": "b5bb85d0852c0561f068991fbd0c5892be30319e"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/chunk-streaming/host.json",
+      "size": 507,
+      "sha256": "68b80875298a5e6804f806edc4d3980f5ade143fdc7e570e605a7f1961722c7d",
+      "git_blob_sha": "d24b616d8121dcc4974f96066fc8b3558769168a"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/chunk-streaming/network-resources.csv",
+      "size": 5658,
+      "sha256": "f7352fac49044efc7fecb17a311754e8806585a74f84b5ef96afbe56b3cc9b98",
+      "git_blob_sha": "c4475555c2884fcb45214caad072452de92bb98f"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/chunk-streaming/online-summary.json",
+      "size": 7675,
+      "sha256": "e268488dc8d3173b40e2f8e4b02f32da853945452d07c4988a80afe53ebbdbe4",
+      "git_blob_sha": "ac9cf95ef38d6b37720238d4da7f422d84733985"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/chunk-streaming/packet-counts.csv",
+      "size": 15465,
+      "sha256": "6a4e307431308c0a02f2060c8d0d826b7bec6e9d606cc7eba5b9a1f78319e7af",
+      "git_blob_sha": "35928130508409bdc12742876a5f023c29894578"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/chunk-streaming/transport-state-summary.json",
+      "size": 342,
+      "sha256": "f29b097ecc7d53705d85c48d666a2052931ea75fe9b591833eb9c9b60c4f7652",
+      "git_blob_sha": "856f1be4a8dc6ee488ccc4dcb19b7c7c10e2929c"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/chunk-streaming/validation.json",
+      "size": 369,
+      "sha256": "1adaf672e7bd89c5fd64760a342cc629d18c7f34010efcd5fa500f7b384bfce9",
+      "git_blob_sha": "b6c40462aa9cd10a7ceb4c40417141fd3e77e436"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/direct/compute-model.json",
+      "size": 398,
+      "sha256": "909783e99b59da26aaa4d47689889b92098a5bcaa91f1df00eb9c05ea131b2cb",
+      "git_blob_sha": "1489105a69f8bf7cb52658d3341b025a1434534f"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/direct/compute-validation.json",
+      "size": 161,
+      "sha256": "1384c3c9717a53bf0e3faf00f1be729e9168778b4e46719aee337e9f83881913",
+      "git_blob_sha": "126c1ce810a540d668fc8cc6d00ef67f60ecc87f"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/direct/expert-compute.csv",
+      "size": 23089,
+      "sha256": "02593522fef0d8fe7305b6eaf3b4e0ef898c25a42c04f4edbb7f5804108fa4d3",
+      "git_blob_sha": "d38b69b5afd68b7bc18bf1a61df9373168c03177"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/direct/expert-ready.csv",
+      "size": 376,
+      "sha256": "ed8b2eb19263796b987f0d98a89f9d5279cab615a677383b5d48eb29d0ca746a",
+      "git_blob_sha": "55e24d5d842f79c75724de682c64ebe2014f1795"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/direct/host.json",
+      "size": 508,
+      "sha256": "62b6e82dbf48b6f9b27a2e88cd363327de8f986711a545377344eef83af1d62e",
+      "git_blob_sha": "6032a94adce8923bfe218b58402119f9aea9e5f8"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/direct/network-resources.csv",
+      "size": 5636,
+      "sha256": "8e8268dd0e3d7683a290e001f9554ae3031fb7fdbdbfd0781285f4b125bdc888",
+      "git_blob_sha": "9b5af566f7418d83cbd98d20b5bb739dc777e829"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/direct/online-summary.json",
+      "size": 7574,
+      "sha256": "c3ff5831170c50ca6b183d0fd2129399925cff5db690d8aa41515ee5f270a490",
+      "git_blob_sha": "0a8d6d8a671d96eeb61e56894db920717b3e67ee"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/direct/packet-counts.csv",
+      "size": 15326,
+      "sha256": "8d8bdb33940a22a7a0b68589de13518a74868159a53491629f3bc2b888053a06",
+      "git_blob_sha": "08cb8fc2b3cb0da0246dbe4f9058a8b426a347b4"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/direct/transport-state-summary.json",
+      "size": 342,
+      "sha256": "f29b097ecc7d53705d85c48d666a2052931ea75fe9b591833eb9c9b60c4f7652",
+      "git_blob_sha": "856f1be4a8dc6ee488ccc4dcb19b7c7c10e2929c"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/direct/validation.json",
+      "size": 369,
+      "sha256": "3e9c19f720a69076747d5d833f76cd304c14033337f1f7ccd030d85be75e5be2",
+      "git_blob_sha": "4dacc5ebe612cb4ff2f2d56b98d356b2d3bfb3ca"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/multicast-v2/compute-model.json",
+      "size": 398,
+      "sha256": "909783e99b59da26aaa4d47689889b92098a5bcaa91f1df00eb9c05ea131b2cb",
+      "git_blob_sha": "1489105a69f8bf7cb52658d3341b025a1434534f"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/multicast-v2/compute-validation.json",
+      "size": 161,
+      "sha256": "1384c3c9717a53bf0e3faf00f1be729e9168778b4e46719aee337e9f83881913",
+      "git_blob_sha": "126c1ce810a540d668fc8cc6d00ef67f60ecc87f"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/multicast-v2/expert-compute.csv",
+      "size": 23089,
+      "sha256": "9cd5b2f2319e6a41286142cd21ea5f4b8c176f47861ba35d26100733cc771788",
+      "git_blob_sha": "5874cc584a48bb661bd16932841831b84b841267"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/multicast-v2/expert-ready.csv",
+      "size": 376,
+      "sha256": "d28079fd26054f851b9c91d86c52d8fb861af27149cfefd75d5dacba7cc85316",
+      "git_blob_sha": "43c3e8ddaea46e87a87e4f450f28c404a5ce8e00"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/multicast-v2/host.json",
+      "size": 508,
+      "sha256": "9cece030242cedeb899e5c7694580c9de49bf2dfcb3ef588c98a20ccc5f212a1",
+      "git_blob_sha": "8a50889b01d02bbf1f9ce3e172d736501dce93c3"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/multicast-v2/multicast-groups.csv",
+      "size": 3455,
+      "sha256": "41d2b2d9b63d4a7032a27417f0e7e95b4e8f12e4060cd6ebce5c792e5d9e5685",
+      "git_blob_sha": "dbf353046345ed8102f713e3f7d4c3fc60e9004f"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/multicast-v2/multicast-lifecycle.json",
+      "size": 246,
+      "sha256": "a00dba032d171f7d8d1eb0e37b3348eba72054799b06d7a7764443928e054c39",
+      "git_blob_sha": "f415696d7be6498597b57ef68d10ad7e4e286521"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/multicast-v2/multicast-stats.csv",
+      "size": 1923,
+      "sha256": "d589e15bfe56914afb47728897e2b7263db17f390d2eb6e41df1231cb0c8f32a",
+      "git_blob_sha": "5c430a9644022db98a209f3d5351e4d72c1be3fd"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/multicast-v2/network-resources.csv",
+      "size": 5671,
+      "sha256": "ca885f28c13aae4b784bd8a44d4ac310dee641351f4e2cf1714272daaa5506c4",
+      "git_blob_sha": "17c0301f8cb6916c55697b83c30b7ca5cb3eb7fd"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/multicast-v2/online-summary.json",
+      "size": 7567,
+      "sha256": "6c0d9e52618d879acf06a4aed4b76fa79480361741c6dfa48f9af67a2389259a",
+      "git_blob_sha": "1dd72b9500ed1dc49d661382fc3343535732a73e"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/multicast-v2/packet-counts.csv",
+      "size": 15379,
+      "sha256": "7b4f966a8ac9c45ac19170644d0b142cdaae95db8fc6b40f86c0d3255b969a86",
+      "git_blob_sha": "00920e25a5bbd018e62fd85ce2e9506215d529a1"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/multicast-v2/transport-state-summary.json",
+      "size": 342,
+      "sha256": "f29b097ecc7d53705d85c48d666a2052931ea75fe9b591833eb9c9b60c4f7652",
+      "git_blob_sha": "856f1be4a8dc6ee488ccc4dcb19b7c7c10e2929c"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/multicast-v2/validation.json",
+      "size": 369,
+      "sha256": "6ec55dca27f43ffe3b2f678c896f5d8f7bf35a00b9f514ace81dcbd3e5fface8",
+      "git_blob_sha": "6d32f0f817b0f3c191f1d1eca7523109c5b77479"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/no-balancing/compute-model.json",
+      "size": 398,
+      "sha256": "909783e99b59da26aaa4d47689889b92098a5bcaa91f1df00eb9c05ea131b2cb",
+      "git_blob_sha": "1489105a69f8bf7cb52658d3341b025a1434534f"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/no-balancing/compute-validation.json",
+      "size": 161,
+      "sha256": "04ae019c91f815e2303e309d1180a2912164b0b040c767ace2dcf8d63a8f7501",
+      "git_blob_sha": "67f0eebab84791d1a4166fe5bf01b99b97907015"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/no-balancing/expert-compute.csv",
+      "size": 16186,
+      "sha256": "514846f1ebfd84ea4d548679c12303a16c73c513c3efc765146ecf1557eb98ab",
+      "git_blob_sha": "34557e4e7743cb231301c2f72eecb6282913d6f3"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/no-balancing/expert-ready.csv",
+      "size": 23,
+      "sha256": "39d363bfc69031e4120c29512a712d8c8b97b24b70548e8d003ae62d34c330df",
+      "git_blob_sha": "305d952347cd2f45143ce29501166aec544fc427"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/no-balancing/host.json",
+      "size": 503,
+      "sha256": "f18da460cfe451819eaa3c8d6c1f7dd7076fcdcedfe936bbe47b620eb1933396",
+      "git_blob_sha": "57c1a2994ed625992b6fbd9cd94513ef4c7617b7"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/no-balancing/network-resources.csv",
+      "size": 5389,
+      "sha256": "1bad1ff284a02b2092095827ac1b588b69098d50d43d1d5a73e77c30e41850b3",
+      "git_blob_sha": "56d160359a4dd39d7d6a6137e118950da19571f6"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/no-balancing/online-summary.json",
+      "size": 7100,
+      "sha256": "49c8436b1791c025ff8ea82c79b9c586fe15fafba2f3f13f46406f6a7cc8d390",
+      "git_blob_sha": "9f1d0b3bd46557091adcec6a2a4123fb2892ccf0"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/no-balancing/packet-counts.csv",
+      "size": 12943,
+      "sha256": "549cee6c03a276ddd62b3edd37cf770b21906989caec25d746ec209735243714",
+      "git_blob_sha": "8984176e597616065bcd74325ea190791143656c"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/no-balancing/transport-state-summary.json",
+      "size": 342,
+      "sha256": "ff737020d6da916a529af83f8782399790c24596cd4b28f6e421bf2d4919c538",
+      "git_blob_sha": "d7b28d87306d873ae282dea9d5f473fa2b083ccc"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/real/no-balancing/validation.json",
+      "size": 366,
+      "sha256": "c2e476a93631ba968247da3fdfa0334c4f905bc0e1d25a3e32c1318bbc98be3f",
+      "git_blob_sha": "c2cca0404783e1e44b120445b843257f2f34f092"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/resources.csv",
+      "size": 779,
+      "sha256": "42ece6b7b9b1df42e884c450f65b061db49c9114265a87de37a269c99f217103",
+      "git_blob_sha": "510bf9f80cff8e9f408c40932d208622f006116c"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/stage-a/network/legacy/ack-once/compute-validation.json",
+      "size": 154,
+      "sha256": "fb1b747cee47481fb8a95adcb00fc8c38e1f9a5eb49347e0bd2cf55b91de72f6",
+      "git_blob_sha": "a2ffb807e970ff3874139e27ac285d8602b2d33b"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/stage-a/network/legacy/ack-once/multicast-lifecycle.json",
+      "size": 227,
+      "sha256": "634b15de0cc6bdc47a69da268a1c5e2eb2a69195e38cc35da13eacba418f607c",
+      "git_blob_sha": "061f7e86c8e1d1da392bc28404062358b8e49d02"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/stage-a/network/legacy/ack-once/validation.json",
+      "size": 356,
+      "sha256": "f264d05dba59862adf9a0bb74e0fa968fabf8536f32b7abf4827f5d9fce96221",
+      "git_blob_sha": "c28b75e7fb9a177b78a4abba36cefa4dbfb3d7fc"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/stage-a/network/legacy/ack-once/weight-packets.csv",
+      "size": 6329,
+      "sha256": "e9440adc27ea2650bf3653a27c6365b548f956af0a976473957f2fd5a4cee180",
+      "git_blob_sha": "d93171d0c342de61b3785e21b512fe035adf172f"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/stage-a/network/legacy/data-once/compute-validation.json",
+      "size": 154,
+      "sha256": "fb1b747cee47481fb8a95adcb00fc8c38e1f9a5eb49347e0bd2cf55b91de72f6",
+      "git_blob_sha": "a2ffb807e970ff3874139e27ac285d8602b2d33b"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/stage-a/network/legacy/data-once/multicast-lifecycle.json",
+      "size": 227,
+      "sha256": "634b15de0cc6bdc47a69da268a1c5e2eb2a69195e38cc35da13eacba418f607c",
+      "git_blob_sha": "061f7e86c8e1d1da392bc28404062358b8e49d02"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/stage-a/network/legacy/data-once/validation.json",
+      "size": 356,
+      "sha256": "8b06a3c6e603250f4ec2a46300b52c88d1b3b11daf7f957216be84a08490b5d1",
+      "git_blob_sha": "dfa7abc5a0b4a1b304544d29d7ce6961fb3d58be"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/stage-a/network/legacy/data-once/weight-packets.csv",
+      "size": 6335,
+      "sha256": "e644d81b2b07a4d94b4258ca1691a02f3f08cf749eda2c6133940ec000d432d7",
+      "git_blob_sha": "2a6acc234f1be8843e88e87db5eac72b220a25f8"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/stage-a/network/legacy/invalidate-grant/compute-validation.json",
+      "size": 154,
+      "sha256": "fb1b747cee47481fb8a95adcb00fc8c38e1f9a5eb49347e0bd2cf55b91de72f6",
+      "git_blob_sha": "a2ffb807e970ff3874139e27ac285d8602b2d33b"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/stage-a/network/legacy/invalidate-grant/multicast-lifecycle.json",
+      "size": 227,
+      "sha256": "ed0a107766f6c2e096d4d121b45db51daf4d3efb9749f09c74e207da81fef2f1",
+      "git_blob_sha": "9149eba71215297da8ca7bbfecbbbbae4a5e71c3"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/stage-a/network/legacy/invalidate-grant/validation.json",
+      "size": 356,
+      "sha256": "3d6f22d392afd20b8be9d3c860354b9d91850e236941692b6e6467b539d62cee",
+      "git_blob_sha": "1ea8290edaafeacf71ecd6a0a99454fd9c5a51d8"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/stage-a/network/legacy/invalidate-grant/weight-packets.csv",
+      "size": 6166,
+      "sha256": "454180177c2f5242d3af54c3e9035a3b3dc86afdbf4216d0f14824e38c2081f3",
+      "git_blob_sha": "d2fbd035af8fe2f8944578fa288bc837e4dea197"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/stage-a/network/roofline/ack-once/compute-validation.json",
+      "size": 156,
+      "sha256": "1729af1b5b5cea9cee3d1281dda4a21ef43019382a7506a19251d179fb20c64c",
+      "git_blob_sha": "4e577d9f73217c5e435edc334df84c9618cf1714"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/stage-a/network/roofline/ack-once/multicast-lifecycle.json",
+      "size": 227,
+      "sha256": "634b15de0cc6bdc47a69da268a1c5e2eb2a69195e38cc35da13eacba418f607c",
+      "git_blob_sha": "061f7e86c8e1d1da392bc28404062358b8e49d02"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/stage-a/network/roofline/ack-once/validation.json",
+      "size": 356,
+      "sha256": "c07b715492f73588b06f2a018bd8ff73d750e96bb25001d8f73fd91a7e0d6078",
+      "git_blob_sha": "fe7c405a3698ccaa2b642712d9fcab765c3a997a"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/stage-a/network/roofline/ack-once/weight-packets.csv",
+      "size": 6329,
+      "sha256": "e9440adc27ea2650bf3653a27c6365b548f956af0a976473957f2fd5a4cee180",
+      "git_blob_sha": "d93171d0c342de61b3785e21b512fe035adf172f"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/stage-a/network/roofline/data-once/compute-validation.json",
+      "size": 156,
+      "sha256": "1729af1b5b5cea9cee3d1281dda4a21ef43019382a7506a19251d179fb20c64c",
+      "git_blob_sha": "4e577d9f73217c5e435edc334df84c9618cf1714"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/stage-a/network/roofline/data-once/multicast-lifecycle.json",
+      "size": 227,
+      "sha256": "634b15de0cc6bdc47a69da268a1c5e2eb2a69195e38cc35da13eacba418f607c",
+      "git_blob_sha": "061f7e86c8e1d1da392bc28404062358b8e49d02"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/stage-a/network/roofline/data-once/validation.json",
+      "size": 356,
+      "sha256": "63cb71090201806f237c41abf210eee8bbb20605ad93587ecbb73510d72f98f7",
+      "git_blob_sha": "3a965eeb42d86cf251ca0e403890b605cde383ca"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/stage-a/network/roofline/data-once/weight-packets.csv",
+      "size": 6335,
+      "sha256": "e644d81b2b07a4d94b4258ca1691a02f3f08cf749eda2c6133940ec000d432d7",
+      "git_blob_sha": "2a6acc234f1be8843e88e87db5eac72b220a25f8"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/stage-a/network/roofline/invalidate-grant/compute-validation.json",
+      "size": 156,
+      "sha256": "1729af1b5b5cea9cee3d1281dda4a21ef43019382a7506a19251d179fb20c64c",
+      "git_blob_sha": "4e577d9f73217c5e435edc334df84c9618cf1714"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/stage-a/network/roofline/invalidate-grant/multicast-lifecycle.json",
+      "size": 227,
+      "sha256": "ed0a107766f6c2e096d4d121b45db51daf4d3efb9749f09c74e207da81fef2f1",
+      "git_blob_sha": "9149eba71215297da8ca7bbfecbbbbae4a5e71c3"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/stage-a/network/roofline/invalidate-grant/validation.json",
+      "size": 357,
+      "sha256": "46c4b6f8ccb15277a08fcfc23aa89490b20f3439cc5f754bdf264eefb9922788",
+      "git_blob_sha": "aefa3529ef21b4e3d0ac1a36f432a3f3af391153"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/stage-a/network/roofline/invalidate-grant/weight-packets.csv",
+      "size": 6166,
+      "sha256": "454180177c2f5242d3af54c3e9035a3b3dc86afdbf4216d0f14824e38c2081f3",
+      "git_blob_sha": "d2fbd035af8fe2f8944578fa288bc837e4dea197"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/stage-a/status.json",
+      "size": 2156,
+      "sha256": "f9c3ed4ccb84dc06344b99b99f3a9e912c2835cc6e10f1d0c8d3126e6e9f7561",
+      "git_blob_sha": "e47df65ec9e91fb2e6839378d098ca288f0bb1c2"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/stage-a/unit/status.json",
+      "size": 114,
+      "sha256": "8a12fba7f89a7d55c924e14c2ad8f9a29ee13ac72588d7f09a7fbf69166949b3",
+      "git_blob_sha": "88514f891c1acd66576bd6074057022b8fd2a8d9"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/stage-a/unit/token-latency.csv",
+      "size": 870,
+      "sha256": "bcb262425505f6e354666f4b8cf9f75ec7443e6ea9bab4337f3775674010acf1",
+      "git_blob_sha": "b4b2ecae34ed189957bb9002b6f9b60fce16b3c3"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/stage-a.csv",
+      "size": 3080,
+      "sha256": "d4d5cbfd9d5b23f45884ef9d6217886a42c2f646c25291e62d1a0633d35fed10",
+      "git_blob_sha": "044a56a9cf4f4168ee138a492d49e44e674c5959"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/summary.json",
+      "size": 7934,
+      "sha256": "889b1b5346a11696d9d8b6ba6a6d48b4d560325efc61554f6275de26f05e879f",
+      "git_blob_sha": "54697d00d1ee753e614b9ac00833e3f38767c7f3"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/token-latency.png",
+      "size": 69301,
+      "sha256": "517ac06c00c8df7f26c6b965ce9c2e57e388356754458d538dbecc4c99d293f5",
+      "git_blob_sha": "59bf6c9c1e95702834e87cead9b4533c07417ab4"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/results/token-latency.svg",
+      "size": 17771,
+      "sha256": "635dfe2fe0f627b00169096cb2571f49bc0abb4f4df1e89788602971a8c75698",
+      "git_blob_sha": "cd815740e0aae3ef3d2996131c5aac5e575d2430"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/run-case.py",
+      "size": 2380,
+      "sha256": "10635948979ce8eb48defa10eb4bab30c3fe34cc1a7c5e2f3be9ca704a73004d",
+      "git_blob_sha": "8b9c475139e382a9b515f9f307479240942c2e59"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/run-ledger.md",
+      "size": 2241,
+      "sha256": "11da9c3ffd0303c94fdc9c9b42f8b4c778b2d2ef17ba3beee0d111184417e2a5",
+      "git_blob_sha": "8f820fc7f5a91961b29926763b4cad93f4dd8a06"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/run-real.py",
+      "size": 5460,
+      "sha256": "e4369049295e92195ddc48138067d4252e41379566312fd85cdf4ca4373ec9e0",
+      "git_blob_sha": "febd84b700f00bf31649cf6d6fa8ee7b3551699a"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/source-provenance.json",
+      "size": 3231,
+      "sha256": "71513df7b8becc64bef3ab86ad5ef8fcbd6ee241859f4b78b368795b72a23bcc",
+      "git_blob_sha": "5ccaaffd53954bea27dc72910da96b2dfa58683e"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/stage-a.py",
+      "size": 5291,
+      "sha256": "6254ef60de88afb253fcacbc9b1aef4c63e359a7cf7c9288686a97e086302abf",
+      "git_blob_sha": "ea5f039888b8946041d15814a7cf64f747f48c91"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/test-model.py",
+      "size": 1893,
+      "sha256": "ea0b3f34d2b4350f18c87c3341f010256b5496b3d755d19e6b7dd6176d996b00",
+      "git_blob_sha": "9af054b9f08b49b48b488dedbf215746d63848ba"
+    },
+    {
+      "path": "experiments/qwen-roofline-compute/verify-compute.py",
+      "size": 2922,
+      "sha256": "71b6b1b16c60f27270b05bb9273074868e23b0aaf49ed7d74eea21a089b5dafd",
+      "git_blob_sha": "5d83e106f646471cf4b92c738ae5688a7911ce43"
+    }
+  ],
+  "receipt_note": "This receipt is added by a child commit; final branch/child commit/tree are checked after creation, avoiding a self-referential SHA."
+}
