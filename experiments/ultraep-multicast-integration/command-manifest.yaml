@@ -1,0 +1,210 @@
+{
+  "stage_a": [
+    {
+      "case": "no-replicas",
+      "strategy": "no-balancing",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "no-replicas",
+      "strategy": "direct",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "no-replicas",
+      "strategy": "chunk-streaming",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "no-replicas",
+      "strategy": "multicast-v2",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "singleton",
+      "strategy": "no-balancing",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "singleton",
+      "strategy": "direct",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "singleton",
+      "strategy": "chunk-streaming",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "singleton",
+      "strategy": "multicast-v2",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "multi-target",
+      "strategy": "no-balancing",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "multi-target",
+      "strategy": "direct",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "multi-target",
+      "strategy": "chunk-streaming",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "multi-target",
+      "strategy": "multicast-v2",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "disjoint-experts",
+      "strategy": "no-balancing",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "disjoint-experts",
+      "strategy": "direct",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "disjoint-experts",
+      "strategy": "chunk-streaming",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "disjoint-experts",
+      "strategy": "multicast-v2",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "window-disjoint",
+      "strategy": "no-balancing",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "window-disjoint",
+      "strategy": "direct",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "window-disjoint",
+      "strategy": "chunk-streaming",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "window-disjoint",
+      "strategy": "multicast-v2",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "shared-receivers",
+      "strategy": "no-balancing",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "shared-receivers",
+      "strategy": "direct",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "shared-receivers",
+      "strategy": "chunk-streaming",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "shared-receivers",
+      "strategy": "multicast-v2",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "delayed-ready",
+      "strategy": "no-balancing",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "delayed-ready",
+      "strategy": "direct",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "delayed-ready",
+      "strategy": "chunk-streaming",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "delayed-ready",
+      "strategy": "multicast-v2",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "tail-segment",
+      "strategy": "no-balancing",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "tail-segment",
+      "strategy": "direct",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "tail-segment",
+      "strategy": "chunk-streaming",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    },
+    {
+      "case": "tail-segment",
+      "strategy": "multicast-v2",
+      "entrypoint": "stage-a.py",
+      "prediction": "byte/dependency/resource invariants pass; speedup not a gate"
+    }
+  ],
+  "stage_b": {
+    "entrypoint": "stage-b.py",
+    "layer": 37,
+    "tokens": 2048,
+    "gate": "full Stage A and current binary/library identity",
+    "strategies": [
+      "no-balancing",
+      "direct",
+      "chunk-streaming",
+      "multicast-v2"
+    ]
+  },
+  "regressions": "regress.py",
+  "guards": "existing wqe-completion-fix/guard.py, 3600 seconds per stage"
+}

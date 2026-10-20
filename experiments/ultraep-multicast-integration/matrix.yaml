@@ -1,0 +1,14 @@
+stage_a:
+  cases: [no-replicas,singleton,multi-target,disjoint-experts,window-disjoint,shared-receivers,delayed-ready,tail-segment]
+  strategies: [no-balancing,direct,chunk-streaming,multicast-v2]
+  negative: [weight-byte,early-wqe,premature-ready,duplicate-completion]
+  network_smoke: [data-once,ack-once]
+  scheduling_smoke: [invalidate-grant]
+  paired_native_hardening: [paired-small,paired-window]
+stage_b:
+  gate: stage_a_pass_and_capacity_pass
+  layer: 37
+  tokens: 2048
+  ep: 64
+  strategies: [no-balancing,direct,chunk-streaming,multicast-v2]
+stage_c: aggregate_only_existing_stage_b

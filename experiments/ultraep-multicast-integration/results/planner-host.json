@@ -1,0 +1,48 @@
+{
+  "no-balancing": {
+    "serialized_layer": 37,
+    "routing_sha256": "4b2f70871b969730a8f85aace4357d28b2e069d2f0d16a738a0c35eca691a0e5",
+    "source_npu": "token_id % 64; simulator assumption",
+    "tokens": 2048,
+    "assignments": 16384,
+    "planner_time": {
+      "wall_seconds": 0.005285228999127867,
+      "cpu_seconds": 0.0052767600000001025
+    },
+    "capacity": {
+      "assignments": 16384,
+      "replicas": 0,
+      "weight_bytes_per_expert": 18874368,
+      "weight_wqes": 0,
+      "weight_tas": 0,
+      "logical_payload_bytes": 268435456,
+      "weight_buffer_lower_bound_bytes": 0,
+      "planned_tasks": 32768,
+      "activation_dtype": "BF16",
+      "weight_dtype": "idealized FP8 without scale metadata"
+    }
+  },
+  "direct": {
+    "serialized_layer": 37,
+    "routing_sha256": "4b2f70871b969730a8f85aace4357d28b2e069d2f0d16a738a0c35eca691a0e5",
+    "source_npu": "token_id % 64; simulator assumption",
+    "tokens": 2048,
+    "assignments": 16384,
+    "planner_time": {
+      "wall_seconds": 1.5956632630004606,
+      "cpu_seconds": 0.2609030749999999
+    },
+    "capacity": {
+      "assignments": 16384,
+      "replicas": 53,
+      "weight_bytes_per_expert": 18874368,
+      "weight_wqes": 53,
+      "weight_tas": 976896,
+      "logical_payload_bytes": 1268776960,
+      "weight_buffer_lower_bound_bytes": 2000683008,
+      "planned_tasks": 32821,
+      "activation_dtype": "BF16",
+      "weight_dtype": "idealized FP8 without scale metadata"
+    }
+  }
+}

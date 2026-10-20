@@ -1,0 +1,110 @@
+{
+  "status": "PASS",
+  "multicast_vs_direct_layer_speedup": 1.1454714636112393,
+  "multicast_vs_chunk_layer_speedup": 1.0728715341886395,
+  "multicast_vs_direct_weight_speedup": 2.0025110663035743,
+  "multicast_vs_chunk_weight_speedup": 1.5020508128197716,
+  "fanout": {
+    "1": 2,
+    "4": 2,
+    "2": 11,
+    "3": 7
+  },
+  "last_weight_ready_experts": {
+    "direct": {
+      "strategy": "direct",
+      "expert": 66,
+      "fanout": 4,
+      "ready_ps": 6867380560,
+      "distribution_duration_ns": 6867179.56
+    },
+    "chunk-streaming": {
+      "strategy": "chunk-streaming",
+      "expert": 64,
+      "fanout": 3,
+      "ready_ps": 5151160120,
+      "distribution_duration_ns": 5150959.12
+    },
+    "multicast-v2": {
+      "strategy": "multicast-v2",
+      "expert": 86,
+      "fanout": 3,
+      "ready_ps": 3429485200,
+      "distribution_duration_ns": 3429284.2
+    }
+  },
+  "binary_identity": {
+    "/workspace/scratch/c6ba02920254/integration-private/build-admission/layer": "694d310a370cb95e5058aee8ca4d9256207ac258c3d3e9728fa8f1d9fcdd5794",
+    "/workspace/scratch/c6ba02920254/integration-private/build-admission/graph-tool": "9925496f9f596f1a1c01745f1b1e9aeb0fa95b31e39708cfbbd39b6b0c098434",
+    "/workspace/scratch/c6ba02920254/retrans-native/build/lib/libns3.44-unified-bus.so": "e1f6985571176bb881df336f1986ada35d075fb0ab9089faf381ec24941fee07"
+  },
+  "input_identity": {
+    "routing": "4b2f70871b969730a8f85aace4357d28b2e069d2f0d16a738a0c35eca691a0e5",
+    "manifest": "d5708f02b9ffa6e19500725685272ad840760d9c6b5f5f475f12bc3560405db6",
+    "counts": "e3163d85c2ada0373cb73dad19a3efeac7d0774f1b56852aacdcf9b264c94c4e"
+  },
+  "planning_identity": [
+    {
+      "strategy": "no-balancing",
+      "plan_semantic_sha256": "a9292a0340d86e706b40d4f499e9cbac58efea8be9916c9b49350f594abd235e",
+      "assignments_sha256": "b63e71fec9589ebc44a303c32306d8210794e9f4517eec7e772adba6166ad402",
+      "input_sha256": "20182d938ebd8fe13192484e62d1bf377d28a2d08eecb9fe8b315bfec6121ac6",
+      "config_sha256": "edc3bb39d709a4a8e8fb83aabead01a5145a47ec4b2ba2b47f526645cd9be318"
+    },
+    {
+      "strategy": "direct",
+      "plan_semantic_sha256": "55b8de3bc0e6773ac265f84883f4c2940ec5ff9e049b29fcccbfb6275a0f0f94",
+      "assignments_sha256": "1a7f767d035076f898f5ce7ee8ab02d65eb9f40d057cc2c99931e97c9c1bf566",
+      "input_sha256": "7c3c2dbd276652a4e154488b962aae2fb0f5a3022c4a147ccdf5d6d3d7096f0d",
+      "config_sha256": "44495a2fbf49cfc2d4d6fb6ee17d62bbf1393dceb1c452910fc5d4534e3bc014"
+    },
+    {
+      "strategy": "chunk-streaming",
+      "plan_semantic_sha256": "55b8de3bc0e6773ac265f84883f4c2940ec5ff9e049b29fcccbfb6275a0f0f94",
+      "assignments_sha256": "1a7f767d035076f898f5ce7ee8ab02d65eb9f40d057cc2c99931e97c9c1bf566",
+      "input_sha256": "035e0f129ca1d4c2b85bab68332bb0421b1f0debd18bbd5cdcf8b1ca420e4b8d",
+      "config_sha256": "f8608f4948fc3ab8545782bbf9f93b81581dcf820a91040472313ceb9a427dd5"
+    },
+    {
+      "strategy": "multicast-v2",
+      "plan_semantic_sha256": "55b8de3bc0e6773ac265f84883f4c2940ec5ff9e049b29fcccbfb6275a0f0f94",
+      "assignments_sha256": "1a7f767d035076f898f5ce7ee8ab02d65eb9f40d057cc2c99931e97c9c1bf566",
+      "input_sha256": "2de5775b8367b1bd5da7e7df8eca74f5ece4e79996d051cedf9fa7ef49ccf55d",
+      "config_sha256": "07f3668b210a9eca2dcc3d9226bc889505038da8ea9981ea0b383e85151ebf3e"
+    }
+  ],
+  "last_multicast_weight_child": {
+    "group": 87,
+    "expert": 86,
+    "source": 43,
+    "target": 0,
+    "physical": 3,
+    "receiver_ready_ps": 3429485200,
+    "sender_complete_ps": 3436032600,
+    "receiver_weight_fanin": 2
+  },
+  "execution_resume": {
+    "reason": "Replace rounded380s admission heuristic with exact historical relative-work projection; same verified NoBal, native build, input and3600s hard guard.",
+    "projected_max_wall_seconds": 3584.6028748137614
+  },
+  "parallel_execution": {
+    "utc": "2026-10-20T17:47:02.727663+00:00",
+    "status": "ADMITTED",
+    "max_parallel_simulators": 2,
+    "per_process_tree_rss_bytes": 6442450944,
+    "min_host_available_bytes": 1610612736,
+    "estimated_new_peak_bytes": 3993853952,
+    "admission_margin_bytes": 134217728,
+    "binary_sha256": "694d310a370cb95e5058aee8ca4d9256207ac258c3d3e9728fa8f1d9fcdd5794",
+    "held_binary": "/workspace/scratch/c6ba02920254/integration-private/build-admission/layer.parallel-admission-held",
+    "identical_execution_binary": "/workspace/scratch/c6ba02920254/integration-private/build-admission/layer.parallel-identical",
+    "reason": "User requested parallel cases; avoid automatic third/duplicate launch while preserving running Chunk.",
+    "available_bytes_at_admission": 5912145920,
+    "admitted_utc": "2026-10-20T17:47:02.751309+00:00"
+  },
+  "metric_notes": {
+    "source_weight_bytes": "Sum across all transmitting hosts, including Chunk relays; not main-source-only.",
+    "last_weight_ready_experts": "Latest receiver-ready expert, determining global Dispatch gate only when weights_end >= reroute_end; not attribution of downstream compute/Combine critical path.",
+    "phase_spans": "Dispatch, compute and Combine may overlap; their spans are not additive."
+  }
+}

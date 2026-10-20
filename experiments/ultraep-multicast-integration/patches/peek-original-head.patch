@@ -1,0 +1,19 @@
+--- a/src/unified-bus/model/protocol/ub-transport.h
++++ b/src/unified-bus/model/protocol/ub-transport.h
+@@ -376,6 +376,16 @@
+         const UbTransactionCorrelationIdentity& expectedCorrelation,
+         const UbLifecycleResourceIdentity& expectedTpIdentity);
+ 
++    // Read-only adapter observation, preserving BuildNextDataSendContext's exact
++    // first-unsent ordering. Does not dequeue, advance PSN, or build a packet.
++    Ptr<const UbWqeSegment> PeekOriginalSegmentForAdapter() const
++    {
++        for (const auto& segment : m_wqeSegmentVector)
++        {
++            if (segment != nullptr && !segment->IsSentCompleted()) return segment;
++        }
++        return nullptr;
++    }
+     uint32_t GetWqeSegmentVecSize() { return m_wqeSegmentVector.size(); }
+     uint32_t GetActiveSendSegmentCount() const;
+     uint32_t GetOutstandingUnackedSegmentCount() const;

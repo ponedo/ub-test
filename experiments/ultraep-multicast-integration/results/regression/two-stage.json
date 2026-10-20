@@ -1,0 +1,251 @@
+{
+  "status": "EXACT_MATCH",
+  "strategy": "two-stage",
+  "summary": {
+    "schema": 1,
+    "log_level": "summary",
+    "layer_latency_ps": 5180680,
+    "remote_WQEs": 15,
+    "TA_count": 48,
+    "target_segments": 48,
+    "sender_completions": 15,
+    "completed_tokens": 32,
+    "assignments": 32,
+    "replicas": 3,
+    "jettys": 8,
+    "simulator_events": 7298,
+    "combine_fnv1a64": "f69f2d11e6645a25",
+    "executed_graph_fnv1a64": "ce3dcec7380df45a",
+    "max_npu_load": 10,
+    "per_npu_load": [
+      10,
+      10,
+      10,
+      2
+    ],
+    "verified_bytes": [
+      4096,
+      4096,
+      36864
+    ],
+    "remote_bytes": [
+      768,
+      768,
+      36864
+    ],
+    "local_bytes": [
+      3328,
+      3328,
+      0
+    ],
+    "packet_tx_per_node": [
+      32,
+      80,
+      32,
+      48,
+      192
+    ],
+    "packet_rx_per_node": [
+      32,
+      80,
+      32,
+      48,
+      192
+    ],
+    "byte_tx_per_node": [
+      14752,
+      30208,
+      2272,
+      3840,
+      51072
+    ],
+    "byte_rx_per_node": [
+      2272,
+      17728,
+      14752,
+      16320,
+      51072
+    ],
+    "timeline": {
+      "layer_start": 1000,
+      "planning_end": 201000,
+      "reroute_end": 301000,
+      "weights_end": 3800880,
+      "dispatch_gate": 3800880,
+      "layer_end": 5181680
+    },
+    "event_spans": {
+      "compute_end": [
+        4097488,
+        5049280,
+        4
+      ],
+      "compute_start": [
+        3800880,
+        3966240,
+        4
+      ],
+      "data_ready": [
+        3800880,
+        5181680,
+        64
+      ],
+      "dispatch_gate": [
+        3800880,
+        3800880,
+        1
+      ],
+      "edge_ready": [
+        1441960,
+        3800880,
+        3
+      ],
+      "expert_end": [
+        4097488,
+        5049280,
+        4
+      ],
+      "expert_start": [
+        3800880,
+        3966240,
+        4
+      ],
+      "layer_end": [
+        5181680,
+        5181680,
+        1
+      ],
+      "layer_start": [
+        1000,
+        1000,
+        1
+      ],
+      "local_verified": [
+        3800880,
+        5049280,
+        52
+      ],
+      "main_weight_ready": [
+        1000,
+        1000,
+        4
+      ],
+      "payload_verified": [
+        427320,
+        5181680,
+        48
+      ],
+      "planning_end": [
+        201000,
+        201000,
+        1
+      ],
+      "planning_start": [
+        1000,
+        1000,
+        1
+      ],
+      "relay_buffer_read": [
+        1441960,
+        1441960,
+        2
+      ],
+      "reroute_end": [
+        301000,
+        301000,
+        1
+      ],
+      "reroute_start": [
+        201000,
+        201000,
+        1
+      ],
+      "send": [
+        201000,
+        5049280,
+        67
+      ],
+      "sender_complete": [
+        1683200,
+        5250080,
+        15
+      ],
+      "ta_admitted": [
+        201000,
+        5049280,
+        48
+      ],
+      "ta_response_admitted": [
+        427320,
+        5181680,
+        48
+      ],
+      "target_complete": [
+        427320,
+        5181680,
+        48
+      ],
+      "target_received": [
+        427320,
+        5181680,
+        48
+      ],
+      "token_complete": [
+        4097488,
+        5181680,
+        32
+      ],
+      "weight_ready": [
+        1441960,
+        3800880,
+        3
+      ],
+      "weights_end": [
+        3800880,
+        3800880,
+        1
+      ],
+      "weights_start": [
+        201000,
+        201000,
+        1
+      ]
+    },
+    "stage_intervals": [
+      [
+        3800880,
+        3966240
+      ],
+      [
+        4097488,
+        5181680
+      ],
+      [
+        201000,
+        3800880
+      ]
+    ],
+    "compute_intervals": [
+      {
+        "node": 0,
+        "start_ps": 3933280,
+        "end_ps": 5016320
+      },
+      {
+        "node": 1,
+        "start_ps": 3949760,
+        "end_ps": 5032800
+      },
+      {
+        "node": 2,
+        "start_ps": 3966240,
+        "end_ps": 5049280
+      },
+      {
+        "node": 3,
+        "start_ps": 3800880,
+        "end_ps": 4097488
+      }
+    ]
+  }
+}

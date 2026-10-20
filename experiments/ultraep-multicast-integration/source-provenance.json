@@ -1,0 +1,35 @@
+{
+  "status": "EXACT_MATCH",
+  "files": 2,
+  "project_parent": "93033c1c946542e90a94303560346f39dc0be828",
+  "native_base": "b8375b51a094d3b1217b697989e1ab979f609e64",
+  "execution": "original dot cloud host",
+  "native_reliability_algorithm_changes": false,
+  "adapter_admission": "atomic unordered pair reservations until complete first-send; native responses/retries bypass",
+  "candidate_native_sha256": "e1f6985571176bb881df336f1986ada35d075fb0ab9089faf381ec24941fee07",
+  "source_sha256": {
+    "experiments/ultraep-multicast-integration/layer.cc": "44def87327ca5e2cc2a941475b4e333fa04b437c55b092913a90a0226df25aaf",
+    "experiments/ultraep-multicast-integration/pair-multicast-v2.h": "f90b1260d91346ad8d5a7f67c0a430640a64b35b7f6aaf90765b81a9af0c1c63",
+    "experiments/ultraep-multicast-integration/integration.inc": "6ba4615c1409f31a0bd60e1854b9884647e588646eb870532a79570bc2f06b32",
+    "experiments/ultraep-multicast-integration/graph-tool.cc": "c3aceef7a3ebd2d0eab5c319a164b5708a99d4f20b4728aa92f178f2c638b05a",
+    "experiments/ultraep-multicast-integration/pair-stress.cc": "4b0dc3fff6f0ed2e6a5888e88de06bd01daa15dd0a9d75127510782c721e4171",
+    "experiments/pair-jetty/pair-layer.cc": "859320eda92f3397a6d26751d049233857d69e217457ffc3627bde3f8f7dba29",
+    "experiments/pair-jetty/pair-jetty-manager.h": "cef2eeae65c93836bc28e43fa397fa968a86c07a53bff6cf4b6723ba24f8bf40",
+    "experiments/pair-jetty/online-validation.inc": "8eb6df0df5e4a1604e4cbbbec3fde442e5e8ed751efc258840bf7382ad70d40b",
+    "experiments/pair-jetty/multicast-integration.inc": "c4202c5f01ea66cd760b32c85aaba12ec00563f4c7368abe86c067cd17c9256d",
+    "experiments/ub-multicast-v2/adapter-v2.h": "63d024c312ca4c908bfbc6858489d47f1ab92c9f91822bf3c0c5af7fddb11b18",
+    "experiments/ub-lightweight-multicast-adapter/adapter.h": "208251dcd6ce504ae0a4a7e5da04fde109bb128bc2ce9a802d600f8a16716281",
+    "experiments/ub-multicast-retransmission/micro.cc": "2c58ef748ccfc81f841bd5fb862ba01471d70a2c58ffd56c8b5ad322c8e23b8c"
+  },
+  "regression_reuse": "Unchanged previous fixture executables, verified RPATH to current native library; all executions fresh. Reproduce script recompiles fixtures.",
+  "binary_sha256": {
+    "integration-private/build-admission/layer": "694d310a370cb95e5058aee8ca4d9256207ac258c3d3e9728fa8f1d9fcdd5794",
+    "integration-private/build-admission/graph-tool": "9925496f9f596f1a1c01745f1b1e9aeb0fa95b31e39708cfbbd39b6b0c098434",
+    "integration-private/build-admission/pair-stress": "087b1ed81145cb0d38e0b75f45c03085f3ddeca01db52d9b67e899e4a1e5eebe",
+    "retrans-private/old-regression/pair-layer": "589f0872b6f9b5476307e2f9d3686464fe6c6d56a6d257965aeb7e6d5d8aa104",
+    "retrans-private/v2-fixtures/micro": "2338506fe30f5c8e1598e7260ef70437e184ae582c34d0ef71235d0dfdc2c44a",
+    "retrans-private/fixtures2/micro": "475548585f460099d5caab963630e5cee12baee79cebf90a94fc7156fa826330"
+  },
+  "native_assertions": true,
+  "attribute_cache": "Presence only, per static TypeId UID; no objects retained; positive getter evaluated on each grant"
+}

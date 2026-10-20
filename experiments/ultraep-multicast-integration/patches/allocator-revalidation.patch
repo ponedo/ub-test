@@ -1,0 +1,72 @@
+--- a/src/unified-bus/model/ub-switch-allocator.cc
++++ b/src/unified-bus/model/ub-switch-allocator.cc
+@@ -7,18 +7,47 @@
+ 
+ #include "ns3/ub-controller.h"
+ #include "ns3/hash.h"
++#include "ns3/boolean.h"
+ #include "ns3/ub-port.h"
+ #include "ns3/ub-switch.h"
+ #include "ns3/ub-tag.h"
+ 
+ #include <algorithm>
+ #include <limits>
++#include <map>
+ #include <sstream>
+ 
+ namespace ns3 {
+ 
+ namespace {
+ 
++// Type definitions are statically registered before objects in this simulator.
++// Cache presence, not the per-object getter value. Missing-attribute lookup
++// otherwise copies every attribute's metadata on every ordinary packet grant.
++bool
++NeedsCommitRevalidation(Ptr<UbIngressQueue> queue)
++{
++    if (queue == nullptr)
++    {
++        return false;
++    }
++    static std::map<uint16_t, bool> attributePresence;
++    const TypeId type = queue->GetInstanceTypeId();
++    auto it = attributePresence.find(type.GetUid());
++    if (it == attributePresence.end())
++    {
++        TypeId::AttributeInformation info;
++        const bool present = type.LookupAttributeByName("RevalidateOnCommit", &info);
++        it = attributePresence.emplace(type.GetUid(), present).first;
++    }
++    if (!it->second)
++    {
++        return false;
++    }
++    BooleanValue value(false);
++    return queue->GetAttributeFailSafe("RevalidateOnCommit", value) && value.Get();
++}
++
+ uint32_t
+ ComputeInitialIngressPhase(uint32_t nodeId, uint32_t outPortId, size_t qSize)
+ {
+@@ -670,6 +699,21 @@
+         m_running[outPortId] = false;
+         return;
+     }
++    // Optional adapter contract. Ordinary native queues do not expose this
++    // read-only attribute, so their existing grant semantics remain unchanged.
++    // Coordinated pair heads (including pending retries) can change between
++    // selection and commit. Re-use native eligibility and CBFC checks, and pay
++    // a fresh normal AllocationTime when the old selection is no longer valid.
++    if (NeedsCommitRevalidation(ingressQueue) &&
++        (ingressQueue->IsEmpty() || ingressQueue->IsLimited() ||
++         outPort->GetFlowControl()->IsFcLimited(ingressQueue)))
++    {
++        ClearActiveIngressQueue(outPortId);
++        m_runAgain[outPortId] = false;
++        m_running[outPortId] = false;
++        TriggerAllocator(outPort);
++        return;
++    }
+     SetActiveIngressQueue(ingressQueue);
+     // 调度得到的ingressqueue加入egressqueue
+     if (ingressQueue != nullptr) {
