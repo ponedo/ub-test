@@ -1,0 +1,4 @@
+stage_a: [unit, legacy_parity, roofline_small, retry_smoke]
+stage_b: [no-balancing, direct, chunk-streaming, multicast-v2]
+fixed: {layer: 37, tokens: 2048, ep: 64, experts: 128, top_k: 8, compute_tflops: 100, hbm_bandwidth_gbps: 2692}
+parallel: resource_admitted_only

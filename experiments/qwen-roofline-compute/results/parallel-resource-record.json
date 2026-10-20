@@ -1,0 +1,89 @@
+{
+  "status": "PASS",
+  "reserve_bytes": 1073741824,
+  "max_parallel": 2,
+  "peak_margin_factor": 1.05,
+  "admission_extra_bytes": 134217728,
+  "historical_peak_bytes": {
+    "no-balancing": 835760128,
+    "direct": 3919425536,
+    "chunk-streaming": 3799568384,
+    "multicast-v2": 3924701184
+  },
+  "events": [
+    {
+      "event": "admitted",
+      "mode": "no-balancing",
+      "utc": "2026-10-20T20:00:55.389313+00:00",
+      "host_available": 9461415936,
+      "required_available": 2085507686,
+      "concurrent": [],
+      "host_cpu_percent": 12.5,
+      "load1": 0.20166015625
+    },
+    {
+      "event": "admitted",
+      "mode": "direct",
+      "utc": "2026-10-20T20:00:56.390848+00:00",
+      "host_available": 8824737792,
+      "required_available": 5555948338,
+      "concurrent": [
+        "no-balancing"
+      ],
+      "host_cpu_percent": 11.2,
+      "load1": 0.20166015625
+    },
+    {
+      "event": "finished",
+      "mode": "no-balancing",
+      "utc": "2026-10-20T20:02:22.481421+00:00",
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "event": "admitted",
+      "mode": "chunk-streaming",
+      "utc": "2026-10-20T20:02:22.484902+00:00",
+      "host_available": 5804175360,
+      "required_available": 5741887487,
+      "concurrent": [
+        "direct"
+      ],
+      "host_cpu_percent": 14.7,
+      "load1": 1.68212890625
+    },
+    {
+      "event": "finished",
+      "mode": "direct",
+      "utc": "2026-10-20T20:07:11.768030+00:00",
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "event": "admitted",
+      "mode": "multicast-v2",
+      "utc": "2026-10-20T20:07:11.772567+00:00",
+      "host_available": 5790916608,
+      "required_available": 5724526182,
+      "concurrent": [
+        "chunk-streaming"
+      ],
+      "host_cpu_percent": 11.5,
+      "load1": 2.0
+    },
+    {
+      "event": "finished",
+      "mode": "chunk-streaming",
+      "utc": "2026-10-20T20:14:22.215907+00:00",
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "event": "finished",
+      "mode": "multicast-v2",
+      "utc": "2026-10-20T20:15:31.281530+00:00",
+      "returncode": 0,
+      "status": "PASS"
+    }
+  ]
+}
