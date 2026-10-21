@@ -1,0 +1,257 @@
+{
+  "schema_version": 1,
+  "verified_at_utc": "2026-10-21T11:59:00Z",
+  "repository": "ponedo/ub-test",
+  "delivery_branch": "experiments/multicast-token-screen-dot-20261021",
+  "accepted_parent_commit": "3521a64fd300938af3af4573a9793c4cde8d9649",
+  "content_commit": "fc7718d86f4f40a370544f56d888f6b4e7f544fd",
+  "content_tree": "75680c3d4b41f09b42d82cbfa6ede513a55429d2",
+  "verification": {
+    "tree": "75680c3d4b41f09b42d82cbfa6ede513a55429d2",
+    "files": 35,
+    "bytes": 246670,
+    "unchanged_outside_files": 10977,
+    "truncated": false
+  },
+  "remote_read_checks": {
+    "commit_tree_match": true,
+    "recursive_tree_complete": true,
+    "all_delivery_blob_ids_and_sizes_match": true,
+    "outside_experiment_files_unchanged": true,
+    "report_fetch": true,
+    "check_runs": 0,
+    "commit_statuses": 0,
+    "ci_conclusion": "No GitHub checks/statuses present; not a CI pass. Local verification is documented separately."
+  },
+  "scope_note": "This receipt verifies the content commit. The descendant delivery commit adds this receipt; final branch ref and receipt are verified after publication.",
+  "experiment": {
+    "tokens": 256,
+    "strategies": [
+      "chunk-streaming",
+      "multicast-v2"
+    ],
+    "formal_attempts": 2,
+    "formal_pass": 2,
+    "retries": 0,
+    "larger_token_runs": 0,
+    "runtime_unit_gates_pass": 4,
+    "pure_harness_tests_pass": 26,
+    "weight_ps": {
+      "chunk_streaming": 691082182,
+      "multicast_v2": 896326667
+    },
+    "interpretation": "One deterministic pair reproduces ordering reversal; not a global minimum, repeated-run stability proof, or unique causal attribution. N2048 is historical reference only."
+  },
+  "files": [
+    {
+      "path": "experiments/multicast-token-screening/README.md",
+      "size": 6886,
+      "sha256": "3b04e0415b64705657a4695c8e5b53f2866875274fccb4e1d697eec448772199",
+      "git_blob_sha": "323e6dbb967a7346a01eb27a0b7e7915f8626151"
+    },
+    {
+      "path": "experiments/multicast-token-screening/REPORT.md",
+      "size": 9369,
+      "sha256": "7b14c243c25f7881db043234fb25dae9ebcdb00a50666ebf3c253454d73fdad4",
+      "git_blob_sha": "5424e04e2ffce595f32c136cf0604332f57d4301"
+    },
+    {
+      "path": "experiments/multicast-token-screening/analyze.py",
+      "size": 37983,
+      "sha256": "97db8d3c64237de56ce7559172327cd74d0a6794c154f6823fb2dd06fa715d61",
+      "git_blob_sha": "04add7003de771df4e3c7caa6a45ccbb690e79e3"
+    },
+    {
+      "path": "experiments/multicast-token-screening/cases/chunk-streaming/experiment-spec.md",
+      "size": 483,
+      "sha256": "f7f0b35cfa58d1280aa865a2ba423147f2888d803dc5cdddc1900ed59db4baf4",
+      "git_blob_sha": "5f1ead886f7fdac573cfef3c3e12194d013f12ac"
+    },
+    {
+      "path": "experiments/multicast-token-screening/cases/multicast-v2/experiment-spec.md",
+      "size": 503,
+      "sha256": "b06e3a9d502aa07781eb7e79d490d130bbd1e508626e8c65d824cda2b469e13c",
+      "git_blob_sha": "61ab3ce989ec82653d79c51b17378e1a9cdb9edc"
+    },
+    {
+      "path": "experiments/multicast-token-screening/command-manifest.json",
+      "size": 1702,
+      "sha256": "909b421e8abdf177a591d9bc3148f58f0bb68d72e3b2723b1b48eebe15bef9a4",
+      "git_blob_sha": "75b4cef6ad49fbb418bbc6be55d48f824861ce18"
+    },
+    {
+      "path": "experiments/multicast-token-screening/common.py",
+      "size": 3322,
+      "sha256": "9926f2a8f3c1fcef6f9cfb9bb257399efea2da8090837435b6338d4f5a632749",
+      "git_blob_sha": "a46696fdf569812cdf85fa23f4222b707708b860"
+    },
+    {
+      "path": "experiments/multicast-token-screening/correctness-gates.json",
+      "size": 10006,
+      "sha256": "b18cdecbd5efc88bb8b1b0bf14a509a62d44155e40e43ed4b900018147fd8849",
+      "git_blob_sha": "de648635f4c5c77628de23b6e42a89c77c7ccba2"
+    },
+    {
+      "path": "experiments/multicast-token-screening/critical-ports.csv",
+      "size": 5494,
+      "sha256": "ce9e09c722715ef88d061097dccd730c350f08af81eb16fcc162a49adf9fe590",
+      "git_blob_sha": "4801a73406e7600c9d3b797ab2f8f574831b7695"
+    },
+    {
+      "path": "experiments/multicast-token-screening/diagnostics.json",
+      "size": 52734,
+      "sha256": "f4f1c4c266fdba7b44e22661b372cea4875eeae30572ba491749b10fbdf4cc9a",
+      "git_blob_sha": "b700cd02c1fd080c8457d3458b0308fc381c4929"
+    },
+    {
+      "path": "experiments/multicast-token-screening/experiment-plan.md",
+      "size": 1482,
+      "sha256": "2ca5af1a0b7e0ec68d0c40fe7b9e301eb3916789fdd6575740804a3aab995359",
+      "git_blob_sha": "fe7f37aef83d70c93b8999d9531555e15888e276"
+    },
+    {
+      "path": "experiments/multicast-token-screening/feedback.csv",
+      "size": 2423,
+      "sha256": "98794c3edc779bf269f0c899f8b042f0e1743a9b50d8be14115d640da84e53d8",
+      "git_blob_sha": "d491794ba99c869d3d6cc67f371a835fa664bbe7"
+    },
+    {
+      "path": "experiments/multicast-token-screening/heartbeat.py",
+      "size": 2833,
+      "sha256": "63ddde30d1ca55b0bde238a78b064847051d4db0eb5a154aa6c7ce6214cc8280",
+      "git_blob_sha": "1a28f25316270a3928e401b180a01b30bc642bce"
+    },
+    {
+      "path": "experiments/multicast-token-screening/host-resources.csv",
+      "size": 1171,
+      "sha256": "a03b8d7eead90e659e33f3a84db0416be0a57d400a75671b5f513f5526faf510",
+      "git_blob_sha": "de007c6243a333728791796fd96a9c2264ab6934"
+    },
+    {
+      "path": "experiments/multicast-token-screening/input-identities.json",
+      "size": 3161,
+      "sha256": "5677d1176f0a133663edb4b8946d7a4d67955d9bd2010a656d8c9d1d7331e421",
+      "git_blob_sha": "d5d3aa055500dd0426ee84899764ff12a1c38955"
+    },
+    {
+      "path": "experiments/multicast-token-screening/matrix.json",
+      "size": 1427,
+      "sha256": "63f1584c6a92961650f8976b7e9bb0f2a85611c5fadb670ede863cf08cd80bec",
+      "git_blob_sha": "b914386c9fd76fb00ffdcdc360088a2e4402f4d8"
+    },
+    {
+      "path": "experiments/multicast-token-screening/post-run-finalization.md",
+      "size": 1143,
+      "sha256": "83ed26055a858df2fbd44af8345c8382ea15e86fdcb69da9c0a122b73a660332",
+      "git_blob_sha": "ff3404ba8e7335fbd725d39a32067c023f95b6b3"
+    },
+    {
+      "path": "experiments/multicast-token-screening/prepare.py",
+      "size": 4656,
+      "sha256": "d54ef40db23a9272d81abda3cc2eb10177f3eb6768ac001eaa8f3529b4a5d24b",
+      "git_blob_sha": "5fd2fef52b97eda28f36af731d4d548759b98052"
+    },
+    {
+      "path": "experiments/multicast-token-screening/preregistered-analysis.md",
+      "size": 2861,
+      "sha256": "da526de314179b88074c2fad5db90ddb27e81f9882a855f1c48b652b5d13959f",
+      "git_blob_sha": "309bc907f9833c7c101b051a2339a456a312b6b9"
+    },
+    {
+      "path": "experiments/multicast-token-screening/restoration/README.md",
+      "size": 9014,
+      "sha256": "788f2b7a104998235bd2e1d8e13e132f47b230d43c6de973bcf5904c8071a844",
+      "git_blob_sha": "f3abadd518ccb18b4ebd0f2112034a36d2df0fbc"
+    },
+    {
+      "path": "experiments/multicast-token-screening/restoration/artifact-manifest.json",
+      "size": 1040,
+      "sha256": "1f916f1962b93d6d3ee0f7b04ff603ec2f03a2e6a264cd6975b08b529f2f9bf4",
+      "git_blob_sha": "2b06faf8a07529d0261ab7bedebf6f5731b297c2"
+    },
+    {
+      "path": "experiments/multicast-token-screening/restoration/build-native.py",
+      "size": 1383,
+      "sha256": "8e49af78bb323d93d51f1eabb282afc39915f29fff62a2f6813a3b225b6f5b12",
+      "git_blob_sha": "98567879f4943fffa1a7c39376b9662ca1e095a2"
+    },
+    {
+      "path": "experiments/multicast-token-screening/restoration/build-runtime.py",
+      "size": 5226,
+      "sha256": "84b0299e1b6d55674e5089280251fa2e44b7bb2028ed9f2ecef051caa9b4d353",
+      "git_blob_sha": "93093a32c9240029e15101cf6af6e375d5989b17"
+    },
+    {
+      "path": "experiments/multicast-token-screening/restoration/commands-normalized.json",
+      "size": 7810,
+      "sha256": "993ce02907ba625ba97857930f894ba07103904d0bfe6779a2db3652068d2b9a",
+      "git_blob_sha": "3ae814742bcc4f6b69d4aad25b25de812f38eeca"
+    },
+    {
+      "path": "experiments/multicast-token-screening/restoration/helper-validation.json",
+      "size": 2144,
+      "sha256": "4232b65e05d316e50fc4d53cb7dbfe28105503d1ab3848956ddaa7ab039a937a",
+      "git_blob_sha": "0730e1f0c15eb6b250094891834d0adccd882518"
+    },
+    {
+      "path": "experiments/multicast-token-screening/restoration/provenance.json",
+      "size": 10818,
+      "sha256": "f1737775c9bb3f3932c8e71af07424a5caa48a7a3affa88c4593d44f943478bc",
+      "git_blob_sha": "0bdbbde2eed9667114f622556ab28042b4f7f938"
+    },
+    {
+      "path": "experiments/multicast-token-screening/restoration/resources.json",
+      "size": 9225,
+      "sha256": "92d133bc35a33c697f8fd3df5fe0bf320f155d61dc8c47fd1224bce768cc98f0",
+      "git_blob_sha": "d07f5a8a8f00479f55fdb14d7e92d1e344d827e5"
+    },
+    {
+      "path": "experiments/multicast-token-screening/restoration/restore-native.py",
+      "size": 3505,
+      "sha256": "d2e1c05c386ebd7a62ae83c84a6926f84c90750af6b5bacbab705a188ed40bd2",
+      "git_blob_sha": "a2171de932298c361e2778d054202f5761c71dc2"
+    },
+    {
+      "path": "experiments/multicast-token-screening/restoration/test-runtime.py",
+      "size": 1903,
+      "sha256": "5270e19c5987696233aad73cd362d82ff39275a54a49fbdca5975de497f350f9",
+      "git_blob_sha": "adbab97fd13625dba2a17f86ca0a911b9bcd36f2"
+    },
+    {
+      "path": "experiments/multicast-token-screening/results.csv",
+      "size": 1293,
+      "sha256": "5fe9b5741d7c59e8c87aa0afca280044018432f695955aff4684ef1b21bd4c74",
+      "git_blob_sha": "21bb7ad1777b9fdc81e1a5410b8224032fa3f7e4"
+    },
+    {
+      "path": "experiments/multicast-token-screening/run-ledger.md",
+      "size": 3546,
+      "sha256": "614c7ab6903d9425d7171998b55601d6daf934a4acb5bcda3602e0b51efe2b6d",
+      "git_blob_sha": "72b0dca517fca0054ed6173920a3d9b278586a79"
+    },
+    {
+      "path": "experiments/multicast-token-screening/run.py",
+      "size": 10477,
+      "sha256": "cae9b09a4b805a32b30947930de4865dd1ee39e6cebdce971d243a5efd0585c7",
+      "git_blob_sha": "0f60a98c7245bcd00136da10da341fee2368767c"
+    },
+    {
+      "path": "experiments/multicast-token-screening/source-provenance.json",
+      "size": 4275,
+      "sha256": "88e571c3b022e207d8e5848b17821d5879aa3dc5cd6fba423f66a8b6abf7e2ad",
+      "git_blob_sha": "67f6e5b4c8fe7c40bdcdc1b2ea414132e2c26842"
+    },
+    {
+      "path": "experiments/multicast-token-screening/test_analyze.py",
+      "size": 20053,
+      "sha256": "f5847477156a069031cd2688d9e2087c8d810b8d9d9967a3a3eabe5b68bbb926",
+      "git_blob_sha": "257a4407e080b7657d8f054967ee9bb1b0a8e3e0"
+    },
+    {
+      "path": "experiments/multicast-token-screening/test_harness.py",
+      "size": 5319,
+      "sha256": "4e65a87de82462ee0bd451c779d9432927041bfe871407424666e6e95631e3ab",
+      "git_blob_sha": "09de99b2681cbf451793072f07a902af6b54979e"
+    }
+  ]
+}
