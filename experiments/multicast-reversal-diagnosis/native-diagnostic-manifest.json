@@ -1,0 +1,52 @@
+{
+  "base_commit": "7041b595004dd02883478b288f3e7a48dbc625fb",
+  "files": [
+    {
+      "path": "src/unified-bus/CMakeLists.txt",
+      "accepted_sha256": "03fb27a958c18af3d0a545df81a17569a1b4d53ef22b4993394fb14b35091940",
+      "diagnostic_sha256": "6d27d84f0f423b95570e3308fc857b572586ca18bbc290a220ee1073c649d9fc"
+    },
+    {
+      "path": "src/unified-bus/model/protocol/ub-transport.cc",
+      "accepted_sha256": "05a09246faafe719da6b780d1f99347a52529b72e7f43e934f6a6bed27c5f628",
+      "diagnostic_sha256": "5d412ad095e5714640c6e61a84d567fc35b334ecbded50b9891e80663719d35f"
+    },
+    {
+      "path": "src/unified-bus/model/protocol/ub-transport.h",
+      "accepted_sha256": "0d2a23114c2e4b9ce72ceb20fea47684ad8b22fc16bb49b16feeb0583028cf60",
+      "diagnostic_sha256": "5a37dd301ceb026c64a7948f4e7c4c4fcfaeed2df2ffd31273f96921ae8e1fef"
+    },
+    {
+      "path": "src/unified-bus/model/ub-ingress-queue.cc",
+      "accepted_sha256": "4723edd8dca80c96bd55e9a4d134de30b69aa80114cfb78d5ae1e0feef7fbe8c",
+      "diagnostic_sha256": "0b2a829d552b4bd170a1ed9c33a482c67d96820c9ceb1a2b8af0b0cb8aaed2f7"
+    },
+    {
+      "path": "src/unified-bus/model/ub-port.cc",
+      "accepted_sha256": "d708718028c8cfd67dc5d8a6ec21c04355690500f6a71fffc0fafc708a33d9df",
+      "diagnostic_sha256": "e8c63aa93cc26999219d07955ff48a2396bfb07a4695dc442f24199881498180"
+    },
+    {
+      "path": "src/unified-bus/model/ub-reversal-diagnostic.cc",
+      "accepted_sha256": null,
+      "diagnostic_sha256": "b451dad18afa4ab6f580b6a7b7eecece1fcc60c6255ed176e3e3ee8590a98a56"
+    },
+    {
+      "path": "src/unified-bus/model/ub-reversal-diagnostic.h",
+      "accepted_sha256": null,
+      "diagnostic_sha256": "0d8c41774fa5fe173d1199887479b2817e61cea5b6105d50b9a810f33f2691de"
+    },
+    {
+      "path": "src/unified-bus/model/ub-switch-allocator.cc",
+      "accepted_sha256": "1a0178091fd95cc4143c3e2f8a68964502146c443f0484e0c6861acb10ff0f19",
+      "diagnostic_sha256": "c841f37a5a8fe80d44a432eb6b76ea88fd9f42fbb285e18db7ff9e2057defe5b"
+    },
+    {
+      "path": "src/unified-bus/model/ub-switch.cc",
+      "accepted_sha256": "e2065380d2e51887bd7074220f01b88aa6f584eed8bc17d907bf1a7d12488b0f",
+      "diagnostic_sha256": "ad84254c185ca73dd3137c8b4549d850545edeca4894f6dafc13169fd31049b7"
+    }
+  ],
+  "patch_sha256": "0623bf4213ecf142bc8dabbdcf4b766ec417b63f0b17fd2d0c7a9e1566371089",
+  "roundtrip_validation": "PASS: forward/reverse on isolated copy of accepted patched source; exact nine hashes"
+}

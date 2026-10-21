@@ -1,0 +1,6 @@
+# Execute from the workspace root. Native build is deliberately a separate gate.
+commands:
+  - python diagnosis-work/experiments/multicast-reversal-diagnosis/build.py --native diagnosis-native --out diagnosis-private/build
+  - python diagnosis-work/experiments/multicast-reversal-diagnosis/stage-a.py --build diagnosis-private/build --out diagnosis-private/stage-a
+  - python diagnosis-work/experiments/multicast-reversal-diagnosis/prepare.py --build diagnosis-private/build --stage-a diagnosis-private/stage-a --out diagnosis-private/real-3136
+  - python diagnosis-work/experiments/multicast-reversal-diagnosis/run-real.py diagnosis-private/real-3136 --build diagnosis-private/build

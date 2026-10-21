@@ -1,0 +1,84 @@
+{
+  "status": "PASS",
+  "regression": {
+    "simulator_invocations": 211,
+    "roofline_runs": 96,
+    "parent_legacy_runs": 64,
+    "native_fault_runs": 18,
+    "negative_correctness_runs": 12,
+    "invalid_cli_runs": 21,
+    "observer_duplicate_uid_and_grant_unit": "PASS",
+    "compute_model_unit": "PASS",
+    "event_order": "EXACT accepted/OFF/ON events.csv",
+    "summary": "EXACT except verification_wall_ns"
+  },
+  "identity": {
+    "source-identity": {
+      "file_count": 6858,
+      "manifest_sha256": "d739bfc31a2ecb09cd6bf375c344e956b365b56e071c8119cc8663c2b010bbcd"
+    },
+    "accepted-identity": {
+      "file_count": 20,
+      "manifest_sha256": "f3841481cdfb73891fc9a62141493891d7308beabf0a85d16d30f374939a90c3"
+    },
+    "binary-identity": {
+      "file_count": 27,
+      "manifest_sha256": "e71b462a40ed13bfe386b4473bf04df427bde0c8e87073935ff15058fa5215af"
+    }
+  },
+  "limits": {
+    "whole_case_wall_seconds": 4800,
+    "tree_rss_bytes": 6442450944,
+    "address_space_bytes": 7516192768,
+    "min_host_available_bytes": 1073741824,
+    "min_disk_free_bytes": 8589934592,
+    "min_tmp_disk_free_bytes": 2147483648,
+    "max_parallel": 2,
+    "diagnostic_extra_bytes_per_process": 134217728
+  },
+  "cases": [
+    {
+      "strategy": "chunk-streaming",
+      "status": "PASS",
+      "accepted_summary_parity": true,
+      "per_expert_compute_ready_parity": true,
+      "whole_case_wall_seconds": 852.5815574940007,
+      "simulator_wall_seconds": 848.6633573039999,
+      "peak_rss_kib": 3754704,
+      "sampled_peak_tree_rss_bytes": 3841499136,
+      "user_cpu_seconds": 847.024619,
+      "system_cpu_seconds": 1.445217,
+      "guard_triggered": false,
+      "queue_observations_open": 0,
+      "queue_unmatched": 0,
+      "queue_order_errors": 0,
+      "queue_depth_errors": 0,
+      "grant_outcomes_unmatched": 0,
+      "grant_start_overwrites": 0,
+      "grant_starts_open": 0
+    },
+    {
+      "strategy": "multicast-v2",
+      "status": "PASS",
+      "accepted_summary_parity": true,
+      "per_expert_compute_ready_parity": true,
+      "whole_case_wall_seconds": 609.8179072509993,
+      "simulator_wall_seconds": 607.4547262870001,
+      "peak_rss_kib": 3869304,
+      "sampled_peak_tree_rss_bytes": 3961221120,
+      "user_cpu_seconds": 606.213672,
+      "system_cpu_seconds": 1.10867,
+      "guard_triggered": false,
+      "queue_observations_open": 0,
+      "queue_unmatched": 0,
+      "queue_order_errors": 0,
+      "queue_depth_errors": 0,
+      "grant_outcomes_unmatched": 0,
+      "grant_start_overwrites": 0,
+      "grant_starts_open": 0
+    }
+  ],
+  "actual_admission": "Sequential, due conservative memory forecast; no guard limit relaxed",
+  "native_patch_roundtrip": "PASS: nine files exactly match accepted-to-diagnostic and reverse",
+  "privacy": "No host snapshots, private paths, raw traces, or full per-node/per-expert outputs in this summary"
+}

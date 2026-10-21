@@ -1,0 +1,18 @@
+small:
+  fixtures: [no-replicas, singleton, multi-target, multi-expert]
+  rates_gbps: [100, 3136]
+  strategies: [no-balancing, direct, chunk-streaming, multicast-v2]
+  variants: [accepted, off, on]
+  log_level: events
+faults:
+  fixture: multi-target
+  rate_gbps: 3136
+  strategy: multicast-v2
+  faults: [data-once, ack-once, invalidate-grant]
+  variants: [accepted, off, on]
+formal:
+  rates_gbps: [3136]
+  strategies: [chunk-streaming, multicast-v2]
+  variants: [on]
+  log_level: summary
+  outputs: private
