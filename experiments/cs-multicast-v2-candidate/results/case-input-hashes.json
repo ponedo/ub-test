@@ -1,0 +1,655 @@
+{
+  "files": [
+    "config.json",
+    "input.txt",
+    "graph-input.txt",
+    "weight-edges.csv",
+    "transfers.csv",
+    "plan.json",
+    "assignments.csv"
+  ],
+  "cases": [
+    {
+      "row": "V01",
+      "arm": "v1",
+      "fixture": "zero",
+      "options": [],
+      "inputs": {
+        "config.json": "6b26533ed98b409d7d4f3f6e1fff6c2a44c433b60d7663ad22c146852a0fd12d",
+        "input.txt": "612b4e634423cbf0a94fb0eef4b885dfe31b3fe795b9786efdd79548d01ebdff",
+        "graph-input.txt": "2fdfc6b3295a077f5a1a8cd6b189cddb43c088e642356495c5d814d00857193a",
+        "weight-edges.csv": "4f46cdfcb37e1143b093f782ccd420ed83be3a51ba945ec0fe1b821ad433b8b9",
+        "transfers.csv": "0f5ffc697a58bff7c6dee6602a3532daec9b8d7cfc31bef038e6ec39545f075f",
+        "plan.json": "444b2f30e189ae6aa23bf4f6d177c84de1fef3a216144560d63ff7b1450b7d8b",
+        "assignments.csv": "36fc2dcb07ccc87af788abba0ed5db421d36c743aec673599875042f6e5fecc2"
+      }
+    },
+    {
+      "row": "V01",
+      "arm": "candidate-on",
+      "fixture": "zero",
+      "options": [],
+      "inputs": {
+        "config.json": "6b26533ed98b409d7d4f3f6e1fff6c2a44c433b60d7663ad22c146852a0fd12d",
+        "input.txt": "612b4e634423cbf0a94fb0eef4b885dfe31b3fe795b9786efdd79548d01ebdff",
+        "graph-input.txt": "2fdfc6b3295a077f5a1a8cd6b189cddb43c088e642356495c5d814d00857193a",
+        "weight-edges.csv": "4f46cdfcb37e1143b093f782ccd420ed83be3a51ba945ec0fe1b821ad433b8b9",
+        "transfers.csv": "0f5ffc697a58bff7c6dee6602a3532daec9b8d7cfc31bef038e6ec39545f075f",
+        "plan.json": "444b2f30e189ae6aa23bf4f6d177c84de1fef3a216144560d63ff7b1450b7d8b",
+        "assignments.csv": "36fc2dcb07ccc87af788abba0ed5db421d36c743aec673599875042f6e5fecc2"
+      }
+    },
+    {
+      "row": "V02",
+      "arm": "v1",
+      "fixture": "singleton",
+      "options": [],
+      "inputs": {
+        "config.json": "1f067537374dfb9144b41b8cb915136f60303ca0544176c277db150274b1171c",
+        "input.txt": "fa447e8d5c59d2966ab09982d3f464a1d33e0070e792320d419d27c49718174b",
+        "graph-input.txt": "b2e9912eb7944dc4c8b9e28e58c0b9d2fc657bec0795aef3e33be68fef178095",
+        "weight-edges.csv": "77499cfce737e5a8a253ad07c5a0eb608cd4a9a76b426b52964b1eb255a68e2d",
+        "transfers.csv": "d8b6c57cfa688671585a50c0be1c3c3217c5ab89407b326f747d3d4b6556594e",
+        "plan.json": "e9d331e7c831ffe569ab6a6e2f95a8fe4ab657edaa3f1ea2f57d5d779dce80b3",
+        "assignments.csv": "4f2a44909d755d191c2579f25ef3c317d476d84156eb2326ea62f159f9b0dd0d"
+      }
+    },
+    {
+      "row": "V02",
+      "arm": "candidate-on",
+      "fixture": "singleton",
+      "options": [],
+      "inputs": {
+        "config.json": "1f067537374dfb9144b41b8cb915136f60303ca0544176c277db150274b1171c",
+        "input.txt": "fa447e8d5c59d2966ab09982d3f464a1d33e0070e792320d419d27c49718174b",
+        "graph-input.txt": "b2e9912eb7944dc4c8b9e28e58c0b9d2fc657bec0795aef3e33be68fef178095",
+        "weight-edges.csv": "77499cfce737e5a8a253ad07c5a0eb608cd4a9a76b426b52964b1eb255a68e2d",
+        "transfers.csv": "d8b6c57cfa688671585a50c0be1c3c3217c5ab89407b326f747d3d4b6556594e",
+        "plan.json": "e9d331e7c831ffe569ab6a6e2f95a8fe4ab657edaa3f1ea2f57d5d779dce80b3",
+        "assignments.csv": "4f2a44909d755d191c2579f25ef3c317d476d84156eb2326ea62f159f9b0dd0d"
+      }
+    },
+    {
+      "row": "V03",
+      "arm": "v1",
+      "fixture": "fallback",
+      "options": [],
+      "inputs": {
+        "config.json": "57cf0a6d529c7a9ccb4d2c2d55de7c1a4e122b1005ede1d77591ee1d064956de",
+        "input.txt": "197dbe3943709924cfa6ea53cc82f2ebb3b68974a05bd5a77d8b39d5db80ca3f",
+        "graph-input.txt": "1ddaa885a8e3b76defb31839f60df4826d8d81060c71c34d7072c9dd23b50c02",
+        "weight-edges.csv": "3926f5d28753dc7a90a989cb8a49ddd27d652bc82dc82ea2c8bd803e859e2333",
+        "transfers.csv": "28062d3ac5afd7d622e77446b10894e6abe47b37d62adc27999b56c71d68bcc4",
+        "plan.json": "a9bb9f64034483fad00104e332f517c2322a7c310a28c26a1f95259a409bbb80",
+        "assignments.csv": "b9f4abafa1d66a8f34d83cec759450ffa56726a8895bb7a6a0a3cd501e0d9619"
+      }
+    },
+    {
+      "row": "V03",
+      "arm": "candidate-on",
+      "fixture": "fallback",
+      "options": [],
+      "inputs": {
+        "config.json": "57cf0a6d529c7a9ccb4d2c2d55de7c1a4e122b1005ede1d77591ee1d064956de",
+        "input.txt": "197dbe3943709924cfa6ea53cc82f2ebb3b68974a05bd5a77d8b39d5db80ca3f",
+        "graph-input.txt": "1ddaa885a8e3b76defb31839f60df4826d8d81060c71c34d7072c9dd23b50c02",
+        "weight-edges.csv": "3926f5d28753dc7a90a989cb8a49ddd27d652bc82dc82ea2c8bd803e859e2333",
+        "transfers.csv": "28062d3ac5afd7d622e77446b10894e6abe47b37d62adc27999b56c71d68bcc4",
+        "plan.json": "a9bb9f64034483fad00104e332f517c2322a7c310a28c26a1f95259a409bbb80",
+        "assignments.csv": "b9f4abafa1d66a8f34d83cec759450ffa56726a8895bb7a6a0a3cd501e0d9619"
+      }
+    },
+    {
+      "row": "V04",
+      "arm": "v1",
+      "fixture": "two-hop",
+      "options": [],
+      "inputs": {
+        "config.json": "8ce3b237bc1eb16a5c08cf40768638f9de06005ea7a80425d056e66b0168a0fe",
+        "input.txt": "f4bfe380f825526e12fba7374b4cf59cfbfd066e7eb2e9d966d4cd4533b6c828",
+        "graph-input.txt": "77477160a48759acb6ee12fc8d7ac6da012900ec51f80452b2e801f45f4bfb34",
+        "weight-edges.csv": "7d3d3464a2cb40cc43f3a4fa2720659ab2f97c27e2af0a8e572a238ff12626c3",
+        "transfers.csv": "bac5050cd462701fdd009519a29f2f13a1b8a702d9be863c11ab3a2df5af350b",
+        "plan.json": "c72cd7953ab86afd2fea7cc486d7edb8ae7caf9d629bfa600f66ac00a8824b79",
+        "assignments.csv": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613"
+      }
+    },
+    {
+      "row": "V04",
+      "arm": "candidate-on",
+      "fixture": "two-hop",
+      "options": [],
+      "inputs": {
+        "config.json": "8ce3b237bc1eb16a5c08cf40768638f9de06005ea7a80425d056e66b0168a0fe",
+        "input.txt": "f4bfe380f825526e12fba7374b4cf59cfbfd066e7eb2e9d966d4cd4533b6c828",
+        "graph-input.txt": "77477160a48759acb6ee12fc8d7ac6da012900ec51f80452b2e801f45f4bfb34",
+        "weight-edges.csv": "7d3d3464a2cb40cc43f3a4fa2720659ab2f97c27e2af0a8e572a238ff12626c3",
+        "transfers.csv": "bac5050cd462701fdd009519a29f2f13a1b8a702d9be863c11ab3a2df5af350b",
+        "plan.json": "c72cd7953ab86afd2fea7cc486d7edb8ae7caf9d629bfa600f66ac00a8824b79",
+        "assignments.csv": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613"
+      }
+    },
+    {
+      "row": "V05",
+      "arm": "v1",
+      "fixture": "slow-relay",
+      "options": [],
+      "inputs": {
+        "config.json": "ebbd27a38aa2a6df13f2cc30f732aa18eac6fdc064c049fa499e3ff5df4e7318",
+        "input.txt": "af76df965740d2e8507deb6243985561485c63542b4b7a6963feef572a46e953",
+        "graph-input.txt": "77477160a48759acb6ee12fc8d7ac6da012900ec51f80452b2e801f45f4bfb34",
+        "weight-edges.csv": "7d3d3464a2cb40cc43f3a4fa2720659ab2f97c27e2af0a8e572a238ff12626c3",
+        "transfers.csv": "bac5050cd462701fdd009519a29f2f13a1b8a702d9be863c11ab3a2df5af350b",
+        "plan.json": "79591e2f92c633ba3dc1d8bfedd5a009e356468a70b36279c4520f23dd460ed4",
+        "assignments.csv": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613"
+      }
+    },
+    {
+      "row": "V05",
+      "arm": "candidate-on",
+      "fixture": "slow-relay",
+      "options": [],
+      "inputs": {
+        "config.json": "ebbd27a38aa2a6df13f2cc30f732aa18eac6fdc064c049fa499e3ff5df4e7318",
+        "input.txt": "af76df965740d2e8507deb6243985561485c63542b4b7a6963feef572a46e953",
+        "graph-input.txt": "77477160a48759acb6ee12fc8d7ac6da012900ec51f80452b2e801f45f4bfb34",
+        "weight-edges.csv": "7d3d3464a2cb40cc43f3a4fa2720659ab2f97c27e2af0a8e572a238ff12626c3",
+        "transfers.csv": "bac5050cd462701fdd009519a29f2f13a1b8a702d9be863c11ab3a2df5af350b",
+        "plan.json": "79591e2f92c633ba3dc1d8bfedd5a009e356468a70b36279c4520f23dd460ed4",
+        "assignments.csv": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613"
+      }
+    },
+    {
+      "row": "V06",
+      "arm": "v1",
+      "fixture": "multi-expert",
+      "options": [],
+      "inputs": {
+        "config.json": "0c1795e4d7afcfae46c079f9fdc6c3fba4126e383e9883006a8f7d530f037b1e",
+        "input.txt": "6c352e3da134f41e0a35a49817cfdb828e870c61fd1916d8c1c5b67f07fbbbec",
+        "graph-input.txt": "9c169268b0a3e878913840314cdcfa23a447003f57f74790bb89ea52f0bb67f9",
+        "weight-edges.csv": "1f26aed4e684d256a7cf79b0682c91b59f71f2821318433fdca7378e528a0529",
+        "transfers.csv": "c9ad61dc2db5b5aedf80df76c8031e9d6e5e82266e9e5687cfb740a8211e8a7b",
+        "plan.json": "031d23e0064c23843e5169c1241772c3053444a20ccf8137d3cb7a9d5b4cd7f2",
+        "assignments.csv": "3111b7caedf82be88cd1053b7bdea2e88e8e9c8c043cf1096e98abbb3ca713b8"
+      }
+    },
+    {
+      "row": "V06",
+      "arm": "candidate-on",
+      "fixture": "multi-expert",
+      "options": [],
+      "inputs": {
+        "config.json": "0c1795e4d7afcfae46c079f9fdc6c3fba4126e383e9883006a8f7d530f037b1e",
+        "input.txt": "6c352e3da134f41e0a35a49817cfdb828e870c61fd1916d8c1c5b67f07fbbbec",
+        "graph-input.txt": "9c169268b0a3e878913840314cdcfa23a447003f57f74790bb89ea52f0bb67f9",
+        "weight-edges.csv": "1f26aed4e684d256a7cf79b0682c91b59f71f2821318433fdca7378e528a0529",
+        "transfers.csv": "c9ad61dc2db5b5aedf80df76c8031e9d6e5e82266e9e5687cfb740a8211e8a7b",
+        "plan.json": "031d23e0064c23843e5169c1241772c3053444a20ccf8137d3cb7a9d5b4cd7f2",
+        "assignments.csv": "3111b7caedf82be88cd1053b7bdea2e88e8e9c8c043cf1096e98abbb3ca713b8"
+      }
+    },
+    {
+      "row": "V07",
+      "arm": "v1",
+      "fixture": "fanout-four",
+      "options": [],
+      "inputs": {
+        "config.json": "fb0cada6c6346b2ca6c514c178a0bf09ade99362f5dfe114863a06c6d54b0546",
+        "input.txt": "3bb8eaace89dfe7d0e2082d3e6a83e65bd6e39e54a9455cf2531904245643c27",
+        "graph-input.txt": "0099a702bb67662aeb7453bfa32a074589300827fb29bddf91fc4ace676efed4",
+        "weight-edges.csv": "6549c973c9fe4839ea456bcd3b917e015a1e58ba18405e97141a1bc0ed40745e",
+        "transfers.csv": "9b0e5db27ea95c4fc98955f65e9ba3b8653b80a47a556466163188c64c61547d",
+        "plan.json": "c9fe512180452044e7f1be165ba3b31b20cd6810bfd513665a00641b387f0e64",
+        "assignments.csv": "081bb230451414fdf6e0b2c096532b57968538a09802ea416007c7b17c0e7fad"
+      }
+    },
+    {
+      "row": "V07",
+      "arm": "candidate-on",
+      "fixture": "fanout-four",
+      "options": [],
+      "inputs": {
+        "config.json": "fb0cada6c6346b2ca6c514c178a0bf09ade99362f5dfe114863a06c6d54b0546",
+        "input.txt": "3bb8eaace89dfe7d0e2082d3e6a83e65bd6e39e54a9455cf2531904245643c27",
+        "graph-input.txt": "0099a702bb67662aeb7453bfa32a074589300827fb29bddf91fc4ace676efed4",
+        "weight-edges.csv": "6549c973c9fe4839ea456bcd3b917e015a1e58ba18405e97141a1bc0ed40745e",
+        "transfers.csv": "9b0e5db27ea95c4fc98955f65e9ba3b8653b80a47a556466163188c64c61547d",
+        "plan.json": "c9fe512180452044e7f1be165ba3b31b20cd6810bfd513665a00641b387f0e64",
+        "assignments.csv": "081bb230451414fdf6e0b2c096532b57968538a09802ea416007c7b17c0e7fad"
+      }
+    },
+    {
+      "row": "V08",
+      "arm": "v1",
+      "fixture": "reuse-window",
+      "options": [],
+      "inputs": {
+        "config.json": "a46e46544ca96f399b34783f2029c2591ccd9d6eadc6333736aabed7472a610c",
+        "input.txt": "7df9db15217e2025db34d18a37546f5da0cacf2b2ba1f94dffa612ff33c5753a",
+        "graph-input.txt": "30c3a8ca6482d040ac954523e472916065bb6b73c4c6787426e4405e4be789d7",
+        "weight-edges.csv": "9f925ad4034eb2a4685b7f61e275493a6b77cc0d45763b304cdcae414c0d1e9e",
+        "transfers.csv": "abe883ab8cfe241ee475406a44a23aea91edec2d3e1b5512adf92ac38667f857",
+        "plan.json": "26994ec539545f94cc4990077f9c1c1e84b05b7308c0a95aa38f3a7c47449b1f",
+        "assignments.csv": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613"
+      }
+    },
+    {
+      "row": "V08",
+      "arm": "candidate-on",
+      "fixture": "reuse-window",
+      "options": [],
+      "inputs": {
+        "config.json": "a46e46544ca96f399b34783f2029c2591ccd9d6eadc6333736aabed7472a610c",
+        "input.txt": "7df9db15217e2025db34d18a37546f5da0cacf2b2ba1f94dffa612ff33c5753a",
+        "graph-input.txt": "30c3a8ca6482d040ac954523e472916065bb6b73c4c6787426e4405e4be789d7",
+        "weight-edges.csv": "9f925ad4034eb2a4685b7f61e275493a6b77cc0d45763b304cdcae414c0d1e9e",
+        "transfers.csv": "abe883ab8cfe241ee475406a44a23aea91edec2d3e1b5512adf92ac38667f857",
+        "plan.json": "26994ec539545f94cc4990077f9c1c1e84b05b7308c0a95aa38f3a7c47449b1f",
+        "assignments.csv": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613"
+      }
+    },
+    {
+      "row": "V09",
+      "arm": "v1",
+      "fixture": "two-hop",
+      "options": [
+        "--invalidateGrant=1"
+      ],
+      "inputs": {
+        "config.json": "8ce3b237bc1eb16a5c08cf40768638f9de06005ea7a80425d056e66b0168a0fe",
+        "input.txt": "f4bfe380f825526e12fba7374b4cf59cfbfd066e7eb2e9d966d4cd4533b6c828",
+        "graph-input.txt": "77477160a48759acb6ee12fc8d7ac6da012900ec51f80452b2e801f45f4bfb34",
+        "weight-edges.csv": "7d3d3464a2cb40cc43f3a4fa2720659ab2f97c27e2af0a8e572a238ff12626c3",
+        "transfers.csv": "bac5050cd462701fdd009519a29f2f13a1b8a702d9be863c11ab3a2df5af350b",
+        "plan.json": "c72cd7953ab86afd2fea7cc486d7edb8ae7caf9d629bfa600f66ac00a8824b79",
+        "assignments.csv": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613"
+      }
+    },
+    {
+      "row": "V09",
+      "arm": "candidate-on",
+      "fixture": "two-hop",
+      "options": [
+        "--invalidateGrant=1"
+      ],
+      "inputs": {
+        "config.json": "8ce3b237bc1eb16a5c08cf40768638f9de06005ea7a80425d056e66b0168a0fe",
+        "input.txt": "f4bfe380f825526e12fba7374b4cf59cfbfd066e7eb2e9d966d4cd4533b6c828",
+        "graph-input.txt": "77477160a48759acb6ee12fc8d7ac6da012900ec51f80452b2e801f45f4bfb34",
+        "weight-edges.csv": "7d3d3464a2cb40cc43f3a4fa2720659ab2f97c27e2af0a8e572a238ff12626c3",
+        "transfers.csv": "bac5050cd462701fdd009519a29f2f13a1b8a702d9be863c11ab3a2df5af350b",
+        "plan.json": "c72cd7953ab86afd2fea7cc486d7edb8ae7caf9d629bfa600f66ac00a8824b79",
+        "assignments.csv": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613"
+      }
+    },
+    {
+      "row": "V10",
+      "arm": "v1",
+      "fixture": "two-hop",
+      "options": [
+        "--nativeRetrans=1",
+        "--networkFault=data-once",
+        "--networkFaultRole=stage1"
+      ],
+      "inputs": {
+        "config.json": "8ce3b237bc1eb16a5c08cf40768638f9de06005ea7a80425d056e66b0168a0fe",
+        "input.txt": "f4bfe380f825526e12fba7374b4cf59cfbfd066e7eb2e9d966d4cd4533b6c828",
+        "graph-input.txt": "77477160a48759acb6ee12fc8d7ac6da012900ec51f80452b2e801f45f4bfb34",
+        "weight-edges.csv": "7d3d3464a2cb40cc43f3a4fa2720659ab2f97c27e2af0a8e572a238ff12626c3",
+        "transfers.csv": "bac5050cd462701fdd009519a29f2f13a1b8a702d9be863c11ab3a2df5af350b",
+        "plan.json": "c72cd7953ab86afd2fea7cc486d7edb8ae7caf9d629bfa600f66ac00a8824b79",
+        "assignments.csv": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613"
+      }
+    },
+    {
+      "row": "V10",
+      "arm": "candidate-on",
+      "fixture": "two-hop",
+      "options": [
+        "--nativeRetrans=1",
+        "--networkFault=data-once",
+        "--networkFaultRole=stage1"
+      ],
+      "inputs": {
+        "config.json": "8ce3b237bc1eb16a5c08cf40768638f9de06005ea7a80425d056e66b0168a0fe",
+        "input.txt": "f4bfe380f825526e12fba7374b4cf59cfbfd066e7eb2e9d966d4cd4533b6c828",
+        "graph-input.txt": "77477160a48759acb6ee12fc8d7ac6da012900ec51f80452b2e801f45f4bfb34",
+        "weight-edges.csv": "7d3d3464a2cb40cc43f3a4fa2720659ab2f97c27e2af0a8e572a238ff12626c3",
+        "transfers.csv": "bac5050cd462701fdd009519a29f2f13a1b8a702d9be863c11ab3a2df5af350b",
+        "plan.json": "c72cd7953ab86afd2fea7cc486d7edb8ae7caf9d629bfa600f66ac00a8824b79",
+        "assignments.csv": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613"
+      }
+    },
+    {
+      "row": "V11",
+      "arm": "v1",
+      "fixture": "two-hop",
+      "options": [
+        "--nativeRetrans=1",
+        "--networkFault=data-once",
+        "--networkFaultRole=stage2"
+      ],
+      "inputs": {
+        "config.json": "8ce3b237bc1eb16a5c08cf40768638f9de06005ea7a80425d056e66b0168a0fe",
+        "input.txt": "f4bfe380f825526e12fba7374b4cf59cfbfd066e7eb2e9d966d4cd4533b6c828",
+        "graph-input.txt": "77477160a48759acb6ee12fc8d7ac6da012900ec51f80452b2e801f45f4bfb34",
+        "weight-edges.csv": "7d3d3464a2cb40cc43f3a4fa2720659ab2f97c27e2af0a8e572a238ff12626c3",
+        "transfers.csv": "bac5050cd462701fdd009519a29f2f13a1b8a702d9be863c11ab3a2df5af350b",
+        "plan.json": "c72cd7953ab86afd2fea7cc486d7edb8ae7caf9d629bfa600f66ac00a8824b79",
+        "assignments.csv": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613"
+      }
+    },
+    {
+      "row": "V11",
+      "arm": "candidate-on",
+      "fixture": "two-hop",
+      "options": [
+        "--nativeRetrans=1",
+        "--networkFault=data-once",
+        "--networkFaultRole=stage2"
+      ],
+      "inputs": {
+        "config.json": "8ce3b237bc1eb16a5c08cf40768638f9de06005ea7a80425d056e66b0168a0fe",
+        "input.txt": "f4bfe380f825526e12fba7374b4cf59cfbfd066e7eb2e9d966d4cd4533b6c828",
+        "graph-input.txt": "77477160a48759acb6ee12fc8d7ac6da012900ec51f80452b2e801f45f4bfb34",
+        "weight-edges.csv": "7d3d3464a2cb40cc43f3a4fa2720659ab2f97c27e2af0a8e572a238ff12626c3",
+        "transfers.csv": "bac5050cd462701fdd009519a29f2f13a1b8a702d9be863c11ab3a2df5af350b",
+        "plan.json": "c72cd7953ab86afd2fea7cc486d7edb8ae7caf9d629bfa600f66ac00a8824b79",
+        "assignments.csv": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613"
+      }
+    },
+    {
+      "row": "V12",
+      "arm": "v1",
+      "fixture": "two-hop",
+      "options": [
+        "--nativeRetrans=1",
+        "--networkFault=ack-once",
+        "--networkFaultRole=stage1"
+      ],
+      "inputs": {
+        "config.json": "8ce3b237bc1eb16a5c08cf40768638f9de06005ea7a80425d056e66b0168a0fe",
+        "input.txt": "f4bfe380f825526e12fba7374b4cf59cfbfd066e7eb2e9d966d4cd4533b6c828",
+        "graph-input.txt": "77477160a48759acb6ee12fc8d7ac6da012900ec51f80452b2e801f45f4bfb34",
+        "weight-edges.csv": "7d3d3464a2cb40cc43f3a4fa2720659ab2f97c27e2af0a8e572a238ff12626c3",
+        "transfers.csv": "bac5050cd462701fdd009519a29f2f13a1b8a702d9be863c11ab3a2df5af350b",
+        "plan.json": "c72cd7953ab86afd2fea7cc486d7edb8ae7caf9d629bfa600f66ac00a8824b79",
+        "assignments.csv": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613"
+      }
+    },
+    {
+      "row": "V12",
+      "arm": "candidate-on",
+      "fixture": "two-hop",
+      "options": [
+        "--nativeRetrans=1",
+        "--networkFault=ack-once",
+        "--networkFaultRole=stage1"
+      ],
+      "inputs": {
+        "config.json": "8ce3b237bc1eb16a5c08cf40768638f9de06005ea7a80425d056e66b0168a0fe",
+        "input.txt": "f4bfe380f825526e12fba7374b4cf59cfbfd066e7eb2e9d966d4cd4533b6c828",
+        "graph-input.txt": "77477160a48759acb6ee12fc8d7ac6da012900ec51f80452b2e801f45f4bfb34",
+        "weight-edges.csv": "7d3d3464a2cb40cc43f3a4fa2720659ab2f97c27e2af0a8e572a238ff12626c3",
+        "transfers.csv": "bac5050cd462701fdd009519a29f2f13a1b8a702d9be863c11ab3a2df5af350b",
+        "plan.json": "c72cd7953ab86afd2fea7cc486d7edb8ae7caf9d629bfa600f66ac00a8824b79",
+        "assignments.csv": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613"
+      }
+    },
+    {
+      "row": "V13",
+      "arm": "v1",
+      "fixture": "two-hop",
+      "options": [
+        "--nativeRetrans=1",
+        "--networkFault=taack-once",
+        "--networkFaultRole=stage2"
+      ],
+      "inputs": {
+        "config.json": "8ce3b237bc1eb16a5c08cf40768638f9de06005ea7a80425d056e66b0168a0fe",
+        "input.txt": "f4bfe380f825526e12fba7374b4cf59cfbfd066e7eb2e9d966d4cd4533b6c828",
+        "graph-input.txt": "77477160a48759acb6ee12fc8d7ac6da012900ec51f80452b2e801f45f4bfb34",
+        "weight-edges.csv": "7d3d3464a2cb40cc43f3a4fa2720659ab2f97c27e2af0a8e572a238ff12626c3",
+        "transfers.csv": "bac5050cd462701fdd009519a29f2f13a1b8a702d9be863c11ab3a2df5af350b",
+        "plan.json": "c72cd7953ab86afd2fea7cc486d7edb8ae7caf9d629bfa600f66ac00a8824b79",
+        "assignments.csv": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613"
+      }
+    },
+    {
+      "row": "V13",
+      "arm": "candidate-on",
+      "fixture": "two-hop",
+      "options": [
+        "--nativeRetrans=1",
+        "--networkFault=taack-once",
+        "--networkFaultRole=stage2"
+      ],
+      "inputs": {
+        "config.json": "8ce3b237bc1eb16a5c08cf40768638f9de06005ea7a80425d056e66b0168a0fe",
+        "input.txt": "f4bfe380f825526e12fba7374b4cf59cfbfd066e7eb2e9d966d4cd4533b6c828",
+        "graph-input.txt": "77477160a48759acb6ee12fc8d7ac6da012900ec51f80452b2e801f45f4bfb34",
+        "weight-edges.csv": "7d3d3464a2cb40cc43f3a4fa2720659ab2f97c27e2af0a8e572a238ff12626c3",
+        "transfers.csv": "bac5050cd462701fdd009519a29f2f13a1b8a702d9be863c11ab3a2df5af350b",
+        "plan.json": "c72cd7953ab86afd2fea7cc486d7edb8ae7caf9d629bfa600f66ac00a8824b79",
+        "assignments.csv": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613"
+      }
+    },
+    {
+      "row": "V14",
+      "arm": "v1",
+      "fixture": "two-hop",
+      "options": [
+        "--nativeRetrans=1",
+        "--networkFault=duplicate-once",
+        "--networkFaultRole=stage2"
+      ],
+      "inputs": {
+        "config.json": "8ce3b237bc1eb16a5c08cf40768638f9de06005ea7a80425d056e66b0168a0fe",
+        "input.txt": "f4bfe380f825526e12fba7374b4cf59cfbfd066e7eb2e9d966d4cd4533b6c828",
+        "graph-input.txt": "77477160a48759acb6ee12fc8d7ac6da012900ec51f80452b2e801f45f4bfb34",
+        "weight-edges.csv": "7d3d3464a2cb40cc43f3a4fa2720659ab2f97c27e2af0a8e572a238ff12626c3",
+        "transfers.csv": "bac5050cd462701fdd009519a29f2f13a1b8a702d9be863c11ab3a2df5af350b",
+        "plan.json": "c72cd7953ab86afd2fea7cc486d7edb8ae7caf9d629bfa600f66ac00a8824b79",
+        "assignments.csv": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613"
+      }
+    },
+    {
+      "row": "V14",
+      "arm": "candidate-on",
+      "fixture": "two-hop",
+      "options": [
+        "--nativeRetrans=1",
+        "--networkFault=duplicate-once",
+        "--networkFaultRole=stage2"
+      ],
+      "inputs": {
+        "config.json": "8ce3b237bc1eb16a5c08cf40768638f9de06005ea7a80425d056e66b0168a0fe",
+        "input.txt": "f4bfe380f825526e12fba7374b4cf59cfbfd066e7eb2e9d966d4cd4533b6c828",
+        "graph-input.txt": "77477160a48759acb6ee12fc8d7ac6da012900ec51f80452b2e801f45f4bfb34",
+        "weight-edges.csv": "7d3d3464a2cb40cc43f3a4fa2720659ab2f97c27e2af0a8e572a238ff12626c3",
+        "transfers.csv": "bac5050cd462701fdd009519a29f2f13a1b8a702d9be863c11ab3a2df5af350b",
+        "plan.json": "c72cd7953ab86afd2fea7cc486d7edb8ae7caf9d629bfa600f66ac00a8824b79",
+        "assignments.csv": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613"
+      }
+    },
+    {
+      "row": "C-V01",
+      "arm": "candidate-off",
+      "fixture": "zero",
+      "options": [],
+      "inputs": {
+        "config.json": "6b26533ed98b409d7d4f3f6e1fff6c2a44c433b60d7663ad22c146852a0fd12d",
+        "input.txt": "612b4e634423cbf0a94fb0eef4b885dfe31b3fe795b9786efdd79548d01ebdff",
+        "graph-input.txt": "2fdfc6b3295a077f5a1a8cd6b189cddb43c088e642356495c5d814d00857193a",
+        "weight-edges.csv": "4f46cdfcb37e1143b093f782ccd420ed83be3a51ba945ec0fe1b821ad433b8b9",
+        "transfers.csv": "0f5ffc697a58bff7c6dee6602a3532daec9b8d7cfc31bef038e6ec39545f075f",
+        "plan.json": "444b2f30e189ae6aa23bf4f6d177c84de1fef3a216144560d63ff7b1450b7d8b",
+        "assignments.csv": "36fc2dcb07ccc87af788abba0ed5db421d36c743aec673599875042f6e5fecc2"
+      }
+    },
+    {
+      "row": "C-V04",
+      "arm": "candidate-off",
+      "fixture": "two-hop",
+      "options": [],
+      "inputs": {
+        "config.json": "8ce3b237bc1eb16a5c08cf40768638f9de06005ea7a80425d056e66b0168a0fe",
+        "input.txt": "f4bfe380f825526e12fba7374b4cf59cfbfd066e7eb2e9d966d4cd4533b6c828",
+        "graph-input.txt": "77477160a48759acb6ee12fc8d7ac6da012900ec51f80452b2e801f45f4bfb34",
+        "weight-edges.csv": "7d3d3464a2cb40cc43f3a4fa2720659ab2f97c27e2af0a8e572a238ff12626c3",
+        "transfers.csv": "bac5050cd462701fdd009519a29f2f13a1b8a702d9be863c11ab3a2df5af350b",
+        "plan.json": "c72cd7953ab86afd2fea7cc486d7edb8ae7caf9d629bfa600f66ac00a8824b79",
+        "assignments.csv": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613"
+      }
+    },
+    {
+      "row": "C-V06",
+      "arm": "candidate-off",
+      "fixture": "multi-expert",
+      "options": [],
+      "inputs": {
+        "config.json": "0c1795e4d7afcfae46c079f9fdc6c3fba4126e383e9883006a8f7d530f037b1e",
+        "input.txt": "6c352e3da134f41e0a35a49817cfdb828e870c61fd1916d8c1c5b67f07fbbbec",
+        "graph-input.txt": "9c169268b0a3e878913840314cdcfa23a447003f57f74790bb89ea52f0bb67f9",
+        "weight-edges.csv": "1f26aed4e684d256a7cf79b0682c91b59f71f2821318433fdca7378e528a0529",
+        "transfers.csv": "c9ad61dc2db5b5aedf80df76c8031e9d6e5e82266e9e5687cfb740a8211e8a7b",
+        "plan.json": "031d23e0064c23843e5169c1241772c3053444a20ccf8137d3cb7a9d5b4cd7f2",
+        "assignments.csv": "3111b7caedf82be88cd1053b7bdea2e88e8e9c8c043cf1096e98abbb3ca713b8"
+      }
+    },
+    {
+      "row": "N02",
+      "arm": "v1",
+      "fixture": "two-hop",
+      "options": [
+        "--fault=relay-buffer-byte"
+      ],
+      "inputs": {
+        "config.json": "8ce3b237bc1eb16a5c08cf40768638f9de06005ea7a80425d056e66b0168a0fe",
+        "input.txt": "f4bfe380f825526e12fba7374b4cf59cfbfd066e7eb2e9d966d4cd4533b6c828",
+        "graph-input.txt": "77477160a48759acb6ee12fc8d7ac6da012900ec51f80452b2e801f45f4bfb34",
+        "weight-edges.csv": "7d3d3464a2cb40cc43f3a4fa2720659ab2f97c27e2af0a8e572a238ff12626c3",
+        "transfers.csv": "bac5050cd462701fdd009519a29f2f13a1b8a702d9be863c11ab3a2df5af350b",
+        "plan.json": "c72cd7953ab86afd2fea7cc486d7edb8ae7caf9d629bfa600f66ac00a8824b79",
+        "assignments.csv": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613"
+      }
+    },
+    {
+      "row": "N02",
+      "arm": "candidate-on",
+      "fixture": "two-hop",
+      "options": [
+        "--fault=relay-buffer-byte"
+      ],
+      "inputs": {
+        "config.json": "8ce3b237bc1eb16a5c08cf40768638f9de06005ea7a80425d056e66b0168a0fe",
+        "input.txt": "f4bfe380f825526e12fba7374b4cf59cfbfd066e7eb2e9d966d4cd4533b6c828",
+        "graph-input.txt": "77477160a48759acb6ee12fc8d7ac6da012900ec51f80452b2e801f45f4bfb34",
+        "weight-edges.csv": "7d3d3464a2cb40cc43f3a4fa2720659ab2f97c27e2af0a8e572a238ff12626c3",
+        "transfers.csv": "bac5050cd462701fdd009519a29f2f13a1b8a702d9be863c11ab3a2df5af350b",
+        "plan.json": "c72cd7953ab86afd2fea7cc486d7edb8ae7caf9d629bfa600f66ac00a8824b79",
+        "assignments.csv": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613"
+      }
+    },
+    {
+      "row": "N04",
+      "arm": "v1",
+      "fixture": "slow-relay",
+      "options": [
+        "--fault=early-group"
+      ],
+      "inputs": {
+        "config.json": "ebbd27a38aa2a6df13f2cc30f732aa18eac6fdc064c049fa499e3ff5df4e7318",
+        "input.txt": "af76df965740d2e8507deb6243985561485c63542b4b7a6963feef572a46e953",
+        "graph-input.txt": "77477160a48759acb6ee12fc8d7ac6da012900ec51f80452b2e801f45f4bfb34",
+        "weight-edges.csv": "7d3d3464a2cb40cc43f3a4fa2720659ab2f97c27e2af0a8e572a238ff12626c3",
+        "transfers.csv": "bac5050cd462701fdd009519a29f2f13a1b8a702d9be863c11ab3a2df5af350b",
+        "plan.json": "79591e2f92c633ba3dc1d8bfedd5a009e356468a70b36279c4520f23dd460ed4",
+        "assignments.csv": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613"
+      }
+    },
+    {
+      "row": "N04",
+      "arm": "candidate-on",
+      "fixture": "slow-relay",
+      "options": [
+        "--fault=early-group"
+      ],
+      "inputs": {
+        "config.json": "ebbd27a38aa2a6df13f2cc30f732aa18eac6fdc064c049fa499e3ff5df4e7318",
+        "input.txt": "af76df965740d2e8507deb6243985561485c63542b4b7a6963feef572a46e953",
+        "graph-input.txt": "77477160a48759acb6ee12fc8d7ac6da012900ec51f80452b2e801f45f4bfb34",
+        "weight-edges.csv": "7d3d3464a2cb40cc43f3a4fa2720659ab2f97c27e2af0a8e572a238ff12626c3",
+        "transfers.csv": "bac5050cd462701fdd009519a29f2f13a1b8a702d9be863c11ab3a2df5af350b",
+        "plan.json": "79591e2f92c633ba3dc1d8bfedd5a009e356468a70b36279c4520f23dd460ed4",
+        "assignments.csv": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613"
+      }
+    },
+    {
+      "row": "N08",
+      "arm": "v1",
+      "fixture": "two-hop",
+      "options": [
+        "--fault=duplicate-completion"
+      ],
+      "inputs": {
+        "config.json": "8ce3b237bc1eb16a5c08cf40768638f9de06005ea7a80425d056e66b0168a0fe",
+        "input.txt": "f4bfe380f825526e12fba7374b4cf59cfbfd066e7eb2e9d966d4cd4533b6c828",
+        "graph-input.txt": "77477160a48759acb6ee12fc8d7ac6da012900ec51f80452b2e801f45f4bfb34",
+        "weight-edges.csv": "7d3d3464a2cb40cc43f3a4fa2720659ab2f97c27e2af0a8e572a238ff12626c3",
+        "transfers.csv": "bac5050cd462701fdd009519a29f2f13a1b8a702d9be863c11ab3a2df5af350b",
+        "plan.json": "c72cd7953ab86afd2fea7cc486d7edb8ae7caf9d629bfa600f66ac00a8824b79",
+        "assignments.csv": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613"
+      }
+    },
+    {
+      "row": "N08",
+      "arm": "candidate-on",
+      "fixture": "two-hop",
+      "options": [
+        "--fault=duplicate-completion"
+      ],
+      "inputs": {
+        "config.json": "8ce3b237bc1eb16a5c08cf40768638f9de06005ea7a80425d056e66b0168a0fe",
+        "input.txt": "f4bfe380f825526e12fba7374b4cf59cfbfd066e7eb2e9d966d4cd4533b6c828",
+        "graph-input.txt": "77477160a48759acb6ee12fc8d7ac6da012900ec51f80452b2e801f45f4bfb34",
+        "weight-edges.csv": "7d3d3464a2cb40cc43f3a4fa2720659ab2f97c27e2af0a8e572a238ff12626c3",
+        "transfers.csv": "bac5050cd462701fdd009519a29f2f13a1b8a702d9be863c11ab3a2df5af350b",
+        "plan.json": "c72cd7953ab86afd2fea7cc486d7edb8ae7caf9d629bfa600f66ac00a8824b79",
+        "assignments.csv": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613"
+      }
+    },
+    {
+      "row": "S64",
+      "arm": "v1",
+      "fixture": "streaming-64k",
+      "options": [],
+      "inputs": {
+        "config.json": "073610ea86bfe9805aedf2f9a49dca90ed499b353d628249a73655c64ba40a86",
+        "input.txt": "422da800ca5d805d292413077f8a4670aef339f7467b3c97a777447f6322acee",
+        "graph-input.txt": "abccfbfcbc0dce1961ac93aa8090c50d9456870417c1044489e58ab2361dc27b",
+        "weight-edges.csv": "e3816e8749363a0758483222da1f8b0dda8148e3fe2241483601e8a6e15d940d",
+        "transfers.csv": "f31a0559066d7670189f49b91c7e0a509a2f34929c4dc76edc2ebf5e1495d030",
+        "plan.json": "c72cd7953ab86afd2fea7cc486d7edb8ae7caf9d629bfa600f66ac00a8824b79",
+        "assignments.csv": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613"
+      }
+    },
+    {
+      "row": "S64",
+      "arm": "candidate-on",
+      "fixture": "streaming-64k",
+      "options": [],
+      "inputs": {
+        "config.json": "073610ea86bfe9805aedf2f9a49dca90ed499b353d628249a73655c64ba40a86",
+        "input.txt": "422da800ca5d805d292413077f8a4670aef339f7467b3c97a777447f6322acee",
+        "graph-input.txt": "abccfbfcbc0dce1961ac93aa8090c50d9456870417c1044489e58ab2361dc27b",
+        "weight-edges.csv": "e3816e8749363a0758483222da1f8b0dda8148e3fe2241483601e8a6e15d940d",
+        "transfers.csv": "f31a0559066d7670189f49b91c7e0a509a2f34929c4dc76edc2ebf5e1495d030",
+        "plan.json": "c72cd7953ab86afd2fea7cc486d7edb8ae7caf9d629bfa600f66ac00a8824b79",
+        "assignments.csv": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613"
+      }
+    }
+  ],
+  "planner_host_timing_note": "Exact recorded Planner output bytes reused; cpu_wall_ns is host telemetry, not fresh performance evidence."
+}

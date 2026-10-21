@@ -1,0 +1,249 @@
+{
+  "base": "e3efc29e901024cea6343196f6ab33958e3b02cd",
+  "build": {
+    "status": "PASS",
+    "base": "e3efc29e901024cea6343196f6ab33958e3b02cd",
+    "app_only": true,
+    "native_rebuilt": false,
+    "build_plan_sha256": "7714cd132776aa794e9642339c36c851b9400f58dc7ebd6bb2be7fdc99952101",
+    "application_sha256": "9bfe937006471e5611f73663674771e7bc92d2c0e4052d6e1792a5a74c2d3136",
+    "runtime_identity_sha256": "1dd56b178bf7195100834c158a78a3bb2bace57c3a2396ec3d4b4e5966cb4ed6",
+    "graph_tool": "${GRAPH_TOOL}",
+    "host": {
+      "command": [
+        "c++",
+        "-std=c++20",
+        "-O2",
+        "-g",
+        "${REPOSITORY}/experiments/cs-multicast-v2-candidate/layer.cc",
+        "-I${NATIVE_ROOT}/build/include",
+        "-L${NATIVE_ROOT}/build/lib",
+        "-Wl,--disable-new-dtags",
+        "-Wl,-rpath,${NATIVE_ROOT}/build/lib",
+        "-lns3.44-unified-bus",
+        "-lns3.44-internet",
+        "-lns3.44-network",
+        "-lns3.44-core",
+        "-o",
+        "${CANDIDATE_BINARY}"
+      ],
+      "cwd": "${WORKSPACE}",
+      "start": "2026-10-21T17:22:43.883660+00:00",
+      "wall_seconds": 49.49342868899839,
+      "returncode": 0,
+      "status": "PASS",
+      "guard": null,
+      "peak_rss_kib": 1566372,
+      "sampled_peak_tree_rss_bytes": 1605505024,
+      "max_observed_threads_per_process": 1,
+      "user_cpu_seconds": 44.131708,
+      "system_cpu_seconds": 5.263752,
+      "limits": {
+        "wall_seconds": 4800,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1073741824,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      },
+      "generic_host_before": {
+        "available_cpu_count": 9,
+        "total_memory_bytes": 10451439616
+      },
+      "generic_host_after": {
+        "available_cpu_count": 9,
+        "total_memory_bytes": 10451439616
+      }
+    },
+    "native_identity_reference": {
+      "entries": 3504,
+      "canonical_sanitized_mapping_sha256": "8fdb294f8d63a6c55285c2bf568e39ee88a46a1784aa14354640c707689b8740",
+      "full_identity_preserved_privately": true,
+      "shared_libraries": {
+        "${NATIVE_ROOT}/build/lib/libns3.44-applications.so": "6dd675de5a4d2412c23690f80742f2a034864d6dfc02a0958696c57cc75be12e",
+        "${NATIVE_ROOT}/build/lib/libns3.44-bridge.so": "301f1d089fa97cdb8955b704f5cff3f9ca88c1e09b2dadc368f9c26e2dced404",
+        "${NATIVE_ROOT}/build/lib/libns3.44-config-store.so": "2d7a443d884b8672d08b3d9b84ffdcab197b59b1668234ecf9fd3b3a9bf5173b",
+        "${NATIVE_ROOT}/build/lib/libns3.44-core.so": "3c1aabf87dfa655e5db683c378ce78e76ccdbae2c567615a520591b14825706a",
+        "${NATIVE_ROOT}/build/lib/libns3.44-internet.so": "f7aae934e4b0a56c7bcdc642b823aa86aa587475bfc51e38f153fdb52da911bc",
+        "${NATIVE_ROOT}/build/lib/libns3.44-network.so": "20450e5d49f66af43481bad820da6ae03208084e09451d829c32122c98ad6ef0",
+        "${NATIVE_ROOT}/build/lib/libns3.44-point-to-point.so": "6bd100cf92fd0a51a13dc3e1fdb072188f1d017eb1d690dfd8fbfe0e32e34b3d",
+        "${NATIVE_ROOT}/build/lib/libns3.44-stats.so": "8dcba5396209a5d22134ef54f388b8ce624fd9917f900eb8ecbbef63c90c19cb",
+        "${NATIVE_ROOT}/build/lib/libns3.44-traffic-control.so": "d7c0f74f373e717ae67a1327b68371f6e7533505bf32c8367cb7c81d0dbb5507",
+        "${NATIVE_ROOT}/build/lib/libns3.44-unified-bus.so": "f9bdef9dff2968e43045eb099c497f790f08e983236ecad57b4d2e9837dda084"
+      },
+      "note": "Exact accepted native closure checked during build and every run; full manifest is retained privately and bound by build/runtime identity hashes, not duplicated here."
+    }
+  },
+  "candidate_sources": {
+    "AUDIT.md": "89020adcc2f3f5305e61065230680860cab9470414b517f313bca07d7a850ac5",
+    "common.py": "caf2aab5efaccf51aad66bf97564a5edee8f1ed28b2c1065c66ab1f1a5639e8f",
+    "preregistered-plan.md": "5db30d2f9305a4c5ec73dfbeea563f4957edc4ab4c3d9c7de68e9ee9310effec",
+    "layer.cc": "30697890054220c3e5aee62ee118835f402afb2e10ac3e65103fcba367316c4a",
+    "build.py": "f5879a4e9c1a3fd7831c6b19b96ec13a8da19be63b4d39fc8ef220b54cc3e371",
+    "hybrid-multicast.h": "12a00984667013679f2d9daec16c2ec8c5f5ac6eb09d4fb338fa59cdb9b5d9fe",
+    "hybrid-integration.inc": "b796f3f841f63d3cc679dbd5f06de651e954582439bbee526899a279ad0e0068",
+    "candidate_ack_oracle.py": "9a48549b281f467c9f6ee6b81c7e0cf8236c6da134265d6c28721f0909cb023d",
+    "REPRODUCE.md": "56bb8f5e11ad6a835b3b56f109fbe045bc006baa0ef7d8fdf1b984fd457f1b81",
+    "prepare_ack_remaining.py": "19d3387192e8cd120afa22cc2efa06b6e3bb20c7b439d32115a9cb0a2cb925d7",
+    "test_remaining.py": "a269782dbe11fb2c40ac7d2d03302eb8f1cf74a5ef05da164f5e33ff53983776",
+    "evidence.py": "c19e8583fb542f3c1987fec321f732f93a9d3ae48ea72af7b7229a067a0e182e",
+    "support.py": "6e7e9dd74ae2981ba73b349a14199c2ad723fe84d724b0f25be28505b67b12aa",
+    "candidate_verify.py": "cf184458467711cdb2c5c36d70c1f19246cb72bf8227014b7c70751558c5627e",
+    "prepare_target_remaining.py": "ba556d7eba1bc68c514b2530aaa1b850e08bb173fa5f2b1ab54e78ce66cfdfa9",
+    "target_contract.py": "eff1687a1331ec18b1d2db6aa1d587fbb524bd43ce357de61c29f610d8834dca",
+    "test_target_continuation.py": "a1d64d398ba9f6a882f6a86075716021ab9a4562624816784fe9d90e40c804f6",
+    "prepare_remaining.py": "17af80bb88226d0ce720227229544957324ce4f96c744a9b12c6dc6147f078b1",
+    "small.py": "4967ddb7fcb339dd404545943435fc60b32967b7d38b2d572b38a64764063051",
+    "DESIGN.md": "665119fcf66ce797fa41f90898376df23b51dd97d3bb461eccd7baf6dcb0b7e0",
+    "test_candidate_ack.py": "6aef5863bf196a3420a49e5646bd06c25a8498619d616b77d33beaae1157c93f",
+    "test_small.py": "353b4d6d61883380275904b35716c0dbced453da98ac583d7d1ef3b42a619d48"
+  },
+  "runtime_sources": {
+    "layer.cc": "30697890054220c3e5aee62ee118835f402afb2e10ac3e65103fcba367316c4a",
+    "hybrid-multicast.h": "12a00984667013679f2d9daec16c2ec8c5f5ac6eb09d4fb338fa59cdb9b5d9fe",
+    "hybrid-integration.inc": "b796f3f841f63d3cc679dbd5f06de651e954582439bbee526899a279ad0e0068"
+  },
+  "runtime_unchanged": true,
+  "native_rebuilt": false,
+  "attempts": [
+    {
+      "attempt": "high-bandwidth-validation",
+      "status": "INCOMPLETE",
+      "reason": "INCOMPLETE mandatory coverage: streaming_physical",
+      "manifest_sha256": "fcd1f534642efd830bee4c5dc141c1ab0e43f8b56eaa7115924a896fd1f63243",
+      "identity_sha256": "cf59eadb03da91194e9be761b5303b3a799e52ec6ab1c670502fd85a975a2d3b",
+      "ledger_sha256": "ec8470a221736366db538aff083b98baf94f7d8cc066ae81b66c6993fc7c7a17",
+      "actual_executions": 7
+    },
+    {
+      "attempt": "high-bandwidth-remaining-validation",
+      "status": "STOPPED",
+      "reason": "No later same-TP cumulative ACK with observed covering PSNs and complete physical path",
+      "manifest_sha256": "ef4bcee93cd1493c9bfccf80d24d22e88c61b941d29366bbb6cd74f8fd89f58a",
+      "identity_sha256": "3944dd75fcea604f503d261e2e66ca5cdbce31aea691237fed0f628cc9297900",
+      "ledger_sha256": "ec4c614fb159ea9aee1e9b99ee6411b9139ce98af4b18c93f8e499cb8edfd3ec",
+      "actual_executions": 16
+    },
+    {
+      "attempt": "high-bandwidth-final-validation",
+      "status": "SMALL_EXECUTIONS_COMPLETE_NOT_GENERAL_ADMISSION",
+      "reason": null,
+      "manifest_sha256": "875e5a847c87fca6deceba493ae719795137c6899a9bd2aca3f44fcf47ea98a6",
+      "identity_sha256": "4f33fb3c444bd85b4116d43cb881e14b2a7a066b4a2f32d3d53592ec0382f6e0",
+      "ledger_sha256": "e633bf5613c7d67b24da2ab8008558f4fb45a69dd86792ccd48ef83bcbbfdd32",
+      "actual_executions": 16
+    }
+  ],
+  "correction_history": [
+    {
+      "change": "rolling native diagnostic tail eviction is not aggregate incompleteness",
+      "runtime_change": false
+    },
+    {
+      "change": "Inherited100Gbps omission corrected to requested3136Gbps; prior52 retained off-target only",
+      "record": {
+        "status": "METADATA_ONLY_CORRECTION_PREPARED",
+        "prior_executions": 52,
+        "prior_link_gbps": 100,
+        "prior_scope": "OFF_TARGET_DIAGNOSTIC_ONLY_NOT_3136Gbps_EVIDENCE",
+        "target_link_gbps": 3136,
+        "link_delay_ns": 20,
+        "chunk_bytes": 4096,
+        "ta_window": 512,
+        "tp_packet_window": 1000,
+        "native_allocation_ns": 5,
+        "candidate_policy_hold_ns": 5,
+        "candidate_binary_unchanged_sha256": "9bfe937006471e5611f73663674771e7bc92d2c0e4052d6e1792a5a74c2d3136",
+        "original_runtime_identity_sha256": "1dd56b178bf7195100834c158a78a3bb2bace57c3a2396ec3d4b4e5966cb4ed6",
+        "corrected_preparation_identity_sha256": "87f5ee3890aaf4494d70f50c3c775da61c6a3c112cb2d42fce652cd31806489c",
+        "source_changes": [
+          {
+            "path": "support.py",
+            "kind": "declarative target network",
+            "original_sha256": "e458f5e2f2dc2b238075bde4da542b3c162e5ff44ed51d040f34be11e88fe136",
+            "new_sha256": "6e7e9dd74ae2981ba73b349a14199c2ad723fe84d724b0f25be28505b67b12aa"
+          },
+          {
+            "path": "small.py",
+            "kind": "preflight/postflight target assertions and retained planner metadata reuse"
+          },
+          {
+            "path": "target_contract.py",
+            "kind": "metadata-only target verifier"
+          }
+        ],
+        "no_new_build": true,
+        "no_simulator_yet": true
+      }
+    },
+    {
+      "change": "Single S64 coverage extension and exact missing-witness whitelist",
+      "receipt": {
+        "old_small_sha256": "6df35c9669796c6f5f9c79ea216eeeeb96a509a2d65aeccb14ddd8c3561d932f",
+        "new_small_sha256": "5183724d50364b330e5075e75adf9e1e97260f0ec00694886ed147726f6cf28d",
+        "archive": "${WORKSPACE}/cs-mc-v2-private/pre-streaming-extension-source/small.py",
+        "old_plan_sha256": "c72cd7953ab86afd2fea7cc486d7edb8ae7caf9d629bfa600f66ac00a8824b79",
+        "new_plan_sha256": "c72cd7953ab86afd2fea7cc486d7edb8ae7caf9d629bfa600f66ac00a8824b79",
+        "tree_edge_roles": [
+          [
+            0,
+            1,
+            0,
+            3,
+            false
+          ],
+          [
+            0,
+            2,
+            0,
+            5,
+            false
+          ],
+          [
+            1,
+            3,
+            3,
+            7,
+            true
+          ],
+          [
+            1,
+            5,
+            3,
+            11,
+            true
+          ],
+          [
+            2,
+            4,
+            5,
+            9,
+            true
+          ],
+          [
+            2,
+            6,
+            5,
+            13,
+            true
+          ]
+        ],
+        "original_weight_bytes": 12288,
+        "new_weight_bytes": 65536,
+        "chunk_bytes": 4096,
+        "prior_executions": 7,
+        "new_executions": 32
+      }
+    },
+    {
+      "change": "Candidate-only ACK route allows already-inflight complete path, requires later matching RX",
+      "oracle_sha256": "9a48549b281f467c9f6ee6b81c7e0cf8236c6da134265d6c28721f0909cb023d",
+      "original_oracle_sha256": "04b589849fc9f6215f61e587da84f4800551113705d4c336ba12703b0b95cda4",
+      "preserved_control_stop": true
+    }
+  ],
+  "no_new_build": true,
+  "actual_simulations": 91,
+  "off_target_simulations": 52,
+  "target_simulations": 39
+}

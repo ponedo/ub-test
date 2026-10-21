@@ -1,0 +1,125 @@
+{
+  "status": "PASS",
+  "source": 0,
+  "target": 1,
+  "forward_tpn": 2,
+  "reverse_tpn": 9,
+  "lost_task": 128,
+  "lost_wire_psn": 9,
+  "lost_logical_psn": 9,
+  "drop_time_ps": 397188,
+  "drop_uid": "211",
+  "drop_physical_path_ps": [
+    306872,
+    327030,
+    377030,
+    397188
+  ],
+  "covering_acks": [
+    {
+      "task": 130,
+      "wire_psn": 10,
+      "logical_psn": 10,
+      "uid": "219",
+      "physical_path_ps": [
+        321872,
+        342030,
+        387030,
+        407188
+      ],
+      "covered_original_tasks": [
+        128,
+        130
+      ]
+    },
+    {
+      "task": 132,
+      "wire_psn": 11,
+      "logical_psn": 11,
+      "uid": "227",
+      "physical_path_ps": [
+        336872,
+        357030,
+        397030,
+        417188
+      ],
+      "covered_original_tasks": [
+        128,
+        130,
+        132
+      ]
+    }
+  ],
+  "terminal_send_una": 12,
+  "terminal_send_nxt": 12,
+  "native_retry_required": false,
+  "coverage": {
+    "fault_tpack": true
+  },
+  "limitation": "Per-ACK instantaneous sndUna transitions were not selected. Evidence proves covering same-TP physical ACKs and safe terminal advancement, not the exact advancement timestamp.",
+  "fixture_bound_no_wrap_psns": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "kind": "POSTHOC_ORACLE_CORRECTION_NO_SIMULATOR_RERUN",
+  "source_identity": {
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/ablation-config.json": "306dd2a13ed094232beb77e3f06aa3c279fc85ecf3cbd183293fe54358d5fc37",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/ack-stop-diagnosis.json": "d0f34d4ce81054a6a57f7c0261b946ad3c4808300a24ea5dfc2e9b2c6a5556f7",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/assignments.csv": "21a7d6862cab07e6c1087b453375f5de2bdc57e12abc4678b17a6df847090613",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/compute-model.json": "909783e99b59da26aaa4d47689889b92098a5bcaa91f1df00eb9c05ea131b2cb",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/config.json": "8ce3b237bc1eb16a5c08cf40768638f9de06005ea7a80425d056e66b0168a0fe",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/diagnostic-groups.csv": "f21d5d8ead17024ad06dcd52c74dd3e1404a873fdd437fed3f8c7c0447a631b1",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/diagnostic-jetty-aggregates.csv": "e90c5ea15ff99a1aba8142eb27f8f549a532f7ec5196118596e0c63027f1a809",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/diagnostic-jetty-occupancy.csv": "855be7153996450f05e170f097016462398adc4c44a45eb3f1d266e48169f635",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/diagnostic-jetty-status.json": "62663e88fbe4803b4f757ee81647123b724784ba7e6aabde404c9eff459530b1",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/diagnostic-jetty-tail.csv": "324ec2420fae7dabc598c114f8f728d45b461fd138bd0cf8a8ace9bdd0b35e3e",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/diagnostic-jetty-weight-tail.csv": "324ec2420fae7dabc598c114f8f728d45b461fd138bd0cf8a8ace9bdd0b35e3e",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/diagnostic-native-aggregates.csv": "a08ded00dff931e4d524b95eb8e423f281142b93529076739b3f3a36196e92f1",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/diagnostic-poll-upper-bounds.csv": "3a8b875f81ea12c9438a7dba51f51673f9cdcb8c1a022f0b1cccf74b9e654157",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/diagnostic-port-partition.csv": "54787365448682f148424be99f95b4e2da9f0fc042b813cef428ebafd02a6c11",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/diagnostic-source-last-send-partition.csv": "abbc8a0640255c30990863f66e7b5afb096f928c06cdec73966194ce77cfde89",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/diagnostic-status.json": "926a16aa9439c0da3499a1a21c383bd174f5bc34903b8169124ed00367c374c4",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/diagnostic-ta-rtt-tail.csv": "ee8c9bbf170d467a1c2ca0144529c3641a770c5375f24f59dfee409a75b7288a",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/diagnostic-tail.csv": "156f26c9601ae3b1aaff4b3ddb41bd8a541f0ef3512a2ec5e0a07ffc1f3f4779",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/diagnostic-transfers.csv": "bc1c692a56171d20834023a37f426b7316f415af790d20d5b20c4870f3c4b3f3",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/diagnostic-weight-phase-cohorts.csv": "d0c08db0a3e24927d1f4689c2698e235f7e001c77af010727ffc3fbf6f02aed5",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/diagnostic-weight-tail.csv": "156f26c9601ae3b1aaff4b3ddb41bd8a541f0ef3512a2ec5e0a07ffc1f3f4779",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/events.csv": "e9d9d919a4ee4d61c7805e30db000fd03217106d2db7fe8a3965b1dac1293418",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/expert-compute.csv": "dd7f3e963972a9fc1d39c6eea78213e3e44654e7c0ebcc8b6fe56a6fa7eb76f6",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/expert-ready.csv": "67d4b1757d3f7c9fc126b6934834efdf45ddd2a33ba1274c1a3ad6d1aad80a6a",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/graph-input.txt": "77477160a48759acb6ee12fc8d7ac6da012900ec51f80452b2e801f45f4bfb34",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/hybrid-events.csv": "6e196e13582bf6c673a42c08d8f363314323ccf609ca23942e2f02afaef1c2bc",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/hybrid-fallback.csv": "9d91d6a029cb53932c8a98c87a77b93d0b3b57328d123c5efd7a0063de25e162",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/hybrid-groups.csv": "f27c099a4c3748cfe114771d5f8202e702a5524b27d763024a4bc108a706e688",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/hybrid-lifecycle.json": "21fc8126509d1a3941ac162de8d6baa61e0fca91c41b05db4730814600068429",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/hybrid-physical.csv": "6c246c6cd4bd6bd133d3b2a09d1b9d951d2152e1c06dd0d85b09c5b154aa7666",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/hybrid-stats.csv": "187548fac663878d5b337d67109a80c50f4e794c31b8d539d478d671f4f0c035",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/hybrid-summary.json": "0a4af1dc3040c854db3ab2b1a9b2a4ea3198012dc5915822406c66927ad874ce",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/independent.json": "842bc2a53c2c2f793f479549dab1ba6fba4cfc12ad268944a3f71de7a05565a3",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/input.txt": "f4bfe380f825526e12fba7374b4cf59cfbfd066e7eb2e9d966d4cd4533b6c828",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/network-resources.csv": "74bd8c57f16a9cd57b672392ab3aa25ac59a61cda5dcc3f516545d993937a412",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/online-summary.json": "5bc483098b6c104461386811e2e8e98f6836bd1ed4b4b966a7df3cb3ce7b3951",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/packet-counts.csv": "7824d11b9fba14465bd64c91c1bfe0c41e27e86e6d103ffbde8e6ae6fcc05470",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/pair-state.csv": "a432ccfde32561ec64077fa65fb120fec824185ca01e9576be9c2b8440881c9c",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/physical-witnesses.json": "8f437b3319ae917d406ee07b496c8722f1eddb48c1e5ed3c838d9d6798106bfd",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/plan.json": "c72cd7953ab86afd2fea7cc486d7edb8ae7caf9d629bfa600f66ac00a8824b79",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/postflight.json": "6c75948a93ad3fee6026925980ae9f58d0370e1d99b8a705262b15a677819df3",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/queue-stats.csv": "8fde59ffe6b2687d4e5848a730d06ea60ba64a6a99a2b586d288cbf83b7aa3a2",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/replica-ready.csv": "2ee50674e74e1489fa69ca1b9a18556e2ecee2a9c5dd0b2d2feec48ded745724",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/simulator-metrics.json": "d38c3daa0177e69d9a9e09fc22205f44692f0571a31478e181d8fd3c43d1f300",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/transfers.csv": "bac5050cd462701fdd009519a29f2f13a1b8a702d9be863c11ab3a2df5af350b",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/validation.json": "d7d65eefe9f411a8ed517043a948313aa40a7d33d946817b44506aa6396cba2e",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/weight-edges.csv": "7d3d3464a2cb40cc43f3a4fa2720659ab2f97c27e2af0a8e572a238ff12626c3",
+    "${WORKSPACE}/cs-mc-v2-private/high-bandwidth-remaining-validation/runs/V12/v1/weight-packets.csv": "4e79ad0b2eb83ecd096d99dc1f2466ee50cbd72d082915715dd7c3ac28277c62"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "status": "NOT_GENERAL_ADMISSION",
+  "original14_candidate_holds": 44,
+  "extension_holds": 85,
+  "total_target_holds": 129,
+  "all_expired": true,
+  "all_consumed": true,
+  "max_app_hold_ps": 5000,
+  "early_release": 0,
+  "active_priority_bypass": 0,
+  "original_missing": {
+    "V04": [
+      "streaming_physical"
+    ],
+    "V09_candidate": [
+      "stale_grant"
+    ],
+    "C_V04": [
+      "streaming_physical; parity separately PASS"
+    ]
+  },
+  "supplemental_streaming": "S64 both arms/two relays65ns strict overlap; not clean performance comparison",
+  "causal_limitations": [
+    "No early release witnessed",
+    "No active-hold priority bypass witnessed",
+    "Underlying absent/priority data eligibility UNKNOWN",
+    "No instantaneous per-ACK sndUna transition recorded",
+    "Rolling native tails and pull snapshots sampled, not complete causal histories"
+  ],
+  "target_no_layer_latency_improvement": true
+}

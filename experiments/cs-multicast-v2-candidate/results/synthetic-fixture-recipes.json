@@ -1,0 +1,4804 @@
+{
+  "status": "EXACT_DECLARATIVE_RECIPES",
+  "fixtures": {
+    "zero": {
+      "planner_input": {
+        "schema_version": 1,
+        "npus": 4,
+        "experts": 4,
+        "top_k": 1,
+        "main_placement": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "slots": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "mapping": [
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          }
+        ],
+        "beta": "1.01",
+        "min_replica_quota": 1024
+      },
+      "model": {
+        "weight_bytes": 12288,
+        "link_gbps": 3136,
+        "link_delay_ns": 20
+      },
+      "relay": {
+        "chunk_bytes": 4096,
+        "relay_min_replicas": 4,
+        "relay_max_relays": 8,
+        "relay_min_fanout_gain": 2,
+        "force_relay": false,
+        "reorder_ns": 0,
+        "slow_relay_rank": 4294967295,
+        "slow_relay_ns": 0
+      },
+      "topology": {
+        "groups": 0
+      },
+      "required_witnesses": [
+        "zero_replicas"
+      ],
+      "log_level": "summary"
+    },
+    "singleton": {
+      "planner_input": {
+        "schema_version": 1,
+        "npus": 4,
+        "experts": 4,
+        "top_k": 1,
+        "main_placement": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "slots": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "mapping": [
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              2
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              2
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              2
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              2
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              3
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              3
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              3
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              3
+            ]
+          }
+        ],
+        "beta": "1.01",
+        "min_replica_quota": 1024
+      },
+      "model": {
+        "weight_bytes": 12288,
+        "link_gbps": 3136,
+        "link_delay_ns": 20
+      },
+      "relay": {
+        "chunk_bytes": 4096,
+        "relay_min_replicas": 4,
+        "relay_max_relays": 8,
+        "relay_min_fanout_gain": 2,
+        "force_relay": false,
+        "reorder_ns": 0,
+        "slow_relay_rank": 4294967295,
+        "slow_relay_ns": 0
+      },
+      "topology": {
+        "fanout": 1,
+        "groups": 1
+      },
+      "required_witnesses": [
+        "singleton_native"
+      ],
+      "log_level": "summary"
+    },
+    "fallback": {
+      "planner_input": {
+        "schema_version": 1,
+        "npus": 4,
+        "experts": 4,
+        "top_k": 1,
+        "main_placement": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "slots": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "mapping": [
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          }
+        ],
+        "beta": "1.01",
+        "min_replica_quota": 1024
+      },
+      "model": {
+        "weight_bytes": 12288,
+        "link_gbps": 3136,
+        "link_delay_ns": 20
+      },
+      "relay": {
+        "chunk_bytes": 4096,
+        "relay_min_replicas": 4,
+        "relay_max_relays": 8,
+        "relay_min_fanout_gain": 2,
+        "force_relay": false,
+        "reorder_ns": 0,
+        "slow_relay_rank": 4294967295,
+        "slow_relay_ns": 0
+      },
+      "topology": {
+        "direct_fanout": 3
+      },
+      "required_witnesses": [
+        "fanout3",
+        "direct_fallback"
+      ],
+      "log_level": "events"
+    },
+    "two-hop": {
+      "planner_input": {
+        "schema_version": 1,
+        "npus": 8,
+        "experts": 8,
+        "top_k": 1,
+        "main_placement": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "slots": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "mapping": [
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          }
+        ],
+        "beta": "1.01",
+        "min_replica_quota": 1024
+      },
+      "model": {
+        "weight_bytes": 12288,
+        "link_gbps": 3136,
+        "link_delay_ns": 20
+      },
+      "relay": {
+        "chunk_bytes": 4096,
+        "relay_min_replicas": 4,
+        "relay_max_relays": 8,
+        "relay_min_fanout_gain": 2,
+        "force_relay": false,
+        "reorder_ns": 0,
+        "slow_relay_rank": 4294967295,
+        "slow_relay_ns": 0
+      },
+      "topology": {
+        "stage1_fanout": 2,
+        "stage2_fanout": 2,
+        "min_relays": 2
+      },
+      "required_witnesses": [
+        "fanout2",
+        "stage1_envelope",
+        "stage2_envelope",
+        "multiple_relays",
+        "streaming_physical"
+      ],
+      "log_level": "events"
+    },
+    "slow-relay": {
+      "planner_input": {
+        "schema_version": 1,
+        "npus": 8,
+        "experts": 8,
+        "top_k": 1,
+        "main_placement": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "slots": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "mapping": [
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          }
+        ],
+        "beta": "1.01",
+        "min_replica_quota": 1024
+      },
+      "model": {
+        "weight_bytes": 12288,
+        "link_gbps": 3136,
+        "link_delay_ns": 20
+      },
+      "relay": {
+        "chunk_bytes": 4096,
+        "relay_min_replicas": 4,
+        "relay_max_relays": 8,
+        "relay_min_fanout_gain": 2,
+        "force_relay": false,
+        "reorder_ns": 0,
+        "slow_relay_rank": 1,
+        "slow_relay_ns": 20000
+      },
+      "topology": {
+        "stage1_fanout": 2,
+        "stage2_fanout": 2,
+        "min_relays": 2
+      },
+      "required_witnesses": [
+        "groupchunk_all_parents"
+      ],
+      "log_level": "events"
+    },
+    "multi-expert": {
+      "planner_input": {
+        "schema_version": 1,
+        "npus": 8,
+        "experts": 16,
+        "top_k": 1,
+        "main_placement": [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          4,
+          4,
+          5,
+          5,
+          6,
+          6,
+          7,
+          7
+        ],
+        "slots": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "mapping": [
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              1
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              1
+            ]
+          }
+        ],
+        "beta": "1.01",
+        "min_replica_quota": 1024
+      },
+      "model": {
+        "weight_bytes": 12288,
+        "link_gbps": 3136,
+        "link_delay_ns": 20
+      },
+      "relay": {
+        "chunk_bytes": 4096,
+        "relay_min_replicas": 4,
+        "relay_max_relays": 8,
+        "relay_min_fanout_gain": 2,
+        "force_relay": true,
+        "reorder_ns": 0,
+        "slow_relay_rank": 4294967295,
+        "slow_relay_ns": 0
+      },
+      "topology": {
+        "min_experts": 2,
+        "min_stage2_groups": 2
+      },
+      "required_witnesses": [
+        "concurrent_experts",
+        "cross_expert_chunk_isolation"
+      ],
+      "log_level": "events"
+    },
+    "fanout-four": {
+      "planner_input": {
+        "schema_version": 1,
+        "npus": 20,
+        "experts": 20,
+        "top_k": 1,
+        "main_placement": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "slots": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "mapping": [
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 8,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 9,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 10,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 11,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 12,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 13,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 14,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 15,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 16,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 17,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 18,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 19,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 8,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 9,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 10,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 11,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 12,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 13,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 14,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 15,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 16,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 17,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 18,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 19,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 8,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 9,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 10,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 11,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 12,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 13,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 14,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 15,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 16,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 17,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 18,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 19,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 8,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 9,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 10,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 11,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 12,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 13,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 14,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 15,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 16,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 17,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 18,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 19,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 8,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 9,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 10,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 11,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 12,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 13,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 14,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 15,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 16,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 17,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 18,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 19,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 8,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 9,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 10,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 11,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 12,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 13,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 14,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 15,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 16,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 17,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 18,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 19,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 8,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 9,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 10,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 11,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 12,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 13,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 14,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 15,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 16,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 17,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 18,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 19,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 8,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 9,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 10,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 11,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 12,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 13,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 14,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 15,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 16,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 17,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 18,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 19,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 8,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 9,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 10,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 11,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 12,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 13,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 14,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 15,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 16,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 17,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 18,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 19,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 8,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 9,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 10,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 11,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 12,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 13,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 14,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 15,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 16,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 17,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 18,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 19,
+            "experts": [
+              0
+            ]
+          }
+        ],
+        "beta": "1.01",
+        "min_replica_quota": 1024
+      },
+      "model": {
+        "weight_bytes": 12288,
+        "link_gbps": 3136,
+        "link_delay_ns": 20
+      },
+      "relay": {
+        "chunk_bytes": 4096,
+        "relay_min_replicas": 4,
+        "relay_max_relays": 8,
+        "relay_min_fanout_gain": 2,
+        "force_relay": false,
+        "reorder_ns": 0,
+        "slow_relay_rank": 4294967295,
+        "slow_relay_ns": 0
+      },
+      "topology": {
+        "stage1_fanout": 4
+      },
+      "required_witnesses": [
+        "fanout4"
+      ],
+      "log_level": "events"
+    },
+    "reuse-window": {
+      "planner_input": {
+        "schema_version": 1,
+        "npus": 8,
+        "experts": 8,
+        "top_k": 1,
+        "main_placement": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "slots": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "mapping": [
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          }
+        ],
+        "beta": "1.01",
+        "min_replica_quota": 1024
+      },
+      "model": {
+        "weight_bytes": 1082369,
+        "weight_completion_ns": 200000,
+        "link_gbps": 3136,
+        "link_delay_ns": 20
+      },
+      "relay": {
+        "chunk_bytes": 4096,
+        "relay_min_replicas": 4,
+        "relay_max_relays": 8,
+        "relay_min_fanout_gain": 2,
+        "force_relay": false,
+        "reorder_ns": 0,
+        "slow_relay_rank": 4294967295,
+        "slow_relay_ns": 0
+      },
+      "topology": {},
+      "required_witnesses": [
+        "ta_window_512",
+        "resource_cleanup"
+      ],
+      "log_level": "summary"
+    },
+    "streaming-64k": {
+      "planner_input": {
+        "schema_version": 1,
+        "npus": 8,
+        "experts": 8,
+        "top_k": 1,
+        "main_placement": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "slots": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "mapping": [
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 0,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 5,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 6,
+            "experts": [
+              0
+            ]
+          },
+          {
+            "source": 7,
+            "experts": [
+              0
+            ]
+          }
+        ],
+        "beta": "1.01",
+        "min_replica_quota": 1024
+      },
+      "model": {
+        "weight_bytes": 65536,
+        "link_gbps": 3136,
+        "link_delay_ns": 20
+      },
+      "relay": {
+        "chunk_bytes": 4096,
+        "relay_min_replicas": 4,
+        "relay_max_relays": 8,
+        "relay_min_fanout_gain": 2,
+        "force_relay": false,
+        "reorder_ns": 0,
+        "slow_relay_rank": 4294967295,
+        "slow_relay_ns": 0
+      },
+      "topology": {
+        "stage1_fanout": 2,
+        "stage2_fanout": 2,
+        "min_relays": 2
+      },
+      "required_witnesses": [
+        "fanout2",
+        "stage1_envelope",
+        "stage2_envelope",
+        "multiple_relays",
+        "streaming_physical"
+      ],
+      "log_level": "events"
+    }
+  },
+  "cases": [
+    {
+      "row": "V01",
+      "arm": "v1",
+      "fixture": "zero",
+      "options": []
+    },
+    {
+      "row": "V01",
+      "arm": "candidate-on",
+      "fixture": "zero",
+      "options": []
+    },
+    {
+      "row": "V02",
+      "arm": "v1",
+      "fixture": "singleton",
+      "options": []
+    },
+    {
+      "row": "V02",
+      "arm": "candidate-on",
+      "fixture": "singleton",
+      "options": []
+    },
+    {
+      "row": "V03",
+      "arm": "v1",
+      "fixture": "fallback",
+      "options": []
+    },
+    {
+      "row": "V03",
+      "arm": "candidate-on",
+      "fixture": "fallback",
+      "options": []
+    },
+    {
+      "row": "V04",
+      "arm": "v1",
+      "fixture": "two-hop",
+      "options": []
+    },
+    {
+      "row": "V04",
+      "arm": "candidate-on",
+      "fixture": "two-hop",
+      "options": []
+    },
+    {
+      "row": "V05",
+      "arm": "v1",
+      "fixture": "slow-relay",
+      "options": []
+    },
+    {
+      "row": "V05",
+      "arm": "candidate-on",
+      "fixture": "slow-relay",
+      "options": []
+    },
+    {
+      "row": "V06",
+      "arm": "v1",
+      "fixture": "multi-expert",
+      "options": []
+    },
+    {
+      "row": "V06",
+      "arm": "candidate-on",
+      "fixture": "multi-expert",
+      "options": []
+    },
+    {
+      "row": "V07",
+      "arm": "v1",
+      "fixture": "fanout-four",
+      "options": []
+    },
+    {
+      "row": "V07",
+      "arm": "candidate-on",
+      "fixture": "fanout-four",
+      "options": []
+    },
+    {
+      "row": "V08",
+      "arm": "v1",
+      "fixture": "reuse-window",
+      "options": []
+    },
+    {
+      "row": "V08",
+      "arm": "candidate-on",
+      "fixture": "reuse-window",
+      "options": []
+    },
+    {
+      "row": "V09",
+      "arm": "v1",
+      "fixture": "two-hop",
+      "options": [
+        "--invalidateGrant=1"
+      ]
+    },
+    {
+      "row": "V09",
+      "arm": "candidate-on",
+      "fixture": "two-hop",
+      "options": [
+        "--invalidateGrant=1"
+      ]
+    },
+    {
+      "row": "V10",
+      "arm": "v1",
+      "fixture": "two-hop",
+      "options": [
+        "--nativeRetrans=1",
+        "--networkFault=data-once",
+        "--networkFaultRole=stage1"
+      ]
+    },
+    {
+      "row": "V10",
+      "arm": "candidate-on",
+      "fixture": "two-hop",
+      "options": [
+        "--nativeRetrans=1",
+        "--networkFault=data-once",
+        "--networkFaultRole=stage1"
+      ]
+    },
+    {
+      "row": "V11",
+      "arm": "v1",
+      "fixture": "two-hop",
+      "options": [
+        "--nativeRetrans=1",
+        "--networkFault=data-once",
+        "--networkFaultRole=stage2"
+      ]
+    },
+    {
+      "row": "V11",
+      "arm": "candidate-on",
+      "fixture": "two-hop",
+      "options": [
+        "--nativeRetrans=1",
+        "--networkFault=data-once",
+        "--networkFaultRole=stage2"
+      ]
+    },
+    {
+      "row": "V12",
+      "arm": "v1",
+      "fixture": "two-hop",
+      "options": [
+        "--nativeRetrans=1",
+        "--networkFault=ack-once",
+        "--networkFaultRole=stage1"
+      ]
+    },
+    {
+      "row": "V12",
+      "arm": "candidate-on",
+      "fixture": "two-hop",
+      "options": [
+        "--nativeRetrans=1",
+        "--networkFault=ack-once",
+        "--networkFaultRole=stage1"
+      ]
+    },
+    {
+      "row": "V13",
+      "arm": "v1",
+      "fixture": "two-hop",
+      "options": [
+        "--nativeRetrans=1",
+        "--networkFault=taack-once",
+        "--networkFaultRole=stage2"
+      ]
+    },
+    {
+      "row": "V13",
+      "arm": "candidate-on",
+      "fixture": "two-hop",
+      "options": [
+        "--nativeRetrans=1",
+        "--networkFault=taack-once",
+        "--networkFaultRole=stage2"
+      ]
+    },
+    {
+      "row": "V14",
+      "arm": "v1",
+      "fixture": "two-hop",
+      "options": [
+        "--nativeRetrans=1",
+        "--networkFault=duplicate-once",
+        "--networkFaultRole=stage2"
+      ]
+    },
+    {
+      "row": "V14",
+      "arm": "candidate-on",
+      "fixture": "two-hop",
+      "options": [
+        "--nativeRetrans=1",
+        "--networkFault=duplicate-once",
+        "--networkFaultRole=stage2"
+      ]
+    },
+    {
+      "row": "C-V01",
+      "arm": "candidate-off",
+      "fixture": "zero",
+      "options": []
+    },
+    {
+      "row": "C-V04",
+      "arm": "candidate-off",
+      "fixture": "two-hop",
+      "options": []
+    },
+    {
+      "row": "C-V06",
+      "arm": "candidate-off",
+      "fixture": "multi-expert",
+      "options": []
+    },
+    {
+      "row": "N02",
+      "arm": "v1",
+      "fixture": "two-hop",
+      "options": [
+        "--fault=relay-buffer-byte"
+      ]
+    },
+    {
+      "row": "N02",
+      "arm": "candidate-on",
+      "fixture": "two-hop",
+      "options": [
+        "--fault=relay-buffer-byte"
+      ]
+    },
+    {
+      "row": "N04",
+      "arm": "v1",
+      "fixture": "slow-relay",
+      "options": [
+        "--fault=early-group"
+      ]
+    },
+    {
+      "row": "N04",
+      "arm": "candidate-on",
+      "fixture": "slow-relay",
+      "options": [
+        "--fault=early-group"
+      ]
+    },
+    {
+      "row": "N08",
+      "arm": "v1",
+      "fixture": "two-hop",
+      "options": [
+        "--fault=duplicate-completion"
+      ]
+    },
+    {
+      "row": "N08",
+      "arm": "candidate-on",
+      "fixture": "two-hop",
+      "options": [
+        "--fault=duplicate-completion"
+      ]
+    },
+    {
+      "row": "S64",
+      "arm": "v1",
+      "fixture": "streaming-64k",
+      "options": []
+    },
+    {
+      "row": "S64",
+      "arm": "candidate-on",
+      "fixture": "streaming-64k",
+      "options": []
+    }
+  ],
+  "source": "experiments/cs-multicast-v2-candidate/support.py:declaration",
+  "extension": "prepare_target_remaining.py reuses exact V04 plan/assignments and asserts identical tree-edge/role set; only weight length12288 to65536",
+  "fixed": {
+    "link_gbps": 3136,
+    "delay_ns": 20,
+    "chunk_bytes": 4096,
+    "ta_window": 512,
+    "tp_window": 1000,
+    "native_allocation_ns": 5,
+    "hold_ns": 5
+  }
+}

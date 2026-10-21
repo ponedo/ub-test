@@ -1,0 +1,214 @@
+{
+  "scope": "Existing frozen candidate fault results only; no new execution",
+  "packet_identity_note": "Native retry and reverse TAACK route rows use one UID across all four physical observations. Original merged data uses envelope UID on source link and a distinct branch UID on target link.",
+  "cases": {
+    "V10": {
+      "injected_losses": 1,
+      "injected_duplicates": 0,
+      "weight_retry_packets": 3,
+      "recorded_native_write_retries": 3,
+      "retry_tp_pairs": [
+        [
+          "2",
+          "9"
+        ]
+      ],
+      "all_native_pairs_safe": true
+    },
+    "V11": {
+      "injected_losses": 1,
+      "injected_duplicates": 0,
+      "weight_retry_packets": 7,
+      "recorded_native_write_retries": 7,
+      "retry_tp_pairs": [
+        [
+          "12",
+          "26"
+        ]
+      ],
+      "all_native_pairs_safe": true
+    },
+    "V13": {
+      "injected_losses": 1,
+      "injected_duplicates": 0,
+      "weight_retry_packets": 0,
+      "recorded_native_write_retries": 0,
+      "retry_tp_pairs": [],
+      "all_native_pairs_safe": true
+    },
+    "V14": {
+      "injected_losses": 0,
+      "injected_duplicates": 1,
+      "weight_retry_packets": 0,
+      "recorded_native_write_retries": 0,
+      "retry_tp_pairs": [],
+      "all_native_pairs_safe": true,
+      "duplicated_task": 134,
+      "duplicated_task_edge_ready_count": 1,
+      "duplicated_task_chunk_ready_count": 1,
+      "total_edge_ready_count": 18,
+      "total_chunk_ready_count": 18,
+      "sender_completions": 42,
+      "remote_WQEs": 42,
+      "target_segments": 96,
+      "TA_count": 96,
+      "completed_tokens": 64,
+      "pending_associations": 0,
+      "pending_members": 0,
+      "active_codecs": 0
+    },
+    "V12": {
+      "arm": "candidate_5ns",
+      "case_name": "stage1_transport_ack_loss",
+      "status": "PASS",
+      "source": 0,
+      "target": 1,
+      "forward_tpn": 2,
+      "reverse_tpn": 9,
+      "lost_task": 128,
+      "lost_wire_psn": 9,
+      "lost_logical_psn": 9,
+      "drop_time_ps": 402188,
+      "drop_uid": "211",
+      "drop_physical_path_ps": [
+        311872,
+        332030,
+        382030,
+        402188
+      ],
+      "covering_acks": [
+        {
+          "task": 130,
+          "wire_psn": 10,
+          "logical_psn": 10,
+          "uid": "219",
+          "physical_path_ps": [
+            326872,
+            347030,
+            392030,
+            412188
+          ],
+          "covered_original_tasks": [
+            128,
+            130
+          ]
+        },
+        {
+          "task": 132,
+          "wire_psn": 11,
+          "logical_psn": 11,
+          "uid": "227",
+          "physical_path_ps": [
+            341872,
+            362030,
+            402030,
+            422188
+          ],
+          "covered_original_tasks": [
+            128,
+            130,
+            132
+          ]
+        }
+      ],
+      "terminal_send_una": 12,
+      "terminal_send_nxt": 12,
+      "native_retry_required": false,
+      "coverage": {
+        "fault_tpack": true
+      },
+      "limitation": "Per-ACK instantaneous sndUna transitions were not selected. Evidence proves covering same-TP physical ACKs and safe terminal advancement, not the exact advancement timestamp.",
+      "fixture_bound_no_wrap_psns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "kind": "FRESH_RUNTIME_CUMULATIVE_ACK_WITNESS"
+    }
+  },
+  "baseline_V12_posthoc": {
+    "status": "PASS",
+    "source": 0,
+    "target": 1,
+    "forward_tpn": 2,
+    "reverse_tpn": 9,
+    "lost_task": 128,
+    "lost_wire_psn": 9,
+    "lost_logical_psn": 9,
+    "drop_time_ps": 397188,
+    "drop_uid": "211",
+    "drop_physical_path_ps": [
+      306872,
+      327030,
+      377030,
+      397188
+    ],
+    "covering_acks": [
+      {
+        "task": 130,
+        "wire_psn": 10,
+        "logical_psn": 10,
+        "uid": "219",
+        "physical_path_ps": [
+          321872,
+          342030,
+          387030,
+          407188
+        ],
+        "covered_original_tasks": [
+          128,
+          130
+        ]
+      },
+      {
+        "task": 132,
+        "wire_psn": 11,
+        "logical_psn": 11,
+        "uid": "227",
+        "physical_path_ps": [
+          336872,
+          357030,
+          397030,
+          417188
+        ],
+        "covered_original_tasks": [
+          128,
+          130,
+          132
+        ]
+      }
+    ],
+    "terminal_send_una": 12,
+    "terminal_send_nxt": 12,
+    "native_retry_required": false,
+    "coverage": {
+      "fault_tpack": true
+    },
+    "limitation": "Per-ACK instantaneous sndUna transitions were not selected. Evidence proves covering same-TP physical ACKs and safe terminal advancement, not the exact advancement timestamp.",
+    "fixture_bound_no_wrap_psns": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "kind": "POSTHOC_ORACLE_CORRECTION_NO_SIMULATOR_RERUN"
+  },
+  "oracle_correction": "A covering ACK may start transmission before the injected earlier ACK is dropped, provided the same-TP higher ACK is received afterward. Requiring the entire path to start after the drop falsely rejects already-in-flight cumulative coverage. Baseline evidence was rechecked without a simulator rerun; original STOPPED status is preserved."
+}
