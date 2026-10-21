@@ -1,0 +1,21 @@
+case_id,strategy,window,group,first_failing_member,reason,actual_evaluations,observed_spans,sum_observed_span_upper_bound_ps,max_observed_span_upper_bound_ps,semantics
+baseline-512-multicast-v2,multicast-v2,512,8,13,ack,18461,17920,89600000,5000,group8 actual first-failure queries; held spans are not continuous waits
+baseline-512-multicast-v2,multicast-v2,512,8,13,empty,1,1,5000,5000,group8 actual first-failure queries; held spans are not continuous waits
+baseline-512-multicast-v2,multicast-v2,512,8,52,ack,17920,17920,89600000,5000,group8 actual first-failure queries; held spans are not continuous waits
+baseline-512-multicast-v2,multicast-v2,512,8,59,ack,17976,17728,126805000,10000,group8 actual first-failure queries; held spans are not continuous waits
+baseline-512-multicast-v2,multicast-v2,512,8,59,empty,3086,550,18666576,2780000,group8 actual first-failure queries; held spans are not continuous waits
+baseline-512-multicast-v2,multicast-v2,512,8,4294967295,ready,75058,10673,392453152,10351576,group8 actual first-failure queries; held spans are not continuous waits
+window-1024-multicast-v2,multicast-v2,1024,8,13,ack,18671,17432,87160000,5000,group8 actual first-failure queries; held spans are not continuous waits
+window-1024-multicast-v2,multicast-v2,1024,8,13,empty,7749,7749,38745000,5000,group8 actual first-failure queries; held spans are not continuous waits
+window-1024-multicast-v2,multicast-v2,1024,8,52,ack,17468,17432,87160000,5000,group8 actual first-failure queries; held spans are not continuous waits
+window-1024-multicast-v2,multicast-v2,1024,8,52,empty,7834,7765,39175000,20000,group8 actual first-failure queries; held spans are not continuous waits
+window-1024-multicast-v2,multicast-v2,1024,8,59,ack,17863,17428,141390000,10000,group8 actual first-failure queries; held spans are not continuous waits
+window-1024-multicast-v2,multicast-v2,1024,8,59,empty,10277,6170,81831576,7680000,group8 actual first-failure queries; held spans are not continuous waits
+window-1024-multicast-v2,multicast-v2,1024,8,4294967295,ready,76677,9903,222726032,20596576,group8 actual first-failure queries; held spans are not continuous waits
+window-2048-multicast-v2,multicast-v2,2048,8,13,ack,20193,17000,85000000,5000,group8 actual first-failure queries; held spans are not continuous waits
+window-2048-multicast-v2,multicast-v2,2048,8,13,empty,16192,16192,80960000,5000,group8 actual first-failure queries; held spans are not continuous waits
+window-2048-multicast-v2,multicast-v2,2048,8,52,ack,17000,17000,85000000,5000,group8 actual first-failure queries; held spans are not continuous waits
+window-2048-multicast-v2,multicast-v2,2048,8,52,empty,16194,16193,80970000,10000,group8 actual first-failure queries; held spans are not continuous waits
+window-2048-multicast-v2,multicast-v2,2048,8,59,ack,17379,16962,151345000,10000,group8 actual first-failure queries; held spans are not continuous waits
+window-2048-multicast-v2,multicast-v2,2048,8,59,empty,1890,1227,12745000,30000,group8 actual first-failure queries; held spans are not continuous waits
+window-2048-multicast-v2,multicast-v2,2048,8,4294967295,ready,80600,19832,192741576,7095000,group8 actual first-failure queries; held spans are not continuous waits

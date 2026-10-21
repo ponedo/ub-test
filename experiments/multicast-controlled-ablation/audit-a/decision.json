@@ -1,0 +1,20 @@
+{
+  "status": "UNSUPPORTED",
+  "decision_code": "STOPPED_SEMANTIC_PRESERVATION",
+  "formal_case_status": "UNSUPPORTED_SEMANTIC_PRESERVATION",
+  "measured": false,
+  "reason": "Minimal immediate no-candidate callback suppression reverses native PairV2Proxy ACK-queue packet order in a bounded native-linked RR/CBFC unit witness at unchanged 5 ns allocation service. The original null episode coalesces arrivals until 5 ns; suppressing it selects the first arrival earlier. Semantic preservation therefore fails before formal runs. This does not prove all possible scheduler optimizations impossible.",
+  "accepted_commit": "b149fdd4d40d72791a84b788443b0450c41f6180",
+  "evidence": [
+    "audit-a/SOURCE-AUDIT.md",
+    "audit-a/null-callback-order.cc",
+    "audit-a/reproduce.py",
+    "audit-a/native.log",
+    "audit-a/suppress.log",
+    "audit-a/result.json"
+  ],
+  "scope": "scheduler unit counterexample, not physical WRITE, TA/reliability validation, or measured LayerLatency",
+  "runtime_A_patch_created": false,
+  "formal_A_runs_started": false,
+  "order_scope": "Cross-TP shared-source-port arbitration order; not intra-TP FIFO or reliability failure."
+}

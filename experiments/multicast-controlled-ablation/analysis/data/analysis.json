@@ -1,0 +1,306 @@
+{
+  "status": "PASS",
+  "accepted_commit": "b149fdd4d40d72791a84b788443b0450c41f6180",
+  "a": {
+    "status": "UNSUPPORTED",
+    "reason": "Minimal immediate no-candidate callback suppression reverses native PairV2Proxy ACK-queue packet order in a bounded native-linked RR/CBFC unit witness at unchanged 5 ns allocation service. The original null episode coalesces arrivals until 5 ns; suppressing it selects the first arrival earlier. Semantic preservation therefore fails before formal runs. This does not prove all possible scheduler optimizations impossible.",
+    "measured": false
+  },
+  "cases": {
+    "baseline-512-chunk-streaming": {
+      "case_id": "baseline-512-chunk-streaming",
+      "strategy": "chunk-streaming",
+      "window": 512,
+      "weight_ps": 552893591,
+      "layer_ps": 732284971,
+      "weights_start_ps": 201000,
+      "weights_end_ps": 553094591
+    },
+    "baseline-512-multicast-v2": {
+      "case_id": "baseline-512-multicast-v2",
+      "strategy": "multicast-v2",
+      "window": 512,
+      "weight_ps": 717182855,
+      "layer_ps": 898435170,
+      "weights_start_ps": 201000,
+      "weights_end_ps": 717383855
+    },
+    "window-1024-chunk-streaming": {
+      "case_id": "window-1024-chunk-streaming",
+      "strategy": "chunk-streaming",
+      "window": 1024,
+      "weight_ps": 552893591,
+      "layer_ps": 732284971,
+      "weights_start_ps": 201000,
+      "weights_end_ps": 553094591
+    },
+    "window-1024-multicast-v2": {
+      "case_id": "window-1024-multicast-v2",
+      "strategy": "multicast-v2",
+      "window": 1024,
+      "weight_ps": 698240735,
+      "layer_ps": 895291479,
+      "weights_start_ps": 201000,
+      "weights_end_ps": 698441735
+    },
+    "window-2048-chunk-streaming": {
+      "case_id": "window-2048-chunk-streaming",
+      "strategy": "chunk-streaming",
+      "window": 2048,
+      "weight_ps": 552893591,
+      "layer_ps": 732284971,
+      "weights_start_ps": 201000,
+      "weights_end_ps": 553094591
+    },
+    "window-2048-multicast-v2": {
+      "case_id": "window-2048-multicast-v2",
+      "strategy": "multicast-v2",
+      "window": 2048,
+      "weight_ps": 688812836,
+      "layer_ps": 886365447,
+      "weights_start_ps": 201000,
+      "weights_end_ps": 689013836
+    }
+  },
+  "verification": [
+    {
+      "case_id": "baseline-512-chunk-streaming",
+      "strategy": "chunk-streaming",
+      "window": 512,
+      "exact_original_parity": true,
+      "logical_semantic_parity": true,
+      "diagnostic_complete": true,
+      "selected_jetty_timeline": {
+        "status": "no_selected_weight_events_retained",
+        "source_file": "diagnostic-jetty-weight-tail.csv"
+      },
+      "all_pair_jetty_count": 4021,
+      "tail_overwrites": 2212697
+    },
+    {
+      "case_id": "baseline-512-multicast-v2",
+      "strategy": "multicast-v2",
+      "window": 512,
+      "exact_original_parity": true,
+      "logical_semantic_parity": true,
+      "diagnostic_complete": true,
+      "selected_jetty_timeline": {
+        "status": "observed_full_window_release",
+        "source_file": "diagnostic-jetty-weight-tail.csv",
+        "selected_events": 10,
+        "coverage": "bounded ring, not whole-run intervals; absence is not proof of no event"
+      },
+      "all_pair_jetty_count": 4021,
+      "tail_overwrites": 545649
+    },
+    {
+      "case_id": "window-1024-chunk-streaming",
+      "strategy": "chunk-streaming",
+      "window": 1024,
+      "exact_original_parity": false,
+      "logical_semantic_parity": true,
+      "diagnostic_complete": true,
+      "selected_jetty_timeline": {
+        "status": "no_selected_weight_events_retained",
+        "source_file": "diagnostic-jetty-weight-tail.csv"
+      },
+      "all_pair_jetty_count": 4021,
+      "tail_overwrites": 2032146
+    },
+    {
+      "case_id": "window-1024-multicast-v2",
+      "strategy": "multicast-v2",
+      "window": 1024,
+      "exact_original_parity": false,
+      "logical_semantic_parity": true,
+      "diagnostic_complete": true,
+      "selected_jetty_timeline": {
+        "status": "no_full_release_in_retained_scope",
+        "source_file": "diagnostic-jetty-weight-tail.csv",
+        "selected_events": 9,
+        "coverage": "bounded ring, not whole-run intervals; absence is not proof of no event"
+      },
+      "all_pair_jetty_count": 4021,
+      "tail_overwrites": 520401
+    },
+    {
+      "case_id": "window-2048-chunk-streaming",
+      "strategy": "chunk-streaming",
+      "window": 2048,
+      "exact_original_parity": false,
+      "logical_semantic_parity": true,
+      "diagnostic_complete": true,
+      "selected_jetty_timeline": {
+        "status": "no_selected_weight_events_retained",
+        "source_file": "diagnostic-jetty-weight-tail.csv"
+      },
+      "all_pair_jetty_count": 4021,
+      "tail_overwrites": 1920549
+    },
+    {
+      "case_id": "window-2048-multicast-v2",
+      "strategy": "multicast-v2",
+      "window": 2048,
+      "exact_original_parity": false,
+      "logical_semantic_parity": true,
+      "diagnostic_complete": true,
+      "selected_jetty_timeline": {
+        "status": "no_full_release_in_retained_scope",
+        "source_file": "diagnostic-jetty-weight-tail.csv",
+        "selected_events": 9,
+        "coverage": "bounded ring, not whole-run intervals; absence is not proof of no event"
+      },
+      "all_pair_jetty_count": 4021,
+      "tail_overwrites": 507108
+    }
+  ],
+  "timing": [
+    {
+      "case_id": "baseline-512-chunk-streaming",
+      "strategy": "chunk-streaming",
+      "window": 512,
+      "weight_ps": 552893591,
+      "layer_ps": 732284971,
+      "weight_absolute_change_ps": 0,
+      "weight_relative_change_percent": 0.0,
+      "weight_intervention_speedup_vs_same_strategy_512": 1.0,
+      "layer_absolute_change_ps": 0,
+      "layer_relative_change_percent": 0.0,
+      "layer_intervention_speedup_vs_same_strategy_512": 1.0,
+      "interpretation": "fresh exact original baseline"
+    },
+    {
+      "case_id": "baseline-512-multicast-v2",
+      "strategy": "multicast-v2",
+      "window": 512,
+      "weight_ps": 717182855,
+      "layer_ps": 898435170,
+      "weight_absolute_change_ps": 0,
+      "weight_relative_change_percent": 0.0,
+      "weight_intervention_speedup_vs_same_strategy_512": 1.0,
+      "layer_absolute_change_ps": 0,
+      "layer_relative_change_percent": 0.0,
+      "layer_intervention_speedup_vs_same_strategy_512": 1.0,
+      "interpretation": "fresh exact original baseline"
+    },
+    {
+      "case_id": "window-1024-chunk-streaming",
+      "strategy": "chunk-streaming",
+      "window": 1024,
+      "weight_ps": 552893591,
+      "layer_ps": 732284971,
+      "weight_absolute_change_ps": 0,
+      "weight_relative_change_percent": 0.0,
+      "weight_intervention_speedup_vs_same_strategy_512": 1.0,
+      "layer_absolute_change_ps": 0,
+      "layer_relative_change_percent": 0.0,
+      "layer_intervention_speedup_vs_same_strategy_512": 1.0,
+      "interpretation": "capacity intervention; not original algorithm performance"
+    },
+    {
+      "case_id": "window-1024-multicast-v2",
+      "strategy": "multicast-v2",
+      "window": 1024,
+      "weight_ps": 698240735,
+      "layer_ps": 895291479,
+      "weight_absolute_change_ps": -18942120,
+      "weight_relative_change_percent": -2.6411841649505132,
+      "weight_intervention_speedup_vs_same_strategy_512": 1.0271283513701044,
+      "layer_absolute_change_ps": -3143691,
+      "layer_relative_change_percent": -0.349907383968506,
+      "layer_intervention_speedup_vs_same_strategy_512": 1.0035113603488233,
+      "interpretation": "capacity intervention; not original algorithm performance"
+    },
+    {
+      "case_id": "window-2048-chunk-streaming",
+      "strategy": "chunk-streaming",
+      "window": 2048,
+      "weight_ps": 552893591,
+      "layer_ps": 732284971,
+      "weight_absolute_change_ps": 0,
+      "weight_relative_change_percent": 0.0,
+      "weight_intervention_speedup_vs_same_strategy_512": 1.0,
+      "layer_absolute_change_ps": 0,
+      "layer_relative_change_percent": 0.0,
+      "layer_intervention_speedup_vs_same_strategy_512": 1.0,
+      "interpretation": "capacity intervention; not original algorithm performance"
+    },
+    {
+      "case_id": "window-2048-multicast-v2",
+      "strategy": "multicast-v2",
+      "window": 2048,
+      "weight_ps": 688812836,
+      "layer_ps": 886365447,
+      "weight_absolute_change_ps": -28370019,
+      "weight_relative_change_percent": -3.9557581169449456,
+      "weight_intervention_speedup_vs_same_strategy_512": 1.0411868326449132,
+      "layer_absolute_change_ps": -12069723,
+      "layer_relative_change_percent": -1.343416130960234,
+      "layer_intervention_speedup_vs_same_strategy_512": 1.0136170955680315,
+      "interpretation": "capacity intervention; not original algorithm performance"
+    }
+  ],
+  "contrasts": [
+    {
+      "window": 512,
+      "weight_mc_minus_chunk_ps": 164289264,
+      "weight_difference_in_differences_ps": 0,
+      "weight_gap_reduction_vs_512_ps": 0,
+      "weight_mc_over_chunk_time_ratio": 1.2971444536060828,
+      "layer_mc_minus_chunk_ps": 166150199,
+      "layer_difference_in_differences_ps": 0,
+      "layer_gap_reduction_vs_512_ps": 0,
+      "layer_mc_over_chunk_time_ratio": 1.226892815747819,
+      "interpretation": "Same-window comparison; negative DID preferentially benefits MC, not a mediator share"
+    },
+    {
+      "window": 1024,
+      "weight_mc_minus_chunk_ps": 145347144,
+      "weight_difference_in_differences_ps": -18942120,
+      "weight_gap_reduction_vs_512_ps": 18942120,
+      "weight_mc_over_chunk_time_ratio": 1.2628844797009051,
+      "layer_mc_minus_chunk_ps": 163006508,
+      "layer_difference_in_differences_ps": -3143691,
+      "layer_gap_reduction_vs_512_ps": 3143691,
+      "layer_mc_over_chunk_time_ratio": 1.2225998271921383,
+      "interpretation": "Same-window comparison; negative DID preferentially benefits MC, not a mediator share"
+    },
+    {
+      "window": 2048,
+      "weight_mc_minus_chunk_ps": 135919245,
+      "weight_difference_in_differences_ps": -28370019,
+      "weight_gap_reduction_vs_512_ps": 28370019,
+      "weight_mc_over_chunk_time_ratio": 1.245832556594059,
+      "layer_mc_minus_chunk_ps": 154080476,
+      "layer_difference_in_differences_ps": -12069723,
+      "layer_gap_reduction_vs_512_ps": 12069723,
+      "layer_mc_over_chunk_time_ratio": 1.2104105397514706,
+      "interpretation": "Same-window comparison; negative DID preferentially benefits MC, not a mediator share"
+    }
+  ],
+  "cautions": [
+    "Changed-window speedups are intervention results, never original Multicast v2 performance.",
+    "B identifies total capacity-intervention effects, not isolated ACK/allocator/AllReady mediation.",
+    "Negative DID preferentially benefits MC; inspect each within-strategy effect for harm or benefit.",
+    "Full-window exposure sums are Jetty-time, not wall time or automatically harmful blocked wait.",
+    "TAACK latencies have explicit distinct boundaries and selected weight-admission coverage.",
+    "VOQ residence and held AllReady spans cannot be added to source elapsed-resource partitions.",
+    "Original terminal resources are preselected controls; true terminal dependencies can move.",
+    "Deterministic fixed-workload contrasts have no statistical confidence interval or broad generalization.",
+    "TP1000 may produce diminishing returns, but a plateau alone does not prove a TP bottleneck."
+  ],
+  "artifact_rows": {
+    "timing": 6,
+    "contrasts": 3,
+    "occupancy": 96,
+    "latency": 144,
+    "histogram": 576,
+    "partitions": 54,
+    "switch_cohorts": 72,
+    "tp_reasons": 36,
+    "allready": 20,
+    "critical": 12,
+    "selected_events": 28,
+    "selected_rtt": 12
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "format_version": 1,
+  "base": "Accepted diagnosis-native with its existing default-OFF diagnostic sink and accepted native patches already applied",
+  "candidate": "Frozen ablation-native used by build-r2 and stage-a",
+  "application_repo_head": "b149fdd4d40d72791a84b788443b0450c41f6180",
+  "patch_file": "ub-jetty-controlled-ablation.patch",
+  "patch_sha256": "f04aa181e011c097d35bdc359ca4d294f147f5ae7dc4562204932e287e92d600",
+  "patch_bytes": 7443,
+  "files": [
+    {
+      "path": "src/unified-bus/model/protocol/ub-function.cc",
+      "accepted_sha256": "a1de4e3dc60381bddc05fb467e55894ac8e2ce313ad72d3273ccf1f59692a86f",
+      "candidate_sha256": "aa75a3be233b55b559a6fbc40abee5dd1e4862ccf31e8af374dd736244e69b68"
+    },
+    {
+      "path": "src/unified-bus/model/protocol/ub-function.h",
+      "accepted_sha256": "fb809b9c6474f56e531545479df4f867c53e1e8735b6a0ab86d242b034abcec4",
+      "candidate_sha256": "f5ebffdd2ab7254edb75426c33595952ff1250de290d9755728593ebbcf2cf1b"
+    },
+    {
+      "path": "src/unified-bus/model/ub-reversal-diagnostic.h",
+      "accepted_sha256": "0d8c41774fa5fe173d1199887479b2817e61cea5b6105d50b9a810f33f2691de",
+      "candidate_sha256": "209e1e8fd60d3d930efe8ff44c6a6caeb6077c3dc5e8aa3495723e32ae46d05f"
+    }
+  ],
+  "complete_native_src_inventory_file_count": 3430,
+  "complete_native_src_delta_exactly_these_three_files": true,
+  "unchanged_controls": {
+    "src/unified-bus/model/protocol/ub-transport.cc": "5d412ad095e5714640c6e61a84d567fc35b334ecbded50b9891e80663719d35f",
+    "src/unified-bus/model/protocol/ub-transport.h": "5a37dd301ceb026c64a7948f4e7c4c4fcfaeed2df2ffd31273f96921ae8e1fef",
+    "src/unified-bus/model/ub-switch-allocator.cc": "c841f37a5a8fe80d44a432eb6b76ea88fd9f42fbb285e18db7ff9e2057defe5b",
+    "src/unified-bus/model/ub-switch-allocator.h": "6932ada9f850d91aa875c6553ba21b129e5756cdb4348b05fa87441a81470608",
+    "src/unified-bus/model/ub-reversal-diagnostic.cc": "b451dad18afa4ab6f580b6a7b7eecece1fcc60c6255ed176e3e3ee8590a98a56",
+    "src/unified-bus/model/ub-port.cc": "e8c63aa93cc26999219d07955ff48a2396bfb07a4695dc442f24199881498180",
+    "src/unified-bus/model/ub-queue-manager.cc": "037d5017bf901668fc92978c6a98042cf3df84deb5ec7079b72d24c98de3f69d",
+    "src/unified-bus/model/ub-write-v2.h": "e91594ef330ba7d4bb59a4ddfe5d4781e6d21fce4f3ab4cf06b1b64a4dfc719a",
+    "src/unified-bus/CMakeLists.txt": "6d27d84f0f423b95570e3308fc857b572586ca18bbc290a220ee1073c649d9fc"
+  },
+  "scope": "Passive Jetty observation hooks only; native default inflight512 and ACK bitmap2048 unchanged. Application CLI selects 512/1024/2048 separately.",
+  "stage_a_case_count": 428
+}

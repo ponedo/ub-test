@@ -1,0 +1,174 @@
+diff --git a/src/unified-bus/model/protocol/ub-function.cc b/src/unified-bus/model/protocol/ub-function.cc
+--- a/src/unified-bus/model/protocol/ub-function.cc
++++ b/src/unified-bus/model/protocol/ub-function.cc
+@@ -1044,6 +1044,38 @@
+     ResetSsnAckBitset(m_oooAckThreshold);
+ }
+ 
++void
++UbJetty::ObserveJetty(UbReversalDiagnosticKind kind,
++                       uint32_t taSsn,
++                       UbReversalDiagnosticReason reason,
++                       uint32_t task) const
++{
++    if (UbReversalDiagnostic::Enabled())
++    {
++        UbReversalDiagnostic::Emit({.kind = kind,
++            .reason = reason,
++            .node = m_src,
++            .port = m_dest,
++            .tp = m_jettyNum,
++            .queue = reinterpret_cast<uintptr_t>(this),
++            .aux0 = m_taSsnSndNxt,
++            .aux1 = m_taSsnSndUna,
++            .aux2 = m_inflightMax,
++            .aux3 = taSsn,
++            .task = task});
++    }
++}
++
++bool
++UbJetty::IsLimited()
++{
++    const bool limited = (m_taSsnSndNxt - m_taSsnSndUna) >= m_inflightMax;
++    ObserveJetty(UbReversalDiagnosticKind::JettyWindowTest, UINT32_MAX,
++                 limited ? UbReversalDiagnosticReason::Inflight
++                         : UbReversalDiagnosticReason::Eligible);
++    return limited;
++}
++
+ void UbJetty::SetClientCallback(Callback<void, uint32_t, uint32_t> cb)
+ {
+     FinishCallback = cb;
+@@ -1234,6 +1266,8 @@
+     wqe->UpdateSentBytes(segment->GetSize());
+     wqe->m_lastAdmittedTaSsn = segment->GetTaSsn();
+     IncreaseTaSsnSndNxt();
++    ObserveJetty(UbReversalDiagnosticKind::JettyAdmission, segment->GetTaSsn(),
++                 UbReversalDiagnosticReason::None, segment->GetTaskId());
+ }
+ 
+ void
+@@ -1264,6 +1298,7 @@
+     m_taSsnSndUna += m_ssnAckWindow.AdvanceContiguous();
+     NS_ABORT_MSG_IF(m_ssnAckWindow.GetBase() != m_taSsnSndUna,
+                     "Jetty terminal progress advanced ACK-window state inconsistently");
++    ObserveJetty(UbReversalDiagnosticKind::JettyCleanup);
+     if (m_transaction != nullptr)
+     {
+         m_transaction->TryContinueJettyTransmission(m_jettyNum);
+@@ -1446,11 +1481,14 @@
+ bool UbJetty::ProcessWqeSegmentComplete(uint32_t taSsnAck)
+ {
+     NS_LOG_DEBUG(this << taSsnAck);
++    ObserveJetty(UbReversalDiagnosticKind::JettyTaAckBefore, taSsnAck);
+     // 检查 SSN 是否在有效范围内
+     if (taSsnAck < m_taSsnSndUna) {
+         NS_LOG_WARN("Received ACK for already processed SSN " << std::to_string(taSsnAck)
+                                                               << ", current m_taSsnSndUna is "
+                                                               << std::to_string(m_taSsnSndUna));
++        ObserveJetty(UbReversalDiagnosticKind::JettyTaAckRejected, taSsnAck,
++                     UbReversalDiagnosticReason::Failed);
+         return false;
+     }
+ 
+@@ -1458,6 +1496,8 @@
+         NS_LOG_WARN("Received ACK for future SSN " << std::to_string(taSsnAck)
+                                                    << ", current m_taSsnSndNxt is "
+                                                    << std::to_string(m_taSsnSndNxt));
++        ObserveJetty(UbReversalDiagnosticKind::JettyTaAckRejected, taSsnAck,
++                     UbReversalDiagnosticReason::Failed);
+         return false;
+     }
+ 
+@@ -1468,6 +1508,8 @@
+     if (bitIndex >= m_ssnAckWindow.GetWindowSize()) {
+         NS_LOG_ERROR("SSN " << std::to_string(taSsnAck)
+                             << " exceeds bitset capacity, bitIndex=" << std::to_string(bitIndex));
++        ObserveJetty(UbReversalDiagnosticKind::JettyTaAckRejected, taSsnAck,
++                     UbReversalDiagnosticReason::Failed);
+         return false;
+     }
+ 
+@@ -1490,6 +1532,9 @@
+         }
+     }
+ 
++    // Observe the existing result before completion callbacks can admit new work.
++    ObserveJetty(UbReversalDiagnosticKind::JettyTaAckAfter, taSsnAck);
++
+     // 如果 m_taSsnSndUna 有更新，需要清理 bitset
+     if (m_taSsnSndUna > oldSndUna) {
+         NS_LOG_DEBUG("Updated m_taSsnSndUna from " << std::to_string(oldSndUna) << " to "
+diff --git a/src/unified-bus/model/protocol/ub-function.h b/src/unified-bus/model/protocol/ub-function.h
+--- a/src/unified-bus/model/protocol/ub-function.h
++++ b/src/unified-bus/model/protocol/ub-function.h
+@@ -13,6 +13,7 @@
+ #include "ub-ldst-api.h"
+ #include "ub-transaction.h"
+ #include "ub-transaction-rules.h"
++#include "ns3/ub-reversal-diagnostic.h"
+ 
+ namespace ns3 {
+     class UbController;
+@@ -342,10 +343,7 @@
+             return m_dport;
+         }
+ 
+-        bool IsLimited()
+-        {
+-            return (m_taSsnSndNxt - m_taSsnSndUna) >= m_inflightMax;
+-        }
++        bool IsLimited();
+ 
+         void SetSrc(uint32_t src)
+         {
+@@ -462,6 +460,10 @@
+          */
+         friend class UbTransaction; // Recheck only after exact WQE terminal cleanup.
+         void CheckAndRemoveCompletedWqe();
++        void ObserveJetty(UbReversalDiagnosticKind kind,
++                          uint32_t taSsn = UINT32_MAX,
++                          UbReversalDiagnosticReason reason = UbReversalDiagnosticReason::None,
++                          uint32_t task = UINT32_MAX) const;
+ 
+         /**
+          * @brief 检查指定WQE是否已完成
+diff --git a/src/unified-bus/model/ub-reversal-diagnostic.h b/src/unified-bus/model/ub-reversal-diagnostic.h
+--- a/src/unified-bus/model/ub-reversal-diagnostic.h
++++ b/src/unified-bus/model/ub-reversal-diagnostic.h
+@@ -9,7 +9,10 @@
+     EgressEnqueue, EgressSend, PortBusyStart, PortBusyEnd, TxStart, Rx,
+     TpEnqueue, TpPop, TpHead, TpLimited, TpAckBefore, TpAckAfter,
+     TpResponseBefore, TpResponseAfter, EnvelopeDecode, NativeBranch, QueueBind, TpEmpty,
+-    GrantRejected, GrantNoIngress
++    GrantRejected, GrantNoIngress,
++    // Append-only controlled-ablation observations. Existing numeric IDs stay stable.
++    JettyWindowTest, JettyAdmission, JettyTaAckBefore, JettyTaAckAfter,
++    JettyTaAckRejected, JettyCleanup
+ };
+ enum class UbReversalDiagnosticReason : uint8_t {
+     None, Empty, Ack, Cnp, Inflight, Cc, Eligible, Retransmission, Failed
+@@ -50,6 +53,14 @@
+ // - EnvelopeDecode: aux0=operation, aux1=sequence, aux2=branch count.
+ // - NativeBranch: packet=new native packet; aux0=parent envelope UID,
+ //   aux1=operation, aux2=sequence, aux3=branch index. No tag mutation is added.
++// - Jetty events: node=source, port=destination (NOT a physical port),
++//   tp=Jetty number (NOT TPN), queue=Jetty identity; aux0=logical SSN next,
++//   aux1=logical SSN una, aux2=configured TA window, aux3=logical TA SSN
++//   for admission/TAACK, UINT32_MAX otherwise. JettyWindowTest.reason is
++//   the result of the existing IsLimited evaluation, never a new probe.
++//   JettyTaAckAfter observes accepted completion progress before callbacks
++//   can admit more work. Admission-to-TAACK includes queueing and execution,
++//   and is not physical-link RTT. JettyCleanup is terminal cleanup, not ACK.
+ // Source-flight caution: sndNxt-sndUna counts sequence-space outstanding work,
+ // not bytes physically on a source link. WQE admission, first TP generation,
+ // allocator commit, port busy time, serialized TX and actual RX are separate.
+@@ -64,6 +75,7 @@
+     uintptr_t queue = 0;
+     Ptr<const Packet> packet;
+     uint64_t aux0 = 0, aux1 = 0, aux2 = 0, aux3 = 0;
++    uint32_t task = UINT32_MAX; // JettyAdmission only; append-only optional identity.
+ };
+ class UbReversalDiagnostic {
+ public:

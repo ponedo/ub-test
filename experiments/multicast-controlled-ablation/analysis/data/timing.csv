@@ -1,0 +1,7 @@
+case_id,strategy,window,weight_ps,layer_ps,weight_absolute_change_ps,weight_relative_change_percent,weight_intervention_speedup_vs_same_strategy_512,layer_absolute_change_ps,layer_relative_change_percent,layer_intervention_speedup_vs_same_strategy_512,interpretation
+baseline-512-chunk-streaming,chunk-streaming,512,552893591,732284971,0,0.0,1.0,0,0.0,1.0,fresh exact original baseline
+baseline-512-multicast-v2,multicast-v2,512,717182855,898435170,0,0.0,1.0,0,0.0,1.0,fresh exact original baseline
+window-1024-chunk-streaming,chunk-streaming,1024,552893591,732284971,0,0.0,1.0,0,0.0,1.0,capacity intervention; not original algorithm performance
+window-1024-multicast-v2,multicast-v2,1024,698240735,895291479,-18942120,-2.6411841649505132,1.0271283513701044,-3143691,-0.349907383968506,1.0035113603488233,capacity intervention; not original algorithm performance
+window-2048-chunk-streaming,chunk-streaming,2048,552893591,732284971,0,0.0,1.0,0,0.0,1.0,capacity intervention; not original algorithm performance
+window-2048-multicast-v2,multicast-v2,2048,688812836,886365447,-28370019,-3.9557581169449456,1.0411868326449132,-12069723,-1.343416130960234,1.0136170955680315,capacity intervention; not original algorithm performance

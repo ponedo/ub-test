@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "guard": "existing-output",
+      "rejected_as_expected": true,
+      "returncode": 1
+    },
+    {
+      "guard": "native-output",
+      "rejected_as_expected": true,
+      "returncode": 1
+    },
+    {
+      "guard": "wrong-native-source",
+      "rejected_as_expected": true,
+      "returncode": 1
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+{
+  "scope": "Analysis-only explicit publication allowlist. Includes aggregate data and bounded selected records, not raw trace dumps.",
+  "status": "PASS",
+  "selected_detailed_records": 87,
+  "raw_trace_files_included": 0,
+  "artifacts": [
+    {
+      "path": "EVIDENCE-GUIDE.md",
+      "bytes": 3263,
+      "sha256": "7a0216708841720dbc563a5efd8c43995976cd27792065563d0cbfff7c385700"
+    },
+    {
+      "path": "REPORT.md",
+      "bytes": 35543,
+      "sha256": "9618d4e462074dde9a1083adb02db32b8afd640b85ea44883da8ac4c81b2ac92"
+    },
+    {
+      "path": "data/allready.csv",
+      "bytes": 3261,
+      "sha256": "9a4f8fa4ed38c9aa05bb4a08a2c0d3e6c3bbf1de086f6bfdc98d81d31d336f91",
+      "data_rows": 20
+    },
+    {
+      "path": "data/analysis.json",
+      "bytes": 11692,
+      "sha256": "2c9eea185ddca8c2c74af93217cbd06985fefcbfeef359af2ab26b480a3433cb"
+    },
+    {
+      "path": "data/contrasts.csv",
+      "bytes": 802,
+      "sha256": "6cfd83e7ea1029ae444d391281fb8c771ba8a991e386340725b96ec2d741cead",
+      "data_rows": 3
+    },
+    {
+      "path": "data/critical.csv",
+      "bytes": 2104,
+      "sha256": "36d6e5df4283c3d4f57d4ce0fada4ebbcb589970779ee54c73db83993ca719a9",
+      "data_rows": 12
+    },
+    {
+      "path": "data/histogram.csv",
+      "bytes": 56540,
+      "sha256": "741920381a6bf0ecca2a05e000077edec629efadf13553a2531ba658917a056c",
+      "data_rows": 576
+    },
+    {
+      "path": "data/latency.csv",
+      "bytes": 48145,
+      "sha256": "8cc9623b220a8e506418eb3524bfdcab7128b19bca0216498599bba261dd567c",
+      "data_rows": 144
+    },
+    {
+      "path": "data/occupancy.csv",
+      "bytes": 34472,
+      "sha256": "09c01ae369883160120cd569b8e0318c32d865d613a87e6e3f776e7b30e03b65",
+      "data_rows": 96
+    },
+    {
+      "path": "data/partitions.csv",
+      "bytes": 10974,
+      "sha256": "3314f0950ceb20b92c02d920f84957d92873d2859b9e9f026e27830267204284",
+      "data_rows": 54
+    },
+    {
+      "path": "data/selected_events.csv",
+      "bytes": 5743,
+      "sha256": "c7309537c71bc73b7382169e811631eea9e42686e7374aa9e634f07e368c800a",
+      "data_rows": 28
+    },
+    {
+      "path": "data/selected_rtt.csv",
+      "bytes": 2745,
+      "sha256": "1dae3d48a4bb4e8bf74f42e9f7620aa72b78d95ab3efbb6596c96b99d038aceb",
+      "data_rows": 12
+    },
+    {
+      "path": "data/switch_cohorts.csv",
+      "bytes": 17305,
+      "sha256": "1cc4f898ec586e689a1c99add7aebf2824575a8b4eda08f6164e3a9c109a3ca2",
+      "data_rows": 72
+    },
+    {
+      "path": "data/timing.csv",
+      "bytes": 1235,
+      "sha256": "bfe9bed0a0b42271715445f4c4c9847051f8847beb51bb2a3340dcda83a34d8d",
+      "data_rows": 6
+    },
+    {
+      "path": "data/tp_reasons.csv",
+      "bytes": 7043,
+      "sha256": "98c54ade881d15865ddebcc06044466f5a6669774eaee7b4ecc52f85b18e3b15",
+      "data_rows": 36
+    },
+    {
+      "path": "evidence/feedback-hypothesis-preregistered.md",
+      "bytes": 3019,
+      "sha256": "afb06aabfdd81a0835d1ea03169f23f5e0c7c502870f43d9bf40d814028134fd"
+    },
+    {
+      "path": "evidence/input-fingerprints.json",
+      "bytes": 12689,
+      "sha256": "9e3ca39b3a93836ea34333bed4fa03dc5026cc98bd3a2d089def731e5c27e965"
+    },
+    {
+      "path": "evidence/selected-baseline-cycle-manifest.json",
+      "bytes": 963,
+      "sha256": "80a8cc8d741f00225724cee30bbdbcafcd0c2229b5266cab960eb0c202593979"
+    },
+    {
+      "path": "evidence/selected-baseline-feedback-path.csv",
+      "bytes": 312,
+      "sha256": "406adf9d2c4dddf5f739f2bc4d3ef2e33764c1e54e67547feae9966f3268ba94",
+      "data_rows": 4
+    },
+    {
+      "path": "evidence/selected-baseline-final-ta.csv",
+      "bytes": 162,
+      "sha256": "b4ba9748f3b371a32fe351dfe7bfd60798afb4e5c5e264a7b417dc6fc3f3d50c",
+      "data_rows": 1
+    },
+    {
+      "path": "evidence/selected-baseline-jetty-cycle.csv",
+      "bytes": 479,
+      "sha256": "2f2fa00b2e14f891942880174ba48dcf6b65239aeed03abad1a1a8db825936cd",
+      "data_rows": 6
+    },
+    {
+      "path": "evidence/service-lower-bound.md",
+      "bytes": 12336,
+      "sha256": "aaca8a25f13e46ad9213eb72daa1bf89a82aa92c8dcbdec1f13e0be48f8bd48f"
+    },
+    {
+      "path": "evidence/source-references.json",
+      "bytes": 3001,
+      "sha256": "2e860f78c5fdc40ca5a614fe097c533fd59a517162a09cd99c192a67f243886c"
+    },
+    {
+      "path": "feedback/physical-packet-kinds.csv",
+      "bytes": 2872,
+      "sha256": "ecd4b5d2c46c4f6176a98b2c922206ffcc2dba85152e4bfdd6dae9889070ed4a",
+      "data_rows": 48
+    },
+    {
+      "path": "feedback/port3-cohorts.csv",
+      "bytes": 14988,
+      "sha256": "5d6930ecd53c046d4bcd6933d8b1c98141ed5f70ed7dc117127d834a0f63ec7d",
+      "data_rows": 195
+    },
+    {
+      "path": "feedback/port3-summary.csv",
+      "bytes": 3584,
+      "sha256": "4b9289170901ffbd2e188e660def5d6ed36dd2bfe2885b44b6181a3d4dd463bb",
+      "data_rows": 6
+    },
+    {
+      "path": "feedback/postweight-landmarks.csv",
+      "bytes": 3910,
+      "sha256": "603e910b2904d84eea0edddc7e298d4c27eb306a76b91253a8469d268529a16d",
+      "data_rows": 6
+    },
+    {
+      "path": "feedback/selected-feedback-events.csv",
+      "bytes": 5233,
+      "sha256": "b523902a4fc5ab8463fd387cf73e519943417e4ac1968b0a4a5799e77339779f",
+      "data_rows": 36
+    },
+    {
+      "path": "feedback/selected-feedback-paths.csv",
+      "bytes": 1409,
+      "sha256": "612a647ee96645b530b2af61207c0bd3c0279b046f63017e7717e890c546fbc0",
+      "data_rows": 12
+    },
+    {
+      "path": "feedback/selected-return-ports.csv",
+      "bytes": 5838,
+      "sha256": "13dacb9cf364ca8ff7357d24365e9afa593083394b487294f323a23133625629",
+      "data_rows": 18
+    },
+    {
+      "path": "feedback/summary.json",
+      "bytes": 197,
+      "sha256": "90af7ba10f55070cadc194fc21728cb8e800d6e0826ef53f0f7c4be279f2bfe6"
+    },
+    {
+      "path": "feedback/terminal-coverage.csv",
+      "bytes": 498,
+      "sha256": "8d0d46fd0948afb49e84dcd8f86084beacf9772ed21927f7b116430e4c87c656",
+      "data_rows": 12
+    },
+    {
+      "path": "feedback/tp-empty-capacity-observations.csv",
+      "bytes": 5132,
+      "sha256": "3e5ea38e641f98686e025e8c70c54c24134fabfc233440521ded8e448baf6929",
+      "data_rows": 12
+    },
+    {
+      "path": "feedback/weight-end-frontiers.csv",
+      "bytes": 1913,
+      "sha256": "02d8302a712cbc5f42f6551305c7f1debd88759f167b80b77eaf8e34145d9ee3",
+      "data_rows": 24
+    },
+    {
+      "path": "feedback/weight-feedback-counts.csv",
+      "bytes": 1918,
+      "sha256": "0ce5899f18f22e6330ea8b7b2579e0d315215613a56bd321a404f8cd5a84269b",
+      "data_rows": 6
+    },
+    {
+      "path": "figures/feedback-return-port.png",
+      "bytes": 187249,
+      "sha256": "68b7aa6b07b35b1b87fe2467825d1f496321ea5b43d5ae1bbf7031ff1e9fbac9"
+    },
+    {
+      "path": "figures/feedback-return-port.svg",
+      "bytes": 118163,
+      "sha256": "76ecc3fa6235de3c934fb1a8abe616691b4078d855ad0227148a94948521e6c6"
+    },
+    {
+      "path": "figures/source3-occupancy.png",
+      "bytes": 131117,
+      "sha256": "3e712e3fc856171dba7dbaf37cf7b7508b2c7660ff5d5f2d99f2b00fb7c5ecb2"
+    },
+    {
+      "path": "figures/source3-occupancy.svg",
+      "bytes": 66609,
+      "sha256": "f5f241a37b99db49f7e2288889f1b174b4867832eafe806a3d0693d1ef9f2156"
+    },
+    {
+      "path": "figures/switch59-residence.png",
+      "bytes": 121019,
+      "sha256": "fba90a7cc82886e1ce9db26e85569c8bcf393f2a174f9532fc05ef0d0fbdaa97"
+    },
+    {
+      "path": "figures/switch59-residence.svg",
+      "bytes": 69812,
+      "sha256": "0862d1357d7706566bb4fcb94867304f7faf867e8dbe504b9b89d41b79c8b846"
+    },
+    {
+      "path": "figures/window-contrasts.png",
+      "bytes": 128486,
+      "sha256": "c4b694c3fcacb41e1f498c4b01b3ffcb652a4f365ae4b7281df6d4dbe58abc03"
+    },
+    {
+      "path": "figures/window-contrasts.svg",
+      "bytes": 65417,
+      "sha256": "287f5b4db5fc88aa1653c56d850ae7e303efb2d06c6a2d1bd2868d25e5c82e30"
+    },
+    {
+      "path": "figures/window-latency.png",
+      "bytes": 108792,
+      "sha256": "f379628052ce719f4bd304e70beb3c013191e4dc760e991e1320e95a1c50569a"
+    },
+    {
+      "path": "figures/window-latency.svg",
+      "bytes": 80280,
+      "sha256": "1c758d34ffdb250e4a49ba04e09e8f11794a7e5963e5734b57af01bfe7a916af"
+    },
+    {
+      "path": "supplemental-analysis/collect-feedback.py",
+      "bytes": 13500,
+      "sha256": "e2e17079e03df282fcc87c24c2eb3585abf27d2f2f5debb802d0b7e8bf6a647d"
+    },
+    {
+      "path": "supplemental-analysis/plot-feedback.py",
+      "bytes": 4313,
+      "sha256": "c4c768a5c2f7d876c610e8e8b402d02226adf7046ba52f5571d8bd3f527f8a1b"
+    }
+  ]
+}

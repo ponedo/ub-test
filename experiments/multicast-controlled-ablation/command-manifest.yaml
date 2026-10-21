@@ -1,0 +1,17 @@
+# Execute from workspace root. Commands are explicit and refuse reused outputs.
+# Root must coordinate build/run admission; this file does not auto-launch work.
+commands:
+  - python ablation-work/experiments/multicast-controlled-ablation/test-harness.py
+  - python ablation-work/experiments/multicast-controlled-ablation/test-analysis.py
+  - python ablation-work/experiments/multicast-controlled-ablation/build-native.py --native ablation-native --out ablation-private/native-build --tools real-batch-build-tools
+  - python ablation-work/experiments/multicast-controlled-ablation/build.py --native ablation-native --out ablation-private/build-r2
+  - python ablation-work/experiments/multicast-controlled-ablation/stage-a.py --build ablation-private/build-r2 --out ablation-private/stage-a
+  - python ablation-work/experiments/multicast-controlled-ablation/prepare.py --build ablation-private/build-r2 --stage-a ablation-private/stage-a --a-decision ablation-work/experiments/multicast-controlled-ablation/audit-a/decision.json --out ablation-private/real-3136
+  - python ablation-work/experiments/multicast-controlled-ablation/run-real.py ablation-private/real-3136 --build ablation-private/build-r2
+  - python ablation-work/experiments/multicast-controlled-ablation/analyze.py ablation-private/real-3136 --out ablation-private/real-3136/analysis
+  - python ablation-work/experiments/multicast-controlled-ablation/plot.py ablation-private/real-3136/analysis
+script_contract:
+  inputs: immutable accepted real and small fixture files; frozen app/native source
+  outputs: independent private stage-a and real-3136 directories; no overwrite
+  idempotency: refuses existing output root
+  forbidden_actions: no regenerate inputs; no A+B; no automatic rerun; no publishing

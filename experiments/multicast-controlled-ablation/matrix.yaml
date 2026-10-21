@@ -1,0 +1,295 @@
+{
+  "schema": 1,
+  "checkpoint_policy": "continue_full_matrix_except_safety_or_correctness",
+  "small": {
+    "fixtures": [
+      "no-replicas",
+      "singleton",
+      "multi-target",
+      "multi-expert"
+    ],
+    "rates_gbps": [
+      100,
+      3136
+    ],
+    "strategies": [
+      "no-balancing",
+      "direct",
+      "chunk-streaming",
+      "multicast-v2"
+    ],
+    "windows": [
+      512,
+      1024,
+      2048
+    ],
+    "variants_at_512": [
+      "accepted",
+      "off",
+      "on"
+    ],
+    "variants_changed_window": [
+      "off",
+      "on"
+    ],
+    "log_level": "events"
+  },
+  "cases": [
+    {
+      "case_id": "baseline-512-chunk-streaming",
+      "block_id": "baseline-512",
+      "role": "control",
+      "status": "pending",
+      "window": 512,
+      "strategy": "chunk-streaming",
+      "allocator": "original",
+      "changed_variable": "none",
+      "case_dir": "ablation-private/real-3136/baseline-512-chunk-streaming",
+      "fixed_controls": "experiment-plan.md",
+      "prediction": "Exact accepted baseline parity",
+      "falsification_signal": "Baseline parity fails",
+      "metric_checks": [
+        "online payload/WQE",
+        "CBFC conservation",
+        "capacity",
+        "pair/multicast drain",
+        "compute/readiness",
+        "bounded diagnostic completeness"
+      ],
+      "expected_artifacts": [
+        "run-result.json",
+        "online-summary.json",
+        "ablation-config.json",
+        "simulator-metrics.json",
+        "diagnostic-jetty-status.json"
+      ],
+      "parallel_group": "peak-aware-max-two",
+      "checkpoint_ids": [
+        "small-gate",
+        "baseline-exact-parity"
+      ]
+    },
+    {
+      "case_id": "baseline-512-multicast-v2",
+      "block_id": "baseline-512",
+      "role": "control",
+      "status": "pending",
+      "window": 512,
+      "strategy": "multicast-v2",
+      "allocator": "original",
+      "changed_variable": "none",
+      "case_dir": "ablation-private/real-3136/baseline-512-multicast-v2",
+      "fixed_controls": "experiment-plan.md",
+      "prediction": "Exact accepted baseline parity",
+      "falsification_signal": "Baseline parity fails",
+      "metric_checks": [
+        "online payload/WQE",
+        "CBFC conservation",
+        "capacity",
+        "pair/multicast drain",
+        "compute/readiness",
+        "bounded diagnostic completeness"
+      ],
+      "expected_artifacts": [
+        "run-result.json",
+        "online-summary.json",
+        "ablation-config.json",
+        "simulator-metrics.json",
+        "diagnostic-jetty-status.json"
+      ],
+      "parallel_group": "peak-aware-max-two",
+      "checkpoint_ids": [
+        "small-gate",
+        "baseline-exact-parity"
+      ]
+    },
+    {
+      "case_id": "window-1024-chunk-streaming",
+      "block_id": "window-1024",
+      "role": "treatment",
+      "status": "pending",
+      "window": 1024,
+      "strategy": "chunk-streaming",
+      "allocator": "original",
+      "changed_variable": "jetty_ta_window",
+      "case_dir": "ablation-private/real-3136/window-1024-chunk-streaming",
+      "fixed_controls": "experiment-plan.md",
+      "prediction": "Reduced explicit full-window eligibility intervals may improve MC-minus-Chunk weight delta",
+      "falsification_signal": "No predicted interval reduction or no MC-minus-Chunk improvement",
+      "metric_checks": [
+        "online payload/WQE",
+        "CBFC conservation",
+        "capacity",
+        "pair/multicast drain",
+        "compute/readiness",
+        "bounded diagnostic completeness"
+      ],
+      "expected_artifacts": [
+        "run-result.json",
+        "online-summary.json",
+        "ablation-config.json",
+        "simulator-metrics.json",
+        "diagnostic-jetty-status.json"
+      ],
+      "parallel_group": "peak-aware-max-two",
+      "checkpoint_ids": [
+        "small-gate",
+        "baseline-exact-parity"
+      ]
+    },
+    {
+      "case_id": "window-1024-multicast-v2",
+      "block_id": "window-1024",
+      "role": "treatment",
+      "status": "pending",
+      "window": 1024,
+      "strategy": "multicast-v2",
+      "allocator": "original",
+      "changed_variable": "jetty_ta_window",
+      "case_dir": "ablation-private/real-3136/window-1024-multicast-v2",
+      "fixed_controls": "experiment-plan.md",
+      "prediction": "Reduced explicit full-window eligibility intervals may improve MC-minus-Chunk weight delta",
+      "falsification_signal": "No predicted interval reduction or no MC-minus-Chunk improvement",
+      "metric_checks": [
+        "online payload/WQE",
+        "CBFC conservation",
+        "capacity",
+        "pair/multicast drain",
+        "compute/readiness",
+        "bounded diagnostic completeness"
+      ],
+      "expected_artifacts": [
+        "run-result.json",
+        "online-summary.json",
+        "ablation-config.json",
+        "simulator-metrics.json",
+        "diagnostic-jetty-status.json"
+      ],
+      "parallel_group": "peak-aware-max-two",
+      "checkpoint_ids": [
+        "small-gate",
+        "baseline-exact-parity"
+      ]
+    },
+    {
+      "case_id": "window-2048-chunk-streaming",
+      "block_id": "window-2048",
+      "role": "treatment",
+      "status": "pending",
+      "window": 2048,
+      "strategy": "chunk-streaming",
+      "allocator": "original",
+      "changed_variable": "jetty_ta_window",
+      "case_dir": "ablation-private/real-3136/window-2048-chunk-streaming",
+      "fixed_controls": "experiment-plan.md",
+      "prediction": "Reduced explicit full-window eligibility intervals may improve MC-minus-Chunk weight delta",
+      "falsification_signal": "No predicted interval reduction or no MC-minus-Chunk improvement",
+      "metric_checks": [
+        "online payload/WQE",
+        "CBFC conservation",
+        "capacity",
+        "pair/multicast drain",
+        "compute/readiness",
+        "bounded diagnostic completeness"
+      ],
+      "expected_artifacts": [
+        "run-result.json",
+        "online-summary.json",
+        "ablation-config.json",
+        "simulator-metrics.json",
+        "diagnostic-jetty-status.json"
+      ],
+      "parallel_group": "peak-aware-max-two",
+      "checkpoint_ids": [
+        "small-gate",
+        "baseline-exact-parity"
+      ]
+    },
+    {
+      "case_id": "window-2048-multicast-v2",
+      "block_id": "window-2048",
+      "role": "treatment",
+      "status": "pending",
+      "window": 2048,
+      "strategy": "multicast-v2",
+      "allocator": "original",
+      "changed_variable": "jetty_ta_window",
+      "case_dir": "ablation-private/real-3136/window-2048-multicast-v2",
+      "fixed_controls": "experiment-plan.md",
+      "prediction": "Reduced explicit full-window eligibility intervals may improve MC-minus-Chunk weight delta",
+      "falsification_signal": "No predicted interval reduction or no MC-minus-Chunk improvement",
+      "metric_checks": [
+        "online payload/WQE",
+        "CBFC conservation",
+        "capacity",
+        "pair/multicast drain",
+        "compute/readiness",
+        "bounded diagnostic completeness"
+      ],
+      "expected_artifacts": [
+        "run-result.json",
+        "online-summary.json",
+        "ablation-config.json",
+        "simulator-metrics.json",
+        "diagnostic-jetty-status.json"
+      ],
+      "parallel_group": "peak-aware-max-two",
+      "checkpoint_ids": [
+        "small-gate",
+        "baseline-exact-parity"
+      ]
+    },
+    {
+      "case_id": "null-grant-A-chunk-streaming",
+      "block_id": "A",
+      "role": "treatment",
+      "status": "STOPPED",
+      "window": 512,
+      "strategy": "chunk-streaming",
+      "allocator": "unapproved-null-grant-candidate",
+      "changed_variable": "null-grant callback scheduling",
+      "case_dir": null,
+      "measured": false,
+      "reason": "Minimal suppression reverses round-robin winner order under fixed allocation service time; semantic-preservation gate failed.",
+      "fixed_controls": "Original baseline only; no window change",
+      "prediction": "No performance prediction is tested after semantic stop",
+      "falsification_signal": "Semantic counterexample already observed",
+      "metric_checks": [
+        "semantic-preservation proof"
+      ],
+      "expected_artifacts": [
+        "A audit decision and counterexample"
+      ],
+      "parallel_group": null,
+      "checkpoint_ids": [
+        "A-semantic-preservation"
+      ]
+    },
+    {
+      "case_id": "null-grant-A-multicast-v2",
+      "block_id": "A",
+      "role": "treatment",
+      "status": "STOPPED",
+      "window": 512,
+      "strategy": "multicast-v2",
+      "allocator": "unapproved-null-grant-candidate",
+      "changed_variable": "null-grant callback scheduling",
+      "case_dir": null,
+      "measured": false,
+      "reason": "Minimal suppression reverses round-robin winner order under fixed allocation service time; semantic-preservation gate failed.",
+      "fixed_controls": "Original baseline only; no window change",
+      "prediction": "No performance prediction is tested after semantic stop",
+      "falsification_signal": "Semantic counterexample already observed",
+      "metric_checks": [
+        "semantic-preservation proof"
+      ],
+      "expected_artifacts": [
+        "A audit decision and counterexample"
+      ],
+      "parallel_group": null,
+      "checkpoint_ids": [
+        "A-semantic-preservation"
+      ]
+    }
+  ]
+}

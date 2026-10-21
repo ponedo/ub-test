@@ -1,0 +1,54 @@
+{
+  "audit_status": "COUNTEREXAMPLE_CONFIRMED",
+  "experiment_A_status": "UNSUPPORTED_SEMANTIC_PRESERVATION",
+  "scope": "Scheduler/ACK-queue unit witness, not physical WRITE or real LayerLatency",
+  "allocation_ps": 5000,
+  "flow_control": "CBFC",
+  "configured_link_gbps": 3136,
+  "native_sources_unchanged": true,
+  "native_libraries_unchanged": true,
+  "native_source_sha256": {
+    "src/unified-bus/CMakeLists.txt": "6d27d84f0f423b95570e3308fc857b572586ca18bbc290a220ee1073c649d9fc",
+    "src/unified-bus/model/protocol/ub-transport.cc": "5d412ad095e5714640c6e61a84d567fc35b334ecbded50b9891e80663719d35f",
+    "src/unified-bus/model/protocol/ub-transport.h": "5a37dd301ceb026c64a7948f4e7c4c4fcfaeed2df2ffd31273f96921ae8e1fef",
+    "src/unified-bus/model/ub-ingress-queue.cc": "0b2a829d552b4bd170a1ed9c33a482c67d96820c9ceb1a2b8af0b0cb8aaed2f7",
+    "src/unified-bus/model/ub-port.cc": "e8c63aa93cc26999219d07955ff48a2396bfb07a4695dc442f24199881498180",
+    "src/unified-bus/model/ub-reversal-diagnostic.cc": "b451dad18afa4ab6f580b6a7b7eecece1fcc60c6255ed176e3e3ee8590a98a56",
+    "src/unified-bus/model/ub-reversal-diagnostic.h": "0d8c41774fa5fe173d1199887479b2817e61cea5b6105d50b9a810f33f2691de",
+    "src/unified-bus/model/ub-switch-allocator.cc": "c841f37a5a8fe80d44a432eb6b76ea88fd9f42fbb285e18db7ff9e2057defe5b",
+    "src/unified-bus/model/ub-switch.cc": "ad84254c185ca73dd3137c8b4549d850545edeca4894f6dafc13169fd31049b7"
+  },
+  "native_library_sha256": {
+    "libns3.44-applications.so": "445459162463305dd7c5bbe9c076933c609d573280c6237dc8fa81581b5586c1",
+    "libns3.44-bridge.so": "31648ddb41d2d708a2f1c3178697b1c288fbd203dde3ee14aaf444c167acd400",
+    "libns3.44-config-store.so": "6e10417b7f77784a667b07df01c1ba2a8b0c03f34656dd15897b96385cfe8e91",
+    "libns3.44-core.so": "49635f6f5bd9b41d657dbbf67947b2cd65003c2bbc96ad99e97b3c4cca42d4b3",
+    "libns3.44-internet.so": "b7c8a089de52d66338f3902698202e2ed29d245276fc1bb812244a5484c58dcf",
+    "libns3.44-network.so": "fcbf528fa254f1e03d8ff15ca1e7b86d1ea909e9df34d2210e37266eac7c452f",
+    "libns3.44-point-to-point.so": "f49d29c64f6b7201f47db8e7ae47fc8218541801ad4f28618ab7ed4c55e4c741",
+    "libns3.44-stats.so": "5a62764d81d466afdc68dc2bee0e2126ad6f8c81f79946046f6d98810f4fb7d2",
+    "libns3.44-traffic-control.so": "051f77c7fc5c2c60856995ae4a18eb775e6642eb20527540b0bce3ddcf94ca57",
+    "libns3.44-unified-bus.so": "a8bcf2259ceb815b635f749e3dda2caa1aa35213d4b776c033e9e6169c23329a"
+  },
+  "accepted_pair_proxy_sha256": "447f7e296bab4af1d3f97482161d4f7e35f82bb89785bf63a64fc779951bd44c",
+  "counterexample_sha256": "8ab42cf18db10c4af6d69f17a6ce280a64c604879a9b3b6914d68ca2e2f7d9c8",
+  "binary_sha256": "209feb4f1163eada5f5ad29aad1ab0b4546d8bd7b1aca25eb5c2fee6d7e97756",
+  "outputs": {
+    "native": "native fc=CBFC link_gbps=3136 allocation_ps=5000 callbacks=3 suppressed=0 commits=A@10000ps,B@25000ps",
+    "suppress": "suppress fc=CBFC link_gbps=3136 allocation_ps=5000 callbacks=2 suppressed=2 commits=B@6000ps,A@11000ps"
+  },
+  "execution": {
+    "build": {
+      "returncode": 0,
+      "wall_seconds": 7.088002603999485
+    },
+    "native": {
+      "returncode": 0,
+      "wall_seconds": 0.016589361999649554
+    },
+    "suppress": {
+      "returncode": 0,
+      "wall_seconds": 0.016606076998868957
+    }
+  }
+}

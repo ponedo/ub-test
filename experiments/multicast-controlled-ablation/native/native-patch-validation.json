@@ -1,0 +1,73 @@
+{
+  "status": "PASS",
+  "patch_sha256": "f04aa181e011c097d35bdc359ca4d294f147f5ae7dc4562204932e287e92d600",
+  "file_count": 3,
+  "forward_check": "PASS",
+  "forward_application": "PASS",
+  "forward_hashes": {
+    "src/unified-bus/model/protocol/ub-function.cc": "aa75a3be233b55b559a6fbc40abee5dd1e4862ccf31e8af374dd736244e69b68",
+    "src/unified-bus/model/protocol/ub-function.h": "f5ebffdd2ab7254edb75426c33595952ff1250de290d9755728593ebbcf2cf1b",
+    "src/unified-bus/model/ub-reversal-diagnostic.h": "209e1e8fd60d3d930efe8ff44c6a6caeb6077c3dc5e8aa3495723e32ae46d05f"
+  },
+  "reverse_check": "PASS",
+  "reverse_application": "PASS",
+  "reverse_hashes": {
+    "src/unified-bus/model/protocol/ub-function.cc": "a1de4e3dc60381bddc05fb467e55894ac8e2ce313ad72d3273ccf1f59692a86f",
+    "src/unified-bus/model/protocol/ub-function.h": "fb809b9c6474f56e531545479df4f867c53e1e8735b6a0ab86d242b034abcec4",
+    "src/unified-bus/model/ub-reversal-diagnostic.h": "0d8c41774fa5fe173d1199887479b2817e61cea5b6105d50b9a810f33f2691de"
+  },
+  "native_inputs_unchanged": true,
+  "temporary_tree_removed": true,
+  "new_builds_or_simulations": false,
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "apply",
+        "--check",
+        "<staging>/ub-jetty-controlled-ablation.patch"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "cwd": "<throwaway-native-tree>"
+    },
+    {
+      "argv": [
+        "git",
+        "apply",
+        "<staging>/ub-jetty-controlled-ablation.patch"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "cwd": "<throwaway-native-tree>"
+    },
+    {
+      "argv": [
+        "git",
+        "apply",
+        "--reverse",
+        "--check",
+        "<staging>/ub-jetty-controlled-ablation.patch"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "cwd": "<throwaway-native-tree>"
+    },
+    {
+      "argv": [
+        "git",
+        "apply",
+        "--reverse",
+        "<staging>/ub-jetty-controlled-ablation.patch"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "cwd": "<throwaway-native-tree>"
+    }
+  ],
+  "command_path_rendering": "Absolute execution paths are replaced with <staging> and <throwaway-native-tree> placeholders; command results and hashes are unchanged."
+}
