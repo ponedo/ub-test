@@ -1,0 +1,9 @@
+link_gbps,strategy,status,completed_tokens,assignments,remote_wqes,ta_count,sender_completions,transport_directions,all_psn_windows_drained,all_ta_windows_drained,unacked,descriptors,timers,active_wqes,total_credit_consumed,total_credit_returned,total_credit_restored,total_credit_pending,total_credit_blocked,credit_conservation_pass,all_private_per_port_credit_checks_pass,all_private_transport_window_checks_pass,max_port_voq_bytes,max_port_ingress_bytes,max_port_egress_bytes,max_switch_port_packets,max_switch_port_feedback_packets
+100,no-balancing,PASS,2048,16384,32246,257968,32246,3976,True,True,0,0,0,0,5159360,5159360,5158952,408,0,True,True,True,7516966,845242,2204,43968,32976
+100,direct,PASS,2048,16384,31593,1229216,31593,4022,True,True,0,0,0,0,24584320,24584320,24583260,1060,0,True,True,True,731412,594804,2204,162944,159072
+100,chunk-streaming,PASS,2048,16384,68449,1229216,68449,4022,True,True,0,0,0,0,24584320,24584320,24583120,1200,0,True,True,True,731474,594928,2204,126656,122640
+100,multicast-v2,PASS,2048,16384,31593,1229216,31593,4022,True,True,0,0,0,0,20990080,20990080,20989036,1044,0,True,True,True,1188618,722678,2704,162945,159072
+3136,no-balancing,PASS,2048,16384,32246,257968,32246,3976,True,True,0,0,0,0,5159360,5159360,5158332,1028,0,True,True,True,3510466,678316,1102,43968,32976
+3136,direct,PASS,2048,16384,31593,1229216,31593,4022,True,True,0,0,0,0,24584320,24584320,24582760,1560,0,True,True,True,440800,283214,1102,162944,159072
+3136,chunk-streaming,PASS,2048,16384,68449,1229216,68449,4022,True,True,0,0,0,0,24584320,24584320,24582716,1604,0,True,True,True,284316,283214,1102,126656,122640
+3136,multicast-v2,PASS,2048,16384,31593,1229216,31593,4022,True,True,0,0,0,0,20990080,20990080,20988672,1408,0,True,True,True,567628,347464,1352,162945,159072

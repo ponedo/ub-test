@@ -1,0 +1,108 @@
+{
+  "status": "PASS",
+  "baseline_commit": "3c2275eafea79426a441c819c8b65268492ff08e",
+  "baseline_reuse": "All four baseline config/input/assignments SHA256 and semantic Planner SHA256 exactly match accepted published evidence; unchanged accepted source and current two-rate small-stage gate.",
+  "current_real_runs": 4,
+  "small_case_runs": 32,
+  "native_fault_smoke_runs": 3,
+  "source_unchanged": true,
+  "source_identity_entries": 3406,
+  "source_identity_sha256": "c87f844e1756324b115fc5383358acee0f128dcee8d1d03a0dd15294dec5884a",
+  "accepted_native_manifest_reference": "experiments/ultraep-multicast-integration/candidate-native-source-sha256.json",
+  "accepted_native_manifest_sha256": "349721cdf1a14455cb14d8bdbfffe259730436fc9769fc3403405b75a09b3909",
+  "binary_identity_entries": 13,
+  "binary_identity_sha256": "0c645b8c4096fe3e49a2afeb6bca97a8feaad7e75d520360e7a4468eff9c8176",
+  "input_identity": {
+    "routing": "4b2f70871b969730a8f85aace4357d28b2e069d2f0d16a738a0c35eca691a0e5",
+    "manifest": "d5708f02b9ffa6e19500725685272ad840760d9c6b5f5f475f12bc3560405db6",
+    "counts": "e3163d85c2ada0373cb73dad19a3efeac7d0774f1b56852aacdcf9b264c94c4e"
+  },
+  "compute_work_exactly_unchanged": true,
+  "build_receipts": [
+    {
+      "stage": "native-build",
+      "status": "PASS",
+      "guard": null,
+      "start": "2026-10-21T02:15:37.213991+00:00",
+      "wall_seconds": 653.3848418000002,
+      "user_cpu_seconds": 1239.018922,
+      "system_cpu_seconds": 66.213233,
+      "peak_rss_kib": 3116868,
+      "sampled_peak_tree_rss_bytes": 3646939136,
+      "end_utc": "2026-10-21T02:26:30.598833+00:00"
+    },
+    {
+      "stage": "native-configure",
+      "status": "PASS",
+      "guard": null,
+      "start": "2026-10-21T02:15:35.194365+00:00",
+      "wall_seconds": 2.0177774600001612,
+      "user_cpu_seconds": 1.266732,
+      "system_cpu_seconds": 0.6696489999999999,
+      "peak_rss_kib": 26276,
+      "sampled_peak_tree_rss_bytes": 35115008,
+      "end_utc": "2026-10-21T02:15:37.212142+00:00"
+    },
+    {
+      "stage": "build/graph-tool-build",
+      "status": "PASS",
+      "guard": null,
+      "start": "2026-10-21T02:27:38.229610+00:00",
+      "wall_seconds": 1.7572123449999708,
+      "user_cpu_seconds": 1.569655,
+      "system_cpu_seconds": 0.094224,
+      "peak_rss_kib": 161052,
+      "sampled_peak_tree_rss_bytes": 166068224,
+      "end_utc": "2026-10-21T02:27:39.986822+00:00"
+    },
+    {
+      "stage": "build/layer-build",
+      "status": "PASS",
+      "guard": null,
+      "start": "2026-10-21T02:26:46.058806+00:00",
+      "wall_seconds": 26.084373790000427,
+      "user_cpu_seconds": 25.085286,
+      "system_cpu_seconds": 0.7798889999999999,
+      "peak_rss_kib": 1461976,
+      "sampled_peak_tree_rss_bytes": 1496567808,
+      "end_utc": "2026-10-21T02:27:12.143180+00:00"
+    },
+    {
+      "stage": "build/model-probe-build",
+      "status": "PASS",
+      "guard": null,
+      "start": "2026-10-21T02:27:39.987877+00:00",
+      "wall_seconds": 0.753721994999978,
+      "user_cpu_seconds": 0.453899,
+      "system_cpu_seconds": 0.056192,
+      "peak_rss_kib": 92324,
+      "sampled_peak_tree_rss_bytes": 66457600,
+      "end_utc": "2026-10-21T02:27:40.741599+00:00"
+    },
+    {
+      "stage": "build/parent-layer-build",
+      "status": "PASS",
+      "guard": null,
+      "start": "2026-10-21T02:27:12.145845+00:00",
+      "wall_seconds": 26.082367494999744,
+      "user_cpu_seconds": 25.193471,
+      "system_cpu_seconds": 0.804391,
+      "peak_rss_kib": 1434440,
+      "sampled_peak_tree_rss_bytes": 1468362752,
+      "end_utc": "2026-10-21T02:27:38.228212+00:00"
+    },
+    {
+      "stage": "build/rate-probe-build",
+      "status": "PASS",
+      "guard": null,
+      "start": "2026-10-21T02:27:40.764558+00:00",
+      "wall_seconds": 5.769518280000284,
+      "user_cpu_seconds": 5.29763,
+      "system_cpu_seconds": 0.270436,
+      "peak_rss_kib": 547480,
+      "sampled_peak_tree_rss_bytes": 558084096,
+      "end_utc": "2026-10-21T02:27:46.534076+00:00"
+    }
+  ],
+  "scope": "One L37 / 2048-token / EP64 real workload; logical aggregate 3136 Gbps versus reused accepted 100 Gbps."
+}

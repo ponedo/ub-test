@@ -1,0 +1,7 @@
+sequence: [restore_accepted_source, verify_source_identity, build_native_unchanged, build_executors_unchanged, stage_a_two_rates, prepare_real_exact_baseline_parity, run_real_3136_guarded, aggregate, publish_verify]
+private_root: /workspace/scratch/c6ba02920254/bandwidth-private
+command_script: commands.sh
+new_rate_gbps: 3136
+baseline_rate_gbps: 100
+baseline_reuse_requires: exact_config_input_assignments_and_semantic_plan_hashes
+checkpoint_decision: continue_full_matrix

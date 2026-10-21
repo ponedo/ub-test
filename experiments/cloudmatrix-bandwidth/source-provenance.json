@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "accepted_commit": "3c2275eafea79426a441c819c8b65268492ff08e",
+  "project_tracked_diff_empty": true,
+  "native_base": "b8375b51a094d3b1217b697989e1ab979f609e64",
+  "native_candidate_hashes_verified": 109,
+  "native_changed_files_covered_by_accepted_manifest": [
+    "src/unified-bus/model/protocol/ub-transport.h",
+    "src/unified-bus/model/ub-port.cc",
+    "src/unified-bus/model/ub-queue-manager.cc",
+    "src/unified-bus/model/ub-queue-manager.h",
+    "src/unified-bus/model/ub-switch-allocator.cc",
+    "src/unified-bus/model/ub-switch.cc",
+    "src/unified-bus/model/ub-switch.h"
+  ],
+  "native_cmake_change_verified_exact_accepted_v2_header_registration": true,
+  "private_source_identity_entries": 3406,
+  "private_source_identity_sha256": "c87f844e1756324b115fc5383358acee0f128dcee8d1d03a0dd15294dec5884a",
+  "native_patch_diff_sha256": "b07d218d6f9c0144a26c27e5fbeb8870a829015621dc6322abf034ce9dda48c2",
+  "only_new_experiment_directory_added": true,
+  "build_recipe": "Accepted roofline reproduce.sh native CMake flags unchanged; -j2; accepted build.py executors unchanged; additional test-only rate-probe."
+}

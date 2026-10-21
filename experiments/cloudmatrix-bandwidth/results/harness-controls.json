@@ -1,0 +1,102 @@
+{
+  "status": "PASS",
+  "final_cleanup_tests": [
+    {
+      "test": "sigterm",
+      "status": "PASS",
+      "driver_returncode": 1,
+      "live_after_return": []
+    },
+    {
+      "test": "sigint",
+      "status": "PASS",
+      "driver_returncode": 1,
+      "live_after_return": []
+    },
+    {
+      "test": "timeout",
+      "status": "PASS",
+      "driver_returncode": 0,
+      "live_after_return": []
+    },
+    {
+      "test": "success",
+      "status": "PASS",
+      "driver_returncode": 0,
+      "live_after_return": []
+    }
+  ],
+  "optimization_rejection_checks": [
+    {
+      "script": "prepare.py",
+      "mode": "flag",
+      "status": "PASS",
+      "returncode": 1,
+      "error": "RuntimeError: Python optimization is forbidden: all validation assertions must execute"
+    },
+    {
+      "script": "prepare.py",
+      "mode": "env",
+      "status": "PASS",
+      "returncode": 1,
+      "error": "RuntimeError: Python optimization is forbidden: all validation assertions must execute"
+    },
+    {
+      "script": "run-case.py",
+      "mode": "flag",
+      "status": "PASS",
+      "returncode": 1,
+      "error": "RuntimeError: Python optimization is forbidden: all validation assertions must execute"
+    },
+    {
+      "script": "run-case.py",
+      "mode": "env",
+      "status": "PASS",
+      "returncode": 1,
+      "error": "RuntimeError: Python optimization is forbidden: all validation assertions must execute"
+    },
+    {
+      "script": "run-real.py",
+      "mode": "flag",
+      "status": "PASS",
+      "returncode": 1,
+      "error": "RuntimeError: Python optimization is forbidden: all validation assertions must execute"
+    },
+    {
+      "script": "run-real.py",
+      "mode": "env",
+      "status": "PASS",
+      "returncode": 1,
+      "error": "RuntimeError: Python optimization is forbidden: all validation assertions must execute"
+    },
+    {
+      "script": "stage-a.py",
+      "mode": "flag",
+      "status": "PASS",
+      "returncode": 1,
+      "error": "RuntimeError: Assertions must remain enabled"
+    },
+    {
+      "script": "stage-a.py",
+      "mode": "env",
+      "status": "PASS",
+      "returncode": 1,
+      "error": "RuntimeError: Assertions must remain enabled"
+    }
+  ],
+  "initial_test_findings": [
+    {
+      "test": "sigterm",
+      "status": "PASS"
+    },
+    {
+      "test": "sigint",
+      "status": "PASS"
+    },
+    {
+      "test": "timeout",
+      "status": "FAIL"
+    }
+  ],
+  "correction": "Before simulations, corrected owned-process-group cleanup on success/failure/interruption; preserved numerical guards and reran four dummy tests. No native protocol change."
+}

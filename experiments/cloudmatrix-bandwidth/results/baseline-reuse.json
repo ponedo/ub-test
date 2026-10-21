@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "accepted_commit": "3c2275eafea79426a441c819c8b65268492ff08e",
+  "accepted_summary_sha256": "889b1b5346a11696d9d8b6ba6a6d48b4d560325efc61554f6275de26f05e879f",
+  "source_identity_sha256": "c87f844e1756324b115fc5383358acee0f128dcee8d1d03a0dd15294dec5884a",
+  "native_source_hashes": 109,
+  "source_files_unchanged": true,
+  "binary_identity_note": "Same accepted source and build recipe; new binary paths and hashes are recorded, not claimed byte-identical to the historical build.",
+  "small_stage_note": "Current small-stage PASS is required; historical aggregate summary comparisons are partial numerical checks, not full historical execution replay.",
+  "strategies": [
+    {
+      "strategy": "no-balancing",
+      "plan_semantic_sha256": "a9292a0340d86e706b40d4f499e9cbac58efea8be9916c9b49350f594abd235e",
+      "assignments_sha256": "b63e71fec9589ebc44a303c32306d8210794e9f4517eec7e772adba6166ad402",
+      "input_sha256": "20182d938ebd8fe13192484e62d1bf377d28a2d08eecb9fe8b315bfec6121ac6",
+      "config_sha256": "edc3bb39d709a4a8e8fb83aabead01a5145a47ec4b2ba2b47f526645cd9be318",
+      "status": "EXACT_HASH_MATCH"
+    },
+    {
+      "strategy": "direct",
+      "plan_semantic_sha256": "55b8de3bc0e6773ac265f84883f4c2940ec5ff9e049b29fcccbfb6275a0f0f94",
+      "assignments_sha256": "1a7f767d035076f898f5ce7ee8ab02d65eb9f40d057cc2c99931e97c9c1bf566",
+      "input_sha256": "7c3c2dbd276652a4e154488b962aae2fb0f5a3022c4a147ccdf5d6d3d7096f0d",
+      "config_sha256": "44495a2fbf49cfc2d4d6fb6ee17d62bbf1393dceb1c452910fc5d4534e3bc014",
+      "status": "EXACT_HASH_MATCH"
+    },
+    {
+      "strategy": "chunk-streaming",
+      "plan_semantic_sha256": "55b8de3bc0e6773ac265f84883f4c2940ec5ff9e049b29fcccbfb6275a0f0f94",
+      "assignments_sha256": "1a7f767d035076f898f5ce7ee8ab02d65eb9f40d057cc2c99931e97c9c1bf566",
+      "input_sha256": "035e0f129ca1d4c2b85bab68332bb0421b1f0debd18bbd5cdcf8b1ca420e4b8d",
+      "config_sha256": "f8608f4948fc3ab8545782bbf9f93b81581dcf820a91040472313ceb9a427dd5",
+      "status": "EXACT_HASH_MATCH"
+    },
+    {
+      "strategy": "multicast-v2",
+      "plan_semantic_sha256": "55b8de3bc0e6773ac265f84883f4c2940ec5ff9e049b29fcccbfb6275a0f0f94",
+      "assignments_sha256": "1a7f767d035076f898f5ce7ee8ab02d65eb9f40d057cc2c99931e97c9c1bf566",
+      "input_sha256": "2de5775b8367b1bd5da7e7df8eca74f5ece4e79996d051cedf9fa7ef49ccf55d",
+      "config_sha256": "07f3668b210a9eca2dcc3d9226bc889505038da8ea9981ea0b383e85151ebf3e",
+      "status": "EXACT_HASH_MATCH"
+    }
+  ],
+  "reuse_basis": "All four baseline config/input/assignments SHA256 and semantic Planner SHA256 exactly match accepted published evidence; unchanged accepted source and current two-rate small-stage gate."
+}

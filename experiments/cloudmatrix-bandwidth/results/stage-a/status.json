@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "link_gbps": [
+    100,
+    3136
+  ],
+  "strategies": [
+    "no-balancing",
+    "direct",
+    "chunk-streaming",
+    "multicast-v2"
+  ],
+  "small_cases_pass": true,
+  "native_rate_probe_pass": true,
+  "fault_smoke_pass": true,
+  "small_case_runs": 32,
+  "native_fault_smoke_runs": 3,
+  "reference_100_comparisons": 16,
+  "reference_100_status": "PASS",
+  "reference_100_comparison_kind": "EXACT_PUBLISHED_LATENCY_AND_OUTPUT_HASH",
+  "source_identity_entries": 3406,
+  "source_identity_sha256": "c87f844e1756324b115fc5383358acee0f128dcee8d1d03a0dd15294dec5884a",
+  "accepted_native_manifest_reference": "experiments/ultraep-multicast-integration/candidate-native-source-sha256.json",
+  "accepted_native_manifest_sha256": "349721cdf1a14455cb14d8bdbfffe259730436fc9769fc3403405b75a09b3909"
+}
