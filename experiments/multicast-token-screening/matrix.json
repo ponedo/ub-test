@@ -1,0 +1,41 @@
+{
+  "requested_base": "3521a64fd300938af3af4573a9793c4cde8d9649",
+  "tokens": [256],
+  "serialized_layer": 37,
+  "strategies": ["chunk-streaming", "multicast-v2"],
+  "formal_cases": 2,
+  "execution": "sequential, stop at first guard or correctness failure",
+  "link_gbps": 3136,
+  "link_propagation_ns": 20,
+  "allocator_service_ns": 5,
+  "jetty_ta_window": 512,
+  "tp_packet_window": 1000,
+  "compute_model": "roofline",
+  "compute_tflops": 100,
+  "hbm_bandwidth_GBps": 2692,
+  "full_layer": true,
+  "native_allocator": "original unchanged",
+  "diagnostic": {
+    "enabled": true,
+    "nodes": "all 65; diagnosticNodes option omitted",
+    "source": 4294967294,
+    "group": 4294967294,
+    "selected_TA_RTT_detail": "disabled by non-matching observer IDs only"
+  },
+  "guards": {
+    "case_wall_seconds": 4800,
+    "tree_RSS_bytes": 6442450944,
+    "address_space_bytes": 7516192768,
+    "min_host_available_bytes": 1073741824,
+    "min_disk_free_bytes": 8589934592,
+    "min_tmp_free_bytes": 2147483648
+  },
+  "prohibited": [
+    "512-token, 1024-token or 2048-token execution",
+    "native/runtime changes or new instrumentation",
+    "new weight-only or complete-key execution framework",
+    "independent replanning per strategy or manual fanout changes",
+    "automatic rerun, resume, higher-window or allocator intervention",
+    "publication of private source, routing, assignments, raw trace or observer rings"
+  ]
+}

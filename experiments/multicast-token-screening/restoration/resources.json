@@ -1,0 +1,258 @@
+{
+  "status": "PASS",
+  "accounting": "Per-stage wall and simulator/compiler process-tree child CPU from wait4; peak_rss_kib is kernel ru_maxrss, sampled_peak_tree_rss_bytes is 0.25-second process-tree sampling. Do not substitute one scope for the other. Host/cgroup details and raw samples are omitted; source evidence hashes bind private originals.",
+  "stages": [
+    {
+      "name": "native-configure",
+      "private_resource_sha256": "91c970c3d6bcaf943afb2b9f5a607cd5a1f3086d4c0cf572e3bc7d3afe057250",
+      "status": "PASS",
+      "returncode": 0,
+      "wall_seconds": 2.0076918949999936,
+      "user_cpu_seconds": 1.3243559999999999,
+      "system_cpu_seconds": 0.554261,
+      "peak_rss_kib": 26056,
+      "sampled_peak_tree_rss_bytes": 27070464,
+      "max_observed_threads_per_process": 1,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 4800,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1073741824,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    {
+      "name": "native-build",
+      "private_resource_sha256": "72143cfb47ffeb62b6ccdc92eba071269688992503536c62e2641ed75231d2dc",
+      "status": "PASS",
+      "returncode": 0,
+      "wall_seconds": 392.712048944,
+      "user_cpu_seconds": 741.488655,
+      "system_cpu_seconds": 36.655812,
+      "peak_rss_kib": 858688,
+      "sampled_peak_tree_rss_bytes": 1365172224,
+      "max_observed_threads_per_process": 1,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 4800,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1073741824,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    {
+      "name": "build-layer",
+      "private_resource_sha256": "118ac52d792e0ad8f377ef32da0c4d82f43c0ce80a4677c2d50eeb4cc659c2e2",
+      "status": "PASS",
+      "returncode": 0,
+      "wall_seconds": 36.12042677600016,
+      "user_cpu_seconds": 35.109938,
+      "system_cpu_seconds": 0.834349,
+      "peak_rss_kib": 1534964,
+      "sampled_peak_tree_rss_bytes": 1571647488,
+      "max_observed_threads_per_process": 1,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 1800,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1073741824,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    {
+      "name": "build-observer-fifo-test",
+      "private_resource_sha256": "99f3ac64651df26943ce71dbd98fd9747ffc7fd55eca5cce4272e923b5254e4b",
+      "status": "PASS",
+      "returncode": 0,
+      "wall_seconds": 10.283485862999896,
+      "user_cpu_seconds": 9.753879,
+      "system_cpu_seconds": 0.507482,
+      "peak_rss_kib": 887924,
+      "sampled_peak_tree_rss_bytes": 903278592,
+      "max_observed_threads_per_process": 1,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 1800,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1073741824,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    {
+      "name": "build-jetty-window-test",
+      "private_resource_sha256": "e2afe730a0977cc32123abe2d7f7b94a890f6d9b95384fb567c9fb05ae833bc0",
+      "status": "PASS",
+      "returncode": 0,
+      "wall_seconds": 6.7765430849999575,
+      "user_cpu_seconds": 6.281065,
+      "system_cpu_seconds": 0.34243599999999996,
+      "peak_rss_kib": 680584,
+      "sampled_peak_tree_rss_bytes": 692199424,
+      "max_observed_threads_per_process": 1,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 1800,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1073741824,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    {
+      "name": "build-jetty-observer-test",
+      "private_resource_sha256": "dc0be0fe1fdef328d16f67cd042651a56628f67307ca3011baaeef3ea8e97e24",
+      "status": "PASS",
+      "returncode": 0,
+      "wall_seconds": 11.293003853000073,
+      "user_cpu_seconds": 10.80631,
+      "system_cpu_seconds": 0.433021,
+      "peak_rss_kib": 919696,
+      "sampled_peak_tree_rss_bytes": 940408832,
+      "max_observed_threads_per_process": 1,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 1800,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1073741824,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    {
+      "name": "build-graph-tool",
+      "private_resource_sha256": "c7ac4089a1591a797d84848234deefc6bdf3de69519aa666f1c1b7faf70c1027",
+      "status": "PASS",
+      "returncode": 0,
+      "wall_seconds": 2.2596078589999706,
+      "user_cpu_seconds": 1.927892,
+      "system_cpu_seconds": 0.12249499999999999,
+      "peak_rss_kib": 161064,
+      "sampled_peak_tree_rss_bytes": 162910208,
+      "max_observed_threads_per_process": 1,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 1800,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1073741824,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    {
+      "name": "build-model-probe",
+      "private_resource_sha256": "2ce3ad5e2805363207c06d31b80b645c14a976670d2790cef01fe830b09647f5",
+      "status": "PASS",
+      "returncode": 0,
+      "wall_seconds": 0.7554662239999743,
+      "user_cpu_seconds": 0.557451,
+      "system_cpu_seconds": 0.064294,
+      "peak_rss_kib": 92316,
+      "sampled_peak_tree_rss_bytes": 93843456,
+      "max_observed_threads_per_process": 1,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 1800,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1073741824,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    {
+      "name": "unit-observer-fifo-test",
+      "private_resource_sha256": "318641a861eb0753e3f7884700eeabe6ce548fcbd705756b7fc030d09016e518",
+      "status": "PASS",
+      "returncode": 0,
+      "wall_seconds": 0.25297878499986837,
+      "user_cpu_seconds": 0.003658,
+      "system_cpu_seconds": 0.0032129999999999997,
+      "peak_rss_kib": 11872,
+      "sampled_peak_tree_rss_bytes": 626688,
+      "max_observed_threads_per_process": 1,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 1800,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1073741824,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    {
+      "name": "unit-jetty-window-test",
+      "private_resource_sha256": "7442535ee1e04dd5e0b937533b06bf12bc14f291a03eaf4bca9d33e3a45498e7",
+      "status": "PASS",
+      "returncode": 0,
+      "wall_seconds": 0.2528782389999833,
+      "user_cpu_seconds": 0.020093,
+      "system_cpu_seconds": 0.0046879999999999995,
+      "peak_rss_kib": 17992,
+      "sampled_peak_tree_rss_bytes": 2019328,
+      "max_observed_threads_per_process": 1,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 1800,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1073741824,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    {
+      "name": "unit-jetty-observer-test",
+      "private_resource_sha256": "f080167641a45d9d767d518ae0daa29ce8696b4257e216ff55c417622eb6b9b4",
+      "status": "PASS",
+      "returncode": 0,
+      "wall_seconds": 0.25464587800001937,
+      "user_cpu_seconds": 0.0048579999999999995,
+      "system_cpu_seconds": 0.0040089999999999995,
+      "peak_rss_kib": 12300,
+      "sampled_peak_tree_rss_bytes": 606208,
+      "max_observed_threads_per_process": 1,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 1800,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1073741824,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    },
+    {
+      "name": "unit-model-unit",
+      "private_resource_sha256": "a49d0eca5cddc20f2a0d59423e150b9586e2684a23bab9377c9443e09a775f76",
+      "status": "PASS",
+      "returncode": 0,
+      "wall_seconds": 0.25444064099997377,
+      "user_cpu_seconds": 0.082704,
+      "system_cpu_seconds": 0.038654,
+      "peak_rss_kib": 12304,
+      "sampled_peak_tree_rss_bytes": 929792,
+      "max_observed_threads_per_process": 1,
+      "guard": null,
+      "limits": {
+        "wall_seconds": 1800,
+        "tree_rss_bytes": 6442450944,
+        "min_host_available_bytes": 1073741824,
+        "address_space_bytes": 7516192768,
+        "min_disk_free_bytes": 8589934592,
+        "min_tmp_disk_free_bytes": 2147483648
+      }
+    }
+  ]
+}

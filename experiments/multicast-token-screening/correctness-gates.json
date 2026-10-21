@@ -1,0 +1,271 @@
+{
+  "status": "PASS",
+  "scope": {
+    "tokens": [
+      256
+    ],
+    "formal_cases": 2,
+    "attempts_per_case": 1,
+    "retries": 0,
+    "other_real_token_sizes_run": [],
+    "full_layer": true,
+    "all_65_native_nodes_observed": true,
+    "observer_only_source_and_group_selection": 4294967294,
+    "selected_TA_RTT_detail": "Disabled by non-matching selector; not used as global completeness proof."
+  },
+  "minimal_native_and_model_units": {
+    "status": "PASS",
+    "count": 4,
+    "tests": [
+      {
+        "name": "observer-fifo-test",
+        "status": "PASS"
+      },
+      {
+        "name": "jetty-window-test",
+        "status": "PASS"
+      },
+      {
+        "name": "jetty-observer-test",
+        "status": "PASS"
+      },
+      {
+        "name": "model-unit",
+        "status": "PASS"
+      }
+    ],
+    "receipt_sha256": "bd992dc647ad72f1f8f03b17005c319d2bacf37efcdeb57288ebba60f82bd975",
+    "note": "Native capacity boundary unit checks are not extra token experiments."
+  },
+  "pure_harness_and_analyzer_units": {
+    "status": "PASS",
+    "count": 26,
+    "receipt_sha256": "a3f2faf49dbb4eca3842a34ae161c00938fcf825a8b530e824c998921e52a4a3",
+    "no_simulator_invoked": true
+  },
+  "source_prefix_and_paired_graph_preflight": "PASS exact raw prefix, unchanged plan/assignment identities and accepted independent graph reconstruction.",
+  "independent_preflight_review": {
+    "status": "PASS",
+    "prepared_manifest_sha256": "92fbc0210cdf4539dfbd3b3de7855e3cb11847d72b79b1a95f14d165f51ddc8d",
+    "receipt_sha256": "caed00486df950d549979fb852f9cf65233b8a8e51ff107cc59ba0c127ed9c6c"
+  },
+  "independent_post_run_review": {
+    "status": "PASS",
+    "basis": "Independent read-only final evidence review after completion; communicated separately from the preflight receipt.",
+    "reviewed_pair_aggregate_sha256": "54c2cda40a0bbbf1112c89e782fb8f22cc011946937348ab11056da88a6c9ab5",
+    "checks": [
+      "Exactly two PASS attempts and twelve PASS per-case guarded stage receipts.",
+      "Shared combine fingerprint and all frozen identities unchanged.",
+      "Primary arithmetic, critical transfer identities and resource limits verified.",
+      "Mechanism evidence is consistency evidence, not unique causal proof, a global minimum or repeated-run stability."
+    ]
+  },
+  "per_case_stage_receipts": {
+    "chunk-streaming": {
+      "preflight": {
+        "status": "PASS",
+        "returncode": 0,
+        "guard": null,
+        "receipt_sha256": "56163978cf872a9f337317a529bc9a1b8e74152b7900394c0a96a8317703a953"
+      },
+      "simulator": {
+        "status": "PASS",
+        "returncode": 0,
+        "guard": null,
+        "receipt_sha256": "b76569c6686920ea2ab1c10f410718f6983a65d1d033faeaa3d8e2a7630a2a15"
+      },
+      "postflight": {
+        "status": "PASS",
+        "returncode": 0,
+        "guard": null,
+        "receipt_sha256": "dd0aa8903d432d7f5542683c2cfa1cbc079e5b908dbcb81d4b328bc9db7beecf"
+      },
+      "independent": {
+        "status": "PASS",
+        "returncode": 0,
+        "guard": null,
+        "receipt_sha256": "3ac3ea5be281e5c919372fa5784a732629cfa87c29ab9a53baab6047f1595362"
+      },
+      "compute": {
+        "status": "PASS",
+        "returncode": 0,
+        "guard": null,
+        "receipt_sha256": "dc5a49b5d1b6190af47bcac2371ebc4dc77679dd2bc351d68ce923400eb09f2b"
+      },
+      "aggregate": {
+        "status": "PASS",
+        "returncode": 0,
+        "guard": null,
+        "receipt_sha256": "402d987709759435565477e53f5e4b99b4694af456c84647fbdb616bd87f39fb"
+      }
+    },
+    "multicast-v2": {
+      "preflight": {
+        "status": "PASS",
+        "returncode": 0,
+        "guard": null,
+        "receipt_sha256": "0a3db35a5b21d2798f40962ee5d12a8c6ec63be52ce56a148a13fe2b22094ef5"
+      },
+      "simulator": {
+        "status": "PASS",
+        "returncode": 0,
+        "guard": null,
+        "receipt_sha256": "2641061da9b733e411486ca5f81358f804dc6b5efc7399e8c688ba9b29d04084"
+      },
+      "postflight": {
+        "status": "PASS",
+        "returncode": 0,
+        "guard": null,
+        "receipt_sha256": "2ea1bc7425110153348cbd3ecbe0d7cf538beacd1b9b49ff21ddb1cdccf036dc"
+      },
+      "independent": {
+        "status": "PASS",
+        "returncode": 0,
+        "guard": null,
+        "receipt_sha256": "cc5b99983d63fb8aede1d4e40ad3d690795f734442628a73fdbe76f55f4c5501"
+      },
+      "compute": {
+        "status": "PASS",
+        "returncode": 0,
+        "guard": null,
+        "receipt_sha256": "20d48069cfe84cca289a0688fd639f70d9e9f63cdf0da6fcb19022e0c44247a3"
+      },
+      "aggregate": {
+        "status": "PASS",
+        "returncode": 0,
+        "guard": null,
+        "receipt_sha256": "27daa459888084d77bbd1e808dc3ad0dad2a78d5647a204b0ec037b3db481953"
+      }
+    }
+  },
+  "observed_native_defaults": {
+    "chunk-streaming": {
+      "jetty_ta_window": 512,
+      "jetty_ooo_ack_window": 2048,
+      "tp_packet_window": 1000,
+      "measurement_enabled": true,
+      "allocator_policy": "original",
+      "predicted_total_tas_upper_bound": 843776,
+      "logical_ssn_uint32_no_wrap_bound": true
+    },
+    "multicast-v2": {
+      "jetty_ta_window": 512,
+      "jetty_ooo_ack_window": 2048,
+      "tp_packet_window": 1000,
+      "measurement_enabled": true,
+      "allocator_policy": "original",
+      "predicted_total_tas_upper_bound": 843776,
+      "logical_ssn_uint32_no_wrap_bound": true
+    }
+  },
+  "physical_link_conservation": {
+    "chunk-streaming": {
+      "nodes": 65,
+      "directed_links": 128,
+      "all_links_packet_and_byte_conserved": true,
+      "physical_tx_packets": 6738702,
+      "physical_rx_packets": 6738702,
+      "physical_tx_wire_bytes": 2169677616,
+      "physical_rx_wire_bytes": 2169677616
+    },
+    "multicast-v2": {
+      "nodes": 65,
+      "directed_links": 128,
+      "all_links_packet_and_byte_conserved": true,
+      "physical_tx_packets": 6316150,
+      "physical_rx_packets": 6316150,
+      "physical_tx_wire_bytes": 1742073712,
+      "physical_rx_wire_bytes": 1742073712
+    }
+  },
+  "all_pair_completion": {
+    "chunk-streaming": {
+      "tracked_jetties": 2722,
+      "window": 512,
+      "max_outstanding": 512,
+      "admissions": 842256,
+      "accepted_taacks": 842256,
+      "rejected_taacks": 0,
+      "ssn_progress": 842256,
+      "cleanup_events": 0,
+      "terminal_outstanding": 0,
+      "all_pair_completion_reconciled": true
+    },
+    "multicast-v2": {
+      "tracked_jetties": 2722,
+      "window": 512,
+      "max_outstanding": 512,
+      "admissions": 842256,
+      "accepted_taacks": 842256,
+      "rejected_taacks": 0,
+      "ssn_progress": 842256,
+      "cleanup_events": 0,
+      "terminal_outstanding": 0,
+      "all_pair_completion_reconciled": true
+    }
+  },
+  "no_loss_evidence": {
+    "chunk-streaming": {
+      "aggregate_contract_passed": true,
+      "basis": [
+        "All 128 directed native links conserve TX/RX packets and bytes.",
+        "Per-source token/weight WRITE, TPACK and TAACK totals match the complete transfer graph.",
+        "All-pair admissions, accepted TAACKs and SSN progress reconcile exactly; native pairs complete.",
+        "Native retransmission and fault injection are disabled; simulator payload/completion and independent compute validations passed."
+      ],
+      "limits": "No global drop counter is provided. This is a no-loss/no-retry aggregate consistency contract, not a direct measurement of every possible drop event. Disabled selected RTT counters are not part of this evidence."
+    },
+    "multicast-v2": {
+      "aggregate_contract_passed": true,
+      "basis": [
+        "All 128 directed native links conserve TX/RX packets and bytes.",
+        "Per-source token/weight WRITE, TPACK and TAACK totals match the complete transfer graph.",
+        "All-pair admissions, accepted TAACKs and SSN progress reconcile exactly; native pairs complete.",
+        "Native retransmission and fault injection are disabled; simulator payload/completion and independent compute validations passed.",
+        "Multicast envelopes/branches/source bytes reconcile; native retry and injected-test-loss counters are zero."
+      ],
+      "limits": "No global drop counter is provided. This is a no-loss/no-retry aggregate consistency contract, not a direct measurement of every possible drop event. Disabled selected RTT counters are not part of this evidence."
+    }
+  },
+  "formal_cases": {
+    "chunk-streaming": {
+      "status": "PASS",
+      "attempts": 1,
+      "tokens": 256,
+      "start_utc": "2026-10-21T11:33:13.197459+00:00",
+      "terminal_utc": "2026-10-21T11:42:50.473618+00:00",
+      "formal_resource": {
+        "wall_seconds": 577.2717753729999,
+        "user_cpu_seconds": 576.225345,
+        "system_cpu_seconds": 0.74093,
+        "peak_rss_kib": 2724044,
+        "sampled_peak_tree_rss_bytes": 2788503552,
+        "max_observed_threads_per_process": 1,
+        "cpu_seconds": 576.966275
+      },
+      "weight_duration_ps": 691082182,
+      "layer_latency_ps": 727245670,
+      "aggregate_sha256": "c9f86bbf731016bb768657da38e2c3448ddc581ed63336334fbc1d63d94eeba0"
+    },
+    "multicast-v2": {
+      "status": "PASS",
+      "attempts": 1,
+      "tokens": 256,
+      "start_utc": "2026-10-21T11:42:53.641353+00:00",
+      "terminal_utc": "2026-10-21T11:50:48.656348+00:00",
+      "formal_resource": {
+        "wall_seconds": 475.0071162260001,
+        "user_cpu_seconds": 474.11018,
+        "system_cpu_seconds": 0.6403369999999999,
+        "peak_rss_kib": 2802784,
+        "sampled_peak_tree_rss_bytes": 2870124544,
+        "max_observed_threads_per_process": 1,
+        "cpu_seconds": 474.750517
+      },
+      "weight_duration_ps": 896326667,
+      "layer_latency_ps": 932419197,
+      "aggregate_sha256": "a8f58ae1499ee1c9a8b4dd08bee20dca61475bdbe844717115d96cea2718dbab"
+    }
+  },
+  "performance_scope": "Formal simulator costs exclude one-time restoration/build and ancillary verification. Whole-run 10-second Jetty observation exposure is not used to infer active-phase utilization."
+}

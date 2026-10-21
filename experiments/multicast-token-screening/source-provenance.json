@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "accepted_project_commit": "3521a64fd300938af3af4573a9793c4cde8d9649",
+  "accepted_project_tree": "8f50dc4772debb9b8017d0e4e902a5510525c05e",
+  "accepted_project_files_verified": 10977,
+  "source_restoration": "Pinned archive, every file Git-blob/size verified against the accepted tree. No alternate semantic source.",
+  "native_base_commit": "b8375b51a094d3b1217b697989e1ab979f609e64",
+  "native_candidate_files_verified": 3430,
+  "accepted_native_patch_count": 6,
+  "allocator_sha256": "c841f37a5a8fe80d44a432eb6b76ea88fd9f42fbb285e18db7ff9e2057defe5b",
+  "allocator_unchanged_from_accepted_diagnosis": true,
+  "accepted_execution_source_sha256": {
+    "multicast-controlled-ablation/layer.cc": "a090f3a1507e6b37a7409f3edcf2059bb5ea6f659a1e4e7f9120171793061cef",
+    "multicast-controlled-ablation/diagnostic-recorder.h": "1b2133c6aa35f1ea98d5894332406ac41ca25c0486987815958f990fd429d65d",
+    "multicast-controlled-ablation/jetty-measurement.inc": "4034332c66e270ff7579b9bec1485f6084227229e6588d40c304007cf62c07a1",
+    "ultraep-multicast-integration/adapter.py": "4cd56fb83d73b8a9364a1d37033de035856333cb0d37cf3a0149e24b044c6181",
+    "ultraep-multicast-integration/preflight.py": "c63311a17e3f32cba8af007cb1c305e8fd2a677eb987097fa80824364151ee4f",
+    "ultraep-multicast-integration/verify.py": "0dd98b34b2e4bf3f197fa92e55ca26d9c4aedec900853c70a8b74a15d3de718f",
+    "ultraep-multicast-integration/integration.inc": "6ba4615c1409f31a0bd60e1854b9884647e588646eb870532a79570bc2f06b32",
+    "multi-npu-relay/adapter.py": "be745d78642127cc3f19d17ad9310c7a57060c4cc7dfcb4e374b9039956642da",
+    "cloudmatrix-bandwidth/guard.py": "41f13e5919c06122d0e632c7b6df46d80846b0b1094bfaef3c77f55a26256fbb",
+    "qwen-roofline-compute/guard.py": "3c0e33790677b9e5e59428c62f82c6a74124060162c526f8e3e119721abce36f",
+    "qwen-roofline-compute/verify-compute.py": "71b6b1b16c60f27270b05bb9273074868e23b0aaf49ed7d74eea21a089b5dafd"
+  },
+  "executed_new_harness_python_sha256": {
+    "analyze.py": "97db8d3c64237de56ce7559172327cd74d0a6794c154f6823fb2dd06fa715d61",
+    "common.py": "9926f2a8f3c1fcef6f9cfb9bb257399efea2da8090837435b6338d4f5a632749",
+    "heartbeat.py": "63ddde30d1ca55b0bde238a78b064847051d4db0eb5a154aa6c7ce6214cc8280",
+    "prepare.py": "d54ef40db23a9272d81abda3cc2eb10177f3eb6768ac001eaa8f3529b4a5d24b",
+    "run.py": "cae9b09a4b805a32b30947930de4865dd1ee39e6cebdce971d243a5efd0585c7",
+    "test_analyze.py": "f5847477156a069031cd2688d9e2087c8d810b8d9d9967a3a3eabe5b68bbb926",
+    "test_harness.py": "4e65a87de82462ee0bd451c779d9432927041bfe871407424666e6e95631e3ab"
+  },
+  "runtime_binary_sha256": {
+    "layer": "27b3eae2b2aa7cd3c932359261c410238ae53beb4a752ca0d1e62e225befc85b",
+    "graph-tool": "f3118b9ac1bcfe3f15a9019c1985dbe4b0c1f373d947bbc29bb9f84da620665c"
+  },
+  "build_identity_file_count": 4005,
+  "build_identity_sha256": "41357f9a54b8a816d729401505a911b5931432ac7915004b4294a97c72567ec0",
+  "complete_execution_identity_file_count": 4021,
+  "complete_execution_identity_sha256": "71341efdf366737a49c9758281973d95bafe31c21c9346abcc5518af7ca17693",
+  "prepared_manifest_sha256": "92fbc0210cdf4539dfbd3b3de7855e3cb11847d72b79b1a95f14d165f51ddc8d",
+  "preflight_review_sha256": "caed00486df950d549979fb852f9cf65233b8a8e51ff107cc59ba0c127ed9c6c",
+  "root_approval_sha256": "56f840cb400d2852a349e4d9a4219f3b22a5a400e8fb9805df25907a28093973",
+  "final_ledger_sha256": "16f050bca320e3309f32df4a763c8ac6695ecbac4d4bae9a42e185160a49a7f2",
+  "pair_aggregate_sha256": "54c2cda40a0bbbf1112c89e782fb8f22cc011946937348ab11056da88a6c9ab5",
+  "postflight_identity": "All frozen source/runtime/harness and both per-case input maps rehashed unchanged.",
+  "compiler": "c++ (Debian 14.2.0-19) 14.2.0",
+  "application_flags": [
+    "-std=c++20",
+    "-O2",
+    "-g"
+  ],
+  "native_build": "accepted build-native.py unchanged; release; assertions ON; logging OFF; unified-bus target; -j2",
+  "historical_binary_identity": "Historical binaries unavailable; fresh source-identical binaries recorded. No claim of historical binary identity or strict host-cost speedup.",
+  "post_run_documentation": "Only administrative publication copies are finalized after execution; source, runtime, executable harness and private attempt artifacts are not edited."
+}

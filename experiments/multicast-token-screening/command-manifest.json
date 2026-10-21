@@ -1,0 +1,10 @@
+{
+  "path_placeholders": "Every uppercase placeholder is supplied as a verified private absolute path; no command discovers or downloads token data.",
+  "pure_tests": ["python", "-m", "unittest", "discover", "-s", "EXPERIMENT", "-p", "test_*.py", "-v"],
+  "guarded_prepare": ["python", "EXPERIMENT/run.py", "prepare", "--private", "FRESH_CAMPAIGN", "--source", "CACHED_N256_DIRECT", "--routing", "EXACT_N256_ROUTING", "--manifest", "SOURCE_MANIFEST", "--counts", "FROZEN_COUNTS", "--binary", "VERIFIED_LAYER", "--graph-tool", "VERIFIED_GRAPH_TOOL", "--identity", "BUILD_IDENTITY_JSON"],
+  "formal_pair_after_approval": ["python", "EXPERIMENT/run.py", "run", "--private", "CAMPAIGN", "--approval", "HASH_BOUND_APPROVAL_JSON"],
+  "per_case_simulator": ["VERIFIED_LAYER", "--input=CASE/input.txt", "--out=CASE", "--computeModel=roofline", "--compute-tflops=100", "--hbm-bandwidth-gbps=2692", "--jettyMode=pair", "--logLevel=summary", "--capacityMetrics=CASE/simulator-metrics.json", "--jetty-ta-window=512", "--diagnostic=1", "--diagnosticSource=4294967294", "--diagnosticGroup=4294967294", "--payloadBudgetBytes=8589934592", "--weightTaskLimit=1000000"],
+  "postflight_order": ["accepted integration preflight with execution summary", "accepted integration verify.py", "accepted Roofline verify-compute.py", "new aggregate-only analyze.py"],
+  "admission": "No formal command before hash-bound PASS gate and independent review plus explicit root approval. Exactly two sequential cases, no automatic resume or retries.",
+  "no_new_native_flags": "TP1000 and allocator5ns are unchanged native defaults validated by output; diagnosticNodes omitted means all65. Link propagation20ns resides in the input."
+}

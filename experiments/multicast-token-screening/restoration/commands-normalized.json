@@ -1,0 +1,262 @@
+{
+  "status": "PASS",
+  "normalization": "Only the private workspace prefix becomes <workspace>; the Python executable prefix becomes <python3>. All arguments, flags, target names, limits and ordering are preserved.",
+  "patch_commands": [
+    [
+      "git",
+      "apply",
+      "--check",
+      "<workspace>/token-screen-work/experiments/ub-multicast-v2/patches/native-write-v2.patch"
+    ],
+    [
+      "git",
+      "apply",
+      "<workspace>/token-screen-work/experiments/ub-multicast-v2/patches/native-write-v2.patch"
+    ],
+    [
+      "git",
+      "apply",
+      "--check",
+      "<workspace>/token-screen-work/experiments/ub-multicast-retransmission/patches/transport-fault-seam.patch"
+    ],
+    [
+      "git",
+      "apply",
+      "<workspace>/token-screen-work/experiments/ub-multicast-retransmission/patches/transport-fault-seam.patch"
+    ],
+    [
+      "git",
+      "apply",
+      "--check",
+      "<workspace>/token-screen-work/experiments/ultraep-multicast-integration/patches/peek-original-head.patch"
+    ],
+    [
+      "git",
+      "apply",
+      "<workspace>/token-screen-work/experiments/ultraep-multicast-integration/patches/peek-original-head.patch"
+    ],
+    [
+      "git",
+      "apply",
+      "--check",
+      "<workspace>/token-screen-work/experiments/ultraep-multicast-integration/patches/allocator-revalidation.patch"
+    ],
+    [
+      "git",
+      "apply",
+      "<workspace>/token-screen-work/experiments/ultraep-multicast-integration/patches/allocator-revalidation.patch"
+    ],
+    [
+      "git",
+      "apply",
+      "--check",
+      "<workspace>/token-screen-work/experiments/multicast-reversal-diagnosis/patches/native-diagnostics.patch"
+    ],
+    [
+      "git",
+      "apply",
+      "<workspace>/token-screen-work/experiments/multicast-reversal-diagnosis/patches/native-diagnostics.patch"
+    ],
+    [
+      "git",
+      "apply",
+      "--check",
+      "<workspace>/token-screen-work/experiments/multicast-controlled-ablation/native/ub-jetty-controlled-ablation.patch"
+    ],
+    [
+      "git",
+      "apply",
+      "<workspace>/token-screen-work/experiments/multicast-controlled-ablation/native/ub-jetty-controlled-ablation.patch"
+    ]
+  ],
+  "stages": [
+    {
+      "name": "native-configure",
+      "argv": [
+        "cmake",
+        "-S",
+        "<workspace>/token-screen-native",
+        "-B",
+        "<workspace>/token-screen-native/cmake-cache",
+        "-G",
+        "Ninja",
+        "-DCMAKE_BUILD_TYPE=release",
+        "-DNS3_ENABLED_MODULES=unified-bus",
+        "-DNS3_ASSERT=ON",
+        "-DNS3_LOG=OFF",
+        "-DNS3_TESTS=ON",
+        "-DNS3_EXAMPLES=OFF",
+        "-DNS3_MPI=OFF",
+        "-DNS3_MTP=OFF",
+        "-DNS3_NATIVE_OPTIMIZATIONS=OFF",
+        "-DNS3_WARNINGS_AS_ERRORS=OFF"
+      ],
+      "cwd": "<workspace>",
+      "wall_guard_seconds": 4800
+    },
+    {
+      "name": "native-build",
+      "argv": [
+        "cmake",
+        "--build",
+        "<workspace>/token-screen-native/cmake-cache",
+        "--target",
+        "unified-bus",
+        "-j2"
+      ],
+      "cwd": "<workspace>",
+      "wall_guard_seconds": 4800
+    },
+    {
+      "name": "build-layer",
+      "argv": [
+        "c++",
+        "-std=c++20",
+        "-O2",
+        "-g",
+        "<workspace>/token-screen-work/experiments/multicast-controlled-ablation/layer.cc",
+        "-I<workspace>/token-screen-native/build/include",
+        "-L<workspace>/token-screen-native/build/lib",
+        "-Wl,--disable-new-dtags",
+        "-Wl,-rpath,<workspace>/token-screen-native/build/lib",
+        "-lns3.44-unified-bus",
+        "-lns3.44-internet",
+        "-lns3.44-network",
+        "-lns3.44-core",
+        "-o",
+        "<workspace>/token-screen-private/build/layer"
+      ],
+      "cwd": "<workspace>",
+      "wall_guard_seconds": 1800
+    },
+    {
+      "name": "build-observer-fifo-test",
+      "argv": [
+        "c++",
+        "-std=c++20",
+        "-O2",
+        "-g",
+        "<workspace>/token-screen-work/experiments/multicast-controlled-ablation/observer-fifo-test.cc",
+        "-I<workspace>/token-screen-native/build/include",
+        "-L<workspace>/token-screen-native/build/lib",
+        "-Wl,--disable-new-dtags",
+        "-Wl,-rpath,<workspace>/token-screen-native/build/lib",
+        "-lns3.44-unified-bus",
+        "-lns3.44-internet",
+        "-lns3.44-network",
+        "-lns3.44-core",
+        "-o",
+        "<workspace>/token-screen-private/build/observer-fifo-test"
+      ],
+      "cwd": "<workspace>",
+      "wall_guard_seconds": 1800
+    },
+    {
+      "name": "build-jetty-window-test",
+      "argv": [
+        "c++",
+        "-std=c++20",
+        "-O2",
+        "-g",
+        "<workspace>/token-screen-work/experiments/multicast-controlled-ablation/jetty-window-test.cc",
+        "-I<workspace>/token-screen-native/build/include",
+        "-L<workspace>/token-screen-native/build/lib",
+        "-Wl,--disable-new-dtags",
+        "-Wl,-rpath,<workspace>/token-screen-native/build/lib",
+        "-lns3.44-unified-bus",
+        "-lns3.44-internet",
+        "-lns3.44-network",
+        "-lns3.44-core",
+        "-o",
+        "<workspace>/token-screen-private/build/jetty-window-test"
+      ],
+      "cwd": "<workspace>",
+      "wall_guard_seconds": 1800
+    },
+    {
+      "name": "build-jetty-observer-test",
+      "argv": [
+        "c++",
+        "-std=c++20",
+        "-O2",
+        "-g",
+        "<workspace>/token-screen-work/experiments/multicast-controlled-ablation/jetty-observer-test.cc",
+        "-I<workspace>/token-screen-native/build/include",
+        "-L<workspace>/token-screen-native/build/lib",
+        "-Wl,--disable-new-dtags",
+        "-Wl,-rpath,<workspace>/token-screen-native/build/lib",
+        "-lns3.44-unified-bus",
+        "-lns3.44-internet",
+        "-lns3.44-network",
+        "-lns3.44-core",
+        "-o",
+        "<workspace>/token-screen-private/build/jetty-observer-test"
+      ],
+      "cwd": "<workspace>",
+      "wall_guard_seconds": 1800
+    },
+    {
+      "name": "build-graph-tool",
+      "argv": [
+        "c++",
+        "-std=c++20",
+        "-O2",
+        "-g",
+        "<workspace>/token-screen-work/experiments/ultraep-multicast-integration/graph-tool.cc",
+        "-o",
+        "<workspace>/token-screen-private/build/graph-tool"
+      ],
+      "cwd": "<workspace>",
+      "wall_guard_seconds": 1800
+    },
+    {
+      "name": "build-model-probe",
+      "argv": [
+        "c++",
+        "-std=c++20",
+        "-O2",
+        "-g",
+        "<workspace>/token-screen-work/experiments/qwen-roofline-compute/model-probe.cc",
+        "-o",
+        "<workspace>/token-screen-private/build/model-probe"
+      ],
+      "cwd": "<workspace>",
+      "wall_guard_seconds": 1800
+    },
+    {
+      "name": "unit-observer-fifo-test",
+      "argv": [
+        "<workspace>/token-screen-private/build/observer-fifo-test"
+      ],
+      "cwd": "<workspace>/token-screen-private/unit-gate",
+      "wall_guard_seconds": 1800
+    },
+    {
+      "name": "unit-jetty-window-test",
+      "argv": [
+        "<workspace>/token-screen-private/build/jetty-window-test"
+      ],
+      "cwd": "<workspace>/token-screen-private/unit-gate",
+      "wall_guard_seconds": 1800
+    },
+    {
+      "name": "unit-jetty-observer-test",
+      "argv": [
+        "<workspace>/token-screen-private/build/jetty-observer-test"
+      ],
+      "cwd": "<workspace>/token-screen-private/unit-gate",
+      "wall_guard_seconds": 1800
+    },
+    {
+      "name": "unit-model-unit",
+      "argv": [
+        "<python3>",
+        "<workspace>/token-screen-work/experiments/qwen-roofline-compute/test-model.py",
+        "<workspace>/token-screen-private/build/model-probe",
+        "<workspace>/token-screen-private/unit-gate/model-unit-data"
+      ],
+      "cwd": "<workspace>/token-screen-private/unit-gate",
+      "wall_guard_seconds": 1800
+    }
+  ]
+}

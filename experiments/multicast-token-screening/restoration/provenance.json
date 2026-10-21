@@ -1,0 +1,179 @@
+{
+  "status": "PASS",
+  "scope": "Necessary source-identical runtime restoration because latest accepted binary was absent from restored snapshot; not an optimization, protocol change, formal run, or claim of historical binary byte equality.",
+  "application": {
+    "repository": "https://github.com/ponedo/ub-test",
+    "commit": "3521a64fd300938af3af4573a9793c4cde8d9649",
+    "tree": "8f50dc4772debb9b8017d0e4e902a5510525c05e",
+    "verified_blob_files": 10977
+  },
+  "native": {
+    "repository": "https://gitcode.com/open-usim/ns-3-ub.git",
+    "base_commit": "b8375b51a094d3b1217b697989e1ab979f609e64",
+    "base_source_files": 3427,
+    "candidate_source_files": 3430,
+    "verification": [
+      {
+        "name": "accepted integration native source inventory",
+        "file_count": 109,
+        "status": "PASS"
+      },
+      {
+        "name": "diagnostic patch native manifest",
+        "file_count": 9,
+        "status": "PASS"
+      },
+      {
+        "name": "controlled ablation native manifest",
+        "file_count": 12,
+        "status": "PASS"
+      }
+    ],
+    "inventory_result": "All 3430 files accounted for by pristine native Git base plus exact six accepted patches; accepted manifest checks passed; final patch changes exactly three passive-hook files.",
+    "controlled_ablation_delta": [
+      "src/unified-bus/model/protocol/ub-function.cc",
+      "src/unified-bus/model/protocol/ub-function.h",
+      "src/unified-bus/model/ub-reversal-diagnostic.h"
+    ],
+    "allocator_sha256": "c841f37a5a8fe80d44a432eb6b76ea88fd9f42fbb285e18db7ff9e2057defe5b",
+    "allocator_unchanged_from_diagnosis": true,
+    "defaults_preserved": {
+      "jetty_ta_window": 512,
+      "tp_packet_window": 1000,
+      "jetty_ooo_ack_window": 2048,
+      "allocator_policy": "original"
+    }
+  },
+  "patches": [
+    {
+      "path": "experiments/ub-multicast-v2/patches/native-write-v2.patch",
+      "sha256": "3e478e43258ae78b734a886ee5beae805986e471764599f82442f6de0628bb12",
+      "url": "https://github.com/ponedo/ub-test/blob/3521a64fd300938af3af4573a9793c4cde8d9649/experiments/ub-multicast-v2/patches/native-write-v2.patch"
+    },
+    {
+      "path": "experiments/ub-multicast-retransmission/patches/transport-fault-seam.patch",
+      "sha256": "80732293d609817d120cf38cfc5f91cb4aa7bc92b6a6f5646205124cbb562f63",
+      "url": "https://github.com/ponedo/ub-test/blob/3521a64fd300938af3af4573a9793c4cde8d9649/experiments/ub-multicast-retransmission/patches/transport-fault-seam.patch"
+    },
+    {
+      "path": "experiments/ultraep-multicast-integration/patches/peek-original-head.patch",
+      "sha256": "51edc0e5e4f5be4d1a56dde0e1d68c572e21b34ffd21d4a1e3c1e1ff8c3b6abd",
+      "url": "https://github.com/ponedo/ub-test/blob/3521a64fd300938af3af4573a9793c4cde8d9649/experiments/ultraep-multicast-integration/patches/peek-original-head.patch"
+    },
+    {
+      "path": "experiments/ultraep-multicast-integration/patches/allocator-revalidation.patch",
+      "sha256": "4cd98af20ce1557b3b1820f674a7c5a94f6b54d7a7789f92768da42f79fc1877",
+      "url": "https://github.com/ponedo/ub-test/blob/3521a64fd300938af3af4573a9793c4cde8d9649/experiments/ultraep-multicast-integration/patches/allocator-revalidation.patch"
+    },
+    {
+      "path": "experiments/multicast-reversal-diagnosis/patches/native-diagnostics.patch",
+      "sha256": "0623bf4213ecf142bc8dabbdcf4b766ec417b63f0b17fd2d0c7a9e1566371089",
+      "url": "https://github.com/ponedo/ub-test/blob/3521a64fd300938af3af4573a9793c4cde8d9649/experiments/multicast-reversal-diagnosis/patches/native-diagnostics.patch"
+    },
+    {
+      "path": "experiments/multicast-controlled-ablation/native/ub-jetty-controlled-ablation.patch",
+      "sha256": "f04aa181e011c097d35bdc359ca4d294f147f5ae7dc4562204932e287e92d600",
+      "url": "https://github.com/ponedo/ub-test/blob/3521a64fd300938af3af4573a9793c4cde8d9649/experiments/multicast-controlled-ablation/native/ub-jetty-controlled-ablation.patch"
+    }
+  ],
+  "toolchain": {
+    "cpp_compiler": "c++ (Debian 14.2.0-19) 14.2.0",
+    "cmake": "4.4.4",
+    "ninja": "1.13.2.git.kitware.jobserver-pipe-1",
+    "native_flags": [
+      "release",
+      "NS3_ASSERT=ON",
+      "NS3_LOG=OFF",
+      "NS3_TESTS=ON",
+      "NS3_EXAMPLES=OFF",
+      "NS3_MPI=OFF",
+      "NS3_MTP=OFF",
+      "NS3_NATIVE_OPTIMIZATIONS=OFF",
+      "NS3_WARNINGS_AS_ERRORS=OFF",
+      "unified-bus target",
+      "-j2"
+    ],
+    "native_compile_flags": [
+      "-DNS3_ASSERT_ENABLE",
+      "-DNS3_BUILD_PROFILE_RELEASE",
+      "-O3",
+      "-DNDEBUG",
+      "-std=c++20",
+      "-fPIC",
+      "-fno-semantic-interposition",
+      "-Wall",
+      "-Wpedantic"
+    ],
+    "application_flags": [
+      "-std=c++20",
+      "-O2",
+      "-g"
+    ],
+    "rpath_scope": "Absolute path to this fresh workspace/token-screen-native/build/lib only; --disable-new-dtags preserves DT_RPATH. Rebuilt binaries are tied to their own recorded native libraries, never relocated independently."
+  },
+  "minimal_gate": {
+    "status": "PASS",
+    "tests": [
+      "observer-fifo-test",
+      "jetty-window-test",
+      "jetty-observer-test",
+      "model-unit"
+    ],
+    "model_oracle": {
+      "status": "PASS",
+      "positive_cases": 16,
+      "negative_cases": 6,
+      "integer_boundary": [
+        19,
+        20
+      ]
+    },
+    "native_window_scope": "Existing capacity/ACK boundary unit includes 512/1024/2048 admissions, no Simulator::Run and no experimental sweep.",
+    "source_binary_identity_postflight": "PASS",
+    "formal_or_real_simulations_run": 0
+  },
+  "private_evidence_sha256": {
+    "token-screen-private/restoration/verification.json": "6c8ad563701f7f23a47cae27c5b6fa625af98e93db670d7438968f77ba7ab103",
+    "token-screen-private/restoration/native-verification.json": "bb4ba4634010a701a3324dcd8611a38774975b0730386dc4d839ca0dc9abd202",
+    "token-screen-private/restoration/native-base-source-sha256.json": "215ab1a2652a1f6549bb40e133aad8d02ce9e7009140c688bc22e53d31b8e843",
+    "token-screen-private/restoration/native-diagnostic-source-sha256.json": "c39e3d3068dfed38e629720a53f8efe7d5028c1e4975287d019ec5cd1b23f209",
+    "token-screen-private/restoration/native-candidate-source-sha256.json": "5ec5fdc157c4984bee0ece92494dde770394692b7ff32e824c8fab16ce2afcb7",
+    "token-screen-private/restoration/native-patch-commands.json": "b2fb51c0989362813bf49aca0faa4e30cc82529afdfe0d57292184615ceb804c",
+    "token-screen-private/restoration/runtime-restoration-report.json": "7ed956b1882502fc0f92d8ed9e3a5fda247d81708012a234750e32f96b8bc8ba",
+    "token-screen-private/build/build-identity.json": "41357f9a54b8a816d729401505a911b5931432ac7915004b4294a97c72567ec0",
+    "token-screen-private/build/source-identity.json": "dd2720f18ae7d357f8f2186e7c872941c4a2ab3a87bdfe9139099856334c8a0a",
+    "token-screen-private/build/binary-identity.json": "1b9f21d3eeaa2f66a306aa24e2b8cb65c091e371d00845fa9981fe70ea14430b",
+    "token-screen-private/build/compiler-commands.json": "f99bf469385889629d5dac8abe219f38a94bf066c701a228a0794208a700990d",
+    "token-screen-private/unit-gate/status.json": "bd992dc647ad72f1f8f03b17005c319d2bacf37efcdeb57288ebba60f82bd975",
+    "token-screen-private/unit-gate/identity-before.json": "41357f9a54b8a816d729401505a911b5931432ac7915004b4294a97c72567ec0",
+    "token-screen-private/unit-gate/identity-after.json": "41357f9a54b8a816d729401505a911b5931432ac7915004b4294a97c72567ec0"
+  },
+  "binary_sha256": {
+    "token-screen-native/build/lib/libns3.44-applications.so": "6dd675de5a4d2412c23690f80742f2a034864d6dfc02a0958696c57cc75be12e",
+    "token-screen-native/build/lib/libns3.44-bridge.so": "301f1d089fa97cdb8955b704f5cff3f9ca88c1e09b2dadc368f9c26e2dced404",
+    "token-screen-native/build/lib/libns3.44-config-store.so": "2d7a443d884b8672d08b3d9b84ffdcab197b59b1668234ecf9fd3b3a9bf5173b",
+    "token-screen-native/build/lib/libns3.44-core.so": "3c1aabf87dfa655e5db683c378ce78e76ccdbae2c567615a520591b14825706a",
+    "token-screen-native/build/lib/libns3.44-internet.so": "f7aae934e4b0a56c7bcdc642b823aa86aa587475bfc51e38f153fdb52da911bc",
+    "token-screen-native/build/lib/libns3.44-network.so": "20450e5d49f66af43481bad820da6ae03208084e09451d829c32122c98ad6ef0",
+    "token-screen-native/build/lib/libns3.44-point-to-point.so": "6bd100cf92fd0a51a13dc3e1fdb072188f1d017eb1d690dfd8fbfe0e32e34b3d",
+    "token-screen-native/build/lib/libns3.44-stats.so": "8dcba5396209a5d22134ef54f388b8ce624fd9917f900eb8ecbbef63c90c19cb",
+    "token-screen-native/build/lib/libns3.44-traffic-control.so": "d7c0f74f373e717ae67a1327b68371f6e7533505bf32c8367cb7c81d0dbb5507",
+    "token-screen-native/build/lib/libns3.44-unified-bus.so": "f9bdef9dff2968e43045eb099c497f790f08e983236ecad57b4d2e9837dda084",
+    "token-screen-private/build/graph-tool": "f3118b9ac1bcfe3f15a9019c1985dbe4b0c1f373d947bbc29bb9f84da620665c",
+    "token-screen-private/build/jetty-observer-test": "bfe5c352d1f00bf96f76835548f7bcfcb6de24f9ebe14588cf6fe756c5094301",
+    "token-screen-private/build/jetty-window-test": "ad809ecb8b863a000f0a1a9655f0deafb8f11564f4db358fca973b22073a8e56",
+    "token-screen-private/build/layer": "27b3eae2b2aa7cd3c932359261c410238ae53beb4a752ca0d1e62e225befc85b",
+    "token-screen-private/build/model-probe": "1fe2ec0e0a365691d5152f009177ab3ce82e5b6ca7a4233f775e0551af34fd49",
+    "token-screen-private/build/observer-fifo-test": "9ba814b7b4fc5801165f77f5298ee2cf9920e1b3e42e989e0a17a75cc5e2cc39"
+  },
+  "public_accepted_references": {
+    "accepted_native_chain": "https://github.com/ponedo/ub-test/blob/3521a64fd300938af3af4573a9793c4cde8d9649/experiments/multicast-controlled-ablation/README.md",
+    "integration_source_manifest": "https://github.com/ponedo/ub-test/blob/3521a64fd300938af3af4573a9793c4cde8d9649/experiments/ultraep-multicast-integration/candidate-native-source-sha256.json",
+    "diagnostic_manifest": "https://github.com/ponedo/ub-test/blob/3521a64fd300938af3af4573a9793c4cde8d9649/experiments/multicast-reversal-diagnosis/native-diagnostic-manifest.json",
+    "controlled_ablation_manifest": "https://github.com/ponedo/ub-test/blob/3521a64fd300938af3af4573a9793c4cde8d9649/experiments/multicast-controlled-ablation/native/native-patch-manifest.json",
+    "native_build_driver": "https://github.com/ponedo/ub-test/blob/3521a64fd300938af3af4573a9793c4cde8d9649/experiments/multicast-controlled-ablation/build-native.py",
+    "application_build_commands": "https://github.com/ponedo/ub-test/blob/3521a64fd300938af3af4573a9793c4cde8d9649/experiments/multicast-controlled-ablation/build.py",
+    "resource_guard": "https://github.com/ponedo/ub-test/blob/3521a64fd300938af3af4573a9793c4cde8d9649/experiments/cloudmatrix-bandwidth/guard.py",
+    "resource_guard_limits": "https://github.com/ponedo/ub-test/blob/3521a64fd300938af3af4573a9793c4cde8d9649/experiments/qwen-roofline-compute/guard.py"
+  }
+}

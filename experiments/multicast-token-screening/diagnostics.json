@@ -1,0 +1,1631 @@
+{
+  "status": "PASS",
+  "scope": "One new N256 Chunk Streaming versus Multicast v2 pair; no larger-token reruns.",
+  "accepted_application_commit": "3521a64fd300938af3af4573a9793c4cde8d9649",
+  "shared_plan_semantic_sha256": "5df5e9b331e487985f0b53a8e0485e9acc477bd71d756430029f8b7427bed06d",
+  "prepared_manifest_sha256": "92fbc0210cdf4539dfbd3b3de7855e3cb11847d72b79b1a95f14d165f51ddc8d",
+  "pair_aggregate_sha256": "54c2cda40a0bbbf1112c89e782fb8f22cc011946937348ab11056da88a6c9ab5",
+  "natural_plan": {
+    "tokens": 256,
+    "serialized_layer": 37,
+    "replicas": 44,
+    "groups": 21,
+    "max_fanout": 5,
+    "fanout_histogram": {
+      "1": 3,
+      "2": 15,
+      "3": 2,
+      "5": 1
+    }
+  },
+  "observer": {
+    "nodes": 65,
+    "source_selector": 4294967294,
+    "group_selector": 4294967294,
+    "selected_TA_RTT_details_enabled": false
+  },
+  "cases": [
+    {
+      "status": "PASS",
+      "strategy": "chunk-streaming",
+      "tokens": 256,
+      "settings": {
+        "npus": 64,
+        "link_gbps": 3136,
+        "propagation_ns": 20,
+        "allocator_requested_ns": 5,
+        "jetty_ta_window": 512,
+        "native_tp_packet_window": 1000,
+        "compute_model": "roofline",
+        "compute_tflops": 100,
+        "hbm_bandwidth_GBps": 2692
+      },
+      "timing": {
+        "weight_duration_ps": 691082182,
+        "weights_start_ps": 201000,
+        "weights_end_ps": 691283182,
+        "layer_latency_ps": 727245670
+      },
+      "critical_transfer_count": 1,
+      "critical_transfers": [
+        {
+          "task": 22540,
+          "source": 23,
+          "target": 59,
+          "physical": 238,
+          "bytes": 4096,
+          "last_native_send_ps": 691229591,
+          "receiver_ready_ps": 691283182,
+          "sender_complete_ps": 693047560
+        }
+      ],
+      "critical_source_paths": [
+        {
+          "source": 23,
+          "host": {
+            "node": 23,
+            "port": 0,
+            "tx_busy_union_ps": 115270884,
+            "allocator_pending_excluding_tx_ps": 508865003,
+            "uncovered_idle_ps": 66946295,
+            "total_ps": 691082182,
+            "busy_or_allocator_fraction": 0.9031283156422053,
+            "ack_response_tx": {
+              "count": 73710,
+              "sum": 4570020,
+              "max": 62
+            },
+            "ack_response_rx": {
+              "count": 92125,
+              "sum": 5711750,
+              "max": 62
+            },
+            "weight_tx": {
+              "count": 36864,
+              "sum": 40624128,
+              "max": 1102
+            },
+            "weight_rx": {
+              "count": 18432,
+              "sum": 20312064,
+              "max": 1102
+            },
+            "weight_voq_residence": {
+              "count": 0,
+              "sum": 0,
+              "max": 0
+            },
+            "weight_egress_wait": {
+              "count": 36864,
+              "sum": 0,
+              "max": 0
+            },
+            "ack_response_voq_residence": {
+              "count": 0,
+              "sum": 0,
+              "max": 0
+            },
+            "ack_response_egress_wait": {
+              "count": 73710,
+              "sum": 0,
+              "max": 0
+            },
+            "callback_event_cohorts": {
+              "requested": {
+                "count": 124391,
+                "sum": 621955000,
+                "max": 5000
+              },
+              "committed": {
+                "count": 110574,
+                "sum": 552870000,
+                "max": 5000
+              },
+              "rejected": {
+                "count": 0,
+                "sum": 0,
+                "max": 0
+              },
+              "no_ingress": {
+                "count": 13816,
+                "sum": 69080000,
+                "max": 5000
+              }
+            }
+          },
+          "shared_return_port": {
+            "node": 64,
+            "port": 23,
+            "tx_busy_union_ps": 66368734,
+            "allocator_pending_excluding_tx_ps": 608541483,
+            "uncovered_idle_ps": 16171965,
+            "total_ps": 691082182,
+            "busy_or_allocator_fraction": 0.9765990711072913,
+            "ack_response_tx": {
+              "count": 92129,
+              "sum": 5711998,
+              "max": 62
+            },
+            "ack_response_rx": {
+              "count": 73708,
+              "sum": 4569896,
+              "max": 62
+            },
+            "weight_tx": {
+              "count": 18432,
+              "sum": 20312064,
+              "max": 1102
+            },
+            "weight_rx": {
+              "count": 36864,
+              "sum": 40624128,
+              "max": 1102
+            },
+            "weight_voq_residence": {
+              "count": 18432,
+              "sum": 1732092108,
+              "max": 3208591
+            },
+            "weight_egress_wait": {
+              "count": 18432,
+              "sum": 0,
+              "max": 0
+            },
+            "ack_response_voq_residence": {
+              "count": 92129,
+              "sum": 9721786991,
+              "max": 3171244
+            },
+            "ack_response_egress_wait": {
+              "count": 92129,
+              "sum": 0,
+              "max": 0
+            },
+            "callback_event_cohorts": {
+              "requested": {
+                "count": 131299,
+                "sum": 656495000,
+                "max": 5000
+              },
+              "committed": {
+                "count": 110561,
+                "sum": 552805000,
+                "max": 5000
+              },
+              "rejected": {
+                "count": 0,
+                "sum": 0,
+                "max": 0
+              },
+              "no_ingress": {
+                "count": 20737,
+                "sum": 103685000,
+                "max": 5000
+              }
+            }
+          },
+          "target_paths": [
+            {
+              "target": 59,
+              "critical_transfer_count": 1,
+              "forward_switch_port": {
+                "node": 64,
+                "port": 59,
+                "tx_busy_union_ps": 54722870,
+                "allocator_pending_excluding_tx_ps": 327608899,
+                "uncovered_idle_ps": 308750413,
+                "total_ps": 691082182,
+                "busy_or_allocator_fraction": 0.5532363284110833,
+                "ack_response_tx": {
+                  "count": 18421,
+                  "sum": 1142102,
+                  "max": 62
+                },
+                "ack_response_rx": {
+                  "count": 36860,
+                  "sum": 2285320,
+                  "max": 62
+                },
+                "weight_tx": {
+                  "count": 18432,
+                  "sum": 20312064,
+                  "max": 1102
+                },
+                "weight_rx": {
+                  "count": 0,
+                  "sum": 0,
+                  "max": 0
+                },
+                "weight_voq_residence": {
+                  "count": 18432,
+                  "sum": 124094907,
+                  "max": 9845
+                },
+                "weight_egress_wait": {
+                  "count": 18432,
+                  "sum": 0,
+                  "max": 0
+                },
+                "ack_response_voq_residence": {
+                  "count": 18421,
+                  "sum": 106466921,
+                  "max": 9845
+                },
+                "ack_response_egress_wait": {
+                  "count": 18421,
+                  "sum": 0,
+                  "max": 0
+                },
+                "callback_event_cohorts": {
+                  "requested": {
+                    "count": 70091,
+                    "sum": 350455000,
+                    "max": 5000
+                  },
+                  "committed": {
+                    "count": 36853,
+                    "sum": 184265000,
+                    "max": 5000
+                  },
+                  "rejected": {
+                    "count": 0,
+                    "sum": 0,
+                    "max": 0
+                  },
+                  "no_ingress": {
+                    "count": 33237,
+                    "sum": 166185000,
+                    "max": 5000
+                  }
+                }
+              },
+              "receiver_port": {
+                "node": 59,
+                "port": 0,
+                "tx_busy_union_ps": 5824196,
+                "allocator_pending_excluding_tx_ps": 273537428,
+                "uncovered_idle_ps": 411720558,
+                "total_ps": 691082182,
+                "busy_or_allocator_fraction": 0.4042379202883283,
+                "ack_response_tx": {
+                  "count": 36862,
+                  "sum": 2285444,
+                  "max": 62
+                },
+                "ack_response_rx": {
+                  "count": 18420,
+                  "sum": 1142040,
+                  "max": 62
+                },
+                "weight_tx": {
+                  "count": 0,
+                  "sum": 0,
+                  "max": 0
+                },
+                "weight_rx": {
+                  "count": 18432,
+                  "sum": 20312064,
+                  "max": 1102
+                },
+                "weight_voq_residence": {
+                  "count": 0,
+                  "sum": 0,
+                  "max": 0
+                },
+                "weight_egress_wait": {
+                  "count": 0,
+                  "sum": 0,
+                  "max": 0
+                },
+                "ack_response_voq_residence": {
+                  "count": 0,
+                  "sum": 0,
+                  "max": 0
+                },
+                "ack_response_egress_wait": {
+                  "count": 36862,
+                  "sum": 0,
+                  "max": 0
+                },
+                "callback_event_cohorts": {
+                  "requested": {
+                    "count": 55291,
+                    "sum": 276455000,
+                    "max": 5000
+                  },
+                  "committed": {
+                    "count": 36862,
+                    "sum": 184310000,
+                    "max": 5000
+                  },
+                  "rejected": {
+                    "count": 0,
+                    "sum": 0,
+                    "max": 0
+                  },
+                  "no_ingress": {
+                    "count": 18428,
+                    "sum": 92140000,
+                    "max": 5000
+                  }
+                }
+              }
+            }
+          ],
+          "source_own_last_dequeue": {
+            "last_weight_native_send_ps": 691229591,
+            "tx_busy_union_ps": 115267125,
+            "allocator_pending_excluding_tx_ps": 508815171,
+            "uncovered_idle_ps": 66946295,
+            "total_ps": 691028591
+          },
+          "own_last_dequeue_to_weight_ready_ps": 53591,
+          "accounting_residual_ps": 0
+        }
+      ],
+      "native_partition_coverage": {
+        "nodes": 65,
+        "physical_ports": 128,
+        "recorded_ports": 122,
+        "unobserved_switch_ports": [
+          7,
+          8,
+          15,
+          16,
+          29,
+          44
+        ],
+        "unobserved_host_ports": [],
+        "basis": "Every remote-TP host, weight endpoint and in-phase native aggregate port is covered. Absent ports have no recorded phase partition and no relevant phase event; inactivity is source-derived, not measured. No partition rows are fabricated."
+      },
+      "hot_return_ports": {
+        "ranking": "All observed shared return ports ranked by weight-phase ACK/weight-response VOQ residence sum, then TX count; top eight. Unobserved inactive ports have no weight-phase cohorts.",
+        "ports": [
+          {
+            "node": 64,
+            "port": 57,
+            "tx_busy_union_ps": 11652696,
+            "allocator_pending_excluding_tx_ps": 361554391,
+            "uncovered_idle_ps": 317875095,
+            "total_ps": 691082182,
+            "busy_or_allocator_fraction": 0.5400328596519943,
+            "ack_response_tx": {
+              "count": 73728,
+              "sum": 4571136,
+              "max": 62
+            },
+            "ack_response_rx": {
+              "count": 36864,
+              "sum": 2285568,
+              "max": 62
+            },
+            "weight_tx": {
+              "count": 0,
+              "sum": 0,
+              "max": 0
+            },
+            "weight_rx": {
+              "count": 36864,
+              "sum": 40624128,
+              "max": 1102
+            },
+            "weight_voq_residence": {
+              "count": 0,
+              "sum": 0,
+              "max": 0
+            },
+            "weight_egress_wait": {
+              "count": 0,
+              "sum": 0,
+              "max": 0
+            },
+            "ack_response_voq_residence": {
+              "count": 73728,
+              "sum": 21045278446,
+              "max": 1168124
+            },
+            "ack_response_egress_wait": {
+              "count": 73728,
+              "sum": 0,
+              "max": 0
+            },
+            "callback_event_cohorts": {
+              "requested": {
+                "count": 74614,
+                "sum": 373070000,
+                "max": 5000
+              },
+              "committed": {
+                "count": 73764,
+                "sum": 368820000,
+                "max": 5000
+              },
+              "rejected": {
+                "count": 0,
+                "sum": 0,
+                "max": 0
+              },
+              "no_ingress": {
+                "count": 850,
+                "sum": 4250000,
+                "max": 5000
+              }
+            }
+          },
+          {
+            "node": 64,
+            "port": 62,
+            "tx_busy_union_ps": 11652696,
+            "allocator_pending_excluding_tx_ps": 361554391,
+            "uncovered_idle_ps": 317875095,
+            "total_ps": 691082182,
+            "busy_or_allocator_fraction": 0.5400328596519943,
+            "ack_response_tx": {
+              "count": 73728,
+              "sum": 4571136,
+              "max": 62
+            },
+            "ack_response_rx": {
+              "count": 36864,
+              "sum": 2285568,
+              "max": 62
+            },
+            "weight_tx": {
+              "count": 0,
+              "sum": 0,
+              "max": 0
+            },
+            "weight_rx": {
+              "count": 36864,
+              "sum": 40624128,
+              "max": 1102
+            },
+            "weight_voq_residence": {
+              "count": 0,
+              "sum": 0,
+              "max": 0
+            },
+            "weight_egress_wait": {
+              "count": 0,
+              "sum": 0,
+              "max": 0
+            },
+            "ack_response_voq_residence": {
+              "count": 73728,
+              "sum": 21045278446,
+              "max": 1168124
+            },
+            "ack_response_egress_wait": {
+              "count": 73728,
+              "sum": 0,
+              "max": 0
+            },
+            "callback_event_cohorts": {
+              "requested": {
+                "count": 74614,
+                "sum": 373070000,
+                "max": 5000
+              },
+              "committed": {
+                "count": 73764,
+                "sum": 368820000,
+                "max": 5000
+              },
+              "rejected": {
+                "count": 0,
+                "sum": 0,
+                "max": 0
+              },
+              "no_ingress": {
+                "count": 850,
+                "sum": 4250000,
+                "max": 5000
+              }
+            }
+          },
+          {
+            "node": 64,
+            "port": 58,
+            "tx_busy_union_ps": 11652696,
+            "allocator_pending_excluding_tx_ps": 361549075,
+            "uncovered_idle_ps": 317880411,
+            "total_ps": 691082182,
+            "busy_or_allocator_fraction": 0.5400251673685894,
+            "ack_response_tx": {
+              "count": 73728,
+              "sum": 4571136,
+              "max": 62
+            },
+            "ack_response_rx": {
+              "count": 36864,
+              "sum": 2285568,
+              "max": 62
+            },
+            "weight_tx": {
+              "count": 0,
+              "sum": 0,
+              "max": 0
+            },
+            "weight_rx": {
+              "count": 36864,
+              "sum": 40624128,
+              "max": 1102
+            },
+            "weight_voq_residence": {
+              "count": 0,
+              "sum": 0,
+              "max": 0
+            },
+            "weight_egress_wait": {
+              "count": 0,
+              "sum": 0,
+              "max": 0
+            },
+            "ack_response_voq_residence": {
+              "count": 73728,
+              "sum": 21040236416,
+              "max": 1175777
+            },
+            "ack_response_egress_wait": {
+              "count": 73728,
+              "sum": 0,
+              "max": 0
+            },
+            "callback_event_cohorts": {
+              "requested": {
+                "count": 74613,
+                "sum": 373065000,
+                "max": 5000
+              },
+              "committed": {
+                "count": 73764,
+                "sum": 368820000,
+                "max": 5000
+              },
+              "rejected": {
+                "count": 0,
+                "sum": 0,
+                "max": 0
+              },
+              "no_ingress": {
+                "count": 849,
+                "sum": 4245000,
+                "max": 5000
+              }
+            }
+          }
+        ],
+        "export_scope": "Top three only; ranking considers all observed return ports, not preselected historical sources."
+      },
+      "allocator_callbacks": {
+        "whole_run": {
+          "requested": {
+            "count": 8286550,
+            "sum": 41432750000,
+            "max": 5000
+          },
+          "committed": {
+            "count": 6738702,
+            "sum": 33693510000,
+            "max": 5000
+          },
+          "rejected": {
+            "count": 0,
+            "sum": 0,
+            "max": 0
+          },
+          "no_ingress": {
+            "count": 1547848,
+            "sum": 7739240000,
+            "max": 5000
+          }
+        },
+        "weight_phase_event_cohorts": {
+          "requested": {
+            "count": 7977701,
+            "sum": 39888505000,
+            "max": 5000
+          },
+          "committed": {
+            "count": 6488644,
+            "sum": 32443220000,
+            "max": 5000
+          },
+          "rejected": {
+            "count": 0,
+            "sum": 0,
+            "max": 0
+          },
+          "no_ingress": {
+            "count": 1489051,
+            "sum": 7445255000,
+            "max": 5000
+          }
+        },
+        "semantics": "Requested services and callback durations are event aggregates, not disjoint wall time; phase starts and ends can straddle boundaries."
+      },
+      "jetty": {
+        "tracked_jetties": 2722,
+        "window": 512,
+        "admissions": 842256,
+        "window_tests": 19683994,
+        "window_limited_tests": 15746058,
+        "accepted_taacks": 842256,
+        "rejected_taacks": 0,
+        "ssn_progress": 842256,
+        "cleanup_events": 0,
+        "window_full_intervals": 8760,
+        "max_outstanding": 512,
+        "terminal_outstanding": 0,
+        "all_pair_completion_reconciled": true,
+        "selected_ta_rtt": {
+          "enabled": false,
+          "completeness_evidence": false,
+          "reason": "Impossible source/group selection disables selected TA latency and duplicate tracking. Zero selected counters do not prove global latency or identity coverage."
+        },
+        "weight_phase": {
+          "exposure_jetty_ps": 40598595037,
+          "outstanding_ta_jetty_ps": 926161249965,
+          "full_window_jetty_ps": 254663401,
+          "mean_outstanding_tas": 22.812642878920617,
+          "full_window_fraction": 0.006272714628866086,
+          "histogram_jetty_ps": [
+            23805335053,
+            14809512324,
+            579287712,
+            576171682,
+            573624865,
+            254663401
+          ]
+        },
+        "semantics": "Exact transition-integrated Jetty-time, not wall-clock blocked time; includes empty/completed exposure.",
+        "excluded_observed_run_scope": "Whole observer lifetime extends to the fixed 10-second simulation stop; its denominator includes empty postcompletion exposure and is not Layer utilization."
+      },
+      "multicast": {
+        "applicable": false
+      },
+      "physical_network": {
+        "nodes": 65,
+        "directed_links": 128,
+        "all_links_packet_and_byte_conserved": true,
+        "physical_tx_packets": 6738702,
+        "physical_rx_packets": 6738702,
+        "physical_tx_wire_bytes": 2169677616,
+        "physical_rx_wire_bytes": 2169677616
+      },
+      "verification": {
+        "validation": "PASS",
+        "compute-validation": "PASS",
+        "postflight-host": "PASS",
+        "independent-host": "PASS",
+        "compute-host": "PASS"
+      },
+      "no_loss_evidence": {
+        "aggregate_contract_passed": true,
+        "basis": [
+          "All 128 directed native links conserve TX/RX packets and bytes.",
+          "Per-source token/weight WRITE, TPACK and TAACK totals match the complete transfer graph.",
+          "All-pair admissions, accepted TAACKs and SSN progress reconcile exactly; native pairs complete.",
+          "Native retransmission and fault injection are disabled; simulator payload/completion and independent compute validations passed."
+        ],
+        "limits": "No global drop counter is provided. This is a no-loss/no-retry aggregate consistency contract, not a direct measurement of every possible drop event. Disabled selected RTT counters are not part of this evidence."
+      },
+      "feedback": {
+        "logical_remote_tas": 842256,
+        "physical_tpack_transmissions": 3369024,
+        "physical_taack_transmissions": 1684512,
+        "all_64_sources_reconciled": true,
+        "semantics": "Whole lifecycle native opcode split, not weight-phase counts. Nominal allocator demand is service workload, not elapsed wall time or a new lower bound. Each WRITE TA yields one TAACK and two TPACKs; each crosses two physical links. Return TPACK includes outgoing and incoming TAs, including relay-source incoming weights.",
+        "all_64_sources_totals": {
+          "outgoing_token_tas": 31248,
+          "incoming_token_tas": 31248,
+          "outgoing_weight_tas": 811008,
+          "incoming_weight_tas": 811008,
+          "switch_return_tpack": 1684512,
+          "switch_return_taack": 842256,
+          "weight_return_tpack_after_token_subtraction": 1622016,
+          "weight_return_taack_after_token_subtraction": 811008,
+          "weight_return_feedback_frames": 2433024,
+          "nominal_weight_return_allocator_service_ps": 12165120000
+        },
+        "selected_source_rows": "feedback.csv exports actual critical and top-three hot sources plus same-source controls, not every source."
+      }
+    },
+    {
+      "status": "PASS",
+      "strategy": "multicast-v2",
+      "tokens": 256,
+      "settings": {
+        "npus": 64,
+        "link_gbps": 3136,
+        "propagation_ns": 20,
+        "allocator_requested_ns": 5,
+        "jetty_ta_window": 512,
+        "native_tp_packet_window": 1000,
+        "compute_model": "roofline",
+        "compute_tflops": 100,
+        "hbm_bandwidth_GBps": 2692
+      },
+      "timing": {
+        "weight_duration_ps": 896326667,
+        "weights_start_ps": 201000,
+        "weights_end_ps": 896527667,
+        "layer_latency_ps": 932419197
+      },
+      "critical_transfer_count": 1,
+      "critical_transfers": [
+        {
+          "task": 4135,
+          "source": 22,
+          "target": 59,
+          "physical": 238,
+          "bytes": 18874368,
+          "last_native_send_ps": 896474540,
+          "receiver_ready_ps": 896527667,
+          "sender_complete_ps": 931479540
+        }
+      ],
+      "critical_source_paths": [
+        {
+          "source": 22,
+          "host": {
+            "node": 22,
+            "port": 0,
+            "tx_busy_union_ps": 81306462,
+            "allocator_pending_excluding_tx_ps": 784766665,
+            "uncovered_idle_ps": 30253540,
+            "total_ps": 896326667,
+            "busy_or_allocator_fraction": 0.9662471941158925,
+            "ack_response_tx": {
+              "count": 89610,
+              "sum": 5555820,
+              "max": 62
+            },
+            "ack_response_rx": {
+              "count": 179222,
+              "sum": 11111764,
+              "max": 62
+            },
+            "weight_tx": {
+              "count": 18432,
+              "sum": 26320896,
+              "max": 1428
+            },
+            "weight_rx": {
+              "count": 0,
+              "sum": 0,
+              "max": 0
+            },
+            "weight_voq_residence": {
+              "count": 0,
+              "sum": 0,
+              "max": 0
+            },
+            "weight_egress_wait": {
+              "count": 18432,
+              "sum": 0,
+              "max": 0
+            },
+            "ack_response_voq_residence": {
+              "count": 0,
+              "sum": 0,
+              "max": 0
+            },
+            "ack_response_egress_wait": {
+              "count": 89610,
+              "sum": 0,
+              "max": 0
+            },
+            "callback_event_cohorts": {
+              "requested": {
+                "count": 173215,
+                "sum": 866075000,
+                "max": 5000
+              },
+              "committed": {
+                "count": 108045,
+                "sum": 540225000,
+                "max": 5000
+              },
+              "rejected": {
+                "count": 715,
+                "sum": 3575000,
+                "max": 5000
+              },
+              "no_ingress": {
+                "count": 64454,
+                "sum": 322270000,
+                "max": 5000
+              }
+            }
+          },
+          "shared_return_port": {
+            "node": 64,
+            "port": 22,
+            "tx_busy_union_ps": 28317708,
+            "allocator_pending_excluding_tx_ps": 867830735,
+            "uncovered_idle_ps": 178224,
+            "total_ps": 896326667,
+            "busy_or_allocator_fraction": 0.9998011617788897,
+            "ack_response_tx": {
+              "count": 179226,
+              "sum": 11112012,
+              "max": 62
+            },
+            "ack_response_rx": {
+              "count": 89607,
+              "sum": 5555634,
+              "max": 62
+            },
+            "weight_tx": {
+              "count": 0,
+              "sum": 0,
+              "max": 0
+            },
+            "weight_rx": {
+              "count": 18432,
+              "sum": 26320896,
+              "max": 1428
+            },
+            "weight_voq_residence": {
+              "count": 0,
+              "sum": 0,
+              "max": 0
+            },
+            "weight_egress_wait": {
+              "count": 0,
+              "sum": 0,
+              "max": 0
+            },
+            "ack_response_voq_residence": {
+              "count": 179226,
+              "sum": 4287631371487,
+              "max": 25486557
+            },
+            "ack_response_egress_wait": {
+              "count": 179226,
+              "sum": 0,
+              "max": 0
+            },
+            "callback_event_cohorts": {
+              "requested": {
+                "count": 179230,
+                "sum": 896150000,
+                "max": 5000
+              },
+              "committed": {
+                "count": 179226,
+                "sum": 896130000,
+                "max": 5000
+              },
+              "rejected": {
+                "count": 0,
+                "sum": 0,
+                "max": 0
+              },
+              "no_ingress": {
+                "count": 3,
+                "sum": 15000,
+                "max": 5000
+              }
+            }
+          },
+          "target_paths": [
+            {
+              "target": 59,
+              "critical_transfer_count": 1,
+              "forward_switch_port": {
+                "node": 64,
+                "port": 59,
+                "tx_busy_union_ps": 54643870,
+                "allocator_pending_excluding_tx_ps": 366425475,
+                "uncovered_idle_ps": 475257322,
+                "total_ps": 896326667,
+                "busy_or_allocator_fraction": 0.4697721941145817,
+                "ack_response_tx": {
+                  "count": 17921,
+                  "sum": 1111102,
+                  "max": 62
+                },
+                "ack_response_rx": {
+                  "count": 36862,
+                  "sum": 2285444,
+                  "max": 62
+                },
+                "weight_tx": {
+                  "count": 18432,
+                  "sum": 20312064,
+                  "max": 1102
+                },
+                "weight_rx": {
+                  "count": 0,
+                  "sum": 0,
+                  "max": 0
+                },
+                "weight_voq_residence": {
+                  "count": 18432,
+                  "sum": 123356482,
+                  "max": 9958
+                },
+                "weight_egress_wait": {
+                  "count": 18432,
+                  "sum": 0,
+                  "max": 0
+                },
+                "ack_response_voq_residence": {
+                  "count": 17921,
+                  "sum": 90435973,
+                  "max": 9223
+                },
+                "ack_response_egress_wait": {
+                  "count": 17921,
+                  "sum": 0,
+                  "max": 0
+                },
+                "callback_event_cohorts": {
+                  "requested": {
+                    "count": 74938,
+                    "sum": 374690000,
+                    "max": 5000
+                  },
+                  "committed": {
+                    "count": 36353,
+                    "sum": 181765000,
+                    "max": 5000
+                  },
+                  "rejected": {
+                    "count": 0,
+                    "sum": 0,
+                    "max": 0
+                  },
+                  "no_ingress": {
+                    "count": 38585,
+                    "sum": 192925000,
+                    "max": 5000
+                  }
+                }
+              },
+              "receiver_port": {
+                "node": 59,
+                "port": 0,
+                "tx_busy_union_ps": 5824400,
+                "allocator_pending_excluding_tx_ps": 302181236,
+                "uncovered_idle_ps": 588321031,
+                "total_ps": 896326667,
+                "busy_or_allocator_fraction": 0.34363100791243106,
+                "ack_response_tx": {
+                  "count": 36862,
+                  "sum": 2285444,
+                  "max": 62
+                },
+                "ack_response_rx": {
+                  "count": 17921,
+                  "sum": 1111102,
+                  "max": 62
+                },
+                "weight_tx": {
+                  "count": 0,
+                  "sum": 0,
+                  "max": 0
+                },
+                "weight_rx": {
+                  "count": 18432,
+                  "sum": 20312064,
+                  "max": 1102
+                },
+                "weight_voq_residence": {
+                  "count": 0,
+                  "sum": 0,
+                  "max": 0
+                },
+                "weight_egress_wait": {
+                  "count": 0,
+                  "sum": 0,
+                  "max": 0
+                },
+                "ack_response_voq_residence": {
+                  "count": 0,
+                  "sum": 0,
+                  "max": 0
+                },
+                "ack_response_egress_wait": {
+                  "count": 36862,
+                  "sum": 0,
+                  "max": 0
+                },
+                "callback_event_cohorts": {
+                  "requested": {
+                    "count": 61111,
+                    "sum": 305555000,
+                    "max": 5000
+                  },
+                  "committed": {
+                    "count": 36864,
+                    "sum": 184320000,
+                    "max": 5000
+                  },
+                  "rejected": {
+                    "count": 0,
+                    "sum": 0,
+                    "max": 0
+                  },
+                  "no_ingress": {
+                    "count": 24246,
+                    "sum": 121230000,
+                    "max": 5000
+                  }
+                }
+              }
+            }
+          ],
+          "source_own_last_dequeue": {
+            "last_weight_native_send_ps": 896474540,
+            "tx_busy_union_ps": 81302029,
+            "allocator_pending_excluding_tx_ps": 784722971,
+            "uncovered_idle_ps": 30248540,
+            "total_ps": 896273540
+          },
+          "own_last_dequeue_to_weight_ready_ps": 53127,
+          "accounting_residual_ps": 0
+        }
+      ],
+      "native_partition_coverage": {
+        "nodes": 65,
+        "physical_ports": 128,
+        "recorded_ports": 122,
+        "unobserved_switch_ports": [
+          7,
+          8,
+          15,
+          16,
+          29,
+          44
+        ],
+        "unobserved_host_ports": [],
+        "basis": "Every remote-TP host, weight endpoint and in-phase native aggregate port is covered. Absent ports have no recorded phase partition and no relevant phase event; inactivity is source-derived, not measured. No partition rows are fabricated."
+      },
+      "hot_return_ports": {
+        "ranking": "All observed shared return ports ranked by weight-phase ACK/weight-response VOQ residence sum, then TX count; top eight. Unobserved inactive ports have no weight-phase cohorts.",
+        "ports": [
+          {
+            "node": 64,
+            "port": 22,
+            "tx_busy_union_ps": 28317708,
+            "allocator_pending_excluding_tx_ps": 867830735,
+            "uncovered_idle_ps": 178224,
+            "total_ps": 896326667,
+            "busy_or_allocator_fraction": 0.9998011617788897,
+            "ack_response_tx": {
+              "count": 179226,
+              "sum": 11112012,
+              "max": 62
+            },
+            "ack_response_rx": {
+              "count": 89607,
+              "sum": 5555634,
+              "max": 62
+            },
+            "weight_tx": {
+              "count": 0,
+              "sum": 0,
+              "max": 0
+            },
+            "weight_rx": {
+              "count": 18432,
+              "sum": 26320896,
+              "max": 1428
+            },
+            "weight_voq_residence": {
+              "count": 0,
+              "sum": 0,
+              "max": 0
+            },
+            "weight_egress_wait": {
+              "count": 0,
+              "sum": 0,
+              "max": 0
+            },
+            "ack_response_voq_residence": {
+              "count": 179226,
+              "sum": 4287631371487,
+              "max": 25486557
+            },
+            "ack_response_egress_wait": {
+              "count": 179226,
+              "sum": 0,
+              "max": 0
+            },
+            "callback_event_cohorts": {
+              "requested": {
+                "count": 179230,
+                "sum": 896150000,
+                "max": 5000
+              },
+              "committed": {
+                "count": 179226,
+                "sum": 896130000,
+                "max": 5000
+              },
+              "rejected": {
+                "count": 0,
+                "sum": 0,
+                "max": 0
+              },
+              "no_ingress": {
+                "count": 3,
+                "sum": 15000,
+                "max": 5000
+              }
+            }
+          },
+          {
+            "node": 64,
+            "port": 4,
+            "tx_busy_union_ps": 17473536,
+            "allocator_pending_excluding_tx_ps": 535521780,
+            "uncovered_idle_ps": 343331351,
+            "total_ps": 896326667,
+            "busy_or_allocator_fraction": 0.6169573397284631,
+            "ack_response_tx": {
+              "count": 110592,
+              "sum": 6856704,
+              "max": 62
+            },
+            "ack_response_rx": {
+              "count": 55296,
+              "sum": 3428352,
+              "max": 62
+            },
+            "weight_tx": {
+              "count": 0,
+              "sum": 0,
+              "max": 0
+            },
+            "weight_rx": {
+              "count": 18432,
+              "sum": 23519232,
+              "max": 1276
+            },
+            "weight_voq_residence": {
+              "count": 0,
+              "sum": 0,
+              "max": 0
+            },
+            "weight_egress_wait": {
+              "count": 0,
+              "sum": 0,
+              "max": 0
+            },
+            "ack_response_voq_residence": {
+              "count": 110592,
+              "sum": 1550811795344,
+              "max": 15246715
+            },
+            "ack_response_egress_wait": {
+              "count": 110592,
+              "sum": 0,
+              "max": 0
+            },
+            "callback_event_cohorts": {
+              "requested": {
+                "count": 110599,
+                "sum": 552995000,
+                "max": 5000
+              },
+              "committed": {
+                "count": 110592,
+                "sum": 552960000,
+                "max": 5000
+              },
+              "rejected": {
+                "count": 0,
+                "sum": 0,
+                "max": 0
+              },
+              "no_ingress": {
+                "count": 7,
+                "sum": 35000,
+                "max": 5000
+              }
+            }
+          },
+          {
+            "node": 64,
+            "port": 36,
+            "tx_busy_union_ps": 17473536,
+            "allocator_pending_excluding_tx_ps": 535531938,
+            "uncovered_idle_ps": 343321193,
+            "total_ps": 896326667,
+            "busy_or_allocator_fraction": 0.6169686726502359,
+            "ack_response_tx": {
+              "count": 110592,
+              "sum": 6856704,
+              "max": 62
+            },
+            "ack_response_rx": {
+              "count": 55296,
+              "sum": 3428352,
+              "max": 62
+            },
+            "weight_tx": {
+              "count": 0,
+              "sum": 0,
+              "max": 0
+            },
+            "weight_rx": {
+              "count": 18432,
+              "sum": 23519232,
+              "max": 1276
+            },
+            "weight_voq_residence": {
+              "count": 0,
+              "sum": 0,
+              "max": 0
+            },
+            "weight_egress_wait": {
+              "count": 0,
+              "sum": 0,
+              "max": 0
+            },
+            "ack_response_voq_residence": {
+              "count": 110592,
+              "sum": 1541461817676,
+              "max": 15248588
+            },
+            "ack_response_egress_wait": {
+              "count": 110592,
+              "sum": 0,
+              "max": 0
+            },
+            "callback_event_cohorts": {
+              "requested": {
+                "count": 110601,
+                "sum": 553005000,
+                "max": 5000
+              },
+              "committed": {
+                "count": 110592,
+                "sum": 552960000,
+                "max": 5000
+              },
+              "rejected": {
+                "count": 0,
+                "sum": 0,
+                "max": 0
+              },
+              "no_ingress": {
+                "count": 9,
+                "sum": 45000,
+                "max": 5000
+              }
+            }
+          }
+        ],
+        "export_scope": "Top three only; ranking considers all observed return ports, not preselected historical sources."
+      },
+      "allocator_callbacks": {
+        "whole_run": {
+          "requested": {
+            "count": 7811641,
+            "sum": 39058205000,
+            "max": 5000
+          },
+          "committed": {
+            "count": 6316150,
+            "sum": 31580750000,
+            "max": 5000
+          },
+          "rejected": {
+            "count": 34969,
+            "sum": 174845000,
+            "max": 5000
+          },
+          "no_ingress": {
+            "count": 1460522,
+            "sum": 7302610000,
+            "max": 5000
+          }
+        },
+        "weight_phase_event_cohorts": {
+          "requested": {
+            "count": 7486190,
+            "sum": 37430950000,
+            "max": 5000
+          },
+          "committed": {
+            "count": 6055958,
+            "sum": 30279790000,
+            "max": 5000
+          },
+          "rejected": {
+            "count": 34969,
+            "sum": 174845000,
+            "max": 5000
+          },
+          "no_ingress": {
+            "count": 1395254,
+            "sum": 6976270000,
+            "max": 5000
+          }
+        },
+        "semantics": "Requested services and callback durations are event aggregates, not disjoint wall time; phase starts and ends can straddle boundaries."
+      },
+      "jetty": {
+        "tracked_jetties": 2722,
+        "window": 512,
+        "admissions": 842256,
+        "window_tests": 4285335,
+        "window_limited_tests": 821175,
+        "accepted_taacks": 842256,
+        "rejected_taacks": 0,
+        "ssn_progress": 842256,
+        "cleanup_events": 0,
+        "window_full_intervals": 233541,
+        "max_outstanding": 512,
+        "terminal_outstanding": 0,
+        "all_pair_completion_reconciled": true,
+        "selected_ta_rtt": {
+          "enabled": false,
+          "completeness_evidence": false,
+          "reason": "Impossible source/group selection disables selected TA latency and duplicate tracking. Zero selected counters do not prove global latency or identity coverage."
+        },
+        "weight_phase": {
+          "exposure_jetty_ps": 53714371374,
+          "outstanding_ta_jetty_ps": 7912015241361,
+          "full_window_jetty_ps": 9655887781,
+          "mean_outstanding_tas": 147.29792118894173,
+          "full_window_fraction": 0.1797635815891509,
+          "histogram_jetty_ps": [
+            34149533408,
+            1670079418,
+            1721448016,
+            3109449225,
+            3407973526,
+            9655887781
+          ]
+        },
+        "semantics": "Exact transition-integrated Jetty-time, not wall-clock blocked time; includes empty/completed exposure.",
+        "excluded_observed_run_scope": "Whole observer lifetime extends to the fixed 10-second simulation stop; its denominator includes empty postcompletion exposure and is not Layer utilization."
+      },
+      "multicast": {
+        "applicable": true,
+        "groups": 21,
+        "fanout_histogram": {
+          "1": 3,
+          "2": 15,
+          "3": 2,
+          "5": 1
+        },
+        "fanout_total": 44,
+        "envelopes": 331776,
+        "native_branches": 755712,
+        "native_singleton_packets": 55296,
+        "source_wire_bytes": 466071552,
+        "source_payload_bytes": 396361728,
+        "source_header_bytes": 69709824,
+        "native_retry_packets": 0,
+        "injected_test_losses": 0,
+        "pending_associations": 0,
+        "loss_counter_scope": "injected_test_losses counts only explicit test-hook injections, not all network drops."
+      },
+      "physical_network": {
+        "nodes": 65,
+        "directed_links": 128,
+        "all_links_packet_and_byte_conserved": true,
+        "physical_tx_packets": 6316150,
+        "physical_rx_packets": 6316150,
+        "physical_tx_wire_bytes": 1742073712,
+        "physical_rx_wire_bytes": 1742073712
+      },
+      "verification": {
+        "validation": "PASS",
+        "compute-validation": "PASS",
+        "postflight-host": "PASS",
+        "independent-host": "PASS",
+        "compute-host": "PASS"
+      },
+      "no_loss_evidence": {
+        "aggregate_contract_passed": true,
+        "basis": [
+          "All 128 directed native links conserve TX/RX packets and bytes.",
+          "Per-source token/weight WRITE, TPACK and TAACK totals match the complete transfer graph.",
+          "All-pair admissions, accepted TAACKs and SSN progress reconcile exactly; native pairs complete.",
+          "Native retransmission and fault injection are disabled; simulator payload/completion and independent compute validations passed.",
+          "Multicast envelopes/branches/source bytes reconcile; native retry and injected-test-loss counters are zero."
+        ],
+        "limits": "No global drop counter is provided. This is a no-loss/no-retry aggregate consistency contract, not a direct measurement of every possible drop event. Disabled selected RTT counters are not part of this evidence."
+      },
+      "feedback": {
+        "logical_remote_tas": 842256,
+        "physical_tpack_transmissions": 3369024,
+        "physical_taack_transmissions": 1684512,
+        "all_64_sources_reconciled": true,
+        "semantics": "Whole lifecycle native opcode split, not weight-phase counts. Nominal allocator demand is service workload, not elapsed wall time or a new lower bound. Each WRITE TA yields one TAACK and two TPACKs; each crosses two physical links. Return TPACK includes outgoing and incoming TAs, including relay-source incoming weights.",
+        "all_64_sources_totals": {
+          "outgoing_token_tas": 31248,
+          "incoming_token_tas": 31248,
+          "outgoing_weight_tas": 811008,
+          "incoming_weight_tas": 811008,
+          "switch_return_tpack": 1684512,
+          "switch_return_taack": 842256,
+          "weight_return_tpack_after_token_subtraction": 1622016,
+          "weight_return_taack_after_token_subtraction": 811008,
+          "weight_return_feedback_frames": 2433024,
+          "nominal_weight_return_allocator_service_ps": 12165120000
+        },
+        "selected_source_rows": "feedback.csv exports actual critical and top-three hot sources plus same-source controls, not every source."
+      }
+    }
+  ],
+  "limits": [
+    "A deterministic tested pair is not a global token minimum or repeated-run stability result.",
+    "Native-pop landmarks are not physical-link TX completion or end-to-end RTT.",
+    "Native class 0 identifies stage-2 weight traffic; class 1 is the measured ACK/response class, not automatically weight-only. Weight-only opcode totals use whole-Layer token subtraction.",
+    "Jetty-time occupancy and overlapping VOQ residence are not additive wall-clock stalls.",
+    "No universal Chunk drop counter is exported; conservation is a strong consistency contract, not omniscient event coverage.",
+    "Historical host cost is not strictly comparable because host and observer scope changed."
+  ],
+  "historical_chunk_terminal_prefix_comparison": {
+    "old_tokens": 2048,
+    "old_critical_sources": [
+      36,
+      50
+    ],
+    "old_identical_prefix_partition": {
+      "tx_busy_union_ps": 164167221,
+      "allocator_pending_excluding_tx_ps": 388672779,
+      "uncovered_idle_ps": 0,
+      "total_ps": 552840000
+    },
+    "old_last_dequeue_to_weight_ready_ps": 53591,
+    "new_tokens": 256,
+    "new_critical_prefixes": [
+      {
+        "source": 23,
+        "last_weight_native_send_ps": 691229591,
+        "tx_busy_union_ps": 115267125,
+        "allocator_pending_excluding_tx_ps": 508815171,
+        "uncovered_idle_ps": 66946295,
+        "total_ps": 691028591,
+        "last_dequeue_to_weight_ready_ps": 53591
+      }
+    ],
+    "weight_duration_delta_ps": 138188591,
+    "evidence": "../multicast-controlled-ablation/analysis/data/partitions.csv and critical.csv; current accepted aggregate",
+    "limit": "Different workloads and actual critical source ports; exact elapsed partition comparison, not a controlled intervention or causal mediator decomposition.",
+    "new_terminal_relay_identity": {
+      "task": 22540,
+      "expert": 45,
+      "source": 23,
+      "target": 59,
+      "source_kind": "replica",
+      "source_physical": 94,
+      "target_physical": 238,
+      "bytes": 4096,
+      "offset": 18870272,
+      "expert_weight_bytes": 18874368,
+      "original_main_rank": 22,
+      "original_main_physical": 89,
+      "dependencies": [
+        {
+          "task": 13324,
+          "source": 22,
+          "target": 23,
+          "physical": 94,
+          "bytes": 4096,
+          "offset": 18870272
+        },
+        {
+          "task": 13325,
+          "source": 22,
+          "target": 32,
+          "physical": 130,
+          "bytes": 4096,
+          "offset": 18870272
+        }
+      ],
+      "scope": "Case-derived terminal transfer/dependency identities only; not dependency wait timing or unique causal attribution.",
+      "review_basis": "Independent read-only check of prepared Chunk config and shared plan.",
+      "config_sha256": "4fd8c0be6afa0c50fc4e164828f13e0b206da57f3b84ff15c68568b4896616db",
+      "plan_sha256": "7cf755cade55ef2d8497a91a7f710d3ce263f98e5ec175d0231c8e157b51633a"
+    }
+  },
+  "selected_critical_source_jetty_observations": {
+    "selection": "Actual Chunk terminal relay source outgoing pairs and actual Multicast terminal source five children.",
+    "evidence": "Independent read-only selection from each accepted diagnostic-jetty-aggregates.csv.",
+    "source_sha256": {
+      "chunk-streaming": "43e3c43a7c781af915d76ba7c81fa47a31e6f8a1dea714c4269f3796b92d6b49",
+      "multicast-v2": "911b11853371bfaad59179d7ab3c42d9c50aae70a3638586a720fe2d1105a07e"
+    },
+    "rows": {
+      "chunk-streaming": [
+        {
+          "source": 23,
+          "target": 49,
+          "max_outstanding": 15,
+          "weight_phase_observed_ps": 414648591,
+          "weight_phase_outstanding_ta_ps": 5006645206,
+          "weight_phase_window_saturated_ps": 0,
+          "window_limited_tests": 0,
+          "accepted_taacks": 18432,
+          "ssn_progress": 18432
+        },
+        {
+          "source": 23,
+          "target": 59,
+          "max_outstanding": 15,
+          "weight_phase_observed_ps": 414648591,
+          "weight_phase_outstanding_ta_ps": 5006610206,
+          "weight_phase_window_saturated_ps": 0,
+          "window_limited_tests": 0,
+          "accepted_taacks": 18432,
+          "ssn_progress": 18432
+        }
+      ],
+      "multicast-v2": [
+        {
+          "source": 22,
+          "target": 23,
+          "max_outstanding": 512,
+          "weight_phase_observed_ps": 896326667,
+          "weight_phase_outstanding_ta_ps": 446878677250,
+          "weight_phase_window_saturated_ps": 806133540,
+          "window_limited_tests": 47217,
+          "accepted_taacks": 18432,
+          "ssn_progress": 18432
+        },
+        {
+          "source": 22,
+          "target": 32,
+          "max_outstanding": 512,
+          "weight_phase_observed_ps": 896326667,
+          "weight_phase_outstanding_ta_ps": 446890162250,
+          "weight_phase_window_saturated_ps": 806853540,
+          "window_limited_tests": 47219,
+          "accepted_taacks": 18432,
+          "ssn_progress": 18432
+        },
+        {
+          "source": 22,
+          "target": 49,
+          "max_outstanding": 512,
+          "weight_phase_observed_ps": 896326667,
+          "weight_phase_outstanding_ta_ps": 449200504330,
+          "weight_phase_window_saturated_ps": 830326770,
+          "window_limited_tests": 49406,
+          "accepted_taacks": 18432,
+          "ssn_progress": 18432
+        },
+        {
+          "source": 22,
+          "target": 53,
+          "max_outstanding": 512,
+          "weight_phase_observed_ps": 896326667,
+          "weight_phase_outstanding_ta_ps": 446913132250,
+          "weight_phase_window_saturated_ps": 808293540,
+          "window_limited_tests": 47949,
+          "accepted_taacks": 18432,
+          "ssn_progress": 18432
+        },
+        {
+          "source": 22,
+          "target": 59,
+          "max_outstanding": 512,
+          "weight_phase_observed_ps": 896326667,
+          "weight_phase_outstanding_ta_ps": 446926817250,
+          "weight_phase_window_saturated_ps": 809013540,
+          "window_limited_tests": 48012,
+          "accepted_taacks": 18432,
+          "ssn_progress": 18432
+        }
+      ]
+    },
+    "scope": {
+      "weight_phase": "Each pair own observed weight-phase Jetty-time; do not add across pairs as elapsed wall-clock stall.",
+      "max_outstanding": "Maximum during observer lifetime.",
+      "window_limited_tests": "Whole-observer count, not phase-specific and not a duration.",
+      "accepted_taacks_and_ssn_progress": "Whole-lifecycle completed weight TAs for these pairs."
+    },
+    "limit": "Local saturation supports feedback/window pressure but does not reconstruct a TAACK-release cycle or isolate a unique causal share."
+  }
+}

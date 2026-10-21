@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "helpers": [
+    {
+      "file": "restore-native.py",
+      "status": "PASS",
+      "syntax": "ast.parse and compile only; no execution",
+      "original_sha256": "d2e1c05c386ebd7a62ae83c84a6926f84c90750af6b5bacbab705a188ed40bd2",
+      "staged_sha256": "d2e1c05c386ebd7a62ae83c84a6926f84c90750af6b5bacbab705a188ed40bd2",
+      "byte_identical": true,
+      "command_comparison": "Exact helper bytes: command construction and guards unchanged; path discovery stays relative"
+    },
+    {
+      "file": "build-runtime.py",
+      "status": "PASS",
+      "syntax": "ast.parse and compile only; no execution",
+      "original_sha256": "84b0299e1b6d55674e5089280251fa2e44b7bb2028ed9f2ecef051caa9b4d353",
+      "staged_sha256": "84b0299e1b6d55674e5089280251fa2e44b7bb2028ed9f2ecef051caa9b4d353",
+      "byte_identical": true,
+      "command_comparison": "Exact helper bytes: command construction and guards unchanged; path discovery stays relative"
+    },
+    {
+      "file": "test-runtime.py",
+      "status": "PASS",
+      "syntax": "ast.parse and compile only; no execution",
+      "original_sha256": "5270e19c5987696233aad73cd362d82ff39275a54a49fbdca5975de497f350f9",
+      "staged_sha256": "5270e19c5987696233aad73cd362d82ff39275a54a49fbdca5975de497f350f9",
+      "byte_identical": true,
+      "command_comparison": "Exact helper bytes: command construction and guards unchanged; path discovery stays relative"
+    },
+    {
+      "file": "build-native.py",
+      "status": "PASS",
+      "syntax": "ast.parse and compile only; no execution",
+      "original_sha256": "8e49af78bb323d93d51f1eabb282afc39915f29fff62a2f6813a3b225b6f5b12",
+      "staged_sha256": "8e49af78bb323d93d51f1eabb282afc39915f29fff62a2f6813a3b225b6f5b12",
+      "byte_identical": true,
+      "command_comparison": "Exact helper bytes: command construction and guards unchanged; path discovery stays relative"
+    }
+  ],
+  "new_builds": 0,
+  "new_simulations": 0,
+  "original_frozen_files_changed": false,
+  "original_build_identity_sha256": "41357f9a54b8a816d729401505a911b5931432ac7915004b4294a97c72567ec0",
+  "original_identity_postflight": "PASS"
+}

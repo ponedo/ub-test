@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "tokens": 256,
+  "serialized_layer": 37,
+  "source_prefix": "Exact manifest-order raw real-token prefix; unchanged within-request order and expert IDs; source NPU=index modulo64.",
+  "routing_sha256": "6e74b9ff210f53a40c86cb12b83c6a5ea417922f902d4a474e3dc4427005da4e",
+  "source_manifest_sha256": "d5708f02b9ffa6e19500725685272ad840760d9c6b5f5f475f12bc3560405db6",
+  "mapping_sha256": "17c7c0a71bfd4062650f2d952f0fb9e451641d1c4680f28aecafe5060e71f959",
+  "shared_plan_semantic_sha256": "5df5e9b331e487985f0b53a8e0485e9acc477bd71d756430029f8b7427bed06d",
+  "semantic_normalization": "Remove only cpu_wall_ns; JSON sort_keys=True and compact separators.",
+  "byte_identical_plan_and_assignments": true,
+  "replicas": 44,
+  "groups": 21,
+  "max_fanout": 5,
+  "fanout_histogram": {
+    "1": 3,
+    "2": 15,
+    "3": 2,
+    "5": 1
+  },
+  "cases": {
+    "chunk-streaming": {
+      "file_sha256": {
+        "assignments.csv": "b5878b60eab1eba0db3aa321f461d6f1f1c92d43f278e33e878ee4fc9558d3b5",
+        "config.json": "4fd8c0be6afa0c50fc4e164828f13e0b206da57f3b84ff15c68568b4896616db",
+        "graph-input.txt": "934e6a76fbad62be413913c43893d4a944131c55992371003790c262a0919a17",
+        "input.txt": "69260811a01d8e0479bcad79e37d1292250a3d277b075cf478550d3aac277176",
+        "plan.json": "7cf755cade55ef2d8497a91a7f710d3ce263f98e5ec175d0231c8e157b51633a",
+        "transfers.csv": "1aa978dde5e8f116ec308a24576ea754f17639af61d0dd611139074f956c236a",
+        "weight-edges.csv": "02883891f2cf1ae73a7b23b7e0f85464ebd9533b86583a6f8da7d190f94515df"
+      },
+      "tokens": 256,
+      "assignments": 2048,
+      "physical_experts": 172,
+      "replicas": 44,
+      "transfers": 27175,
+      "weight_transfers": 23079,
+      "remote_pairs": 2722,
+      "logical_remote_tas": 842256,
+      "canonical_graph_sha256": "1aa978dde5e8f116ec308a24576ea754f17639af61d0dd611139074f956c236a",
+      "executed_graph_fnv1a64": "716b18790ac6b969"
+    },
+    "multicast-v2": {
+      "file_sha256": {
+        "assignments.csv": "b5878b60eab1eba0db3aa321f461d6f1f1c92d43f278e33e878ee4fc9558d3b5",
+        "config.json": "b36975e64cd3a337011c02d8aa40020c022908ed3e3e0f465a0538ed4389e775",
+        "graph-input.txt": "6c3afb95e049717416bb8d147c93159422feb296b203289cc85d67a99ed9f871",
+        "input.txt": "31ceda73debceaf6ab63b6e887cf1dae079233590fae78b19dbd140b39b36f38",
+        "plan.json": "7cf755cade55ef2d8497a91a7f710d3ce263f98e5ec175d0231c8e157b51633a",
+        "transfers.csv": "bebcfa84dec60b36213ab684a36ae8a9c3feb258501b583547a8640ed40f39b9",
+        "weight-edges.csv": "8d7bd30af70c862dbba8614c6d9f43f86b108ff474f6a4fbefa0ff85773d427c"
+      },
+      "tokens": 256,
+      "assignments": 2048,
+      "physical_experts": 172,
+      "replicas": 44,
+      "transfers": 4140,
+      "weight_transfers": 44,
+      "remote_pairs": 2722,
+      "logical_remote_tas": 842256,
+      "canonical_graph_sha256": "bebcfa84dec60b36213ab684a36ae8a9c3feb258501b583547a8640ed40f39b9",
+      "executed_graph_fnv1a64": "8d7c01a20afd091b"
+    }
+  },
+  "privacy": "Hashes and aggregate counts only; source, routing, assignments and prepared input contents remain private."
+}
