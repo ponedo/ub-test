@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "reviewed_at_utc": "2026-10-21T14:25:37Z",
+  "formal_results_sha256": "7be95d3772a47ffe97a02869e824c81bd261101d2e8cd2270a7531f8d8e0ab72",
+  "execution_receipt_sha256": "d18f2d48dc0847b7de32cb0aa6466d09c574a395d00868d7f4e60365b21df066",
+  "formal_artifacts_checked": 217,
+  "member_rows_checked": 23079,
+  "groups_checked": 13844,
+  "native_tp_rows_safe": 2750,
+  "weight_reduction_vs_cs_percent": 13.219797931355137,
+  "layer_reduction_vs_cs_percent": 12.572135355580727,
+  "merged_multi_groups": 694,
+  "total_multi_groups": 9233,
+  "envelopes": 144244,
+  "stage_envelopes": [
+    1050,
+    544,
+    142650
+  ],
+  "weight_logical_packets": 811008,
+  "envelope_logical_branches": 293654,
+  "native_first_fallback_packets": 517354,
+  "credits": {
+    "consumed": 15943494,
+    "restored": 15942444,
+    "pending_batched_return": 1050,
+    "max_pending": 44,
+    "blocked": 0,
+    "conserved": true
+  },
+  "limitations": [
+    "One deterministic N256 case, no sweep or stability claim",
+    "Whole-hybrid effect, not isolated causal gain from hop multicast",
+    "Direct early-forwarding physical timeline is Phase B only",
+    "Live SSN wrap untested; merge eligibility 78-byte native WRITE and TP VL7",
+    "NoBal has zero weights, so no Weight speedup denominator"
+  ]
+}

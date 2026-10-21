@@ -1,0 +1,76 @@
+{
+  "accepted_control_binary": {
+    "path": "token-screen-private/build/layer",
+    "sha256": "27b3eae2b2aa7cd3c932359261c410238ae53beb4a752ca0d1e62e225befc85b"
+  },
+  "administrative_reconciliation": {
+    "path": "cs-mc-private/phase-c-plan/view-receipt.json",
+    "sha256": "79a175d3b22f051c81f296c23f3e745bee23a5a9c78c8bf851fa735322e05e89"
+  },
+  "app_include_entries": 16,
+  "base_commit": "3a33cc6a249667fc46bf02ac0fed4e1127d7c1ab",
+  "candidate_binary": {
+    "path": "cs-mc-private/app-build-v2/layer",
+    "sha256": "2fd21591e56bf8bd9dfe7ee481e5ce935ac776722ba1e3193acb38ee0d6e5b2f"
+  },
+  "candidate_runtime_identity": {
+    "path": "cs-mc-private/app-build-v2/runtime-identity.json",
+    "sha256": "d9af515501e22798d7b93d00fa66c2495637dcf51cfaf1266203f234a9f3d905"
+  },
+  "compile_flags": [
+    "-std=c++20",
+    "-O2",
+    "-g"
+  ],
+  "formal_output_identity": {
+    "path": "cs-mc-private/phase-c-v1/formal-output-identity.json",
+    "sha256": "c81dd27ad7b2969e25b4192b2014fc809876b4a5cd82852fdb9575cd4b233c4c"
+  },
+  "formal_prepared_manifest": {
+    "path": "cs-mc-private/phase-c-v1/prepared-manifest.json",
+    "sha256": "620d55d0460f6f153ce10866a48d17386a72f96d364cd5f71dc1e2110386d7f2"
+  },
+  "formal_results": {
+    "path": "cs-mc-private/phase-c-v1/five-strategy-results.json",
+    "sha256": "7be95d3772a47ffe97a02869e824c81bd261101d2e8cd2270a7531f8d8e0ab72"
+  },
+  "gate_execution_receipt": {
+    "path": "cs-mc-private/phase-c-v1/gate-execution-receipt.json",
+    "sha256": "d18f2d48dc0847b7de32cb0aa6466d09c574a395d00868d7f4e60365b21df066"
+  },
+  "graph_tool": {
+    "path": "token-screen-private/build/graph-tool",
+    "sha256": "f3118b9ac1bcfe3f15a9019c1985dbe4b0c1f373d947bbc29bb9f84da620665c"
+  },
+  "inherited_native_patch_count": 6,
+  "loaded_native_libraries": {
+    "token-screen-native/build/lib/libns3.44-applications.so": "6dd675de5a4d2412c23690f80742f2a034864d6dfc02a0958696c57cc75be12e",
+    "token-screen-native/build/lib/libns3.44-bridge.so": "301f1d089fa97cdb8955b704f5cff3f9ca88c1e09b2dadc368f9c26e2dced404",
+    "token-screen-native/build/lib/libns3.44-config-store.so": "2d7a443d884b8672d08b3d9b84ffdcab197b59b1668234ecf9fd3b3a9bf5173b",
+    "token-screen-native/build/lib/libns3.44-core.so": "3c1aabf87dfa655e5db683c378ce78e76ccdbae2c567615a520591b14825706a",
+    "token-screen-native/build/lib/libns3.44-internet.so": "f7aae934e4b0a56c7bcdc642b823aa86aa587475bfc51e38f153fdb52da911bc",
+    "token-screen-native/build/lib/libns3.44-network.so": "20450e5d49f66af43481bad820da6ae03208084e09451d829c32122c98ad6ef0",
+    "token-screen-native/build/lib/libns3.44-point-to-point.so": "6bd100cf92fd0a51a13dc3e1fdb072188f1d017eb1d690dfd8fbfe0e32e34b3d",
+    "token-screen-native/build/lib/libns3.44-stats.so": "8dcba5396209a5d22134ef54f388b8ce624fd9917f900eb8ecbbef63c90c19cb",
+    "token-screen-native/build/lib/libns3.44-traffic-control.so": "d7c0f74f373e717ae67a1327b68371f6e7533505bf32c8367cb7c81d0dbb5507",
+    "token-screen-native/build/lib/libns3.44-unified-bus.so": "f9bdef9dff2968e43045eb099c497f790f08e983236ecad57b4d2e9837dda084"
+  },
+  "native_base_commit": "b8375b51a094d3b1217b697989e1ab979f609e64",
+  "native_patch_note": "Existing accepted six-patch source closure and loaded libraries are unchanged. No new native patch was generated or applied for CS+MC.",
+  "native_rebuilt": false,
+  "new_native_patch_count": 0,
+  "old_mode_regression": {
+    "path": "cs-mc-private/phase-b-v3-extension/old-mode-regression.json",
+    "sha256": "3cc6abd58ae6ba96716fdfe8a11572febb28551c6421c3863235c5df3d06562f"
+  },
+  "original_historical_identity": {
+    "path": "cs-mc-private/phase-c-plan/original-campaign-identity.json",
+    "sha256": "71341efdf366737a49c9758281973d95bafe31c21c9346abcc5518af7ca17693"
+  },
+  "phase_b": {
+    "path": "cs-mc-private/phase-b-v3-extension/phase-b.json",
+    "sha256": "6317709588f50f533ddabba53e8c474cadb9b043b7144d9b1bc6a2c28e6796c9"
+  },
+  "source_closure_entries": 3504,
+  "status": "PASS"
+}

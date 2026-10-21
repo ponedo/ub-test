@@ -1,0 +1,10 @@
+case,fault,returncode,exact_rejection,oracle_status,guard_trip
+N01,--fault=weight-byte,2,payload byte mismatch,PASS,False
+N02,--fault=relay-buffer-byte,-6,hybrid same-range native payload differs,PASS,False
+N03,--fault=early-relay,2,relay before target chunk ready,PASS,False
+N04,--fault=early-group,2,relay before target chunk ready,PASS,False
+N05,--fault=early-final-ready,2,final ready before full weight coverage,PASS,False
+N06,--fault=premature-ready,2,ready before target completion coverage,PASS,False
+N07,--fault=early-wqe,2,sender completed before target data ready,PASS,False
+N08,--fault=duplicate-completion,2,audit premature/duplicate sender completion,PASS,False
+N09,--fault=duplicate-weight,2,duplicate forwarding,PASS,False
